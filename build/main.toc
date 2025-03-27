@@ -1,0 +1,5 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Teoria}{3}{chapter.1}%
+\contentsline {chapter}{Bibliografia}{4}{section*.1}%

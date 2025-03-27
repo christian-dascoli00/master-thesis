@@ -1,0 +1,153 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[
+	corpo=11pt,
+    stile=classica,
+    oldstyle,
+    tipotesi=custom,
+    greek,
+    evenboxes,
+]{toptesi}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{csquotes}
+\usepackage{mathtools}
+\usepackage[dvipsnames]{xcolor}
+
+%\usepackage{delarray} % Per le matrici con le righe verticali
+
+\usepackage{tikz-cd} % diagrammi commutativi
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+
+\usepackage{accents}
+
+\usepackage{amsmath}
+
+%Ipertesto
+\usepackage{hyperref}
+
+\hypersetup{
+    pdfpagemode={UseOutlines},
+    bookmarksopen,
+    pdfstartview={FitH},
+    colorlinks,
+    linkcolor={blue},
+    citecolor={blue},
+    urlcolor={blue}
+  }
+
+%%%%%%% use PDFLATEX
+
+\usepackage{enumitem}
+
+\usepackage{geometry} %for the margins
+\newcommand\fillin[1][4cm]{\makebox[#1]{\dotfill}} %for the dotted line in the frontispiace
+
+\usepackage{dcolumn}
+\newcolumntype{d}{D{.}{.}{-1} } %to vetical align numbers in tables, along the decimal dot
+
+
+\usepackage{amsmath,systeme,amssymb,amsfonts,amsthm,amsopn,dsfont}
+\usepackage{caption,subcaption}
+
+\usepackage[normalem]{ulem} % per sottolineare
+
+%\usepackage{bibtex} % for the bibliography
+\usepackage[backend=biber,maxbibnames=99]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{calc} % \widthof
+
+\usepackage{color,soul}
+
+%APPENDICI
+%\usepackage[toc,page]{appendix}
+
+
+%%%%%%% Local definitions
+
+\newcommand{\restrict}[1]{\raisebox{-.25ex}{$|$}_{#1}}
+
+\numberwithin{equation}{chapter}
+
+\theoremstyle{definition}
+\newtheorem{teo}{Teorema}[chapter]
+\newtheorem{lem}[teo]{Lemma}
+\newtheorem{cor}[teo]{Corollario}
+\newtheorem{prop}[teo]{Proposizione}
+\newtheorem{propr}[teo]{Proprietà}
+\newtheorem{defi}[teo]{Definizione}
+\newtheorem*{oss}{Osservazione}
+\newtheorem{esempio}{Esempio}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{problema}[esempio]{Problema}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Nota}
+
+\newlist{defprop}{enumerate}{2}
+\setlist[defprop]{label={\normalfont(\roman*)}}
+\setlist[description]{leftmargin=0.5cm,labelindent=0.5cm}
+
+%\DeclareMathOperator{\Span}{span}
+%\DeclareMathOperator{\Div}{div}
+%\DeclareMathOperator{\Supp}{supp}
+%\DeclareMathOperator{\Rot}{rot}
+%\DeclareMathOperator{\End}{End}
+%\DeclareMathOperator{\Aut}{Aut}
+%\DeclareMathOperator{\im}{Im}
+%\let\ker\relax \DeclareMathOperator{\ker}{Ker}
+%\DeclareMathOperator{\id}{Id}
+%\DeclareMathOperator{\sgn}{sgn}
+%\DeclareMathOperator{\tr}{tr}
+%\DeclareMathOperator{\Det}{det}
+
+% lettere gotica per le algebre di Lie
+%\newcommand{\lieg}{\mathfrak{g}}
+%\newcommand{\liesl}{\mathfrak{sl}}
+%\newcommand{\lieso}{\mathfrak{so}}
+%\newcommand{\lieEnd}{\mathfrak{End}}
+
+% Simbolo di derivata parziale come frazione
+%\newcommand{\pdder}[2]{\frac{\partial #1}{\partial #2}}
+%\newcommand{\pder}[1]{\partial_{#1}}
+
+%\newcommand{\ang}{^{\circ}}
+
+%\newcommand{\vecD}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+%\newcommand{\vecT}[3]{\begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}}
+
+\begin{document}
+
+\input{./titolo.tex}
+
+\input{./0-introduzione.tex}
+
+\indici % ToC (generato automaticamente)
+
+\mainmatter
+
+\input{./1-teoria.tex}
+
+
+% Per qualche motivo il link di default alla bibliografia nell'indice non funziona
+% Lo inserisco manualmente, e sovrascrivo il comando \addcontentsline così che non
+% venga aggiunto due volte.
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\bibname}
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+
+\begin{thebibliography}{9}
+  %\raggedright
+
+  \bibitem{} bla bla bla
+\end{thebibliography}
+
+\let\addcontentsline\oldaddcontentsline
+
+\end{document}
