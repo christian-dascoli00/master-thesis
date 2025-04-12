@@ -1,0 +1,45 @@
+
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoALOSq1GLNlx5Z+cYQApNfQaICUEqSAzY8BIgHZl1es1aIO3I7tHnp1uUQBOR1UXNjFJX1lbFABGGODndTdDbWNwiyso+WQADlIAJhVE1xAhH0sZG2y8gGYitRL2CRUYKABzeCJQADMAJwheJDIQHAgkeJCkkAAeNH6AKwFgeJSdYRFJGKXVtPEAPhBqBjoAIxgGAAVK-zderDaACxxyvoGh6lGkADYnBrY5iCLZakHZeDaHEDHM6Xa7REB3R7PahnMBQJAAWhqxAiIFeg0Qw0+iHyv1Cbi2wFB63EEKh5yufjhDBg3SRIBRaMQWJxePGHzGxNJUwBQJJVKEBg8qV0IiEJhpR1O9Nh8nh9yeL36+ImRKUkxKUoYsGAIoE+QVkKVMMZquZrIhHKQ3IsvMQOoFP31-wWSxWUrWEqpsvltKtDKybDtbMdiEx2JdWqQJJGAoArEKSnpuIw0A86CY9KbgGL-bszIroeGqmwERqeYnBSmnRnvYCliWtAHwRXlTaa+rnvW3lz+Uh0163NmGLm6KHKyrIyzBwnh3qiTUW24ix3PNS572I24o5rV6PEJ66dbD2rEQ6YKincNiq2gX7O7sT-jPUTx8+t-ur2rI8l2acQgA
+\begin{tikzcd}
+    E\times_BA \arrow[rrrr, "{<\mathrm{proj}_{1,E\times_BA},1_{E\times_BA}>}"'] \arrow[rrrrrrrrddd, "{\mathrm{proj}_{1,E\times_BA}}"', bend right] \arrow[rrrrrrr, "1_{E\times_BA}", bend left] &  &  &  & E\times_B(E\times_BA) \arrow[rrr, "{\mathrm{proj}_{2,E\times_B(E\times_AB)}}"'] \arrow[rrrrrrr, "\tilde{\mathrm{proj}_2}", bend left] \arrow[rrrrddd, "{\mathrm{proj}_{1,E\times_B(E\times_AB)}}", bend right] &  &  & E\times_BA \arrow[rdd, "{(\alpha)(\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{2,E\times_BA}}"'] &                  & A \arrow[ldd, "\alpha"] &  & E\times_BA \arrow[ll, "{\mathrm{proj}_{2,E\times_BA}}"] \arrow[lllddd, "{\mathrm{proj}_{1,E\times_BA}}"', bend left] \\
+                                                                                                                                                                              &  &  &  &                                                                                                                                                                                     &  &  &                                                                                                 &                  &                         &  &                                                                                                    \\
+                                                                                                                                                                              &  &  &  &                                                                                                                                                                                     &  &  &                                                                                                 & B                &                         &  &                                                                                                    \\
+                                                                                                                                                                              &  &  &  &                                                                                                                                                                                     &  &  &                                                                                                 & E \arrow[u, "p"] &                         &  &                                                                                                   
+    \end{tikzcd}
+
+
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkQCMpfSvrNWiEEIkqYUAObwioAGYAnCLyRkQOCEiWqZmzcjGgAFnQABAAUaO4AVgLASlw8WPxwwiLiAJQg1Ax0AEYwDAAKMrryIK5YdmE4ElIgbh5Ihj5+iAGm6hYhDOF0TS7unojevu3UveYgcRCJwIapfIKi4tbiQA
+\begin{tikzcd}
+    E\times_BA \arrow[rd, "{\alpha (\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{1,E\times_BA}}"] &   & A \arrow[ld, "\alpha"] \\
+                                                                                                 & B &                       
+    \end{tikzcd}
+
+
+
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoAjKQVVajFmy48s-OMIAUWvoNEBKCVJAZseAkQDMy1fWatEHbsb2iL0m3KIlACZndTcOXysZW3lkRxDqFw13IQlVGCgAc3giUAAzACcIXiRHEBwIJAAWRLC2NBBqBjoAIxgGAAVogPcCrEyACxxIwuKkJXLKxCDJfKKSxAmK0trXeqKAKwFgJSMdE0NPfe8RU3ER+aQg6mXEGrU19zR9NE3t3aPdYRFxc1mQUYLMiTK7UNpgKClYFJcIKbZ7L6ic7-QFIYG3CYMLBgcJQOhwAYZRogQl0SGIMBMBgMG50LAMNiQHHEmFsbgwAAeWDgODgAAIAIR87hwNB0ADGMD5AB5XhAtjtSAiTD9lPDPirxAA+C5jRDoqZlcHkgC09mBzTanW6dl6-SGLLqTzeiuVJ2RFHEQA
+\begin{tikzcd}
+    E\times_BA \arrow[rrrd, "1_{E\times_BA}", bend left] \arrow[rd, "{\exists ! \space <\mathrm{proj}_{1,E\times_BA},1_{E\times_BA}>}", dashed] \arrow[rdd, "{\mathrm{proj}_{1,E\times_BA}}"', bend right] &                                                                                &  &                                                  \\
+                                                                                                                                                                                         & E\times_B(E\times_BA) \arrow[rr] \arrow[d, "{\mathrm{proj}_{1,E\times_B(E\times_BA)}}"] &  & E\times_BA \arrow[d, "{p(\mathrm{proj}_{1,E\times_BA})}"] \\
+                                                                                                                                                                                         & E \arrow[rr, "p"']                                                             &  & B                                               
+    \end{tikzcd}
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAUXHln5xhAQQCUIAL6l0mXPkIoAzOSq1GLNuL6ChMpSpAZseAkQCsu6vWatEIc8tU2NRAOxO+q5G3CbSZhbe6nYoACykAEx6LobuQpFWaraayPFayQZuHEp6MFAA5vBEoABmAE4QvEhkIDgQSACMzoVsaA0AVgLACaTGkqZioePSMkJyiiDUDHQARjAMAApZvu51WOUAFjgZ9Y3N1G1IOkGpIFMMsMB9EIPDo1NSsooLS6vrWz4YiAGDAasdqGswFArsQvCBTk1EC1LohHDcis9Xl0xp9RDjBLN5otgX9NtsgSCwcTIdDEABaLSwywIzoXdqIeLotgibiMNAHOhyESYoYjfHhGSKBS-NZkwGaEB7Q7HOEsxBdVrskZc9wit7ir7E5aygHRBVKo4nBqI7UozkpIq8hj8uhG0mm7JsSkq5nWq5spDah29Aai94SXGSt0m8kK71Ws6Ia4otHG-6xtgW8EgGkw7rBXWh4DYj6mKOqv2ogMc-O3NDR9Pyr2glUURRAA
+\begin{tikzcd}
+    E\times_B(E\times_BA) \arrow[rrr, "{\mathrm{proj}_{2,E\times_B(E\times_AB)}}"'] \arrow[rrrrrrr, "{\tilde{\mathrm{proj}_{2,E\times_BA}}}", bend left] \arrow[rrrrddd, "{\mathrm{proj}_{1,E\times_B(E\times_AB)}}", bend right] &  &  & E\times_BA \arrow[rdd, "{(\alpha)(\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{2,E\times_BA}}"'] &                  & A \arrow[ldd, "\alpha"] &  & E\times_BA \arrow[ll, "{\mathrm{proj}_{2,E\times_BA}}"] \arrow[lllddd, "{\mathrm{proj}_{1,E\times_BA}}"', bend left] \\
+                                                                                                                                                                                                       &  &  &                                                                                                 &                  &                         &  &                                                                                                    \\
+                                                                                                                                                                                                       &  &  &                                                                                                 & B                &                         &  &                                                                                                    \\
+                                                                                                                                                                                                       &  &  &                                                                                                 & E \arrow[u, "p"] &                         &  &                                                                                                   
+    \end{tikzcd}
+
+
+
+\[
+\begin{tikzcd}[row sep=large, column sep=huge]
+  \mathcal{C}
+  \arrow[bend left=40]{r}[description]{F}
+  & \mathcal{D}
+  \arrow[bend left=40]{l}[description]{G}
+  \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\rotatebox{180}{$\top$}}
+\end{tikzcd}
+\]
