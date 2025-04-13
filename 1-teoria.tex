@@ -94,7 +94,7 @@ Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\m
 
 We can check that the unit and counit fulfil the triangle identities:
 
-\[ (p^*\epsilon)_{(A,\alpha)} \circ (\eta p^*)_{(A,\alpha)} = p^*(\mathrm{proj}_2) \circ (\eta_{(E\times_BA,\mathrm{proj}_1)} ) = \circledast\]
+\[ ((p^*\epsilon) \circ (\eta p^*))_{(A,\alpha)} = (p^*\epsilon)_{(A,\alpha)}  (\eta p^*)_{(A,\alpha)} = p^*(\mathrm{proj}_2)  (\eta_{(E\times_BA,\mathrm{proj}_1)} ) = \circledast\]
 
 \noindent considering how $p^*$ acts on the morphism $\mathrm{proj}_{1,E\times_BA}$, we have
 
@@ -136,18 +136,37 @@ We can check that the unit and counit fulfil the triangle identities:
 
 \[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) \] 
 
-\noindent In order to conclude we need to check some compositions so that, by the universal property of the pullback $E\times_A$ in the right of the following diagram
+In order to conclude we need to check some compositions so that, by the universal property of the pullback $E\times_BA$ in the right of the following diagram, we obtain the identity morphism.
 
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoAzOSq1GLNlx5Z+cYQApNfQaICUEqSAzY8BIgFZl1es1aIO3I7tHnp1uUQB2R1UXNjFJX1lbFAAOYOd1N0NtY3CLKyj5ZAA2UgAmFQTXECEfSxkbLNyFQrVi9gkVGCgAc3giUAAzACcIXiQyEBwIJABGJzq2AB40XoArAWBx5J1hEUlRxZXU8QA+EGoGOgAjGAYABQr-N26sFoALHDKevoHqYaRckMTLecXljwpLzrA4gI6nC5XaIgW4PJ7UU5gKBIAC0CmIERAL36iEGH0QeQmoTcm2A22B4lB4LOlz80IYME68JAiORiHRmOxY3eIwJhxONKh8hhd0ez16OPGQ15ABYiT9AQxYMBZhAFnlKfyIbTMmwGUzQaykByLFzEFL8V9qZC6cL9cyjYg0RjTRKkITpUgHN9inpuIw0Pc6CY9KqFsBCeS1uIzFrBba2LCxZy3XzPez5cUw4tI4DVqJNWCBTbdTdRU8U68M+nvUU2P6GIG6FTizrKnrGRXXVW5emlEXtUKOwbKzje5a4yX22W4YaYEjjS6uqmvvja5M3GgW4OE257Y1xEA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoAzOSq1GLNlx5Z+cYQApNfQaICUEqSAzY8BIgBZl1es1aIO3I7tHnp1uUQA2R1UXNjFJX1lbFAB2YOd1N0NtY3CLKyj5ZABWUgBGFQTXECEfSxkbLNyAJkK1YvYJFRgoAHN4IlAAMwAnCF4kMhAcCCQ8p3q2AB40PoArAWBx5J1hEUk8xZXU8QA+EGoGOgAjGAYABQr-Nx6sVoALHDLe-sHqEaQgkMTLecXljwpLzrA4gI6nC5XaIgW4PJ7UU5gKBIAC0CmIERALwGiCGH0Q1QmoTcm2A22B4lB4LOlz80IYMC68JAiORiHRmOxY3eowJhxONKh8hhd0ezz6OPGw15Dm+xUBDFgwFmEAWwEJ5LW4kp-IhtMybAZTNBrKQHIsXMQUvxX2pkLpwthYoRMCRqPRRJ+KrVAK0qyEBkB-pEJkpnIlSEJ0qQuTlbD03EYaHudBMem9iw1QZ2Zl1godbCdT3Drz50fZnuKGfVpE1oh1YIF9oNN1FxYtEYr5djRTYiYYyboVKb+sqhsZ7e6ndl+KUjb1QvHxpLOJnvNtI8XrbhJtdbI9cbc1d9ni14tLX3xPcmR+HC4LbiNxYo4iAA
 \begin{tikzcd}
-    E\times_BA \arrow[rrr, "{<proj_{1,E\times_BA},1_{E\times_BA}>}"'] \arrow[rrrrrrddd, "{proj_{1,E\times_BA}}"', bend right] \arrow[rrrrr, "1_{E\times_BA}", bend left] &  &  & E\times_B(E\times_BA) \arrow[rr] \arrow[rrrrr, "\tilde{proj_2}", bend left] \arrow[rrrddd, bend right] &  & E\times_BA \arrow[rdd, "{(\alpha)(proj_{2,E\times_BA})}"'] \arrow[rr, "{proj_{2,E\times_BA}}"'] &                  & A \arrow[ldd, "\alpha"] & E\times_BA \arrow[l] \arrow[llddd, bend left] \\
-                                                                                                                                                                         &  &  &                                                                                                        &  &                                                                                                 &                  &                         &                                               \\
-                                                                                                                                                                         &  &  &                                                                                                        &  &                                                                                                 & B                &                         &                                               \\
-                                                                                                                                                                         &  &  &                                                                                                        &  &                                                                                                 & E \arrow[u, "p"] &                         &                                              
+    E\times_BA \arrow[rrr, "{<\mathrm{proj}_{1,E\times_BA},1_{E\times_BA}>}"'] \arrow[rrrrrdd, "{\mathrm{proj}_{1,E\times_BA}}"', bend right] \arrow[rrrr, "1_{E\times_BA}", bend left] &  &  & E\times_B(E\times_BA) \arrow[r] \arrow[rrrr, "{\tilde{\mathrm{proj}_2}}", bend left] \arrow[rrdd, "{\mathrm{proj}_{1,E\times_B(E\times_BA)}}"', bend right] & E\times_BA \arrow[rd, "{(\alpha)(\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{2,E\times_BA}}"'] &                  & A \arrow[ld, "\alpha"] & E\times_BA \arrow[l] \arrow[lldd, "{\mathrm{proj}_{1,E\times_BA}}"', bend left] \\
+                                                                                                                                                                      &  &  &                                                                                                                                                        &                                                                                                & B                &                        &                                                                        \\
+                                                                                                                                                                      &  &  &                                                                                                                                                        &                                                                                                & E \arrow[u, "p"] &                        &                                                                       
     \end{tikzcd}
 \]
 
 \[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = \mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}\] 
 
+Let check the composing the projections of $E\times_BA$ with $(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle)$ is the same of composing those projection with $\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}$. Following the first composition
 
+\[ 
+     (\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =
+\]
+     
+\[
+    = (\mathrm{proj}_{2,E \times_BA}) (1_{E\times_BA}) = \mathrm{proj}_{2,E \times_BA} = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}})
+\]
+
+\pagebreak
+
+\noindent and the second
+
+\[
+    (\mathrm{proj}_{1,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = (\mathrm{proj}_{1,E\times_B(E\times_BA)})(\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =   
+\]
+    
+\[   
+    \mathrm{proj}_{1,E \times_BA} = (\mathrm{proj}_{1,E \times_BA}) (\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}})
+\]
