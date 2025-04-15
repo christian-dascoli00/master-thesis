@@ -21,68 +21,77 @@ Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\m
 \begin{itemize}
     \item $(\mathcal{A} \downarrow B)$ is the category of objects over $B$ in $\mathcal{A}$, we denote \\ an object by $(A, \alpha:A \to B)$;
     \item $(\mathcal{A} \downarrow E)$ is the category of objects over $E$ in $\mathcal{A}$, we denote \\ an object by $(D, \delta:D \to E)$;
-    \item  $p^*: (\mathcal{A} \downarrow E) \to (\mathcal{A} \downarrow B)$ is the pullback functor \\
-
+    \item  $p^*: (\mathcal{A} \downarrow E) \to (\mathcal{A} \downarrow B)$ is the pullback functor
+\end{itemize}
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiygIyqGLNohDDJ0kBl3yiZYzVMaLHazrn6U5FS-VzEC0bO28FZD9nNTN2K21bWT0Iw38YtxBPRPsfZAAmNNcgyVUYKABzeCJQADMAJwg+JD8QHAgkVPSgtAaAK0E8rPrGpDJW9sQCrvY0IYamxBa20YDYix6IfsM5kcRO5cnVjJ4mNAALeh2FgBYaA+UQRnoAIxhGAAUkhwtGGBqcEBHIInRjnS4JYYLABsdwmAHY7vQsIx2Hx6Gg4MsaHAzlh-kg4RJKBIgA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiygIyqGLNohDDJ0kBl3yiZYzVMaLHazrn6U5FS-VzEC0bO28FZD9nNTN2K21bWT0Iw38YtxBPRPsfZAAmNNcgyVUYKABzeCJQADMAJwg+JD8QHAgkVPSgtAaAK0E8rPrGpDJW9sQCrvY0IYamxBa20YDYix6IfsM5kcRO5cnVjJ4mNAALeh2FgBYaA+UQRnoAIxhGAAUkhwtGGBqcEBHIInRjnS4JYYLABsdwmAHY7vQsIx2Hx6Gg4MsaHAzlh-kgEdN1gA9ABUJQkQA
 \begin{tikzcd}
-    A \arrow[d, "\alpha"] & {} \arrow[r, maps to, shift right=7] & {} & E\times_BA \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & A \arrow[d, "\alpha"] \\
-    B                     &                                      &    & E \arrow[rr, "p"]                                   &  & B                    
-    \end{tikzcd}
-\]
-\[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEOQ06o8LXKSnFABmVtiQDsaCyMy2kHiJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABabs3i9jRVgCtBCISVtaQqrZ3EMnd+niY0AAt6E9VutEC13kgvlcLL9GAD6DYaIx6IdGAAFTohEDLLAzf44YEvRCbbaverPUFvUlgkw1CyLQmg3oQsHkkEbGjU5mHY5IC5IrBgbJQehwf7TEC0sY8GAADywcBwcAABABCZU8OBoegAYxgGu8jFgwEWEkZu05HyhdPskpAyNRGKG7EYMEWBLZROZ1L2PJOiH532yNwg9wiiPtKJg6MxCmxuPx5sQ4RZRiD7AZntBrhZAE5OfQsIx2Hx6GhFTsaGKsO7dlmkCnqRFLjbYfCk2mmy3pVw-oC6pQJEA
-\begin{tikzcd}[column sep=small]
-    A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] & {} \arrow[r, maps to, shift right=5] & {} & E\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r] \arrow[rrrr, "\exists ! \space \tilde{f}", dashed, bend left] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &                  & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
-    B                                    &                          &                                      &    &                                                                                                                       &                                        & B                &                           &                                                           \\
-                                         &                          &                                      &    &                                                                                                                       &                                        & E \arrow[u, "p"] &                           &                                                          
+    A \arrow[d, "\alpha"] & {} \arrow[r, "p^*", maps to, shift right=7] & {} & E\times_BA \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & A \arrow[d, "\alpha"] \\
+    B                     &                                             &    & E \arrow[rr, "p"]                                   &  & B                    
     \end{tikzcd}
 \]
 
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEOQ06o8LXKSnFABmVtiQDsaCyMy2kHiJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABabs3i9h4+ehwAC2W+YDRVgCsJQQiElbWkKq2O0QZHc-R4TDQ93oP1W60QLUBSBBVws4MYkPoNhojHoh0YAAVOiEQMssDN7jgYX9EJttv8TDVUVxbg8ni93p80iBsbiYASiQoSWSKVS4QC6fCGWNFqKkL1EZLQdkbndHs9XhAPoI0nU7L84bSgfLDsc5ZtGFgwNkoPQ4PdptyldcuDAAB5YOA4OAAAgAhN6eHA0PQAMYwAPeRiwYCLCSyxB7CXIxn2R04vGEobsRgwRaU+r6uU0CV7E0nRAXKVg5mqtkarURLEgdN8zP5dik8n5vWwpDhBVGJ0WGUF3uIVwKgCcxfoWEY7FuaE9Oxodqwed2VeyaAAegAqeP9iURS4ptEY+OD4+nsbnqF1SgSIA
+\begin{tikzcd}
+    A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] & {} \arrow[r, "p^*", maps to, shift right=5] & {} & E\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\exists ! \space \tilde{f}", dashed, bend left] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &                  & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
+    B                                    &                          &                                             &    &                                                                                                                                                    &                                        & B                &                           &                                                                                        \\
+                                         &                          &                                             &    &                                                                                                                                                    &                                        & E \arrow[u, "p"] &                           &                                                                                       
+    \end{tikzcd}
+\]
+\begin{itemize}
     \item $p_!: (\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)$ is the shrink functor
 
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbAKLdeIDNjwEiI8uPrNWiEHL5LBRAEzrqmqTr0L+yocgDMpiVrace+gSpSOxZydpBZd2sDL2QAFlJfZwsQACFucRgoAHN4IlAAMwAnCABbJDIQHAgkNRiAgB1K2AYcOisc-KQTYtLER2K6LAY2PLo0OBKQajgACyxMnCQAVmCmgsRItqQANj8XHTRq2vrG3MXl4cQZjdidmDqG6gY6ACNLgAUbQx1srBSx6fmD2epj9YVNhoRJcIA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbAKLdeIDNjwEiI8uPrNWiEHL5LBRAEzrqmqTr0L+yocgDMpiVrace+gSpSOxZydpBZd2sDL2QAFlJfZwsQACFucRgoAHN4IlAAMwAnCABbJDIQHAgkNRiAgB1K2AYcOisc-KQTYtLER2K6LAY2PLo0OBKQajgACyxMnCQAVj8XHTQAfQBCRtyCxEi2pAA2edi0atr69eat6mHEOYq2Y5g6huoGOgAjB4AFG0MdbKwUsbTYJNTY3K77W6LRJcIA
 \begin{tikzcd}
-    D \arrow[d, "\delta"] & {} \arrow[r, maps to, shift right=5] & {} & D \arrow[rd, "p\delta"] \arrow[d, "\delta"'] &   \\
-    E                     &                                      &    & E \arrow[r, "p"]                             & B
+    D \arrow[d, "\delta"] & {} \arrow[r, "p_!", maps to, shift right=5] & {} & D \arrow[rd, "p\delta"] \arrow[d, "\delta"'] &   \\
+    E                     &                                             &    & E \arrow[r, "p"]                             & B
     \end{tikzcd}
 \]
 
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQAmclVqMWbdgHJuvEBmx4CRMgEZx9Zq0QgAovL7LBRAMxjq2qXqOL+KocgAsliTrZ2lA1SgCsbta6HF4OpigA7IGSwbKhJr7IAZpWMWyGPMY+TlEp7jYgAELc4jBQAObwRKAAZgBOEAC2SGQgOBBIovnBADo9sAw4dCDUDHQARjAMAAphviB1WOUAFjh29U0t1O1I6qkeelAjIGOTM3NCJzA1a5kgG82Ie20diF1BbH0DQ3KjE1OzBKXBjXW4KB5ICwvJCuNp0LAMNiNOhoOA7ahwZZYG5IPx3CGIALQxAANn2BSO+IajyixIAHOTgmhjqcARc2IsVmDatTcdtXgzumw0F8pkMWf9zkCOUtVsdMdi1ohiFTNqT+UhBR89CL+mK6HIuBQuEA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQAmclVqMWbdgHJuvEBmx4CRMgEZx9Zq0QgAovL7LBRAMxjq2qXqOL+KocgAsliTrZ2lA1SgCsbta6HF4OpigA7IGSwbKhJr7IAZpWMWyGPMY+TlEp7jYgAELc4jBQAObwRKAAZgBOEAC2SGQgOBBIovnBADo9sAw4dCDUDHQARjAMAAphviB1WOUAFjh29U0t1O1I6qkeelAjIGOTM3NCJzA1a5kgG82Ie20diF1BbH0DQ3KjE1OzBKXBjXW4KB5ICwvJCuNp0LAMNiNOhoOA7ahwZZYG5IALdNhoAD6AEJ1g1HnidogAGz7ApHO4QxBRaGIAAcdOCaGOpwBFzYixWYNq5Nx21eHPxejQXymQx5-3OQIFS1Wx0x2LWiGIjNFNPFSElH2lssGdDkXAoXCAA
 \begin{tikzcd}
-    D \arrow[d, "\delta"'] \arrow[rr, "d"] &  & D' \arrow[lld, "\delta'"] & {} \arrow[r, maps to, shift right=5] & {} & D \arrow[rr, "d"] \arrow[rrd, "p\delta"'] &  & D' \arrow[d, "p\delta'"] \\
-    E                                      &  &                           &                                      &    & E \arrow[rr, "p"']                        &  & B                       
+    D \arrow[d, "\delta"'] \arrow[rr, "d"] &  & D' \arrow[lld, "\delta'"] & {} \arrow[r, "p_!", maps to, shift right=5] & {} & D \arrow[rr, "d"] \arrow[rrd, "p\delta"'] &  & D' \arrow[d, "p\delta'"] \\
+    E                                      &  &                           &                                             &    & E \arrow[rr, "p"']                        &  & B                       
     \end{tikzcd}
 \]    
 
 \item the unit $\eta^p$
-
+\end{itemize}
+\begin{minipage}{0.45\textwidth}
 \[
     \eta: \mathrm{Id}_{(\mathcal{A} \downarrow E)} \to p^*p_!
 \]
 \[
     \eta_{(D,\delta)} = \langle \delta,1_D \rangle : (D,\delta) \to (E\times_BD, \mathrm{proj}_{1})
 \]
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQBGUsKq1GLNgFEAOnLwBbeAH0AQpx59seAkQDMYifWatEHbrxAZdgoqIBMJqeZAyrOgfpRHn1U2kLdW4JGCgAc3giUAAzACcIJSQjEBwIJAAWANc2NE8QBKSkUTSMxEdtQsTkxFL0lJyzPMSAK1VhAqLax2oGxGzJZos0BVgGHDoumqQyMqRekAAjGDAoFLnAt2FVLWtu2b7y0oYsMDcoOjgAC3CQalu6dcQwJgYGProsBjZIc-uhkEQAoYAAPLBwHBwAAEAEJoQo4Gg6ABjGDQgA8YxgEzoYl2AD5psVEHN+qkVmskABaAxzBh0FYMAAK-D0QhA8SwEWuOABWzY2NxoS4QA
 \begin{tikzcd}
     D \arrow[rrrd, "1_D", bend left] \arrow[rd, "{\exists ! \space \langle\delta,1_D\rangle}", dashed] \arrow[rdd, "\delta"', bend right] &                                           &  &                        \\
-                                                                                                                              & E\times_BD \arrow[rr] \arrow[d, "\mathrm{proj}_1"] &  & D \arrow[d, "p\delta"] \\
+                                                                                                                              & E\times_BD \arrow[rr] \arrow[d] &  & D \arrow[d, "p\delta"] \\
                                                                                                                               & E \arrow[rr, "p"]                         &  & B                     
     \end{tikzcd}
     \]
+\end{minipage}
 
-    \pagebreak
+\begin{itemize}
 \item the counit $\epsilon^p$
+\end{itemize}
+
+\begin{minipage}{0.45\textwidth}
 \[
     \epsilon: p_!p^* \to \mathrm{Id}_{(\mathcal{A} \downarrow B)}
 \]
 \[
     \epsilon_{(A,\alpha)} = \mathrm{proj}_2 : (E\times_BA, \ p (\mathrm{proj}_1)) \to (A,\alpha)
 \]
-
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkSUBGFfWatEIIRKkgMOuUTJHqJ9efYSVMKAHN4RUABmAE4QvEhkIDgQSAbOamY2IQBWAgpWgSFhiADM1FFISqqmbGjpIMGh4XnROXHF5mjJAgZlFVmxkTWFLgncjGgAFnQe4kA
 \begin{tikzcd}
@@ -90,21 +99,86 @@ Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\m
     E \arrow[rr, "p"]                                   &  & B.                    
     \end{tikzcd}
 \]
-\end{itemize}
+\end{minipage}
 
-We can check that the unit and counit fulfil the triangle identities:
 
-\[ ((p^*\epsilon) \circ (\eta p^*))_{(A,\alpha)} = (p^*\epsilon)_{(A,\alpha)}  (\eta p^*)_{(A,\alpha)} = p^*(\mathrm{proj}_2)  (\eta_{(E\times_BA,\mathrm{proj}_1)} ) = \circledast\]
+[TO DO] We need to check that the unit and counit are natural transformations.
 
-\noindent considering how $p^*$ acts on the morphism $\mathrm{proj}_{1,E\times_BA}$, we have
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbdgHJuvEBmx4CRAEzlx9Zq0QgAogB1DeALbwA+gCFOPPssHrSY6tql6jJrObjXZ3cRgoAHN4IlAAMwAnCFMkMhAcCCQNCR02YxgcOgtgAAp2UmNYBmyASi55SJi4xBFqJKQAZldJXRBM7NyCmSLDEuyZCqqQaNj4huS61vS9YJGx2tTGxBa090UAPQAqNAsAQjzgsoBeYzwGWGBgyq4KLiA
+\begin{tikzcd}
+    D \arrow[rr, "{\eta_{(D,\delta)}}"] \arrow[d, "g"] &  & E\times_BD \arrow[d, "p^*p_!(g)=\tilde{g}"] \\
+    D' \arrow[rr, "{\eta_{(D',\delta')}}"]             &  & E\times_BD'                                
+    \end{tikzcd}
+\]
+
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQBGclVqMWbdgHJuvEBmx4CRAExjq9Zq0Qh5fZYKIBmTRJ1sDi-iqElSw8dql6AotaUDVKACzmXXQ5PW2MUAFYAySDZEKMfZEinLWi2ACFucRgoAHN4IlAAMwAnCABbJDIQHAgkUQtXEBzrEvKkDWraxDNquiwGNjK6NDgakGo4AAssQpwkSIagtAB9AEIW0orEKrHEf0W2AB1D2AYcOg22xHrd-cCjk5gzujkeIs356l2AdhTLPTQx1O50uWwAbF8ur8DgCgU9zq8FK0tgtdhCYU1MlwgA
+\begin{tikzcd}
+    D \arrow[r, "g"] \arrow[d, "\delta"] & D' \arrow[ld, "\delta'"] & {} \arrow[r, "p_!", maps to, shift right=5] & {} & D \arrow[rd, "p\delta"] \arrow[r, "g"] & D' \arrow[d, "p\delta'"] \\
+    E                                    &                          &                                             &    &                                        & B                       
+    \end{tikzcd}
+\]
+
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAERABfUuky58hFAGYK1Ok1btxUmdjwEiAVhU0GLNohCiA5JOkgMu+UQBsxtWfbdeWAXBHXbHTl9FAAWUgBGVVMNC2FA+1k9BWRw4mj1c04Eh2CU8jcYrJykpxQIwsz2SVUYKABzeCJQADMAJwg+JAKQHAgkIxAAIxgwKCQAWkUeovYePnocAAs2vmA0DoArCUEIhPbOpAre-sRw91j7HlhGHHp9jq7EMhOkc9mLNGuYW-obGkY9BGjAACqUQiA2lh6kscA9Dogen0jiYqhZ5osVmsNhBtoJiPCnsdkc9UR4LPVCUhlK9SRcshjlqt1lsdsR-iBAcCwY4IVCYXDtCADk8kacaSMxtSeowsGAslB6HAlnUQGTLjwYAAPLBwHBwAAEAEIDTw4Gh6ABjGCm7yMWDAeoSKmIQYk95o+xqzlAn48vLsRgwFqCuwi6k0EmDSXjRDTdUMrgLJnY1m7Dlcv3ghSQ6Gwl2uWkAdkj9CwjHYCzQev6NGVWBDAwT7DQAD0AFQu4mnHox6XN9FcGB3QTAAAUolI31+AEpnULw3SSRLRrGpjNPZqR+PrFOuDc7lY597M6Ds+x+fmJJQJEA
+\begin{tikzcd}
+    {} \arrow[r, "p^*", maps to, shift right=5] & {} & E\times_BD \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"] \arrow[rrrr, "\exists ! \space \tilde{g}", dashed, bend left] & D \arrow[rd, "p\delta"] \arrow[rr, "g"] \arrow[l, "{\eta_{(D,\delta)}}", bend left] &                  & D' \arrow[ld, "p\delta'"'] \arrow[r, "{\eta_{(D',\delta')}}"', bend right] & E\times_BD' \arrow[l, "\mathrm{proj}_2'"'] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
+                                                &    &                                                                                                                                                   &                                                                                     & B                &                                                                            &                                                                                         \\
+                                                &    &                                                                                                                                                   &                                                                                     & E \arrow[u, "p"] &                                                                            &                                                                                        
+    \end{tikzcd}
+\]
+
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbdgHJuvEBmx4CRAEzlx9Zq0QgAogB1DeALbwA+gCFOPPssHrSY6tql6jJrObjXZ8+wFVFAAWZy1JXQ45O0V+FSFkDTUInTZ9ALiHYOQwlNdItitucRgoAHN4IlAAMwAnCFMkMhAcCCQNCTS9YxgcOgtgAAp2UmNYBn6ASi5M+sakEWo2pABmAu6QXv7BkZkxwwn+mRm5hqbEFpXEJa73EHKzhcRO6-W7qLQAPQAqNAsAIRDcpTAC8xjwDFgwHKs1i8wu72uYQ+bGMpjoOAAFnVTMA0A0AFZcCxqGIKBFrZbtRAAVg293RmJxeIJEGJFhE5Nq5yQ9NaNIAbAzPk8LijrsLUXo0OMYJM6NyQJTLtSqSAGFgwFEoHQ4FiyiUuEA
+\begin{tikzcd}
+    D \arrow[rr, "{\eta_{(D,\delta)}}"] \arrow[d, "g"] \arrow[rrd, dashed] &  & E\times_BD \arrow[d, "p^*p_!(g)=\tilde{g}"]                              &  &                          \\
+    D' \arrow[rr, "{\eta_{(D',\delta')}}"]                                 &  & E\times_BD' \arrow[rr, "\mathrm{proj}_2'"] \arrow[d, "\mathrm{proj}_1'"] &  & D' \arrow[d, "p\delta'"] \\
+                                                                           &  & E \arrow[rr, "p"]                                                        &  & B                       
+    \end{tikzcd}
+\]
+
+-- Second natural
+
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoyARiq1GLNlx5Z+cYSIDkEqSAzY8BIgCZyK+s1aIQdI9LNyrpZdTvrHBiSowUADm8ESgAGYAThC8SNYgOBBIAMzeag4gES5ZMXGIZInJiIrp9mxoAgCEaAB6AFQAFBEAlAC83HgMsMAR4iDUDHQARjAMAAoy5vIgUVjBABY4OdGxSIVJ8WW+INwwaNgMBALAjSKk3IxoC3Qt-ZKReUilRanbmXsHWEdgJ2f6F04Vxu+juAXEQA
+\begin{tikzcd}
+    E\times_BA \arrow[d, "p_!p^*(f)=\tilde{f}"'] \arrow[rr, "{\epsilon_{(A,\alpha)}}"] &  & a \arrow[d, "f"] \\
+    E\times_BA' \arrow[rr, "{\epsilon_{(A',\alpha')}}"]                                &  & A'              
+    \end{tikzcd}
+\]
+
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEOQ06o8LXKSnFABmVtiQDsaCyMy2kHiJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABabs3i9h4+ehwAC2W+YDRVgCsJQQiElbWkKq2O0QZHc-R4TDQ93oP1W60QLUBSBBVws4MYkPoNhojHoh0YAAVOiEQMssDN7jgYX9EJttv8TDVUVxbg8ni93p80iBsbiYASiQoSWSKVS4QC6fCGWNFqKkL1EZLQdkbndHs9XhAPoI0nU7L84bSgfLDsc5ZtGFgwNkoPQ4PdptyldcuDAAB5YOA4OAAAgAhN6eHA0PQAMYwAPeRiwYCLCSyxB7CXIxn2R04vGEobsRgwRaU+r6uU0CV7E0nRAXKVg5mqtkarURLEgdN8zP5dik8n5vWwpDhBVGJ0WGUF3uIVwKgCcxfoWEY7FuaE9Oxodqwed2VeyaAAegAqeP9iURS4ptEY+OD4+nsbnqF1SgSIA
+\begin{tikzcd}
+    A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] & {} \arrow[r, "p^*", maps to, shift right=5] & {} & E\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\exists ! \space \tilde{f}", dashed, bend left] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &                  & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
+    B                                    &                          &                                             &    &                                                                                                                                                    &                                        & B                &                           &                                                                                        \\
+                                         &                          &                                             &    &                                                                                                                                                    &                                        & E \arrow[u, "p"] &                           &                                                                                       
+    \end{tikzcd}
+\]
+
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAGYK1Ok1btxUmdjwEiAVhU0GLNohCiA5JOkgMu+UQBsxtWfbdeWAXBHXbHTl9FAAWUgBGVVMNC2FA+1k9BWRyNxjzEASHYJSI9PVMyVUYKABzeCJQADMAJwg+JHyQHAgkcPdYkB4mNAALegS6hqQyFrbEDoz2HsZ++hsaRnoAIxhGAAUkpwtarDK+nCH6xsQ08aaTQpmuPnocPtq+YDR6gCsJQWIQJdX1rccIRAewOR20IGGp2arVGVw8FmqxxGiGUF0QY2mFh4dweTxe70+33BkKQ5xhKJoazAUCQinOjCwYEyUHocD6pR+nUyPBgAA8sHAcHAAAQAQmFPDgaHoAGMYBLvIxYMBqhIkacjGjXC16FhGOw7mhBW0aGysNUjohNZj7IJRerSTRyR0qTTEABaOlwrpoAAU2Puj2erwgH0EEQAlA6KWiXTBqbTzja-QHccGCeGrFGJJQJEA
+\begin{tikzcd}
+    {} \arrow[r, "p_!", maps to, shift right=5] & {} & E\times_BA \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\exists ! \space \tilde{f}", dashed, bend left] \arrow[rrd, "p(\mathrm{proj}_1)", bend right] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &   & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2"] \arrow[lld, "p(\mathrm{proj}_1')", bend left] \\
+                                                &    &                                                                                                                                                      &                                        & B &                           &                                                                                       
+    \end{tikzcd}
+\]
+
+We can check that the unit and counit fulfil the first triangle identities. Let $(A,\alpha)$ be an object in $(\mathcal{A} \downarrow B)$, we have:
+
+\[ ((p^*\epsilon) \circ (\eta p^*))_{(A,\alpha)} = (p^*\epsilon)_{(A,\alpha)}  (\eta p^*)_{(A,\alpha)} = p^*(\mathrm{proj}_{2,E\times_BA})  (\eta_{(E\times_BA,\mathrm{proj}_1)} ) = \circledast\]
+
+Considering first how $p^*$ acts on the morphism $\mathrm{proj}_{1,E\times_BA}$
 
 \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkQCMpfSvrNWiEEIkqYUAObwioAGYAnCLyRkQOCEiWqZmzcjGgAFnQABAAUaO4AVgLASlw8WPxwwiLiAJQg1Ax0AEYwDAAKMrryIK5YdmE4ElIgbh5Ihj5+iAGm6hYhDOF0TS7unojevu3UveYgcRCJwIapfIKi4tbiQA
 \begin{tikzcd}
-    E\times_BA \arrow[rd, "{\alpha (\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{1,E\times_BA}}"] &   & A \arrow[ld, "\alpha"] \\
+    E\times_BA \arrow[rd, "{\alpha (\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{2,E\times_BA}}"] &   & A \arrow[ld, "\alpha"] \\
                                                                                                  & B &                       
     \end{tikzcd}
 \]
+
 
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAUXHln5xhAQQCUIAL6l0mXPkIoAzOSq1GLNuL6ChMpSpAZseAkQCsu6vWatEIc8tU2NRAOxO+q5G3CbSZhbe6nYoACykAEx6LobuQpFWaraayPFayQZuHEp6MFAA5vBEoABmAE4QvEhkIDgQSACMzoVsaA0AVgLACaTGkqZioePSMkJyiiDUDHQARjAMAApZvu51WOUAFjgZ9Y3N1G1IOkGpIFMMsMB9EIPDo1NSsooLS6vrWz4YiAGDAasdqGswFArsQvCBTk1EC1LohHDcis9Xl0xp9RDjBLN5otgX9NtsgSCwcTIdDEABaLSwywIzoXdqIeLotgibiMNAHOhyESYoYjfHhGSKBS-NZkwGaEB7Q7HOEsxBdVrskZc9wit7ir7E5aygHRBVKo4nBqI7UozkpIq8hj8uhG0mm7JsSkq5nWq5spDah29Aai94SXGSt0m8kK71Ws6Ia4otHG-6xtgW8EgGkw7rBXWh4DYj6mKOqv2ogMc-O3NDR9Pyr2glUURRAA
@@ -118,15 +192,13 @@ We can check that the unit and counit fulfil the triangle identities:
 
 \[ \circledast = (\tilde{\mathrm{proj}_2}) (\eta_{(E\times_BA,\mathrm{proj}_1)}) \] 
 
-\pagebreak
-
-\noindent then considering the definition of $\eta$
+and then considering the definition of $\eta$, we obtain
 
 \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoAjKQVVajFmy48s-OMIAUWvoNEBKCVJAZseAkQDMy1fWatEHbsb2iL0m3KIlACZndTcOXysZW3lkRxDqFw13IQlVGCgAc3giUAAzACcIXiRHEBwIJAAWRLC2NBBqBjoAIxgGAAVogPcCrEyACxxIwuKkJXLKxCDJfKKSxAmK0trXeqKAKwFgJSMdE0NPfe8RU3ER+aQg6mXEGrU19zR9NE3t3aPdYRFxc1mQUYLMiTK7UNpgKClYFJcIKbZ7L6ic7-QFIYG3CYMLBgcJQOhwAYZRogQl0SGIMBMBgMG50LAMNiQHHEmFsbgwAAeWDgODgAAIAIR87hwNB0ADGMD5AB5XhAtjtSAiTD9lPDPirxAA+C5jRDoqZlcHkgC09mBzTanW6dl6-SGLLqTzeiuVJ2RFHEQA
 \begin{tikzcd}
     E\times_BA \arrow[rrrd, "1_{E\times_BA}", bend left] \arrow[rd, "{\exists ! \space \langle\mathrm{proj}_{1,E\times_BA},1_{E\times_BA}\rangle}", dashed] \arrow[rdd, "{\mathrm{proj}_{1,E\times_BA}}"', bend right] &                                                                                &  &                                                  \\
-                                                                                                                                                                                         & E\times_B(E\times_BA) \arrow[rr] \arrow[d, "{\mathrm{proj}_{1,E\times_B(E\times_BA)}}"] &  & E\times_BA \arrow[d, "{p(\mathrm{proj}_{1,E\times_BA})}"] \\
+                                                                                                                                                                                         & E\times_B(E\times_BA) \arrow[rr] \arrow[d] &  & E\times_BA \arrow[d, "{p(\mathrm{proj}_{1,E\times_BA})}"] \\
                                                                                                                                                                                          & E \arrow[rr, "p"']                                                             &  & B                                               
     \end{tikzcd}
 \]
@@ -134,7 +206,7 @@ We can check that the unit and counit fulfil the triangle identities:
 
 
 
-\[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) \] 
+\[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle) \] 
 
 In order to conclude we need to check some compositions so that, by the universal property of the pullback $E\times_BA$ in the right of the following diagram, we obtain the identity morphism.
 
@@ -147,9 +219,9 @@ In order to conclude we need to check some compositions so that, by the universa
     \end{tikzcd}
 \]
 
-\[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = \mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}\] 
+\[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle) = \mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}\] 
 
-Let check the composing the projections of $E\times_BA$ with $(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle)$ is the same of composing those projection with $\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}$. Following the first composition
+Let check the composing the projections of $E\times_BA$ with $(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle)$ is the same of composing those projection with $\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}$. Following the first composition
 
 \[ 
      (\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =
@@ -159,9 +231,8 @@ Let check the composing the projections of $E\times_BA$ with $(\tilde{\mathrm{pr
     = (\mathrm{proj}_{2,E \times_BA}) (1_{E\times_BA}) = \mathrm{proj}_{2,E \times_BA} = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}})
 \]
 
-\pagebreak
 
-\noindent and the second
+\noindent and the second composition
 
 \[
     (\mathrm{proj}_{1,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = (\mathrm{proj}_{1,E\times_B(E\times_BA)})(\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =   
@@ -170,3 +241,35 @@ Let check the composing the projections of $E\times_BA$ with $(\tilde{\mathrm{pr
 \[   
     \mathrm{proj}_{1,E \times_BA} = (\mathrm{proj}_{1,E \times_BA}) (\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}})
 \]
+
+Finally we can check the second triangle identities. Let $(D,\delta)$ be an object in $(\mathcal{A} \downarrow E)$, we have:
+
+\[
+((\epsilon p_!) \circ (p_! \eta))_{(D,\delta)} = ((\epsilon p_!)_{(D,\delta)} (p_! \eta))_{(D,\delta)} = (\epsilon_{p_!(D,\delta)}) p_! (\langle \delta, 1_D \rangle) =
+\]
+
+\[ 
+    = (\epsilon_{(D,p \delta)}) p_! (\langle \delta, 1_D \rangle) = \mathrm{proj}_{2,E\times_BD} (\langle \delta, 1_D \rangle) = 1_D = \mathrm{Id}_{(D,\delta)}
+\]
+
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAiIAL6l0mXPkIoATOSq1GLNmMnTseAkSUBGFfWatEIIRKkgMOuUTJHqJ9efYSVMKAHN4RUABmAE4QvEhkIDgQSAbOamYg3Lx0OAAWQbzAaCEAVuICwEpcPFj8cMIi4laBIWGIAMzUUUhKqqZsaNUgwaHhTdENce3m2RA5BbHFfIKiVVrdtTH9LUOuNtywDDh0HuJAA
+\begin{tikzcd}
+    E\times_BD \arrow[rr, "{\mathrm{proj}_{2,E\times_BD}}"] \arrow[d, "{proj_{1,E\times_BD}}"] &  & D \arrow[d, "p\delta"] \\
+    E \arrow[rr, "p"]                                                                          &  & B                     
+    \end{tikzcd}
+\]
+
+Now we can conclude that
+
+\[
+\begin{tikzcd}
+    (\mathcal{A} \downarrow B)
+  \arrow[bend left=40]{r}[description]{p^*}
+  & (\mathcal{A} \downarrow E)
+  \arrow[bend left=40]{l}[description]{p_!}
+  \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\rotatebox{180}{$\top$}}
+\end{tikzcd}
+\]
+
+\noindent is an adjunction.
