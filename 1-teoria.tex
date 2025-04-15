@@ -151,7 +151,7 @@ Now we want to prove the counit is a natural trasfromation. Consider $f : A \to 
     \end{tikzcd}
 \]
 
-Considering the action of the functor $p_!p^*$ on the morphism $f$, we have:
+As done similarly before we need to the action of the functor $p_!p^*$ on the morphism $f$, we have:
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEOQ06o8LXKSnFABmVtiQDsaCyMy2kHiJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABabs3i9h4+ehwAC2W+YDRVgCsJQQiElbWkKq2O0QZHc-R4TDQ93oP1W60QLUBSBBVws4MYkPoNhojHoh0YAAVOiEQMssDN7jgYX9EJttv8TDVUVxbg8ni93p80iBsbiYASiQoSWSKVS4QC6fCGWNFqKkL1EZLQdkbndHs9XhAPoI0nU7L84bSgfLDsc5ZtGFgwNkoPQ4PdptyldcuDAAB5YOA4OAAAgAhN6eHA0PQAMYwAPeRiwYCLCSyxB7CXIxn2R04vGEobsRgwRaU+r6uU0CV7E0nRAXKVg5mqtkarURLEgdN8zP5dik8n5vWwpDhBVGJ0WGUF3uIVwKgCcxfoWEY7FuaE9Oxodqwed2VeyaAAegAqeP9iURS4ptEY+OD4+nsbnqF1SgSIA
 \begin{tikzcd}
@@ -160,7 +160,6 @@ Considering the action of the functor $p_!p^*$ on the morphism $f$, we have:
                                          &                          &                                             &    &                                                                                                                                                    &                                        & E \arrow[u, "p"] &                           &                                                                                       
     \end{tikzcd}
 \]
-
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAGYK1Ok1btxUmdjwEiAVhU0GLNohCiA5JOkgMu+UQBsxtWfbdeWAXBHXbHTl9FAAWUgBGVVMNC2FA+1k9BWRyNxjzEASHYJSI9PVMyVUYKABzeCJQADMAJwg+JHyQHAgkcPdYkB4mNAALegS6hqQyFrbEDoz2HsZ++hsaRnoAIxhGAAUkpwtarDK+nCH6xsQ08aaTQpmuPnocPtq+YDR6gCsJQWIQJdX1rccIRAewOR20IGGp2arVGVw8FmqxxGiGUF0QY2mFh4dweTxe70+33BkKQ5xhKJoazAUCQinOjCwYEyUHocD6pR+nUyPBgAA8sHAcHAAAQAQmFPDgaHoAGMYBLvIxYMBqhIkacjGjXC16FhGOw7mhBW0aGysNUjohNZj7IJRerSTRyR0qTTEABaOlwrpoAAU2Puj2erwgH0EEQAlJzlmtNtsgSDDg6KWiXTBqbTzja-QHccGCeGrFGJJQJEA
 \begin{tikzcd}
@@ -169,15 +168,13 @@ Considering the action of the functor $p_!p^*$ on the morphism $f$, we have:
     \end{tikzcd}
 \]
 
-Since $\epsilon_{(A,\alpha)}$ is the $\mathrm{proj}_{2,E\times_BA}$, the composition $(f)(\epsilon_{(A,\alpha)})=(\epsilon_{(A',\alpha')})(\tilde{f})$ holds by the definition of $\tilde{f}$. So the also the naturality of $\epsilon$ is satisfied.
-
+Since $\epsilon_{(A,\alpha)}$ is the $\mathrm{proj}_{2,E\times_BA}$, the composition $(f)(\epsilon_{(A,\alpha)})=(\epsilon_{(A',\alpha')})(\tilde{f})$ holds by the definition of $\tilde{f}$. So also the naturality of $\epsilon$ is satisfied.
 
 Now we can check that the unit and counit fulfil the first triangle identities. Let $(A,\alpha)$ be an object in $(\mathcal{A} \downarrow B)$, we have:
 \[ ((p^*\epsilon) \circ (\eta p^*))_{(A,\alpha)} = (p^*\epsilon)_{(A,\alpha)}  (\eta p^*)_{(A,\alpha)} = p^*(\mathrm{proj}_{2,E\times_BA})  (\eta_{(E\times_BA,\mathrm{proj}_1)} ) = \circledast
 \]
 
 Considering first how $p^*$ acts on the morphism $\mathrm{proj}_{1,E\times_BA}$
-
 \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkQCMpfSvrNWiEEIkqYUAObwioAGYAnCLyRkQOCEiWqZmzcjGgAFnQABAAUaO4AVgLASlw8WPxwwiLiAJQg1Ax0AEYwDAAKMrryIK5YdmE4ElIgbh5Ihj5+iAGm6hYhDOF0TS7unojevu3UveYgcRCJwIapfIKi4tbiQA
 \begin{tikzcd}
@@ -185,8 +182,6 @@ Considering first how $p^*$ acts on the morphism $\mathrm{proj}_{1,E\times_BA}$
                                                                                                  & B &                       
     \end{tikzcd}
 \]
-
-
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAUXHln5xhAQQCUIAL6l0mXPkIoAzOSq1GLNuL6ChMpSpAZseAkQCsu6vWatEIc8tU2NRAOxO+q5G3CbSZhbe6nYoACykAEx6LobuQpFWaraayPFayQZuHEp6MFAA5vBEoABmAE4QvEhkIDgQSACMzoVsaA0AVgLACaTGkqZioePSMkJyiiDUDHQARjAMAApZvu51WOUAFjgZ9Y3N1G1IOkGpIFMMsMB9EIPDo1NSsooLS6vrWz4YiAGDAasdqGswFArsQvCBTk1EC1LohHDcis9Xl0xp9RDjBLN5otgX9NtsgSCwcTIdDEABaLSwywIzoXdqIeLotgibiMNAHOhyESYoYjfHhGSKBS-NZkwGaEB7Q7HOEsxBdVrskZc9wit7ir7E5aygHRBVKo4nBqI7UozkpIq8hj8uhG0mm7JsSkq5nWq5spDah29Aai94SXGSt0m8kK71Ws6Ia4otHG-6xtgW8EgGkw7rBXWh4DYj6mKOqv2ogMc-O3NDR9Pyr2glUURRAA
 \begin{tikzcd}
@@ -198,9 +193,7 @@ Considering first how $p^*$ acts on the morphism $\mathrm{proj}_{1,E\times_BA}$
 \]
 
 \[ \circledast = (\tilde{\mathrm{proj}_2}) (\eta_{(E\times_BA,\mathrm{proj}_1)}) \] 
-
 and then considering the definition of $\eta$, we obtain
-
 \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoAjKQVVajFmy48s-OMIAUWvoNEBKCVJAZseAkQDMy1fWatEHbsb2iL0m3KIlACZndTcOXysZW3lkRxDqFw13IQlVGCgAc3giUAAzACcIXiRHEBwIJAAWRLC2NBBqBjoAIxgGAAVogPcCrEyACxxIwuKkJXLKxCDJfKKSxAmK0trXeqKAKwFgJSMdE0NPfe8RU3ER+aQg6mXEGrU19zR9NE3t3aPdYRFxc1mQUYLMiTK7UNpgKClYFJcIKbZ7L6ic7-QFIYG3CYMLBgcJQOhwAYZRogQl0SGIMBMBgMG50LAMNiQHHEmFsbgwAAeWDgODgAAIAIR87hwNB0ADGMD5AB5XhAtjtSAiTD9lPDPirxAA+C5jRDoqZlcHkgC09mBzTanW6dl6-SGLLqTzeiuVJ2RFHEQA
 \begin{tikzcd}
@@ -210,13 +203,9 @@ and then considering the definition of $\eta$, we obtain
     \end{tikzcd}
 \]
 
-
-
-
 \[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle) \] 
 
 In order to conclude we need to check some compositions so that, by the universal property of the pullback $E\times_BA$ in the right of the following diagram, we obtain the identity morphism.
-
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoAzOSq1GLNlx5Z+cYQApNfQaICUEqSAzY8BIgBZl1es1aIO3I7tHnp1uUQA2R1UXNjFJX1lbFAB2YOd1N0NtY3CLKyj5ZABWUgBGFQTXECEfSxkbLNyAJkK1YvYJFRgoAHN4IlAAMwAnCF4kMhAcCCQ8p3q2AB40PoArAWBx5J1hEUk8xZXU8QA+EGoGOgAjGAYABQr-Nx6sVoALHDLe-sHqEaQgkMTLecXljwpLzrA4gI6nC5XaIgW4PJ7UU5gKBIAC0CmIERALwGiCGH0Q1QmoTcm2A22B4lB4LOlz80IYMC68JAiORiHRmOxY3eowJhxONKh8hhd0ezz6OPGw15Dm+xUBDFgwFmEAWwEJ5LW4kp-IhtMybAZTNBrKQHIsXMQUvxX2pkLpwthYoRMCRqPRRJ+KrVAK0qyEBkB-pEJkpnIlSEJ0qQuTlbD03EYaHudBMem9iw1QZ2Zl1godbCdT3Drz50fZnuKGfVpE1oh1YIF9oNN1FxYtEYr5djRTYiYYyboVKb+sqhsZ7e6ndl+KUjb1QvHxpLOJnvNtI8XrbhJtdbI9cbc1d9ni14tLX3xPcmR+HC4LbiNxYo4iAA
 \begin{tikzcd}
@@ -268,7 +257,6 @@ Finally we can check the second triangle identities. Let $(D,\delta)$ be an obje
 \]
 
 Now we can conclude that
-
 \[
 \begin{tikzcd}
     (\mathcal{A} \downarrow B)
@@ -278,5 +266,5 @@ Now we can conclude that
   \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\rotatebox{180}{$\top$}}
 \end{tikzcd}
 \]
+is an adjunction.
 
-\noindent is an adjunction.
