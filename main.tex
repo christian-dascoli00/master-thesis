@@ -43,10 +43,6 @@
 \usepackage{enumitem}
 
 \usepackage{geometry} %for the margins
-\newcommand\fillin[1][4cm]{\makebox[#1]{\dotfill}} %for the dotted line in the frontispiace
-
-\usepackage{dcolumn}
-\newcolumntype{d}{D{.}{.}{-1} } %to vetical align numbers in tables, along the decimal dot
 
 
 \usepackage{amsmath,systeme,amssymb,amsfonts,amsthm,amsopn,dsfont}
@@ -68,22 +64,18 @@
 
 %%%%%%% Local definitions
 
-\newcommand{\restrict}[1]{\raisebox{-.25ex}{$|$}_{#1}}
 
 \numberwithin{equation}{chapter}
 
 \theoremstyle{definition}
-\newtheorem{teo}{Teorema}[chapter]
-\newtheorem{lem}[teo]{Lemma}
-\newtheorem{cor}[teo]{Corollario}
-\newtheorem{prop}[teo]{Proposizione}
-\newtheorem{propr}[teo]{Proprietà}
-\newtheorem{defi}[teo]{Definizione}
-\newtheorem*{oss}{Osservazione}
-\newtheorem{esempio}{Esempio}[chapter]
+\newtheorem{theo}{Theorem}[chapter]
+\newtheorem{lemma}[theo]{Lemma}
+\newtheorem{cor}[theo]{Corollary}
+\newtheorem{prop}[theo]{Proposition}
+\newtheorem{propr}[theo]{Property}
+\newtheorem{defi}[theo]{Definition}
+\newtheorem*{rem}{Remark}
 
-\theoremstyle{plain}
-\newtheorem{problema}[esempio]{Problema}
 
 \theoremstyle{remark}
 \newtheorem*{rmk}{Nota}
@@ -120,13 +112,14 @@
 %\newcommand{\vecD}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
 %\newcommand{\vecT}[3]{\begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}}
 
+
 \begin{document}
 
 \input{./titolo.tex}
 
-\input{./0-introduzione.tex}
+\indici
 
-\indici % ToC (generato automaticamente)
+\input{./0-introduzione.tex}
 
 \mainmatter
 
