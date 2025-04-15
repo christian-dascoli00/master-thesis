@@ -101,8 +101,7 @@ Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\m
 \]
 \end{minipage}
 
-
-[TO DO] We need to check that the unit and counit are natural transformations.
+Let us show that this is actually an adjunction. First we prove that the unit is a natural transformation. Let $g : (D,\delta)  \to ((D',\delta'))$ be a morphism in $(\mathcal{A} \downarrow E)$, we want to prove that the following diagram commutes:
 
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbdgHJuvEBmx4CRAEzlx9Zq0QgAogB1DeALbwA+gCFOPPssHrSY6tql6jJrObjXZ3cRgoAHN4IlAAMwAnCFMkMhAcCCQNCR02YxgcOgtgAAp2UmNYBmyASi55SJi4xBFqJKQAZldJXRBM7NyCmSLDEuyZCqqQaNj4huS61vS9YJGx2tTGxBa090UAPQAqNAsAQjzgsoBeYzwGWGBgyq4KLiA
@@ -111,6 +110,8 @@ Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\m
     D' \arrow[rr, "{\eta_{(D',\delta')}}"]             &  & E\times_BD'                                
     \end{tikzcd}
 \]
+
+In order to do that we need to expand the action of the functor $p^*p_!$ on the morphism $g$. We have:
 
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQBGclVqMWbdgHJuvEBmx4CRAExjq9Zq0Qh5fZYKIBmTRJ1sDi-iqElSw8dql6AotaUDVKACzmXXQ5PW2MUAFYAySDZEKMfZEinLWi2ACFucRgoAHN4IlAAMwAnCABbJDIQHAgkUQtXEBzrEvKkDWraxDNquiwGNjK6NDgakGo4AAssQpwkSIagtAB9AEIW0orEKrHEf0W2AB1D2AYcOg22xHrd-cCjk5gzujkeIs356l2AdhTLPTQx1O50uWwAbF8ur8DgCgU9zq8FK0tgtdhCYU1MlwgA
@@ -128,7 +129,7 @@ Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\m
                                                 &    &                                                                                                                                                   &                                                                                     & E \arrow[u, "p"] &                                                                            &                                                                                        
     \end{tikzcd}
 \]
-
+Considering the diagram
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbdgHJuvEBmx4CRAEzlx9Zq0QgAogB1DeALbwA+gCFOPPssHrSY6tql6jJrObjXZ8+wFVFAAWZy1JXQ45O0V+FSFkDTUInTZ9ALiHYOQwlNdItitucRgoAHN4IlAAMwAnCFMkMhAcCCQNCTS9YxgcOgtgAAp2UmNYBn6ASi5M+sakEWo2pABmAu6QXv7BkZkxwwn+mRm5hqbEFpXEJa73EHKzhcRO6-W7qLQAPQAqNAsAIRDcpTAC8xjwDFgwHKs1i8wu72uYQ+bGMpjoOAAFnVTMA0A0AFZcCxqGIKBFrZbtRAAVg293RmJxeIJEGJFhE5Nq5yQ9NaNIAbAzPk8LijrsLUXo0OMYJM6NyQJTLtSqSAGFgwFEoHQ4FiyiUuEA
 \begin{tikzcd}
@@ -137,6 +138,19 @@ Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\m
                                                                            &  & E \arrow[rr, "p"]                                                        &  & B                       
     \end{tikzcd}
 \]
+
+\noindent we can prove the naturality in the left diagram by the universal property of the pullback in the right. Since $(\mathrm{proj}_1$, $\mathrm{proj}_2)$ are jointly monic, by the following compositions
+
+\begin{itemize}
+    \item $(\mathrm{proj}_2')(\tilde{g})(\eta_{D,\delta}) = (g)(\mathrm{proj}_2)(\eta_{D,\delta}) = (g)(1_D) = g$
+    \item $(\mathrm{proj}_2')(\eta_{D',\delta'})(g) = (1_{D'})(g) = g$
+    \item $(\mathrm{proj}_1')(\tilde{g})(\eta_{D,\delta}) = (\mathrm{proj}_1)(\eta_{D,\delta}) = \delta$
+    \item $(\mathrm{proj}_1')(\eta_{D',\delta'})(g) = (\delta')(f) = \delta$
+\end{itemize}
+
+\noindent we conclude that ($\tilde{g}) (\eta_{(D,\delta)}) = (\eta_{(D',\delta')}) (g)$. So the naturality condition of $\eta$ is satisfied.
+
+
 
 -- Second natural
 
@@ -221,7 +235,7 @@ In order to conclude we need to check some compositions so that, by the universa
 
 \[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle) = \mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}\] 
 
-Let check the composing the projections of $E\times_BA$ with $(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle)$ is the same of composing those projection with $\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}$. Following the first composition
+We want to check that composition of the projections of $E\times_BA$ with $\circledast$ is the same of composing those projection with $\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}$.  Following the first composition
 
 \[ 
      (\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =
