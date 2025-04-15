@@ -150,9 +150,7 @@ Considering the diagram
 
 \noindent we conclude that ($\tilde{g}) (\eta_{(D,\delta)}) = (\eta_{(D',\delta')}) (g)$. So the naturality condition of $\eta$ is satisfied.
 
-
-
--- Second natural
+Now we want to prove the counit is a natural trasfromation. Consider $f : A \to A'$ a morphism in $(\mathcal{A} \downarrow B)$, we want to prove that the following diagram commutes:
 
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoyARiq1GLNlx5Z+cYSIDkEqSAzY8BIgCZyK+s1aIQdI9LNyrpZdTvrHBiSowUADm8ESgAGYAThC8SNYgOBBIAMzeag4gES5ZMXGIZInJiIrp9mxoAgCEaAB6AFQAFBEAlAC83HgMsMAR4iDUDHQARjAMAAoy5vIgUVjBABY4OdGxSIVJ8WW+INwwaNgMBALAjSKk3IxoC3Qt-ZKReUilRanbmXsHWEdgJ2f6F04Vxu+juAXEQA
@@ -161,6 +159,8 @@ Considering the diagram
     E\times_BA' \arrow[rr, "{\epsilon_{(A',\alpha')}}"]                                &  & A'              
     \end{tikzcd}
 \]
+
+Considering the of the functor $p_!p^*$ on the morphism $f$, we have:
 
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEOQ06o8LXKSnFABmVtiQDsaCyMy2kHiJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABabs3i9h4+ehwAC2W+YDRVgCsJQQiElbWkKq2O0QZHc-R4TDQ93oP1W60QLUBSBBVws4MYkPoNhojHoh0YAAVOiEQMssDN7jgYX9EJttv8TDVUVxbg8ni93p80iBsbiYASiQoSWSKVS4QC6fCGWNFqKkL1EZLQdkbndHs9XhAPoI0nU7L84bSgfLDsc5ZtGFgwNkoPQ4PdptyldcuDAAB5YOA4OAAAgAhN6eHA0PQAMYwAPeRiwYCLCSyxB7CXIxn2R04vGEobsRgwRaU+r6uU0CV7E0nRAXKVg5mqtkarURLEgdN8zP5dik8n5vWwpDhBVGJ0WGUF3uIVwKgCcxfoWEY7FuaE9Oxodqwed2VeyaAAegAqeP9iURS4ptEY+OD4+nsbnqF1SgSIA
@@ -178,6 +178,8 @@ Considering the diagram
                                                 &    &                                                                                                                                                      &                                        & B &                           &                                                                                       
     \end{tikzcd}
 \]
+
+The naturaity follow (to complete)
 
 We can check that the unit and counit fulfil the first triangle identities. Let $(A,\alpha)$ be an object in $(\mathcal{A} \downarrow B)$, we have:
 
