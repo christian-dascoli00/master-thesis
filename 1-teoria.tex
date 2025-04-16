@@ -141,7 +141,7 @@ we can prove the naturality in the left diagram by the universal property of the
 \end{itemize}
 we conclude that ($\tilde{g}) (\eta_{(D,\delta)}) = (\eta_{(D',\delta')}) (g)$. So the naturality condition of $\eta$ is satisfied.
 
-Now we want to prove that the counit is a natural trasfromation. Consider $f : (A,\alpha) \to (A',\alpha')$ a morphism in $(\mathcal{A} \downarrow B)$, we want to prove that the following diagram commutes:
+Now we want to prove that the counit is a natural transfromation. Consider $f : (A,\alpha) \to (A',\alpha')$ a morphism in $(\mathcal{A} \downarrow B)$, we want to prove that the following diagram commutes:
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoyARiq1GLNlx5Z+cYSIDkEqSAzY8BIgCZyK+s1aIQYydLNyrpZdTvrHBiSowUADm8ESgAGYAThC8SNYgOBBIAMzeag4gEUaRMXGIZInJiIrp9mxoAgCEaAB6AFQAFBEAlAC83HgMsMAR4iDUDHQARjAMAAoy5vIgUVjBABY4OVl5SIVJ8WW+INwwaNgMBALAjSKk3IxoC3Qt-S6rsUilRanbmXsHWEdgJ2f6F04Vxu+juAXEQA
 \begin{tikzcd}
@@ -270,5 +270,27 @@ The unit $\eta$ and the counit $\epsilon$ are cartesian.
 \end{proof}
 \end{propr}
 
+eta cartesian
 
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAiIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHbn0GiA5BKkgMOuUSVHqJ9eZF2tjmbryJKQKxmpmHPbasnqKIWGmbEISKjBQAObwRKAAZgBOELxIZCA4EEgGHuFs3Lx0OAAWebzAaAUAVuICClEg+YVISqXliADMVYnmtfVNLW0Qnd2+Dv1FiCVlgxNejgB6AFRoAgCEABTpAJQAvJZYDLDA6eIg1Ax0AEYwDAAKAS7mDBgORwvVWFWomzG2wi6ReIDenx+f1iIDyWHSDRBfjBiCGkIALNCapw6o1mq0Ol0DMtcgU1uNhkgAKxE8xobiwBg4Oh2V4fL6-ZwotEYrErOlIQmMxAs1STRygiWISrS2WfMBQJAANhKngi7M4nO5ioG6whIyl6s1iAAtDrWSBpmS5pSBAY4QiBcj5Kj0ZiUuIgA
+\begin{tikzcd}
+    E\times_BD \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "p^*p_!(g)=\tilde{g}"] \arrow[dd, "\mathrm{proj}_1"', bend right=60] &  & D \arrow[d, "g"'] \arrow[dd, "p\delta", bend left=60] \\
+    E\times_BD' \arrow[rr, "\mathrm{proj}_2'"] \arrow[d, "\mathrm{proj}_1'"]                                                &  & D' \arrow[d, "p\delta'"']                             \\
+    E \arrow[rr, "p"]                                                                                                       &  & B                                                    
+    \end{tikzcd}
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAERABfUuky58hFABYK1Ok1btxUmdjwEiZAIyqGLNok49+QsQHJJ0kBl3yiy4zVMaLo+9qeyegrI5KQeamaafo7OcvoooVSe6uYgWqowUADm8ESgAGYAThB8SKEgOBBIhsmRFjx89DgAFoV8wGjFAFYSgsQOBcWliGQVVYgAzLXeIA1Nre2dED190YMlZTSVSKNeqWgAegBUaIIAhAAUWQCUALxWWIywwFkSIDSM9ABGMIwACoFXBZGDB8jgBiAihtEDUxkgphEZll3iBPj9-oD4iBClgss1wf4ocNlHCRtNUjwYDh6IJgBdfKQeLBGNTbNc3oShkgAKxbcYkvbsZGc6G80nlQX1LhUml00SMrjM6nsiFEpAk7aTGg-MBQJAAWgmEpS7EMtN8bw+31+AJcWJxeIJjjViDFmthOr1k2NdRAZvEVvRtriClRoIJlAkQA
+\begin{tikzcd}
+    D \arrow[d, "g"] \arrow[rr, "{\eta_{(D,\delta)}}"] \arrow[rrrr, "1_D", bend left] &  & E\times_BD \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "p^*p_!(g)=\tilde{g}"] &  & D \arrow[d, "g"'] \\
+    D' \arrow[rr, "{\eta_{(D',\delta')}}"] \arrow[rrrr, "1_{D'}"', bend right]        &  & E\times_BD' \arrow[rr, "\mathrm{proj}_2'"]                                &  & D'               
+    \end{tikzcd}
+
+epsilon cartesian
+
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHbn0GiA5BKkgMOuUSVHqJ9eZF2tjmbryJKQKxmpmHPbasnqKIWGmbEISKjBQAObwRKAAZgBOELxIZCA4EEgGHuFs3DBo2AwEAsAAFCKk3IxoABZ0AJTiALzcvHQ43Xm8wGgFAFbiAgpRIPmFSEql5YgAzFWJ5rX1WI1gzW02HZxdvTYDw5yj45PTcwsKvg6rRYglZet7XkcAgAhGgAHoAKhaOT69zwDFgwBy4hA1AYdAARjAGAAFAIucwMGA5HDLL4Vah-HYAiI5VEgdFY3H42IgPJYdLdUl+cmIDZUgAsNJqDzGEymMwg8wEBg+uQK312myQAFZhQcrgwenQ7GjMdi8c5WezOdzPgqkELlYg1ap9o4yRbEJVrbasWAoEgAGwlTwRTpa3qOtY-SlbK3uz2IAC0PvVIBGYuekulBnpjINLPkbI5XJS4iAA
+\begin{tikzcd}
+    E\times_BA \arrow[rr, "{\epsilon_{(A,\alpha)}=\mathrm{proj}_2}"] \arrow[d, "p_!p^*(f)=\tilde{f}"] \arrow[dd, "\mathrm{proj}_1"', bend right=60] &  & A \arrow[d, "f"'] \arrow[dd, "\alpha", bend left=60] \\
+    E\times_BA' \arrow[rr, "{\epsilon_{(A',\alpha')}=\mathrm{proj}_2'}"] \arrow[d, "\mathrm{proj}_1'"]                                              &  & A' \arrow[d, "\alpha'"']                             \\
+    E \arrow[rr, "p"]                                                                                                                               &  & B                                                   
+    \end{tikzcd}
 
