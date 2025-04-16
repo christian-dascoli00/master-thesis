@@ -53,6 +53,7 @@ defined as follows:
 
 \item the unit $\eta^p$
 \end{itemize}
+
 \begin{minipage}{0.45\textwidth}
 \[
     \eta: \mathrm{Id}_{(\mathcal{A} \downarrow E)} \to p^*p_!
@@ -140,11 +141,11 @@ we can prove the naturality in the left diagram by the universal property of the
 \end{itemize}
 we conclude that ($\tilde{g}) (\eta_{(D,\delta)}) = (\eta_{(D',\delta')}) (g)$. So the naturality condition of $\eta$ is satisfied.
 
-Now we want to prove the counit is a natural trasfromation. Consider $f : A \to A'$ a morphism in $(\mathcal{A} \downarrow B)$, we want to prove that the following diagram commutes:
+Now we want to prove that the counit is a natural trasfromation. Consider $f : (A,\alpha) \to (A',\alpha')$ a morphism in $(\mathcal{A} \downarrow B)$, we want to prove that the following diagram commutes:
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoyARiq1GLNlx5Z+cYSIDkEqSAzY8BIgCZyK+s1aIQdI9LNyrpZdTvrHBiSowUADm8ESgAGYAThC8SNYgOBBIAMzeag4gES5ZMXGIZInJiIrp9mxoAgCEaAB6AFQAFBEAlAC83HgMsMAR4iDUDHQARjAMAAoy5vIgUVjBABY4OdGxSIVJ8WW+INwwaNgMBALAjSKk3IxoC3Qt-ZKReUilRanbmXsHWEdgJ2f6F04Vxu+juAXEQA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoyARiq1GLNlx5Z+cYSIDkEqSAzY8BIgCZyK+s1aIQYydLNyrpZdTvrHBiSowUADm8ESgAGYAThC8SNYgOBBIAMzeag4gEUaRMXGIZInJiIrp9mxoAgCEaAB6AFQAFBEAlAC83HgMsMAR4iDUDHQARjAMAAoy5vIgUVjBABY4OVl5SIVJ8WW+INwwaNgMBALAjSKk3IxoC3Qt-S6rsUilRanbmXsHWEdgJ2f6F04Vxu+juAXEQA
 \begin{tikzcd}
-    E\times_BA \arrow[d, "p_!p^*(f)=\tilde{f}"'] \arrow[rr, "{\epsilon_{(A,\alpha)}}"] &  & a \arrow[d, "f"] \\
+    E\times_BA \arrow[d, "p_!p^*(f)=\tilde{f}"'] \arrow[rr, "{\epsilon_{(A,\alpha)}}"] &  & A \arrow[d, "f"] \\
     E\times_BA' \arrow[rr, "{\epsilon_{(A',\alpha')}}"]                                &  & A'              
     \end{tikzcd}
 \]
@@ -216,36 +217,27 @@ In order to conclude we need to check some compositions so that, by the universa
 \[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle) = \mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}\] 
 
 We want to check that composition of the projections of $E\times_BA$ with $\circledast$ is the same of composing those projection with $\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}$.  Following the first composition
-
 \[ 
      (\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =
 \]
-     
 \[
     = (\mathrm{proj}_{2,E \times_BA}) (1_{E\times_BA}) = \mathrm{proj}_{2,E \times_BA} = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}})
 \]
-
-
-\noindent and the second composition
-
+and the second composition
 \[
     (\mathrm{proj}_{1,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = (\mathrm{proj}_{1,E\times_B(E\times_BA)})(\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =   
 \]
-    
 \[   
     \mathrm{proj}_{1,E \times_BA} = (\mathrm{proj}_{1,E \times_BA}) (\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}})
 \]
 
 Finally we can check the second triangle identities. Let $(D,\delta)$ be an object in $(\mathcal{A} \downarrow E)$, we have:
-
 \[
 ((\epsilon p_!) \circ (p_! \eta))_{(D,\delta)} = ((\epsilon p_!)_{(D,\delta)} (p_! \eta))_{(D,\delta)} = (\epsilon_{p_!(D,\delta)}) p_! (\langle \delta, 1_D \rangle) =
 \]
-
 \[ 
     = (\epsilon_{(D,p \delta)}) p_! (\langle \delta, 1_D \rangle) = \mathrm{proj}_{2,E\times_BD} (\langle \delta, 1_D \rangle) = 1_D = \mathrm{Id}_{(D,\delta)}
 \]
-
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAiIAL6l0mXPkIoATOSq1GLNmMnTseAkSUBGFfWatEIIRKkgMOuUTJHqJ9efYSVMKAHN4RUABmAE4QvEhkIDgQSAbOamYg3Lx0OAAWQbzAaCEAVuICwEpcPFj8cMIi4laBIWGIAMzUUUhKqqZsaNUgwaHhTdENce3m2RA5BbHFfIKiVVrdtTH9LUOuNtywDDh0HuJAA
 \begin{tikzcd}
