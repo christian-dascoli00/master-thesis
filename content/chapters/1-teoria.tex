@@ -1,4 +1,4 @@
-\chapter{Teoria}
+\chapter{Theory}
 
 \section{The pullback functor}
 
@@ -9,7 +9,7 @@ In this section we will define the pullback functor and its left adjoint, the sh
   \arrow[bend left=40]{r}[description]{p^*}
   & (\mathcal{A} \downarrow E)
   \arrow[bend left=40]{l}[description]{p_!}
-  \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\rotatebox{180}{$\top$}}
+  \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\top}
 \end{tikzcd}
 \]
 defined as follows:
@@ -151,6 +151,7 @@ Now we want to prove that the counit is a natural transfromation. Consider $f : 
 \]
 
 As similarly done above, we need to expand the action of the functor $p_!p^*$ on the morphism $f$, we have:
+
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEOQ06o8LXKSnFABmVtiQDsaCyMy2kHiJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABabs3i9h4+ehwAC2W+YDRVgCsJQQiElbWkKq2O0QZHc-R4TDQ93oP1W60QLUBSBBVws4MYkPoNhojHoh0YAAVOiEQMssDN7jgYX9EJttv8TDVUVxbg8ni93p80iBsbiYASiQoSWSKVS4QC6fCGWNFqKkL1EZLQdkbndHs9XhAPoI0nU7L84bSgfLDsc5ZtGFgwNkoPQ4PdptyldcuDAAB5YOA4OAAAgAhN6eHA0PQAMYwAPeRiwYCLCSyxB7CXIxn2R04vGEobsRgwRaU+r6uU0CV7E0nRAXKVg5mqtkarURLEgdN8zP5dik8n5vWwpDhBVGJ0WGUF3uIVwKgCcxfoWEY7FuaE9Oxodqwed2VeyaAAegAqeP9iURS4ptEY+OD4+nsbnqF1SgSIA
 \begin{tikzcd}
@@ -253,12 +254,12 @@ So we can conclude that the adjunction holds.
   \arrow[bend left=40]{r}[description]{p^*}
   & (\mathcal{A} \downarrow E)
   \arrow[bend left=40]{l}[description]{p_!}
-  \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\rotatebox{180}{$\top$}}
+  \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\top}
 \end{tikzcd}
 \]
 
 \begin{rem}
-$p^*$ is a left adjoint functor, so it preserves limits. $p_!$ is a right adjoint functor, so it preserves colimits.
+$p^*$ is a right adjoint functor, so it preserves limits. $p_!$ is a left adjoint functor, so it preserves colimits.
 \end{rem}
 
 Now we can claim some properties of the adjunction.
@@ -267,7 +268,7 @@ Now we can claim some properties of the adjunction.
 The unit $\eta$ and the counit $\epsilon$ are cartesian.
 \begin{proof}
 
-In order to prove that $\eta$ is cartesian, ie the naturality diagrams are pullback, we consider the bottom and the total commutative diagrams below. Let $g : (D,\delta) \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$. Since both the diagrams are pullback, it follows that the top diagram is a pullback.
+In order to prove that $\eta$ is cartesian, ie the naturality diagrams are pullback. Let $g : (D,\delta) \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$. Considering the commutative diagram below, since both the bottom and the total diagrams are pullback, it follows that the top diagram is a pullback.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAiIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHbn0GiA5BKkgMOuUSVHqJ9eZF2tjmbryJKQKxmpmHPbasnqKIWGmbEISKjBQAObwRKAAZgBOELxIZCA4EEgGHuFs3Lx0OAAWebzAaAUAVuICClEg+YVISqXliADMVYnmtfVNLW0Qnd2+Dv1FiCVlgxNejgB6AFRoAgCEABTpAJQAvJZYDLDA6eIg1Ax0AEYwDAAKAS7mDBgORwvVWFWomzG2wi6ReIDenx+f1iIDyWHSDRBfjBiCGkIALNCapw6o1mq0Ol0DMtcgU1uNhkgAKxE8xobiwBg4Oh2V4fL6-ZwotEYrErOlIQmMxAs1STRygiWISrS2WfMBQJAANhKngi7M4nO5ioG6whIyl6s1iAAtDrWSBpmS5pSBAY4QiBcj5Kj0ZiUuIgA
 \begin{tikzcd}
@@ -286,13 +287,26 @@ Considering the following commutative diagram, since the right diagram is a pull
     \end{tikzcd}
 \]
 
+Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\alpha')$ be a morphism in $(\mathcal{A} \downarrow B)$. Considering the following commutative digram, since the bottom diagram is a pullback and the total diagram is a pullback, we can conclude that the top diagram is a pullback, as stated.
+\[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHbn0GiA5BKkgMOuUSVHqJ9eZF2tjmbryJKQKxmpmHPbasnqKIWGmbEISKjBQAObwRKAAZgBOELxIZCA4EEgGHuFs3DBo2AwEAsAAFCKk3IxoABZ0AJTiALzcvHQ43Xm8wGgFAFbiAgpRIPmFSEql5YgAzFWJ5rX1WI1gzW02HZxdvTYDw5yj45PTcwsKvg6rRYglZet7XkcAgAhGgAHoAKhaOT69zwDFgwBy4hA1AYdAARjAGAAFAIucwMGA5HDLL4Vah-HYAiI5VEgdFY3H42IgPJYdLdUl+cmIDZUgAsNJqDzGEymMwg8wEBg+uQK312myQAFZhQcrgwenQ7GjMdi8c5WezOdzPgqkELlYg1ap9o4yRbEJVrbasWAoEgAGwlTwRTpa3qOtY-SlbK3uz2IAC0PvVIBGYuekulBnpjINLPkbI5XJS4iAA
 \begin{tikzcd}
     E\times_BA \arrow[rr, "{\epsilon_{(A,\alpha)}=\mathrm{proj}_2}"] \arrow[d, "p_!p^*(f)=\tilde{f}"] \arrow[dd, "\mathrm{proj}_1"', bend right=60] &  & A \arrow[d, "f"'] \arrow[dd, "\alpha", bend left=60] \\
     E\times_BA' \arrow[rr, "{\epsilon_{(A',\alpha')}=\mathrm{proj}_2'}"] \arrow[d, "\mathrm{proj}_1'"]                                              &  & A' \arrow[d, "\alpha'"']                             \\
     E \arrow[rr, "p"]                                                                                                                               &  & B                                                   
     \end{tikzcd}
-
+\]
 \end{proof}
 \end{propr}
 
+Considering the monad associated to the adjunction, we have have the following property.
+
+\begin{propr}
+The monad $(p^*p_!, \eta, p^*\epsilon p_!)$ is cartesian.
+\begin{proof}
+We need to prove that the category $(\mathcal{A} \downarrow E)$ has pullback, the monad preserves pullbacks, and both the multiplication $p^* \epsilon p_!$ and the unit $\eta$ are cartesian.
+
+The category $(\mathcal{A} \downarrow E)$ has pullback, since it pullbacks are computed in $\mathcal{A}$, and $\mathcal{A}$ has pullbacks. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks because it only affects the morphism with the base $E$. We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
+
+\end{proof}
+\end{propr}
