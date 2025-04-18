@@ -316,9 +316,12 @@ Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\a
 Consider the monad associated to the adjunction we just studied, we want to study some properties that will be useful. In order to do that we need first to define some notions.
 
 \begin{defi}
-A connected limit is a limit over a connected category. A category is connected if it is inhabited and any two objects can be connected by a zigzag of morphisms.
+A connected limit is a limit over a connected category. A category is connected if it is inhabited and any two objects can be connected by a zigzag of morphisms
 \[
-x_0 = y_0 \leftrightarrow y_1 \leftrightarrow \cdots \leftrightarrow y_n = x_1
+\begin{tikzcd}
+    1 \arrow[rd, leftrightarrow] &   & 3 \arrow[ld, leftrightarrow] \arrow[rd, leftrightarrow] &        & n \arrow[ld, leftrightarrow] \\
+                      & 2 &                                  & \cdots &             
+    \end{tikzcd}
 \]
 where each symbol $\leftrightarrow$ is a morphism $x_i \to x_{i+1}$ or  $x_{i+1} \to x_i$.
 \end{defi}
@@ -350,7 +353,7 @@ where each symbol $\leftrightarrow$ is a morphism $x_i \to x_{i+1}$ or  $x_{i+1}
 \end{ex}
 
 \begin{rem}
-The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to fomr an object in $(\mathcal{A} \downarrow E)$. In the diagram below we can choose for example $(\varphi_1)(q_1)$, that said we could use whatever couple of morphism $(\varphi_i)(q_i)$. The connection guarantee that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie each diagram composed by a pair of base moprhism $\varphi_1 \ldots \varphi_n$ and one of $q_1 \ldots q_n$ commute.
+The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to fomr an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we can choose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantee that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie each diagram composed by a pair of base moprhism $\varphi_1 \ldots \varphi_n$ and one of $q_1 \ldots q_n$ commute.
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
 \[
     \begin{tikzcd}
@@ -362,13 +365,13 @@ The connected limits in the category $(\mathcal{A} \downarrow E)$ can be compute
           & & & & \\
         & & & & \\
         F(1) 
-          \arrow[leftrightarrow, rd, "F(i)" description] 
+          \arrow[leftrightarrow, rd, "F(1\leftrightarrow2)" description] 
           \arrow[dd, "\varphi_1" description, bend right=49] 
           & 
           & F(2) 
-            \arrow[leftrightarrow, ld, "F(j)" description] 
+            \arrow[leftrightarrow, ld, "F(2\leftrightarrow3)" description] 
             \arrow[lldd, "\varphi_3" description, bend left=49] 
-            \arrow[leftrightarrow, rd, "F(k)" description] 
+            \arrow[leftrightarrow, rd, "F(2\leftrightarrow ..)" description] 
           & 
           & F(n) 
             \arrow[lllldd, "\varphi_n" description, bend left=49] \\
@@ -376,7 +379,7 @@ The connected limits in the category $(\mathcal{A} \downarrow E)$ can be compute
           \arrow[ld, "\varphi_2" description, bend right] 
           & 
           & \cdots 
-            \arrow[leftrightarrow, ru, "F(l)" description] 
+            \arrow[leftrightarrow, ru, "F(.. \leftrightarrow n)" description] 
           & \\
         E & & & & 
         \end{tikzcd}
