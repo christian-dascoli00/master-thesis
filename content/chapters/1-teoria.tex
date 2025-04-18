@@ -319,11 +319,11 @@ Consider the monad associated to the adjunction we just studied, we want to stud
 A connected limit is a limit over a connected category. A category is connected if it is inhabited and any two objects can be connected by a zigzag of morphisms
 \[
 \begin{tikzcd}
-    1 \arrow[rd, leftrightarrow] &   & 3 \arrow[ld, leftrightarrow] \arrow[rd, leftrightarrow] &        & n \arrow[ld, leftrightarrow] \\
-                      & 2 &                                  & \cdots &             
+    x_0 = y_1 \arrow[rd, leftrightarrow] &   & y_3 \arrow[ld, leftrightarrow] \arrow[rd, leftrightarrow] &        & y_n=x_1 \arrow[ld, leftrightarrow] \\
+                      & y_2 &                                  & \cdots &             
     \end{tikzcd}
 \]
-where each symbol $\leftrightarrow$ is a morphism $x_i \to x_{i+1}$ or  $x_{i+1} \to x_i$.
+where each symbol $\leftrightarrow$ is a morphism $y_i \to y_{i+1}$ or  $y_{i+1} \to y_i$.
 \end{defi}
 \begin{ex}  
     Some examples
@@ -353,7 +353,7 @@ where each symbol $\leftrightarrow$ is a morphism $x_i \to x_{i+1}$ or  $x_{i+1}
 \end{ex}
 
 \begin{rem}
-The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to fomr an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we can choose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantee that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie each diagram composed by a pair of base moprhism $\varphi_1 \ldots \varphi_n$ and one of $q_1 \ldots q_n$ commute.
+The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to fomr an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we can choose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie each diagram composed by a pair of base moprhism $\varphi_1 \ldots \varphi_n$ and one of $q_1 \ldots q_n$ commute.
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
 \[
     \begin{tikzcd}
@@ -361,20 +361,20 @@ The connected limits in the category $(\mathcal{A} \downarrow E)$ can be compute
           \arrow[rddd, "q_2" description, bend left] 
           \arrow[rrdd, "q_3" description, bend left] 
           \arrow[rrrrdd, "q_n" description, bend left] 
-          \arrow[dddd, "(\varphi_1)(q_1)"', dashed, bend right=60] 
+          \arrow[dddd, "(\varphi_1)(q_1)"', dashed, bend right=65] 
           & & & & \\
         & & & & \\
         F(1) 
           \arrow[leftrightarrow, rd, "F(1\leftrightarrow2)" description] 
           \arrow[dd, "\varphi_1" description, bend right=49] 
           & 
-          & F(2) 
+          & F(3) 
             \arrow[leftrightarrow, ld, "F(2\leftrightarrow3)" description] 
             \arrow[lldd, "\varphi_3" description, bend left=49] 
             \arrow[leftrightarrow, rd, "F(2\leftrightarrow ..)" description] 
           & 
           & F(n) 
-            \arrow[lllldd, "\varphi_n" description, bend left=49] \\
+            \arrow[lllldd, "\varphi_n" description, bend left=51] \\
         & F(2) 
           \arrow[ld, "\varphi_2" description, bend right] 
           & 
@@ -392,7 +392,6 @@ The monad $(p^*p_!, \eta, p^*\epsilon p_!)$ is cartesian.
 \begin{proof}
 We need to prove that the category $(\mathcal{A} \downarrow E)$ has pullback, the monad preserves pullbacks, and both the multiplication $p^* \epsilon p_!$ and the unit $\eta$ are cartesian.
 
-The category $(\mathcal{A} \downarrow E)$ has pullback, since it pullbacks are computed in $\mathcal{A}$, and $\mathcal{A}$ has pullbacks. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks because it only affects the morphism with the base $E$. We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
-
+The category $(\mathcal{A} \downarrow E)$ has pullback, since pullbacks are connnected limit and hence are computed in $\mathcal{A}$, which has pullbacks. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks because they are computed in $\mathcal{A}$ and $p_!$ doesn't affect the object and morphism in $\mathcal{A}$. We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
 \end{proof}
 \end{propr}
