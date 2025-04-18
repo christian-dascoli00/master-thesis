@@ -346,7 +346,7 @@ where each symbol $\leftrightarrow$ is a morphism $y_i \to y_{i+1}$ or  $y_{i+1}
 \end{ex}
 
 \begin{rem}
-The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to fomr an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we can choose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie each diagram composed by a pair of base moprhism $\varphi_1 \ldots \varphi_n$ and one of $q_1 \ldots q_n$ commute.
+The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to form an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we chose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie $(\varphi_i)(q_i) = (\varphi_1)(q_1) \ \forall i \in {1,\ldots,n} $.
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
 \[
     \begin{tikzcd}
@@ -396,7 +396,7 @@ D \arrow[rr, "\delta"] \arrow[rrd, "\delta"'] &                                 
     &                                   & E                                &                                                 
 \end{tikzcd}
 \]
-which doesn't correspond to the product in $\mathcal{A}$.
+which doesn't correspond to the product $D\times D$ in $\mathcal{A}$.
 
 
 
@@ -440,6 +440,7 @@ If $\mathcal{X}$ is a pointed protomodular category with finite coproducts and $
     0 \arrow[rr, "\eta_0"] \arrow[u, "!_X"', shift right] &  & T(0) \arrow[u, "T(!_X)"', shift right]
     \end{tikzcd}
 \]
-Since $\mathcal{X}$ is protomodular then by the lemma above, the pair $(\eta_X,T(!_X))$ is a strongly epimorphic. It is a standard fact that given $f$ and $g$ morphism if $(f,g)$ is a strongly epimorphic pair then $[f,g]$ is a strong epi. So we conclude that $[\eta_X,T(!_X)]$ is a strong epi, ie the moand is essentially nullary. (citazione) %\cite{https://arxiv.org/pdf/1409.4219) ALGEBRAICALLY COHERENT CATEGORIES
+Since $\mathcal{X}$ is protomodular then by the lemma above, the pair $(\eta_X,T(!_X))$ is a strongly epimorphic. It is a standard fact that given $f$ and $g$ morphism, if $(f,g)$ is a strongly epimorphic pair, then $[f,g]$ is a strong epi. So we conclude that $[\eta_X,T(!_X)]$ is a strong epi, ie the moand is essentially nullary. (citazione) %\cite{https://arxiv.org/pdf/1409.4219) ALGEBRAICALLY COHERENT CATEGORIES
 \end{proof}
 \end{theo}
+
