@@ -1,6 +1,6 @@
 \chapter{Theory}
 
-\section{The pullback functor}
+\section{The pullback functor and its adjunction}
 
 In this section we will define the pullback functor and its left adjoint, the shrink functor. Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\mathcal{A}$, one can consider adjunction
 \[
@@ -262,13 +262,25 @@ So we can conclude that the adjunction holds.
 $p^*$ is a right adjoint functor, so it preserves limits. $p_!$ is a left adjoint functor, so it preserves colimits.
 \end{rem}
 
-Now we can claim some properties of the adjunction.
+We need the following definition in order to claim some properties.
+
+\begin{defi}
+    Let $\gamma$ be a natural transformation between two functors $F,G : \mathcal{C} \to \mathcal{D}$, we say that $\gamma$ is a cartesian natural transformation if for every morphism $f : A \to B$ in $\mathcal{C}$, the following diagram is a pullback:
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRADEAKAQQEoQAvqXSZc+QigBM5KrUYs2AcR78hI7HgJFpARln1mrRCGUAhVcJAYN4omT3UDC413ODZMKAHN4RUADMAJwgAWyQyEBwIJB1HeSMQAB1ErzoQkLoAfWBuAUFLINDw6iikAGY4wzYufwsA4LDECsjoxGk5KuNk1PSs03z6osRYlqR2pwTlWvcBIA
+\begin{tikzcd}
+    F(A) \arrow[rr, "\gamma_{A}"] \arrow[d, "F(f)"] &  & G(A) \arrow[d, "G(f)"] \\
+    F(B) \arrow[rr, "\gamma_B"]                     &  & G(B)                  
+    \end{tikzcd}
+\]
+ie the naturality diagrams are pullback.
+\end{defi}
 
 \begin{propr}
 The unit $\eta$ and the counit $\epsilon$ are cartesian.
 \begin{proof}
 
-In order to prove that $\eta$ is cartesian, ie the naturality diagrams are pullback. Let $g : (D,\delta) \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$. Considering the commutative diagram below, since both the bottom and the total diagrams are pullback, it follows that the top diagram is a pullback.
+First we prove that $\eta$ is cartesian. Let $g : (D,\delta) \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$. Considering the commutative diagram below, since both the bottom and the total diagrams are pullback, it follows that the top diagram is a pullback.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAiIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHbn0GiA5BKkgMOuUSVHqJ9eZF2tjmbryJKQKxmpmHPbasnqKIWGmbEISKjBQAObwRKAAZgBOELxIZCA4EEgGHuFs3Lx0OAAWebzAaAUAVuICClEg+YVISqXliADMVYnmtfVNLW0Qnd2+Dv1FiCVlgxNejgB6AFRoAgCEABTpAJQAvJZYDLDA6eIg1Ax0AEYwDAAKAS7mDBgORwvVWFWomzG2wi6ReIDenx+f1iIDyWHSDRBfjBiCGkIALNCapw6o1mq0Ol0DMtcgU1uNhkgAKxE8xobiwBg4Oh2V4fL6-ZwotEYrErOlIQmMxAs1STRygiWISrS2WfMBQJAANhKngi7M4nO5ioG6whIyl6s1iAAtDrWSBpmS5pSBAY4QiBcj5Kj0ZiUuIgA
 \begin{tikzcd}
@@ -299,7 +311,78 @@ Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\a
 \end{proof}
 \end{propr}
 
-Considering the monad associated to the adjunction, we have have the following property.
+\section{The monad associated to the adjunction}
+
+Consider the monad associated to the adjunction we just studied, we want to study some properties that will be useful. In order to do that we need first to define some notions.
+
+\begin{defi}
+A connected limit is a limit over a connected category. A category is connected if it is inhabited and any two objects can be connected by a zigzag of morphisms.
+\[
+x_0 = y_0 \leftrightarrow y_1 \leftrightarrow \cdots \leftrightarrow y_n = x_1
+\]
+where each symbol $\leftrightarrow$ is a morphism $x_i \to x_{i+1}$ or  $x_{i+1} \to x_i$.
+\end{defi}
+\begin{ex}  
+    Some examples
+    \begin{itemize}
+        \item The pullback is a connected limit.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkRyQBfU9TXfIRTlSxanSat2AJm68QGbHgJERVGgxZtEIAMzdxMKAHN4RUADMAThAC2SMiBwQk0jZO0gscyzfuIRJxdENwktdgArAy4gA
+\begin{tikzcd}
+    & 2 \arrow[d, "j"] \\
+1 \arrow[r, "i"] & 3               
+\end{tikzcd}
+        \]
+        \item The equalizer is a connected limit.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEYQBfU9TXfIRTtyVWoxZsATNzEwoAc3hFQAMwBOEALZIyIHBCQjxzVohBYQ1OAAssqnEgC07Hms07Eeg0et2HviAMdABGMAwACvx4BGzqWAo2jtT0pmwAVrJcQA
+\begin{tikzcd}
+    1 \arrow[r, "i", shift left] \arrow[r, "j"', shift right] & 2
+    \end{tikzcd}\]
+        \item The product is not a connected limit.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEYQBfU9TXfIRTtyVWoxZsATNzEwoAc3hEKXIA
+\begin{tikzcd}
+    1 & 2
+    \end{tikzcd}
+        \]
+    \end{itemize}
+\end{ex}
+
+\begin{rem}
+The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to fomr an object in $(\mathcal{A} \downarrow E)$. In the diagram below we can choose for example $(\varphi_1)(q_1)$, that said we could use whatever couple of morphism $(\varphi_i)(q_i)$. The connection guarantee that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie each diagram composed by a pair of base moprhism $\varphi_1 \ldots \varphi_n$ and one of $q_1 \ldots q_n$ commute.
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
+\[
+    \begin{tikzcd}
+        L \arrow[dd, "q_1" description, bend right] 
+          \arrow[rddd, "q_2" description, bend left] 
+          \arrow[rrdd, "q_3" description, bend left] 
+          \arrow[rrrrdd, "q_n" description, bend left] 
+          \arrow[dddd, "(\varphi_1)(q_1)"', dashed, bend right=60] 
+          & & & & \\
+        & & & & \\
+        F(1) 
+          \arrow[leftrightarrow, rd, "F(i)" description] 
+          \arrow[dd, "\varphi_1" description, bend right=49] 
+          & 
+          & F(2) 
+            \arrow[leftrightarrow, ld, "F(j)" description] 
+            \arrow[lldd, "\varphi_3" description, bend left=49] 
+            \arrow[leftrightarrow, rd, "F(k)" description] 
+          & 
+          & F(n) 
+            \arrow[lllldd, "\varphi_n" description, bend left=49] \\
+        & F(2) 
+          \arrow[ld, "\varphi_2" description, bend right] 
+          & 
+          & \cdots 
+            \arrow[leftrightarrow, ru, "F(l)" description] 
+          & \\
+        E & & & & 
+        \end{tikzcd}
+\]
+
+\end{rem}
 
 \begin{propr}
 The monad $(p^*p_!, \eta, p^*\epsilon p_!)$ is cartesian.
