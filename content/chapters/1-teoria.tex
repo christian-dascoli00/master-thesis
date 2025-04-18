@@ -342,13 +342,6 @@ where each symbol $\leftrightarrow$ is a morphism $y_i \to y_{i+1}$ or  $y_{i+1}
 \begin{tikzcd}
     1 \arrow[r, "i", shift left] \arrow[r, "j"', shift right] & 2
     \end{tikzcd}\]
-        \item The product is not a connected limit.
-        \[
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEYQBfU9TXfIRTtyVWoxZsATNzEwoAc3hEKXIA
-\begin{tikzcd}
-    1 & 2
-    \end{tikzcd}
-        \]
     \end{itemize}
 \end{ex}
 
@@ -384,6 +377,28 @@ The connected limits in the category $(\mathcal{A} \downarrow E)$ can be compute
         E & & & & 
         \end{tikzcd}
 \]
+\end{rem}
+
+\begin{rem}
+    The product is not a connected limit, in fact as we can see the category is not connected.
+    \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEYQBfU9TXfIRTtyVWoxZsATNzEwoAc3hEKXIA
+\begin{tikzcd}
+    1 & 2
+    \end{tikzcd}
+\]
+We try to compute the product directly in $(\mathcal{A} \downarrow E)$. Let $(D,\delta)$ and $(D',\delta')$ be two objects in $(\mathcal{A} \downarrow E)$, the product is given by the following pullback
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBAHS7wFt4AfQBCHAOQgAvqXSZc+QigDMFanSat24qTJAZseAkXKliahizaJOO2QYVEATKfMarIAKK29cw4uTOjq6W7F6SajBQAObwRKAAZgBOEHxIJiA4EEiO0gnJqYhkGVmIKuoh1jxMaAAW9BI0jPQARjCMAAq+DtaJWFE1ON5JKWk0mUjEuSDDBc7FSGUWmpVc1XVD+dljJQAsNEvuVYy19CCNLW2d9kY9fQMbI4XbSHvlyyBHJxJTMwvPiK9GFgwO4oBBmM1GGwaDUYPQoOxICCzhl6FhGIiCNCQE1Wh0ujccTB4oNwpIgA
+\begin{tikzcd}
+    & D\times_ED' \arrow[ld] \arrow[rr] &                                  & D' \arrow[ld, "\delta'"'] \arrow[ldd, "\delta'"] \\
+D \arrow[rr, "\delta"] \arrow[rrd, "\delta"'] &                                   & E \arrow[d, equal] &                                                  \\
+    &                                   & E                                &                                                 
+\end{tikzcd}
+\]
+which doesn't correspond to the product in $\mathcal{A}$.
+
+
 
 \end{rem}
 
@@ -395,3 +410,36 @@ We need to prove that the category $(\mathcal{A} \downarrow E)$ has pullback, th
 The category $(\mathcal{A} \downarrow E)$ has pullback, since pullbacks are connnected limit and hence are computed in $\mathcal{A}$, which has pullbacks. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks because they are computed in $\mathcal{A}$ and $p_!$ doesn't affect the object and morphism in $\mathcal{A}$. We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
 \end{proof}
 \end{propr}
+
+\begin{defi}
+A monad $(T,\eta,\mu)$ on a category $\mathcal{X}$ with finite coproducts is said to be essentially nullary if the morphism $[T(!_X),\eta_X]$ is a strong epimorphism for each object $X$ in $\mathcal{X}$, where $!_X$ is the unique morphism from the initial object of $\mathcal{X}$ to $X$.
+\end{defi}
+
+Now we claim a lemma which will be useful to prove some theorems.
+\begin{lemma}
+    A category $\mathcal{X}$ is protomodular id and only if for each pullback
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACEByAHW7wFt4AfXYBBEAF9S6TLnyEUAJnJVajFm3FSZ2PASJkAjKvrNWiDp0nSQGXfKLLj1UxovtJqmFADm8IqAAZgBOEPxIZCA4EEiGLurmIADW1kGh4YjKUTGIAMzxZmy8AEYwOHSpICFhsdTRSPkgcAAWWIE4tWqFFmgg1Ax0pQwACrJ6CiDBWD7NHdpV6Q11OXFNre2dA0Oj9voWUzMdBW5NldUZWfWIkS1tHYirWzAjYw7707Nni9fLSFm3Gwe-UGzx2cj2kw+cwoEiAA
+\begin{tikzcd}
+    B'\times_BA \arrow[rr, "k"] \arrow[d, shift right] &  & A \arrow[d, "p"', shift right] \\
+    B' \arrow[rr, "\beta"] \arrow[u, shift right]      &  & B \arrow[u, "s"', shift right]
+    \end{tikzcd}
+    \]
+    the pair $(k,s)$ is stronly epimorphic.
+\end{lemma}
+The proof is out of the scope of this thesis, but we can find it in (citazione) %\cite{Borceux}.
+
+\begin{theo}
+If $\mathcal{X}$ is a pointed protomodular category with finite coproducts and $(T,\eta,\mu)$ is a monad on $\mathcal{X}$ with cartesian $\eta$, then the monad is essentially nullary.
+\begin{proof}
+    For each object $X$ in $\mathcal{X}$ we can consider the following diagram:
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQAmclVqMWbACoAKdgEpuvEBmx4CRMgEZx9Zq0QhiyvusFFRu6vqlG5xJV3EwoAc3hFQAMwBOEAFskMhAcCCRtG0lDEAAdWJgcOgB9Th4ffyDEUVDwxABmKIM2eMSUk3SQP0CI6jCkQpA4AAssbxxaiWL7WQBCAD1FEGoGOgAjGAYABX4NIRBfLDdmjsrqrMb6xEim1vbO2xi5XtSlEfHJmfNNI0Xl1ZV1pBytkJa2ju2iuxATznOJtNZhZbksVqYqplgnU8jl3vsvl0fgN-iBRoCrgIbgswasKFwgA
+\begin{tikzcd}
+    X \arrow[rr, "\eta_X"] \arrow[d, "!^X"', shift right] &  & T(X) \arrow[d, "T(!^X)"', shift right] \\
+    0 \arrow[rr, "\eta_0"] \arrow[u, "!_X"', shift right] &  & T(0) \arrow[u, "T(!_X)"', shift right]
+    \end{tikzcd}
+\]
+Since $\mathcal{X}$ is protomodular then by the lemma above, the pair $(\eta_X,T(!_X))$ is a strongly epimorphic. It is a standard fact that given $f$ and $g$ morphism if $(f,g)$ is a strongly epimorphic pair then $[f,g]$ is a strong epi. So we conclude that $[\eta_X,T(!_X)]$ is a strong epi, ie the moand is essentially nullary. (citazione) %\cite{https://arxiv.org/pdf/1409.4219) ALGEBRAICALLY COHERENT CATEGORIES
+\end{proof}
+\end{theo}
