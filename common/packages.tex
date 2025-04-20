@@ -57,6 +57,7 @@
 \usepackage{hyperref}
 \usepackage[most]{tcolorbox}
 \usepackage[capitalize]{cleveref} % Per riferimenti automatici e corretti
+\usepackage{fancyhdr}
 
 % Stile di base per tcolorbox
 \tcbset{
@@ -134,3 +135,12 @@
 \Crefformat{defi}{\emph{Definition~#2#1#3}}
 \Crefformat{rem}{\emph{Remark~#2#1#3}}
 \Crefformat{ex}{\emph{Example~#2#1#3}}
+
+
+% Cancella intestazioni e piè di pagina
+\fancyhf{}
+
+
+% Linea sopra l'intestazione
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
