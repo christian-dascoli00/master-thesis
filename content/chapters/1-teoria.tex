@@ -8,6 +8,7 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
 
 \section{Connected limits}
 
+\begin{mainbox}{}
 \begin{defi}
     A connected limit is a limit over a connected category. A category is connected if it is inhabited and any two objects can be connected by a zigzag of morphisms
     \[
@@ -18,6 +19,8 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
     \]
     where each symbol $\leftrightarrow$ is a morphism $y_i \to y_{i+1}$ or  $y_{i+1} \to y_i$.
     \end{defi}
+\end{mainbox}
+\begin{subbox}{}
     \begin{ex}  
         Some examples
         \begin{itemize}
@@ -37,6 +40,7 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
         \end{tikzcd}\]
         \end{itemize}
     \end{ex}
+\end{subbox}
     
     \begin{rem}\label{connected limits computed on the base}
     The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to form an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we chose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie $(\varphi_i)(q_i) = (\varphi_1)(q_1) \ \forall i \in {1,\ldots,n} $.
