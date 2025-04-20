@@ -279,9 +279,9 @@ Now we want to prove that the counit is a natural transfromation. Consider $f : 
 As similarly done above, we need to expand the action of the functor $p_!p^*$ on the morphism $f$, we have:
 
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEOQ06o8LXKSnFABmVtiQDsaCyMy2kHiJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABabs3i9h4+ehwAC2W+YDRVgCsJQQiElbWkKq2O0QZHc-R4TDQ93oP1W60QLUBSBBVws4MYkPoNhojHoh0YAAVOiEQMssDN7jgYX9EJttv8TDVUVxbg8ni93p80iBsbiYASiQoSWSKVS4QC6fCGWNFqKkL1EZLQdkbndHs9XhAPoI0nU7L84bSgfLDsc5ZtGFgwNkoPQ4PdptyldcuDAAB5YOA4OAAAgAhN6eHA0PQAMYwAPeRiwYCLCSyxB7CXIxn2R04vGEobsRgwRaU+r6uU0CV7E0nRAXKVg5mqtkarURLEgdN8zP5dik8n5vWwpDhBVGJ0WGUF3uIVwKgCcxfoWEY7FuaE9Oxodqwed2VeyaAAegAqeP9iURS4ptEY+OD4+nsbnqF1SgSIA
-\begin{tikzcd}
-    A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] & {} \arrow[r, "p^*", maps to, shift right=5] & {} & E\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\exists ! \space \tilde{f}", dashed, bend left] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &                  & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
+% % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEORCqJMauNykpxQ06o8LTsaUgGY+2JBJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABaYc3i9h4+ehwAC2W+YDRVgCsJQQiElbWkKq2O0QZHc4x4TDQ93oP1W60QvUBSBBVws4MYkPoNhojHoh0YAAUuiEQMssDN7jgYX9EJttv82v0QDc7o9nq8IB9BGkQNjcTACUSFCSyRSqXCAXT4QzxosxUhRoipaDssyHk8Xu9Pmk6nZfnDaUCFYdjvLNowsGBslB6HB7tMecrrlwYAAPLBwHBwAAEAEIvTw4Gh6ABjGD+7yMWDARYSOWIPaS5HtewOnF4wlDdiMGCLSn1PXymiSvbGk6IC7SlVcW5qtmar5YkBp-kZ-LsUnkvO62FIcKKoyOiyy-M9xB9yWuQdMrgQqFxgcTytO2eYuMATiLQIim1tWFzvaL9CwjHYtzQHp2S4saAAegAqSYSIA
+\begin{tikzcd}[column sep=small]
+    A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] & {} \arrow[r, "p^*", maps to, shift right=6] & {} & E\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\exists ! \space \tilde{f}", dashed, bend left] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &                  & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
     B                                    &                          &                                             &    &                                                                                                                                                    &                                        & B                &                           &                                                                                        \\
                                          &                          &                                             &    &                                                                                                                                                    &                                        & E \arrow[u, "p"] &                           &                                                                                       
     \end{tikzcd}
@@ -333,12 +333,12 @@ and then considering the definition of $\eta$, we obtain
 
 In order to conclude we need to check some compositions so that, by the universal property of the pullback $E\times_BA$ in the right of the following diagram, we obtain the identity morphism.
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoAzOSq1GLNlx5Z+cYQApNfQaICUEqSAzY8BIgBZl1es1aIO3I7tHnp1uUQA2R1UXNjFJX1lbFAB2YOd1N0NtY3CLKyj5ZABWUgBGFQTXECEfSxkbLNyAJkK1YvYJFRgoAHN4IlAAMwAnCF4kMhAcCCQ8p3q2AB40PoArAWBx5J1hEUk8xZXU8QA+EGoGOgAjGAYABQr-Nx6sVoALHDLe-sHqEaQgkMTLecXljwpLzrA4gI6nC5XaIgW4PJ7UU5gKBIAC0CmIERALwGiCGH0Q1QmoTcm2A22B4lB4LOlz80IYMC68JAiORiHRmOxY3eowJhxONKh8hhd0ezz6OPGw15Dm+xUBDFgwFmEAWwEJ5LW4kp-IhtMybAZTNBrKQHIsXMQUvxX2pkLpwthYoRMCRqPRRJ+KrVAK0qyEBkB-pEJkpnIlSEJ0qQuTlbD03EYaHudBMem9iw1QZ2Zl1godbCdT3Drz50fZnuKGfVpE1oh1YIF9oNN1FxYtEYr5djRTYiYYyboVKb+sqhsZ7e6ndl+KUjb1QvHxpLOJnvNtI8XrbhJtdbI9cbc1d9ni14tLX3xPcmR+HC4LbiNxYo4iAA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFOVLFqdJq3bdeWAXBEAKLfyFiAlJOkgM2PASIAmZaoYs2iTj2N6xFmTflEACxONC4a7uJSfnJ2KACsIWqump46JpGW1jEKyADMFM7qbiDCvlaytjn59oXJ7hySqjBQAObwRKAAZgBOEHxIZCA4EEhKSeEgPAAE07NcM-NzjPRgLYwwU2i9AFaCwEpGad6iUuR7h7oiJzzdK2tsNMsARjCMAAoVAe5YYNiwIDQXmAoAMoiAen0BjRhkgAGyhIrsLYQXb7UgXdISAEgZ6vD7+WIgbpYFoACxw2KBIMQAFpcsQwRD+ohBjDEI5xsUzsAMccsY96C93p9CetOhTATBgXCAOyM3rMsZsjm44UEhREknkspM0bQkaIYKc9ipRiwYDI1GOXlXCT8nGCvEijViiUgKlIenyyGIJUG+EOoX47LsYlkt0e2n0hF1Kw7PYHVKXYSGJPpUxY73MjlshLG9z6HhMNCk+imfSWvbWtN88wCoPO0NailZpA5g35fNxlFV9E123Y1XBypN8M6hWe-VIPNhYpFxgl+iDx1qkPuV3jn1GtmdoeN9cwcWb5nb-31p3q0fayXSxDRruVtE2sSZyy6xAB3MxiZoZcNy8HkeEiUBIQA
 \begin{tikzcd}
-    E\times_BA \arrow[rrr, "{<\mathrm{proj}_{1,E\times_BA},1_{E\times_BA}>}"'] \arrow[rrrrrdd, "{\mathrm{proj}_{1,E\times_BA}}"', bend right] \arrow[rrrr, "1_{E\times_BA}", bend left] &  &  & E\times_B(E\times_BA) \arrow[r] \arrow[rrrr, "{\tilde{\mathrm{proj}_2}}", bend left] \arrow[rrdd, "{\mathrm{proj}_{1,E\times_B(E\times_BA)}}"', bend right] & E\times_BA \arrow[rd, "{(\alpha)(\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{2,E\times_BA}}"'] &                  & A \arrow[ld, "\alpha"] & E\times_BA \arrow[l] \arrow[lldd, "{\mathrm{proj}_{1,E\times_BA}}"', bend left] \\
-                                                                                                                                                                      &  &  &                                                                                                                                                        &                                                                                                & B                &                        &                                                                        \\
-                                                                                                                                                                      &  &  &                                                                                                                                                        &                                                                                                & E \arrow[u, "p"] &                        &                                                                       
-    \end{tikzcd}
+    & E\times_B(E\times_BA) \arrow[r] \arrow[rrrr, "{\tilde{\mathrm{proj}_{2,E\times_BA}}}", bend left] \arrow[rrdd, "{\mathrm{proj}_{1,E\times_B(E\times_BA)}}"', bend right] & E\times_BA \arrow[rd, "{(\alpha)(\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{2,E\times_BA}}"'] &                  & A \arrow[ld, "\alpha"] & E\times_BA \arrow[l] \arrow[lldd, "{\mathrm{proj}_{1,E\times_BA}}"', bend left] \\
+E\times_BA \arrow[ru, "{\ \ \ \ \ \ \langle \mathrm{proj}_{1,E\times_BA},1_{E\times_BA}\rangle}" description] \arrow[rrrd, "{\mathrm{proj}_{1,E\times_BA}}"', bend right] \arrow[rru, "1_{E\times_BA}", bend left=67] &                                                                                                                                                        &                                                                                                & B                &                        &                                                                        \\
+    &                                                                                                                                                        &                                                                                                & E \arrow[u, "p"] &                        &                                                                       
+\end{tikzcd}
 \]
 
 \[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle) = \mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}\] 
@@ -430,7 +430,7 @@ The unit $\eta$ and the counit $\epsilon$ are cartesian.
 \end{mainbox}
 \begin{subbox}{}
 \begin{proof}
-First we prove that $\eta$ is cartesian. Let $g : (D,\delta) \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$. Applying \Cref{p^*(f) is a pullback} at $p_!(g)$, we obtain that the following diagram is a pullback.
+First we prove that $\eta$ is cartesian. Let $g : (D,\delta) \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$. Applying \Cref{p^*(f) is a pullback} to $p_!(g)$, we obtain that the following diagram is a pullback.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAiIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHbn0GiA5BKkgMOuUSVHqJ9eZF3xKmFAA5vBEoABmAE4QvEhkIDgQSAYeamYg3Lx0OAAWEbzAaFEAVuICCvbhUTGISvGJiADMKaZsGVm5+YUQJWW+DpHRsdQJSLWeaWgAegBUaAIAhAAUgQCUALyWWAywwIHiINQMdABGMAwACjK68iAMMGE4FSAD1cl1SE2qLeaBB7cnZ0uzj05giWEC2UefnEQA
 \begin{tikzcd}
@@ -458,6 +458,28 @@ Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\a
 \]
 \end{proof}
 \end{subbox}
+
+\begin{mainbox}{}
+    \begin{prop}
+    Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks. Then $p^*$ preserves coequalizer of kernel pairs whose coequalizers are pullback stable regular epimorphisms.
+    \end{prop}
+    \end{mainbox}
+    \begin{subbox}{}
+        \begin{proof}
+    Consider the following diagram
+    
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBmAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABhCDACOAXwAUaAPoBGUouIBKENNLpMufIRQqqNBizaIQAQS06QGbHgJEADBWp0mrdl14DhwACikrKS6tK2uo4GrqTEHmbelmgAegBUsr58QiLBcmGa2lH6zkZxCV4W9umyVuoAvFZceNzwCgBCgZH2ek6GJOWmleypGVn+IuJScooqauqFdg4l-WQuFebsogDk3ct9setDm5aiWh4wUADm8ESgAGaCENxIKiA4EEhunicgkt2PZ5IMjvT6IN5wfhYe44JAAWjeiSqagBTxeiBBH1eNEh0Nh4OOSXsyhANEY9AARjBGAAFXoxSyCLBXfiwoogQHo8g0LEY9mcpAAFh5YKU-LRSAArCKvuKgYhuaChTioTD4YjhpZmlhGLBgGoImTKdS6dFSiBGDA1XKuTLEMKQLi1QSfkTtbqYPrlIaLcbafTzUyWWy7AL7Xbpa6qu69TJUfKHbyAGyEqrMePoyPJslYMBVKD0SGXUlRnwcGAADywcBwcAAhAACEMPCWIADsdodTvxGt+giUJfJVP9ZsMICDrIzSA7SvDjtV+IRqfYggUxCn7btiqRZcr1drDcbCCNw9NKxXzMnObz7ALRag52kQA
+    \begin{tikzcd}
+        C \arrow[rdd, "r1"', shift right] \arrow[rdd, "r_2", shift left] \arrow[dd, "\exists ! s"', dashed]       &                                                                     & C'                                                                       \\
+                                                                                                                  &                                                                     &                                                                          \\
+        p^*(\mathrm{Eq}(q)) \arrow[d] \arrow[r, "\tilde{p_2}", shift left] \arrow[r, "\tilde{p_1}"', shift right] & p^*(A)=A\times_BE \arrow[d] \arrow[r, "\tilde{q}"] \arrow[ruu, "u"] & {p^*(\mathrm{Coeq}(p_1,p_2))} \arrow[d] \arrow[uu, "\exists! t", dashed] \\
+        \mathrm{Eq(q)} \arrow[r, "p_2", shift left] \arrow[r, "p_1"', shift right]                                & A \arrow[r, "q"]                                                    & {\mathrm{Coeq}(p_1,p_2)}                                                
+        \end{tikzcd}
+    \]
+    Let $q$ be the coequalizer of the kernel pair $\mathrm{Eq}(q)$. We can affirm by \Cref{p^*(f) is a pullback} applied to $q$ that the diagram in the bottom-right corner is a pullback. Since by hypothesis $q$ is a pullback stable regular epimorphism, we have that $\tilde{q}$ is a regular epimorphism, ie it is the coequalizer of some parallel arrows. Let $(r_1,r_2)$ be such pair. Now we want to prove that $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$. Since $\tilde{q}$, $\tilde{p_1}$ and $\tilde{p_2}$ are obtained applying $p^*$ to the kernel pair $\mathrm{Eq}(q)$, and $p^*$ preserves limits, then $p^*(\mathrm{Eq}(q))$ is the kernel pair of $\tilde{q}$. So by the universal property there exists a unique morphism $s : C \to p^*(\mathrm{Eq}(q))$ such that $\tilde{p_1}s=r_1$ and $\tilde{p_2}s=r_2$. Now let $u$ be a morphism such that $u \tilde{p_1} = u \tilde{p_2}$. We have that $ur_1 = u \tilde{p_1} s = u \tilde{p_2} s = ur_2$, so by the universal property of the coequalizer $\tilde{q}$ there exists a unique morphism $t : p^*(\mathrm{Coeq}(p_1,p_2)) \to C'$ such that $t\tilde{q} = u$. So $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$.
+    \end{proof}
+    \end{subbox}
 
 \section{The monad associated to the adjunction}
 
@@ -516,10 +538,3 @@ Since $\mathcal{X}$ is protomodular then by the lemma above, the pair $(\eta_X,T
 \end{proof}
 \end{subbox}
 
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoBmAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABhCDACOAXwAUaAPoBGUooBMAShDTS6TLnyEUaitTpNW7AILbdIDNjwEiABlM0GLNok48+QkQBRSVlJDWlbPUdDV1I1M09LHzQAPQAqWS5eAWFgYLkwrR0og2djOISLb3t02SsNAF4rLjxueAUAIUDI+30nIxIKjyr2VIys-1zxKTlFFXUNIrsHUoHyUhdKr3ZRAHIelf6iFU3h7Z9RbTMYKABzeCJQADNBCG4kFRAcCCQ3c3OQJIei83kgTF8fohPnB+FgnjgkABaT6JarqYGvd6IcHfD40GFwhFQs5JezKEA0Rj0ABGMEYAAU+jEfIIsLd+AjiiAQVj1hCwVyeUgyPyoYLMUgAKw0XGIFzi0GIPmykUE+FIlEjZK1BYNFpYRiwYDqCKUml0xnRMogRgwdUK3kyyGq2Hq4n-UljeTKRr6w0wY3KU0280MpnW1nszl2IWIEWy6UetHpYChcJ6jh4f3AGQYxXxyEANgdUqdSELlKwYGqUHoMJuFKT7C4MAAHlg4Dg4ABCAAE0eeEsQAHYy3H8a6iZqAYIlI2qbSw1ajCBIxy81jR6KXYSNSTqoIFGoN0gt7K+ajmxw2x2u72+wgzYvLat2GuEZXq+xa-WoFdpEAA
-\begin{tikzcd}
-    & C \arrow[rdd, "r1"', shift right] \arrow[rdd, "r_2", shift left] \arrow[ldd, "\exists ! s"', dashed] &                                                                          & C' &                                                                           \\
-    &                                                                                                      &                                                                          &    &                                                                           \\
-p^*(\mathrm{Eq}(q)) \arrow[d] \arrow[rr, "p^*(p_2)=\tilde{p_2}", shift left] \arrow[rr, "p^*(p_1)=\tilde{p_1}"', shift right] &                                                                                                      & p^*(A)=A\times_BE \arrow[d] \arrow[rr, "p^*{(q)}=\tilde{q}"] \arrow[ruu] &    & {p^*(\mathrm{Coeq}(p_1,p_2))} \arrow[d] \arrow[luu, "\exists! t", dashed] \\
-\mathrm{Eq(q)} \arrow[rr, "p_2", shift left] \arrow[rr, "p_1"', shift right]                                                  &                                                                                                      & A \arrow[rr, "q"]                                                        &    & {\mathrm{Coeq}(p_1,p_2)}                                                 
-\end{tikzcd}
