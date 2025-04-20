@@ -54,3 +54,36 @@
 \usepackage{tikz-cd} % diagrammi commutativi
 \usepackage{tikz}
 \usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\numberwithin{equation}{section}
+
+\theoremstyle{thorem}
+\newtheorem{theo}{Theorem}[section]
+\newtheorem{lemma}[theo]{Lemma}
+\newtheorem{cor}[theo]{Corollary}
+\newtheorem{prop}[theo]{Proposition}
+\newtheorem{propr}[theo]{Property}
+\newtheorem{defi}[theo]{Definition}
+\newtheorem{rem}[theo]{Remark}
+\newtheorem{ex}[theo]{Example}
+
+% Etichette personalizzate per cleveref
+\crefname{theo}{\emph{Theorem}}{\emph{Theorems}}
+\crefname{lemma}{\emph{Lemma}}{\emph{Lemmas}}
+\crefname{cor}{\emph{Corollary}}{\emph{Corollaries}}
+\crefname{prop}{\emph{Proposition}}{\emph{Propositions}}
+\crefname{propr}{\emph{Property}}{\emph{Properties}}
+\crefname{defi}{\emph{Definition}}{\emph{Definitions}}
+\crefname{rem}{\emph{Remark}}{\emph{Remarks}}
+\crefname{ex}{\emph{Example}}{\emph{Examples}}
+
+\Crefname{theo}{\emph{Theorem}}{\emph{Theorems}}
+\Crefname{lemma}{\emph{Lemma}}{\emph{Lemmas}}
+\Crefname{cor}{\emph{Corollary}}{\emph{Corollaries}}
+\Crefname{prop}{\emph{Proposition}}{\emph{Propositions}}
+\Crefname{propr}{\emph{Property}}{\emph{Properties}}
+\Crefname{defi}{\emph{Definition}}{\emph{Definitions}}
+\Crefname{rem}{\emph{Remark}}{\emph{Remarks}}
+\Crefname{ex}{\emph{Example}}{\emph{Examples}}
