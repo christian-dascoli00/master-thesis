@@ -1,8 +1,7 @@
 \chapter{Theory}
 
 \section{Category over an object}
-Let $E$ be an object in a category $\mathcal{A}$.
-$(\mathcal{A} \downarrow E)$ is the category of objects over $B$ in $\mathcal{A}$, we denote \\ an object by $(A, \alpha:A \to B)$.
+Given an object $E$ in a category $\mathcal{A}$, we call $(\mathcal{A} \downarrow E)$ the category of objects over $E$, we denote an object by $(A, \alpha:A \to B)$.
 
 A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $f: A \to A'$ such that $\alpha' f = \alpha$.
 
@@ -41,7 +40,7 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
         \end{itemize}
     \end{ex}
 \end{subbox}
-    
+\begin{subbox}{}
     \begin{rem}\label{connected limits computed on the base}
     The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to form an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we chose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie $(\varphi_i)(q_i) = (\varphi_1)(q_1) \ \forall i \in {1,\ldots,n} $.
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
@@ -75,11 +74,13 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
             \end{tikzcd}
     \]
     \end{rem}
-
-    \begin{rem}
-        In particular one can affirm that, for each object $E$ in $\mathcal{A}$, $(\mathcal{A} \downarrow E)$ has all the connected limits that $\mathcal{A}$ has.
+\end{subbox}
+\begin{subbox}{}
+    \begin{rem}\label{AonE has the con lim that A has}
+       For each object $E$ in $\mathcal{A}$, by the previous result, $(\mathcal{A} \downarrow E)$ has all the connected limits that $\mathcal{A}$ has.
     \end{rem}
-    
+\end{subbox}
+\begin{subbox}{}  
     \begin{ex}
         The product is not a connected limit, in fact we can see that the following category is not connected.
         \[
@@ -102,10 +103,11 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
     
     
     \end{ex}
+\end{subbox}
 
 \section{The pullback functor and its adjunction}
 
-Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\mathcal{A}$, one can consider functors pullback and shrink
+Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to B$ in $\mathcal{A}$, one can consider functors pullback and shrink
 \[
 \begin{tikzcd}
     (\mathcal{A} \downarrow B)
@@ -152,26 +154,31 @@ defined as follows:
 \]
 \end{itemize}
 
+\begin{mainbox}{}
 \begin{prop}\label{p_! preserves connected limits}
-Let $p : E \to B$ be a morphism in $\mathcal{A}$, then $p_!$ preserves connected limits.
+Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks, then $p_!$ preserves connected limits.
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
 \begin{proof}
     By \Cref{connected limits computed on the base} connected limits are computed in $\mathcal{A}$ and $p_!$ doesn't affect objects and morphism in $\mathcal{A}$.
 \end{proof}
-\end{prop}
+\end{subbox}
+
+\begin{mainbox}{}
 \begin{prop}
-    Let $p : E \to B$ be a morphism in $\mathcal{A}$, then
-    \[
+Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks, then
+\[
 \begin{tikzcd}
     (\mathcal{A} \downarrow B)
-  \arrow[bend left=40]{r}[description]{p^*}
+  \arrow[bend left=40]{r}{p^*}
   & (\mathcal{A} \downarrow E)
-  \arrow[bend left=40]{l}[description]{p_!}
-  \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\top}
+  \arrow[bend left=40]{l}{p_!}
 \end{tikzcd}
+\quad \text{with } p_! \dashv p^*
 \]
-is an adjunction.
-
-In particular the unit is given by
+is an adjunction. In particular the unit is given by
 
 \begin{minipage}{0.45\textwidth}
     \[
@@ -210,6 +217,9 @@ and the counit is given by
         \end{tikzcd}
     \]
     \end{minipage}
+\end{prop}
+\end{mainbox}
+\begin{subbox}{}
 \begin{proof}
 Let us show that this is actually an adjunction. First we want to prove that the unit is a natural transformation. Let $g : (D,\delta)  \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$, we want to prove that the following diagram commutes:
 \[
@@ -365,13 +375,41 @@ Finally we can check the second triangle identities. Let $(D,\delta)$ be an obje
 
 So we can conclude that the adjunction holds.
 \end{proof}
-\end{prop}
+\end{subbox}
+\begin{subbox}{}
 \begin{rem}
 $p^*$ is a right adjoint functor, so it preserves limits. $p_!$ is a left adjoint functor, so it preserves colimits.
 \end{rem}
+\end{subbox}
+
+\begin{mainbox}{}
+\begin{propr}\label{p^*(f) is a pullback}
+The diagram costructed by $p^*$ acting on a morphism $f : (A,\alpha) \to (A',\alpha')$ is a pullback in $(\mathcal{A} \downarrow B)$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoyARiq1GLNmMnTseAkQBMpZdXrNWiECIDkEqSAw65B8itPqLXHln5xh1iSowUADm8ESgAGYAThC8SGQgOBBIAMwmaub2AHoAVAAUEQCUALzceAywwBHitpExcYiK1ElIhqpmbBG1INGx8c3JjekdFty8dDgAFlG8wGgxAFbiAvrdvQ1piYNtbpljE9Oz8xBLKzbiFOJAA
+\begin{tikzcd}
+    E\times_BA \arrow[rr, "p^*(f)=\tilde{f}"] \arrow[d, "\mathrm{proj}_2"] &  & E\times_BA' \arrow[d, "\mathrm{proj}_2'"] \\
+    A \arrow[rr, "f"]                                                      &  & A'                                       
+    \end{tikzcd}
+\]
+\end{propr}
+\end{mainbox}
+\begin{subbox}{}
+\begin{proof}
+   We prove it in $\mathcal{A}$, then by \Cref{connected limits computed on the base} it holds in $\mathcal{A} \downarrow B$. Since the right and the total diagrams below are pullback, then the left diagram is a pullback.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoyARiq1GLNmMnTseAkQBMpZdXrNWiECIDkEqSAw65B8itPqLXHln5xh129qyeigALC4mauYcAfYyuvLIYcaqZmxCEiowUADm8ESgAGYAThC8SGQgOBBIAMwRqRZoAHoAVAAUBQCUALzceAywwAXiMcWlSIrUVUiGKe4gBaMlZYgV04iTc1HcvHQ4ABZFvMBoJQBW4gL6S+OIdZXViLNu25y7B0cn55f6NloLy1qU0eYS2bB2e0Ox1OEAuAkUfzsYxWs3WAFZ6vNuIw0Ps6IjCoDEKD0ZiomgbitNqSQAAjGBgKBIAC0NQqDDo9IYAAU4k4LEUsNl9jgQGTwZwcXjKeVgUhQfTGbUKi8Je8oV9YZdFBlxEA
+\begin{tikzcd}
+    E\times_BA \arrow[rr, "p^*(f)=\tilde{f}"] \arrow[d, "\mathrm{proj}_2"] \arrow[rrrr, "\mathrm{proj}_1", bend left] &  & E\times_BA' \arrow[d, "\mathrm{proj}_2'"] \arrow[rr, "\mathrm{proj}_1'"] &  & E \arrow[d, "p"] \\
+    A \arrow[rr, "f"] \arrow[rrrr, "\alpha"', bend right]                                                             &  & A' \arrow[rr, "\alpha'"]                                                 &  & B               
+    \end{tikzcd}
+\]
+\end{proof}
+\end{subbox}
 
 We need the following definition in order to claim some properties.
 
+\begin{mainbox}{}
 \begin{defi}
     Let $\gamma$ be a natural transformation between two functors $F,G : \mathcal{C} \to \mathcal{D}$, we say that $\gamma$ is a cartesian natural transformation if for every morphism $f : A \to B$ in $\mathcal{C}$, the following diagram is a pullback:
 \[
@@ -383,18 +421,21 @@ We need the following definition in order to claim some properties.
 \]
 ie the naturality diagrams are pullback.
 \end{defi}
+\end{mainbox}
 
+\begin{mainbox}{}
 \begin{propr}
 The unit $\eta$ and the counit $\epsilon$ are cartesian.
+\end{propr}
+\end{mainbox}
+\begin{subbox}{}
 \begin{proof}
-
-First we prove that $\eta$ is cartesian. Let $g : (D,\delta) \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$. Considering the commutative diagram below, since both the bottom and the total diagrams are pullback, it follows that the top diagram is a pullback.
+First we prove that $\eta$ is cartesian. Let $g : (D,\delta) \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$. Applying \Cref{p^*(f) is a pullback} at $p_!(g)$, we obtain that the following diagram is a pullback.
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAiIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHbn0GiA5BKkgMOuUSVHqJ9eZF2tjmbryJKQKxmpmHPbasnqKIWGmbEISKjBQAObwRKAAZgBOELxIZCA4EEgGHuFs3Lx0OAAWebzAaAUAVuICClEg+YVISqXliADMVYnmtfVNLW0Qnd2+Dv1FiCVlgxNejgB6AFRoAgCEABTpAJQAvJZYDLDA6eIg1Ax0AEYwDAAKAS7mDBgORwvVWFWomzG2wi6ReIDenx+f1iIDyWHSDRBfjBiCGkIALNCapw6o1mq0Ol0DMtcgU1uNhkgAKxE8xobiwBg4Oh2V4fL6-ZwotEYrErOlIQmMxAs1STRygiWISrS2WfMBQJAANhKngi7M4nO5ioG6whIyl6s1iAAtDrWSBpmS5pSBAY4QiBcj5Kj0ZiUuIgA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAiIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHbn0GiA5BKkgMOuUSVHqJ9eZF3xKmFAA5vBEoABmAE4QvEhkIDgQSAYeamYg3Lx0OAAWEbzAaFEAVuICCvbhUTGISvGJiADMKaZsGVm5+YUQJWW+DpHRsdQJSLWeaWgAegBUaAIAhAAUgQCUALyWWAywwIHiINQMdABGMAwACjK68iAMMGE4FSAD1cl1SE2qLeaBB7cnZ0uzj05giWEC2UefnEQA
 \begin{tikzcd}
-    E\times_BD \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "p^*p_!(g)=\tilde{g}"] \arrow[dd, "\mathrm{proj}_1"', bend right=60] &  & D \arrow[d, "g"'] \arrow[dd, "p\delta", bend left=60] \\
-    E\times_BD' \arrow[rr, "\mathrm{proj}_2'"] \arrow[d, "\mathrm{proj}_1'"]                                                &  & D' \arrow[d, "p\delta'"']                             \\
-    E \arrow[rr, "p"]                                                                                                       &  & B                                                    
+    E\times_BD \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "p^*p_!(g)=\tilde{g}"] &  & D \arrow[d, "g"'] \\
+    E\times_BD' \arrow[rr, "\mathrm{proj}_2'"]                                &  & D'               
     \end{tikzcd}
 \]
 
@@ -407,38 +448,41 @@ Considering the following commutative diagram, since the right diagram is a pull
     \end{tikzcd}
 \]
 
-Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\alpha')$ be a morphism in $(\mathcal{A} \downarrow B)$. Considering the following commutative digram, since the bottom diagram is a pullback and the total diagram is a pullback, we can conclude that the top diagram is a pullback, as stated.
+Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\alpha')$ be a morphism in $(\mathcal{A} \downarrow B)$. By \Cref{p_! preserves connected limits} applied at the pullback in \Cref{p^*(f) is a pullback} for $f$ we obtain that the following diagram is a pullback.
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHbn0GiA5BKkgMOuUSVHqJ9eZF2tjmbryJKQKxmpmHPbasnqKIWGmbEISKjBQAObwRKAAZgBOELxIZCA4EEgGHuFs3DBo2AwEAsAAFCKk3IxoABZ0AJTiALzcvHQ43Xm8wGgFAFbiAgpRIPmFSEql5YgAzFWJ5rX1WI1gzW02HZxdvTYDw5yj45PTcwsKvg6rRYglZet7XkcAgAhGgAHoAKhaOT69zwDFgwBy4hA1AYdAARjAGAAFAIucwMGA5HDLL4Vah-HYAiI5VEgdFY3H42IgPJYdLdUl+cmIDZUgAsNJqDzGEymMwg8wEBg+uQK312myQAFZhQcrgwenQ7GjMdi8c5WezOdzPgqkELlYg1ap9o4yRbEJVrbasWAoEgAGwlTwRTpa3qOtY-SlbK3uz2IAC0PvVIBGYuekulBnpjINLPkbI5XJS4iAA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHbn0GiA5BKkgMOuUSVHqJ9eZF3xKmFAA5vBEoABmAE4QvEhkIDgQSAYeamYg3DBo2AwEAsAAFCKk3IxoABZ0AJTiALzcvHQ4ZRG8wGhRAFbiAgr24VExiErxiYgAzCmmbBlZWDlgeYU2xZylFTbVdZwNTS1tnd0Kvg6R0bHUCUjDnmloAgCEaAB6AFT5YZVbeAywwGHiIGoDDoACMYAwAAoyXTyEAMGBhHB9ECnQbJEZICaqKbmMKAuGg8FQ5x6cwRLCBMpIvziIA
 \begin{tikzcd}
-    E\times_BA \arrow[rr, "{\epsilon_{(A,\alpha)}=\mathrm{proj}_2}"] \arrow[d, "p_!p^*(f)=\tilde{f}"] \arrow[dd, "\mathrm{proj}_1"', bend right=60] &  & A \arrow[d, "f"'] \arrow[dd, "\alpha", bend left=60] \\
-    E\times_BA' \arrow[rr, "{\epsilon_{(A',\alpha')}=\mathrm{proj}_2'}"] \arrow[d, "\mathrm{proj}_1'"]                                              &  & A' \arrow[d, "\alpha'"']                             \\
-    E \arrow[rr, "p"]                                                                                                                               &  & B                                                   
+    E\times_BA \arrow[rr, "{\epsilon_{(A,\alpha)}=\mathrm{proj}_2}"] \arrow[d, "p_!p^*(f)=\tilde{f}"] &  & A \arrow[d, "f"'] \\
+    E\times_BA' \arrow[rr, "{\epsilon_{(A',\alpha')}=\mathrm{proj}_2'}"]                              &  & A'               
     \end{tikzcd}
 \]
 \end{proof}
-\end{propr}
+\end{subbox}
 
 \section{The monad associated to the adjunction}
 
 Consider the monad associated to the adjunction we just studied, we want to study some properties that will be useful.
 
-
-
+\begin{mainbox}{}
 \begin{propr}
-The monad $(p^*p_!, \eta, p^*\epsilon p_!)$ is cartesian.
+Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks. The monad $(p^*p_!, \eta, p^*\epsilon p_!)$ is cartesian.
+\end{propr}
+\end{mainbox}
+\begin{subbox}{}
 \begin{proof}
 We need to prove that the category $(\mathcal{A} \downarrow E)$ has pullback, the monad preserves pullbacks, and both the multiplication $p^* \epsilon p_!$ and the unit $\eta$ are cartesian.
-
-The category $(\mathcal{A} \downarrow E)$ has pullback, since pullbacks are connnected limit and hence are computed in $\mathcal{A}$, which has pullbacks. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks because (cita all'inizio). We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
+The category $(\mathcal{A} \downarrow E)$ has pullbacks, by \Cref{AonE has the con lim that A has}, since $\mathcal{A}$ has. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks by \Cref{p_! preserves connected limits}. We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
 \end{proof}
-\end{propr}
+\end{subbox}
 
+\begin{mainbox}{}
 \begin{defi}
 A monad $(T,\eta,\mu)$ on a category $\mathcal{X}$ with finite coproducts is said to be essentially nullary if the morphism $[T(!_X),\eta_X]$ is a strong epimorphism for each object $X$ in $\mathcal{X}$, where $!_X$ is the unique morphism from the initial object of $\mathcal{X}$ to $X$.
 \end{defi}
+\end{mainbox}
 
 Now we claim a lemma which will be useful to prove some theorems.
+\begin{mainbox}{}
 \begin{lemma}
     A category $\mathcal{X}$ is protomodular id and only if for each pullback
     \[
@@ -450,10 +494,15 @@ Now we claim a lemma which will be useful to prove some theorems.
     \]
     the pair $(k,s)$ is stronly epimorphic.
 \end{lemma}
+\end{mainbox}
 The proof is out of the scope of this thesis, but we can find it in (citazione) %\cite{Borceux}.
 
+\begin{mainbox}{}
 \begin{theo}
 If $\mathcal{X}$ is a pointed protomodular category with finite coproducts and $(T,\eta,\mu)$ is a monad on $\mathcal{X}$ with cartesian $\eta$, then the monad is essentially nullary.
+\end{theo}
+\end{mainbox}
+\begin{subbox}{}
 \begin{proof}
     For each object $X$ in $\mathcal{X}$ we can consider the following diagram:
     \[
@@ -465,7 +514,7 @@ If $\mathcal{X}$ is a pointed protomodular category with finite coproducts and $
 \]
 Since $\mathcal{X}$ is protomodular then by the lemma above, the pair $(\eta_X,T(!_X))$ is a strongly epimorphic. It is a standard fact that given $f$ and $g$ morphism, if $(f,g)$ is a strongly epimorphic pair, then $[f,g]$ is a strong epi. So we conclude that $[\eta_X,T(!_X)]$ is a strong epi, ie the moand is essentially nullary. (citazione) %\cite{https://arxiv.org/pdf/1409.4219) ALGEBRAICALLY COHERENT CATEGORIES
 \end{proof}
-\end{theo}
+\end{subbox}
 
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoBmAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABhCDACOAXwAUaAPoBGUooBMAShDTS6TLnyEUaitTpNW7AILbdIDNjwEiABlM0GLNok48+QkQBRSVlJDWlbPUdDV1I1M09LHzQAPQAqWS5eAWFgYLkwrR0og2djOISLb3t02SsNAF4rLjxueAUAIUDI+30nIxIKjyr2VIys-1zxKTlFFXUNIrsHUoHyUhdKr3ZRAHIelf6iFU3h7Z9RbTMYKABzeCJQADNBCG4kFRAcCCQ3c3OQJIei83kgTF8fohPnB+FgnjgkABaT6JarqYGvd6IcHfD40GFwhFQs5JezKEA0Rj0ABGMEYAAU+jEfIIsLd+AjiiAQVj1hCwVyeUgyPyoYLMUgAKw0XGIFzi0GIPmykUE+FIlEjZK1BYNFpYRiwYDqCKUml0xnRMogRgwdUK3kyyGq2Hq4n-UljeTKRr6w0wY3KU0280MpnW1nszl2IWIEWy6UetHpYChcJ6jh4f3AGQYxXxyEANgdUqdSELlKwYGqUHoMJuFKT7C4MAAHlg4Dg4ABCAAE0eeEsQAHYy3H8a6iZqAYIlI2qbSw1ajCBIxy81jR6KXYSNSTqoIFGoN0gt7K+ajmxw2x2u72+wgzYvLat2GuEZXq+xa-WoFdpEAA
 \begin{tikzcd}
