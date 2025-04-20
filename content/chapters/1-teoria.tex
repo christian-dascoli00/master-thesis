@@ -1,22 +1,118 @@
 \chapter{Theory}
 
+\section{Category over an object}
+Let $E$ be an object in a category $\mathcal{A}$.
+$(\mathcal{A} \downarrow E)$ is the category of objects over $B$ in $\mathcal{A}$, we denote \\ an object by $(A, \alpha:A \to B)$.
+
+A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $f: A \to A'$ such that $\alpha' f = \alpha$.
+
+\section{Connected limits}
+
+\begin{defi}
+    A connected limit is a limit over a connected category. A category is connected if it is inhabited and any two objects can be connected by a zigzag of morphisms
+    \[
+    \begin{tikzcd}
+        x_0 = y_1 \arrow[rd, leftrightarrow] &   & y_3 \arrow[ld, leftrightarrow] \arrow[rd, leftrightarrow] &        & y_n=x_1 \arrow[ld, leftrightarrow] \\
+                          & y_2 &                                  & \cdots &             
+        \end{tikzcd}
+    \]
+    where each symbol $\leftrightarrow$ is a morphism $y_i \to y_{i+1}$ or  $y_{i+1} \to y_i$.
+    \end{defi}
+    \begin{ex}  
+        Some examples
+        \begin{itemize}
+            \item The pullback is a connected limit.
+            \[
+            % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkRyQBfU9TXfIRTlSxanSat2AJm68QGbHgJERVGgxZtEIAMzdxMKAHN4RUADMAThAC2SMiBwQk0jZO0gscyzfuIRJxdENwktdgArAy4gA
+    \begin{tikzcd}
+        & 2 \arrow[d, "j"] \\
+    1 \arrow[r, "i"] & 3               
+    \end{tikzcd}
+            \]
+            \item The equalizer is a connected limit.
+            \[
+            % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEYQBfU9TXfIRTtyVWoxZsATNzEwoAc3hFQAMwBOEALZIyIHBCQjxzVohBYQ1OAAssqnEgC07Hms07Eeg0et2HviAMdABGMAwACvx4BGzqWAo2jtT0pmwAVrJcQA
+    \begin{tikzcd}
+        1 \arrow[r, "i", shift left] \arrow[r, "j"', shift right] & 2
+        \end{tikzcd}\]
+        \end{itemize}
+    \end{ex}
+    
+    \begin{rem}\label{connected limits computed on the base}
+    The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to form an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we chose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie $(\varphi_i)(q_i) = (\varphi_1)(q_1) \ \forall i \in {1,\ldots,n} $.
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
+    \[
+        \begin{tikzcd}
+            L \arrow[dd, "q_1" description, bend right] 
+              \arrow[rddd, "q_2" description, bend left] 
+              \arrow[rrdd, "q_3" description, bend left] 
+              \arrow[rrrrdd, "q_n" description, bend left] 
+              \arrow[dddd, "(\varphi_1)(q_1)"', dashed, bend right=65] 
+              & & & & \\
+            & & & & \\
+            F(1) 
+              \arrow[leftrightarrow, rd, "F(1\leftrightarrow2)" description] 
+              \arrow[dd, "\varphi_1" description, bend right=49] 
+              & 
+              & F(3) 
+                \arrow[leftrightarrow, ld, "F(2\leftrightarrow3)" description] 
+                \arrow[lldd, "\varphi_3" description, bend left=49] 
+                \arrow[leftrightarrow, rd, "F(2\leftrightarrow ..)" description] 
+              & 
+              & F(n) 
+                \arrow[lllldd, "\varphi_n" description, bend left=51] \\
+            & F(2) 
+              \arrow[ld, "\varphi_2" description, bend right] 
+              & 
+              & \cdots 
+                \arrow[leftrightarrow, ru, "F(.. \leftrightarrow n)" description] 
+              & \\
+            E & & & & 
+            \end{tikzcd}
+    \]
+    \end{rem}
+
+    \begin{rem}
+        In particular one can affirm that, for each object $E$ in $\mathcal{A}$, $(\mathcal{A} \downarrow E)$ has all the connected limits that $\mathcal{A}$ has.
+    \end{rem}
+    
+    \begin{ex}
+        The product is not a connected limit, in fact we can see that the following category is not connected.
+        \[
+            % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEYQBfU9TXfIRTtyVWoxZsATNzEwoAc3hEKXIA
+    \begin{tikzcd}
+        1 & 2
+        \end{tikzcd}
+    \]
+    We try to compute the product directly in $(\mathcal{A} \downarrow E)$. Let $(D,\delta)$ and $(D',\delta')$ be two objects in $(\mathcal{A} \downarrow E)$, the product is given by the following pullback
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBAHS7wFt4AfQBCHAOQgAvqXSZc+QigDMFanSat24qTJAZseAkXKliahizaJOO2QYVEATKfMarIAKK29cw4uTOjq6W7F6SajBQAObwRKAAZgBOEHxIJiA4EEiO0gnJqYhkGVmIKuoh1jxMaAAW9BI0jPQARjCMAAq+DtaJWFE1ON5JKWk0mUjEuSDDBc7FSGUWmpVc1XVD+dljJQAsNEvuVYy19CCNLW2d9kY9fQMbI4XbSHvlyyBHJxJTMwvPiK9GFgwO4oBBmM1GGwaDUYPQoOxICCzhl6FhGIiCNCQE1Wh0ujccTB4oNwpIgA
+    \begin{tikzcd}
+        & D\times_ED' \arrow[ld] \arrow[rr] &                                  & D' \arrow[ld, "\delta'"'] \arrow[ldd, "\delta'"] \\
+    D \arrow[rr, "\delta"] \arrow[rrd, "\delta"'] &                                   & E \arrow[d, equal] &                                                  \\
+        &                                   & E                                &                                                 
+    \end{tikzcd}
+    \]
+    which doesn't correspond to the product $D\times D'$ in $\mathcal{A}$.
+    
+    
+    
+    \end{ex}
+
 \section{The pullback functor and its adjunction}
 
-In this section we will define the pullback functor and its left adjoint, the shrink functor. Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\mathcal{A}$, one can consider adjunction
+Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to A$ in $\mathcal{A}$, one can consider functors pullback and shrink
 \[
 \begin{tikzcd}
     (\mathcal{A} \downarrow B)
   \arrow[bend left=40]{r}[description]{p^*}
   & (\mathcal{A} \downarrow E)
   \arrow[bend left=40]{l}[description]{p_!}
-  \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\top}
 \end{tikzcd}
 \]
 defined as follows:
 \begin{itemize}
-    \item $(\mathcal{A} \downarrow B)$ is the category of objects over $B$ in $\mathcal{A}$, we denote \\ an object by $(A, \alpha:A \to B)$;
-    \item $(\mathcal{A} \downarrow E)$ is the category of objects over $E$ in $\mathcal{A}$, we denote \\ an object by $(D, \delta:D \to E)$;
-    \item  $p^*: (\mathcal{A} \downarrow E) \to (\mathcal{A} \downarrow B)$ is the pullback functor
+\item $p^*: (\mathcal{A} \downarrow E) \to (\mathcal{A} \downarrow B)$ is the pullback functor
 \end{itemize}
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiygIyqGLNohDDJ0kBl3yiZYzVMaLHazrn6U5FS-VzEC0bO28FZD9nNTN2K21bWT0Iw38YtxBPRPsfZAAmNNcgyVUYKABzeCJQADMAJwg+JD8QHAgkVPSgtAaAK0E8rPrGpDJW9sQCrvY0IYamxBa20YDYix6IfsM5kcRO5cnVjJ4mNAALeh2FgBYaA+UQRnoAIxhGAAUkhwtGGBqcEBHIInRjnS4JYYLABsdwmAHY7vQsIx2Hx6Gg4MsaHAzlh-kgEdN1gA9ABUJQkQA
@@ -49,52 +145,68 @@ defined as follows:
     D \arrow[d, "\delta"'] \arrow[rr, "d"] &  & D' \arrow[lld, "\delta'"] & {} \arrow[r, "p_!", maps to, shift right=5] & {} & D \arrow[rr, "d"] \arrow[rrd, "p\delta"'] &  & D' \arrow[d, "p\delta'"] \\
     E                                      &  &                           &                                             &    & E \arrow[rr, "p"']                        &  & B                       
     \end{tikzcd}
-\]    
-
-\item the unit $\eta^p$
+\]
 \end{itemize}
 
-\begin{minipage}{0.45\textwidth}
-\[
-    \eta: \mathrm{Id}_{(\mathcal{A} \downarrow E)} \to p^*p_!
-\]
-\[
-    \eta_{(D,\delta)} = \langle \delta,1_D \rangle : (D,\delta) \to (E\times_BD, \mathrm{proj}_{1})
-\]
-\end{minipage}
-\begin{minipage}{0.5\textwidth}
-\[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQBGUsKq1GLNgFEAOnLwBbeAH0AQpx59seAkQDMYifWatEHbrxAZdgoqIBMJqeZAyrOgfpRHn1U2kLdW4JGCgAc3giUAAzACcIJSQjEBwIJAAWANc2NE8QBKSkUTSMxEdtQsTkxFL0lJyzPMSAK1VhAqLax2oGxGzJZos0BVgGHDoumqQyMqRekAAjGDAoFLnAt2FVLWtu2b7y0oYsMDcoOjgAC3CQalu6dcQwJgYGProsBjZIc-uhkEQAoYAAPLBwHBwAAEAEJoQo4Gg6ABjGDQgA8YxgEzoYl2AD5psVEHN+qkVmskABaAxzBh0FYMAAK-D0QhA8SwEWuOABWzY2NxoS4QA
+\begin{prop}\label{p_! preserves connected limits}
+Let $p : E \to B$ be a morphism in $\mathcal{A}$, then $p_!$ preserves connected limits.
+\begin{proof}
+    By \Cref{connected limits computed on the base} connected limits are computed in $\mathcal{A}$ and $p_!$ doesn't affect objects and morphism in $\mathcal{A}$.
+\end{proof}
+\end{prop}
+\begin{prop}
+    Let $p : E \to B$ be a morphism in $\mathcal{A}$, then
+    \[
 \begin{tikzcd}
-    D \arrow[rrrd, "1_D", bend left] \arrow[rd, "{\exists ! \space \langle\delta,1_D\rangle}", dashed] \arrow[rdd, "\delta"', bend right] &                                           &  &                        \\
-                                                                                                                              & E\times_BD \arrow[rr] \arrow[d] &  & D \arrow[d, "p\delta"] \\
-                                                                                                                              & E \arrow[rr, "p"]                         &  & B                     
-    \end{tikzcd}
+    (\mathcal{A} \downarrow B)
+  \arrow[bend left=40]{r}[description]{p^*}
+  & (\mathcal{A} \downarrow E)
+  \arrow[bend left=40]{l}[description]{p_!}
+  \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\top}
+\end{tikzcd}
+\]
+is an adjunction.
+
+In particular the unit is given by
+
+\begin{minipage}{0.45\textwidth}
+    \[
+        \eta: \mathrm{Id}_{(\mathcal{A} \downarrow E)} \to p^*p_!
     \]
-\end{minipage}
-
-\begin{itemize}
-\item the counit $\epsilon^p$
-\end{itemize}
+    \[
+        \eta_{(D,\delta)} = \langle \delta,1_D \rangle : (D,\delta) \to (E\times_BD, \mathrm{proj}_{1})
+    \]
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQBGUsKq1GLNgFEAOnLwBbeAH0AQpx59seAkQDMYifWatEHbrxAZdgoqIBMJqeZAyrOgfpRHn1U2kLdW4JGCgAc3giUAAzACcIJSQjEBwIJAAWANc2NE8QBKSkUTSMxEdtQsTkxFL0lJyzPMSAK1VhAqLax2oGxGzJZos0BVgGHDoumqQyMqRekAAjGDAoFLnAt2FVLWtu2b7y0oYsMDcoOjgAC3CQalu6dcQwJgYGProsBjZIc-uhkEQAoYAAPLBwHBwAAEAEJoQo4Gg6ABjGDQgA8YxgEzoYl2AD5psVEHN+qkVmskABaAxzBh0FYMAAK-D0QhA8SwEWuOABWzY2NxoS4QA
+    \begin{tikzcd}
+        D \arrow[rrrd, "1_D", bend left] \arrow[rd, "{\exists ! \space \langle\delta,1_D\rangle}", dashed] \arrow[rdd, "\delta"', bend right] &                                           &  &                        \\
+                                                                                                                                  & E\times_BD \arrow[rr] \arrow[d] &  & D \arrow[d, "p\delta"] \\
+                                                                                                                                  & E \arrow[rr, "p"]                         &  & B                     
+        \end{tikzcd}
+        \]
+    \end{minipage}
+and the counit is given by
 
 \begin{minipage}{0.45\textwidth}
-\[
-    \epsilon: p_!p^* \to \mathrm{Id}_{(\mathcal{A} \downarrow B)}
-\]
-\[
-    \epsilon_{(A,\alpha)} = \mathrm{proj}_2 : (E\times_BA, \ p (\mathrm{proj}_1)) \to (A,\alpha)
-\]
-\end{minipage}
-\begin{minipage}{0.5\textwidth}
-\[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkSUBGFfWatEIIRKkgMOuUTJHqJ9efYSVMKAHN4RUABmAE4QvEhkIDgQSAbOamY2IQBWAgpWgSFhiADM1FFISqqmbGjpIMGh4XnROXHF5mjJAgZlFVmxkTWFLgncjGgAFnQe4kA
-\begin{tikzcd}
-    E\times_BA \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & A \arrow[d, "\alpha"] \\
-    E \arrow[rr, "p"]                                   &  & B.                    
-    \end{tikzcd}
-\]
-\end{minipage}
-
+    \[
+        \epsilon: p_!p^* \to \mathrm{Id}_{(\mathcal{A} \downarrow B)}
+    \]
+    \[
+        \epsilon_{(A,\alpha)} = \mathrm{proj}_2 : (E\times_BA, \ p (\mathrm{proj}_1)) \to (A,\alpha)
+    \]
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkSUBGFfWatEIIRKkgMOuUTJHqJ9efYSVMKAHN4RUABmAE4QvEhkIDgQSAbOamY2IQBWAgpWgSFhiADM1FFISqqmbGjpIMGh4XnROXHF5mjJAgZlFVmxkTWFLgncjGgAFnQe4kA
+    \begin{tikzcd}
+        E\times_BA \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & A \arrow[d, "\alpha"] \\
+        E \arrow[rr, "p"]                                   &  & B.                    
+        \end{tikzcd}
+    \]
+    \end{minipage}
+\begin{proof}
 Let us show that this is actually an adjunction. First we want to prove that the unit is a natural transformation. Let $g : (D,\delta)  \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$, we want to prove that the following diagram commutes:
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbdgHJuvEBmx4CRAEzlx9Zq0QgAogB1DeALbwA+gCFOPPssHrSY6tql6jJrObjXZ3cRgoAHN4IlAAMwAnCFMkMhAcCCQNCR02YxgcOgtgAAp2UmNYBmyASi55SJi4xBFqJKQAZldJXRBM7NyCmSLDEuyZCqqQaNj4huS61vS9YJGx2tTGxBa090UAPQAqNAsAQjzgsoBeYzwGWGBgyq4KLiA
@@ -248,16 +360,8 @@ Finally we can check the second triangle identities. Let $(D,\delta)$ be an obje
 \]
 
 So we can conclude that the adjunction holds.
-\[
-\begin{tikzcd}
-    (\mathcal{A} \downarrow B)
-  \arrow[bend left=40]{r}[description]{p^*}
-  & (\mathcal{A} \downarrow E)
-  \arrow[bend left=40]{l}[description]{p_!}
-  \arrow[phantom, shift left=1.5, shift right=1.5]{l}[description]{\top}
-\end{tikzcd}
-\]
-
+\end{proof}
+\end{prop}
 \begin{rem}
 $p^*$ is a right adjoint functor, so it preserves limits. $p_!$ is a left adjoint functor, so it preserves colimits.
 \end{rem}
@@ -313,101 +417,16 @@ Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\a
 
 \section{The monad associated to the adjunction}
 
-Consider the monad associated to the adjunction we just studied, we want to study some properties that will be useful. In order to do that we need first to define some notions.
-
-\begin{defi}
-A connected limit is a limit over a connected category. A category is connected if it is inhabited and any two objects can be connected by a zigzag of morphisms
-\[
-\begin{tikzcd}
-    x_0 = y_1 \arrow[rd, leftrightarrow] &   & y_3 \arrow[ld, leftrightarrow] \arrow[rd, leftrightarrow] &        & y_n=x_1 \arrow[ld, leftrightarrow] \\
-                      & y_2 &                                  & \cdots &             
-    \end{tikzcd}
-\]
-where each symbol $\leftrightarrow$ is a morphism $y_i \to y_{i+1}$ or  $y_{i+1} \to y_i$.
-\end{defi}
-\begin{ex}  
-    Some examples
-    \begin{itemize}
-        \item The pullback is a connected limit.
-        \[
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkRyQBfU9TXfIRTlSxanSat2AJm68QGbHgJERVGgxZtEIAMzdxMKAHN4RUADMAThAC2SMiBwQk0jZO0gscyzfuIRJxdENwktdgArAy4gA
-\begin{tikzcd}
-    & 2 \arrow[d, "j"] \\
-1 \arrow[r, "i"] & 3               
-\end{tikzcd}
-        \]
-        \item The equalizer is a connected limit.
-        \[
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEYQBfU9TXfIRTtyVWoxZsATNzEwoAc3hFQAMwBOEALZIyIHBCQjxzVohBYQ1OAAssqnEgC07Hms07Eeg0et2HviAMdABGMAwACvx4BGzqWAo2jtT0pmwAVrJcQA
-\begin{tikzcd}
-    1 \arrow[r, "i", shift left] \arrow[r, "j"', shift right] & 2
-    \end{tikzcd}\]
-    \end{itemize}
-\end{ex}
-
-\begin{rem}
-The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to form an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we chose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie $(\varphi_i)(q_i) = (\varphi_1)(q_1) \ \forall i \in {1,\ldots,n} $.
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
-\[
-    \begin{tikzcd}
-        L \arrow[dd, "q_1" description, bend right] 
-          \arrow[rddd, "q_2" description, bend left] 
-          \arrow[rrdd, "q_3" description, bend left] 
-          \arrow[rrrrdd, "q_n" description, bend left] 
-          \arrow[dddd, "(\varphi_1)(q_1)"', dashed, bend right=65] 
-          & & & & \\
-        & & & & \\
-        F(1) 
-          \arrow[leftrightarrow, rd, "F(1\leftrightarrow2)" description] 
-          \arrow[dd, "\varphi_1" description, bend right=49] 
-          & 
-          & F(3) 
-            \arrow[leftrightarrow, ld, "F(2\leftrightarrow3)" description] 
-            \arrow[lldd, "\varphi_3" description, bend left=49] 
-            \arrow[leftrightarrow, rd, "F(2\leftrightarrow ..)" description] 
-          & 
-          & F(n) 
-            \arrow[lllldd, "\varphi_n" description, bend left=51] \\
-        & F(2) 
-          \arrow[ld, "\varphi_2" description, bend right] 
-          & 
-          & \cdots 
-            \arrow[leftrightarrow, ru, "F(.. \leftrightarrow n)" description] 
-          & \\
-        E & & & & 
-        \end{tikzcd}
-\]
-\end{rem}
-
-\begin{rem}
-    The product is not a connected limit, in fact we can see that the following category is not connected.
-    \[
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEYQBfU9TXfIRTtyVWoxZsATNzEwoAc3hEKXIA
-\begin{tikzcd}
-    1 & 2
-    \end{tikzcd}
-\]
-We try to compute the product directly in $(\mathcal{A} \downarrow E)$. Let $(D,\delta)$ and $(D',\delta')$ be two objects in $(\mathcal{A} \downarrow E)$, the product is given by the following pullback
-\[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBAHS7wFt4AfQBCHAOQgAvqXSZc+QigDMFanSat24qTJAZseAkXKliahizaJOO2QYVEATKfMarIAKK29cw4uTOjq6W7F6SajBQAObwRKAAZgBOEHxIJiA4EEiO0gnJqYhkGVmIKuoh1jxMaAAW9BI0jPQARjCMAAq+DtaJWFE1ON5JKWk0mUjEuSDDBc7FSGUWmpVc1XVD+dljJQAsNEvuVYy19CCNLW2d9kY9fQMbI4XbSHvlyyBHJxJTMwvPiK9GFgwO4oBBmM1GGwaDUYPQoOxICCzhl6FhGIiCNCQE1Wh0ujccTB4oNwpIgA
-\begin{tikzcd}
-    & D\times_ED' \arrow[ld] \arrow[rr] &                                  & D' \arrow[ld, "\delta'"'] \arrow[ldd, "\delta'"] \\
-D \arrow[rr, "\delta"] \arrow[rrd, "\delta"'] &                                   & E \arrow[d, equal] &                                                  \\
-    &                                   & E                                &                                                 
-\end{tikzcd}
-\]
-which doesn't correspond to the product $D\times D$ in $\mathcal{A}$.
+Consider the monad associated to the adjunction we just studied, we want to study some properties that will be useful.
 
 
-
-\end{rem}
 
 \begin{propr}
 The monad $(p^*p_!, \eta, p^*\epsilon p_!)$ is cartesian.
 \begin{proof}
 We need to prove that the category $(\mathcal{A} \downarrow E)$ has pullback, the monad preserves pullbacks, and both the multiplication $p^* \epsilon p_!$ and the unit $\eta$ are cartesian.
 
-The category $(\mathcal{A} \downarrow E)$ has pullback, since pullbacks are connnected limit and hence are computed in $\mathcal{A}$, which has pullbacks. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks because they are computed in $\mathcal{A}$ and $p_!$ doesn't affect the object and morphism in $\mathcal{A}$. We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
+The category $(\mathcal{A} \downarrow E)$ has pullback, since pullbacks are connnected limit and hence are computed in $\mathcal{A}$, which has pullbacks. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks because (cita all'inizio). We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
 \end{proof}
 \end{propr}
 
@@ -444,3 +463,10 @@ Since $\mathcal{X}$ is protomodular then by the lemma above, the pair $(\eta_X,T
 \end{proof}
 \end{theo}
 
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoBmAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABhCDACOAXwAUaAPoBGUooBMAShDTS6TLnyEUaitTpNW7AILbdIDNjwEiABlM0GLNok48+QkQBRSVlJDWlbPUdDV1I1M09LHzQAPQAqWS5eAWFgYLkwrR0og2djOISLb3t02SsNAF4rLjxueAUAIUDI+30nIxIKjyr2VIys-1zxKTlFFXUNIrsHUoHyUhdKr3ZRAHIelf6iFU3h7Z9RbTMYKABzeCJQADNBCG4kFRAcCCQ3c3OQJIei83kgTF8fohPnB+FgnjgkABaT6JarqYGvd6IcHfD40GFwhFQs5JezKEA0Rj0ABGMEYAAU+jEfIIsLd+AjiiAQVj1hCwVyeUgyPyoYLMUgAKw0XGIFzi0GIPmykUE+FIlEjZK1BYNFpYRiwYDqCKUml0xnRMogRgwdUK3kyyGq2Hq4n-UljeTKRr6w0wY3KU0280MpnW1nszl2IWIEWy6UetHpYChcJ6jh4f3AGQYxXxyEANgdUqdSELlKwYGqUHoMJuFKT7C4MAAHlg4Dg4ABCAAE0eeEsQAHYy3H8a6iZqAYIlI2qbSw1ajCBIxy81jR6KXYSNSTqoIFGoN0gt7K+ajmxw2x2u72+wgzYvLat2GuEZXq+xa-WoFdpEAA
+\begin{tikzcd}
+    & C \arrow[rdd, "r1"', shift right] \arrow[rdd, "r_2", shift left] \arrow[ldd, "\exists ! s"', dashed] &                                                                          & C' &                                                                           \\
+    &                                                                                                      &                                                                          &    &                                                                           \\
+p^*(\mathrm{Eq}(q)) \arrow[d] \arrow[rr, "p^*(p_2)=\tilde{p_2}", shift left] \arrow[rr, "p^*(p_1)=\tilde{p_1}"', shift right] &                                                                                                      & p^*(A)=A\times_BE \arrow[d] \arrow[rr, "p^*{(q)}=\tilde{q}"] \arrow[ruu] &    & {p^*(\mathrm{Coeq}(p_1,p_2))} \arrow[d] \arrow[luu, "\exists! t", dashed] \\
+\mathrm{Eq(q)} \arrow[rr, "p_2", shift left] \arrow[rr, "p_1"', shift right]                                                  &                                                                                                      & A \arrow[rr, "q"]                                                        &    & {\mathrm{Coeq}(p_1,p_2)}                                                 
+\end{tikzcd}
