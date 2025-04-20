@@ -91,17 +91,14 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
     \]
     We try to compute the product directly in $(\mathcal{A} \downarrow E)$. Let $(D,\delta)$ and $(D',\delta')$ be two objects in $(\mathcal{A} \downarrow E)$, the product is given by the following pullback
     \[
-    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBAHS7wFt4AfQBCHAOQgAvqXSZc+QigDMFanSat24qTJAZseAkXKliahizaJOO2QYVEATKfMarIAKK29cw4uTOjq6W7F6SajBQAObwRKAAZgBOEHxIJiA4EEiO0gnJqYhkGVmIKuoh1jxMaAAW9BI0jPQARjCMAAq+DtaJWFE1ON5JKWk0mUjEuSDDBc7FSGUWmpVc1XVD+dljJQAsNEvuVYy19CCNLW2d9kY9fQMbI4XbSHvlyyBHJxJTMwvPiK9GFgwO4oBBmM1GGwaDUYPQoOxICCzhl6FhGIiCNCQE1Wh0ujccTB4oNwpIgA
-    \begin{tikzcd}
-        & D\times_ED' \arrow[ld] \arrow[rr] &                                  & D' \arrow[ld, "\delta'"'] \arrow[ldd, "\delta'"] \\
-    D \arrow[rr, "\delta"] \arrow[rrd, "\delta"'] &                                   & E \arrow[d, equal] &                                                  \\
-        &                                   & E                                &                                                 
-    \end{tikzcd}
-    \]
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBAHS7wFt4AfQBCHAOQgAvqXSZc+QigBMFanSat24qTJAZseAkXKliahizaJOO2QYVEyZmhc3WAorb1zDikqSVzDSsQT0k1GCgAc3giUAAzACcIPiQTEBwIJCVpBOTUxDIMrMQAZhdg9h4mNAALegkaRnoAIxhGAAUfB2tErCjanC8klLSaTKRiXJARgpVipHL1SyquGvrh-OzxkoAWCpXrasY6+hAm1vau+yNe-sHN0cKdpH3ltxBj04lp2cWXxBvRhYMAhKAQZgtRhsGi1GD0KDsSCg84ZehYRhIggwkDNNqdbq3XEweJDcKSIA
+\begin{tikzcd}
+    & A\times_BA' \arrow[ld] \arrow[r] & A' \arrow[ld, "\alpha'"'] \arrow[ldd, "\alpha'"] \\
+A \arrow[r, "\alpha"] \arrow[rd, "\alpha"'] & E \arrow[d, no head, Rightarrow] &                                                  \\
+    & E                                &                                                 
+\end{tikzcd}
+\]
     which doesn't correspond to the product $D\times D'$ in $\mathcal{A}$.
-    
-    
-    
     \end{ex}
 \end{subbox}
 
