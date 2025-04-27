@@ -485,7 +485,9 @@ Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\a
         \mathrm{Eq(q)} \arrow[r, "p_2", shift left] \arrow[r, "p_1"', shift right]                                & A \arrow[r, "q"]                                                    & {\mathrm{Coeq}(p_1,p_2)}                                                
         \end{tikzcd}
     \]
-    Let $q$ be the coequalizer of the kernel pair $\mathrm{Eq}(q)$. We can affirm by \Cref{p^*(f) is a pullback} applied to $q$ that the diagram in the bottom-right corner is a pullback. Since by hypothesis $q$ is a pullback stable regular epimorphism, we have that $\tilde{q}$ is a regular epimorphism, ie it is the coequalizer of some parallel arrows. Let $(r_1,r_2)$ be such pair. Now we want to prove that $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$. Since $\tilde{q}$, $\tilde{p_1}$ and $\tilde{p_2}$ are obtained applying $p^*$ to the kernel pair $\mathrm{Eq}(q)$, and $p^*$ preserves limits, then $p^*(\mathrm{Eq}(q))$ is the kernel pair of $\tilde{q}$. So by the universal property there exists a unique morphism $s : C \to p^*(\mathrm{Eq}(q))$ such that $\tilde{p_1}s=r_1$ and $\tilde{p_2}s=r_2$. Now let $u$ be a morphism such that $u \tilde{p_1} = u \tilde{p_2}$. We have that $ur_1 = u \tilde{p_1} s = u \tilde{p_2} s = ur_2$, so by the universal property of the coequalizer $\tilde{q}$ there exists a unique morphism $t : p^*(\mathrm{Coeq}(p_1,p_2)) \to C'$ such that $t\tilde{q} = u$. So $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$.
+    Let $q$ be the coequalizer of the kernel pair $\mathrm{Eq}(q)$. We can affirm by \Cref{p^*(f) is a pullback} applied to $q$ that the diagram in the bottom-right corner is a pullback. Since by hypothesis $q$ is a pullback stable regular epimorphism, we have that $\tilde{q}$ is a regular epimorphism, ie it is the coequalizer of some parallel arrows. Let $(r_1,r_2)$ be such pair.
+    
+    Now we want to prove that $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$. Since $\tilde{q}$, $\tilde{p_1}$ and $\tilde{p_2}$ are obtained applying $p^*$ to the kernel pair $\mathrm{Eq}(q)$, and $p^*$ preserves limits, then $p^*(\mathrm{Eq}(q))$ is the kernel pair of $\tilde{q}$. So by the universal property there exists a unique morphism $s : C \to p^*(\mathrm{Eq}(q))$ such that $\tilde{p_1}s=r_1$ and $\tilde{p_2}s=r_2$. Now let $u$ be a morphism such that $u \tilde{p_1} = u \tilde{p_2}$. We have that $ur_1 = u \tilde{p_1} s = u \tilde{p_2} s = ur_2$, so by the universal property of the coequalizer $\tilde{q}$ there exists a unique morphism $t : p^*(\mathrm{Coeq}(p_1,p_2)) \to C'$ such that $t\tilde{q} = u$. So $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$.
     \end{proof}
     \end{subbox}
 
@@ -501,6 +503,7 @@ Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks. The monad $(p^*
 \begin{subbox}{}
 \begin{proof}
 We need to prove that the category $(\mathcal{A} \downarrow E)$ has pullback, the monad preserves pullbacks, and both the multiplication $p^* \epsilon p_!$ and the unit $\eta$ are cartesian.
+
 The category $(\mathcal{A} \downarrow E)$ has pullbacks, by \Cref{AonE has the con lim that A has}, since $\mathcal{A}$ has. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks by \Cref{p_! preserves connected limits}. We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
 \end{proof}
 \end{subbox}
