@@ -19,7 +19,7 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
     where each symbol $\leftrightarrow$ is a morphism $y_i \to y_{i+1}$ or  $y_{i+1} \to y_i$.
     \end{defi}
 \end{mainbox}
-\begin{subbox}{}
+\begin{rembox}{}
     \begin{ex}  
         Some examples
         \begin{itemize}
@@ -39,8 +39,8 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
         \end{tikzcd}\]
         \end{itemize}
     \end{ex}
-\end{subbox}
-\begin{subbox}{}
+\end{rembox}
+\begin{rembox}{}
     \begin{rem}\label{connected limits computed on the base}
     The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the objects in $\mathcal{A}$ a morphism to form an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we chose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit are also morphisms in $(\mathcal{A} \downarrow E)$, ie $(\varphi_i)(q_i) = (\varphi_1)(q_1) \ \forall i \in {1,\ldots,n} $.
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
@@ -74,13 +74,17 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
             \end{tikzcd}
     \]
     \end{rem}
-\end{subbox}
-\begin{subbox}{}
-    \begin{rem}\label{AonE has the con lim that A has}
+\end{rembox}
+
+By the previous result, the following holds.
+\begin{mainbox}{}
+    \begin{prop}\label{AonE has the con lim that A has}
        For each object $E$ in $\mathcal{A}$, by the previous result, $(\mathcal{A} \downarrow E)$ has all the connected limits that $\mathcal{A}$ has.
-    \end{rem}
-\end{subbox}
-\begin{subbox}{}  
+    \end{prop}
+\end{mainbox}
+
+Note that this result is not true for all the limits. This is extensively shown in the following example.
+\begin{rembox}{}  
     \begin{ex}
         The product is not a connected limit, in fact we can see that the following category is not connected.
         \[
@@ -100,7 +104,7 @@ A \arrow[r, "\alpha"] \arrow[rd, "\alpha"'] & E \arrow[d, no head, Rightarrow] &
 \]
     which doesn't correspond to the product $D\times D'$ in $\mathcal{A}$.
     \end{ex}
-\end{subbox}
+\end{rembox}
 
 \section{The pullback functor and its adjunction}
 
@@ -117,6 +121,7 @@ defined as follows:
 \begin{itemize}
 \item $p^*: (\mathcal{A} \downarrow E) \to (\mathcal{A} \downarrow B)$ is the pullback functor
 \end{itemize}
+\fontsize{11}{13}\selectfont
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiygIyqGLNohDDJ0kBl3yiZYzVMaLHazrn6U5FS-VzEC0bO28FZD9nNTN2K21bWT0Iw38YtxBPRPsfZAAmNNcgyVUYKABzeCJQADMAJwg+JD8QHAgkVPSgtAaAK0E8rPrGpDJW9sQCrvY0IYamxBa20YDYix6IfsM5kcRO5cnVjJ4mNAALeh2FgBYaA+UQRnoAIxhGAAUkhwtGGBqcEBHIInRjnS4JYYLABsdwmAHY7vQsIx2Hx6Gg4MsaHAzlh-kgEdN1gA9ABUJQkQA
 \begin{tikzcd}
@@ -126,6 +131,7 @@ defined as follows:
 \]
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEOQ06o8LXKSnFABmVtiQDsaCyMy2kHiJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABabs3i9h4+ehwAC2W+YDRVgCsJQQiElbWkKq2O0QZHc-R4TDQ93oP1W60QLUBSBBVws4MYkPoNhojHoh0YAAVOiEQMssDN7jgYX9EJttv8TDVUVxbg8ni93p80iBsbiYASiQoSWSKVS4QC6fCGWNFqKkL1EZLQdkbndHs9XhAPoI0nU7L84bSgfLDsc5ZtGFgwNkoPQ4PdptyldcuDAAB5YOA4OAAAgAhN6eHA0PQAMYwAPeRiwYCLCSyxB7CXIxn2R04vGEobsRgwRaU+r6uU0CV7E0nRAXKVg5mqtkarURLEgdN8zP5dik8n5vWwpDhBVGJ0WGUF3uIVwKgCcxfoWEY7FuaE9Oxodqwed2VeyaAAegAqeP9iURS4ptEY+OD4+nsbnqF1SgSIA
+\fontsize{11}{13}\selectfont
 \begin{tikzcd}
     A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] & {} \arrow[r, "p^*", maps to, shift right=5] & {} & E\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\exists ! \space \tilde{f}", dashed, bend left] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &                  & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
     B                                    &                          &                                             &    &                                                                                                                                                    &                                        & B                &                           &                                                                                        \\
@@ -135,6 +141,7 @@ defined as follows:
 \begin{itemize}
     \item $p_!: (\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)$ is the shrink functor
 
+\fontsize{11}{13}\selectfont
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbAKLdeIDNjwEiI8uPrNWiEHL5LBRAEzrqmqTr0L+yocgDMpiVrace+gSpSOxZydpBZd2sDL2QAFlJfZwsQACFucRgoAHN4IlAAMwAnCABbJDIQHAgkNRiAgB1K2AYcOisc-KQTYtLER2K6LAY2PLo0OBKQajgACyxMnCQAVj8XHTQAfQBCRtyCxEi2pAA2edi0atr69eat6mHEOYq2Y5g6huoGOgAjB4AFG0MdbKwUsbTYJNTY3K77W6LRJcIA
 \begin{tikzcd}
@@ -142,6 +149,7 @@ defined as follows:
     E                     &                                             &    & E \arrow[r, "p"]                             & B
     \end{tikzcd}
 \]
+\fontsize{11}{13}\selectfont
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQAmclVqMWbdgHJuvEBmx4CRMgEZx9Zq0QgAovL7LBRAMxjq2qXqOL+KocgAsliTrZ2lA1SgCsbta6HF4OpigA7IGSwbKhJr7IAZpWMWyGPMY+TlEp7jYgAELc4jBQAObwRKAAZgBOEAC2SGQgOBBIovnBADo9sAw4dCDUDHQARjAMAAphviB1WOUAFjh29U0t1O1I6qkeelAjIGOTM3NCJzA1a5kgG82Ie20diF1BbH0DQ3KjE1OzBKXBjXW4KB5ICwvJCuNp0LAMNiNOhoOA7ahwZZYG5IALdNhoAD6AEJ1g1HnidogAGz7ApHO4QxBRaGIAAcdOCaGOpwBFzYixWYNq5Nx21eHPxejQXymQx5-3OQIFS1Wx0x2LWiGIjNFNPFSElH2lssGdDkXAoXCAA
 \begin{tikzcd}
@@ -342,7 +350,10 @@ E\times_BA \arrow[ru, "{\ \ \ \ \ \ \langle \mathrm{proj}_{1,E\times_BA},1_{E\ti
 
 We want to check that composition of the projections of $E\times_BA$ with $\circledast$ is the same of composing those projection with $\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}$.  Following the first composition
 \[ 
-     (\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =
+     (\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = 
+\]     
+\[
+ = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =
 \]
 \[
     = (\mathrm{proj}_{2,E \times_BA}) (1_{E\times_BA}) = \mathrm{proj}_{2,E \times_BA} = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}})
@@ -373,11 +384,11 @@ Finally we can check the second triangle identities. Let $(D,\delta)$ be an obje
 So we can conclude that the adjunction holds.
 \end{proof}
 \end{subbox}
-\begin{subbox}{}
+\begin{rembox}{}
 \begin{rem}
 $p^*$ is a right adjoint functor, so it preserves limits. $p_!$ is a left adjoint functor, so it preserves colimits.
 \end{rem}
-\end{subbox}
+\end{rembox}
 
 \begin{mainbox}{}
 \begin{propr}\label{p^*(f) is a pullback}
