@@ -78,15 +78,15 @@ A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $
 
 By the previous result, the following holds.
 \begin{mainbox}{}
-    \begin{prop}\label{AonE has the con lim that A has}
-       For each object $E$ in $\mathcal{A}$, by the previous result, $(\mathcal{A} \downarrow E)$ has all the connected limits that $\mathcal{A}$ has.
+    \begin{prop}\label{U creates con lim}
+       Let $E$ be an object in $\mathcal{A}$. Then the forgetful functor $U : (\mathcal{A} \downarrow E) \to \mathcal{A}$ creates all connected limits that $\mathcal{A}$ has.
     \end{prop}
 \end{mainbox}
 
 Note that this result is not true for all the limits. This is extensively shown in the following example.
 \begin{rembox}{}  
     \begin{ex}
-        The product is not a connected limit, in fact we can see that the following category is not connected.
+        The product is not a connected limit, in fact as we can observe the following category is not connected.
         \[
             % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEYQBfU9TXfIRTtyVWoxZsATNzEwoAc3hEKXIA
     \begin{tikzcd}
@@ -504,7 +504,7 @@ Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks. The monad $(p^*
 \begin{proof}
 We need to prove that the category $(\mathcal{A} \downarrow E)$ has pullback, the monad preserves pullbacks, and both the multiplication $p^* \epsilon p_!$ and the unit $\eta$ are cartesian.
 
-The category $(\mathcal{A} \downarrow E)$ has pullbacks, by \Cref{AonE has the con lim that A has}, since $\mathcal{A}$ has. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks by \Cref{p_! preserves connected limits}. We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
+The category $(\mathcal{A} \downarrow E)$ has pullbacks, by \Cref{U creates con lim}, since $\mathcal{A}$ has. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks by \Cref{p_! preserves connected limits}. We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
 \end{proof}
 \end{subbox}
 
