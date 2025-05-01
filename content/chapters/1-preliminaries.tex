@@ -1,0 +1,98 @@
+\chapter{Preliminaries}
+
+In order to understand the notions introduced in this thesis is important to recall some definitions and constructions. We also take this opportunity to introduce and fix some notation.
+
+First we define some categories that will be used throughout the thesis. Let $\mathcal{A}$ be a category, we defines the following categories.
+
+\begin{itemize}
+    \item The slice category: given an object $B$ in a category $\mathcal{A}$, we call $(\mathcal{A} \downarrow B)$ the category of objects over $E$, we denote an object by $(A, \alpha:A \to B)$. A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $f: A \to A'$ such that $\alpha' f = \alpha$.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiAJnLj6zVog5y+SwUQDMG6lqm72Acn0L+yocnVjzknSFldxMKAHN4IlAAMwAnCABbJDIQHAgkETdtNgAdFMY0AAs6OzDIpHVY+MRTCWTdYNzwqMRCuKQAFiTLEDSM7Kr8kup6xCaylraGLLpbby4gA
+    \begin{tikzcd}
+    A \arrow[d, "\alpha"] &  & A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] \\
+    B                     &  & B                                    &                         
+    \end{tikzcd}
+    \]
+    \item The coslice category: given an object $B$ in a category $\mathcal{A}$, we call $(B \downarrow \mathcal{A})$ the category of objects under $B$, we denote an object by $(\alpha:B \to A, A)$. A morphism between two objects $(\alpha, A)$ and $(\alpha', A')$ is a morphism $f: A \to A'$ such that $f \alpha = \alpha'$.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACEQBfU9TXfIRRkAjFVqMWbAILdeIDNjwEiAJnLj6zVog5y+SwWtJjqWqbtk8DAlSgDMJzZJ0hpAcm7iYUAObwiUAAzACcIAFskMhAcCCQRMxc2AB1kxjQACzp9EFCIpHUYuMRHCW0UtIZM7OtcsMjEQtikABZE8t1U9KzPWryG0ubENrKLXK8uIA
+    \begin{tikzcd}
+    B \arrow[d, "\alpha"] &  & B \arrow[d, "\alpha"] \arrow[rd, "\alpha'"] &    \\
+    A                     &  & A \arrow[r, "f"]                            & A'
+    \end{tikzcd}
+    \]
+    \item The category of points: given an object $B$ in a category $\mathcal{A}$, we call $\mathrm{Pt}(B)$ the category of points of $B$, we denote an object by $(A,B,p,s)$ which is a diagram of the type $A \overset{p}{\underset{s}{\rightleftarrows}} B$ with the condition $ps=1_B$. Morphisms between two objects $(A,B,p,s)$ and $(A',B',p',s')$ are diagrams of the type 
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGUsKq1GLNgCFuvEBmx4CRAEzkJ9Zq0QcA5NwkwoAc3hFQAMwBOEALZIyIHBCSiQcABZYrOd9Ta0npoINQMdABGMAwACvwqQiA2WKZe-jzWdo6IGi5uiB7evv6FgVK6iobhUTHxyoJsKWkZCrYOAflIecV+nRHRcQmNes3pYZI6bHCGmSDtOR6uTtS9pR5BlQg1g-UCqqOp43MLK1255VN6VkZcQA
+    \begin{tikzcd}
+    A \arrow[rd, "p"', shift right] \arrow[rr, "f"] &                                                                & A' \arrow[ld, "p'"', shift right] \\
+                                                    & B \arrow[ru, "s'"', shift right] \arrow[lu, "s"', shift right] &                                  
+    \end{tikzcd}
+    \]
+    with the condition $p'f=p$ and $fs=s'$
+\end{itemize}
+
+We recall the following definitions.
+
+\begin{mainbox}{}
+    \begin{defi}
+        A A finitely complete category $\mathcal{A}$ is said to be regular if
+        \begin{itemize}
+            \item Every morphism in $\mathcal{A}$ admits an (regular epi, mono) factorization;
+            \item Regular epis in $\mathcal{A}$ are pullback stable.
+        \end{itemize}
+    \end{defi}
+\end{mainbox}
+
+\begin{mainbox}{}
+    \begin{defi}
+        A category $\mathcal{A}$ is said to be exact if
+        \begin{itemize}
+            \item It is regular;
+            \item Any equivalence relation is the kernel pair of some arrow.
+        \end{itemize}
+    \end{defi}
+\end{mainbox}
+    
+In order to define the next notion, we need the following construction. Suppose $\mathcal{A}$ has pullbacks and consider a morphism $f: B' \to B$ in the same category. We define the change-of-base functor of $f$.
+\[
+f^* : \mathrm{Pt}(B) \to \mathrm{Pt}(A)
+\]
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoBGAXVJADcBDAGwFcYkQAhAcgB0e8AtvAD6HAIIgAvqXSZc+QigBsFanSat2E6bOx4CRFQCY1DFm0ScpMkBj0KiZEzTObL3a7vkGUABlUuGhYg2jZ23orI-s7q5uwcnrZy+pHkAbFuIInhKURG6a7B2ckOKADMpL6mQfFcUmowUADm8ESgAGYAThACSP4gOBBIaRnBfAL0OAAWnQLAaN0AVpLCRoldPUgVA0OI+aPs7evdvYj9g1uBcZbjkzNzCxDLwuTHm4gjF3tXmWggNHAplh2jgkABacg6EAbU5kHZIACsNEY9AARjBGAAFEo+ECMGAg-4HSx-AFAwmICFQmFIFTwxAAdhoOHoWEY7AmaDgFzJwNBjJ+wXaAD0AFRvU5I+lwwF88EjQrsBDUk5IfZfEayikQwVKiVIAAczN2-UYWDAwSg9EBjSJipuPBRYCa+IABORhMBuNI4O1XXxOvRnfj9YgjfSRuiwFAtv17SBfaHw19tlGY5SynGapYPV6uJJ6pIgA
+\begin{tikzcd}
+    &                                             &    & B' \arrow[rd, "{\langle 1_{B'},sf \rangle}", dashed] \arrow[rrrd, "sf", bend left] \arrow[rdd, "1_{B'}", bend right] &                                                                        &  &                              \\
+A \arrow[d, "p", shift left] & {} \arrow[r, "f^*", maps to, shift right=7] & {} &                                                                                                                      & B'\times_BA \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & A \arrow[d, "p", shift left] \\
+B \arrow[u, "s", shift left] &                                             &    &                                                                                                                      & B' \arrow[rr, "f"]                                                     &  & B \arrow[u, "s", shift left]
+\end{tikzcd}
+\]
+where $\langle 1_{B'},sf \rangle$ is the section of $\mathrm{proj}_1$. It holds that $(\mathrm{proj}_1) \langle 1_{B'},sf \rangle = 1_{B'}$.
+\fontsize{11}{13}\selectfont
+\[ 
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQAhAcgB0e8AtvAD6HAIIgAvqXSZc+QigCsFanSat2E6bOx4CRAOyqaDFm0QgxXKTJAY9CogA4T68+259BI8TZ32cvqKyABspACMamaalhy2uvIGKOEATNEaFpz+dg5JIeRuMVnauUFOKBFFmVo5icFEqdUelgmBjsnIAMzNsSBteQ0ohVGmNXFSajBQAObwRKAAZgBOEAJIhSA4EEgqIABGMGBQSAC0XZvF7HwC9DgAFssCwGirAFaSwhEgNHD3WIscGcIgEVmskFUtjtEGR3H00D8QH8AUDEKcQXYwetEE0oUhYVdLGgbDRGPRDowAArlZIgZZYGb3IG-f6AiGg1bYzbbCFjFogG53R7PV4QD7CVKIskU6kdRR0hlMtpY3l4nF8vp8Jhoe70ZWcpA9NW4wkCni3B5PF7vT6pOogFWIbnQo2HY6GzaMLBgLJQeh-aaI02LAB6ACoABRaxg6+gASn14MQex5MI1WUWUvJMCpNPljBgbI5SaNqb2bpOiAu6eu5qFVtF4oiJJA0pzsvy7HpjOZSNZqIxSwNiHCauMcKy0djiexrjVAE4aDh6FhGOxbmg4DyWSjdjXLKGwzOkKPUxFLuN7IjkWy0YOHcPx2eL-zidf+6q27m5V3FUDi9i55LtCo43qi6L7kix6IEBY47rekKmnALZfh2QwKj20Gwme8HgYhl4IAB+LAUguJgaqSEodm36dpY3ZKkRyYkU6NAVh6uHApBfBkmAMwFgABBEwjANw0hwIsfDLPQvEFtBKYuqxRyVucmzkTBXE8DxfEwIJwmiaQyGLPxknSdpWYynmv6YZIlCSEAA
+\begin{tikzcd}
+    A \arrow[r, "\alpha"] \arrow[d, "p", shift left]            & A' \arrow[ld, "p'"', shift right] & {} \arrow[r, "f^*", maps to, shift right=5] & {} & B'\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right, shift left] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "f^*(\alpha)", dashed, bend left] & A \arrow[rd, "p", shift left] \arrow[rr, "\alpha"] &                                                                                                                                                            & A' \arrow[ld, "p'"', shift right] & B'\times_BA' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left, shift right] \\
+    B \arrow[u, "s", shift left] \arrow[ru, "s'"', shift right] &                                   &                                             &    &                                                                                                                                                  &                                                    & B \arrow[lu, "s", shift left] \arrow[ru, "s'"', shift right]                                                                                               &                                   &                                                                                                      \\
+                                                                &                                   &                                             &    &                                                                                                                                                  &                                                    & B' \arrow[u, "f"] \arrow[lluu, "{\langle 1_{B'},sf\rangle}", bend left, shift left] \arrow[rruu, "{\langle 1_{B'},s'f \rangle}"', bend right, shift right] &                                   &                                                                                                     
+    \end{tikzcd}
+\]
+
+\begin{mainbox}{}
+    \begin{defi}
+        A finitely complete category $\mathcal{A}$ is said to be protomodular if for every morphism $f: A \to B$ in $\mathcal{A}$, the change-of-base functor $f^*: \mathrm{Pt}(B) \to \mathrm{Pt}(A)$ is conservative.
+    \end{defi}
+\end{mainbox}
+
+We conclude recalling the follwing.
+\begin{mainbox}{}
+    \begin{defi}
+        A category $\mathcal{A}$ is said to be semiabelian if
+        \begin{itemize}
+            \item It is pointed;
+            \item It is exact;
+            \item It is protomodular;
+            \item It has binary coproducts.
+        \end{itemize}
+    \end{defi}
+\end{mainbox}
+
