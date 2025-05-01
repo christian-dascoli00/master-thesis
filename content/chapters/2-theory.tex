@@ -1,10 +1,5 @@
 \chapter{Theory}
 
-\section{Category over an object}
-Given an object $E$ in a category $\mathcal{A}$, we call $(\mathcal{A} \downarrow E)$ the category of objects over $E$, we denote an object by $(A, \alpha:A \to B)$.
-
-A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $f: A \to A'$ such that $\alpha' f = \alpha$.
-
 \section{Connected limits}
 
 \begin{mainbox}{}
@@ -119,7 +114,7 @@ Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to B$ in $\m
 \]
 defined as follows:
 \begin{itemize}
-\item $p^*: (\mathcal{A} \downarrow E) \to (\mathcal{A} \downarrow B)$ is the pullback functor
+\item $p^*: (\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)$ is the pullback functor
 \end{itemize}
 \fontsize{11}{13}\selectfont
 \[
@@ -133,13 +128,13 @@ defined as follows:
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEOQ06o8LXKSnFABmVtiQDsaCyMy2kHiJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABabs3i9h4+ehwAC2W+YDRVgCsJQQiElbWkKq2O0QZHc-R4TDQ93oP1W60QLUBSBBVws4MYkPoNhojHoh0YAAVOiEQMssDN7jgYX9EJttv8TDVUVxbg8ni93p80iBsbiYASiQoSWSKVS4QC6fCGWNFqKkL1EZLQdkbndHs9XhAPoI0nU7L84bSgfLDsc5ZtGFgwNkoPQ4PdptyldcuDAAB5YOA4OAAAgAhN6eHA0PQAMYwAPeRiwYCLCSyxB7CXIxn2R04vGEobsRgwRaU+r6uU0CV7E0nRAXKVg5mqtkarURLEgdN8zP5dik8n5vWwpDhBVGJ0WGUF3uIVwKgCcxfoWEY7FuaE9Oxodqwed2VeyaAAegAqeP9iURS4ptEY+OD4+nsbnqF1SgSIA
 \fontsize{11}{13}\selectfont
 \begin{tikzcd}
-    A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] & {} \arrow[r, "p^*", maps to, shift right=5] & {} & E\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\exists ! \space \tilde{f}", dashed, bend left] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &                  & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
+    A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] & {} \arrow[r, "p^*", maps to, shift right=5] & {} & E\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "p^*(f)=\tilde{f}", dashed, bend left] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &                  & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
     B                                    &                          &                                             &    &                                                                                                                                                    &                                        & B                &                           &                                                                                        \\
                                          &                          &                                             &    &                                                                                                                                                    &                                        & E \arrow[u, "p"] &                           &                                                                                       
     \end{tikzcd}
 \]
 \begin{itemize}
-    \item $p_!: (\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)$ is the shrink functor
+    \item $p_!: (\mathcal{A} \downarrow E) \to (\mathcal{A} \downarrow B)$ is the shrink functor
 
 \fontsize{11}{13}\selectfont
 \[
@@ -197,7 +192,7 @@ is an adjunction. In particular the unit is given by
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQBGUsKq1GLNgFEAOnLwBbeAH0AQpx59seAkQDMYifWatEHbrxAZdgoqIBMJqeZAyrOgfpRHn1U2kLdW4JGCgAc3giUAAzACcIJSQjEBwIJAAWANc2NE8QBKSkUTSMxEdtQsTkxFL0lJyzPMSAK1VhAqLax2oGxGzJZos0BVgGHDoumqQyMqRekAAjGDAoFLnAt2FVLWtu2b7y0oYsMDcoOjgAC3CQalu6dcQwJgYGProsBjZIc-uhkEQAoYAAPLBwHBwAAEAEJoQo4Gg6ABjGDQgA8YxgEzoYl2AD5psVEHN+qkVmskABaAxzBh0FYMAAK-D0QhA8SwEWuOABWzY2NxoS4QA
     \begin{tikzcd}
-        D \arrow[rrrd, "1_D", bend left] \arrow[rd, "{\exists ! \space \langle\delta,1_D\rangle}", dashed] \arrow[rdd, "\delta"', bend right] &                                           &  &                        \\
+        D \arrow[rrrd, "1_D", bend left] \arrow[rd, "{\space \langle\delta,1_D\rangle}", dashed] \arrow[rdd, "\delta"', bend right] &                                           &  &                        \\
                                                                                                                                   & E\times_BD \arrow[rr] \arrow[d] &  & D \arrow[d, "p\delta"] \\
                                                                                                                                   & E \arrow[rr, "p"]                         &  & B                     
         \end{tikzcd}
@@ -248,7 +243,7 @@ In order to do that we need to expand the action of the functor $p^*p_!$ on the 
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAERABfUuky58hFAGYK1Ok1btxUmdjwEiAVhU0GLNohCiA5JOkgMu+UQBsxtWfbdeWAXBHXbHTl9FAAWUgBGVVMNC2FA+1k9BWRw4mj1c04Eh2CU8jcYrJykpxQIwsz2SVUYKABzeCJQADMAJwg+JAKQHAgkIxAAIxgwKCQAWkUeovYePnocAAs2vmA0DoArCUEIhPbOpAre-sRw91j7HlhGHHp9jq7EMhOkc9mLNGuYW-obGkY9BGjAACqUQiA2lh6kscA9Dogen0jiYqhZ5osVmsNhBtoJiPCnsdkc9UR4LPVCUhlK9SRcshjlqt1lsdsR-iBAcCwY4IVCYXDtCADk8kacaSMxtSeowsGAslB6HAlnUQGTLjwYAAPLBwHBwAAEAEIDTw4Gh6ABjGCm7yMWDAeoSKmIQYk95o+xqzlAn48vLsRgwFqCuwi6k0EmDSXjRDTdUMrgLJnY1m7Dlcv3ghSQ6Gwl2uWkAdkj9CwjHYCzQev6NGVWBDAwT7DQAD0AFQu4mnHox6XN9FcGB3QTAAAUolI31+AEpnULw3SSRLRrGpjNPZqR+PrFOuDc7lY597M6Ds+x+fmJJQJEA
 \begin{tikzcd}
-    {} \arrow[r, "p^*", maps to, shift right=5] & {} & E\times_BD \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"] \arrow[rrrr, "\exists ! \space \tilde{g}", dashed, bend left] & D \arrow[rd, "p\delta"] \arrow[rr, "g"] \arrow[l, "{\eta_{(D,\delta)}}", bend left] &                  & D' \arrow[ld, "p\delta'"'] \arrow[r, "{\eta_{(D',\delta')}}"', bend right] & E\times_BD' \arrow[l, "\mathrm{proj}_2'"'] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
+    {} \arrow[r, "p^*", maps to, shift right=5] & {} & E\times_BD \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"] \arrow[rrrr, "\space \tilde{g}", dashed, bend left] & D \arrow[rd, "p\delta"] \arrow[rr, "g"] \arrow[l, "{\eta_{(D,\delta)}}", bend left] &                  & D' \arrow[ld, "p\delta'"'] \arrow[r, "{\eta_{(D',\delta')}}"', bend right] & E\times_BD' \arrow[l, "\mathrm{proj}_2'"'] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
                                                 &    &                                                                                                                                                   &                                                                                     & B                &                                                                            &                                                                                         \\
                                                 &    &                                                                                                                                                   &                                                                                     & E \arrow[u, "p"] &                                                                            &                                                                                        
     \end{tikzcd}
@@ -286,7 +281,7 @@ As similarly done above, we need to expand the action of the functor $p_!p^*$ on
 \[
 % % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiAdhU0GLNohCiA5JOkgMu+UQAcxtWfbdeWAXBHXbHTl9FAA2UgBGVVMNC2FA+1k9BWRwgCZo9XNOBIdglPI3GOytOzzkogiirM0bbUTHEORCqJMauNykpxQ06o8LTsaUgGY+2JBJVRgoAHN4IlAAMwAnCD4kQpAcCCRlEAAjGDAoJABaYc3i9h4+ehwAC2W+YDRVgCsJQQiElbWkKq2O0QZHc4x4TDQ93oP1W60QvUBSBBVws4MYkPoNhojHoh0YAAUuiEQMssDN7jgYX9EJttv82v0QDc7o9nq8IB9BGkQNjcTACUSFCSyRSqXCAXT4QzxosxUhRoipaDssyHk8Xu9Pmk6nZfnDaUCFYdjvLNowsGBslB6HB7tMecrrlwYAAPLBwHBwAAEAEIvTw4Gh6ABjGD+7yMWDARYSOWIPaS5HtewOnF4wlDdiMGCLSn1PXymiSvbGk6IC7SlVcW5qtmar5YkBp-kZ-LsUnkvO62FIcKKoyOiyy-M9xB9yWuQdMrgQqFxgcTytO2eYuMATiLQIim1tWFzvaL9CwjHYtzQHp2S4saAAegAqSYSIA
 \begin{tikzcd}[column sep=small]
-    A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] & {} \arrow[r, "p^*", maps to, shift right=6] & {} & E\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\exists ! \space \tilde{f}", dashed, bend left] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &                  & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
+    A \arrow[r, "f"] \arrow[d, "\alpha"] & A' \arrow[ld, "\alpha'"] & {} \arrow[r, "p^*", maps to, shift right=6] & {} & E\times_BA \arrow[rrdd, "\mathrm{proj}_1", bend right] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\tilde{f}", dashed, bend left] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &                  & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left] \\
     B                                    &                          &                                             &    &                                                                                                                                                    &                                        & B                &                           &                                                                                        \\
                                          &                          &                                             &    &                                                                                                                                                    &                                        & E \arrow[u, "p"] &                           &                                                                                       
     \end{tikzcd}
@@ -294,7 +289,7 @@ As similarly done above, we need to expand the action of the functor $p_!p^*$ on
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAGYK1Ok1btxUmdjwEiAVhU0GLNohCiA5JOkgMu+UQBsxtWfbdeWAXBHXbHTl9FAAWUgBGVVMNC2FA+1k9BWRyNxjzEASHYJSI9PVMyVUYKABzeCJQADMAJwg+JHyQHAgkcPdYkB4mNAALegS6hqQyFrbEDoz2HsZ++hsaRnoAIxhGAAUkpwtarDK+nCH6xsQ08aaTQpmuPnocPtq+YDR6gCsJQWIQJdX1rccIRAewOR20IGGp2arVGVw8FmqxxGiGUF0QY2mFh4dweTxe70+33BkKQ5xhKJoazAUCQinOjCwYEyUHocD6pR+nUyPBgAA8sHAcHAAAQAQmFPDgaHoAGMYBLvIxYMBqhIkacjGjXC16FhGOw7mhBW0aGysNUjohNZj7IJRerSTRyR0qTTEABaOlwrpoAAU2Puj2erwgH0EEQAlJzlmtNtsgSDDg6KWiXTBqbTzja-QHccGCeGrFGJJQJEA
 \begin{tikzcd}
-    {} \arrow[r, "p_!", maps to, shift right=5] & {} & E\times_BA \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\exists ! \space \tilde{f}", dashed, bend left] \arrow[rrd, "p(\mathrm{proj}_1)"', bend right] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &   & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2"] \arrow[lld, "p(\mathrm{proj}_1')", bend left] \\
+    {} \arrow[r, "p_!", maps to, shift right=5] & {} & E\times_BA \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\tilde{f}", dashed, bend left] \arrow[rrd, "p(\mathrm{proj}_1)"', bend right] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &   & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2"] \arrow[lld, "p(\mathrm{proj}_1')", bend left] \\
                                                 &    &                                                                                                                                                       &                                        & B &                           &                                                                                       
     \end{tikzcd}
 \]
@@ -328,7 +323,7 @@ and then considering the definition of $\eta$, we obtain
 \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoAjKQVVajFmy48s-OMIAUWvoNEBKCVJAZseAkQDMy1fWatEHbsb2iL0m3KIlACZndTcOXysZW3lkRxDqFw13IQlVGCgAc3giUAAzACcIXiRHEBwIJAAWRLC2NBBqBjoAIxgGAAVogPcCrEyACxxIwuKkJXLKxCDJfKKSxAmK0trXeqKAKwFgJSMdE0NPfe8RU3ER+aQg6mXEGrU19zR9NE3t3aPdYRFxc1mQUYLMiTK7UNpgKClYFJcIKbZ7L6ic7-QFIYG3CYMLBgcJQOhwAYZRogQl0SGIMBMBgMG50LAMNiQHHEmFsbgwAAeWDgODgAAIAIR87hwNB0ADGMD5AB5XhAtjtSAiTD9lPDPirxAA+C5jRDoqZlcHkgC09mBzTanW6dl6-SGLLqTzeiuVJ2RFHEQA
 \begin{tikzcd}
-    E\times_BA \arrow[rrrd, "1_{E\times_BA}", bend left] \arrow[rd, "{\exists ! \space \langle\mathrm{proj}_{1,E\times_BA},1_{E\times_BA}\rangle}", dashed] \arrow[rdd, "{\mathrm{proj}_{1,E\times_BA}}"', bend right] &                                                                                &  &                                                  \\
+    E\times_BA \arrow[rrrd, "1_{E\times_BA}", bend left] \arrow[rd, "{\langle\mathrm{proj}_{1,E\times_BA},1_{E\times_BA}\rangle}", dashed] \arrow[rdd, "{\mathrm{proj}_{1,E\times_BA}}"', bend right] &                                                                                &  &                                                  \\
                                                                                                                                                                                          & E\times_B(E\times_BA) \arrow[rr] \arrow[d] &  & E\times_BA \arrow[d, "{p(\mathrm{proj}_{1,E\times_BA})}"] \\
                                                                                                                                                                                          & E \arrow[rr, "p"']                                                             &  & B                                               
     \end{tikzcd}
@@ -517,18 +512,33 @@ A monad $(T,\eta,\mu)$ on a category $\mathcal{X}$ with finite coproducts is sai
 Now we claim a lemma which will be useful to prove some theorems.
 \begin{mainbox}{}
 \begin{lemma}
-    A category $\mathcal{X}$ is protomodular id and only if for each pullback
+    If a category $\mathcal{X}$ is protomodular, then for each commutative diagram of the form
     \[
-    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACEByAHW7wFt4AfXYBBEAF9S6TLnyEUAJnJVajFm3FSZ2PASJkAjKvrNWiDp0nSQGXfKLLj1UxovtJqmFADm8IqAAZgBOEPxIZCA4EEiGLurmIADW1kGh4YjKUTGIAMzxZmy8AEYwOHSpICFhsdTRSPkgcAAWWIE4tWqFFmgg1Ax0pQwACrJ6CiDBWD7NHdpV6Q11OXFNre2dA0Oj9voWUzMdBW5NldUZWfWIkS1tHYirWzAjYw7707Nni9fLSFm3Gwe-UGzx2cj2kw+cwoEiAA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACEByAHW7wFt4AfXYBBEAF9S6TLnyEUAJnJVajFm3FSZ2PASJkAjKvrNWiDp0nSQGXfKLLj1UxovtJqmFADm8IqAAZgBOEPxIZCA4EEiGLurmIEzWQaHhiMpRMYgAzPFmbDQpICFhsdTRSHkgcAAWWIE45WoFFmgg1Ax0AEYwDAAKsnoKIMFYPrVN2iVpVRXZcTX1jc1dvQNDDhZjE035bjXFpemZlYiRdQ1NiItrfYP2+tvjkx0tB1M2xxHzSJmXKxunR6902T1GLz270SAEdPBIgA
 \begin{tikzcd}
-    B'\times_BA \arrow[rr, "k"] \arrow[d, shift right] &  & A \arrow[d, "p"', shift right] \\
-    B' \arrow[rr, "\beta"] \arrow[u, shift right]      &  & B \arrow[u, "s"', shift right]
+    B'\times_BA \arrow[rr, "u"] \arrow[d, "q"', shift right] &  & A \arrow[d, "p"', shift right] \\
+    B' \arrow[rr, "v"] \arrow[u, "t"', shift right]          &  & B \arrow[u, "s"', shift right]
     \end{tikzcd}
     \]
-    the pair $(k,s)$ is stronly epimorphic.
+    where $p$, $q$ are split epimorphisms with respective sections $s$, $t$ and the downward directed square is a pullback, it holds that the pair $(u,s)$ is a strongly epimorphic pair. 
 \end{lemma}
 \end{mainbox}
-The proof is out of the scope of this thesis, but we can find it in (citazione) %\cite{Borceux}.
+
+\begin{subbox}{}
+\begin{proof}
+Assume $\mathcal{X}$ is protomodular. We want to prove that if $u$ and $s$ factorize through a mono $m$ as $u = mf$ and $s = ms'$, then $m$ is an iso. By (cita appendice), this implies that $(u,s)$ is a strongly epimorphic pair.
+Define $p' = pm$, we have that $p's'=1_Y$, in fact $p's'=pms'=ps=1_Y$. Pulling back with the change-of-base functor $v^*$ the mono $m$ along $v$ we obtain the following diagram. In this operation we also generate the morphism $q'$, $t'$, $w$. In the same way as in \Cref{p^*(f) is a pullback} we have that the diagram between $m$ and $v^*(m)$ is a pullback.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAHUQBfU9TXfIRQBGclVqMWbABoBybrxAZseAkQDMY6vWatEIaQr4rBRACxaJutgDUjS-qqHIATKWHidU-QE17ygTUUNxdPST0ObnEYKABzeCJQADMAJwgAWyQyEBwIJABWagAjGDAoJABadWy4AAssJJxK0StvEABHeR5ktMzEFtykC1aItHlqOoamxArhbpBUjKQ3HLzEYa9RkGoGOhKGAAVHU30UrFjapon6xqQ5xUW+7MH+nb2YQ+OgkDOLq5G2AB3eyPO7UF4rTZsTLguhYBhsHBwhHzUGIZ5rTQgEplJDVHZYMARKB0OoxbYA-Q0AB6ACoABTpACUFN2+yOJm+hOwsBBvQK4LWG3CbBorPen05QhADBgt1R-MQWJehWxpXKSuybI+HMC0t+lwpk1ur0pHT5S3WgrBIGN01m2hF+jgXQeiuGEOuUxtUOd4vZX3150NCstqpe2RxGvxtpu9pavpyrp6YetSuK6sqMbtNu1kr1bAN-0TTVDfWVa0hTpATAt5bTLSjlQAbAB2R3WfRJf06wOF4P-HPorgULhAA
+\begin{tikzcd}
+    W \arrow[rrdd, "q'", bend right, shift left] \arrow[r, "w"'] \arrow[rrrr, "v^*(m)" description, dashed, bend left] & X' \arrow[rd, "p'", shift left] \arrow[rr, "m", tail] &                                                                                                        & X \arrow[ld, "p"', shift right] & V \arrow[lldd, "q"', bend left, shift right] \arrow[l, "u"] \arrow[lll, "f"', bend right=67] \\
+                                                                                                                       &                                                       & Y \arrow[lu, "s'", shift left] \arrow[ru, "s"', shift right]                                           &                                 &                                                                                              \\
+                                                                                                                       &                                                       & W \arrow[u, "v"] \arrow[lluu, "t'", bend left, shift left] \arrow[rruu, "t"', bend right, shift right] &                                 &                                                                                             
+    \end{tikzcd}
+\]
+
+\end{proof}
+\end{subbox}
 
 \begin{mainbox}{}
 \begin{theo}
