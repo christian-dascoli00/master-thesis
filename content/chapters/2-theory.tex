@@ -511,7 +511,7 @@ A monad $(T,\eta,\mu)$ on a category $\mathcal{X}$ with finite coproducts is sai
 
 Now we claim a lemma which will be useful to prove some theorems.
 \begin{mainbox}{}
-\begin{lemma}
+\begin{lemma}\label{protomod lemma}
     If a category $\mathcal{X}$ is protomodular, then for each commutative diagram of the form
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRADUQBfU9TXfIRQAmclVqMWbABrdeIDNjwEiZAIzj6zVohAB1OXyWCiojdS1TdATW7iYUAObwioAGYAnCAFskZEDgQSGoWkjogTIYgnj5IogFBiADModpsNFExvoghCUgpIHAAFlhuOMGpVgog1Ax0AEYwDAAK-MpCIB5YjkXlPO5e2QWBFYUlZaN1jS1tJrpdPeWV4Qj90YNx1COI-sWl5Tm1DU2txirz3b01Emm6ffJZfluJ8XsThyBTJ7PnnZdLNyqAEc7FwgA
@@ -526,7 +526,8 @@ Now we claim a lemma which will be useful to prove some theorems.
 
 \begin{subbox}{}
 \begin{proof}
-Assume $\mathcal{X}$ is protomodular. We want to prove that if $u$ and $s$ factorize through a mono $m$ as $u = mf$ and $s = ms'$, then $m$ is an iso. By (cita appendice), this implies that $(u,s)$ is a strongly epimorphic pair.
+Assume $\mathcal{X}$ is protomodular. We want to prove that if $u$ and $s$ factorize through a mono $m$ as $u = mf$ and $s = ms'$, then $m$ is an iso. By \Cref{Eqivalence strong epi pair with iso}, this implies that $(u,s)$ is a strongly epimorphic pair.
+
 Define $p' = pm$, we have that $p's'=1_Y$, in fact $p's'=pms'=ps=1_Y$. Pulling back with the change-of-base functor $v^*$ the mono $m$ along $v$ we obtain the following diagram. In this operation we also generate the morphism $q'$, $t'$, $w$. In the same way as in \Cref{p^*(f) is a pullback} we have that the diagram between $m$ and $v^*(m)$ is a pullback.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAHUQBfU9TXfIRQBGclVqMWbABoBybrxAZseAkQDMY6vWatEIaQr4rBRACxaJutgDUjS-qqHIATKWHidU-QE17ygTUUNxdPST0ObnEYKABzeCJQADMAJwgAWyQyEBwIJABWagAjGDAoJABadWy4AAssJJxK0StvEABHeR5ktMzEFtykC1aItHlqOoamxArhbpBUjKQ3HLzEYa9RkGoGOhKGAAVHU30UrFjapon6xqQ5xUW+7MH+nb2YQ+OgkDOLq5G2AB3eyPO7UF4rTZsTLguhYBhsHBwhHzUGIZ5rTQgEplJDVHZYMARKB0OoxbYA-Q0AB6ACoABTpACUFN2+yOJm+hOwsBBvQK4LWG3CbBorPen05QhADBgt1R-MQWJehWxpXKSuybI+HMC0t+lwpk1ur0pHT5S3WgrBIGN01m2hF+jgXQeiuGEOuUxtUOd4vZX3150NCstqpe2RxGvxtpu9pavpyrp6YetSuK6sqMbtNu1kr1bAN-0TTVDfWVa0hTpATAt5bTLSjlQAbAB2R3WfRJf06wOF4P-HPorgULhAA
@@ -537,6 +538,25 @@ Define $p' = pm$, we have that $p's'=1_Y$, in fact $p's'=pms'=ps=1_Y$. Pulling b
     \end{tikzcd}
 \]
 
+Now we want to prove that $v^*(m)$ is an iso. Consider the following diagram. We know that the external diagram commutes by the hypothesis factorization.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAHUQBfU9TXfIRQBmclVqMWbAGrdeIDNjwEiZAEzj6zVohAANAORy+SwUVEbqWqbr3GF-ZUOQAGUi82SdIWV3EwoAHN4IlAAMwAnCABbJDcQHAgkNSsvNgB3e0iYpDIEpMRRCW02Jiyo2MR4xNzUkt0aAD0AKgAKaIBKcpzEFPykIutvWOocOiwGNjGJ7sqAFlGCvIAjGDAoAfihtmIAfV95bPnF5OpV9aQAWmEttN0w2aQF-qrqBiwwbyg6OAALAJAdRsIAAOiCGHQwIEGDAAARhcj7WFgiKQ6GsPxcIA
+\begin{tikzcd}
+    V \arrow[rrrd, "1_V", bend left] \arrow[rdd, "f", bend right] \arrow[rd, "{\langle f,1_V \rangle}", dashed] &                                       &  &                  \\
+                                                                                                                & W \arrow[d, "w"] \arrow[rr, "v^*(m)"] &  & V \arrow[d, "u"] \\
+                                                                                                                & X' \arrow[rr, "m", tail]              &  & X               
+    \end{tikzcd}
+\]
+Since the square is a pullback, it's obvious that $v^*(m) \langle f, 1_{V} \rangle  = 1_V$. It remains to prove that $\langle f, 1_{V} \rangle v^*(m) = 1_{W}$. 
+
+Notice that $mfv^*(m) = u v^*(m) = m w$, so $fv^*(m) = w$ since m is a mono. Now consider the following compositions, and use what we just noticed.
+\begin{itemize}
+    \item $v^*(m) (\langle f, 1_{V} \rangle v^*(m) ) = ( v^*(m) \langle f, 1_{V} \rangle ) v^*(m)  = v^*(m) 1_W $
+    \item $w (\langle f, 1_{V} \rangle v^*(m)) = (w \langle f, 1_{V} \rangle ) v^*(m) = f v^*(m) = w = w 1_W $
+\end{itemize}
+Since the pair $(v^*(m),w)$ is jointly monic we have that $\langle f, 1_{V} \rangle v^*(m) = 1_W$. Consdiering this composition and the one above, it follows that $v^*(m)$ is an iso.
+
+By the propomodurality of $\mathcal{X}$, since $v^*(m)$ is an iso, we have that $m$ is an iso, as claimed.
 \end{proof}
 \end{subbox}
 
@@ -555,7 +575,7 @@ If $\mathcal{X}$ is a pointed protomodular category with finite coproducts and $
     0 \arrow[rr, "\eta_0"] \arrow[u, "!_X"', shift right] &  & T(0) \arrow[u, "T(!_X)"', shift right]
     \end{tikzcd}
 \]
-Since $\mathcal{X}$ is protomodular then by the lemma above, the pair $(\eta_X,T(!_X))$ is a strongly epimorphic. It is a standard fact that given $f$ and $g$ morphism, if $(f,g)$ is a strongly epimorphic pair, then $[f,g]$ is a strong epi. So we conclude that $[\eta_X,T(!_X)]$ is a strong epi, ie the moand is essentially nullary. (citazione) %\cite{https://arxiv.org/pdf/1409.4219) ALGEBRAICALLY COHERENT CATEGORIES
+Since $\mathcal{X}$ is protomodular then by \Cref{protomod lemma}, the pair $(\eta_X,T(!_X))$ is a strongly epimorphic. It is a standard fact that given $f$ and $g$ morphism, if $(f,g)$ is a strongly epimorphic pair, then $[f,g]$ is a strong epi, we proved that in \Cref{Equivalence strong epi with coprod}. So we conclude that $[\eta_X,T(!_X)]$ is a strong epi, ie the moand is essentially nullary.
 \end{proof}
 \end{subbox}
 
