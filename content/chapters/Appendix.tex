@@ -72,10 +72,10 @@ Since $m$ is a mono, the projection $\mathrm{proj}_2$ is a mono. Now $f$ factors
     \begin{defi}
         Let $\mathcal{C}$ be a category and $f : A \to B$, $g : A' \to B$ be morphisms. We say that the pair $(f,g)$ is a \textbf{strongly epimorphic pair} if for each commutative diagram of solid arrows
     \[
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAGclVqMWbdgHJuvEBmx4CRAMxjq9Zq0QgAIvL7LBRAEykz47VL0BhI4v4qhyC8OuTdIAELdxMFAA5vBEoABmAE4QALZIZCA4EEgALFpebOGOUbFIoonJiGkSOmxBINQMdABGMAwACs6mepFYQQAWONnRcUXUSUgWIFW1DU2qegww4V3ppXrt3bmIGgWD-XRYDGw4m9tztiBxlTV1jSYTIK0dXTwRPXn9has23kFydyA5vQkDKwfecJyE6jc4CS7XTpLXrFP6rBhYMDeKB0ODtQIVEqHAA62JgAA8sHAcHAAAQAQlJUH8XCAA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAGclVqMWbdgHJuvEBmx4CRAMxjq9Zq0QgAIvL7LBRAEykz47VL0BhI4v4qhyC8OuTdIAELdxMFAA5vBEoABmAE4QALZIZCA4EEgALFpebEGOUbFIoonJiGkSOmzhINQMdABGMAwACs6mepFYQQAWONnRcUXUSUgWIFW1DU2qegww4V3ppXrt3bmIGgWD-XRYDGw4m9tztiBxlTV1jSYTIK0dXTwRPXn9has23uFydyA5vQkDKwfeIJyE6jc4CS7XTpLXrFP6rBhYMDeKB0ODtQIVEqHAA62JgAA8sHAcHAAAQAQlJUH8XCAA
 \begin{tikzcd}
     &                                     & B \arrow[rd, "h"] \arrow[dd, "\exists ! d", dashed] &   \\
-A' \arrow[rru, "f"] \arrow[rrd, "f'"'] & A \arrow[ru, "g"'] \arrow[rd, "g'"] &                                                     & D \\
+A' \arrow[rru, "g"] \arrow[rrd, "g'"'] & A \arrow[ru, "f"'] \arrow[rd, "f'"] &                                                     & D \\
     &                                     & C \arrow[ru, "m"', tail]                            &  
 \end{tikzcd}
     \]
@@ -97,7 +97,51 @@ A' \arrow[rru, "f"] \arrow[rrd, "f'"'] & A \arrow[ru, "g"'] \arrow[rd, "g'"] &  
 
 \begin{subbox}{}
     \begin{proof}
-        $(1 \implies 2)$
+        $(1 \implies 2)$ $(f,g)$ is a strongly epimorphic pair. Consider the commutative diagram where $m$ is a mono
+        \[ 
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEBqdgchAF9S6TLnyEUZAIxVajFmwDCAoSAzY8BIpNLTq9Zq0QgAIsuHqxW8jP3yjAIQEyYUAObwioAGYAnCAFskMhAcCCQAZj05QxBkL1JXCjMQXwCkbRCwxAAmahw6LAY2fMKQKIM2QMFvP0DEYND08rsQIuoGOgAjGAYABRENcRAfLFcACxxk1LrIzKRc2QqjMad+IA
+\begin{tikzcd}
+    A+A' \arrow[r, "{[f,g]}"] \arrow[d, "l"'] & B \arrow[d, "h"] \\
+    C \arrow[r, "m", tail]                    & D               
+    \end{tikzcd}
+        \]
+        Composing with the injection $\iota_1 : A \to A+A'$ and $\iota_2 : A' \to A+A'$ we have the following commutative diagram
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAGclVqMWbdgHJuvEBmx4CRAMxjq9Zq0QgAIvL7LBRAEykz47VL0BhI4v4qhyC8OuTdIAELdxMFAA5vBEoABmAE4QALZIZCA4EEgALFpebEGOUbFIoonJiGkSOmzhINQMdABGMAwACs6mepFYQQAWONnRcUXUSUgWIFW1DU2qegww4V3ppXrt3bmIGgWD-XRYDGw4m9tztiBxlTV1jSYTIK0dXTwRPXn9has23gwAOu-4uwD6xEu9BIDFYHN6fb50H5mCrDU5jC5CK5tTr+LhAA
+\begin{tikzcd}
+    &                                           & B \arrow[rd, "h"]        &   \\
+A' \arrow[rru, "g"] \arrow[rrd, "l\iota_2"'] & A \arrow[ru, "f"'] \arrow[rd, "l\iota_1"] &                          & D \\
+    &                                           & C \arrow[ru, "m"', tail] &  
+\end{tikzcd}
+    \]
+    Since $(f,g)$ is strongly epimorphic, there exists a unique morphism $d: B \to C$ such that $l\iota_1=df$, $l\iota_2=dg$ and $md=h$. The first two leads to $d[f,g]\iota_1=df=l\iota_1$ and $[f,g]\iota_2=dg=l\iota_2$. So, by the universal property of the coproduct, we have that $d[f,g]=l$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkATFVqMWbdgHJuvEBmx4CRMgEZx9Zq0QcA1LPl9lgoutKbq2qXoBCxxfxVDkIy1sm6QAYUdKBVRQAFnJPHWl-ZzMQ0jFrL2k5HhNA11CrCQi9dkNkhQCXIgBWDwTs325xGCgAc3giUAAzACcIAFskMhAcCCR3LNsQAB1h-Bw6AH11R1aOpAsevsQBm29R8amRWbbOlepepABmcqHkJtJaih35xBOlpFDB7ygbvdKHxAB2U-WxiAm0zeSAAbAdlj9nmwNgCtsDvuCkAAOX5sBhVLhAA
+\begin{tikzcd}
+    A \arrow[d, "\iota_1"]    &                  &   &  & A \arrow[d, "\iota_1"]  &   \\
+    A+A' \arrow[r, "{[f,g]}"] & B \arrow[r, "d"] & C &  & A+A' \arrow[r, "l"]     & C \\
+    A' \arrow[u, "\iota_2"]   &                  &   &  & A' \arrow[u, "\iota_2"] &  
+    \end{tikzcd}
+\]
+We already know that $md=h$, hence $[f,g]$ is a strong epimorphism.
+
+$(2 \implies 1)$ $[f,g]$ is a strong epimorphism. Consider the following commutative diagram where $m$ is a mono
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAGclVqMWbdgHJuvEBmx4CRAMxjq9Zq0QgAIvL7LBRAEykz47VL0BhI4v4qhyC8OuTdIAELdxMFAA5vBEoABmAE4QALZIZCA4EEgALFpebEGOUbFIoonJiGkSOmzhINQMdABGMAwACs6mepFYQQAWONnRcUXUSUgWIFW1DU2qegww4V3ppXrt3bmIGgWD-XRYDGw4m9tztiBxlTV1jSYTIK0dXTwRPXn9has23uFydyA5vQkDKwfeIJyE6jc4CS7XTr+LhAA
+\begin{tikzcd}
+    &                                     & B \arrow[rd, "h"]        &   \\
+A' \arrow[rru, "g"] \arrow[rrd, "g'"'] & A \arrow[ru, "f"'] \arrow[rd, "f'"] &                          & D \\
+    &                                     & C \arrow[ru, "m"', tail] &  
+\end{tikzcd}
+\]
+Thus we have the commutative diagram
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEBqdgchAF9S6TLnyEUARnJVajFmwBCAoSAzY8BImQkz6zVohABhZcPViiUndT3zDAEQEyYUAObwioAGYAnCAFskMhAcCCQpWX02ZC9SVwpTEF8AoOpQpAAmGzkDEBieOJ4E6gY6ACMYBgAFEQ1xEB8sVwALHETkwMQI9MQAZmyow2b2v06skLC+gbsQQLS6LAY2HAWl-gp+IA
+\begin{tikzcd}
+    A+A' \arrow[r, "{[f,g]}"] \arrow[d, "{[f',g']}"'] & B \arrow[d, "h"] \\
+    C \arrow[r, "m", tail]                            & D               
+    \end{tikzcd}
+\]
+Since $[f,g]$ is a strong epimorphism, there exists a unique morphism $d: B \to C$ such that $d[f,g]=[f'.g']$ and $md=h$. Hence $f'=[f',g']\iota_1=d[f,g]\iota_1=df$ and $g'=[f',g']\iota_2=d[f,g]\iota_2=dg$. Thus $(f,g)$ is a strongly epimorphic pair.
     \end{proof}
 \end{subbox}
-
