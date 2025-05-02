@@ -5,13 +5,99 @@
 \setcounter{theo}{0}
 
 \begin{mainbox}{}
-\begin{prop}\label{Eqivalence strong epi pair with iso}
-To do: Riportare A.4.3 adattato a strongly epimorphic pair.
-\end{prop}
+    \begin{defi}
+        Let $\gamma$ be a natural transformation between two functors $F,G : \mathcal{C} \to \mathcal{D}$, we say that $\gamma$ is \textbf{cartesian} if for every morphism $f : A \to B$ in $\mathcal{C}$, the following diagram is a pullback:
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRADEAKAQQEoQAvqXSZc+QigBM5KrUYs2AcR78hI7HgJFpARln1mrRCGUAhVcJAYN4omT3UDC413ODZMKAHN4RUADMAJwgAWyQyEBwIJB1HeSMQAB1ErzoQkLoAfWBuAUFLINDw6iikAGY4wzYufwsA4LDECsjoxGk5KuNk1PSs03z6osRYlqR2pwTlWvcBIA
+    \begin{tikzcd}
+        F(A) \arrow[rr, "\gamma_{A}"] \arrow[d, "F(f)"] &  & G(A) \arrow[d, "G(f)"] \\
+        F(B) \arrow[rr, "\gamma_B"]                     &  & G(B)                  
+        \end{tikzcd}
+    \]
+    ie the naturality diagrams are pullbacks.
+    \end{defi}
+\end{mainbox}
+
+
+\begin{mainbox}{}
+    \begin{defi}
+        Let $\mathcal{C}$ be a category and $f : A \to B$. We say that $f$ is a \textbf{strong epimorphism} if it for each commutative diagram of solid arrows
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGclVqMWbAELdeIDNjwEiZYePrNWiEAGE5fJYKKj11TVJ0ARbuJhQA5vCKgAZgCcIAWyRkQOCCRRCS02VwMQD28kACZqAKQAZni6LAY2HFT080ltEB8eN08fRD8ExDiQyxAmEGoGOgAjGAYABX5lIRB3LAcACxwIqJLg8uSqvJoh4qD4wIr6rDA8qDo4Pvs6ibYAHR2YAA8sOBw4AAIAQjOoLYbmto7jHR7+wa4KLiA
+\begin{tikzcd}
+    A \arrow[r, "f"] \arrow[d, "u"'] & B \arrow[d, "v"] \arrow[ld, "\exists ! d"', dashed] \\
+    C \arrow[r, "m", tail]           & D                                                  
+    \end{tikzcd}
+    \]
+    where $m$ is a mono, there exists a unique morphism $d$ such that $df=u$ and $md=v$.
+    \end{defi}
 \end{mainbox}
 
 \begin{mainbox}{}
-    \begin{prop}\label{Equivalence strong epi with coprod}
-    To do: Riportare equivalenza strongly epimorphic pair e coprodotto strong epi.
+    \begin{prop}\label{Eqivalence strong epi pair with iso}
+    Let $\mathcal{C}$ be a category with pullbacks and $f : A \to B$. The following are equivalent:
+    \begin{enumerate}
+        \item $f$ is a strong epimorphism;
+        \item Given a factorization $f=mg$, if $m$ is a mono, then it is an iso.
+    \end{enumerate}
     \end{prop}
 \end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        $(1 \implies 2)$ Let $f=mg$ be a factorization with $m$ mono and consider the square
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGclVqMWbAELdeIDNjwEio4ePrNWiELJ58lgomXXVNUnQGFu4mFADm8IqABmAJwgBbJGRA4ISKISWmwucq4e3oi+-kgAzGaS2iD2INQMdABGMAwACvzKQiBuWPYAFjjhIO5e8dSxiABMiSE63ulZOfmGKjol5ZX1dFgMbDjDo-rVkYH1AU3pWGDJcBAMWFBpIGUwdJuIYEwMDEMjbJDLW3BlWC6V0S0WIMIA+nryNVFBDQnBT5sdbJ5ApGPqlCo2LhAA
+\begin{tikzcd}
+    A \arrow[r, "f"] \arrow[d, "g"'] & B \arrow[d, "1_B"] \arrow[ld, "d"'] \\
+    C \arrow[r, "m"', tail]          & B                                  
+    \end{tikzcd}
+    \]
+    By $(1)$ we have $md = 1_B$. Furthermore $mdm = m$ and since $m$ is mono, we have that $dm = 1_C$. Thus $m$ is an iso.
+
+        $(2 \implies 1)$ Consider the pullback
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAmAXVJADcBDAGwFcYkQBhEAX1PU1z5CKAMwVqdJq3YARHnxAZseAkTHEJDFm0QgAQvP7KhRMhppbpujgB0beALbwA+jIO8jg1SgAMpH5pSOiAAgjwSMFAA5vBEoABmAE4QDkhiIDgQSH6S2ux2DvQ4ABaJDsBoyQBW3M7EhiBJKdk0mUhkGfRYjOw4XT0WQeypNIz0AEYwjAAKAirCIIlYUcU4DU2piOltiOSDeboFRaXllRA1zuTryZt7GVmIHZbBtNfNiAAsrQ-pjFhgwSg9DgxUib02X3uSDukzAUDSOWe7Hi4KQkJ2OVh8MQAFoRIihrpmOFuEA
+\begin{tikzcd}
+    A \arrow[rd, dashed] \arrow[rrrd, "f", bend left] \arrow[rdd, "u", bend right] &                                                                       &  &                  \\
+                                                                                   & C\times_DB \arrow[d, "\mathrm{proj}_1"] \arrow[rr, "\mathrm{proj}_2"] &  & B \arrow[d, "v"] \\
+                                                                                   & C \arrow[rr, "m"', tail]                                              &  & D               
+    \end{tikzcd}
+    \]
+Since $m$ is a mono, the projection $\mathrm{proj}_2$ is a mono. Now $f$ factors through $\mathrm{proj}_2$, so by $(2)$ $\mathrm{proj}_2$ is an iso. We define $d=\mathrm{proj}_1 (\mathrm{proj}_2)^{-1}$, which is the morphism we are looking for.
+    \end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
+    \begin{defi}
+        Let $\mathcal{C}$ be a category and $f : A \to B$, $g : A' \to B$ be morphisms. We say that the pair $(f,g)$ is a \textbf{strongly epimorphic pair} if for each commutative diagram of solid arrows
+    \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAGclVqMWbdgHJuvEBmx4CRAMxjq9Zq0QgAIvL7LBRAEykz47VL0BhI4v4qhyC8OuTdIAELdxMFAA5vBEoABmAE4QALZIZCA4EEgALFpebOGOUbFIoonJiGkSOmxBINQMdABGMAwACs6mepFYQQAWONnRcUXUSUgWIFW1DU2qegww4V3ppXrt3bmIGgWD-XRYDGw4m9tztiBxlTV1jSYTIK0dXTwRPXn9has23kFydyA5vQkDKwfecJyE6jc4CS7XTpLXrFP6rBhYMDeKB0ODtQIVEqHAA62JgAA8sHAcHAAAQAQlJUH8XCAA
+\begin{tikzcd}
+    &                                     & B \arrow[rd, "h"] \arrow[dd, "\exists ! d", dashed] &   \\
+A' \arrow[rru, "f"] \arrow[rrd, "f'"'] & A \arrow[ru, "g"'] \arrow[rd, "g'"] &                                                     & D \\
+    &                                     & C \arrow[ru, "m"', tail]                            &  
+\end{tikzcd}
+    \]
+    where $m$ is a mono, there exists a unique morphism $d$ such that $f'=df$, $g'=dg$ and $md=h$.
+    \end{defi}
+\end{mainbox}
+
+
+
+\begin{mainbox}{}
+    \begin{prop}\label{Equivalence strong epi with coprod}
+    Let $\mathcal{C}$ be a category with binary coproducts and $f : A \to B$, $g : A' \to B$ be morphisms. The following are equivalent:
+    \begin{enumerate}
+        \item $(f,g)$ is a strongly epimorphic pair;
+        \item $[f,g]$ is a strong epimorphism.
+    \end{enumerate}
+    \end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        $(1 \implies 2)$
+    \end{proof}
+\end{subbox}
+

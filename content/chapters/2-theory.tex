@@ -410,22 +410,6 @@ The diagram costructed by $p^*$ acting on a morphism $f : (A,\alpha) \to (A',\al
 \end{proof}
 \end{subbox}
 
-We need the following definition in order to claim some properties.
-
-\begin{mainbox}{}
-\begin{defi}
-    Let $\gamma$ be a natural transformation between two functors $F,G : \mathcal{C} \to \mathcal{D}$, we say that $\gamma$ is a cartesian natural transformation if for every morphism $f : A \to B$ in $\mathcal{C}$, the following diagram is a pullback:
-\[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRADEAKAQQEoQAvqXSZc+QigBM5KrUYs2AcR78hI7HgJFpARln1mrRCGUAhVcJAYN4omT3UDC413ODZMKAHN4RUADMAJwgAWyQyEBwIJB1HeSMQAB1ErzoQkLoAfWBuAUFLINDw6iikAGY4wzYufwsA4LDECsjoxGk5KuNk1PSs03z6osRYlqR2pwTlWvcBIA
-\begin{tikzcd}
-    F(A) \arrow[rr, "\gamma_{A}"] \arrow[d, "F(f)"] &  & G(A) \arrow[d, "G(f)"] \\
-    F(B) \arrow[rr, "\gamma_B"]                     &  & G(B)                  
-    \end{tikzcd}
-\]
-ie the naturality diagrams are pullback.
-\end{defi}
-\end{mainbox}
-
 \begin{mainbox}{}
 \begin{propr}
 The unit $\eta$ and the counit $\epsilon$ are cartesian.
