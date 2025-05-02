@@ -5,7 +5,7 @@ In order to understand the notions introduced in this thesis is important to rec
 First we define some categories that will be used throughout the thesis. Let $\mathcal{A}$ be a category, we defines the following categories.
 
 \begin{itemize}
-    \item The slice category: given an object $B$ in a category $\mathcal{A}$, we call $(\mathcal{A} \downarrow B)$ the category of objects over $E$, we denote an object by $(A, \alpha:A \to B)$. A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $f: A \to A'$ such that $\alpha' f = \alpha$.
+    \item The \textbf{slice category}: given an object $B$ in a category $\mathcal{A}$, we call $(\mathcal{A} \downarrow B)$ the category of objects over $E$, we denote an object by $(A, \alpha:A \to B)$. A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $f: A \to A'$ such that $\alpha' f = \alpha$.
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiAJnLj6zVog5y+SwUQDMG6lqm72Acn0L+yocnVjzknSFldxMKAHN4IlAAMwAnCABbJDIQHAgkETdtNgAdFMY0AAs6OzDIpHVY+MRTCWTdYNzwqMRCuKQAFiTLEDSM7Kr8kup6xCaylraGLLpbby4gA
     \begin{tikzcd}
@@ -13,7 +13,7 @@ First we define some categories that will be used throughout the thesis. Let $\m
     B                     &  & B                                    &                         
     \end{tikzcd}
     \]
-    \item The coslice category: given an object $B$ in a category $\mathcal{A}$, we call $(B \downarrow \mathcal{A})$ the category of objects under $B$, we denote an object by $(\alpha:B \to A, A)$. A morphism between two objects $(\alpha, A)$ and $(\alpha', A')$ is a morphism $f: A \to A'$ such that $f \alpha = \alpha'$.
+    \item The \textbf{coslice category}: given an object $B$ in a category $\mathcal{A}$, we call $(B \downarrow \mathcal{A})$ the category of objects under $B$, we denote an object by $(\alpha:B \to A, A)$. A morphism between two objects $(\alpha, A)$ and $(\alpha', A')$ is a morphism $f: A \to A'$ such that $f \alpha = \alpha'$.
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACEQBfU9TXfIRRkAjFVqMWbAILdeIDNjwEiAJnLj6zVog5y+SwWtJjqWqbtk8DAlSgDMJzZJ0hpAcm7iYUAObwiUAAzACcIAFskMhAcCCQRMxc2AB1kxjQACzp9EFCIpHUYuMRHCW0UtIZM7OtcsMjEQtikABZE8t1U9KzPWryG0ubENrKLXK8uIA
     \begin{tikzcd}
@@ -21,7 +21,7 @@ First we define some categories that will be used throughout the thesis. Let $\m
     A                     &  & A \arrow[r, "f"]                            & A'
     \end{tikzcd}
     \]
-    \item The category of points: given an object $B$ in a category $\mathcal{A}$, we call $\mathrm{Pt}(B)$ the category of points of $B$, we denote an object by $(A,B,p,s)$ which is a diagram of the type $A \overset{p}{\underset{s}{\rightleftarrows}} B$ with the condition $ps=1_B$. Morphisms between two objects $(A,B,p,s)$ and $(A',B',p',s')$ are diagrams of the type 
+    \item The \textbf{category of points}: given an object $B$ in a category $\mathcal{A}$, we call $\mathrm{Pt}(B)$ the category of points of $B$, we denote an object by $(A,B,p,s)$ which is a diagram of the type $A \overset{p}{\underset{s}{\rightleftarrows}} B$ with the condition $ps=1_B$. Morphisms between two objects $(A,B,p,s)$ and $(A',B',p',s')$ are diagrams of the type 
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGUsKq1GLNgCFuvEBmx4CRAEzkJ9Zq0QcA5NwkwoAc3hFQAMwBOEALZIyIHBCSiQcABZYrOd9Ta0npoINQMdABGMAwACvwqQiA2WKZe-jzWdo6IGi5uiB7evv6FgVK6iobhUTHxyoJsKWkZCrYOAflIecV+nRHRcQmNes3pYZI6bHCGmSDtOR6uTtS9pR5BlQg1g-UCqqOp43MLK1255VN6VkZcQA
     \begin{tikzcd}
@@ -36,7 +36,7 @@ We recall the following definitions.
 
 \begin{mainbox}{}
     \begin{defi}
-        A A finitely complete category $\mathcal{A}$ is said to be regular if
+        A A finitely complete category $\mathcal{A}$ is said to be \textbf{regular} if
         \begin{itemize}
             \item Every morphism in $\mathcal{A}$ admits an (regular epi, mono) factorization;
             \item Regular epis in $\mathcal{A}$ are pullback stable.
@@ -46,7 +46,7 @@ We recall the following definitions.
 
 \begin{mainbox}{}
     \begin{defi}
-        A category $\mathcal{A}$ is said to be exact if
+        A category $\mathcal{A}$ is said to be \textbf{exact} if
         \begin{itemize}
             \item It is regular;
             \item Any equivalence relation is the kernel pair of some arrow.
@@ -54,7 +54,7 @@ We recall the following definitions.
     \end{defi}
 \end{mainbox}
     
-In order to define the next notion, we need the following construction. Suppose $\mathcal{A}$ has pullbacks and consider a morphism $f: B' \to B$ in the same category. We define the change-of-base functor of $f$.
+In order to define the next notion, we need the following construction. Suppose $\mathcal{A}$ has pullbacks and consider a morphism $f: B' \to B$ in the same category. We define the \textbf{change-of-base functor} of $f$.
 \[
 f^* : \mathrm{Pt}(B) \to \mathrm{Pt}(A)
 \]
@@ -79,14 +79,14 @@ where $\langle 1_{B'},sf \rangle$ is the section of $\mathrm{proj}_1$. It holds 
 
 \begin{mainbox}{}
     \begin{defi}
-        A finitely complete category $\mathcal{A}$ is said to be protomodular if for every morphism $f: A \to B$ in $\mathcal{A}$, the change-of-base functor $f^*: \mathrm{Pt}(B) \to \mathrm{Pt}(A)$ is conservative.
+        A finitely complete category $\mathcal{A}$ is said to be \textbf{protomodular} if for every morphism $f: A \to B$ in $\mathcal{A}$, the change-of-base functor $f^*: \mathrm{Pt}(B) \to \mathrm{Pt}(A)$ is conservative.
     \end{defi}
 \end{mainbox}
 
 We conclude recalling the follwing.
 \begin{mainbox}{}
     \begin{defi}
-        A category $\mathcal{A}$ is said to be semiabelian if
+        A category $\mathcal{A}$ is said to be \textbf{semiabelian} if
         \begin{itemize}
             \item It is pointed;
             \item It is exact;
