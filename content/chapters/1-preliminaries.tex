@@ -2,7 +2,7 @@
 
 \fontsize{12}{13}\selectfont
 
-In order to understand the notions introduced in this thesis is important to recall some definitions and constructions. We also take this opportunity to introduce and fix some notation.
+In order to understand the notions introduced in this thesis is important to recall some definitions and constructions. We also take this opportunity to introduce and fix some notations.
 
 First we define some categories that will be used throughout the thesis. Let $\mathcal{A}$ be a category, we defines the following categories.
 
@@ -31,7 +31,7 @@ First we define some categories that will be used throughout the thesis. Let $\m
                                                     & B \arrow[ru, "s'"', shift right] \arrow[lu, "s"', shift right] &                                  
     \end{tikzcd}
     \]
-    with the condition $p'f=p$ and $fs=s'$
+    with the conditions $p'f=p$ and $fs=s'$
 \end{itemize}
 
 We recall the following definitions.
@@ -58,7 +58,7 @@ We recall the following definitions.
     
 In order to define the next notion, we need the following construction. Suppose $\mathcal{A}$ has pullbacks and consider a morphism $f: B' \to B$ in the same category. We define the \textbf{change-of-base functor} of $f$.
 \[
-f^* : \mathrm{Pt}(B) \to \mathrm{Pt}(A)
+f^* : \mathrm{Pt}(B) \to \mathrm{Pt}(B')
 \]
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoBGAXVJADcBDAGwFcYkQAhAcgB0e8AtvAD6HAIIgAvqXSZc+QigBsFanSat2E6bOx4CRFQCY1DFm0ScpMkBj0KiZEzTObL3a7vkGUABlUuGhYg2jZ23orI-s7q5uwcnrZy+pHkAbFuIInhKURG6a7B2ckOKADMpL6mQfFcUmowUADm8ESgAGYAThACSP4gOBBIaRnBfAL0OAAWnQLAaN0AVpLCRoldPUgVA0OI+aPs7evdvYj9g1uBcZbjkzNzCxDLwuTHm4gjF3tXmWggNHAplh2jgkABacg6EAbU5kHZIACsNEY9AARjBGAAFEo+ECMGAg-4HSx-AFAwmICFQmFIFTwxAAdhoOHoWEY7AmaDgFzJwNBjJ+wXaAD0AFRvU5I+lwwF88EjQrsBDUk5IfZfEayikQwVKiVIAAczN2-UYWDAwSg9EBjSJipuPBRYCa+IABORhMBuNI4O1XXxOvRnfj9YgjfSRuiwFAtv17SBfaHw19tlGY5SynGapYPV6uJJ6pIgA
@@ -68,7 +68,9 @@ A \arrow[d, "p", shift left] & {} \arrow[r, "f^*", maps to, shift right=7] & {} 
 B \arrow[u, "s", shift left] &                                             &    &                                                                                                                      & B' \arrow[rr, "f"]                                                     &  & B \arrow[u, "s", shift left]
 \end{tikzcd}
 \]
-where $\langle 1_{B'},sf \rangle$ is the section of $\mathrm{proj}_1$. It holds that $(\mathrm{proj}_1) \langle 1_{B'},sf \rangle = 1_{B'}$.
+where $\langle 1_{B'},sf \rangle$ is the section of $\mathrm{proj}_1$. It holds that $(\mathrm{proj}_1) \langle 1_{B'},sf \rangle = 1_{B'}$. The action on a morphism $\alpha: A \to A'$ is given by
+
+
 \fontsize{11}{13}\selectfont
 \[ 
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQAhAcgB0e8AtvAD6HAIIgAvqXSZc+QigCsFanSat2E6bOx4CRAOyqaDFm0QgxXKTJAY9CogA4T68+259BI8TZ32cvqKyABspACMamaalhy2uvIGKOEATNEaFpz+dg5JIeRuMVnauUFOKBFFmVo5icFEqdUelgmBjsnIAMzNsSBteQ0ohVGmNXFSajBQAObwRKAAZgBOEAJIhSA4EEgqIABGMGBQSAC0XZvF7HwC9DgAFssCwGirAFaSwhEgNHD3WIscGcIgEVmskFUtjtEGR3H00D8QH8AUDEKcQXYwetEE0oUhYVdLGgbDRGPRDowAArlZIgZZYGb3IG-f6AiGg1bYzbbCFjFogG53R7PV4QD7CVKIskU6kdRR0hlMtpY3l4nF8vp8Jhoe70ZWcpA9NW4wkCni3B5PF7vT6pOogFWIbnQo2HY6GzaMLBgLJQeh-aaI02LAB6ACoABRaxg6+gASn14MQex5MI1WUWUvJMCpNPljBgbI5SaNqb2bpOiAu6eu5qFVtF4oiJJA0pzsvy7HpjOZSNZqIxSwNiHCauMcKy0djiexrjVAE4aDh6FhGOxbmg4DyWSjdjXLKGwzOkKPUxFLuN7IjkWy0YOHcPx2eL-zidf+6q27m5V3FUDi9i55LtCo43qi6L7kix6IEBY47rekKmnALZfh2QwKj20Gwme8HgYhl4IAB+LAUguJgaqSEodm36dpY3ZKkRyYkU6NAVh6uHApBfBkmAMwFgABBEwjANw0hwIsfDLPQvEFtBKYuqxRyVucmzkTBXE8DxfEwIJwmiaQyGLPxknSdpWYynmv6YZIlCSEAA

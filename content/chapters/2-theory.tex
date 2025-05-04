@@ -8,7 +8,7 @@
     A \textbf{connected limit} is a limit over a connected category. A category is connected if it is inhabited and any two objects can be connected by a zigzag of morphisms
     \[
     \begin{tikzcd}
-        x_0 = y_1 \arrow[rd, leftrightarrow] &   & y_3 \arrow[ld, leftrightarrow] \arrow[rd, leftrightarrow] &        & y_n=x_1 \arrow[ld, leftrightarrow] \\
+         y_1 \arrow[rd, leftrightarrow] &   & y_3 \arrow[ld, leftrightarrow] \arrow[rd, leftrightarrow] &        & y_n \arrow[ld, leftrightarrow] \\
                           & y_2 &                                  & \cdots &             
         \end{tikzcd}
     \]
@@ -38,7 +38,7 @@
 \end{rembox}
 \begin{rembox}{}
     \begin{rem}\label{connected limits computed on the base}
-    The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the object $L$ of the limit cone $(L,(q_i)_{i \in \mathcal{I}})$ in $\mathcal{A}$ a morphism to form an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we chose for example $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit in $\mathcal{A}$ are also morphisms in $(\mathcal{A} \downarrow E)$, ie $(\varphi_i)(q_i) = (\varphi_1)(q_1) \ \forall i $.
+    The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the object $L$ of the limit cone $(L,(q_i)_{i \in \mathcal{I}})$ in $\mathcal{A}$ a morphism to form an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we chose $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit in $\mathcal{A}$ are also morphisms in $(\mathcal{A} \downarrow E)$, ie $(\varphi_i)(q_i) = (\varphi_1)(q_1) \ \forall i $.
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
     \[
         \begin{tikzcd}
@@ -91,10 +91,10 @@ Note that this result is not true for all the limits. This is extensively shown 
     \]
     We try to compute the product directly in $(\mathcal{A} \downarrow E)$. Let $(D,\delta)$ and $(D',\delta')$ be two objects in $(\mathcal{A} \downarrow E)$, the product is given by the following pullback
     \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBAHS7wFt4AfQBCHAOQgAvqXSZc+QigBMFanSat24qTJAZseAkXKliahizaJOO2QYVEyZmhc3WAorb1zDikqSVzDSsQT0k1GCgAc3giUAAzACcIPiQTEBwIJCVpBOTUxDIMrMQAZhdg9h4mNAALegkaRnoAIxhGAAUfB2tErCjanC8klLSaTKRiXJARgpVipHL1SyquGvrh-OzxkoAWCpXrasY6+hAm1vau+yNe-sHN0cKdpH3ltxBj04lp2cWXxBvRhYMAhKAQZgtRhsGi1GD0KDsSCg84ZehYRhIggwkDNNqdbq3XEweJDcKSIA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQARAHS7wFt4AfQBCHAOQgAvqXSZc+QigBMFanSat24qTJAZseAkXKliahizaJOO2QYVEyZmhc3WAorb1zDikqSVzDSsQT0k1GCgAc3giUAAzACcIPiQTEBwIJCVpBOTUxDIMrMQAZhdg9h5YRhx6CRpGegAjGEYABR8Ha0SsKIALHC8klLSaTKRiXJARgpVipHL1SyquGrrh-OzxkoAWCpXraraNxpa2zvsjHr7BzdHCnaR95bcQY9r6+4KlicQXxhYMAhOAQQFQEA0fowegQxBgZiMRjjehYRjsSDAyEgJqtDpda4gXoDIYHN7EQRhSiSIA
 \begin{tikzcd}
-    & A\times_BA' \arrow[ld] \arrow[r] & A' \arrow[ld, "\alpha'"'] \arrow[ldd, "\alpha'"] \\
-A \arrow[r, "\alpha"] \arrow[rd, "\alpha"'] & E \arrow[d, no head, Rightarrow] &                                                  \\
+    & D\times_BD' \arrow[ld] \arrow[r] & D' \arrow[ld, "\delta'"'] \arrow[ldd, "\delta'"] \\
+D \arrow[r, "\delta"] \arrow[rd, "\delta"'] & E \arrow[d, "1_E"']              &                                                  \\
     & E                                &                                                 
 \end{tikzcd}
 \]
@@ -151,7 +151,7 @@ defined as follows:
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQAmclVqMWbdgHJuvEBmx4CRMgEZx9Zq0QgAovL7LBRAMxjq2qXqOL+KocgAsliTrZ2lA1SgCsbta6HF4OpigA7IGSwbKhJr7IAZpWMWyGPMY+TlEp7jYgAELc4jBQAObwRKAAZgBOEAC2SGQgOBBIovnBADo9sAw4dCDUDHQARjAMAAphviB1WOUAFjh29U0t1O1I6qkeelAjIGOTM3NCJzA1a5kgG82Ie20diF1BbH0DQ3KjE1OzBKXBjXW4KB5ICwvJCuNp0LAMNiNOhoOA7ahwZZYG5IALdNhoAD6AEJ1g1HnidogAGz7ApHO4QxBRaGIAAcdOCaGOpwBFzYixWYNq5Nx21eHPxejQXymQx5-3OQIFS1Wx0x2LWiGIjNFNPFSElH2lssGdDkXAoXCAA
 \begin{tikzcd}
-    D \arrow[d, "\delta"'] \arrow[rr, "d"] &  & D' \arrow[lld, "\delta'"] & {} \arrow[r, "p_!", maps to, shift right=5] & {} & D \arrow[rr, "d"] \arrow[rrd, "p\delta"'] &  & D' \arrow[d, "p\delta'"] \\
+    D \arrow[d, "\delta"'] \arrow[rr, "g"] &  & D' \arrow[lld, "\delta'"] & {} \arrow[r, "p_!", maps to, shift right=5] & {} & D \arrow[rr, "g"] \arrow[rrd, "p\delta"'] &  & D' \arrow[d, "p\delta'"] \\
     E                                      &  &                           &                                             &    & E \arrow[rr, "p"']                        &  & B                       
     \end{tikzcd}
 \]
@@ -181,7 +181,7 @@ Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks, then
 \end{tikzcd}
 \quad \text{with } p_! \dashv p^*
 \]
-is an adjunction. In particular the unit is given by
+is an adjunction. The unit is given by
 
 \begin{minipage}{0.45\textwidth}
     \[
@@ -224,7 +224,7 @@ and the counit is given by
 \end{mainbox}
 \begin{subbox}{}
 \begin{proof}
-Let us show that this is actually an adjunction. First we want to prove that the unit is a natural transformation. Let $g : (D,\delta)  \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$, we want to prove that the following diagram commutes:
+We want to prove this is adjunction. We start proving that the unit is a natural transformation. Let $g : (D,\delta)  \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$, we want to prove that the following diagram commutes:
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbdgHJuvEBmx4CRAEzlx9Zq0QgAogB1DeALbwA+gCFOPPssHrSY6tql6jJrObjXZ3cRgoAHN4IlAAMwAnCFMkMhAcCCQNCR02YxgcOgtgAAp2UmNYBmyASi55SJi4xBFqJKQAZldJXRBM7NyCmSLDEuyZCqqQaNj4huS61vS9YJGx2tTGxBa090UAPQAqNAsAQjzgsoBeYzwGWGBgyq4KLiA
 \begin{tikzcd}
@@ -252,7 +252,7 @@ In order to do that we need to expand the action of the functor $p^*p_!$ on the 
     \end{tikzcd}
 \]
 
-Considering the diagram
+Consider the following commutative diagram. 
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbdgHJuvEBmx4CRAEzlx9Zq0QgAogB1DeALbwA+gCFOPPssHrSY6tql6jJrObjXZ8+wFVFAAWZy1JXQ45O0V+FSFkDTUInTZ9ALiHYOQwlNdItitucRgoAHN4IlAAMwAnCFMkMhAcCCQNCTS9YxgcOgtgAAp2UmNYBn6ASi5M+sakEWo2pABmAu6QXv7BkZkxwwn+mRm5hqbEFpXEJa73EHKzhcRO6-W7qLQAPQAqNAsAIRDcpTAC8xjwDFgwHKs1i8wu72uYQ+bGMpjoOAAFnVTMA0A0AFZcCxqGIKBFrZbtRAAVg293RmJxeIJEGJFhE5Nq5yQ9NaNIAbAzPk8LijrsLUXo0OMYJM6NyQJTLtSqSAGFgwFEoHQ4FiyiUuEA
 \begin{tikzcd}
@@ -261,14 +261,14 @@ Considering the diagram
                                                                            &  & E \arrow[rr, "p"]                                                        &  & B                       
     \end{tikzcd}
 \]
-we can prove the naturality in the left diagram by the universal property of the pullback in the right. Since $(\mathrm{proj}_1$, $\mathrm{proj}_2)$ are jointly monic, by the following compositions
+Since $(\mathrm{proj}'_1$, $\mathrm{proj}'_2)$ are jointly monic, by the following compositions
 \begin{itemize}
     \item $(\mathrm{proj}_2')(\tilde{g})(\eta_{(D,\delta)}) = (g)(\mathrm{proj}_2)(\eta_{(D,\delta)}) = (g)(1_D) = g$
     \item $(\mathrm{proj}_2')(\eta_{(D',\delta')})(g) = (1_{D'})(g) = g$
     \item $(\mathrm{proj}_1')(\tilde{g})(\eta_{(D,\delta)}) = (\mathrm{proj}_1)(\eta_{(D,\delta)}) = \delta$
-    \item $(\mathrm{proj}_1')(\eta_{(D',\delta')})(g) = (\delta')(f) = \delta$
+    \item $(\mathrm{proj}_1')(\eta_{(D',\delta')})(g) = (\delta')(g) = \delta$
 \end{itemize}
-we conclude that ($\tilde{g}) (\eta_{(D,\delta)}) = (\eta_{(D',\delta')}) (g)$. So the naturality condition of $\eta$ is satisfied.
+we conclude that ($\tilde{g}) (\eta_{(D,\delta)}) = (\eta_{(D',\delta')}) (g)$. Thus the naturality condition of $\eta$ is satisfied.
 
 Now we want to prove that the counit is a natural transfromation. Consider $f : (A,\alpha) \to (A',\alpha')$ a morphism in $(\mathcal{A} \downarrow B)$, we want to prove that the following diagram commutes:
 \[
@@ -290,38 +290,38 @@ As similarly done above, we need to expand the action of the functor $p_!p^*$ on
     \end{tikzcd}
 \]
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAGYK1Ok1btxUmdjwEiAVhU0GLNohCiA5JOkgMu+UQBsxtWfbdeWAXBHXbHTl9FAAWUgBGVVMNC2FA+1k9BWRyNxjzEASHYJSI9PVMyVUYKABzeCJQADMAJwg+JHyQHAgkcPdYkB4mNAALegS6hqQyFrbEDoz2HsZ++hsaRnoAIxhGAAUkpwtarDK+nCH6xsQ08aaTQpmuPnocPtq+YDR6gCsJQWIQJdX1rccIRAewOR20IGGp2arVGVw8FmqxxGiGUF0QY2mFh4dweTxe70+33BkKQ5xhKJoazAUCQinOjCwYEyUHocD6pR+nUyPBgAA8sHAcHAAAQAQmFPDgaHoAGMYBLvIxYMBqhIkacjGjXC16FhGOw7mhBW0aGysNUjohNZj7IJRerSTRyR0qTTEABaOlwrpoAAU2Puj2erwgH0EEQAlJzlmtNtsgSDDg6KWiXTBqbTzja-QHccGCeGrFGJJQJEA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAGYK1Ok1btxUmdjwEiAVhU0GLNohCiA5JOkgMu+UQBsxtWfbdeWAXBHXbHTl9FAAWUgBGVVMNC2FA+1k9BWRyNxjzEASHYJSI9PVMyVUYKABzeCJQADMAJwg+JHyQHAgkcPdYkB4mNAALegS6hqQyFrbEDoz2HsZ++hsaRnoAIxhGAAUkpwtarDK+nCH6xsQ08aaTQpmuPnocPtq+YDR6gCsJQWIQJdX1rccIRAewOR20IGGp2arVGVw8FmqxxGiGUF0QY2mFh4dweTxe7wkVi+SNO5xhKJoazAUCQinOjCwYEyUHocD6pR+nUyPBgAA8sHAcHAAAQAQmFPDgaHoAGMYBLvIxYMBqhISUgjGjXC16FhGOw7mhBW0aGysNUjohNZj7IJReqzjRyR0qTTEABaOlwrpoAAU2Puj2erwgH0EEQAlJzlmtNtsgSDDg7Uc7KTBqbTzja-QHccGCeGrFGJJQJEA
 \begin{tikzcd}
-    {} \arrow[r, "p_!", maps to, shift right=5] & {} & E\times_BA \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\tilde{f}", dashed, bend left] \arrow[rrd, "p(\mathrm{proj}_1)"', bend right] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &   & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}_2"] \arrow[lld, "p(\mathrm{proj}_1')", bend left] \\
-                                                &    &                                                                                                                                                       &                                        & B &                           &                                                                                       
+    {} \arrow[r, "p_!", maps to, shift right=5] & {} & E\times_BA \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "\tilde{f}", dashed, bend left] \arrow[rrd, "p(\mathrm{proj}_1)"', bend right] & A \arrow[rd, "\alpha"] \arrow[rr, "f"] &   & A' \arrow[ld, "\alpha'"'] & E\times_BA' \arrow[l, "\mathrm{proj}'_2"] \arrow[lld, "p(\mathrm{proj}_1')", bend left] \\
+                                                &    &                                                                                                                                                       &                                        & B &                           &                                                                                        
     \end{tikzcd}
 \]
 
-Since $\epsilon_{(A,\alpha)}$ is the $\mathrm{proj}_{2,E\times_BA}$, the composition $(f)(\epsilon_{(A,\alpha)})=(\epsilon_{(A',\alpha')})(\tilde{f})$ holds by the definition of $\tilde{f}$. So also the naturality of $\epsilon$ is satisfied.
+Since $\epsilon_{(A,\alpha)} = \mathrm{proj}_{2,E\times_BA}$, the composition $(f)(\epsilon_{(A,\alpha)})=(\epsilon_{(A',\alpha')})(\tilde{f})$ holds by the definition of $\tilde{f}$. Thus also the naturality of $\epsilon$ is satisfied.
 
-Now we can check that the unit and counit fulfil the first triangle identities. Let $(A,\alpha)$ be an object in $(\mathcal{A} \downarrow B)$, we have:
+Now we can check that the unit and counit fulfil the first triangle identities. Let $(A,\alpha)$ be an object in $(\mathcal{A} \downarrow B)$.
 \[ ((p^*\epsilon) \circ (\eta p^*))_{(A,\alpha)} = (p^*\epsilon)_{(A,\alpha)}  (\eta p^*)_{(A,\alpha)} = p^*(\mathrm{proj}_{2,E\times_BA})  (\eta_{(E\times_BA,\mathrm{proj}_1)} ) = \circledast
 \]
 
 Considering first how $p^*$ acts on the morphism $\mathrm{proj}_{1,E\times_BA}$
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkQCMpfSvrNWiEEIlSQGHXKIBmZdVPqL17bL0oALC9UzNgkVGCgAc3giUAAzACcIXiQyEBwIJCVA9xBuRjQACzoAAgAKNASAKwFgJS4eLH44YRFxAEoQagY6ACMYBgAFGV15EDiscPycTxB4xKRDVPTETLdzHM48wunZpMQUtPnXNTXyiCrgQzq+QVFxbYTd50WkfxA4fKwYqcQAViOgixoAB6ACoOqk6FgGGxeHQ0HADuIKOIgA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkQCMpfSvrNWiEEIlSQGHXKIBmZdVPqL17bL0oALC9UzNgkVGCgAc3giUAAzACcIXiQyEBwIJCVA9xBuRjQACzoAAgAKbl46HHy43mA0BIArcQFgJS4eLH44YRFxAEoQagY6ACMYBgAFGV15EDiscPycTxB4xKRDVPTETLdzHM48wpW1pMQUtI3XNX3yyura+ogmlrbuPkFRcROEs+ctpD+EBwfJYGLLRAAVmuQQsaAAegAqQapOhYBhsCpoOCXcQUcRAA
 \begin{tikzcd}
-    E\times_BA \arrow[rd, "{\alpha (proj_{2,E\times_BA})}"'] \arrow[rr, "{proj_{1,E\times_BA}}"] &   & A \arrow[ld, "\alpha"] & {} \arrow[r, "p^*", maps to, shift right=5] & {} \\
-                                                                                                 & B &                        &                                             &   
+    E\times_BA \arrow[rd, "{\alpha (\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{2,E\times_BA}}"] &   & A \arrow[ld, "\alpha"] & {} \arrow[r, "p^*", maps to, shift right=5] & {} \\
+                                                                                                                   & B &                        &                                             &   
     \end{tikzcd}
 \]
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAUXHln5xhAQQCUIAL6l0mXPkIoAzOSq1GLNuL6ChMpSpAZseAkQCsu6vWatEIc8tU2NRAOxO+q5G3CbSZhbe6nYoACykAEx6LobuQpFWaraayPFayQZuHEp6MFAA5vBEoABmAE4QvEhkIDgQSACMzoVsaA0AVgLACaTGkqZioePSMkJyiiDUDHQARjAMAApZvu51WOUAFjgZ9Y3N1G1IOkGpIFMMsMB9EIPDo1NSsooLS6vrWz4YiAGDAasdqGswFArsQvCBTk1EC1LohHDcis9Xl0xp9RDjBLN5otgX9NtsgSCwcTIdDEABaLSwywIzoXdqIeLotgibiMNAHOhyESYoYjfHhGSKBS-NZkwGaEB7Q7HOEsxBdVrskZc9wit7ir7E5aygHRBVKo4nBqI7UozkpIq8hj8uhG0mm7JsSkq5nWq5spDah29Aai94SXGSt0m8kK71Ws6Ia4otHG-6xtgW8EgGkw7rBXWh4DYj6mKOqv2ogMc-O3NDR9Pyr2glUURRAA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAUXHln5xhAQQCUIAL6l0mXPkIoAzOSq1GLNuL6ChMpSpAZseAkQCsu6vWatEIc8tU2NRAOxO+q5G3CbSZhbe6nYoACykAEx6LobuQpFWaraayPFayQZuHEp6MFAA5vBEoABmAE4QvEhkIDgQSACMzoVs3Lx0OAAWdbzAaA0AVooCwAmkxpKmYqGL4fKKINQMdABGMAwAClm+7nVY5YM4GfWNzdRtSDpBqSArDLBjkzNzC1Kyihstrt9kcfDEQAwYDUrtQ9mAoI9iF4QDcmogWg9EI5nkU+gNhqNxhApjMur8luS1nJARDgYdjuDIdDNiA4QjEABaLRIyyozr3dqIeI4tgibiMNCDOhyMWcfpDEafYnTWbzFZ-MyKBRAvb0sGaEBnC5XZF8xBdVqCuYi9x4hWEyYqn7q0wyGnbXWg6IGo2Xa4NNHWzHClK4zgSqUsj0ghkGpkm3kBx4CpDW0O9OX4xVEkmqyn-KN0r3ZNjx-23RBPTHY6N671sX0w1kweGI7rBW2Z+1K3Nkl1rDampNYlNC9svNCFz2x0tQk0URRAA
 \begin{tikzcd}
-    E\times_B(E\times_BA) \arrow[rrr, "{\mathrm{proj}_{2,E\times_B(E\times_AB)}}"'] \arrow[rrrrrrr, "{\tilde{\mathrm{proj}_{2,E\times_BA}}}", bend left] \arrow[rrrrddd, "{\mathrm{proj}_{1,E\times_B(E\times_AB)}}", bend right] &  &  & E\times_BA \arrow[rdd, "{(\alpha)(\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{2,E\times_BA}}"'] &                  & A \arrow[ldd, "\alpha"] &  & E\times_BA \arrow[ll, "{\mathrm{proj}_{2,E\times_BA}}"] \arrow[lllddd, "{\mathrm{proj}_{1,E\times_BA}}"', bend left] \\
-                                                                                                                                                                                                       &  &  &                                                                                                 &                  &                         &  &                                                                                                    \\
-                                                                                                                                                                                                       &  &  &                                                                                                 & B                &                         &  &                                                                                                    \\
-                                                                                                                                                                                                       &  &  &                                                                                                 & E \arrow[u, "p"] &                         &  &                                                                                                   
+    E\times_B(E\times_BA) \arrow[rrr, "{\mathrm{proj}_{2,E\times_B(E\times_BA)}}"'] \arrow[rrrrrrr, "{\tilde{proj_{2,E\times_BA}}}", bend left] \arrow[rrrrddd, "{\mathrm{proj}_{1,E\times_B(E\times_BA)}}", bend right] &  &  & E\times_BA \arrow[rdd, "{(\alpha)(\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{2,E\times_BA}}"'] &                  & A \arrow[ldd, "\alpha"] &  & E\times_BA \arrow[ll, "{\mathrm{proj}_{2,E\times_BA}}"] \arrow[lllddd, "{\mathrm{proj}_{1,E\times_BA}}"', bend left] \\
+                                                                                                                                                                                                                         &  &  &                                                                                                                   &                  &                         &  &                                                                                                                      \\
+                                                                                                                                                                                                                         &  &  &                                                                                                                   & B                &                         &  &                                                                                                                      \\
+                                                                                                                                                                                                                         &  &  &                                                                                                                   & E \arrow[u, "p"] &                         &  &                                                                                                                     
     \end{tikzcd}
 \]
 
-\[ \circledast = (\tilde{\mathrm{proj}_2}) (\eta_{(E\times_BA,\mathrm{proj}_1)}) \] 
+\[ \circledast = (\tilde{\mathrm{proj}_{2,E\times_BA}}) (\eta_{(E\times_BA,\mathrm{proj}_1)}) \] 
 and then considering the definition of $\eta$, we obtain
 \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoAjKQVVajFmy48s-OMIAUWvoNEBKCVJAZseAkQDMy1fWatEHbsb2iL0m3KIlACZndTcOXysZW3lkRxDqFw13IQlVGCgAc3giUAAzACcIXiRHEBwIJAAWRLC2NBBqBjoAIxgGAAVogPcCrEyACxxIwuKkJXLKxCDJfKKSxAmK0trXeqKAKwFgJSMdE0NPfe8RU3ER+aQg6mXEGrU19zR9NE3t3aPdYRFxc1mQUYLMiTK7UNpgKClYFJcIKbZ7L6ic7-QFIYG3CYMLBgcJQOhwAYZRogQl0SGIMBMBgMG50LAMNiQHHEmFsbgwAAeWDgODgAAIAIR87hwNB0ADGMD5AB5XhAtjtSAiTD9lPDPirxAA+C5jRDoqZlcHkgC09mBzTanW6dl6-SGLLqTzeiuVJ2RFHEQA
@@ -332,7 +332,7 @@ and then considering the definition of $\eta$, we obtain
     \end{tikzcd}
 \]
 
-\[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle) \] 
+\[ \circledast = (\tilde{\mathrm{proj}_{2,E\times_BA}}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle \] 
 
 In order to conclude we need to check some compositions so that, by the universal property of the pullback $E\times_BA$ in the right of the following diagram, we obtain the identity morphism.
 \[
@@ -344,32 +344,35 @@ E\times_BA \arrow[ru, "{\ \ \ \ \ \ \langle \mathrm{proj}_{1,E\times_BA},1_{E\ti
 \end{tikzcd}
 \]
 
-\[ \circledast = (\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle) = \mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}\] 
-
-We want to check that composition of the projections of $E\times_BA$ with $\circledast$ is the same of composing those projection with $\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}}$.  Following the first composition
+We want to check that composition of the projections of $E\times_BA$ with $\circledast$ is the same of composing those projection with $1_{(E\times_BA,\mathrm{proj}_1)}$. Then, since the projections are jointly monic, we have the result. Following the first composition
 \[ 
-     (\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = 
+     (\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}_{2,E\times_BA}}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = 
 \]     
 \[
- = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =
+ = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle =
 \]
 \[
-    = (\mathrm{proj}_{2,E \times_BA}) (1_{E\times_BA}) = \mathrm{proj}_{2,E \times_BA} = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}})
+    = (\mathrm{proj}_{2,E \times_BA}) (1_{E\times_BA}) =(\mathrm{proj}_{2,E \times_BA}) (1_{(E\times_BA,\mathrm{proj}_1)})
 \]
 and the second composition
 \[
-    (\mathrm{proj}_{1,E \times_BA})(\tilde{\mathrm{proj}_2}) (\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) = (\mathrm{proj}_{1,E\times_B(E\times_BA)})(\langle \mathrm{proj}_1, 1_{E\times_BA} \rangle) =   
+    (\mathrm{proj}_{1,E \times_BA})(\tilde{\mathrm{proj}_{2,E\times_BA}}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle =
+    \]
+    \[
+    = (\mathrm{proj}_{1,E\times_B(E\times_BA)}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = \mathrm{proj}_{1,E \times_BA} = \] 
+    \[
+    = (\mathrm{proj}_{1,E \times_BA}) (1_{(E\times_BA,\mathrm{proj}_1)})
 \]
-\[   
-    \mathrm{proj}_{1,E \times_BA} = (\mathrm{proj}_{1,E \times_BA}) (\mathrm{Id_{(E\times_BA,\mathrm{proj}_1)}})
-\]
+
+Hence
+\[ \circledast = (\tilde{\mathrm{proj}_{2,E\times_BA}}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = 1_{(E\times_BA,\mathrm{proj}_1)}\] 
 
 Finally we can check the second triangle identities. Let $(D,\delta)$ be an object in $(\mathcal{A} \downarrow E)$, we have:
 \[
-((\epsilon p_!) \circ (p_! \eta))_{(D,\delta)} = ((\epsilon p_!)_{(D,\delta)} (p_! \eta))_{(D,\delta)} = (\epsilon_{p_!(D,\delta)}) p_! (\langle \delta, 1_D \rangle) =
+((\epsilon p_!) \circ (p_! \eta))_{(D,\delta)} = ((\epsilon p_!)_{(D,\delta)} (p_! \eta))_{(D,\delta)} = (\epsilon_{p_!(D,\delta)}) p_! \langle \delta, 1_D \rangle =
 \]
 \[ 
-    = (\epsilon_{(D,p \delta)}) p_! (\langle \delta, 1_D \rangle) = \mathrm{proj}_{2,E\times_BD} (\langle \delta, 1_D \rangle) = 1_D = \mathrm{Id}_{(D,\delta)}
+    = (\epsilon_{(D,p \delta)}) p_! (\langle \delta, 1_D \rangle) = \mathrm{proj}_{2,E\times_BD} \langle \delta, 1_D \rangle = 1_{(D,p\delta)}
 \]
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAiIAL6l0mXPkIoATOSq1GLNmMnTseAkSUBGFfWatEIIRKkgMOuUTJHqJ9efYSVMKAHN4RUABmAE4QvEhkIDgQSAbOamYg3Lx0OAAWQbzAaCEAVuICwEpcPFj8cMIi4laBIWGIAMzUUUhKqqZsaNUgwaHhTdENce3m2RA5BbHFfIKiVVrdtTH9LUOuNtywDDh0HuJAA
@@ -469,17 +472,15 @@ Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\a
     \]
     Let $q$ be the coequalizer of the kernel pair $\mathrm{Eq}(q)$. We can affirm by \Cref{p^*(f) is a pullback} applied to $q$ that the diagram in the bottom-right corner is a pullback. Since by hypothesis $q$ is a pullback stable regular epimorphism, we have that $\tilde{q}$ is a regular epimorphism, ie it is the coequalizer of some parallel arrows. Let $(r_1,r_2)$ be such pair.
     
-    Now we want to prove that $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$. Since $\tilde{q}$, $\tilde{p_1}$ and $\tilde{p_2}$ are obtained applying $p^*$ to the kernel pair $\mathrm{Eq}(q)$, and $p^*$ preserves limits, then $p^*(\mathrm{Eq}(q))$ is the kernel pair of $\tilde{q}$. So by the universal property there exists a unique morphism $s : C \to p^*(\mathrm{Eq}(q))$ such that $\tilde{p_1}s=r_1$ and $\tilde{p_2}s=r_2$. Now let $u$ be a morphism such that $u \tilde{p_1} = u \tilde{p_2}$. We have that $ur_1 = u \tilde{p_1} s = u \tilde{p_2} s = ur_2$, so by the universal property of the coequalizer $\tilde{q}$ there exists a unique morphism $t : p^*(\mathrm{Coeq}(p_1,p_2)) \to C'$ such that $t\tilde{q} = u$. So $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$.
+    Now we want to prove that $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$. Since $\tilde{q}$, $\tilde{p_1}$ and $\tilde{p_2}$ are obtained applying $p^*$ to the kernel pair $\mathrm{Eq}(q)$, and $p^*$ preserves limits, then $p^*(\mathrm{Eq}(q))$ is the kernel pair of $\tilde{q}$. So by the universal property there exists a unique morphism $s : C \to p^*(\mathrm{Eq}(q))$ such that $\tilde{p_1}s=r_1$ and $\tilde{p_2}s=r_2$. Now let $u$ be a morphism such that $u \tilde{p_1} = u \tilde{p_2}$. We have that $ur_1 = u \tilde{p_1} s = u \tilde{p_2} s = ur_2$, hence by the universal property of the coequalizer $\tilde{q}$ there exists a unique morphism $t : p^*(\mathrm{Coeq}(p_1,p_2)) \to C'$ such that $t\tilde{q} = u$. So $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$.
     \end{proof}
     \end{subbox}
 
-\section{The monad associated to the adjunction}
-
-Consider the monad associated to the adjunction we just studied, we want to study some properties that will be useful.
+Later on it will be useful to study monads. Thus, we state the following proposition.
 
 \begin{mainbox}{}
 \begin{propr}
-Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks. The monad $(p^*p_!, \eta, p^*\epsilon p_!)$ is cartesian.
+Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks. The associated monad $(p^*p_!, \eta, p^*\epsilon p_!)$ is cartesian.
 \end{propr}
 \end{mainbox}
 \begin{subbox}{}
@@ -490,9 +491,11 @@ The category $(\mathcal{A} \downarrow E)$ has pullbacks, by \Cref{U creates con 
 \end{proof}
 \end{subbox}
 
+\section{Nullary and essentially nullary monads}
+
 \begin{mainbox}{}
 \begin{defi}
-A monad $(T,\eta,\mu)$ on a category $\mathcal{X}$ with finite coproducts is said to be \textbf{essentially nullary} if the morphism $[T(!_X),\eta_X]$ is a strong epimorphism for each object $X$ in $\mathcal{X}$, where $!_X$ is the unique morphism from the initial object of $\mathcal{X}$ to $X$.
+A monad $(T,\eta,\mu)$ on a category $\mathcal{X}$ with finite coproducts is said to be \textbf{essentially nullary} if, for each object $X$ in $\mathcal{X}$, the morphism $[T(!_X),\eta_X]$ is a strong epimorphism, where $!_X$ is the unique morphism from the initial object of $\mathcal{X}$ to $X$.
 \end{defi}
 \end{mainbox}
 
@@ -513,9 +516,9 @@ Now we claim a lemma which will be useful to prove some theorems.
 
 \begin{subbox}{}
 \begin{proof}
-Assume $\mathcal{X}$ is protomodular. We want to prove that if $u$ and $s$ factorize through a mono $m$ as $u = mf$ and $s = ms'$, then $m$ is an iso. By \Cref{Eqivalence strong epi pair with iso}, this implies that $(u,s)$ is a strongly epimorphic pair.
+Assume $\mathcal{X}$ is protomodular. We want to prove that if $u$ and $s$ factorize through a mono $m$ as $u = mf$ and $s = ms'$, then $m$ is an iso. By a standard result, proved in \Cref{Eqivalence strong epi pair with iso}, this implies that $(u,s)$ is a strongly epimorphic pair.
 
-Define $p' = pm$, we have that $p's'=1_Y$, in fact $p's'=pms'=ps=1_Y$. Pulling back with the change-of-base functor $v^*$ the mono $m$ along $v$ we obtain the following diagram. In this operation we also generate the morphism $q'$, $t'$, $w$. In the same way as in \Cref{p^*(f) is a pullback} we have that the diagram between $m$ and $v^*(m)$ is a pullback.
+Define $p' = pm$, we have that $p's'=1_Y$, in fact $p's'=pms'=ps=1_Y$. Pulling back with the change-of-base functor $v^*$ the mono $m$ we obtain the following diagram. In this operation we also generate the morphisms $q'$, $t'$ and $w$. In the same way as in \Cref{p^*(f) is a pullback} we have that the diagram between $m$ and $v^*(m)$ is a pullback.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAHUQBfU9TXfIRQBGclVqMWbABoBybrxAZseAkQDMY6vWatEIaQr4rBRACxaJutgDUjS-qqHIATKWHidU-QE17ygTUUNxdPST0ObnEYKABzeCJQADMAJwgAWyQyEBwIJABWagAjGDAoJABadWy4AAssJJxK0StvEABHeR5ktMzEFtykC1aItHlqOoamxArhbpBUjKQ3HLzEYa9RkGoGOhKGAAVHU30UrFjapon6xqQ5xUW+7MH+nb2YQ+OgkDOLq5G2AB3eyPO7UF4rTZsTLguhYBhsHBwhHzUGIZ5rTQgEplJDVHZYMARKB0OoxbYA-Q0AB6ACoABTpACUFN2+yOJm+hOwsBBvQK4LWG3CbBorPen05QhADBgt1R-MQWJehWxpXKSuybI+HMC0t+lwpk1ur0pHT5S3WgrBIGN01m2hF+jgXQeiuGEOuUxtUOd4vZX3150NCstqpe2RxGvxtpu9pavpyrp6YetSuK6sqMbtNu1kr1bAN-0TTVDfWVa0hTpATAt5bTLSjlQAbAB2R3WfRJf06wOF4P-HPorgULhAA
 \begin{tikzcd}
@@ -538,7 +541,7 @@ Since the square is a pullback, it's obvious that $v^*(m) \langle f, 1_{V} \rang
 
 Notice that $mfv^*(m) = u v^*(m) = m w$, so $fv^*(m) = w$ since m is a mono. Now consider the following compositions, and use what we just noticed.
 \begin{itemize}
-    \item $v^*(m) (\langle f, 1_{V} \rangle v^*(m) ) = ( v^*(m) \langle f, 1_{V} \rangle ) v^*(m)  = v^*(m) 1_W $
+    \item $v^*(m) (\langle f, 1_{V} \rangle v^*(m) ) = ( v^*(m) \langle f, 1_{V} \rangle ) v^*(m)  = 1_V v^*(m) = v^*(m) 1_W$
     \item $w (\langle f, 1_{V} \rangle v^*(m)) = (w \langle f, 1_{V} \rangle ) v^*(m) = f v^*(m) = w = w 1_W $
 \end{itemize}
 Since the pair $(v^*(m),w)$ is jointly monic we have that $\langle f, 1_{V} \rangle v^*(m) = 1_W$. Consdiering this composition and the one above, it follows that $v^*(m)$ is an iso.
@@ -562,7 +565,7 @@ If $\mathcal{X}$ is a pointed protomodular category with finite coproducts and $
     0 \arrow[rr, "\eta_0"] \arrow[u, "!_X"', shift right] &  & T(0) \arrow[u, "T(!_X)"', shift right]
     \end{tikzcd}
 \]
-Since $\mathcal{X}$ is protomodular then by \Cref{protomod lemma}, the pair $(\eta_X,T(!_X))$ is a strongly epimorphic. It is a standard fact that given $f$ and $g$ morphism, if $(f,g)$ is a strongly epimorphic pair, then $[f,g]$ is a strong epi, we proved that in \Cref{Equivalence strong epi with coprod}. So we conclude that $[\eta_X,T(!_X)]$ is a strong epi, ie the moand is essentially nullary.
+By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback. Since $\mathcal{X}$ is protomodular then by \Cref{protomod lemma}, the pair $(\eta_X,T(!_X))$ is strongly epimorphic. By a standard result, proved in \Cref{Equivalence strong epi with coprod}, this yields that $[\eta_X,T(!_X)]$ is a strong epi. Thus the moand is essentially nullary.
 \end{proof}
 \end{subbox}
 

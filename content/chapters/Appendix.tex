@@ -36,7 +36,7 @@
 \end{mainbox}
 
 \begin{mainbox}{}
-    \begin{prop}\label{Eqivalence strong epi pair with iso}
+    \begin{prop}\label{Eqivalence strong epi with iso}
     Let $\mathcal{C}$ be a category with pullbacks and $f : A \to B$. The following are equivalent:
     \begin{enumerate}
         \item $f$ is a strong epimorphism;
@@ -55,9 +55,9 @@
     C \arrow[r, "m"', tail]          & B                                  
     \end{tikzcd}
     \]
-    By $(1)$ we have $md = 1_B$. Furthermore $mdm = m$ and since $m$ is mono, we have that $dm = 1_C$. Thus $m$ is an iso.
+    By $(1)$ we have $md = 1_B$. Furthermore $mdm = m$ and, since $m$ is mono, we have that $dm = 1_C$. Thus $m$ is an iso.
 
-        $(2 \implies 1)$ Consider the pullback
+        $(2 \implies 1)$ We want to prove that $f$ is a strong epi. Consider the pullback
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAmAXVJADcBDAGwFcYkQBhEAX1PU1z5CKAMwVqdJq3YARHnxAZseAkTHEJDFm0QgAQvP7KhRMhppbpujgB0beALbwA+jIO8jg1SgAMpH5pSOiAAgjwSMFAA5vBEoABmAE4QDkhiIDgQSH6S2ux2DvQ4ABaJDsBoyQBW3M7EhiBJKdk0mUhkGfRYjOw4XT0WQeypNIz0AEYwjAAKAirCIIlYUcU4DU2piOltiOSDeboFRaXllRA1zuTryZt7GVmIHZbBtNfNiAAsrQ-pjFhgwSg9DgxUib02X3uSDukzAUDSOWe7Hi4KQkJ2OVh8MQAFoRIihrpmOFuEA
 \begin{tikzcd}
@@ -85,7 +85,21 @@ A' \arrow[rru, "g"] \arrow[rrd, "g'"'] & A \arrow[ru, "f"'] \arrow[rd, "f'"] &  
     \end{defi}
 \end{mainbox}
 
+\begin{mainbox}{}
+    \begin{prop}\label{Eqivalence strong epi pair with iso}
+    Let $\mathcal{C}$ be a category with pullbacks and $f : A \to B$, $g : A' \to B$ be morphisms. The following are equivalent:
+    \begin{enumerate}
+        \item $(f,g)$ is a strong epimorphic pair;
+        \item Given factorizations $f=mf'$ and $g=mg'$, if $m$ is a mono, then it is an iso.
+    \end{enumerate}
+    \end{prop}
+\end{mainbox}
 
+\begin{subbox}{}
+    \begin{proof}
+        By adding the morphism $g'$ and its conditions in the proof of \Cref{Eqivalence strong epi with iso}, we obtain the proof of the current proposition.
+\end{proof}
+\end{subbox}
 
 \begin{mainbox}{}
     \begin{prop}\label{Equivalence strong epi with coprod}
@@ -107,7 +121,7 @@ A' \arrow[rru, "g"] \arrow[rrd, "g'"'] & A \arrow[ru, "f"'] \arrow[rd, "f'"] &  
     C \arrow[r, "m", tail]                    & D               
     \end{tikzcd}
         \]
-        Composing with the injection $\iota_1 : A \to A+A'$ and $\iota_2 : A' \to A+A'$ we have the following commutative diagram
+        Composing with the injection $\iota_1 : A \to A+A'$ and $\iota_2 : A' \to A+A'$, we have the following commutative diagram
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAGclVqMWbdgHJuvEBmx4CRAMxjq9Zq0QgAIvL7LBRAEykz47VL0BhI4v4qhyC8OuTdIAELdxMFAA5vBEoABmAE4QALZIZCA4EEgALFpebEGOUbFIoonJiGkSOmzhINQMdABGMAwACs6mepFYQQAWONnRcUXUSUgWIFW1DU2qegww4V3ppXrt3bmIGgWD-XRYDGw4m9tztiBxlTV1jSYTIK0dXTwRPXn9has23gwAOu-4uwD6xEu9BIDFYHN6fb50H5mCrDU5jC5CK5tTr+LhAA
 \begin{tikzcd}
@@ -116,7 +130,7 @@ A' \arrow[rru, "g"] \arrow[rrd, "l\iota_2"'] & A \arrow[ru, "f"'] \arrow[rd, "l\
     &                                           & C \arrow[ru, "m"', tail] &  
 \end{tikzcd}
     \]
-    Since $(f,g)$ is strongly epimorphic, there exists a unique morphism $d: B \to C$ such that $l\iota_1=df$, $l\iota_2=dg$ and $md=h$. The first two leads to $d[f,g]\iota_1=df=l\iota_1$ and $[f,g]\iota_2=dg=l\iota_2$. So, by the universal property of the coproduct, we have that $d[f,g]=l$.
+    Since $(f,g)$ is strongly epimorphic, there exists a unique morphism $d: B \to C$ such that $l\iota_1=df$, $l\iota_2=dg$ and $md=h$. The first two yield the equalities $d[f,g]\iota_1=df=l\iota_1$ and $[f,g]\iota_2=dg=l\iota_2$. So, by the universal property of the coproduct, we have that $d[f,g]=l$.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkATFVqMWbdgHJuvEBmx4CRMgEZx9Zq0QcA1LPl9lgoutKbq2qXoBCxxfxVDkIy1sm6QAYUdKBVRQAFnJPHWl-ZzMQ0jFrL2k5HhNA11CrCQi9dkNkhQCXIgBWDwTs325xGCgAc3giUAAzACcIAFskMhAcCCR3LNsQAB1h-Bw6AH11R1aOpAsevsQBm29R8amRWbbOlepepABmcqHkJtJaih35xBOlpFDB7ygbvdKHxAB2U-WxiAm0zeSAAbAdlj9nmwNgCtsDvuCkAAOX5sBhVLhAA
 \begin{tikzcd}
