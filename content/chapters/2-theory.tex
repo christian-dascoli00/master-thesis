@@ -614,17 +614,50 @@ By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback
     \]
 
     Now we want to prove that $(\mathcal{A} \downarrow 0)$ is exact, from the exactness of $\mathcal{A}$.
-    Consider an equivalence relation $(R,r_1,r_2)$ in $(\mathcal{A} \downarrow 0)$, endowed with the morphism $\rho$ and $\alpha$ as shown in the diagram below. We want to prove that such equivalence relation is the kernel pair of some arrow. Since $\mathcal{A}$ is exact, it is a kernel pair in $\mathcal{A}$. By \Cref{equiv rel is kernel pair of the coeq} we can suppose that it is the kernel pair of its coequalizer.
+    First we prove it is finitely complete. It suffices to show that it has terminal a object and pullbacks. The terminal object is the one just shown above. It also has pullbacks, by \Cref{U creates con lim}, since pullbacks are connected limits and $\mathcal{A}$ has them.
+
+    Consider now an equivalence relation $(R,r_1,r_2)$ in $(\mathcal{A} \downarrow 0)$, endowed with the morphism $\rho$ and $\alpha$ as shown in the diagram below. We want to prove that such equivalence relation is the kernel pair of some arrow. Since $\mathcal{A}$ is exact, it is a kernel pair in $\mathcal{A}$. By \Cref{equiv rel is kernel pair of the coeq} we can suppose that it is the kernel pair of its coequalizer.
     \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACUQBfU9TXfIRQBGclVqMWbAILdeIDNjwEiAJjHV6zVohAAhOXyWCio4eK1TdxbuJhQA5vCKgAZgCcIAWyRkQOCCRREDgACyxXHCDNSR0QdwB9VRBqBjoAIxgGAAV+ZSF4rAdQqJ43Tx9EPwDokPDIpABaYMs4xOFDEA9vWprEdQltNgBHFJBQmDooNhwAdwgJqYQyrorfaj6AZhih3QAdPfdQwNSMrNzjFV13IpLO7srgrZ2rEAPGNFC6e7X+jcDENsQAwsGA4lA6GF7GNWmwDjAAB5YOA4OAAQgABAcsXtMjhvlwKFwgA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACUQBfU9TXfIRQBGclVqMWbAILdeIDNjwEiAJjHV6zVohAAhOXyWCio4eK1TdxbuJhQA5vCKgAZgCcIAWyRkQOCCRREDgACyxXHCDNSR0QdwB9VRBqBjoAIxgGAAV+ZSF4rAdQqJ43Tx9EPwDokPDIpABaYMs4xOFDEA9vWprEdQltNgBHFJBQmDooNhwAdwgJqYQyrorfaj6AZhih3QAdPfdQwNSMrNzjFV13IpLO7srgrZ2rEAPGNFC6e7X+jcDENsQAwsGA4lA6GF7GNWmwDjAAB5YOA4OAAQgABAdMjhvlwKFwgA
 \begin{tikzcd}
-    R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left] \arrow[rd, "\rho"'] & A \arrow[r, "q", two heads] \arrow[d, "\alpha"] & B \arrow[ld, "\exists! \ \beta", dashed] \\
-                                                                                      & 0                                               &                                         
+    R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left] \arrow[rd, "\rho"'] & A \arrow[r, "q", two heads] \arrow[d, "\alpha"] & B \arrow[ld, "\exists! \beta", dashed] \\
+                                                                                      & 0                                               &                                       
     \end{tikzcd}
     \]
     Since $r_1$ and $r_2$ are morphism in $(\mathcal{A} \downarrow 0)$, we have that $\alpha r_1 = \rho = \alpha r_2$. Thus, by the universal property of the coequalizer, there exists a unique morphism $\beta$ such that $\beta q = \alpha$. Providing to $B$ the morphism $\beta$ we have that $(B,\beta)$ is the coequalizer of $(R,r_1,r_2)$ in $(\mathcal{A} \downarrow 0)$. Notice that $\beta$ is a morphism in $(\mathcal{A} \downarrow 0)$ by $\beta q = \alpha$.
-    \end{proof}
+
+    We proceed by proving that $(\mathcal{A} \downarrow 0)$ is regular. Both the conditions of the definition of regular category are easely extendable from $\mathcal{A}$ to $(\mathcal{A} \downarrow 0)$. In fact since in $\mathcal{A}$ each morphism admits a (regular epi, mono) factorization, then the same holds in $(\mathcal{A} \downarrow 0)$ just providing to the objects a suitable morphism, as shown below.
+
+    \begin{minipage}{0.30\textwidth}
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAhHnxAZseAkXKliEhizaIQARXn9lQtaRFapukMR4SYUAObwioAGYAnCAFskZEDgQSOqSOuxuRiCePn40gUhiIAAWMPRQ7DgA7hApaQg02tJ6bLzuXr6IifGIITj0WIwZ9Y0FVuy+pVHlsQFBiADMrWF6ADojTGhJ9JHRFbV9g6FFIGMARjB1dtxAA
+    \begin{tikzcd}
+    & Q \arrow[rd, "m", tail] &                       \\
+    A \arrow[rr, "f"] \arrow[ru, "e", two heads] \arrow[rd, "\alpha"] &                         & B \arrow[ld, "\beta"] \\
+    & 0                       &                      
+    \end{tikzcd}
+        \end{minipage}
+        \begin{minipage}{0.30\textwidth}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAGkQBfU9TXfIRQBGclVqMWbAILdeIDNjwEiAJjHV6zVohAAhOXyWCio4eK1TdxbuJhQA5vCKgAZgCcIAWySiQOCCR1CW02VmoACxg6KDYcAHcIKJiEHjdPH0Qyf0DEPzgIrFccJABaP0sdEAdDEA9vJGyA32oCopK8zUkqiJBqBjoAIxgGAAV+ZSEQdywHCJK0uoyWnKQAZi7Q3QAdbcY0CLpa+szg5sQNkKsQXZgADyw4HDgAQgACEv6sMCqoOgL7MdlllqOdLgNhmMJiZdDM5p8rlVdvtDm8HG8ALxvCI1LgULhAA
+\begin{tikzcd}
+    K \arrow[r, "g", shift left] \arrow[r, "h"', shift right] \arrow[rd, "\alpha g = hg"'] & A \arrow[r, "e", two heads] \arrow[d, "\alpha"] & B \arrow[ld, "\exists! t", dashed] \\
+                                                                                           & 0                                               &                                   
+    \end{tikzcd}
+    \end{minipage}
+    \begin{minipage}{0.30\textwidth}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEUQBfU9TXfIRQAmclVqMWbAELdeIDNjwEiARlKrx9Zq0Qhi3cTCgBzeEVAAzAE4QAtkjIgcEJOok62D6jjpYGbL7+cla2DojuLkiiHlJ6ADrxAEYwviEgNvaOPq6IMdpxIIkpvgAEDlwUXEA
+\begin{tikzcd}
+Q \arrow[rr, "m", tail] \arrow[rd, "\beta m"] &   & B \arrow[ld, "\beta"] \\
+                                              & 0 &                      
+\end{tikzcd}
+    \end{minipage}
+    
+    \noindent In order to prove that regular epis are pullback stable in $(\mathcal{A} \downarrow 0)$ we can use the fact that they are in $\mathcal{A}$. In fact, having a regular epi in $\mathcal{A}$ we can proceed providing a suitable morphism to the coequalizer as done above.
+
+    It remains to prove that the $(\mathcal{A} \downarrow 0)$ is protomodular. Since the construction of the change-of-base functor involves pullbacks, which are a connected limits, then by \Cref{connected limits computed on the base} the construction is the same in $(\mathcal{A} \downarrow 0)$ and in $\mathcal{A}$. Thus $(\mathcal{A} \downarrow 0)$ inherits protomodularity from $\mathcal{A}$, noting that the definition of iso in $\mathcal{A}$ and $(\mathcal{A} \downarrow 0)$ is the same. Hence, since $\mathcal{X} = (\mathcal{A} \downarrow 0)$ is exact, protomodular, pointed and has binary coproducts, we can conclude that it is semiabelian.
+\end{proof}
 \end{subbox}
+
+
 
 \begin{mainbox}{}
     \begin{defi}
