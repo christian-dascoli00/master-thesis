@@ -462,13 +462,13 @@ Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\a
     Consider the following diagram
     
     \[
-    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBmAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABhCDACOAXwAUaAPoBGUouIBKENNLpMufIRQqqNBizaIQAQS06QGbHgJEADBWp0mrdl14DhwACikrKS6tK2uo4GrqTEHmbelmgAegBUsr58QiLBcmGa2lH6zkZxCV4W9umyVuoAvFZceNzwCgBCgZH2ek6GJOWmleypGVn+IuJScooqauqFdg4l-WQuFebsogDk3ct9setDm5aiWh4wUADm8ESgAGaCENxIKiA4EEhunicgkt2PZ5IMjvT6IN5wfhYe44JAAWjeiSqagBTxeiBBH1eNEh0Nh4OOSXsyhANEY9AARjBGAAFXoxSyCLBXfiwoogQHo8g0LEY9mcpAAFh5YKU-LRSAArCKvuKgYhuaChTioTD4YjhpZmlhGLBgGoImTKdS6dFSiBGDA1XKuTLEMKQLi1QSfkTtbqYPrlIaLcbafTzUyWWy7AL7Xbpa6qu69TJUfKHbyAGyEqrMePoyPJslYMBVKD0SGXUlRnwcGAADywcBwcAAhAACEMPCWIADsdodTvxGt+giUJfJVP9ZsMICDrIzSA7SvDjtV+IRqfYggUxCn7btiqRZcr1drDcbCCNw9NKxXzMnObz7ALRag52kQA
-    \begin{tikzcd}
-        C \arrow[rdd, "r_1"', shift right] \arrow[rdd, "r_2", shift left] \arrow[dd, "\exists ! s"', dashed]       &                                                                     & C'                                                                       \\
-                                                                                                                  &                                                                     &                                                                          \\
-        p^*(\mathrm{Eq}(q)) \arrow[d] \arrow[r, "\tilde{p_2}", shift left] \arrow[r, "\tilde{p_1}"', shift right] & p^*(A)=A\times_BE \arrow[d] \arrow[r, "\tilde{q}"] \arrow[ruu, "u"] & {p^*(\mathrm{Coeq}(p_1,p_2))} \arrow[d] \arrow[uu, "\exists! t", dashed] \\
-        \mathrm{Eq(q)} \arrow[r, "p_2", shift left] \arrow[r, "p_1"', shift right]                                & A \arrow[r, "q"]                                                    & {\mathrm{Coeq}(p_1,p_2)}                                                
-        \end{tikzcd}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBmAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABhCDACOAXwAUaAPoBGUouIBKENNLpMufIRQqqNBizaIQAQS06QGbHgJEADBWp0mrdl14DhwACikrKS6tK2uo4GrqTEHmbelmgAegBUsr58QiLBcmGa2lH6zkZxCV4W9umyVuoAvFZceNzwCgBCgZH2ek6GJOWmleypGVn+IuJScooqauqFdg4l-WQuFebsogDk3ct9setDm5aiWh4wUADm8ESgAGaCENxIKiA4EEhunicgkiA0fgwehQdg4ADuECBIIQRRAj2eSDI70+iDecH4WHuOCQAFo3okqmpugiXohkR9XjQMVicWjjkl7MoASBGPQAEYwRgABV6MUsgiwV34OLhpKQ5BolPJYqeZIALFLUUpZYjEABWJVfVVkyUopCKkA07F4gnDSzNLCMWDANQRGhszk8vmlVkwE06iVaxCG410s2-S3WmC25T21kcrm86KuwXC0V2cU+72an6MoM2mQs6GgywQqHAqCwxNyg3egBsDKqzBJpY1FYdWDAVSg9AxlxZhJ8HBgAA8sHAcHAAIQAAi4o4TDzrAHZvb7MSb6WmqoJmQ7I86Y4YQHGRbW1XP9cmjYu6fiq+w18QD2Sj9K9V2LT3+4O4KOxxOEBundGVlehX3Rtm3YVt21BaRKGkIA
+\begin{tikzcd}
+    C \arrow[rdd, "r_1"', shift right] \arrow[rdd, "r_2", shift left] \arrow[dd, "\exists ! \ s"', dashed]    &                                                                                & C'                                                                         \\
+                                                                                                              &                                                                                &                                                                            \\
+    p^*(\mathrm{Eq}(q)) \arrow[d] \arrow[r, "\tilde{p_2}", shift left] \arrow[r, "\tilde{p_1}"', shift right] & p^*(A)=A\times_BE \arrow[d] \arrow[r, "\tilde{q}", two heads] \arrow[ruu, "u"] & {p^*(\mathrm{Coeq}(p_1,p_2))} \arrow[d] \arrow[uu, "\exists! \ t", dashed] \\
+    \mathrm{Eq(q)} \arrow[r, "p_2", shift left] \arrow[r, "p_1"', shift right]                                & A \arrow[r, "q", two heads]                                                    & {\mathrm{Coeq}(p_1,p_2)}                                                  
+    \end{tikzcd}
     \]
     Let $q$ be the coequalizer of the kernel pair $\mathrm{Eq}(q)$. We can affirm by \Cref{p^*(f) is a pullback} applied to $q$ that the diagram in the bottom-right corner is a pullback. Since by hypothesis $q$ is a pullback stable regular epimorphism, we have that $\tilde{q}$ is a regular epimorphism, ie it is the coequalizer of some parallel arrows. Let $(r_1,r_2)$ be such pair.
     
@@ -603,7 +603,7 @@ By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback
         \end{tikzcd}
         \]
 
-        $\mathcal{A}$ has finite coproducts, so $(\mathcal{A} \downarrow 0)$ has finite coproducts. In fact consider $(A,\alpha)$, $(B,\beta)$ in $\mathcal{A} \downarrow 0$ and $A+B$ in $\mathcal{A}$, with the canonical injections $\iota_1 : A \to A+B$ and $\iota_2 : B \to A+B$. Let $(C,\gamma)$ be an object in $\mathcal{A}\downarrow 0$ with $f:A \to C$ and $g:B \to C$ morphisms in $\mathcal{A}\downarrow 0$ . Providing to $A+B$ the morphism $[\alpha,\beta]$ we have that $(A+B, [\alpha,\beta])$ is the coproduct of $(A,\alpha)$ and $(B,\beta)$ in $(\mathcal{A} \downarrow 0)$, in fact $\gamma [f,g] = [\alpha,\beta]$, so $[f,g]$ is also a morphism in $(\mathcal{A}\downarrow 0)$.
+        $\mathcal{A}$ has finite coproducts, so $(\mathcal{A} \downarrow 0)$ has finite coproducts. In fact consider $(A,\alpha)$, $(B,\beta)$ in $(\mathcal{A} \downarrow 0)$ and $A+B$ in $\mathcal{A}$, with the canonical injections $\iota_1 : A \to A+B$ and $\iota_2 : B \to A+B$. Let $(C,\gamma)$ be an object in $(\mathcal{A}\downarrow 0)$ with $f:A \to C$ and $g:B \to C$ morphisms in $(\mathcal{A}\downarrow 0)$ . Providing to $A+B$ the morphism $[\alpha,\beta]$ we have that $(A+B, [\alpha,\beta])$ is the coproduct of $(A,\alpha)$ and $(B,\beta)$ in $(\mathcal{A} \downarrow 0)$, in fact $\gamma [f,g] = [\alpha,\beta]$, so $[f,g]$ is also a morphism in $(\mathcal{A}\downarrow 0)$.
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBAagCEQBfUuky58hFGQBM1Ok1bsAwgKEgM2PASJliMhizaIQ5ZcPVii5CrrkHOJ1SI3jkkqzT3zDffjJhQA5vBEoABmAE4QALZIliA4EEiSgqER0YhkcQmISSrhUUgAzDTxMe427AA6Ffg49AD6xPZ5aQAsxVmxHrZVNfWSIDSM9ABGMIwACo7mhmFY-gAWOE2phe1IGaNgUEgAtAWd5YYhAyBDoxNTmjNzi8v5iG2Z6zSb24j7Zfrs-ndpRU-ZT6eEBVJhoeb0E5nMaTMxXECzBZLZIgZpIR4lQGyL6GKqjWq-UoAnIpe6xTEbGBbXYfbHA5AhUj+ShQkYwy7iBE3ZGUfhAA
 \begin{tikzcd}
@@ -613,8 +613,16 @@ By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback
     \end{tikzcd}
     \]
 
-    Now we want to prove that $(\mathcal{A} \downarrow 0)$ is exact, by the exactness of $\mathcal{A}$.
-    Consider an equivalence relation in $\mathcal{A} \downarrow 0$. Since $\mathcal{A}$ is exact, such equivalence relation is a kernel pair in $\mathcal{A}$. 
+    Now we want to prove that $(\mathcal{A} \downarrow 0)$ is exact, from the exactness of $\mathcal{A}$.
+    Consider an equivalence relation $(R,r_1,r_2)$ in $(\mathcal{A} \downarrow 0)$, endowed with the morphism $\rho$ and $\alpha$ as shown in the diagram below. We want to prove that such equivalence relation is the kernel pair of some arrow. Since $\mathcal{A}$ is exact, it is a kernel pair in $\mathcal{A}$. By \Cref{equiv rel is kernel pair of the coeq} we can suppose that it is the kernel pair of its coequalizer.
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACUQBfU9TXfIRQBGclVqMWbAILdeIDNjwEiAJjHV6zVohAAhOXyWCio4eK1TdxbuJhQA5vCKgAZgCcIAWyRkQOCCRREDgACyxXHCDNSR0QdwB9VRBqBjoAIxgGAAV+ZSF4rAdQqJ43Tx9EPwDokPDIpABaYMs4xOFDEA9vWprEdQltNgBHFJBQmDooNhwAdwgJqYQyrorfaj6AZhih3QAdPfdQwNSMrNzjFV13IpLO7srgrZ2rEAPGNFC6e7X+jcDENsQAwsGA4lA6GF7GNWmwDjAAB5YOA4OAAQgABAcsXtMjhvlwKFwgA
+\begin{tikzcd}
+    R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left] \arrow[rd, "\rho"'] & A \arrow[r, "q", two heads] \arrow[d, "\alpha"] & B \arrow[ld, "\exists! \ \beta", dashed] \\
+                                                                                      & 0                                               &                                         
+    \end{tikzcd}
+    \]
+    Since $r_1$ and $r_2$ are morphism in $(\mathcal{A} \downarrow 0)$, we have that $\alpha r_1 = \rho = \alpha r_2$. Thus, by the universal property of the coequalizer, there exists a unique morphism $\beta$ such that $\beta q = \alpha$. Providing to $B$ the morphism $\beta$ we have that $(B,\beta)$ is the coequalizer of $(R,r_1,r_2)$ in $(\mathcal{A} \downarrow 0)$. Notice that $\beta$ is a morphism in $(\mathcal{A} \downarrow 0)$ by $\beta q = \alpha$.
     \end{proof}
 \end{subbox}
 

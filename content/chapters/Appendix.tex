@@ -164,7 +164,7 @@ Since $[f,g]$ is a strong epimorphism, there exists a unique morphism $d: B \to 
 
 \begin{mainbox}{}
     \begin{prop}\label{equiv rel is kernel pair of the coeq}
-        In a an exact category $mathcal{A}$, each equivalence relation is the kernel pair of its coequalizer.
+        In a an exact category $\mathcal{A}$, each equivalence relation is the kernel pair of its coequalizer.
     \end{prop}
 \end{mainbox}
 
@@ -180,7 +180,26 @@ Since $[f,g]$ is a strong epimorphism, there exists a unique morphism $d: B \to 
     \end{tikzcd}
     \]
 
-    
+    Now we want to prove that $e$ is the coequalizer of $r_1$ and $r_2$. Let $f:A \to D$ be a morphism such that $r_1f=r_2f$. Composing with $t$ we have $fr_1t=fr_2t$, hence $fs_1=fs_2$. By the universal property of the coequalizer $e$, as coequalizer of $s_1$ and $s_2$, there exists a unique morphism $g:Q \to D$ such that $ge=f$. Hence $e$ is also the coequalizer of $r_1$ and $r_2$.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAlEAX1PU1z5CKAIwVqdJq3YBBHnxAZseAkQDM4mgxZtEIACLz+yoUXKkRE7dL0BFI4oErhJUsStTdIAMI8JMKABzeCJQADMAJwgAWyQyEBwIJDEQOAALLDCcZK1PdgiAfXIQGkZ6ACMYRgAFJ1M9CKxAtOzecKjYxHjEnNSMrKQAWhTrL0KRB0iY3p7Ec0kddjDJjpmkxA0QNJh6KHYcAHcIbd2EXMW9NjaQKc6AFhpZlPTM7MRh85tUopXpxAeEutnv03iM8no4AUJqUKlVaiZVA0mi1fvdHut4owsGAvFB6OkAiUFl8ADokmAADywcBwcAABABCOlkunZGGVGp1REgRrNVoKW5ITazeZYnHsPEEvafLxkynU2mM5kkumBPzcIA
+\begin{tikzcd}
+    C \arrow[rdd, "s_2", shift left] \arrow[rdd, "s_1"', shift right] \arrow[dd, "\exists ! \ t"', dashed] &                                              &                                       &   \\
+                                                                                                           &                                              & Q \arrow[rd, "\exists ! \ g", dashed] &   \\
+    R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left]                                          & A \arrow[rr, "f"] \arrow[ru, "e", two heads] &                                       & D
+    \end{tikzcd}
+    \]
+
+    Finally, we prove that $(r_1,r_2)$ is the kernel pair of $e$. We already know that $er_1=er_2$. It remains to show that the universal property of the kernel pair holds. Consider $h: X \to A$ and $h' : X \to A'$ morphisms such that $eh=eh'$. Composing with $m$ we have that $meh=meh'$, hence $qh=qh'$. Since $r_1$ and $r_2$ are the kernel pair of $q$, by the universal property there exists a unique morphism $k: X \to R$ such that $r_1k=h$ and $r_2k=h'$. Hence $(r_1,r_2)$ is the kernel pair of $e$, its coequalizer.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGUsKq1GLNgCVuvEBmx4CRAMykATBPrNWiEACF5fZYKIAWUmp1T9IAIonF-FUOSjt1XdIMBBZyUBVRQNcW87NgCuCRgoAHN4IlAAMwAnCABbJDIQHAgkURAGLDB7KDo4AAs4kAi9NgAdRpgADyw4HDgAQgACZt6Aa2d0rMLqfKQAVnrfEDSAfWERjOzEIsnEK0kGg0XNFbGtiYLETVn7AEdDtZm80-OduevqBjoAIxgGAAVXcz2sPEqjgbjkTtNqJ8wFAkGpcj57FVQYhcpttlCYYgALRwi5sKoAcmRd02GhAGNh8MiBlYPFSqyQ21JkJg0KQOKpuxAtIUozWZM2jxwdCwDDYwtFdSe9myMS4QA
+\begin{tikzcd}
+    X \arrow[rd, "\exists! \ k", dashed] \arrow[rrrd, "h", bend left] \arrow[rdd, "h'", bend right] &                                                 &  &                                               &                         \\
+                                                                                                    & R \arrow[rr, "r_1"] \arrow[d, "r_2"]            &  & A \arrow[d, "q"'] \arrow[rdd, "e", bend left] &                         \\
+                                                                                                    & A \arrow[rr, "q"] \arrow[rrrd, "e", bend right] &  & B                                             &                         \\
+                                                                                                    &                                                 &  &                                               & Q \arrow[lu, "m", tail]
+    \end{tikzcd}
+    \]
 
 \end{proof}
 \end{subbox}
