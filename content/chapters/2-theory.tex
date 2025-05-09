@@ -464,7 +464,7 @@ Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\a
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBmAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABhCDACOAXwAUaAPoBGUouIBKENNLpMufIRQqqNBizaIQAQS06QGbHgJEADBWp0mrdl14DhwACikrKS6tK2uo4GrqTEHmbelmgAegBUsr58QiLBcmGa2lH6zkZxCV4W9umyVuoAvFZceNzwCgBCgZH2ek6GJOWmleypGVn+IuJScooqauqFdg4l-WQuFebsogDk3ct9setDm5aiWh4wUADm8ESgAGaCENxIKiA4EEhunicgkt2PZ5IMjvT6IN5wfhYe44JAAWjeiSqagBTxeiBBH1eNEh0Nh4OOSXsyhANEY9AARjBGAAFXoxSyCLBXfiwoogQHo8g0LEY9mcpAAFh5YKU-LRSAArCKvuKgYhuaChTioTD4YjhpZmlhGLBgGoImTKdS6dFSiBGDA1XKuTLEMKQLi1QSfkTtbqYPrlIaLcbafTzUyWWy7AL7Xbpa6qu69TJUfKHbyAGyEqrMePoyPJslYMBVKD0SGXUlRnwcGAADywcBwcAAhAACEMPCWIADsdodTvxGt+giUJfJVP9ZsMICDrIzSA7SvDjtV+IRqfYggUxCn7btiqRZcr1drDcbCCNw9NKxXzMnObz7ALRag52kQA
     \begin{tikzcd}
-        C \arrow[rdd, "r1"', shift right] \arrow[rdd, "r_2", shift left] \arrow[dd, "\exists ! s"', dashed]       &                                                                     & C'                                                                       \\
+        C \arrow[rdd, "r_1"', shift right] \arrow[rdd, "r_2", shift left] \arrow[dd, "\exists ! s"', dashed]       &                                                                     & C'                                                                       \\
                                                                                                                   &                                                                     &                                                                          \\
         p^*(\mathrm{Eq}(q)) \arrow[d] \arrow[r, "\tilde{p_2}", shift left] \arrow[r, "\tilde{p_1}"', shift right] & p^*(A)=A\times_BE \arrow[d] \arrow[r, "\tilde{q}"] \arrow[ruu, "u"] & {p^*(\mathrm{Coeq}(p_1,p_2))} \arrow[d] \arrow[uu, "\exists! t", dashed] \\
         \mathrm{Eq(q)} \arrow[r, "p_2", shift left] \arrow[r, "p_1"', shift right]                                & A \arrow[r, "q"]                                                    & {\mathrm{Coeq}(p_1,p_2)}                                                
@@ -565,7 +565,61 @@ If $\mathcal{X}$ is a pointed protomodular category with finite coproducts and $
     0 \arrow[rr, "\eta_0"] \arrow[u, "!_X"', shift right] &  & T(0) \arrow[u, "T(!_X)"', shift right]
     \end{tikzcd}
 \]
-By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback. Since $\mathcal{X}$ is protomodular then by \Cref{protomod lemma}, the pair $(\eta_X,T(!_X))$ is strongly epimorphic. By a standard result, proved in \Cref{Equivalence strong epi with coprod}, this yields that $[\eta_X,T(!_X)]$ is a strong epi. Thus the moand is essentially nullary.
+By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback. Since $\mathcal{X}$ is protomodular then by \Cref{protomod lemma}, the pair $(\eta_X,T(!_X))$ is strongly epimorphic. By a standard result, proved in \Cref{Equivalence strong epi with coprod}, this yields that $[\eta_X,T(!_X)]$ is a strong epi. Thus the monad is essentially nullary.
 \end{proof}
 \end{subbox}
 
+\section{Ideally exact categories}
+
+\begin{mainbox}{}
+    \begin{theo}\label{Ideally exact categories}.
+        Let $\mathcal{A}$ be a category. The following are equivalent:
+        \begin{enumerate}
+            \item $\mathcal{A}$ is exact and protomodular, has finite coproducts and the the morphism $!:0 \to 1$ is a regular epimorphism.
+            \item $\mathcal{A}$ is exact, has finite coproducts and there exists $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$.
+            \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwDGjYAEEAviDGl0mXPkIoyAJiq1GLNpx78hDYAA0JUmdjwEiARnKr6zVog7deg4YYB6wAKoAxI6phQAObwRKAAZgBOEFxIZCA4EEhWanZsniDUcHxYYThIALQWxiCR0UnUCbGZ2bkFybYaDt6S0iVRMYhxlYhK1A32jgIEgRkgfDB0UEhgTAwMFXRYDGyQYKzFpR298YmIyVk5eYiFG+3lO0jbB7XHRRRiQA
+\begin{tikzcd}
+    \mathcal{A} \arrow[dd, "U", shift left] \arrow[r, "\cong"]      & \mathcal{X}^{UF} \arrow[ldd, shift left] \\
+                                                                    &                                          \\
+    \mathcal{X} \arrow[uu, "F", shift left] \arrow[ruu, shift left] &                                         
+    \end{tikzcd}
+            \]
+            \item There exist $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$ and $F$ left adjoint to $U$ such that the associated monad $T=UF$ preserves regular epimorphisms and kernel pairs.
+        \end{enumerate}
+    \end{theo}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        $(1\implies 3)$ Suppose $! : 0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact, the pullback functor $(!)^*: (\mathcal{A} \downarrow 1) \to (\mathcal{A} \downarrow 0)$ is monadic by (citazione). Notice that $(\mathcal{A} \downarrow 1) = \mathcal{A}$. Now consider $\mathcal{X} = (\mathcal{A} \downarrow 0)$, we want to prove that $\mathcal{X}$ is semiabelian. 
+        
+        $(\mathcal{A} \downarrow 0)$ is pointed, in fact if $(A,\alpha)$ is an object in $(\mathcal{A} \downarrow 0)$, we have the following initial and terminal objects, which are the same:
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGJAF9T1Nd9CKAIzkqtRizYBBLjxAZseAkRFCx9Zq0TtZvRQKIBmUdQ2TtM7nv7KUxtaYladV+XyWDkAFhPjNbDk4xGCgAc3giUAAzACcIAFskERAcCCQAJkd-bQAdHMY0AAs6XRBYhKQyFLTEZLNnAEIAfUs5csTEY2qkAFYs8xA8guLS9srqVIzXMcQ+7sQfPwGhJsC2uI6uyYX+5yGGIpKgziA
+        \begin{tikzcd}
+        0 \arrow[r, "!_A"] \arrow[rd] & A \arrow[d, "\alpha"] &  & A \arrow[r, "\alpha"] \arrow[d, "\alpha"] & 0 \arrow[ld, "1_0"] \\
+                                      & 0                     &  & 0                                         &                    
+        \end{tikzcd}
+        \]
+
+        $\mathcal{A}$ has finite coproducts, so $(\mathcal{A} \downarrow 0)$ has finite coproducts. In fact consider $(A,\alpha)$, $(B,\beta)$ in $\mathcal{A} \downarrow 0$ and $A+B$ in $\mathcal{A}$, with the canonical injections $\iota_1 : A \to A+B$ and $\iota_2 : B \to A+B$. Let $(C,\gamma)$ be an object in $\mathcal{A}\downarrow 0$ with $f:A \to C$ and $g:B \to C$ morphisms in $\mathcal{A}\downarrow 0$ . Providing to $A+B$ the morphism $[\alpha,\beta]$ we have that $(A+B, [\alpha,\beta])$ is the coproduct of $(A,\alpha)$ and $(B,\beta)$ in $(\mathcal{A} \downarrow 0)$, in fact $\gamma [f,g] = [\alpha,\beta]$, so $[f,g]$ is also a morphism in $(\mathcal{A}\downarrow 0)$.
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBAagCEQBfUuky58hFGQBM1Ok1bsAwgKEgM2PASJliMhizaIQ5ZcPVii5CrrkHOJ1SI3jkkqzT3zDffjJhQA5vBEoABmAE4QALZIliA4EEiSgqER0YhkcQmISSrhUUgAzDTxMe427AA6Ffg49AD6xPZ5aQAsxVmxHrZVNfWSIDSM9ABGMIwACo7mhmFY-gAWOE2phe1IGaNgUEgAtAWd5YYhAyBDoxNTmjNzi8v5iG2Z6zSb24j7Zfrs-ndpRU-ZT6eEBVJhoeb0E5nMaTMxXECzBZLZIgZpIR4lQGyL6GKqjWq-UoAnIpe6xTEbGBbXYfbHA5AhUj+ShQkYwy7iBE3ZGUfhAA
+\begin{tikzcd}
+    A \arrow[r, "\iota_1"] \arrow[rdd, "f"', bend right] \arrow[rd, "\alpha"'] & A+B \arrow[d] \arrow[d] \arrow[dd, "{[f,g]}"', bend right] & B \arrow[l, "\iota_2"'] \arrow[ldd, "g", bend left] \arrow[ld, "\beta"] \\
+                                                                               & 0                                                          &                                                                         \\
+                                                                               & C \arrow[u]                                                &                                                                        
+    \end{tikzcd}
+    \]
+
+    Now we want to prove that $(\mathcal{A} \downarrow 0)$ is exact, by the exactness of $\mathcal{A}$.
+    Consider an equivalence relation in $\mathcal{A} \downarrow 0$. Since $\mathcal{A}$ is exact, such equivalence relation is a kernel pair in $\mathcal{A}$. 
+    \end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
+    \begin{defi}
+        A category $\mathcal{A}$ is said to be \textbf{ideally exact} if it satisfies one of the equivalent conditions of \Cref{Ideally exact categories}.
+    \end{defi}
+\end{mainbox}
