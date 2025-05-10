@@ -459,7 +459,7 @@ Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\a
     \end{mainbox}
     \begin{subbox}{}
         \begin{proof}
-    Consider the following diagram
+    Consider the following diagram (RECALL A.0.7!!!!!!!)
     
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBmAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABhCDACOAXwAUaAPoBGUouIBKENNLpMufIRQqqNBizaIQAQS06QGbHgJEADBWp0mrdl14DhwACikrKS6tK2uo4GrqTEHmbelmgAegBUsr58QiLBcmGa2lH6zkZxCV4W9umyVuoAvFZceNzwCgBCgZH2ek6GJOWmleypGVn+IuJScooqauqFdg4l-WQuFebsogDk3ct9setDm5aiWh4wUADm8ESgAGaCENxIKiA4EEhunicgkiA0fgwehQdg4ADuECBIIQRRAj2eSDI70+iDecH4WHuOCQAFo3okqmpugiXohkR9XjQMVicWjjkl7MoASBGPQAEYwRgABV6MUsgiwV34OLhpKQ5BolPJYqeZIALFLUUpZYjEABWJVfVVkyUopCKkA07F4gnDSzNLCMWDANQRGhszk8vmlVkwE06iVaxCG410s2-S3WmC25T21kcrm86KuwXC0V2cU+72an6MoM2mQs6GgywQqHAqCwxNyg3egBsDKqzBJpY1FYdWDAVSg9AxlxZhJ8HBgAA8sHAcHAAIQAAi4o4TDzrAHZvb7MSb6WmqoJmQ7I86Y4YQHGRbW1XP9cmjYu6fiq+w18QD2Sj9K9V2LT3+4O4KOxxOEBundGVlehX3Rtm3YVt21BaRKGkIA
@@ -605,11 +605,11 @@ By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback
 
         $\mathcal{A}$ has finite coproducts, so $(\mathcal{A} \downarrow 0)$ has finite coproducts. In fact consider $(A,\alpha)$, $(B,\beta)$ in $(\mathcal{A} \downarrow 0)$ and $A+B$ in $\mathcal{A}$, with the canonical injections $\iota_1 : A \to A+B$ and $\iota_2 : B \to A+B$. Let $(C,\gamma)$ be an object in $(\mathcal{A}\downarrow 0)$ with $f:A \to C$ and $g:B \to C$ morphisms in $(\mathcal{A}\downarrow 0)$ . Providing to $A+B$ the morphism $[\alpha,\beta]$ we have that $(A+B, [\alpha,\beta])$ is the coproduct of $(A,\alpha)$ and $(B,\beta)$ in $(\mathcal{A} \downarrow 0)$, in fact $\gamma [f,g] = [\alpha,\beta]$, so $[f,g]$ is also a morphism in $(\mathcal{A}\downarrow 0)$.
         \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBAagCEQBfUuky58hFGQBM1Ok1bsAwgKEgM2PASJliMhizaIQ5ZcPVii5CrrkHOJ1SI3jkkqzT3zDffjJhQA5vBEoABmAE4QALZIliA4EEiSgqER0YhkcQmISSrhUUgAzDTxMe427AA6Ffg49AD6xPZ5aQAsxVmxHrZVNfWSIDSM9ABGMIwACo7mhmFY-gAWOE2phe1IGaNgUEgAtAWd5YYhAyBDoxNTmjNzi8v5iG2Z6zSb24j7Zfrs-ndpRU-ZT6eEBVJhoeb0E5nMaTMxXECzBZLZIgZpIR4lQGyL6GKqjWq-UoAnIpe6xTEbGBbXYfbHA5AhUj+ShQkYwy7iBE3ZGUfhAA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBAagCEQBfUuky58hFGQBM1Ok1bsAwgKEgM2PASJliMhizaIQ5ZcPVii5CrrkHOJ1SI3jkkqzT3zDffjJhQA5vBEoABmAE4QALZIliA4EEiSgqER0YhkcQmIrrL67AA6+f70kZH0IDSM9ABGMIwACo7mhmFY-gAWOPbhUUgAzDTxMe42Bfn4OPQA+sTdqUgALINZsR62hRPTkhUgVbUNTZotbZ1zvYgDmUgZtWBQSAC0faujhiE7e3WNZkcgrR1dZIgHppJZXdI0W73C4vPKGfxnNKXIbZEZwkCFJhodrlSo1L6HcR-E6AlQgxbLRJozwY-K1SaI4bgnJrdjITGMbH0UiFen0SiMxCxFE3GB3R7Pam2ZAhUj+AV4-bfUS-f6nHz8IA
 \begin{tikzcd}
-    A \arrow[r, "\iota_1"] \arrow[rdd, "f"', bend right] \arrow[rd, "\alpha"'] & A+B \arrow[d] \arrow[d] \arrow[dd, "{[f,g]}"', bend right] & B \arrow[l, "\iota_2"'] \arrow[ldd, "g", bend left] \arrow[ld, "\beta"] \\
-                                                                               & 0                                                          &                                                                         \\
-                                                                               & C \arrow[u]                                                &                                                                        
+    A \arrow[r, "\iota_1"] \arrow[rdd, "f"', bend right] \arrow[rd, "\alpha"'] & A+B \arrow[d] \arrow[d, "{[\alpha,\beta]}"] \arrow[dd, "{[f,g]}"', bend right] & B \arrow[l, "\iota_2"'] \arrow[ldd, "g", bend left] \arrow[ld, "\beta"] \\
+                                                                               & 0                                                                              &                                                                         \\
+                                                                               & C \arrow[u, "\gamma"']                                                         &                                                                        
     \end{tikzcd}
     \]
 
@@ -629,35 +629,53 @@ By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback
     We proceed by proving that $(\mathcal{A} \downarrow 0)$ is regular. Both the conditions of the definition of regular category are easely extendable from $\mathcal{A}$ to $(\mathcal{A} \downarrow 0)$. In fact since in $\mathcal{A}$ each morphism admits a (regular epi, mono) factorization, then the same holds in $(\mathcal{A} \downarrow 0)$ just providing to the objects a suitable morphism, as shown below.
 
     \begin{minipage}{0.30\textwidth}
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAhHnxAZseAkXKliEhizaIQARXn9lQtaRFapukMR4SYUAObwioAGYAnCAFskZEDgQSOqSOuxuRiCePn40gUhiIAAWMPRQ7DgA7hApaQg02tJ6bLzuXr6IifGIITj0WIwZ9Y0FVuy+pVHlsQFBiADMrWF6ADojTGhJ9JHRFbV9g6FFIGMARjB1dtxAA
-    \begin{tikzcd}
-    & Q \arrow[rd, "m", tail] &                       \\
-    A \arrow[rr, "f"] \arrow[ru, "e", two heads] \arrow[rd, "\alpha"] &                         & B \arrow[ld, "\beta"] \\
-    & 0                       &                      
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdgCEefEBmx4CRMsXEMWbRCACKc-kqGrSAJg2TtIYj3EwoAc3hFQAMwBOEALZIyIHBBIohJa7K4GIB7evjQBSKY0ABYw9FDsOADuEMmpCDSaUjpsvG6ePogJ-oGIwTj0WIzp9Y35luw+JZFlMVVIAMytoToAOsNMaIn0EVHltdUDIYUgowBGMHW23EA
+\begin{tikzcd}
+    Q \arrow[rd, "m", tail]                                        &                       \\
+    A \arrow[r, "f"] \arrow[u, "e", two heads] \arrow[d, "\alpha"] & B \arrow[ld, "\beta"] \\
+    0                                                              &                      
     \end{tikzcd}
+    \]
         \end{minipage}
-        \begin{minipage}{0.30\textwidth}
+        \begin{minipage}{0.3\textwidth}
+            \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAGkQBfU9TXfIRQBGclVqMWbAILdeIDNjwEiAJjHV6zVohAAhOXyWCio4eK1TdxbuJhQA5vCKgAZgCcIAWySiQOCCR1CW02VmoACxg6KDYcAHcIKJiEHjdPH0Qyf0DEPzgIrFccJABaP0sdEAdDEA9vJGyA32oCopK8zUkqiJBqBjoAIxgGAAV+ZSEQdywHCJK0uoyWnKQAZi7Q3QAdbcY0CLpa+szg5sQNkKsQXZgADyw4HDgAQgACEv6sMCqoOgL7MdlllqOdLgNhmMJiZdDM5p8rlVdvtDm8HG8ALxvCI1LgULhAA
 \begin{tikzcd}
     K \arrow[r, "g", shift left] \arrow[r, "h"', shift right] \arrow[rd, "\alpha g = hg"'] & A \arrow[r, "e", two heads] \arrow[d, "\alpha"] & B \arrow[ld, "\exists! t", dashed] \\
                                                                                            & 0                                               &                                   
     \end{tikzcd}
+    \]
     \end{minipage}
-    \begin{minipage}{0.30\textwidth}
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEUQBfU9TXfIRQAmclVqMWbAELdeIDNjwEiARlKrx9Zq0Qhi3cTCgBzeEVAAzAE4QAtkjIgcEJOok62D6jjpYGbL7+cla2DojuLkiiHlJ6ADrxAEYwviEgNvaOPq6IMdpxIIkpvgAEDlwUXEA
+    \begin{minipage}{0.3\textwidth}
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEUQBfU9TXfIRQBGclVqMWbAELdeIDNjwEiZYePrNWiEMW7iYUAObwioAGYAnCAFskZEDghJRErWzvUcdLAzbffOQtrO0RXJyQAJmpNKR0AHXiAIxhvIJArW3svZ0RotziQRJTvAAJPEAY6FIYABX5lIRBLLCMACxx9LiA
 \begin{tikzcd}
-Q \arrow[rr, "m", tail] \arrow[rd, "\beta m"] &   & B \arrow[ld, "\beta"] \\
-                                              & 0 &                      
-\end{tikzcd}
+    Q \arrow[r, "m", tail] \arrow[d, "\beta m"'] & B \arrow[ld, "\beta"] \\
+    0                                            &                      
+    \end{tikzcd}
+    \]
     \end{minipage}
     
     \noindent In order to prove that regular epis are pullback stable in $(\mathcal{A} \downarrow 0)$ we can use the fact that they are in $\mathcal{A}$. In fact, having a regular epi in $\mathcal{A}$ we can proceed providing a suitable morphism to the coequalizer as done above.
 
-    It remains to prove that the $(\mathcal{A} \downarrow 0)$ is protomodular. Since the construction of the change-of-base functor involves pullbacks, which are a connected limits, then by \Cref{connected limits computed on the base} the construction is the same in $(\mathcal{A} \downarrow 0)$ and in $\mathcal{A}$. Thus $(\mathcal{A} \downarrow 0)$ inherits protomodularity from $\mathcal{A}$, noting that the definition of iso in $\mathcal{A}$ and $(\mathcal{A} \downarrow 0)$ is the same. Hence, since $\mathcal{X} = (\mathcal{A} \downarrow 0)$ is exact, protomodular, pointed and has binary coproducts, we can conclude that it is semiabelian.
+    We must still establish that the $(\mathcal{A} \downarrow 0)$ is protomodular. Since the construction of the change-of-base functor involves pullbacks, which are a connected limits, then by \Cref{connected limits computed on the base} the construction is the same in $(\mathcal{A} \downarrow 0)$ and in $\mathcal{A}$. Thus $(\mathcal{A} \downarrow 0)$ inherits protomodularity from $\mathcal{A}$, noting that the definition of iso in $\mathcal{A}$ and $(\mathcal{A} \downarrow 0)$ is the same. Hence, since $\mathcal{X} = (\mathcal{A} \downarrow 0)$ is exact, protomodular, pointed and has binary coproducts, we can conclude that it is semiabelian.
+
+    It remains to prove that the monad $(!)^*(!)_!$ preserves regular epimorphisms and kernel pairs. Consider a regular epi $q:A \to B$ in $(\mathcal{A} \downarrow 0)$, it is the coequalizer of some parallel arrows. Since the coequalizer is a colimit, it is preserved by the left adjoint functor $(!)_!$. So it suffices to prove that, with $\mathcal{A}$ regular, $(!)^*$ preserves regular epis. Consider the following diagram:
+    \[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAhHnxAZseAkXKkREhizaIQ5ef2VCiZYlqm6QxADo28AW3gB9cl15HBq0aXM1t0nq29lhOcK5y3BIwUADm8ESgAGYAThAOSGQgOBBI6pI67ACOhiCp6Zk0OUgiHmVpGYj51Yi1CuWNAMxVuYjEdR1IACw9eQMNSN3ZvSMFgSAAFACEAJQAegBUC0UrPJTcQA
+    \begin{tikzcd}
+    0\times_1A \arrow[d] \arrow[rr, "(!)^*(q)"] &   & 0\times_1B \arrow[d] \\
+    A \arrow[rr, "q"] \arrow[rd]                &   & B \arrow[ld]         \\
+                                                & 1 &                     
+    \end{tikzcd}
+    \]
+    By \Cref{p^*(f) is a pullback} the square is a pullback. Since $\mathcal{A}$ is regular, and hence so is $(\mathcal{A} \downarrow 0)$, it follows that $(!)^*$ is a regular epi due to the stability of regular epis under pullbacks.
+
+    Finally, we want to establish that the monad $(!)^*(!)_!$ preserves kernel pairs. This is obvius: $(!)_!$ preserves connected limits, such as kernel pairs, by \Cref{p_! preserves connected limits}, while $(!)^*$ preserves kernel pairs since it is a right adjoint. Thus $(!)^*(!)_!$ preserves kernel pairs.
+
+    $(3 \implies 2)$ Suppose there exists $\mathcal{X}$ semiabelian category and a monadic functor $U: \mathcal{A} \to \mathcal{X}$ satisfying the stated conditions. First we need to verify that $\mathcal{A}$ is exact.
 \end{proof}
 \end{subbox}
-
-
 
 \begin{mainbox}{}
     \begin{defi}
