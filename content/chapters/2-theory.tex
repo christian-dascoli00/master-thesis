@@ -459,20 +459,17 @@ Now we wan to prove that $\epsilon$ is cartesian. Let $f : (A,\alpha) \to (A',\a
     \end{mainbox}
     \begin{subbox}{}
         \begin{proof}
-    Consider the following diagram (RECALL A.0.7!!!!!!!)
-    
+            Consider the following diagram:
     \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBmAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABhCDACOAXwAUaAPoBGUouIBKENNLpMufIRQqqNBizaIQAQS06QGbHgJEADBWp0mrdl14DhwACikrKS6tK2uo4GrqTEHmbelmgAegBUsr58QiLBcmGa2lH6zkZxCV4W9umyVuoAvFZceNzwCgBCgZH2ek6GJOWmleypGVn+IuJScooqauqFdg4l-WQuFebsogDk3ct9setDm5aiWh4wUADm8ESgAGaCENxIKiA4EEhunicgkiA0fgwehQdg4ADuECBIIQRRAj2eSDI70+iDecH4WHuOCQAFo3okqmpugiXohkR9XjQMVicWjjkl7MoASBGPQAEYwRgABV6MUsgiwV34OLhpKQ5BolPJYqeZIALFLUUpZYjEABWJVfVVkyUopCKkA07F4gnDSzNLCMWDANQRGhszk8vmlVkwE06iVaxCG410s2-S3WmC25T21kcrm86KuwXC0V2cU+72an6MoM2mQs6GgywQqHAqCwxNyg3egBsDKqzBJpY1FYdWDAVSg9AxlxZhJ8HBgAA8sHAcHAAIQAAi4o4TDzrAHZvb7MSb6WmqoJmQ7I86Y4YQHGRbW1XP9cmjYu6fiq+w18QD2Sj9K9V2LT3+4O4KOxxOEBundGVlehX3Rtm3YVt21BaRKGkIA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABhCDACOAXwAUaAPrlSi4gEoQ00uky58hFMqo0GLNohABBTdpAZseAkQAMFanSat2XXgOHAAUUlZSTVpGx0HfRdSZ3dTLws0AD0AKlkfPiERILlQjS1IvSdDWPjPczs02Us1AF5LLjxueAUAIQCIu11HAxIykwr2FPTMvxFxKTlFZVU1AvcYKABzeCJQADNBCG4kZRAcCCRXDzN2SRAafhh6KHYcAHcIa9uEQpAtnaQyA6PEfbg-CwGxwSAAtPsEpVVF1PrtED9DnsaIDgaD-oMzkklJcQIx6AAjGCMAAKPWiFkEWGW-FB7zhSAAzDQkQj6dt4QAWFl-cjsr6IACsPOO-PhzN+SG5IFRIPBkKGFiaWEYsGAqnCNHxRNJ5JKeJgcrFTJFiGlsvRCqxnA4eFVMHVSk1eMJxLJUX1VJpdNsDLNpuFp0SNrtapkuJedwsj2eNygb0o0iAA
 \begin{tikzcd}
-    C \arrow[rdd, "r_1"', shift right] \arrow[rdd, "r_2", shift left] \arrow[dd, "\exists ! \ s"', dashed]    &                                                                                & C'                                                                         \\
-                                                                                                              &                                                                                &                                                                            \\
-    p^*(\mathrm{Eq}(q)) \arrow[d] \arrow[r, "\tilde{p_2}", shift left] \arrow[r, "\tilde{p_1}"', shift right] & p^*(A)=A\times_BE \arrow[d] \arrow[r, "\tilde{q}", two heads] \arrow[ruu, "u"] & {p^*(\mathrm{Coeq}(p_1,p_2))} \arrow[d] \arrow[uu, "\exists! \ t", dashed] \\
-    \mathrm{Eq(q)} \arrow[r, "p_2", shift left] \arrow[r, "p_1"', shift right]                                & A \arrow[r, "q", two heads]                                                    & {\mathrm{Coeq}(p_1,p_2)}                                                  
+    p^*(\mathrm{Eq}(q)) \arrow[d] \arrow[r, "\tilde{p_2}", shift left] \arrow[r, "\tilde{p_1}"', shift right] & p^*(A)=A\times_BE \arrow[d] \arrow[r, "\tilde{q}", two heads] & {p^*(\mathrm{Coeq}(p_1,p_2))} \arrow[d] \\
+    \mathrm{Eq(q)} \arrow[r, "p_2", shift left] \arrow[r, "p_1"', shift right]                                & A \arrow[r, "q", two heads]                                   & {\mathrm{Coeq}(p_1,p_2)}               
     \end{tikzcd}
     \]
-    Let $q$ be the coequalizer of the kernel pair $\mathrm{Eq}(q)$. We can affirm by \Cref{p^*(f) is a pullback} applied to $q$ that the diagram in the bottom-right corner is a pullback. Since by hypothesis $q$ is a pullback stable regular epimorphism, we have that $\tilde{q}$ is a regular epimorphism, ie it is the coequalizer of some parallel arrows. Let $(r_1,r_2)$ be such pair.
+    Let $q$ be the coequalizer of the kernel pair $\mathrm{Eq}(q)$. We can affirm by \Cref{p^*(f) is a pullback} applied to $q$ that the diagram in the bottom-right corner is a pullback. Since, by hypothesis, $q$ is a pullback stable regular epimorphism, we have that $\tilde{q}$ is a regular epimorphism.
     
-    Now we want to prove that $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$. Since $\tilde{q}$, $\tilde{p_1}$ and $\tilde{p_2}$ are obtained applying $p^*$ to the kernel pair $\mathrm{Eq}(q)$, and $p^*$ preserves limits, then $p^*(\mathrm{Eq}(q))$ is the kernel pair of $\tilde{q}$. So by the universal property there exists a unique morphism $s : C \to p^*(\mathrm{Eq}(q))$ such that $\tilde{p_1}s=r_1$ and $\tilde{p_2}s=r_2$. Now let $u$ be a morphism such that $u \tilde{p_1} = u \tilde{p_2}$. We have that $ur_1 = u \tilde{p_1} s = u \tilde{p_2} s = ur_2$, hence by the universal property of the coequalizer $\tilde{q}$ there exists a unique morphism $t : p^*(\mathrm{Coeq}(p_1,p_2)) \to C'$ such that $t\tilde{q} = u$. So $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$.
+    We now aim to show that $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$. Since $\tilde{q}$, $\tilde{p_1}$ and $\tilde{p_2}$ are obtained applying $p^*$ to the kernel pair $\mathrm{Eq}(q)$, and $p^*$ preserves limits, it follows that $p^*(\mathrm{Eq}(q))$ is the kernel pair of $\tilde{q}$. We already know that $\tilde{q}$ is a regular epi. Thus, by \Cref{coeq of the kernel pair}, $\tilde{q}$ is also the coequalizer of $(\tilde{p_1},\tilde{p_2})$.
     \end{proof}
     \end{subbox}
 
