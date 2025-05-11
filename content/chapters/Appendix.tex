@@ -47,7 +47,7 @@
 
 \begin{subbox}{}
     \begin{proof}
-        $(1 \implies 2)$ Let $f=mg$ be a factorization with $m$ mono and consider the square
+        $(1 \implies 2)$ Let $f=mg$ be a factorization with $m$ mono and consider the square:
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGclVqMWbAELdeIDNjwEio4ePrNWiELJ58lgomXXVNUnQGFu4mFADm8IqABmAJwgBbJGRA4ISKISWmwucq4e3oi+-kgAzGaS2iD2INQMdABGMAwACvzKQiBuWPYAFjjhIO5e8dSxiABMiSE63ulZOfmGKjol5ZX1dFgMbDjDo-rVkYH1AU3pWGDJcBAMWFBpIGUwdJuIYEwMDEMjbJDLW3BlWC6V0S0WIMIA+nryNVFBDQnBT5sdbJ5ApGPqlCo2LhAA
 \begin{tikzcd}
@@ -170,7 +170,11 @@ Since $[f,g]$ is a strong epimorphism, there exists a unique morphism $d: B \to 
 
 \begin{subbox}{}
     \begin{proof}
-Consider the diagram:
+Let $p$ be a regular epi, and let $(r_1,r_2)$ be the kernel pair of $p$. Since $p$ is a regular epi, it is the coequalizer of some parallel arrows. Let $(s_1,s_2)$ be such pair as in the diagram below. We want to prove that $p$ is the coequalizer of $(r_1,r_2)$.
+
+We already know that $pr_1=pr_2$, as $(r_1,r_2)$ is the kernel pair of $p$. It remains to establish the universal property of the coequalizer. Let $q:B \to D$ be a morhism such that $qr_1=qr_2$. By the universal property of the kernel pair, there exists a unique morphism $t: E \to A$ such that $r_1t=s_1$ and $r_2t=s_2$. We have that $qs_1=qr_1t=qr_2t=qs_2$, so, by the universal property of the coequalizer for the pair $(s_1,s_2)$, there exists a unique morphism $u: C \to D$ such that $q=up$. Thus the universal property of the coequalizer also holds for the pair $(r_1,r_2)$.
+
+
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdgCEefEBmx4CRAEyli4hizaIQAETn8lQtWJrapegMJGFA5cJIatk3SACiPcTCgBzeCJQADMAJwgAWyQyEBwIJFEQOAALLGCcJABaRMt3UIB9cjswyOiaOISaFLSMxBy3dgLVEBpGegAjGEYABQdTPVCsP2SM3hDwqLry+MR1CR12AEdiicrYmYBmCwa9NBaQZJh6KHYcAHcIQ+OEMZASyYAWabXq9LXOsBPEDZjc9jh8s1Wh0ur0TCoBkMRitSognusXqk3ohstsFnoAUUaB8vj9bvckPCKogYowsGB3FB6ClfPs-noADoMmAADywcBwcAAhBlgZ0en0ISBBsNRvICd9nrNWuTKdTDic+aDBcJhVDefMrCAmaz2ZyAARc-XMbzcIA
 \begin{tikzcd}
@@ -178,7 +182,7 @@ Consider the diagram:
     A \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right]                                                         & B \arrow[ru, "q"] \arrow[r, "p", two heads] & C \arrow[u, "\exists ! u"', dashed]
     \end{tikzcd}
     \]
-    To do
+    
     \end{proof}
 \end{subbox}
 
@@ -190,7 +194,25 @@ Consider the diagram:
 
 \begin{subbox}{}
     \begin{proof}
-        Proof to do
+        Let $(K, r_1,r_2)$ be a kernel pair of some arrow $q:A \to B$, and assume that such kernel pair has a coequalizer $e: B \to Q$. We want to prove that $(r_1,r_2)$ is the kernel pair of its coequalizer $e$.
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAGclVqMWbANLdeIDNjwEiAJjHV6zVohAAhOXyWC1pYeK1TdARW7iYUAObwioAGYAnCAFskZEDgQSKIgcAAWWG44SAC0-pY6IB4A+sSGIJ4+ftSBwdThkdGI8ZKJKaog1Ax0AEYwDAAK-MpCSViOYdE87l6+iCG5iOoS2mwAjpUg1XWNzSa6Hu2d6Zl9A0GIAMyapWys1GEwdFBsOADuEIfHCFwUXEA
+\begin{tikzcd}
+    &                                              & Q \\
+K \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right] & A \arrow[r, "q"'] \arrow[ru, "e", two heads] & B
+\end{tikzcd}
+    \]
+
+    We already know that $er_1=er_2$, since $e$ is the coequalizer of $(r_1,r_2)$. It remains to show that the universal property of the kernel pair holds. Consider $h: X \to A$ and $h' : X \to A'$ morphisms such that $eh=eh'$. Since $(r_1,r_2)$ is the kernel pair of $q$, it holds that $qr_1=qr_2$. Thus by the unviersal property of the coequalizer $e$, there exists a unique morphism $l:Q \to B$ such that $q=le$. Composing with such mophism $l$ we have that $leh=leh'$, hence $qh=qh'$. Since $(r_1,r_2)$ is the kernel pair of $q$, by the universal property there exists a unique morphism $g: X \to K$ such that $r_1g=h$ and $r_2g=h'$. Hence $(r_1,r_2)$ is the kernel pair of $e$, its coequalizer.
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGUsKq1GLNgGluvEBmx4CRAMykATBPrNWiEACF5fZYKIAWUmp1T9IAIonF-FUOSjt1XdIMBBZyUBVRQNcW87NgCuCRgoAHN4IlAAMwAnCABbJDIQHAgkURAGLDB7KDo4AAs4kAi9NgAdRpgADyw4HDgAQgACXvjndKzC6nykAFZ63xA0gH1hIYzsxCLxxCtJBoN5zSWRjbGCxE1p+wBHfZWpvOPTrZnL6gY6ACMYBgAFV3MdrHiqjgrjkjpNqO8wFAkGpcj57FVgYhcutNhCoYgALQws5sKoAckRN3WGhAaOhsMiBlY1BqdHReQA7hBaVAEDxUsskJtieCYJCkFiKdsQNSQCy2DgmSy2QphisSet7jg6FgGGxIGU6g97M02h0un01c9SuVKjUoTEuEA
+\begin{tikzcd}
+    X \arrow[rd, "\exists!  g", dashed] \arrow[rrrd, "h", bend left] \arrow[rdd, "h'", bend right] &                                                            &  &                                                          &                                    \\
+                                                                                                   & K \arrow[rr, "r_1"] \arrow[d, "r_2"]                       &  & A \arrow[d, "q"'] \arrow[rdd, "e", two heads, bend left] &                                    \\
+                                                                                                   & A \arrow[rr, "q"] \arrow[rrrd, "e", two heads, bend right] &  & B                                                        &                                    \\
+                                                                                                   &                                                            &  &                                                          & Q \arrow[lu, "\exists! l", dashed]
+    \end{tikzcd}
+    \]
     \end{proof}
 \end{subbox}
 
@@ -202,7 +224,7 @@ Consider the diagram:
 
 \begin{subbox}{}
 \begin{proof}
-    Consider an equivalence relation $(R,r_1,r_2)$ in $\mathcal{A}$. Since $\mathcal{A}$ is exact, $(R,r_1,r_2)$ is the kernel pair of some arrow $q:A \to B$. $\mathcal{A}$ is also regular, so $q$ admits a factorization $q=me$, where $m$ is a mono and $e$ is a regular epi, ie the coequalizer of some arrows. Let $s_1$ and $s_2$ be such arrows, we have $es_1=es_2$. Composing with $m$, we have $qs_1=mes_1=mes_2=qs_2$. By the universal property of the kernel pair, there exists a unique morphism $t: C \to R$ such that $r_1t=s_1$ and $r_2t=s_2$.
+    Consider an equivalence relation $(R,r_1,r_2)$ in $\mathcal{A}$. Since $\mathcal{A}$ is exact, $(R,r_1,r_2)$ is the kernel pair of some arrow $q:A \to B$. $\mathcal{A}$ is also regular, so $q$ admits a factorization $q=me$, where $m$ is a mono and $e$ is a regular epi, ie the coequalizer of some arrows. Let $s_1$ and $s_2$ be such arrows, we have that $es_1=es_2$. Composing with $m$, we have that $qs_1=mes_1=mes_2=qs_2$. By the universal property of the kernel pair, there exists a unique morphism $t: C \to R$ such that $r_1t=s_1$ and $r_2t=s_2$.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAlEAX1PU1z5CKchWp0mrdgEEefEBmx4CRAMxiaDFm0QgAQnP5KhRAEyli4rVN0BFQwoHLhJC1ck6QAYR7iYUAHN4IlAAMwAnCABbJDIQHAgkURA4AAssUJwkzQ92cIB9UxAaRnoAIxhGAAUnE11wrADUrN4wyJjEOITslPTMpABaZOtPAvIHCOie7sRzCW12AEcJ9unExHUQVJh6KHYcAHcIbd2EHIXdNlaQSY7NmbmR9hiaHHosRn33z+vbpAAWV7rZJpDJZRBDc42FKFYogCpgPYbYi-VaIQHxYE0UH9RDDXK6OD5cYlcqVGrGFT1RrNOEIpGqFHyP7ooGxEpYMCeKD0NL+OFPXQAHSFMAAHlg4Dg4AACACEMpFMqypIq1VqVJADSaLUo3CAA
 \begin{tikzcd}
@@ -211,7 +233,7 @@ Consider the diagram:
     \end{tikzcd}
     \]
 
-    Now we want to prove that $e$ is the coequalizer of $r_1$ and $r_2$. We have that $mer_1=fr_1 = fr_2 = mer_2$, thus, since $m$ is a mono, $er_1=er_2$. It remains to prove the universal property of the coequalizer. Let $f:A \to D$ be a morphism such that $fr_1=fr_2$. Composing with $t$ we have $fr_1t=fr_2t$, hence $fs_1=fs_2$. By the universal property of the coequalizer $e$, as coequalizer of $s_1$ and $s_2$, there exists a unique morphism $g:Q \to D$ such that $ge=f$. Hence $e$ is also the coequalizer of $r_1$ and $r_2$.
+    Now we want to prove that $e$ is the coequalizer of $(r_1,r_2)$. We have that $mer_1=fr_1 = fr_2 = mer_2$. Thus, since $m$ is a mono, $er_1=er_2$. It remains to prove the universal property of the coequalizer. Let $f:A \to D$ be a morphism such that $fr_1=fr_2$. Composing with $t$ we have $fr_1t=fr_2t$, hence $fs_1=fs_2$. By the universal property of the coequalizer $e$, as coequalizer of $s_1$ and $s_2$, there exists a unique morphism $g:Q \to D$ such that $ge=f$. Hence $e$ is also the coequalizer of $r_1$ and $r_2$.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAlEAX1PU1z5CKchWp0mrdgEEefEBmx4CRAMxiaDFm0QgAInP5KhRAEyli4rVN0BFQwoHLhJC1ck6QAYR7iYUAHN4IlAAMwAnCABbJDIQHAgkURA4AAssUJwkzQ92cIB9UxAaRnoAIxhGAAUnE11wrADUrN4wyJjEOITslPTMpABaZOtPAvIHCOie7sRzCW12UIn26cTEdRBUmHoodhwAdwgtnYQchd02VpBJjoAWGhnktIysxCGzmxTC4pAKsF31sQrjckPd4msnn1XsNcro4PlxiVypUasYVPVGs0fn8AaogfIQYgwTM4owsGBPFB6Gl-D8RuwADoMmAADywcBwcAABABCLlcrJIirVWrokANJotAkrdYPNZzMkU9hUmm7D6eJms9mc3lcgK+bhAA
 \begin{tikzcd}
@@ -220,17 +242,7 @@ Consider the diagram:
     \end{tikzcd}
     \]
 
-    FROM HERE JUST RECALL THE PROP A.0.8
-    Finally, we prove that $(r_1,r_2)$ is the kernel pair of $e$. We already know that $er_1=er_2$. It remains to show that the universal property of the kernel pair holds. Consider $h: X \to A$ and $h' : X \to A'$ morphisms such that $eh=eh'$. Composing with $m$ we have that $meh=meh'$, hence $qh=qh'$. Since $r_1$ and $r_2$ are the kernel pair of $q$, by the universal property there exists a unique morphism $k: X \to R$ such that $r_1k=h$ and $r_2k=h'$. Hence $(r_1,r_2)$ is the kernel pair of $e$, its coequalizer.
-    \[
-    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGUsKq1GLNgCVuvEBmx4CRAMykATBPrNWiEACF5fZYKIAWUmp1T9IAIonF-FUOSjt1XdIMBBZyUBVRQNcW87NgCuCRgoAHN4IlAAMwAnCABbJDIQHAgkURAGLDB7KDo4AAs4kAi9NgAdRpgADyw4HDgAQgACZt6Aa2d0rMLqfKQAVnrfEDSAfWERjOzEIsnEK0kGg0XNFbGtiYLETVn7AEdDtZm80-OduevqBjoAIxgGAAVXcz2sPEqjgbjkTtNqJ8wFAkGpcj57FVQYhcpttlCYYgALRwi5sKoAcmRd02GhAGNh8MiBlYPFSqyQ21JkJg0KQOKpuxAtIUozWZM2jxwdCwDDYwtFdSe9myMS4QA
-\begin{tikzcd}
-    X \arrow[rd, "\exists! \ k", dashed] \arrow[rrrd, "h", bend left] \arrow[rdd, "h'", bend right] &                                                 &  &                                               &                         \\
-                                                                                                    & R \arrow[rr, "r_1"] \arrow[d, "r_2"]            &  & A \arrow[d, "q"'] \arrow[rdd, "e", bend left] &                         \\
-                                                                                                    & A \arrow[rr, "q"] \arrow[rrrd, "e", bend right] &  & B                                             &                         \\
-                                                                                                    &                                                 &  &                                               & Q \arrow[lu, "m", tail]
-    \end{tikzcd}
-    \]
+    Finally, we observe that $(r_1,r_2)$ is the kernel pair of $e$, since by \Cref{kernel pair of the coeq}, a kernel pair that admits a coequalizer is the kernel pair of its coequalizer.
 
 \end{proof}
 \end{subbox}
