@@ -587,8 +587,39 @@ By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback
     \end{theo}
 \end{mainbox}
 
+We defer the proof for a moment; it will follow \hyperref[The proof]{below}.
+
+\begin{mainbox}{}
+    \begin{defi}
+        A category $\mathcal{A}$ is said to be \textbf{ideally exact} if it satisfies one of the equivalent conditions of \Cref{Ideally exact categories}.
+    \end{defi}
+\end{mainbox}
+
+We will extensively analyze this definition later. Now we focus on proving several results that will be essential for the proof.
+
+\begin{mainbox}{}
+    \begin{prop}\label{algebras category is exact if the base category is exact}
+        Let $T:\mathcal{\mathcal{X}} \to \mathcal{X}$ be a monad preserving regular epimorphisms and kernel pairs. If $\mathcal{X}$ is exact, then the Eilenberg-Moore category $\mathcal{X}^T$ is exact.
+    \end{prop}
+\end{mainbox}
+
 \begin{subbox}{}
     \begin{proof}
+        Assume $\mathcal{X}$ is exact. With the given hypotheses on the monad $T$, we aim to prove that $\mathcal{X}^T$ is exact. We need to establish that it is finitely complete, that each equivalent relation is the kernel pair of some arrow, that regular epis are pullback stable and that each morphism admits a (regular epi, mono) factorization.
+
+        First we show that $\mathcal{X}^T$ is finitely complete. We recall that the forgetful functor $U:\mathcal{X}^T \to \mathcal{X}$ creates all the limits that $\mathcal{X}$ has. Since $\mathcal{X}$ is exact, it has all finite limits. Therefore, $\mathcal{X}^T$ has all finite limits.
+
+        We proceed to prove that each equivalent relation is the kernel pair of some arrow. Consider an equivalence relation $R$ in $\mathcal{X}^T$. Then, under the forgetful functor, $R$ is an equivalence relation in $\mathcal{X}$. $\mathcal{A}$ is exact, so $R$ is the kernel pair of some arrow. By \Cref{equiv rel is kernel pair of the coeq} we can assume this arrow to be its coequalizer.
+
+
+
+    \end{proof}
+\end{subbox}
+
+We now proceed to prove the theorem that, as discussed earlier, defines the ideal exact categories.
+
+\begin{subbox}{}
+    \begin{proof}[\textit{Proof of \Cref{Ideally exact categories}}]\label{The proof}
         $(1\implies 3)$ Suppose $! : 0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact, the pullback functor $(!)^*: (\mathcal{A} \downarrow 1) \to (\mathcal{A} \downarrow 0)$ is monadic by (citazione). Notice that $(\mathcal{A} \downarrow 1) = \mathcal{A}$. Now consider $\mathcal{X} = (\mathcal{A} \downarrow 0)$, we want to prove that $\mathcal{X}$ is semiabelian. 
         
         $(\mathcal{A} \downarrow 0)$ is pointed, in fact if $(A,\alpha)$ is an object in $(\mathcal{A} \downarrow 0)$, we have the following initial and terminal objects, which are the same:
@@ -670,12 +701,10 @@ By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback
 
     Finally, we want to establish that the monad $(!)^*(!)_!$ preserves kernel pairs. This is obvius: $(!)_!$ preserves connected limits, such as kernel pairs, by \Cref{p_! preserves connected limits}, while $(!)^*$ preserves kernel pairs since it is a right adjoint. Thus $(!)^*(!)_!$ preserves kernel pairs.
 
-    $(3 \implies 2)$ Suppose there exists $\mathcal{X}$ semiabelian category and a monadic functor $U: \mathcal{A} \to \mathcal{X}$ satisfying the stated conditions. First we need to verify that $\mathcal{A}$ is exact.
+    $(3 \implies 2)$ Suppose there exists $\mathcal{X}$ semiabelian category and a monadic functor $U: \mathcal{A} \to \mathcal{X}$ satisfying the stated conditions. Assume that the associated monad $T$ preserves
+    regular epimorphisms and kernel pairs.
+    
+    First we need to verify that $\mathcal{A}$ is exact.
 \end{proof}
 \end{subbox}
 
-\begin{mainbox}{}
-    \begin{defi}
-        A category $\mathcal{A}$ is said to be \textbf{ideally exact} if it satisfies one of the equivalent conditions of \Cref{Ideally exact categories}.
-    \end{defi}
-\end{mainbox}
