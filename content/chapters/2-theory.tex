@@ -607,12 +607,29 @@ We will extensively analyze this definition later. Now we focus on proving sever
     \begin{proof}
         Assume $\mathcal{X}$ is exact. With the given hypotheses on the monad $T$, we aim to prove that $\mathcal{X}^T$ is exact. We need to establish that it is finitely complete, that each equivalent relation is the kernel pair of some arrow, that regular epis are pullback stable and that each morphism admits a (regular epi, mono) factorization.
 
-        First we show that $\mathcal{X}^T$ is finitely complete. We recall that the forgetful functor $U:\mathcal{X}^T \to \mathcal{X}$ creates all the limits that $\mathcal{X}$ has. Since $\mathcal{X}$ is exact, it has all finite limits. Therefore, $\mathcal{X}^T$ has all finite limits.
+        First we show that $\mathcal{X}^T$ is finitely complete. We recall that the forgetful functor $U^T:\mathcal{X}^T \to \mathcal{X}$ creates all the limits that $\mathcal{X}$ has. Since $\mathcal{X}$ is exact, it has all finite limits. Therefore, $\mathcal{X}^T$ has all finite limits.
 
-        We proceed to prove that each equivalent relation is the kernel pair of some arrow. Consider an equivalence relation $R$ in $\mathcal{X}^T$. Then, under the forgetful functor, $R$ is an equivalence relation in $\mathcal{X}$. $\mathcal{A}$ is exact, so $R$ is the kernel pair of some arrow. By \Cref{equiv rel is kernel pair of the coeq} we can assume this arrow to be its coequalizer.
+        We proceed to prove that each equivalent relation is the kernel pair of some arrow. Consider an equivalence relation $R$ in $\mathcal{X}^T$. Then, under the forgetful functor $U^T$, $R$ is an equivalence relation in $\mathcal{X}$. $\mathcal{X}$ is exact, so $R$ is the kernel pair of some arrow. Since $U^T$ creates all the limits that $\mathcal{X}$, we can conclude that $R$ is the kernel pair in $\mathcal{X}^T$ of some arrow.
+
+        Consider now a morphism $f:(A,\xi_A)\to (B, \xi_B)$ in $\mathcal{X}^T$, we aim to prove that it admits a (regular epi, mono) factorization. The morphism $f$, under the forgetful functor $U^T$, is a morphism in $\mathcal{X}$, which is exact and in particular regular. Thus $f$ admits a (regular epi, mono) factorization in $\mathcal{X}$, let it be $f=mq$ with $m:Q \to B$ mono and $q: A \to Q$ regular epi. Notice that $A$ and $B$ are already algebras, we want to provide $Q$ with the structure of an algebra, so that we can lift the factorization to $\mathcal{X}^T$.
+
+        In order to do that we need first to prove that $T$ preserves coequalizers of kernel pairs. Let $p: X \to Y$ be a coequalizer and let $(\mathrm{Eq}(p),r_1,r_2)$ be its kernel pair. $T$ preserves kernel pair and regular epi by hypothesis, thus $T(p)$ is a regular epi and $(T(\mathrm{Eq}(p)),T(r_1),T(r_2)$ is the kernel pair of $T(p)$. By \Cref{coeq of the kernel pair} we can assert that $T(p)$ is the coequalizer of the kernel pair $(T(\mathrm{Eq}(p)),T(r_1),T(r_2)$, as claimed. We know that $U^T$ creates all the colimits that $\mathcal{X}$ has and $T$ preserves. Since $T$ preserves coequalizers of kernel pairs, we can conclude that $U^T$ creates all coequalizers of kernel pairs that $\mathcal{X}^T$ has.
+        
+        Picking up where we left off, notice that $q$ is a regular epi. By \Cref{coeq of the kernel pair} we can assume that $q$ is the coequalizer of its kernel pair $(\mathrm{Eq}(q),r_1,r_2)$. 
+        
+
+        Da qui da rivedere.!!!
+
+        
+        Since $U^T$ creates all the limits that $\mathcal{X}$ has, we have that $(\mathrm{Eq}(q),r_1,r_2)$ can be lifted to a kernel pair in $\mathcal{X}^T$. Let $\xi$ be the structure of an algebra on $\mathrm{Eq}(q)$. Moreover, since $T$ preserves regular epi, we have that $T(q)$ is a regular epi. By \Cref{coeq of the kernel pair}, $T(q)$ is the coequalizer of its kernel pair $(T(\mathrm{Eq}(q)),T(r_1),T(r_2))$. 
 
 
-
+        
+        
+        
+        
+        We have that $q \xi_A T(r_1) = q r_1 \xi = q r_2 \xi = q \xi_A T(r_2)$, thus, by the universal property of the coequalizer $T(q)$, there exists a unique morphism $\xi_Q: T(Q) \to Q$ such that $\xi_Q T(q) = Q \xi_A$. This morphism is the structure of an algebra on $Q$. 
+ 
     \end{proof}
 \end{subbox}
 
