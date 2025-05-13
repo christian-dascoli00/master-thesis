@@ -613,23 +613,20 @@ We will extensively analyze this definition later. Now we focus on proving sever
 
         Consider now a morphism $f:(A,\xi_A)\to (B, \xi_B)$ in $\mathcal{X}^T$, we aim to prove that it admits a (regular epi, mono) factorization. The morphism $f$, under the forgetful functor $U^T$, is a morphism in $\mathcal{X}$, which is exact and in particular regular. Thus $f$ admits a (regular epi, mono) factorization in $\mathcal{X}$, let it be $f=mq$ with $m:Q \to B$ mono and $q: A \to Q$ regular epi. Notice that $A$ and $B$ are already algebras, we want to provide $Q$ with the structure of an algebra, so that we can lift the factorization to $\mathcal{X}^T$.
 
-        In order to do that we need first to prove that $T$ preserves coequalizers of kernel pairs. Let $p: X \to Y$ be a coequalizer and let $(\mathrm{Eq}(p),r_1,r_2)$ be its kernel pair. $T$ preserves kernel pair and regular epi by hypothesis, thus $T(p)$ is a regular epi and $(T(\mathrm{Eq}(p)),T(r_1),T(r_2)$ is the kernel pair of $T(p)$. By \Cref{coeq of the kernel pair} we can assert that $T(p)$ is the coequalizer of the kernel pair $(T(\mathrm{Eq}(p)),T(r_1),T(r_2)$, as claimed. We know that $U^T$ creates all the colimits that $\mathcal{X}$ has and $T$ preserves. Since $T$ preserves coequalizers of kernel pairs, we can conclude that $U^T$ creates all coequalizers of kernel pairs that $\mathcal{X}^T$ has.
+        In order to do so, we first need to show that $T$ preserves coequalizers in $\mathcal{X}$ of kernel pairs arising from $\mathcal{X}^T$, once the algebra structure is forgotten. Let $(\mathrm{Eq}(p),r_1,r_2)$ be the kernel pair in $\mathcal{X}$ of a morphism $p$, arising from a kernel pair in $\mathcal{X}^T$, and suppose that $p$ is coequalizer in $\mathcal{X}$. Given that $(\mathrm{Eq}(p),r_1,r_2)$ is a kernel pair arising from $\mathcal{X}^T$, it follows that $(T(\mathrm{Eq}(p)),T(r_1),T(r_2))$ is the kernel pair of $T(p)$ in $\mathcal{X}$. Since $T$ preserves regular epi, we have that $T(p)$ is a regular epi. By \Cref{coeq of the kernel pair}, we can assert that $T(p)$ is the coequalizer of the kernel pair $(T(\mathrm{Eq}(p)),T(r_1),T(r_2))$, as claimed.
         
-        Picking up where we left off, notice that $q$ is a regular epi. By \Cref{coeq of the kernel pair} we can assume that $q$ is the coequalizer of its kernel pair $(\mathrm{Eq}(q),r_1,r_2)$. 
-        
+        We know that $U^T$ creates all the colimits that $\mathcal{X}$ has and $T$ preserves. Hence, $U^T$ creates all coequalizers that $\mathcal{X}$ has of kernel pairs arising from $\mathcal{X}^T$, once the algebra structure is forgotten. 
 
-        Da qui da rivedere.!!!
+        Picking up where we left off, notice that $q$ is a regular epi. By \Cref{coeq of the kernel pair} we can assume that $q$ is the coequalizer of its kernel pair $(\mathrm{Eq}(q),r_1,r_2)$. Since $U^T$ creates all the limits that $\mathcal{X}$ has, we can lift the kernel pair $(\mathrm{Eq}(q),r_1,r_2)$ to a kernel pair in $\mathcal{X}^T$. Let $\xi$ be the algebra of $\mathrm{Eq}(q)$. We observe that $q$ is a coequalizer of the kind preserved by the monad $T$. Hence, $q$ is also a coequalizer in $\mathcal{X}^T$. This means that $q$ is a regular epi in $\mathcal{X}^T$ and $Q$ has an algebra structure $\xi_Q$.
 
-        
-        Since $U^T$ creates all the limits that $\mathcal{X}$ has, we have that $(\mathrm{Eq}(q),r_1,r_2)$ can be lifted to a kernel pair in $\mathcal{X}^T$. Let $\xi$ be the structure of an algebra on $\mathrm{Eq}(q)$. Moreover, since $T$ preserves regular epi, we have that $T(q)$ is a regular epi. By \Cref{coeq of the kernel pair}, $T(q)$ is the coequalizer of its kernel pair $(T(\mathrm{Eq}(q)),T(r_1),T(r_2))$. 
+        In order to prove the factorization of $f$ in $\mathcal{X}^T$, it remains to establish that $m$ is a morphism in $\mathcal{X}^T$ and that it is a mono. Notice that $m$ is a mono in $\mathcal{X^T}$, in fact it is a mono in $\mathcal{X}$ and furthermore it is merely a morphism $\mathcal{X}$ that satisfies the algebra condition. Finally, we want to establish that $m$ is a morphism in $\mathcal{X}^T$.
+        \[ f=mq \implies f \xi_A = mq\xi_A \implies \xi_B T(f) = m \xi_Q T(q) \implies \]
+        \[\implies \xi_B T(m) T(q) =  m \xi_Q T(q) \]
+        We know that $T(q)$ is a regular epi, thus it is a epi. So we can cancel it from both sides and we obtain the condition for $m$ to be a morphism in $\mathcal{X}^T$:
+        \[ \xi_B T(m) =  m \xi_Q \]
 
-
+        It remains to prove the last condition of a regular category, that is the pullback stability of regular epi.
         
-        
-        
-        
-        We have that $q \xi_A T(r_1) = q r_1 \xi = q r_2 \xi = q \xi_A T(r_2)$, thus, by the universal property of the coequalizer $T(q)$, there exists a unique morphism $\xi_Q: T(Q) \to Q$ such that $\xi_Q T(q) = Q \xi_A$. This morphism is the structure of an algebra on $Q$. 
- 
     \end{proof}
 \end{subbox}
 
