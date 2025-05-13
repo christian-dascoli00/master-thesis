@@ -607,10 +607,18 @@ We will extensively analyze this definition later. Now we focus on proving sever
     \begin{proof}
         Assume $\mathcal{X}$ is exact. With the given hypotheses on the monad $T$, we aim to prove that $\mathcal{X}^T$ is exact. We need to establish that it is finitely complete, that each equivalent relation is the kernel pair of some arrow, that regular epis are pullback stable and that each morphism admits a (regular epi, mono) factorization.
 
-        First we show that $\mathcal{X}^T$ is finitely complete. We recall that the forgetful functor $U^T:\mathcal{X}^T \to \mathcal{X}$ creates all the limits that $\mathcal{X}$ has. Since $\mathcal{X}$ is exact, it has all finite limits. Therefore, $\mathcal{X}^T$ has all finite limits.
+        First we show that $\mathcal{X}^T$ is finitely complete. We recall that the forgetful functor $U^T:\mathcal{X}^T \to \mathcal{X}$ creates all the limits that $\mathcal{X}$ has. Since $\mathcal{X}$ is exact, it has all finite limits. Therefore, $\mathcal{X}^T$ has all finite limits. (TO VERIFY)
 
-        We proceed to prove that each equivalent relation is the kernel pair of some arrow. Consider an equivalence relation $R$ in $\mathcal{X}^T$. Then, under the forgetful functor $U^T$, $R$ is an equivalence relation in $\mathcal{X}$. $\mathcal{X}$ is exact, so $R$ is the kernel pair of some arrow. Since $U^T$ creates all the limits that $\mathcal{X}$, we can conclude that $R$ is the kernel pair in $\mathcal{X}^T$ of some arrow.
+        We proceed to prove that each equivalent relation is the kernel pair of some arrow. Consider an equivalence relation $R$ in $\mathcal{X}^T$ with $\xi_R$ and $\xi_A$ giving the structure of algebras. Then, under the forgetful functor $U^T$, $R$ is an equivalence relation in $\mathcal{X}$. $\mathcal{X}$ is exact, so $R$ is the kernel pair of some arrow. In particular, by \Cref{equiv rel is kernel pair of the coeq}, we cas suppose that $R$ is the kernel pair of its coequalizer. Let call it $f:A \to B$. Since $T$ preserves kernel pairs, we have that $T(R)$ is the kernel pair of $T(f)$. Morover $T$ preserves regular epis, so $T(f)$ is a regular epi. By \Cref{coeq of the kernel pair}, we can assume that $T(f)$ is the coequalizer of its kernel pair $(T(R),r_1,r_2)$. Since $f\xi_AT(r_1)= fr_1\xi_R = fr_2\xi_R=f\xi_AT(r_2)$, by the universal property of the coequalizer, there exists a unique morphism $\xi_B$ such that $\xi_BT(f) = f\xi_A$. The morphism $\xi_B$ is the algebra structure of $T(B)$. Since $U^T$ creates all the limits that $\mathcal{X}$ has, we can conclude that $R$ is the kernel pair in $\mathcal{X}^T$ of some arrow.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAlEAX1PU1z5CKchWp0mrdgEEefEBmx4CRAExiaDFm0QgAQnP5KhRMsXFapugCoAKDgEpDCgcuHJR5zZJ0g70p14jQRUUdS8JbXY7PUDxGCgAc3giUAAzACcIAFskURAcCCR1SKsQNJAaAAsYeih2HAB3CBq6hCDyrNzEMgKixHy4Kqw0nCQAWnzLXwyAfXJnTJykXsK8miGRsYHvKN051UqQRnoAIxhGAAVXE32sRKqxjqXugGYaNZ7dsoAdH4APLCzLg0RhYMC+OAQMH1Z5dJAAFg+-SmPnYf0Bs1kcOWiCRfSQAFZvr47GknNVavVdE0WlT2vIXkTkcUSeiAUCDKDwb4oPQhglFvDEO8CXiNsNRhNUXs-LY5uRAozhaLPvjNlKdsczhdrsZQiAMvdHkdptF5bNVHFuEA
+\begin{tikzcd}
+    T(R) \arrow[d, "\xi_R"] \arrow[r, "T(r_1)", shift left] \arrow[r, "T(r_2)"', shift right] & T(A) \arrow[d, "\xi_A"] \arrow[r, "T(f)", two heads] & T(B) \arrow[d, "\xi_B", dashed] \\
+    R \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right]                             & A \arrow[r, "f", two heads]                          & B                              
+    \end{tikzcd}
+    \]
 
+        (TO ADJUST)
         Consider now a morphism $f:(A,\xi_A)\to (B, \xi_B)$ in $\mathcal{X}^T$, we aim to prove that it admits a (regular epi, mono) factorization. The morphism $f$, under the forgetful functor $U^T$, is a morphism in $\mathcal{X}$, which is exact and in particular regular. Thus $f$ admits a (regular epi, mono) factorization in $\mathcal{X}$, let it be $f=mq$ with $m:Q \to B$ mono and $q: A \to Q$ regular epi. Notice that $A$ and $B$ are already algebras, we want to provide $Q$ with the structure of an algebra, so that we can lift the factorization to $\mathcal{X}^T$.
 
         In order to do so, we first need to show that $T$ preserves coequalizers in $\mathcal{X}$ of kernel pairs arising from $\mathcal{X}^T$, once the algebra structure is forgotten. Let $(\mathrm{Eq}(p),r_1,r_2)$ be the kernel pair in $\mathcal{X}$ of a morphism $p$, arising from a kernel pair in $\mathcal{X}^T$, and suppose that $p$ is coequalizer in $\mathcal{X}$. Given that $(\mathrm{Eq}(p),r_1,r_2)$ is a kernel pair arising from $\mathcal{X}^T$, it follows that $(T(\mathrm{Eq}(p)),T(r_1),T(r_2))$ is the kernel pair of $T(p)$ in $\mathcal{X}$. Since $T$ preserves regular epi, we have that $T(p)$ is a regular epi. By \Cref{coeq of the kernel pair}, we can assert that $T(p)$ is the coequalizer of the kernel pair $(T(\mathrm{Eq}(p)),T(r_1),T(r_2))$, as claimed.
@@ -618,6 +626,8 @@ We will extensively analyze this definition later. Now we focus on proving sever
         We know that $U^T$ creates all the colimits that $\mathcal{X}$ has and $T$ preserves. Hence, $U^T$ creates all coequalizers that $\mathcal{X}$ has of kernel pairs arising from $\mathcal{X}^T$, once the algebra structure is forgotten. 
 
         Picking up where we left off, notice that $q$ is a regular epi. By \Cref{coeq of the kernel pair} we can assume that $q$ is the coequalizer of its kernel pair $(\mathrm{Eq}(q),r_1,r_2)$. Since $U^T$ creates all the limits that $\mathcal{X}$ has, we can lift the kernel pair $(\mathrm{Eq}(q),r_1,r_2)$ to a kernel pair in $\mathcal{X}^T$. Let $\xi$ be the algebra of $\mathrm{Eq}(q)$. We observe that $q$ is a coequalizer of the kind preserved by the monad $T$. Hence, $q$ is also a coequalizer in $\mathcal{X}^T$. This means that $q$ is a regular epi in $\mathcal{X}^T$ and $Q$ has an algebra structure $\xi_Q$.
+        
+        (VERIFY UNTIL HERE)
 
         In order to prove the factorization of $f$ in $\mathcal{X}^T$, it remains to establish that $m$ is a morphism in $\mathcal{X}^T$ and that it is a mono. Notice that $m$ is a mono in $\mathcal{X^T}$, in fact it is a mono in $\mathcal{X}$ and furthermore it is merely a morphism $\mathcal{X}$ that satisfies the algebra condition. Finally, we want to establish that $m$ is a morphism in $\mathcal{X}^T$.
         \[ f=mq \implies f \xi_A = mq\xi_A \implies \xi_B T(f) = m \xi_Q T(q) \implies \]
@@ -626,7 +636,7 @@ We will extensively analyze this definition later. Now we focus on proving sever
         \[ \xi_B T(m) =  m \xi_Q \]
 
         It remains to prove the last condition of a regular category, that is the pullback stability of regular epi.
-        
+
     \end{proof}
 \end{subbox}
 
