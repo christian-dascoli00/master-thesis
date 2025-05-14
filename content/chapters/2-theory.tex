@@ -640,7 +640,7 @@ We will extensively analyze this definition later. Now we focus on proving sever
         \end{tikzcd}
         \]
         
-        Picking up where we left off, consider $f$ and its kernel pair $(\mathrm{Eq}(q),r_1,r_2)$. Since $U^T$ creates all the limits that $\mathcal{X}$ has, we can lift the kernel pair $(\mathrm{Eq}(q),r_1,r_2)$ to a kernel pair in $\mathcal{X}^T$. Let $\xi_\mathrm{Eq}$ be the algebra of $\mathrm{Eq}$.
+        Picking up where we left off, consider $f$ and its kernel pair $(\mathrm{Eq}(q),r_1,r_2)$. Since $U^T$ creates all the limits that $\mathcal{X}$ has, we can lift the kernel pair $(\mathrm{Eq}(q),r_1,r_2)$ to a kernel pair in $\mathcal{X}^T$. Let $\xi_\mathrm{Eq}$ be the structure of algebra of $\mathrm{Eq}$.
 
         We know that $U^T$ creates all the colimits that $\mathcal{X}$ has and $T$ preserves. Hence, $U^T$ creates all coequalizers that $\mathcal{X}$ has of kernel pairs arising from $\mathcal{X}^T$, once the algebra structure is forgotten. Observe that $e$ is such a coequalizer, in fact it is a regular epi and by (citazione) $f$ and $e$ has the same kernel pair. Thus $(\mathrm{Eq}(q),r_1,r_2)$ is also the kernel pair of $e$. Hence, by \Cref{coeq of the kernel pair}, $e$ is the coequalizer of $(\mathrm{Eq}(q),r_1,r_2)$. In particular by the creation of such colimit we proved that $Q$ has the structure of algebra, called $\xi_Q$, and that $e$ can be lifted to a coequalizer in $\mathcal{X}^T$.
         \[
@@ -758,3 +758,12 @@ We now proceed to prove the theorem that, as discussed earlier, defines the idea
 \end{proof}
 \end{subbox}
 
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAKwVqdJq3YAhHnxAZseAkTEAGCQxZtEIACoAKGQEp5-ZUKJlNNbdL1GOZ3hcGqUARnF2pukAA6AQC29DgAFgBOwcAAogCO3IbxLgpK7sLI3raSOuxGQaER0XGJySapbiqZ5KTEWn7sAMLmigLVRAAsdQ15egAirekdKLWevQ4Ghk2VbZYeyN3jvn1T-bPDVijqPSuTQ+1byDvLufvcEjBQAObwRKAAZpEQwUhkIDgQSAAcriBPLzeNE+SHIfwBr0QOw+X0QnnBz0h0JBiAAbAjAYgAJzA2EAdgxkNRuKQBIUEJ+JLRhNBVPh5MRSG8MNJNMQ3ypWLZtRZ2LZ7xR6jZYl57zg4SwDxwSAAtPTHozECKUWKJVKmWzurzoeLJdLEHLNVSdWr9fL-orlbDOmzPMjrbb7UhiSBdeqDeaKXDmSiRLafbC7f6qRzXabZZ7FZ4A5Sw3qNQzMXaqS63WaLtwgA
+\[
+\begin{tikzcd}
+    & T(\mathrm{Eq}(q)) \arrow[rr, shift left] \arrow[rr, shift right] \arrow[dd] &                            & T(A) \arrow[ld] \arrow[rr] \arrow[dd] &                 & T(B) \arrow[dd] \arrow[ld] \\
+{} \arrow[ru] \arrow[dd] \arrow[rr, shift left] \arrow[rr, shift right] &                                                                             & T(C) \arrow[dd] \arrow[rr] &                                       & T(D) \arrow[dd] &                            \\
+    & \mathrm{Eq}(q) \arrow[rr, shift left] \arrow[rr, shift right]               &                            & A \arrow[rr] \arrow[ld]               &                 & B \arrow[ld]               \\
+{} \arrow[ru] \arrow[rr, shift left] \arrow[rr, shift right]            &                                                                             & C \arrow[rr]               &                                       & D               &                           
+\end{tikzcd}
+\]
