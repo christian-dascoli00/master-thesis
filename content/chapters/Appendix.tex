@@ -176,10 +176,11 @@ We already know that $pr_1=pr_2$, as $(r_1,r_2)$ is the kernel pair of $p$. It r
 
 
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdgCEefEBmx4CRAEyli4hizaIQAETn8lQtWJrapegMJGFA5cJIatk3SACiPcTCgBzeCJQADMAJwgAWyQyEBwIJFEQOAALLGCcJABaRMt3UIB9cjswyOiaOISaFLSMxBy3dgLVEBpGegAjGEYABQdTPVCsP2SM3hDwqLry+MR1CR12AEdiicrYmYBmCwa9NBaQZJh6KHYcAHcIQ+OEMZASyYAWabXq9LXOsBPEDZjc9jh8s1Wh0ur0TCoBkMRitSognusXqk3ohstsFnoAUUaB8vj9bvckPCKogYowsGB3FB6ClfPs-noADoMmAADywcBwcAAhBlgZ0en0ISBBsNRvICd9nrNWuTKdTDic+aDBcJhVDefMrCAmaz2ZyAARc-XMbzcIA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAIwVqdJq3YAhHnxAZseAkXKkREhizaIQAEXn9lQteJrbpegMJHFAlcJKliWqbpABRHhJhQA5vBEoABmAE4QALZIZCA4EEhiIHAAFlghOEgAtEmWHmEA+iJ24VExNPGJNKnpmYi57uyF5CA0jPQARjCMAAoOpnphWP4pmbyhEdH1FQmI6pI67ACOJZNVcbMAzBaNemitICkw9FDsOADuEEcnCOMgpVMALDPrNRnrXWCniJuxeexwAotNqdbp9EyqQbDUarMqIZ4bV5pd6IHI7RZ6QHFGifb6-O4PJAIyqIWKMLBgDxQeipPwHf56AA6jJgAA8sHAcHAAISZEFdXr9SEgIYjMYKQk-F5zNoUqk0o6nflgoXCEXQvkLKwgZlsjlcgAE3INzB83CAA
 \begin{tikzcd}
-    E \arrow[rd, "s_2"', bend left, shift right] \arrow[rd, "s_1", bend left, shift left] \arrow[d, "\exists!t"', dashed] &                                             & D                                   \\
-    A \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right]                                                         & B \arrow[ru, "q"] \arrow[r, "p", two heads] & C \arrow[u, "\exists ! u"', dashed]
+    E \arrow[rdd, "s_2"', bend left, shift right] \arrow[rdd, "s_1", bend left, shift left] \arrow[dd, "\exists!t"', dashed] &                                             &                                     \\
+                                                                                                                             &                                             & D                                   \\
+    A \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right]                                                            & B \arrow[ru, "q"] \arrow[r, "p", two heads] & C \arrow[u, "\exists ! u"', dashed]
     \end{tikzcd}
     \]
     
@@ -226,23 +227,54 @@ K \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right] & A \arrow[r, "q"'
 \begin{proof}
     Consider an equivalence relation $(R,r_1,r_2)$ in $\mathcal{A}$. Since $\mathcal{A}$ is exact, $(R,r_1,r_2)$ is the kernel pair of some arrow $q:A \to B$. $\mathcal{A}$ is also regular, so $q$ admits a factorization $q=me$, where $m$ is a mono and $e$ is a regular epi, ie the coequalizer of some arrows. Let $s_1$ and $s_2$ be such arrows, we have that $es_1=es_2$. Composing with $m$, we have that $qs_1=mes_1=mes_2=qs_2$. By the universal property of the kernel pair, there exists a unique morphism $t: C \to R$ such that $r_1t=s_1$ and $r_2t=s_2$.
     \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAlEAX1PU1z5CKchWp0mrdgEEefEBmx4CRAMxiaDFm0QgAQnP5KhRAEyli4rVN0BFQwoHLhJC1ck6QAYR7iYUAHN4IlAAMwAnCABbJDIQHAgkURA4AAssUJwkzQ92cIB9UxAaRnoAIxhGAAUnE11wrADUrN4wyJjEOITslPTMpABaZOtPAvIHCOie7sRzCW12AEcJ9unExHUQVJh6KHYcAHcIbd2EHIXdNlaQSY7NmbmR9hiaHHosRn33z+vbpAAWV7rZJpDJZRBDc42FKFYogCpgPYbYi-VaIQHxYE0UH9RDDXK6OD5cYlcqVGrGFT1RrNOEIpGqFHyP7ooGxEpYMCeKD0NL+OFPXQAHSFMAAHlg4Dg4AACACEMpFMqypIq1VqVJADSaLUo3CAA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAlEAX1PU1z5CKAIwVqdJq3YBBHnxAZseAkQDM4mgxZtEIAELz+yoUXKkRE7dL0BFI4oErhJUsStTdIAMI8JMKABzeCJQADMAJwgAWyQyEBwIJDEQOAALLDCcZK1PdgiAfXIQGkZ6ACMYRgAFJ1M9CKxAtOzecKjYxHjEnNSMrKQAWhTrL0KRB0iY3p7Ec0kddgBHSY6ZpMQNEDSYeih2HAB3CB29hFzFvTY2kCnOrdn50fZYmhx6LEYDj6+bu6QACxvDYpdKZbKIYYXGypIolECVMD7TbEP5rRBAhIgmhggaIEZ5PRwAoTUoVKq1EyqBpNFrwxHItSohT-DHAuKlLBgLxQejpALw556AA6wpgAA8sHAcHAAAQAQll2TJlRqdWpIEazValG4QA
 \begin{tikzcd}
-    C \arrow[rd, "s_2", bend left, shift left] \arrow[rd, "s_1"', bend left, shift right] \arrow[d, "\exists ! \ t"', dashed] &                                              & Q \arrow[rd, "m", tail] &   \\
-    R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left]                                                             & A \arrow[rr, "q"] \arrow[ru, "e", two heads] &                         & B
+    C \arrow[rdd, "s_2", bend left, shift left] \arrow[rdd, "s_1"', bend left, shift right] \arrow[dd, "\exists ! t"', dashed] &                                              &                         &   \\
+                                                                                                                               &                                              & Q \arrow[rd, "m", tail] &   \\
+    R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left]                                                              & A \arrow[rr, "q"] \arrow[ru, "e", two heads] &                         & B
     \end{tikzcd}
     \]
 
     Now we want to prove that $e$ is the coequalizer of $(r_1,r_2)$. We have that $mer_1=fr_1 = fr_2 = mer_2$. Thus, since $m$ is a mono, $er_1=er_2$. It remains to prove the universal property of the coequalizer. Let $f:A \to D$ be a morphism such that $fr_1=fr_2$. Composing with $t$ we have $fr_1t=fr_2t$, hence $fs_1=fs_2$. By the universal property of the coequalizer $e$, as coequalizer of $s_1$ and $s_2$, there exists a unique morphism $g:Q \to D$ such that $ge=f$. Hence $e$ is also the coequalizer of $r_1$ and $r_2$.
     \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAlEAX1PU1z5CKchWp0mrdgEEefEBmx4CRAMxiaDFm0QgAInP5KhRAEyli4rVN0BFQwoHLhJC1ck6QAYR7iYUAHN4IlAAMwAnCABbJDIQHAgkURA4AAssUJwkzQ92cIB9UxAaRnoAIxhGAAUnE11wrADUrN4wyJjEOITslPTMpABaZOtPAvIHCOie7sRzCW12UIn26cTEdRBUmHoodhwAdwgtnYQchd02VpBJjoAWGhnktIysxCGzmxTC4pAKsF31sQrjckPd4msnn1XsNcro4PlxiVypUasYVPVGs0fn8AaogfIQYgwTM4owsGBPFB6Gl-D8RuwADoMmAADywcBwcAABABCLlcrJIirVWrokANJotAkrdYPNZzMkU9hUmm7D6eJms9mc3lcgK+bhAA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAlEAX1PU1z5CKAIwVqdJq3YBBHnxAZseAkQDM4mgxZtEIACLz+yoUXKkRE7dL0BFI4oErhJUsStTdIAMI8JMKABzeCJQADMAJwgAWyQyEBwIJDEQOAALLDCcZK1PdgiAfXIQGkZ6ACMYRgAFJ1M9CKxAtOzecKjYxHjEnNSMrKQAWhTrL0KRB0iY3p7Ec0kddjDJjpmkxA0QNJh6KHYcAHcIbd2EXMW9NjaQKc6AFhpZlPTM7MRh85tUopKQSrA9htiNdbkgHgl1s9+m8Rnk9HAChNShUqrUTKoGk0Wr9-oC1MCFKDEODZvFGFgwF4oPR0gFfqN2AAdRkwAAeWDgODgAAIAITc7nZZGVGp1DEgRrNVqE1YbR7rebkynsam0vafLzMtkcrl87mBPzcIA
 \begin{tikzcd}
-    C \arrow[rd, "s_2", bend left, shift left] \arrow[rd, "s_1"', bend left, shift right] \arrow[d, "\exists !  t"', dashed] &                                              & Q \arrow[rd, "\exists ! g", dashed] &   \\
-    R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left]                                                            & A \arrow[rr, "f"] \arrow[ru, "e", two heads] &                                     & D
+    C \arrow[rdd, "s_2", bend left, shift left] \arrow[rdd, "s_1"', bend left, shift right] \arrow[dd, "\exists !  t"', dashed] &                                              &                                     &   \\
+                                                                                                                                &                                              & Q \arrow[rd, "\exists ! g", dashed] &   \\
+    R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left]                                                               & A \arrow[rr, "f"] \arrow[ru, "e", two heads] &                                     & D
     \end{tikzcd}
     \]
 
     Finally, we observe that $(r_1,r_2)$ is the kernel pair of $e$, since by \Cref{kernel pair of the coeq}, a kernel pair that admits a coequalizer is the kernel pair of its coequalizer.
-
 \end{proof}
+\end{subbox}
+
+
+\begin{mainbox}{}
+    \begin{prop}\label{f and e share the kernel pair}
+        If a morphism $f$ admits a factorization $f=mg$, with $m$ mono, then $f$ and $g$ share the same kernel pair.
+    \end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        Let $(\mathrm{Eq},r_1,r_2)$ be the kernel pair of $f: A \to B$ and $g:A \to Q$, such that $f=mg$ with $m$ mono. We have that $fr_1=fr_2$, hence $mgr_1=mgr_2$. Since $m$ is a mono, we have that $gr_1=gr_2$. Conversely, if $(\mathrm{Eq},r_1,r_2)$ is the kernel pair of $e$, then we have that $gr_1=gr_2$. Just composing with $m$ we have that $mgr_1=mgr_2$. Hence $fr_1'=fr_2'$.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAmclVqMWbAELdeIDNjwEiARlKrx9Zq0QgAit3EwoAc3hFQAMwBOEALZIyIHBCTqJOtlbnW7jxGdXJFFPKT1TXxBbBxDqYMQPHDosBjZk1JBqbXCQRy4KLiA
+\begin{tikzcd}
+    A \arrow[rr, "f"] \arrow[rd, "g"] &                         & B \\
+                                      & Q \arrow[ru, "m", tail] &  
+    \end{tikzcd}
+    \]
+    Now we want to prove that if the universal property of the kernel pair holds for $f$, then it also holds for $g$. Let $s_1:X \to A$ and $s_2:X \to A$ be morphisms such that $gs_1=gs_2$. Just composing with $m$, we have that $mgs_1=mgs_2$. Hence $fs_1=fs_2$. By the universal property of the kernel pair of $f$, there exists a unique morphism $k: X \to \mathrm{Eq}$ such that $r_1k=s_1$ and $r_2k=s_2$. Conversely, consider $s_1:X \to A$ and $s_2:X \to A$ be morphisms such that $fs_1=fs_2$, and suppose that the universal property holds for $g$. That is $mgr_1=mgr_2$. Since $m$ is a mono, we have that $gr_1=gr_2$. By the universal property of the kernel pair of $g$, there exists a unique morphism $k: X \to \mathrm{Eq}$ such that $r_1k=s_1$ and $r_2k=s_2$.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGUsKq1GLNgB0ZAWzo4AFgCd5wAKIBHLt14gM2PASIBmMRPrNWiEAEF9fY4KKiATFam2HTw-xMhZAtPamtpOwAhPyMBUxQAFlIzLxs2AEVuCRgoAHN4IlAAM1UIeSQyEBwIJAsQACMYMCgkAFozSvCfOAB9YT8SsorqaqRREAYsMB8oOjhlHJAw7zYAawHS8sRK0cR3akbm2s6Vu173DaHEcd26rrZVPsutm5q95bS7R4ueYs3akZvJKST4gIrPJD7KpAj4RMEQ97QpAAVgOTRaiA6sJ8uQRdV2qIa6LaWJBcNxvzB-0QhN2wJwdCwDDYDKZSzJPnKXAoXCAA
+\begin{tikzcd}
+    X \arrow[rdd, "s_1", bend right] \arrow[rd, "k", dashed] \arrow[rrrd, "s_2", bend left] &                                                 &  &                                              &                         \\
+                                                                                            & \mathrm{Eq} \arrow[d, "r_1"] \arrow[rr, "r_2"]  &  & A \arrow[d, "f"] \arrow[rdd, "g", bend left] &                         \\
+                                                                                            & A \arrow[rr, "f"] \arrow[rrrd, "g", bend right] &  & B                                            &                         \\
+                                                                                            &                                                 &  &                                              & Q \arrow[lu, "m", tail]
+    \end{tikzcd}
+    \]
+    \end{proof}
 \end{subbox}
