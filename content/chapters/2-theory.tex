@@ -339,7 +339,7 @@ In order to conclude we need to check some compositions so that, by the universa
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFOVLFqdJq3bdeWAXBEAKLfyFiAlJOkgM2PASIAmZaoYs2iTj2N6xFmTflEACxONC4a7uJSfnJ2KACsIWqump46JpGW1jEKyADMFM7qbiDCvlaytjn59oXJ7hySqjBQAObwRKAAZgBOEHxIZCA4EEhKSeEgPAAE07NcM-NzjPRgLYwwU2i9AFaCwEpGad6iUuR7h7oiJzzdK2tsNMsARjCMAAoVAe5YYNiwIDQXmAoAMoiAen0BjRhkgAGyhIrsLYQXb7UgXdISAEgZ6vD7+WIgbpYFoACxw2KBIMQAFpcsQwRD+ohBjDEI5xsUzsAMccsY96C93p9CetOhTATBgXCAOyM3rMsZsjm44UEhREknkspM0bQkaIYKc9ipRiwYDI1GOXlXCT8nGCvEijViiUgKlIenyyGIJUG+EOoX47LsYlkt0e2n0hF1Kw7PYHVKXYSGJPpUxY73MjlshLG9z6HhMNCk+imfSWvbWtN88wCoPO0NailZpA5g35fNxlFV9E123Y1XBypN8M6hWe-VIPNhYpFxgl+iDx1qkPuV3jn1GtmdoeN9cwcWb5nb-31p3q0fayXSxDRruVtE2sSZyy6xAB3MxiZoZcNy8HkeEiUBIQA
 \begin{tikzcd}
     & E\times_B(E\times_BA) \arrow[r] \arrow[rrrr, "{\tilde{\mathrm{proj}_{2,E\times_BA}}}", bend left] \arrow[rrdd, "{\mathrm{proj}_{1,E\times_B(E\times_BA)}}"', bend right] & E\times_BA \arrow[rd, "{(\alpha)(\mathrm{proj}_{2,E\times_BA})}"'] \arrow[rr, "{\mathrm{proj}_{2,E\times_BA}}"'] &                  & A \arrow[ld, "\alpha"] & E\times_BA \arrow[l] \arrow[lldd, "{\mathrm{proj}_{1,E\times_BA}}"', bend left] \\
-E\times_BA \arrow[ru, "{\ \ \ \ \ \ \langle \mathrm{proj}_{1,E\times_BA},1_{E\times_BA}\rangle}" description] \arrow[rrrd, "{\mathrm{proj}_{1,E\times_BA}}"', bend right] \arrow[rru, "1_{E\times_BA}", bend left=67] &                                                                                                                                                        &                                                                                                & B                &                        &                                                                        \\
+E\times_BA \arrow[ru, "{\ \ \ \ \ \ \langle \mathrm{proj}_{1,E\times_BA},1_{E\times_BA}\rangle}" description] \arrow[rrrd, "{\mathrm{proj}_{1,E\times_BA}}"', bend right] \arrow[rru, "1_{E\times_BA}", bend left=67, crossing over] &                                                                                                                                                        &                                                                                                & B                &                        &                                                                        \\
     &                                                                                                                                                        &                                                                                                & E \arrow[u, "p"] &                        &                                                                       
 \end{tikzcd}
 \]
@@ -519,7 +519,7 @@ Define $p' = pm$, we have that $p's'=1_Y$, in fact $p's'=pms'=ps=1_Y$. Pulling b
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAHUQBfU9TXfIRQBGclVqMWbABoBybrxAZseAkQDMY6vWatEIaQr4rBRACxaJutgDUjS-qqHIATKWHidU-QE17ygTUUNxdPST0ObnEYKABzeCJQADMAJwgAWyQyEBwIJABWagAjGDAoJABadWy4AAssJJxK0StvEABHeR5ktMzEFtykC1aItHlqOoamxArhbpBUjKQ3HLzEYa9RkGoGOhKGAAVHU30UrFjapon6xqQ5xUW+7MH+nb2YQ+OgkDOLq5G2AB3eyPO7UF4rTZsTLguhYBhsHBwhHzUGIZ5rTQgEplJDVHZYMARKB0OoxbYA-Q0AB6ACoABTpACUFN2+yOJm+hOwsBBvQK4LWG3CbBorPen05QhADBgt1R-MQWJehWxpXKSuybI+HMC0t+lwpk1ur0pHT5S3WgrBIGN01m2hF+jgXQeiuGEOuUxtUOd4vZX3150NCstqpe2RxGvxtpu9pavpyrp6YetSuK6sqMbtNu1kr1bAN-0TTVDfWVa0hTpATAt5bTLSjlQAbAB2R3WfRJf06wOF4P-HPorgULhAA
 \begin{tikzcd}
-    W \arrow[rrdd, "q'", bend right, shift left] \arrow[r, "w"'] \arrow[rrrr, "v^*(m)" description, dashed, bend left] & X' \arrow[rd, "p'", shift left] \arrow[rr, "m", tail] &                                                                                                        & X \arrow[ld, "p"', shift right] & V \arrow[lldd, "q"', bend left, shift right] \arrow[l, "u"] \arrow[lll, "f"', bend right=67] \\
+    W \arrow[rrdd, "q'", bend right, shift left] \arrow[r, "w"'] \arrow[rrrr, "v^*(m)" description, dashed, bend left] & X' \arrow[rd, "p'", shift left] \arrow[rr, "m", tail] &                                                                                                        & X \arrow[ld, "p"', shift right] & V \arrow[lldd, "q"', bend left, shift right] \arrow[l, "u"] \arrow[lll, "f"', bend right=67, crossing over] \\
                                                                                                                        &                                                       & Y \arrow[lu, "s'", shift left] \arrow[ru, "s"', shift right]                                           &                                 &                                                                                              \\
                                                                                                                        &                                                       & W \arrow[u, "v"] \arrow[lluu, "t'", bend left, shift left] \arrow[rruu, "t"', bend right, shift right] &                                 &                                                                                             
     \end{tikzcd}
@@ -658,16 +658,16 @@ We will extensively analyze this definition later. Now we focus on proving sever
         \[\implies \xi_B T(m) T(q) =  m \xi_Q T(q) \]
         We know that $T(q)$ is a regular epi, thus it is a epi. So we can cancel it from both sides and we obtain the condition for $m$ to be a morphism in $\mathcal{X}^T$:
         \[ \xi_B T(m) =  m \xi_Q \]
-
         We proved that $m$ and $p$ are respectively a mono and a regular epi in $\mathcal{X}^T$. This allows the lifting of the factorization $f=me$ to $\mathcal{X}^T$.
 
-        It remains to prove the last condition of a regular category, that is the pullback stability of regular epi.
+        It remains to prove the last condition of a regular category, that is the pullback stability of regular epi. Let $q: A \to B$ be a regular epi in $\mathcal{X}^T$, ie a coequalizer of some arrows in $\mathcal{X}^T$. In particular, $q$ is a regular epi in $\mathcal{X}$. Since $\mathcal{X}$ is exact, it is pullback stable. Let $\tilde{q}$ the pullback in $\mathcal{X}^T$ of $q$ along some morphism. As just noticed, $\tilde{q}$ is a regular epi in $\mathcal{X}$. Let $(\mathrm{Eq}(tilde{q}), r_1,r_2)$ be the kernel pair of $\tilde{q}$. By \Cref{coeq of the kernel pair}, $\tilde{q}$ is the coequalizer of such kernel pair. We want to lift $\tilde{Q}$ to a regular epi in $\mathcal{X}^T$. By construction, the pullback considered is a pullback in $\mathcal{X}^T$, thus it comes with algebra structures of $A\times_BC$ and $C$. Let $\xi_{A\times_BC}$ and $\xi_C$ be the algebra structures of $A\times_BC$ and $C$ respectively. Moreover, $\tilde{q}$ is a morphism in $\mathcal{X}^T$. We know that the forgetful functor $U^T$ creates all the limits that $\mathcal{X}$ has, so we can lift the kernel pair $(\mathrm{Eq}(\tilde{q}),r_1,r_2)$ to a kernel pair in $\mathcal{X}^T$. Let $\xi_{\mathrm{Eq}(\tilde{q})}$ be the algebra structure of $\mathrm{Eq}(\tilde{q})$.
+        We know that $U^T$ creates all the colimits that $\mathcal{X}$ has and the monad $T$ preserves, and we already proved that $T$ preserves coequalizers of kernel pairs. Thus, since $\tilde{q}$ is such a coequalizer, we can lift it to a coequalizer in $\mathcal{X}^T$.
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAKwVqdJq3YAhHnxAZseAkTEAGCQxZtEIACoAKGQEp5-ZUKJlNNbdL1GOZ3hcGqUARnF2pukADS5ooCKsLI3raSOuxGAS4KSu7h5KTEWn7sHAA62XgAtvAA+jIAwsFJYUQALGkZMXrlriGWHsipnvUOBoY5eViFcCWlCW5VKLWdvg09IxWhVijqddPdufn0OAAWAE75wACiAI7chrl4jLDAJ6MtyUTLU9HdRuubu-vHp+dYlzDX3BMLgkMCgAHN4ERQAAzHYQfJIAAcNBwECQxGasPh6JRaMQqWe-iMRzMNC2MHoUCQYGYjEYmLhCMQyxAqKQ3kJ7COIDJFKpehwAHcIOTKQgGdjEAA2XFIdQSpkATlliAA7Kt-LkAB5YIpNBRYpky1l49UgUX81nCi0IDXsH5-AE8kCMegAIxgjAACgsPCAdlgwVscMFDUiVcb7JrsjqisA+gVimVuKHGUgCWzEJ4FeGTUhlea+dTaYw7Y4zv1HTdU5KC5nyDnEGQ88zG2IW824FssNCQ4gALTZg1pxDtzOd7u99k0V0e72+4T+wPBmtM2otlldnt9weN9eZzeTvsc2een2tRcBoMhtsq6qNzwczOeFlR+0x3XAN7bPaHE4Vi4rhuFMZywMB-Cgegu1BVd2SfPFkRALcpwHIcYRHR8VUQ5DjwfFlM2NHDp05PQdiKchnVPecL3YK8V0bM1nzwiMaCI1Cy39cieEobggA
 \begin{tikzcd}
     & T(K) \arrow[rr, shift left] \arrow[rr, shift right] \arrow[dd] &                                                                                    & T(A) \arrow[rr, "T(q)"] \arrow[dd] &                                     & T(B) \arrow[dd] \\
 T(\mathrm{Eq}(\tilde{q})) \arrow[dd, "\xi_{\mathrm{Eq}(\tilde{q})}", dashed] \arrow[rr, crossing over, "T(r_1)", pos=0.25, shift left] \arrow[rr, crossing over, "T(r_2)"', pos=0.25 , shift right] &                                                                & T(A\times_BC) \arrow[ru]  \arrow[rr, crossing over, "T(\tilde{q})", pos=0.25] &                                    & T(C) \arrow[ru] &                 \\
-    & K \arrow[rr, shift left] \arrow[rr, shift right]               &                                                                                    & \ A \ \arrow[rr, "q", two heads]       &                                     & B               \\
+    & K \arrow[rr, shift left] \arrow[rr, shift right]               &                                                                                    & \ A \ \arrow[rr, "q", pos=0.25, two heads]       &                                     & B               \\
 \mathrm{Eq}(\tilde{q}) \arrow[rr, "r_2"', shift right] \arrow[rr, "r_1", shift left]                                        &                                                                & A\times_BC \arrow[from=uu, crossing over, pos=0.25,  "\xi_{A\times_BC}"] \arrow[ru, shift right] \arrow[rr, "\tilde{q}"', two heads]                          &                                    & C \arrow[from=uu, crossing over, "\xi_C", pos=0.25] \arrow[ru]                        &                
 \end{tikzcd}
 \]
@@ -675,11 +675,33 @@ T(\mathrm{Eq}(\tilde{q})) \arrow[dd, "\xi_{\mathrm{Eq}(\tilde{q})}", dashed] \ar
     \end{proof}
 \end{subbox}
 
+\begin{mainbox}{}
+    \begin{prop}\label{algebras category is proto if the base category is proto}
+        Let $T:\mathcal{\mathcal{X}} \to \mathcal{X}$ be a monad. If $\mathcal{X}$ is protomodular, then the Eilenberg-Moore category $\mathcal{X}^T$ is protomodular.
+    \end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        Since the forgetful functor $\mathcal{X}^T \to \mathcal{X}$ creates all the limits that $\mathcal{X}$ has, we can conclude that $\mathcal{X}^T$ is finitely complete.
+
+        Let now $f:(X,\xi) \to (Y,\xi')$ be a morphism in $\mathcal{X}^T$. The following diagram of funtors is commutative. This essentially follows from the fact that the forgetful functor $\mathcal{X}^T \to \mathcal{X}$ creates all the limits that $\mathcal{X}$ has, in particular the pullbacks, which are used to define the change-of-base functor $f^*$.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBOXYAAUcAXwD6wTj34BjRsAAa4gHoAVcQAoAmqU4APLAHIAlCHGl0mXPkIoATOSq1GLNrN6DhYqTO5vRQYVdS1tZQN2YwsrG2w8AiIyAEZXemZWRA5A-iFRCWkvBSVVHV1Y6xAMBPsiZzTqDI9s4p8C-zbg0J1lWNcYKABzeCJQADMBCC4kMhAcCCQUpvcskHG1ACpLKsnppeoFpABmFcy2AFVNHYmpmcQ5o8RnN3Psq40b9bukF6fT14tdZbSwUcRAA
+\begin{tikzcd}
+    {\mathrm{Pt}_{\mathcal{X}^T}(Y,\xi')} \arrow[rr, "f^*"] \arrow[d, "U^T"] &  & {\mathrm{Pt}_{\mathcal{X}^T}(X,\xi)} \arrow[d, "U^T"] \\
+    \mathrm{Pt}_{\mathcal{X}}(Y) \arrow[rr, "f^*"]                           &  & \mathrm{Pt}_{\mathcal{X}}(X)                         
+    \end{tikzcd}
+    \]
+    Let $\alpha$ be a morphism in $\mathrm{Pt}_{\mathcal{X}^T}(Y,\xi')$. Suppose that $f^*(\alpha)$ in iso, we want to prove that $\alpha$ is iso. Since $f^*(\alpha)$ in iso, we have that $U^T(f^*(\alpha))$ is iso. By the commutativity of the diagram, we have that $U^T(f^*(\alpha)) = f^*(U^T(\alpha))$. Thus $f^*(U^T(\alpha))$ is an iso. Since $\mathcal{X}$ is protomodular, $U^T(\alpha)$ is an iso. Finally, $U^T$ reflects isomorphisms, so $\alpha$ is an iso.
+    \end{proof}
+\end{subbox}
+
 We now proceed to prove the theorem that, as discussed earlier, defines the ideal exact categories.
 
 \begin{subbox}{}
     \begin{proof}[\textit{Proof of \Cref{Ideally exact categories}}]\label{The proof}
-        $(1\implies 3)$ Suppose $! : 0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact, the pullback functor $(!)^*: (\mathcal{A} \downarrow 1) \to (\mathcal{A} \downarrow 0)$ is monadic by (citazione). Notice that $(\mathcal{A} \downarrow 1) = \mathcal{A}$. Now consider $\mathcal{X} = (\mathcal{A} \downarrow 0)$, we want to prove that $\mathcal{X}$ is semiabelian. 
+        $(1\implies 3)$ Suppose $! : 0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact, the pullback functor $(!)^*: (\mathcal{A} \downarrow 1) \to (\mathcal{A} \downarrow 0)$ is monadic by (citazione). Note that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$. Now consider $\mathcal{X} = (\mathcal{A} \downarrow 0)$, we want to prove that $\mathcal{X}$ is semiabelian. 
         
         $(\mathcal{A} \downarrow 0)$ is pointed, in fact if $(A,\alpha)$ is an object in $(\mathcal{A} \downarrow 0)$, we have the following initial and terminal objects, which are the same:
         \[
@@ -711,42 +733,21 @@ We now proceed to prove the theorem that, as discussed earlier, defines the idea
                                                                                       & 0                                               &                                       
     \end{tikzcd}
     \]
-    Since $r_1$ and $r_2$ are morphism in $(\mathcal{A} \downarrow 0)$, we have that $\alpha r_1 = \rho = \alpha r_2$. Thus, by the universal property of the coequalizer, there exists a unique morphism $\beta$ such that $\beta q = \alpha$. Providing to $B$ the morphism $\beta$ we have that $(B,\beta)$ is the coequalizer of $(R,r_1,r_2)$ in $(\mathcal{A} \downarrow 0)$. Notice that $\beta$ is a morphism in $(\mathcal{A} \downarrow 0)$ by $\beta q = \alpha$.
+    Since $r_1$ and $r_2$ are morphism in $(\mathcal{A} \downarrow 0)$, we have that $\alpha r_1 = \rho = \alpha r_2$. Thus, by the universal property of the coequalizer, there exists a unique morphism $\beta: B \to 0$ such that $\beta q = \alpha$. Providing to $B$ the morphism $\beta$, we have that $(B,\beta)$ is the coequalizer of $(R,r_1,r_2)$ in $(\mathcal{A} \downarrow 0)$.
 
-    We proceed by proving that $(\mathcal{A} \downarrow 0)$ is regular. Both the conditions of the definition of regular category are easely extendable from $\mathcal{A}$ to $(\mathcal{A} \downarrow 0)$. In fact since in $\mathcal{A}$ each morphism admits a (regular epi, mono) factorization, then the same holds in $(\mathcal{A} \downarrow 0)$ just providing to the objects a suitable morphism, as shown below.
+    We proceed by proving that $(\mathcal{A} \downarrow 0)$ is regular. Both the conditions of the definition of regular category are easely extendable from $\mathcal{A}$ to $(\mathcal{A} \downarrow 0)$. In fact since in $\mathcal{A}$ each morphism admits a (regular epi, mono) factorization, then the same holds in $(\mathcal{A} \downarrow 0)$. Let $f=me$ be such a fatorization through $Q$, with $f$ morphism in $(\mathcal{A} \downarrow 0)$. Endow $Q$ with the morphism $t$ induced by the unviersal property of the coequalizer. Now we want to prove that $e$ and $m$ are morphism in $(\mathcal{A} \downarrow 0)$. Then they will be respectively regular epi and mono in $(\mathcal{A} \downarrow 0)$. Notice first that $e$ is obviously a morphism in $(\mathcal{A} \downarrow 0)$, by the condition of $t$. Moreover, we have that $te=\alpha=\beta f= \beta me$ and since $e$ is a regular epi, hence an epi, it follows that $m$ is a morphism in $(\mathcal{A} \downarrow 0)$.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAhHnxAZseAkXKliEhizaIQARXn9lQtaRFapukMR4SYUAObwioAGYAnCAFskZEDgQSOqSOuxuRiCePn40gUhiIAAWMPRQ7DgA7hApaQg02tJ6bLzuXr6IifGIITj0WIwZ9Y0FVuy+pVHlsQFBiADMrWF6ADojTGhJ9JHRFbV9g6FFIGMARjB1M92VcQs0jFhg1lD0cCnpQ8tjMAAeWHA4cAAEAIRPOHbcQA
+\begin{tikzcd}
+    & Q \arrow[rd, "m", tail] \arrow[dd, "\exists ! t", pos=0.75, dashed] &                       \\
+A \arrow[rr, "f", pos=0.25, crossing over] \arrow[ru, "e", two heads] \arrow[rd, "\alpha"] &                                                           & B \arrow[ld, "\beta"] \\
+    & 0                                                         &                      
+\end{tikzcd}
+    \]
 
-    \begin{minipage}{0.30\textwidth}
-        \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdgCEefEBmx4CRMsXEMWbRCACKc-kqGrSAJg2TtIYj3EwoAc3hFQAMwBOEALZIyIHBBIohJa7K4GIB7evjQBSKY0ABYw9FDsOADuEMmpCDSaUjpsvG6ePogJ-oGIwTj0WIzp9Y35luw+JZFlMVVIAMytoToAOsNMaIn0EVHltdUDIYUgowBGMHW23EA
-\begin{tikzcd}
-    Q \arrow[rd, "m", tail]                                        &                       \\
-    A \arrow[r, "f"] \arrow[u, "e", two heads] \arrow[d, "\alpha"] & B \arrow[ld, "\beta"] \\
-    0                                                              &                      
-    \end{tikzcd}
-    \]
-        \end{minipage}
-        \begin{minipage}{0.3\textwidth}
-            \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAGkQBfU9TXfIRQBGclVqMWbAILdeIDNjwEiAJjHV6zVohAAhOXyWCio4eK1TdxbuJhQA5vCKgAZgCcIAWySiQOCCR1CW02VmoACxg6KDYcAHcIKJiEHjdPH0Qyf0DEPzgIrFccJABaP0sdEAdDEA9vJGyA32oCopK8zUkqiJBqBjoAIxgGAAV+ZSEQdywHCJK0uoyWnKQAZi7Q3QAdbcY0CLpa+szg5sQNkKsQXZgADyw4HDgAQgACEv6sMCqoOgL7MdlllqOdLgNhmMJiZdDM5p8rlVdvtDm8HG8ALxvCI1LgULhAA
-\begin{tikzcd}
-    K \arrow[r, "g", shift left] \arrow[r, "h"', shift right] \arrow[rd, "\alpha g = hg"'] & A \arrow[r, "e", two heads] \arrow[d, "\alpha"] & B \arrow[ld, "\exists! t", dashed] \\
-                                                                                           & 0                                               &                                   
-    \end{tikzcd}
-    \]
-    \end{minipage}
-    \begin{minipage}{0.3\textwidth}
-        \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEUQBfU9TXfIRQBGclVqMWbAELdeIDNjwEiZYePrNWiEMW7iYUAObwioAGYAnCAFskZEDghJRErWzvUcdLAzbffOQtrO0RXJyQAJmpNKR0AHXiAIxhvIJArW3svZ0RotziQRJTvAAJPEAY6FIYABX5lIRBLLCMACxx9LiA
-\begin{tikzcd}
-    Q \arrow[r, "m", tail] \arrow[d, "\beta m"'] & B \arrow[ld, "\beta"] \\
-    0                                            &                      
-    \end{tikzcd}
-    \]
-    \end{minipage}
-    
-    \noindent In order to prove that regular epis are pullback stable in $(\mathcal{A} \downarrow 0)$ we can use the fact that they are in $\mathcal{A}$. In fact, having a regular epi in $\mathcal{A}$ we can proceed providing a suitable morphism to the coequalizer as done above.
+    In order to prove that regular epis are pullback stable in $(\mathcal{A} \downarrow 0)$ we can use the fact that they are in $\mathcal{A}$. In fact, we just endow the regular epi with the morphism induced by universal property of the coequalizer.
 
-    We must still establish that the $(\mathcal{A} \downarrow 0)$ is protomodular. Since the construction of the change-of-base functor involves pullbacks, which are a connected limits, then by \Cref{connected limits computed on the base} the construction is the same in $(\mathcal{A} \downarrow 0)$ and in $\mathcal{A}$. Thus $(\mathcal{A} \downarrow 0)$ inherits protomodularity from $\mathcal{A}$, noting that the definition of iso in $\mathcal{A}$ and $(\mathcal{A} \downarrow 0)$ is the same. Hence, since $\mathcal{X} = (\mathcal{A} \downarrow 0)$ is exact, protomodular, pointed and has binary coproducts, we can conclude that it is semiabelian.
+    We must now establish that the $(\mathcal{A} \downarrow 0)$ is protomodular. Since the construction of the change-of-base functor involves pullbacks, which are a connected limits, then by \Cref{connected limits computed on the base} the construction is the same in $(\mathcal{A} \downarrow 0)$ and in $\mathcal{A}$. Thus $(\mathcal{A} \downarrow 0)$ inherits protomodularity from $\mathcal{A}$, noting that the definition of iso in $\mathcal{A}$ and $(\mathcal{A} \downarrow 0)$ is the same. Hence, since $\mathcal{X} = (\mathcal{A} \downarrow 0)$ is exact, protomodular, pointed and has binary coproducts, we can conclude that it is semiabelian.
 
     It remains to prove that the monad $(!)^*(!)_!$ preserves regular epimorphisms and kernel pairs. Consider a regular epi $q:A \to B$ in $(\mathcal{A} \downarrow 0)$, it is the coequalizer of some parallel arrows. Since the coequalizer is a colimit, it is preserved by the left adjoint functor $(!)_!$. So it suffices to prove that, with $\mathcal{A}$ regular, $(!)^*$ preserves regular epis. Consider the following diagram:
     \[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAhHnxAZseAkXKkREhizaIQ5ef2VCiZYlqm6QxADo28AW3gB9cl15HBq0aXM1t0nq29lhOcK5y3BIwUADm8ESgAGYAThAOSGQgOBBI6pI67ACOhiCp6Zk0OUgiHmVpGYj51Yi1CuWNAMxVuYjEdR1IACw9eQMNSN3ZvSMFgSAAFACEAJQAegBUC0UrPJTcQA
@@ -763,6 +764,9 @@ We now proceed to prove the theorem that, as discussed earlier, defines the idea
     $(3 \implies 2)$ Suppose there exists $\mathcal{X}$ semiabelian category and a monadic functor $U: \mathcal{A} \to \mathcal{X}$ satisfying the stated conditions. Assume that the associated monad $T$ preserves
     regular epimorphisms and kernel pairs.
     
-    First we need to verify that $\mathcal{A}$ is exact.
+    First we need to verify that $\mathcal{A}$ is exact. Since $U$ is monadic, we have that $\mathcal{A} \cong \mathcal{X}^T$. Then it suffies to show that $\mathcal{X}^T$ is exact. We know that $\mathcal{X}$ is semiabelian, so it is exact. Then, by \Cref{algebras category is exact if the base category is exact}, we have that $\mathcal{X}^T$ is exact.
+
+    ADJUST
+    In order to prove that $\mathcal{A}$ has finite coproducts, it is first necessary to establish that $\mathcal{X}^T$ is protomodular. This follows directly from \Cref{algebras category is proto if the base category is proto} as $\mathcal{X}$ is protomodular.
 \end{proof}
 \end{subbox}
