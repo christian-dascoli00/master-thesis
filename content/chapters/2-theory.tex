@@ -697,6 +697,53 @@ T(\mathrm{Eq}(\tilde{q})) \arrow[dd, "\xi_{\mathrm{Eq}(\tilde{q})}", dashed] \ar
     \end{proof}
 \end{subbox}
 
+We now want to prove a proposition, which will be useful. First we recall that a pair $(f,g)$ from $A$ to $B$ in a regular category induces a relation with the following construction. Consider the morphism induced by the universal property $\langle f,g \rangle$. Since the category is regular, we can take the factorization $\langle f,g \rangle = \langle r_1,r_2\rangle e$, with $\langle r_1,r_2\rangle$ mono and $e$ regular epi. Then $\langle r_1,r_2\rangle$ is the relation induced.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAmclVqMWbAEIAdWXgC28AATTuvEBmx4CRAIyl94+s1aIQAJW7iYUAObwioAGYAnCIqRkQOCElEQAAsYOig2HAB3CBCwhGpTKQtWagY6ACMYBgAFfl0hEDcseyCcDVcPL0RAvyRDYNDwxDAmBgZqHDosBgiunoTJcxB5NLB7BhgVNwB9Qynp4RV5NzoxiZBUjKzcnUE2IpKyngrPbw7-RHrEoZHV8cmXUnsl2RW11i4KLiA
+\begin{tikzcd}
+    A \arrow[rd, "e"', two heads] \arrow[rr, "{\langle f,g \rangle}"] &                                                   & B\times B \\
+                                                                      & R \arrow[ru, "{\langle r_1, r_2 \rangle}"', tail] &          
+    \end{tikzcd}
+\]
+
+\begin{mainbox}{}
+    \begin{prop}\label{relation induced by a reflexive pair is reflexive}
+        The internal relation induced by a reflexive pair $(f,g)$ in a regular category is reflexive.
+    \end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        Consider the pair $(f,g)$ from $A$ to $B$ and the section $s$ with $fs=1_B$ and $gs=1_B$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGclVqMWbAELdxMKAHN4RUADMAThAC2SMiBwQkokHAAWWNTiQBaAEzV6zVohBruvN1t2J9h49TmltaIDhLObIog1Ax0AEYwDAAK-HgEbBpYimbWPOreAQZGvo6SLqbRILEJyamCbFhg2LByXEA
+\begin{tikzcd}
+    A \arrow[r, "f", shift left=2] \arrow[r, "g"', shift right=2] & B \arrow[l, "s" description]
+    \end{tikzcd}
+\]
+Let $\langle f,g \rangle = \langle r_1,r_2\rangle e$ be the factorization (regular epi, mono). Moreover, by the universal property we have that $\langle f,g \rangle s = \langle 1_B,1_B \rangle$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAhEAX1PU1z5CKMgEZqdJq3YBBHnxAZseAkTIBmCQxZtEnAAQAdQ3gC28fV179lQouVKaa26XqsKlg1SgAsjrVK6nDwSMFAA5vBEoABmAE4QpkiiNDgQSGSSOuzGjPRg4Yww+jGk4UaGcfmFbNYg8YlIDiBpyc6B7Ah1DUmIma2IflmuIMZoWAD6xCA0eQBGMIwACgIqwiBxWOEAFjjysQm9-emI6u3ZemOTovv1h02pJ2cgC2BQSAC06s0uQaITXFm9AWy1Wdj0mx2e2690QzQGQ1e71OPw6en+7gOjUQKRaT3OIxiMxA80WK1s3g2W12tx6bTxSCGv3Y4VpsPhJ0ySM+PgAnASgrlqkV9BjSBiKlUCkViaTQRT1pCadxKNwgA
+\begin{tikzcd}
+    &  & B \arrow[d, "s"] \arrow[llddd, "1_B"', bend right] \arrow[rrddd, "1_B", bend left] &  &   \\
+    &  & A \arrow[dd, "{\langle f,g \rangle}"] \arrow[lldd, "f"] \arrow[rrdd, "g"']                                                                  &  &   \\
+    &  &                                                                                                                                             &  &   \\
+  B &  & B \times B \arrow[rr, "\pi_2"'] \arrow[ll, "\pi_1"] \arrow[from=uuu, "{\langle 1_B,1_B \rangle}"', bend right=49, crossing over]                                                                                         &  & B
+  \end{tikzcd}
+\]
+Thus $\langle r_1,r_2\rangle es = \langle 1_B,1_B \rangle$. The morphism $es$ makes the relation reflexive.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAmAXVJADcBDAGwFcYkQAlEAX1PU1z5CKAAyli1Ok1bsAQjz4gM2PASLlxkhizaIQ83vxVCiZEVum79PSTCgBzeEVAAzAE4QAtkgDMNHBBIYlI67E6GIO5evv6BiGQhMnrEAPryNIz0AEYwjAAKAqrCIG5Y9gAWOAquHt6IfiABSBqJVqkGilF1wU3xNNpJJSnE1ZG1QbHN-ZbsbinkIBnZuQXGanqlFVXclNxAA
+\begin{tikzcd}
+    & B \arrow[dd, "es"] \arrow[ld, "1_B"'] \arrow[rd, "1_B"] &   \\
+  B &                                                         & B \\
+    & R \arrow[lu, "r_1"] \arrow[ru, "r_2"']                  &  
+  \end{tikzcd}
+\]
+    \end{proof}
+\end{subbox}
+
+
 We now proceed to prove the theorem that, as discussed earlier, defines the ideal exact categories.
 
 \begin{subbox}{}
@@ -764,9 +811,18 @@ A \arrow[rr, "f", pos=0.25, crossing over] \arrow[ru, "e", two heads] \arrow[rd,
     $(3 \implies 2)$ Suppose there exists $\mathcal{X}$ semiabelian category and a monadic functor $U: \mathcal{A} \to \mathcal{X}$ satisfying the stated conditions. Assume that the associated monad $T$ preserves
     regular epimorphisms and kernel pairs.
     
-    First we need to verify that $\mathcal{A}$ is exact. Since $U$ is monadic, we have that $\mathcal{A} \cong \mathcal{X}^T$. Then it suffies to show that $\mathcal{X}^T$ is exact. We know that $\mathcal{X}$ is semiabelian, so it is exact. Then, by \Cref{algebras category is exact if the base category is exact}, we have that $\mathcal{X}^T$ is exact.
+    First we need to verify that $\mathcal{A}$ is exact. Since $U$ is monadic, we have that $\mathcal{A} \cong \mathcal{X}^T$. Then it suffies to show that $\mathcal{X}^T$ is exact. We know that $\mathcal{X}$ is semiabelian, so it is exact. Then, by \Cref{algebras category is exact if the base category is exact}, $\mathcal{X}^T$ is exact.
 
-    ADJUST
-    In order to prove that $\mathcal{A}$ has finite coproducts, it is first necessary to establish that $\mathcal{X}^T$ is protomodular. This follows directly from \Cref{algebras category is proto if the base category is proto} as $\mathcal{X}$ is protomodular.
+    In order to prove that $\mathcal{A}$ has finite coproducts, it is first necessary to establish that $\mathcal{X}^T$ is protomodular. This follows directly from \Cref{algebras category is proto if the base category is proto} as $\mathcal{X}$ is protomodular. Since any protomodular cateogry is Malt'sev, then $\mathcal{X}^T$ is Malt'sev. We now need to prove that $\mathcal{X}^T$ has reflexive coequalizer, which will be useful to construct coproducts. Consider a reflexive pair $f,g$ from $A$ to $B$. By \Cref{relation induced by a reflexive pair is reflexive} the relation induced $\langle r_1,r_2 \rangle$ is reflexive. We already proved that $\mathcal{X}^T$ is Malt'sev, thus each internal reflexive relation is an equivalence relation. Hence $\langle r_1,r_2 \rangle$ is an equivalence relation. We already proved that $\mathcal{X}^T$ is exact, then, by \Cref{equiv rel is kernel pair of the coeq} the equivalence relation $(r_1,r_2)$ has a coequalizer $k$. We want to prove that $k$ is also the coequalizer of $(f,g)$. First we note that $kf=kr_1e=kr_2e=kg$. It remains to prove the universal property. Let $h:B \to C$ be a morphism such that $hf=hg$. Then $hr_1e=hr_2e$. Since $e$ is a regular epi, hence an epi, we have that $hr_1=hr_2$. Thus there exists a unique morphism $t$ such that $th=k$. This proves that $\mathcal{X}^T$ has reflexive coequalizers.
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGUgCYqtRizYAhbrxAZseAkTITq9Zq0QgASgr4rBRMeMnaZegDo2AtnRwALAE73gAYQgwAjlwAKVwB9URCxAEojJX5VIWRzYUtpXRBPbkkYKABzeCJQADNXCHskURAcCCQAZi0UtgBrEGoGOgAjGAYABVjTPVcsbOccaKKSpHMKqsRyuGcsApGZlvbOnpM1fsHh5qkdNnDR4tLEMimJuv29VmpnGDooNhwAdwg7h4QeQuOkM8qy6gdMCPRDVM5zBZLAC05SsqQKR3Gp2o-2WICBILB1AhiwBe2sIGyu1aHW6vU2IAGQxGXxAYxOk1Rs3muMQMMuBJCwkRJ3KqIALC0sGBUnAIAwsI8OalnDykILzqChSK2FA6HMsrs4Ww7DAAB5YOA4OAAAgAhCaaRQuEA
+\begin{tikzcd}
+    A \arrow[dd, "e", two heads] \arrow[rdd, "f", bend left, shift left] \arrow[rdd, "g"', bend left, shift right] &                                   &                                    \\
+                                                                                                                   &                                   & C \arrow[d, "\exists ! t", dashed] \\
+    R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left]                                                  & B \arrow[r, "k"'] \arrow[ru, "h"] & {\mathrm{Coeq}(r_1,r_2)}          
+    \end{tikzcd}
+    \]
+
+    We are now ready to show that $\mathcal{X}^T$ has finite coprducts. Then since $U$ is monadic, $1mathcal{A}$ has finite coproducts. Supoose that $\mathcal{X}$ has them. (RICORDA L'OGG TERM O INIZ)
 \end{proof}
 \end{subbox}
