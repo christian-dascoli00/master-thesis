@@ -177,13 +177,19 @@ Thus $\langle r_1,r_2\rangle es = \langle 1_B,1_B \rangle$. The morphism $es$ ma
 
 \begin{mainbox}{}
     \begin{prop}\label{algebras category has colim if the base category has coprod}
-        Let $T:\mathcal{\mathcal{X}} \to \mathcal{X}$ be a monad. If $\mathcal{X}$ has finite coprducts and the Eilenberg-Moore category $\mathcal{X}^T$ has reflexive coequalizers, then $\mathcal{X}^T$ has finite coproducts. Moreover if $\mathcal{X}$ is also finetely cocomplete, then so is $\mathcal{X}^T$.
+        Let $T:\mathcal{\mathcal{X}} \to \mathcal{X}$ be a monad. If $\mathcal{X}$ has finite coproducts and the Eilenberg-Moore category $\mathcal{X}^T$ has reflexive coequalizers, then $\mathcal{X}^T$ has finite coproducts. Moreover $\mathcal{X}^T$ is finitely cocomplete.
     \end{prop}
 \end{mainbox}
 
+
 \begin{subbox}{}
     \begin{proof}
-    Proof
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12AhLAcwYAUAAgAqnAEZ9BogQEEAlAGoRArvIl8ATvKGlOAWyYB9YCoXLV8gL5DOPXtpBXS6TLnyEUAJnJVajFjY7KWEzRTU9dkMTWXCrYId5JxcQDGw8AiIAZl9qemZWRBABAEVIgA8sIxKkqz8YKF54IlAAM00IfSQyEBwIJABGajgACyxWnCQs5zaOrsQh3v7EHvzAooAxAU4YHDojWJ29ozUQagY6cRgGAAU3DM8QLDBsWGTZzsHqPqQffwK2ABHd4gdqfFbfZaLUbjSaIAC00woViAA
+\begin{tikzcd}
+    {\Bigl( T\bigl( T(A)+T(B)\bigr) ,\mu_{T(A)+T(B)} \Bigr)} \arrow[rr, shift right=3] \arrow[rr, shift left=3] &  & {\Bigl( T(A+B),\mu_{A+B}\Bigr)} \arrow[ll, "F(\eta_A+\eta_B)" description] \arrow[r, "q"] & {(Q,\xi_Q)}
+    \end{tikzcd}
+\]
     \end{proof}
     
 \end{subbox}
@@ -192,7 +198,7 @@ Thus $\langle r_1,r_2\rangle es = \langle 1_B,1_B \rangle$. The morphism $es$ ma
 
 \section{The notion of ideally exact category}
 
-We are now ready to prove the theorem of characterization, which will lead to the definition of ideally exact categories.
+We are now ready to prove the theorem, which will lead to the definition of the ideally exact categories.
 
 \begin{mainbox}{}
     \begin{theo}\label{Ideally exact categories}.
