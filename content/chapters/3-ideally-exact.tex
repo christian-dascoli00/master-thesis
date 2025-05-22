@@ -1,9 +1,9 @@
 \chapter{Ideally exact categories}
 
 
-\section{Preliminary results}
+\section{Preliminary results on the Eilenberg-Moore categories}
 
-We present here some results on Eilenberg-Moore categories. These will play a key role in the next section, where we define and characterize the ideally exact categories.
+We present here some technical results on the Eilenberg-Moore categories. These will play a key role in the next section, where we define and characterize the ideally exact categories through monadic functors.
 
 \begin{mainbox}{}
     \begin{prop}\label{algebras category is exact if the base category is exact}
@@ -29,13 +29,13 @@ We present here some results on Eilenberg-Moore categories. These will play a ke
 
         Consider now a morphism $f:(A,\xi_A)\to (B, \xi_B)$ in $\mathcal{X}^T$, we aim to prove that it admits a (regular epi, mono) factorization. The morphism $f$, under the forgetful functor $U^T$, is a morphism in $\mathcal{X}$, which is exact and in particular regular. Thus $f$ admits a (regular epi, mono) factorization in $\mathcal{X}$. Let it be $f=me$ with $m:Q \to B$ mono and $e: A \to Q$ regular epi. Notice that $A$ and $B$ are already algebras, we want to provide $Q$ and the domain of the parallel arrows with a structure of algebra, so that we can lift the factorization to $\mathcal{X}^T$.
         \[
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAWclVqMWbAELdeIDNjwEiAZlKrx9Zq0QgAinL5LBRMgAYtk3SAAqACnYBKIwv7KhyUZerapeh2kXHmMBFRR1AEYrHTYHfWD5RTDPczFfazYAYVdkjyI0nwlYvQARbnEYKABzeCJQADMAJwgAWyQ0kBwIJDJi-xBWagY6ACMYBgAFd1M9JqxqgAscEGpFmDooNhwAdwh1zYQQkGa23upupEiLuiwGbdv7jJKQduGxiemTcJB5pZXjqd2ohOpdENd+jYGq4gUh1F0eiDAS1gaIEVdkWdEPCwcJMcCcYiAKxrDZbPS7fZko7yWGIEnoxB42kopAANguiM6cEWWAaK3B+KQAHZOXDqDy+QLIkLEKLGfDJfykABaGUsrEcxnc3nKxBqrgULhAA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAWclVqMWbAELdeIDNjwEiAZlKrx9Zq0QgAinL5LBRMgAYtk3SAAqACnYBKIwv7KhyUZerapeh2kXHmMBFRRzMV9rNgBhV0Uwz0ifCR02ABFucRgoAHN4IlAAMwAnCABbJEiQHAgkMjT-EFZqBjoAIxgGAAV3Uz1SrDyACxwQahGYOig2HAB3CCmZhBCQMsqG6jqkAEZtuiwGOcPj6PS9KrbO7r6TcJAh0fG1jarEGp3EfaabYtc3kh1LV6h9zs0ADoQgAeWAA+pxXuV3qIQXtwTYobC4bIkZtEMCvqi-DYHMVgvJAYgAKzbUE1OAjLDFcbfPHvABsdKB1EZzNZu3ZSC5aIJvKZLKQAFpBZTkUhaaKGRLWTKuBQuEA
 \begin{tikzcd}
-    D \arrow[rr, shift right] \arrow[rr, shift left] &  & T(A) \arrow[dd] \arrow[rr] \arrow[rd, two heads] &                          & T(B) \arrow[dd] \\
-                                                     &  &                                                  & T(Q) \arrow[ru]          &                 \\
-    C \arrow[rr, shift right] \arrow[rr, shift left] &  & A \arrow[rd, "e"', two heads] \arrow[rr, "f"]    &                          & B               \\
-                                                     &  &                                                  & Q \arrow[ru, "m"', tail] &                
-    \end{tikzcd}
+D \arrow[rr, shift right] \arrow[rr, shift left] &  & T(A) \arrow[dd, "\xi_A"] \arrow[rr, "T(f)"]   &                          & T(B) \arrow[dd, "\xi_B"] \\
+                                                 &  &                                               &                          &                          \\
+C \arrow[rr, shift right] \arrow[rr, shift left] &  & A \arrow[rd, "e"', two heads] \arrow[rr, "f"] &                          & B                        \\
+                                                 &  &                                               & Q \arrow[ru, "m"', tail] &                         
+\end{tikzcd}
         \]
 
         In order to do so, we first need to show that $T$ preserves coequalizers in $\mathcal{X}$ of kernel pairs arising from $\mathcal{X}^T$, once the algebra structure is forgotten, and considering only the pair of the whole kernel pair. Let $(\mathrm{Eq},r_1,r_2)$ be a kernel pair in $\mathcal{X}$, arising from a kernel pair in $\mathcal{X}^T$ of a morphism, and let $p$ be the coequalizer in $\mathcal{X}$ of $(r_1,r_2)$. By \Cref{kernel pair of the coeq}, we can affirm that $(r_1,r_2)$ is the kernel pair of $p$. Given that $(\mathrm{Eq},r_1,r_2)$ is a kernel pair arising from $\mathcal{X}^T$, it follows that $(T(\mathrm{Eq}),T(r_1),T(r_2))$ is the kernel pair of some arrow. Since $T$ preserves regular epi and kernel pair we can assert that $T(p)$ is a regular epi and, by \Cref{coeq of the kernel pair}, it is the coequalizer of the kernel pair $(T(\mathrm{Eq}),T(r_1),T(r_2))$, as claimed.
@@ -184,14 +184,61 @@ Thus $\langle r_1,r_2\rangle es = \langle 1_B,1_B \rangle$. The morphism $es$ ma
 
 \begin{subbox}{}
     \begin{proof}
-    \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12AhLAcwYAUAAgAqnAEZ9BogQEEAlAGoRArvIl8ATvKGlOAWyYB9YCoXLV8gL5DOPXtpBXS6TLnyEUAJnJVajFjY7KWEzRTU9dkMTWXCrYId5JxcQDGw8AiIAZl9qemZWRBABAEVIgA8sIxKkqz8YKF54IlAAM00IfSQyEBwIJABGajgACyxWnCQs5zaOrsQh3v7EHvzAooAxAU4YHDojWJ29ozUQagY6cRgGAAU3DM8QLDBsWGTZzsHqPqQffwK2ABHd4gdqfFbfZaLUbjSaIAC00woViAA
+        Let $(T,\mu,\eta)$ be the given monad, and suppose that $\mathcal{X}$ has finite coproducts. Let $(A,\xi_A)$ and $(B,\xi_B)$ be two objects in $\mathcal{X}^T$. We aim to prove that $(A,\xi_A)$ and $(B,\xi_B)$ have a coproduct in $\mathcal{X}^T$. All the coproducts in the diagram below are taken in $\mathcal{X}$, and therefore they exist. Let $\iota_1$ and $\iota_2$ be the canonical injections in $\mathcal{X}$ of $A$ and $B$ into $A+B$, respectively. Our goal is to prove that the diagram below is composed by a reflexive pair in $\mathcal{X}^T$. Then, by assumption, it admits a coequalizer in $\mathcal{X}^T$, denoted by $q$.
+            \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAWAXVJADcBDAGwFcYkQAVAHS4CMsA5owAUAAg7CAggEoA1BIBC0nvwEAnaSAC+pdJlz5CKAEwVqdJq3YTJspdt0gM2PASLkzNBizaIQARQc9F0MiMgBGc28rPw4APWMVQRFxKTlFZT5BDSCnfVcjZFNIr0tfTgSpO00dYIM3FA8Six9rYX8ax2d6wvDSAGYosutK23tavJCG5D7iIdbYuP6q8fMYKAF4IlAAMzUIAFskMhAcCCQ+kDgACywdnAvShc5kHgAPLAB9SVJ3r4VKCAaIx6LwYIwAAr5UJ+NSCa4PCZ7Q6PU7nRAnaLlCQ8GA4ejfWS4-GfezA0HgqFTIwgLBgbCwIFXW73C5I-ZHRCXM5IUwtGIgACOuWRnP6NB5GKeAp4B2Yn2ANnSwiUWiZILBkOhDRAcIECJFHKQHjRqKx7Fl8uAYzV7JRiAArBL0XzzX4-p9AnbOSbJeL+djKsSCbZg6TNOTNVSeuw9QaaDc7g8ud6kP7JSbE6yudLA8ZXlwPt9foX-oDI5TtTS44jHKLjc6kE6A21BZ1dkapabEAA2Cta6nsRgwVm56zIHFcfAk8LSUiT6cE4zSQGp3uNnMt91cOUKm2G+0Adg3fa3IEtCps1Vtdc76fRx7P8XzC4gM7nr5Jy9Xt6PG5NbqcMIF7WnYWg1JQWhAA
 \begin{tikzcd}
-    {\Bigl( T\bigl( T(A)+T(B)\bigr) ,\mu_{T(A)+T(B)} \Bigr)} \arrow[rr, shift right=3] \arrow[rr, shift left=3] &  & {\Bigl( T(A+B),\mu_{A+B}\Bigr)} \arrow[ll, "F(\eta_A+\eta_B)" description] \arrow[r, "q"] & {(Q,\xi_Q)}
-    \end{tikzcd}
+                                                                                                                                                    & T^3(A+B) \arrow[ddd, "\mu_{T(A+B)}", pos=0.75] \arrow[rd, "T(\mu_{A+B})"] &                                                                                                     &  &                           \\
+T^2\bigl( T(A)+T(B)\bigr) \arrow[ddd, "\mu_{T(A)+T(B)}"'] \arrow[rr, "{T^2[\xi_A,\xi_B]}"', shift right, crossing over, pos=0.25] \arrow[ru, "{T^2[T(\iota_1),T(\iota_2)]}"] &                                                                 & T^2(A+B) \arrow[ddd, "\mu_{A+B}"] \arrow[ll, "T^2(\eta_A+\eta_B)"', shift right, crossing over, pos=0.75] \arrow[rr, "T(q)"] &  & T(Q) \arrow[ddd, "\xi_Q"] \\
+                                                                                                                                                    &                                                                 &                                                                                                     &  &                           \\
+                                                                                                                                                    & T^2(A+B) \arrow[rd, "\mu_{A+B}"]                                &                                                                                                     &  &                           \\
+T\bigl( T(A)+T(B)\bigr) \arrow[rr, "{T[\xi_A,\xi_B]}"', shift right] \arrow[ru, "{T[T(\iota_1),T(\iota_2)]}", pos=0.65]                                       &                                                                 & T(A+B) \arrow[ll, "T(\eta_A+\eta_B)" description, shift right] \arrow[rr, "q"]                      &  & Q                        
+\end{tikzcd}
 \]
-    \end{proof}
-    
+        The parallel arrows in $\mathcal{X}^T$ to be coequalized are
+        \begin{itemize}
+            \item $T[\xi_A,\xi_B]$
+            \item $\mu_{A+B}T[T(\iota_1),T(\iota_2)]$
+        \end{itemize}
+        We proceed to show that they form a reflexive pair by exhibiting a common section. Consider $T(\eta_A+\eta_B)$; it is a common section, as shown below. It follows the first composition
+        \[T[\xi_A,\xi_B]T(\eta_A+\eta_B)=T\bigl([\xi_A,\xi_B](\eta_A+\eta_B)\bigr)=T(1_{A+B})=1_{T(A+B)} \]
+        and the second composition, using the naturality of $\eta$.
+        \begin{align*}
+        \mu_{A+B}T[T(\iota_1),T(\iota_2)]T&(\eta_A+\eta_B)=\mu_{A+B}T\bigl([T(\iota_1),T(\iota_2)](\eta_A+\eta_B)\bigr) \\[1.5ex]
+        &= \mu_{A+B}T[T(\iota_1)\eta_A,T(\iota_2)\eta_B] \\[1.5ex]
+        &= \mu_{A+B}T[\eta_{A+B}\iota_1,\eta_{A+B}\iota_2] \\[1.5ex]
+        &= \mu_{A+B}T(\eta_{A+B} [\iota_1,\iota_2]) \\[1.5ex]
+        &= \mu_{A+B}T(\eta_{A+B} 1_{A+B}) \\[1.5ex]
+        &= \mu_{A+B}T(\eta_{A+B}) = 1_{T(A+B)}
+        \end{align*}
+        Thus it is a reflexive pair. 
+        
+        Let $q:T(A+B) \to Q$ be the coequalizer, and $\xi_Q$ be the algebra structure of $Q$. We aim to prove that $(Q,\xi_Q)$ is the coproduct of $(A,\xi_A)$ and $(B,\xi_B)$ in $\mathcal{X}^T$. First we need to exhibit the canonical injections $\iota_{Q,1}$ and $\iota_{Q,2}$. They are respectively
+        
+        \begin{minipage}{\textwidth}
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAmclVqMWbdgGoAQt14gM2PASIAWMdXrNWiEABUAFLLkBKRX1WCiANm0S9bAIrdxMKAHN4RUADMAJwgAWyQyEBwIJABGHUl9EAAdJPwcOgB9GKsQINDY6iikUScpAxSYdIzgMy4cvLDEEqLEAGZ45wMAR3cuIA
+\begin{tikzcd}
+A \arrow[rr, "\iota_1"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr, "q"] &  & Q
+\end{tikzcd}
+\]
+\[
+% As the one above 
+\begin{tikzcd}
+A \arrow[rr, "\iota_2"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr, "q"] &  & Q
+\end{tikzcd}
+\]
+\end{minipage}
+        We still need to prove that they are morphisms in $\mathcal{X}^T$. We prove the first one, the second one is similar. Note that $\iota_1$ is not a morphism in $\mathcal{X}^T$, this is not a problem, since we are going to prove that the whole composition $q\eta_{A+B}\iota_1$ is a morphism in $\mathcal{X}^T$. Consider the following diagram.All diagrams commute except the left and the external ones. We aim to prove that the left diagram commutes, so that the external one commutes as well.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdhwDUAIR58QGbHgJEALGJoMWbRCAAqACllyAlIv6qhRAGzaJe9gEUrygWuElSxcbqkDEw5LXmtBdRFff0l9I1N5UKUVCO8tPx1Y9kMAPXIEi3cUr3tozOcg4xck8JKULQBGGIr4s1DxGCgAc3giUAAzACcIAFskMhAcCCQG8sCQAB0F-Bx6AH0G9yHRmZoppFEneaWYVbXgM24t4bHEQ-3EAGY5uIBHa53ELUnpxAmAuJLAAeWDWXDCIG2t2+DwArC9ssYlit1g0apCbkh4T8kA4jnETCczhd5Nx0VDcXtfgAOCEUxDYh7UmiMegAIxgjAACp5bAZBlgugALHAgBEGBrnYKJK50zGIZk4p7ikDvOWfPEPADs6tuWqpSGe+PYwNBbm4lG4QA
+\begin{tikzcd}
+T(A) \arrow[dd, "\xi_A"] \arrow[rr, "T(\iota_1)"] &  & T(A+B) \arrow[rr, "T(\eta_{A+B})"] \arrow[rrd, "1_{T(A+B)}"'] &  & T^2(A+B) \arrow[d] \arrow[rr] &  & T(Q) \arrow[dd, "\xi_Q"] \\
+                                                  &  &                                                               &  & T(A+B) \arrow[rrd, "q"]       &  &                          \\
+A \arrow[rr, "\iota_1"]                           &  & A+B \arrow[rr, "\eta_{A+B}"]                                  &  & T(A+B) \arrow[rr, "q"]        &  & Q                       
+\end{tikzcd}
+        \]
+    \end{proof}  
 \end{subbox}
 
 
