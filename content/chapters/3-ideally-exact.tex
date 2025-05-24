@@ -105,9 +105,127 @@ T(\mathrm{Eq}(\tilde{q})) \arrow[dd, "\xi_{\mathrm{Eq}(\tilde{q})}", dashed] \ar
     \end{proof}
 \end{subbox}
 
-We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category.
+We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. The following will be rather intricate and technical; readers may choose to skip directly to the final outcome \Cref{algebras category has colim if the base category has coprod}.
 
-Before proving the next proposition, we recall that a pair $(f,g)$ from $A$ to $B$ in a regular category induces a relation with the following construction. Consider the morphism induced by the universal property $\langle f,g \rangle$. Since the category is regular, we can take the factorization $\langle f,g \rangle = \langle r_1,r_2\rangle e$, with $\langle r_1,r_2\rangle$ mono and $e$ regular epi. Then $\langle r_1,r_2\rangle$ is the relation induced.
+For the sake of clarity, we first present the following technical definition.
+
+\begin{mainbox}{}
+    \begin{defi}
+        Let $U:\mathcal{X} \to \mathcal{A}$ be a functor, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of pair of parallel arrows in $\mathcal{A}$, where $f_i,g_i: A_i \to U(X)$. A morphism $q:X \to Q$ in $\mathcal{X}$ is said to be a $U$\textbf{-coequalizer} of the pair $\{(f_i,g_i)\}_{i\in I}$ if 
+        \begin{itemize}
+            \item $U(q) f_i = U(q) g_i \ \forall i \in I$ in $\mathcal{A}$;
+            \item If $h:X \to Y$ is a morphism in $\mathcal{X}$ such that $U(h) f_i = U(h) g_i \ \forall i \in I$ in $\mathcal{A}$, then there exists a unique morphism $t:Q \to Y$ in $\mathcal{X}$ such that $t q = h$.
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBVACgA0BKEAF9S6TLnyEUAJgrU6TVu24BFAcNHY8BIuVk0GLNohABBISJAZNEojOJyDi49wCaai1fHaUAFj3zDdh5zDS9JZABWf0cjEGUQyzEtcKj7fQVYlyE5GCgAc3giUAAzACcIAFskXRAcCCQyAKdOLgBHdxLyqsQZWvrEGrgACyxinCQAWkaY9mKAfSwEssqkXrrqmmHR8cRpjPY8hZAaRnoAIxhGAAUkm2NSrDyh8fUQZe6a9cQAZnTA5y4QwEJ3Olxu1m8IAeTxeFneDRoX1+TVi3BwwJAjCwYFiUHow1ySy6SD8fSQURR7FaRJWiApXwAbH9muMTtjcfihoTXvDEKTGczYkNjpjQddbpDoc9soIgA
+\begin{tikzcd}
+A \arrow[r, "f_i", shift left] \arrow[r, "g_i"', shift right] & U(X) \arrow[r, "U(q)"] \arrow[rd, "U(h)"'] & U(Q) \arrow[d, "U(t)", dashed] &  & X \arrow[r, "q"] \arrow[rd, "h"'] & Q \arrow[d, "t", dashed] \\
+                                                              &                                            & U(Y)                           &  &                                   & Y                       
+\end{tikzcd}
+        \]
+        \end{itemize}
+    \end{defi}
+\end{mainbox}
+
+Before continuing, recall the universal property of the unit in an adjunction. Consider a functor $U: \mathcal{A} \to \mathcal{B}$ right adjoint to a functor $F$. Then for each object $A$ in $\mathcal{A}$, $B$ in $\mathcal{B}$, and $f:B \to U(A)$ in $\mathcal{B}$ there exists a unique morphism $g: F(B) \to A$ in $\mathcal{A}$ such that $f=U(g)\eta_B$. We denote $g = \bar{f}$. 
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACEQBfU9TXfIRQBGclVqMWbAKoAxABTsAlN14gM2PASKjh4+s1aIQ0+QEEVXcTCgBzeEVAAzAE4QAtklEgcEJACZqAyljU1tLNVcPJDIfP0RvYKMQAB0UmBw6AH1OHmc3T0RY3wDqBjoAIxgGAAV+LSEQFyxbAAscECDJZKduCi4gA
+\begin{tikzcd}
+B \arrow[r, "\eta_B"] \arrow[rd, "f"'] & UF(B) \arrow[d, "U(g)"] \\
+                                       & U(A)                   
+\end{tikzcd}
+\]
+
+Also recall that a monad $(T,\mu,\eta)$ induces a functor $U^T$ and a functor $F^T$ defined as follows:
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwDGjYAA0AvgD0AKiDGl0mXPkIoyARiq1GLNpx78hDUWNnyQGbHgJEATOU31mrRCAAUI0pwAeWAJSmFS2UiAGZ7akcdFxEA80UrFWQ7DQjtZxAYuUClaxQwlK0nNlcpd19PbiYAfRF-MU0YKABzeCJQADMAJwguJDIQHAgkNWo4Pix2nCQAWhHCqJAAVWlYrp7h6kG+0fHJmbnI9IAxFayQNd7EOwGhxDCBuiwGNh40OC3UopdlmTOLpAALJtbgBWTaPZ4uV7vIafBYnX4UMRAA
+\begin{tikzcd}
+\mathcal{X}^T \arrow[d, "U^T", shift left] &  & {(X,\xi)} \arrow[r, "U^T", maps to] & X              \\
+\mathcal{X} \arrow[u, "F^T", shift left]   &  & X \arrow[r, "F^T", maps to]         & {(T(X),\mu_X)}
+\end{tikzcd}
+\]
+
+\begin{mainbox}{}
+    \begin{lemma}\label{U-coeq}
+        Let $U:\mathcal{X} \to \mathcal{A}$ be a functor right adjoint to a functor $F:\mathcal{A} \to \mathcal{X}$, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of parallel arrows in $\mathcal{X}$, where $f_i,g_i: A_i \to U(X)$. Consider the family of unique morphisms induced by the universal property of the unit $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$, such that $f_i=U(\bar{f}_i)\eta_{A_i}$ and $g_i=U(\bar{g}_i)\eta_{A_i}$. If $q:X \to Q$ is a coequalizer of the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ in $\mathcal{X}$, then $q$ is a $U^T$-coequalizer of the family $\{(f_i,g_i)\}_{i\in I}$ in $\mathcal{A}$.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEB9LEAX1PSZc+QigBM5KrUYs2AVQBiACi5YAlHwEgM2PASISxU+s1aIQcpQA0N-QbpFEALKSPUTs86s33h+lACsrsYyZhbWtlo6fqLILpTuoWzKqpG+erFBCdKmbFY+2kIZRABswYm55pYAimmFDv7IZdkeYdV8UjBQAObwRKAAZgBOEAC2SGQgOBBIAIwVniAAOkswOHScwKq8BcNjE9TTSBI5iwPcINRwABZYAzhIALSzdiB744jzUzOIJ63yShWACM6ENgANeNwNFdbvcni8tO8Dt9jjC7g9Pgswt0LtQGHQgTAGAAFIqOcxDLDda4PV5IzEo35ouEM-5VQFLEFg7qQ9SXED4wkksn+ECU6m0xEjD4AZkOPxcIBu6PhWLY5x4dOlSDljMVypZXzZIBxPDxBKJpIaojFVJpu21iCCjLKSthGOeavMwNB4N5Dv2TvlSFdBoxRqS3s5vtNO3NQqtMTY4vtWsDiqOiAA7F7wgBHOr012ZgAcubzHV4QA
+\begin{tikzcd}
+A_i \arrow[rr, "\eta_{A_i}"] \arrow[rrdd, "f_i", shift left] \arrow[rrdd, "g_i"', shift right] &  & UF(A_i) \arrow[dd, "U(\bar{f}_i)", shift left] \arrow[dd, "U(\bar{g}_i)"', shift right] &  & F(A_i) \arrow[r, "\bar{f}_i", shift left] \arrow[r, "\bar{g_i}"', shift right] & X \arrow[r, "q"]       & Q    \\
+                                                                                               &  &                                                                                         &  &                                                                                &                        &      \\
+                                                                                               &  & U(X)                                                                                    &  & A_i \arrow[r, "f_i", shift left] \arrow[r, "g_i"', shift right]                & U(X) \arrow[r, "U(q)"] & U(Q)
+\end{tikzcd}
+        \]
+    \end{lemma}
+\end{mainbox}
+
+\begin{mainbox}{}
+    \begin{prop}\label{algebras category has colim if the base category has coprod}
+        Let $T:\mathcal{\mathcal{X}} \to \mathcal{X}$ be a monad. If $\mathcal{X}$ has finite coproducts and the Eilenberg-Moore category $\mathcal{X}^T$ has reflexive coequalizers, then $\mathcal{X}^T$ has finite coproducts. Moreover $\mathcal{X}^T$ is finitely cocomplete.
+    \end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        Let $(T,\mu,\eta)$ be the given monad, and suppose that $\mathcal{X}$ has finite coproducts. Let $(A,\xi_A)$ and $(B,\xi_B)$ be two objects in $\mathcal{X}^T$. We aim to prove that $(A,\xi_A)$ and $(B,\xi_B)$ have a coproduct in $\mathcal{X}^T$. All the coproducts in the diagram below are taken in $\mathcal{X}$, and therefore they exist. Let $\iota_1$ and $\iota_2$ be the canonical injections in $\mathcal{X}$ of $A$ and $B$ into $A+B$, respectively. Our goal is to prove that the diagram below is composed by a reflexive pair in $\mathcal{X}^T$. Then, by assumption, it admits a coequalizer in $\mathcal{X}^T$, denoted by $q$.
+            \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAWAXVJADcBDAGwFcYkQAVAHS4CMsA5owAUAAg7CAggEoA1BIBC0nvwEAnaSAC+pdJlz5CKAEwVqdJq3YTJspdt0gM2PASLkzNBizaIQARQc9F0MiMgBGc28rPw4APWMVQRFxKTlFZT5BDSCnfVcjZFNIr0tfTgSpO00dYIM3FA8Six9rYX8ax2d6wvDSAGYosutK23tavJCG5D7iIdbYuP6q8fMYKAF4IlAAMzUIAFskMhAcCCQ+kDgACywdnAvShc5kHgAPLAB9SVJ3r4VKCAaIx6LwYIwAAr5UJ+NSCa4PCZ7Q6PU7nRAnaLlCQ8GA4ejfWS4-GfezA0HgqFTIwgLBgbCwIFXW73C5I-ZHRCXM5IUwtGIgACOuWRnP6NB5GKeAp4B2Yn2ANnSwiUWiZILBkOhDRAcIECJFHKQHjRqKx7Fl8uAYzV7JRiAArBL0XzzX4-p9AnbOSbJeL+djKsSCbZg6TNOTNVSeuw9QaaDc7g8ud6kP7JSbE6yudLA8ZXlwPt9foX-oDI5TtTS44jHKLjc6kE6A21BZ1dkapabEAA2Cta6nsRgwVm56zIHFcfAk8LSUiT6cE4zSQGp3uNnMt91cOUKm2G+0Adg3fa3IEtCps1Vtdc76fRx7P8XzC4gM7nr5Jy9Xt6PG5NbqcMIF7WnYWg1JQWhAA
+\begin{tikzcd}
+                                                                                                                                                    & T^3(A+B) \arrow[ddd, "\mu_{T(A+B)}", pos=0.75] \arrow[rd, "T(\mu_{A+B})"] &                                                                                                     &  &                           \\
+T^2\bigl( T(A)+T(B)\bigr) \arrow[ddd, "\mu_{T(A)+T(B)}"'] \arrow[rr, "{T^2[\xi_A,\xi_B]}"', shift right, crossing over, pos=0.25] \arrow[ru, "{T^2[T(\iota_1),T(\iota_2)]}"] &                                                                 & T^2(A+B) \arrow[ddd, "\mu_{A+B}"] \arrow[ll, "T^2(\eta_A+\eta_B)"', shift right, crossing over, pos=0.75] \arrow[rr, "T(q)"] &  & T(Q) \arrow[ddd, "\xi_Q"] \\
+                                                                                                                                                    &                                                                 &                                                                                                     &  &                           \\
+                                                                                                                                                    & T^2(A+B) \arrow[rd, "\mu_{A+B}"]                                &                                                                                                     &  &                           \\
+T\bigl( T(A)+T(B)\bigr) \arrow[rr, "{T[\xi_A,\xi_B]}"', shift right] \arrow[ru, "{T[T(\iota_1),T(\iota_2)]}", pos=0.65]                                       &                                                                 & T(A+B) \arrow[ll, "T(\eta_A+\eta_B)" description, shift right] \arrow[rr, "q"]                      &  & Q                        
+\end{tikzcd}
+\]
+        The parallel arrows in $\mathcal{X}^T$ to be coequalized are
+        \begin{itemize}
+            \item $T[\xi_A,\xi_B]$
+            \item $\mu_{A+B}T[T(\iota_1),T(\iota_2)]$
+        \end{itemize}
+        We proceed to show that they form a reflexive pair by exhibiting a common section. Consider $T(\eta_A+\eta_B)$; it is a common section, as shown below. It follows the first composition
+        \[T[\xi_A,\xi_B]T(\eta_A+\eta_B)=T\bigl([\xi_A,\xi_B](\eta_A+\eta_B)\bigr)=T(1_{A+B})=1_{T(A+B)} \]
+        and the second composition, using the naturality of $\eta$.
+        \begin{align*}
+        \mu_{A+B}T[T(\iota_1),T(\iota_2)]T&(\eta_A+\eta_B)=\mu_{A+B}T\bigl([T(\iota_1),T(\iota_2)](\eta_A+\eta_B)\bigr) \\[1.5ex]
+        &= \mu_{A+B}T[T(\iota_1)\eta_A,T(\iota_2)\eta_B] \\[1.5ex]
+        &= \mu_{A+B}T[\eta_{A+B}\iota_1,\eta_{A+B}\iota_2] \\[1.5ex]
+        &= \mu_{A+B}T(\eta_{A+B} [\iota_1,\iota_2]) \\[1.5ex]
+        &= \mu_{A+B}T(\eta_{A+B} 1_{A+B}) \\[1.5ex]
+        &= \mu_{A+B}T(\eta_{A+B}) = 1_{T(A+B)}
+        \end{align*}
+        Thus it is a reflexive pair. 
+        
+        Let $q:T(A+B) \to Q$ be the coequalizer in $\mathcal{X}$, and $\xi_Q$ be the algebra structure of $Q$. We aim to prove that $(Q,\xi_Q)$ is the coproduct of $(A,\xi_A)$ and $(B,\xi_B)$ in $\mathcal{X}^T$. First we need to exhibit the canonical injections $\iota_{Q,1}$ and $\iota_{Q,2}$. They are respectively
+        
+        \begin{minipage}{\textwidth}
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAmclVqMWbdgGoAQt14gM2PASIAWMdXrNWiEABUAFLLkBKRX1WCiANm0S9bAIrdxMKAHN4RUADMAJwgAWyQyEBwIJABGHUl9EAAdJPwcOgB9GKsQINDY6iikUScpAxSYdIzgMy4cvLDEEqLEAGZ45wMAR3cuIA
+\begin{tikzcd}
+A \arrow[rr, "\iota_1"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr, "q"] &  & Q
+\end{tikzcd}
+\]
+\[
+% As the one above 
+\begin{tikzcd}
+A \arrow[rr, "\iota_2"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr, "q"] &  & Q
+\end{tikzcd}
+\]
+\end{minipage}
+        We still need to prove that they are morphisms in $\mathcal{X}^T$. We prove the first one, the second one is similar. Note that $\iota_1$ and $\eta_{A+B}$ are not a morphism in $\mathcal{X}^T$, this is not a problem, since we are going to prove that the whole composition $q\eta_{A+B}\iota_1$ is a morphism in $\mathcal{X}^T$. Consider the following diagram. All diagrams commute except the left and the external ones. We aim to prove that the left diagram commutes, so that the external one commutes as well.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdhwDUAIR58QGbHgJEALGJoMWbRCAAqACllyAlIv6qhRAGzaJe9gEUrygWuElSxcbqkDEw5LXmtBdRFff0l9I1N5UKUVCO8tPx1Y9kMAPXIEi3cUr3tozOcg4xck8JKULQBGGIr4s1DxGCgAc3giUAAzACcIAFskMhAcCCQG8sCQAB0F-Bx6AH0G9yHRmZoppFEneaWYVbXgM24t4bHEQ-3EAGY5uIBHa53ELUnpxAmAuJLAAeWDWXDCIG2t2+DwArC9ssYlit1g0apCbkh4T8kA4jnETCczhd5Nx0VDcXtfgAOBEGJYjZjnS4fW7Yh60kCMegAIxgjAACp5bAZBlgugALHAgOkgBrnYKJK4QimITkPZ749jvFWYxB4h4AdllJle5L1xpxT1lwNBbm4lG4QA
+\begin{tikzcd}
+T(A) \arrow[dd, "\xi_A"] \arrow[rr, "T(\iota_1)"] &  & T(A+B) \arrow[rr, "T(\eta_{A+B})"] \arrow[rrd, equal] &  & T^2(A+B) \arrow[d, "\mu_{A+B}"] \arrow[rr, "T(q)"] &  & T(Q) \arrow[dd, "\xi_Q"] \\
+                                                  &  &                                                               &  & T(A+B) \arrow[rrd, "q"]                            &  &                          \\
+A \arrow[rr, "\iota_1"]                           &  & A+B \arrow[rr, "\eta_{A+B}"]                                  &  & T(A+B) \arrow[rr, "q"]                             &  & Q                       
+\end{tikzcd}
+        \]
+    \end{proof}  
+\end{subbox}
+
+We now want to study a sufficient condition for a category to admit reflexive coequalizers, so that we can apply the proposition above.
+
+Recall that a pair $(f,g)$ from $A$ to $B$ in a regular category induces a relation with the following construction. Consider the morphism induced by the universal property $\langle f,g \rangle$. Since the category is regular, we can take the factorization $\langle f,g \rangle = \langle r_1,r_2\rangle e$, with $\langle r_1,r_2\rangle$ mono and $e$ regular epi. Then $\langle r_1,r_2\rangle$ is the relation induced.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAmclVqMWbAEIAdWXgC28AATTuvEBmx4CRAIyl94+s1aIQAJW7iYUAObwioAGYAnCIqRkQOCElEQAAsYOig2HAB3CBCwhGpTKQtWagY6ACMYBgAFfl0hEDcseyCcDVcPL0RAvyRDYNDwxDAmBgZqHDosBgiunoTJcxB5NLB7BhgVNwB9Qynp4RV5NzoxiZBUjKzcnUE2IpKyngrPbw7-RHrEoZHV8cmXUnsl2RW11i4KLiA
 \begin{tikzcd}
@@ -161,7 +279,7 @@ Thus $\langle r_1,r_2\rangle es = \langle 1_B,1_B \rangle$. The morphism $es$ ma
 
 \begin{subbox}{}
     \begin{proof}
-        Assume $\mathcal{A}$ is exact and Mal'tsev. We want to prove that $\mathcal{A}$ has reflexive coequalizer. Consider a reflexive pair $(f,g)$ from $A$ to $B$. By \Cref{relation induced by a reflexive pair is reflexive} the relation induced $\langle r_1,r_2 \rangle$ is reflexive. Since $\mathcal{A}$ is Malt'sev, then each internal reflexive relation is an equivalence relation. Hence $\langle r_1,r_2 \rangle$ is an equivalence relation. $\mathcal{A}$ is also exact, then, by \Cref{equiv rel is kernel pair of the coeq} the equivalence relation $(r_1,r_2)$ has a coequalizer $k$.
+        Assume $\mathcal{A}$ is exact and Mal'tsev. We want to prove that $\mathcal{A}$ has reflexive coequalizer. Consider a reflexive pair $(f,g)$ from $A$ to $B$. By \Cref{relation induced by a reflexive pair is reflexive} the internal relation induced $\langle r_1,r_2 \rangle$ is reflexive. Since $\mathcal{A}$ is Malt'sev, then each internal reflexive relation is an equivalence relation. Hence $\langle r_1,r_2 \rangle$ is an equivalence relation. $\mathcal{A}$ is also exact, then, by \Cref{equiv rel is kernel pair of the coeq} the equivalence relation $(r_1,r_2)$ has a coequalizer $k$.
         
         We want to prove that $k$ is also the coequalizer of $(f,g)$. First we note that $kf=kr_1e=kr_2e=kg$. It remains to prove the universal property. Let $h:B \to C$ be a morphism such that $hf=hg$. Then $hr_1e=hr_2e$. Since $e$ is a regular epi, hence an epi, we have that $hr_1=hr_2$. Thus there exists a unique morphism $t$ such that $th=k$.
         \[
@@ -174,74 +292,6 @@ Thus $\langle r_1,r_2\rangle es = \langle 1_B,1_B \rangle$. The morphism $es$ ma
         \]
     \end{proof}    
 \end{subbox}
-
-\begin{mainbox}{}
-    \begin{prop}\label{algebras category has colim if the base category has coprod}
-        Let $T:\mathcal{\mathcal{X}} \to \mathcal{X}$ be a monad. If $\mathcal{X}$ has finite coproducts and the Eilenberg-Moore category $\mathcal{X}^T$ has reflexive coequalizers, then $\mathcal{X}^T$ has finite coproducts. Moreover $\mathcal{X}^T$ is finitely cocomplete.
-    \end{prop}
-\end{mainbox}
-
-
-\begin{subbox}{}
-    \begin{proof}
-        Let $(T,\mu,\eta)$ be the given monad, and suppose that $\mathcal{X}$ has finite coproducts. Let $(A,\xi_A)$ and $(B,\xi_B)$ be two objects in $\mathcal{X}^T$. We aim to prove that $(A,\xi_A)$ and $(B,\xi_B)$ have a coproduct in $\mathcal{X}^T$. All the coproducts in the diagram below are taken in $\mathcal{X}$, and therefore they exist. Let $\iota_1$ and $\iota_2$ be the canonical injections in $\mathcal{X}$ of $A$ and $B$ into $A+B$, respectively. Our goal is to prove that the diagram below is composed by a reflexive pair in $\mathcal{X}^T$. Then, by assumption, it admits a coequalizer in $\mathcal{X}^T$, denoted by $q$.
-            \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAWAXVJADcBDAGwFcYkQAVAHS4CMsA5owAUAAg7CAggEoA1BIBC0nvwEAnaSAC+pdJlz5CKAEwVqdJq3YTJspdt0gM2PASLkzNBizaIQARQc9F0MiMgBGc28rPw4APWMVQRFxKTlFZT5BDSCnfVcjZFNIr0tfTgSpO00dYIM3FA8Six9rYX8ax2d6wvDSAGYosutK23tavJCG5D7iIdbYuP6q8fMYKAF4IlAAMzUIAFskMhAcCCQ+kDgACywdnAvShc5kHgAPLAB9SVJ3r4VKCAaIx6LwYIwAAr5UJ+NSCa4PCZ7Q6PU7nRAnaLlCQ8GA4ejfWS4-GfezA0HgqFTIwgLBgbCwIFXW73C5I-ZHRCXM5IUwtGIgACOuWRnP6NB5GKeAp4B2Yn2ANnSwiUWiZILBkOhDRAcIECJFHKQHjRqKx7Fl8uAYzV7JRiAArBL0XzzX4-p9AnbOSbJeL+djKsSCbZg6TNOTNVSeuw9QaaDc7g8ud6kP7JSbE6yudLA8ZXlwPt9foX-oDI5TtTS44jHKLjc6kE6A21BZ1dkapabEAA2Cta6nsRgwVm56zIHFcfAk8LSUiT6cE4zSQGp3uNnMt91cOUKm2G+0Adg3fa3IEtCps1Vtdc76fRx7P8XzC4gM7nr5Jy9Xt6PG5NbqcMIF7WnYWg1JQWhAA
-\begin{tikzcd}
-                                                                                                                                                    & T^3(A+B) \arrow[ddd, "\mu_{T(A+B)}", pos=0.75] \arrow[rd, "T(\mu_{A+B})"] &                                                                                                     &  &                           \\
-T^2\bigl( T(A)+T(B)\bigr) \arrow[ddd, "\mu_{T(A)+T(B)}"'] \arrow[rr, "{T^2[\xi_A,\xi_B]}"', shift right, crossing over, pos=0.25] \arrow[ru, "{T^2[T(\iota_1),T(\iota_2)]}"] &                                                                 & T^2(A+B) \arrow[ddd, "\mu_{A+B}"] \arrow[ll, "T^2(\eta_A+\eta_B)"', shift right, crossing over, pos=0.75] \arrow[rr, "T(q)"] &  & T(Q) \arrow[ddd, "\xi_Q"] \\
-                                                                                                                                                    &                                                                 &                                                                                                     &  &                           \\
-                                                                                                                                                    & T^2(A+B) \arrow[rd, "\mu_{A+B}"]                                &                                                                                                     &  &                           \\
-T\bigl( T(A)+T(B)\bigr) \arrow[rr, "{T[\xi_A,\xi_B]}"', shift right] \arrow[ru, "{T[T(\iota_1),T(\iota_2)]}", pos=0.65]                                       &                                                                 & T(A+B) \arrow[ll, "T(\eta_A+\eta_B)" description, shift right] \arrow[rr, "q"]                      &  & Q                        
-\end{tikzcd}
-\]
-        The parallel arrows in $\mathcal{X}^T$ to be coequalized are
-        \begin{itemize}
-            \item $T[\xi_A,\xi_B]$
-            \item $\mu_{A+B}T[T(\iota_1),T(\iota_2)]$
-        \end{itemize}
-        We proceed to show that they form a reflexive pair by exhibiting a common section. Consider $T(\eta_A+\eta_B)$; it is a common section, as shown below. It follows the first composition
-        \[T[\xi_A,\xi_B]T(\eta_A+\eta_B)=T\bigl([\xi_A,\xi_B](\eta_A+\eta_B)\bigr)=T(1_{A+B})=1_{T(A+B)} \]
-        and the second composition, using the naturality of $\eta$.
-        \begin{align*}
-        \mu_{A+B}T[T(\iota_1),T(\iota_2)]T&(\eta_A+\eta_B)=\mu_{A+B}T\bigl([T(\iota_1),T(\iota_2)](\eta_A+\eta_B)\bigr) \\[1.5ex]
-        &= \mu_{A+B}T[T(\iota_1)\eta_A,T(\iota_2)\eta_B] \\[1.5ex]
-        &= \mu_{A+B}T[\eta_{A+B}\iota_1,\eta_{A+B}\iota_2] \\[1.5ex]
-        &= \mu_{A+B}T(\eta_{A+B} [\iota_1,\iota_2]) \\[1.5ex]
-        &= \mu_{A+B}T(\eta_{A+B} 1_{A+B}) \\[1.5ex]
-        &= \mu_{A+B}T(\eta_{A+B}) = 1_{T(A+B)}
-        \end{align*}
-        Thus it is a reflexive pair. 
-        
-        Let $q:T(A+B) \to Q$ be the coequalizer, and $\xi_Q$ be the algebra structure of $Q$. We aim to prove that $(Q,\xi_Q)$ is the coproduct of $(A,\xi_A)$ and $(B,\xi_B)$ in $\mathcal{X}^T$. First we need to exhibit the canonical injections $\iota_{Q,1}$ and $\iota_{Q,2}$. They are respectively
-        
-        \begin{minipage}{\textwidth}
-        \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAmclVqMWbdgGoAQt14gM2PASIAWMdXrNWiEABUAFLLkBKRX1WCiANm0S9bAIrdxMKAHN4RUADMAJwgAWyQyEBwIJABGHUl9EAAdJPwcOgB9GKsQINDY6iikUScpAxSYdIzgMy4cvLDEEqLEAGZ45wMAR3cuIA
-\begin{tikzcd}
-A \arrow[rr, "\iota_1"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr, "q"] &  & Q
-\end{tikzcd}
-\]
-\[
-% As the one above 
-\begin{tikzcd}
-A \arrow[rr, "\iota_2"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr, "q"] &  & Q
-\end{tikzcd}
-\]
-\end{minipage}
-        We still need to prove that they are morphisms in $\mathcal{X}^T$. We prove the first one, the second one is similar. Note that $\iota_1$ is not a morphism in $\mathcal{X}^T$, this is not a problem, since we are going to prove that the whole composition $q\eta_{A+B}\iota_1$ is a morphism in $\mathcal{X}^T$. Consider the following diagram.All diagrams commute except the left and the external ones. We aim to prove that the left diagram commutes, so that the external one commutes as well.
-        \[
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdhwDUAIR58QGbHgJEALGJoMWbRCAAqACllyAlIv6qhRAGzaJe9gEUrygWuElSxcbqkDEw5LXmtBdRFff0l9I1N5UKUVCO8tPx1Y9kMAPXIEi3cUr3tozOcg4xck8JKULQBGGIr4s1DxGCgAc3giUAAzACcIAFskMhAcCCQG8sCQAB0F-Bx6AH0G9yHRmZoppFEneaWYVbXgM24t4bHEQ-3EAGY5uIBHa53ELUnpxAmAuJLAAeWDWXDCIG2t2+DwArC9ssYlit1g0apCbkh4T8kA4jnETCczhd5Nx0VDcXtfgAOCEUxDYh7UmiMegAIxgjAACp5bAZBlgugALHAgBEGBrnYKJK50zGIZk4p7ikDvOWfPEPADs6tuWqpSGe+PYwNBbm4lG4QA
-\begin{tikzcd}
-T(A) \arrow[dd, "\xi_A"] \arrow[rr, "T(\iota_1)"] &  & T(A+B) \arrow[rr, "T(\eta_{A+B})"] \arrow[rrd, "1_{T(A+B)}"'] &  & T^2(A+B) \arrow[d] \arrow[rr] &  & T(Q) \arrow[dd, "\xi_Q"] \\
-                                                  &  &                                                               &  & T(A+B) \arrow[rrd, "q"]       &  &                          \\
-A \arrow[rr, "\iota_1"]                           &  & A+B \arrow[rr, "\eta_{A+B}"]                                  &  & T(A+B) \arrow[rr, "q"]        &  & Q                       
-\end{tikzcd}
-        \]
-    \end{proof}  
-\end{subbox}
-
-
 
 \section{The notion of ideally exact category}
 
