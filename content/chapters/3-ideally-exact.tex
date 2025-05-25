@@ -128,10 +128,10 @@ A \arrow[r, "f_i", shift left] \arrow[r, "g_i"', shift right] & U(X) \arrow[r, "
 
 Before continuing, recall the universal property of the unit in an adjunction. Consider a functor $U: \mathcal{A} \to \mathcal{B}$ right adjoint to a functor $F$. Then for each object $A$ in $\mathcal{A}$, $B$ in $\mathcal{B}$, and $f:B \to U(A)$ in $\mathcal{B}$ there exists a unique morphism $g: F(B) \to A$ in $\mathcal{A}$ such that $f=U(g)\eta_B$. We denote $g = \bar{f}$. 
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACEQBfU9TXfIRQBGclVqMWbAKoAxABTsAlN14gM2PASKjh4+s1aIQ0+QEEVXcTCgBzeEVAAzAE4QAtklEgcEJACZqAyljU1tLNVcPJDIfP0RvYKMQAB0UmBw6AH1OHmc3T0RY3wDqBjoAIxgGAAV+LSEQFyxbAAscECDJZKduCi4gA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACEQBfU9TXfIRQBGclVqMWbAKoAxABTsAlN14gM2PASKjh4+s1aIQ0+QEEVPPpsFEAzGOoGpxhctXWB2lA71PJRiBm3OIwUADm8ESgAGYAThAAtkiiIDgQSABM-oYy8uGWavFJSGRpGYipzoEAOjUwOHQA+pxWIMXJiGXpWdQMdABGMAwACvxaQiBxWOEAFjggOS7tHu0JnQ7lSAAsS4HhIVxAA
 \begin{tikzcd}
-B \arrow[r, "\eta_B"] \arrow[rd, "f"'] & UF(B) \arrow[d, "U(g)"] \\
-                                       & U(A)                   
+B \arrow[r, "\eta_B"] \arrow[rd, "f"'] & UF(B) \arrow[d, "U(g)"] &  & F(B) \arrow[d, "g"] \\
+                                       & U(A)                    &  & A                  
 \end{tikzcd}
 \]
 
@@ -157,6 +157,75 @@ A_i \arrow[rr, "\eta_{A_i}"] \arrow[rrdd, "f_i", shift left] \arrow[rrdd, "g_i"'
         \]
     \end{lemma}
 \end{mainbox}
+
+\begin{subbox}{}
+\begin{proof}
+    Assume $q:X \to Q$ is a coequalizer of the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ in $\mathcal{X}$, we want to prove that $q$ is a $U^T$-coequalizer of the family $\{(f_i,g_i)\}_{i\in I}$ in $\mathcal{A}$. First we show, for each $i$, that $U(q)f_i=U(q)g_i$. Assume that $q\bar{f}_i=q\bar{g}_i$.
+    \begin{align*}
+        q\bar{f}_i=q\bar{g}_i &\implies U(q) U(\bar{f}_i) = U(q) U(\bar{g}_i) \\
+        &\implies U(q) U(\bar{f}_i) \eta_{A_i}= U(q) U(\bar{g}_i) \eta_{A_i} \\
+        &\implies U(q)f_i=U(q)g_i
+    \end{align*}
+
+    We aim to prove now the universal property of the $U$-coequalizer. Let $h:X \to Y$ be a morphism such that $U(h)f_i=U(h)g_i$. By the universal peroperty of the unit applied to $U(h)f_i=U(h)g_i : A_i \to U(Y)$ there exist a unique morphism $k:F(A_i) \to Y$ such that $U(k) \eta_{A_i}=U(h)f_i=U(h)g_i$. Both $h\bar{f}_i$ and
+    $h\bar{g}_i$ satisfies such condition; in fact $U(h\bar{f}_i) \eta_{A_i}= U(h) U(\bar{f}_i) \eta_{A_i} = U(h)f_i$ and similarly for $h\bar{g}_i$. Thus by the uniqueness $h\bar{f}_i=k=h\bar{g}_i$.
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEB9LEAX1PSZc+QigBM5KrUYs2AVQBiACi5YAlHwEgM2PASISAjFPrNWiEHKUANDf0G6RB0mJMzzlpQE07WncP0UABZJalNZC2VVXwcA0WQQ4zD3NmtNWL14kNdkszYvPikYKABzeCJQADMAJwgAWyRDahwIJAkQOAALLEqcJABaJuk8iysAHTGAIzpq4ErebhiQGvqkMhAWttyI5e4Qai6evsRB+2XahsR1zcR2w97G7Y8SveoGOkmYBgAFIUy2apYEqdPpnFaXa6tRAAZmonzAUAG0PW92O63CHisnTUlW4AF4sWoXjw3h8vr9HIEQIDgaCtOCthsobDhjtCelzqsrs0oUMMWwJjAcHROMBVLwOQzEEMbndug9paTPj8-k4LDSQftWZilBNprMSgt1JKLo8mUgWfDEYgAGwAdie8iUAGsllKQubEABWA7y46DR0WPUzYCGvZg03enlIG2BkCdE1cj03H0dP1m-lBqYh+avEDvZUUuIAoGaiNJ6O2uEwBEx9EpCzOwq8IA
+\begin{tikzcd}
+A_i \arrow[rrd, "f_i", shift left] \arrow[rrd, "g_i"', shift right] \arrow[rrdd, "U(h)f_i=U(h)g_i"', bend right] \arrow[rr, "\eta_{A_i}"] &  & UF(A_i) \arrow[d, "U(\bar{f}_i)", shift left] \arrow[d, "U(\bar{g}_i)"', shift right] \arrow[dd, "U(k)", bend left=67] &  & F(A_i) \arrow[d, "\bar{g}_i", shift left] \arrow[d, "\bar{f}_i"', shift right] \arrow[dd, "k", bend left=60] \\
+                                                                                                                                          &  & U(X) \arrow[d, "U(h)"]                                                                                                 &  & X \arrow[d, "h"]                                                                                             \\
+                                                                                                                                          &  & U(Y)                                                                                                                   &  & Y                                                                                                           
+\end{tikzcd}
+    \]
+    Then, by the universal property of the coequalizer $q$ in $\mathcal{X}^T$, there exists a unique morphism $t:Q \to Y$ sucht that $tq=h$.
+\end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
+\begin{prop}
+    Let $\mathcal{X}$ be a category, let $(T,\mu,\eta)$ be a monad on $\mathcal{X}$ and let $\{(A_i,\xi_i)\}_{i\in I}$ be a family of objects in $\mathcal{X}^T$. Assume that the coproducts $\sum_iA_i$ and $\sum_iT(A_i)$ exist. If the following parallel arrows in 
+    $\mathcal{X}^T$ admits a coequalizer $q:T(\sum_i)\to (Q,\xi_Q)$
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAdDgISwHMAFABUuAI34CucZgFsA+liECAggoCUY-mtJcZzLrz5qQAX1LpMufIRTlSxanSat2BiUIB6AJkkdp8rFUsbV19Hi1TcxAMbDwCIi8KRwYWNkROcMElKVkFIJCOPTcjU0cYKD54IlAAMwAnCBkkMhAcCCREkFEYMChmmhSXdOy-XKwuAA8sdRAaRnpuxgAFSzibEDr+AAscSNqGpsQWtqQ7J1T2IWQuRigIHDhSEfwcenUdDlv7uEpZrp6+kczPtGqcaCdEJ1BmkMno5MAcgEgiY-t1es0TJQTEA
+\begin{tikzcd}
+                                                                                                                  & {\Big(T^2(\sum_iA_i),\mu\Big)} \arrow[rd, "\mu_{\sum_iA_i}"] &                              \\
+{\Big(T\big(\sum_iT(A_i)\big),\mu\Big)} \arrow[rr, "T(\sum_i\xi_i)"'] \arrow[ru, "{T[\ldots,T(\iota_i),\ldots]}"] &                                                              & {\Big(T(\sum_iA_i),\mu\Big)}
+\end{tikzcd}
+    \]
+    then both the folowing diagrams of parallel arrow in $\mathcal{X}$ have $p$ as $U^T$-coequalizer.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKAQQH0sAlCAC+pdJlz5CKAMzkqtRizZcAOqrhMAtvwAEfQSLEgM2PASIBGUpYX1mrRCANHxZqUQBMNu0sch1TR0sF2EFGCgAc3giUAAzACcILSQyEBwIJGtFBxVOdXwcOn4hUXiklMQ0jKRvHOUndQAPLF5gLGEQagAjGDAoVOoGOl6GAAUJc2kQBKxIgAscVxBE5NrqGsQ5ev8CiCL+ZdXK7c3s+waA1RgD4EDtPQNOnr6BqqGRmHHJjydZhaWYWEQA
+\begin{tikzcd}
+T(A_i) \arrow[rrr, "T(\iota_i)"] \arrow[rd, "\xi_{i}"'] &                          &                                            & T(\sum_i A_i) \\
+                                                        & A_i \arrow[r, "\iota_i"] & \sum_iA_i \arrow[ru, "\eta_{\sum_i A_i}"'] &              
+\end{tikzcd}
+    \]
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB124mBbAfSwAVABQBBAQEoQAX1LpMufIRQAmclVqMWbEZ278s4rFNnzseAkQCMpKxvrNWiDl14CjMjTCgBzeEVAAMwAnCB4kMhAcCCQbTUc2ZE4GKAgcOFJddnwcOklSZNT0ihk5EBCwiOpopDUQACMYMCgq+O1nPTcsAAJOAA8sARBqBjpGhgAFBQtlEGCsHwALHFKg0PDEOprEOMbm1od2lxhcvmBOgyNpYZBR8anzJTZ5pZXpCmkgA
+\begin{tikzcd}
+\sum_iT(A_i) \arrow[rr, "{[\ldots,T(\iota_i),\ldots]}"] \arrow[rd, "\sum_i \xi_i"'] &                                           & T(\sum_iA_i) \\
+                                                                                    & \sum_iA_i \arrow[ru, "\eta_{\sum_iA_i}"'] &             
+\end{tikzcd}
+    \]
+
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBmAXVJADcBDAGwFcYkQAVAHS4CMsA5gAoecZgFsA+lg5CAgtICUPfgMUgAvqXSZc+QigBMpQ9TpNW7DgD1DIrmKlYFWdVp3Y8BIgBYKZhhY2RE57R2kXN20QDE99ImNiAItgzmtyMIkIpU1o2L1vFDIARmSgq1sVQUynWUiqtVyPAoNkP1KaQMsQmztRLOccjTMYKAF4IlAAMwAnCHEkMhAcCCRjEF4YMChFzpSrGukeAA8sHJpGek3GAAVdLwMQGcEACxwmkFn53eXVxGK9uUesgeIwoBAcHBSLIePgcPQlKRQeDIZQPl8Fv8aCs1oDuiAeOJmJJgP0nC4NOi5pjyNi-gDzECCVwiSSYQ4BpFKe5PtSkH5fj9Ltc7nFCk9Xu88alCcTSRzavIlNzohikABWOm4xn42UksnZLAq6Z8xACnGIWk61K9EFcMEQqHsuEI1xI+0ouBonlqy1axCa60HPXy8KDI1RE3fM3+wNdG2HLAnM6uTSUDRAA
+\begin{tikzcd}
+                                                                                                                                          &  & T^3(\sum_iA_i) \arrow[dd, "\mu_{T(\sum_iA_i)}", pos=0.8] \arrow[rrd, "T\big(\mu_{\sum_iA_i}\big)"] &  &                                              \\
+T^2\big(\sum_iT(A_i)\big) \arrow[dd, "\mu_{\sum_iT(A_i)}"'] \arrow[rru, "{T^2[\ldots,T(\iota_i),\ldots]}"] \arrow[rrrr, "T(\sum_i\xi_i)", pos=0.3, crossing over] &  &                                                                                   &  & T^2(\sum_iA_i) \arrow[dd, "\mu_{\sum_iA_i}"] \\
+                                                                                                                                          &  & T^2(\sum_iA_i) \arrow[rrd, "\mu_{\sum_iA_i}"]                                     &  &                                              \\
+T\big(\sum_iT(A_i)\big) \arrow[rrrr, "T(\sum_i\xi_i)"'] \arrow[rru, "{T[\ldots,T(\iota_i),\ldots]}"]                                      &  &                                                                                   &  & T(\sum_iA_i)                                
+\end{tikzcd}
+\]
+    \end{proof}
+\end{subbox}
+
+We are now ready to prove the result that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. This is possible if we assume the existence of reflexive coequalizers in the Eilenberg–Moore category.
 
 \begin{mainbox}{}
     \begin{prop}\label{algebras category has colim if the base category has coprod}
