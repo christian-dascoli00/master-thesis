@@ -62,13 +62,16 @@ C \arrow[rr, shift right] \arrow[rr, shift left] &  & A \arrow[rd, "e"', two hea
 \]
 
         In order to prove the factorization of $f$ in $\mathcal{X}^T$, it remains to establish that $m$ is a morphism in $\mathcal{X}^T$ and that it is a mono. Notice that $m$ is a mono in $\mathcal{X^T}$, in fact it is a mono in $\mathcal{X}$ and furthermore it is merely a morphism $\mathcal{X}$ that satisfies the algebra condition. We still need to establish that $m$ is a morphism in $\mathcal{X}^T$.
-        \[ f=mq \implies f \xi_A = mq\xi_A \implies \xi_B T(f) = m \xi_Q T(q) \implies \]
-        \[\implies \xi_B T(m) T(q) =  m \xi_Q T(q) \]
+        \begin{align*}
+            f=mq &\implies f \xi_A = mq\xi_A \\[1.5ex]
+            &\implies \xi_B T(f) = m \xi_Q T(q) \\[1.5ex]
+            &\implies \xi_B T(m) T(q) =  m \xi_Q T(q)
+        \end{align*}
         We know that $T(q)$ is a regular epi, thus it is a epi. So we can cancel it from both sides and we obtain the condition for $m$ to be a morphism in $\mathcal{X}^T$:
         \[ \xi_B T(m) =  m \xi_Q \]
         We proved that $m$ and $p$ are respectively a mono and a regular epi in $\mathcal{X}^T$. This allows the lifting of the factorization $f=me$ to $\mathcal{X}^T$.
 
-        It remains to prove the last condition of a regular category, that is the pullback stability of regular epi. Let $q: A \to B$ be a regular epi in $\mathcal{X}^T$, ie a coequalizer of some arrows in $\mathcal{X}^T$. In particular, $q$ is a regular epi in $\mathcal{X}$. Since $\mathcal{X}$ is exact, it is pullback stable. Let $\tilde{q}$ the pullback in $\mathcal{X}^T$ of $q$ along some morphism. As just noticed, $\tilde{q}$ is a regular epi in $\mathcal{X}$. Let $(\mathrm{Eq}(tilde{q}), r_1,r_2)$ be the kernel pair of $\tilde{q}$. By \Cref{coeq of the kernel pair}, $\tilde{q}$ is the coequalizer of such kernel pair. We want to lift $\tilde{Q}$ to a regular epi in $\mathcal{X}^T$. By construction, the pullback considered is a pullback in $\mathcal{X}^T$, thus it comes with algebra structures of $A\times_BC$ and $C$. Let $\xi_{A\times_BC}$ and $\xi_C$ be the algebra structures of $A\times_BC$ and $C$ respectively. Moreover, $\tilde{q}$ is a morphism in $\mathcal{X}^T$. We know that the forgetful functor $U^T$ creates all the limits that $\mathcal{X}$ has, so we can lift the kernel pair $(\mathrm{Eq}(\tilde{q}),r_1,r_2)$ to a kernel pair in $\mathcal{X}^T$. Let $\xi_{\mathrm{Eq}(\tilde{q})}$ be the algebra structure of $\mathrm{Eq}(\tilde{q})$.
+        It remains to prove the last condition of a regular category, that is the pullback stability of regular epi. Let $q: A \to B$ be a regular epi in $\mathcal{X}^T$, ie a coequalizer of some arrows in $\mathcal{X}^T$. In particular, $q$ is a regular epi in $\mathcal{X}$. Since $\mathcal{X}$ is exact, it is pullback stable. Let $\tilde{q}$ the pullback in $\mathcal{X}^T$ of $q$ along some morphism. As just noticed, $\tilde{q}$ is a regular epi in $\mathcal{X}$. Let $(\mathrm{Eq}(\tilde{q}), r_1,r_2)$ be the kernel pair of $\tilde{q}$. By \Cref{coeq of the kernel pair}, $\tilde{q}$ is the coequalizer of such kernel pair. We want to lift $\tilde{Q}$ to a regular epi in $\mathcal{X}^T$. By construction, the pullback considered is a pullback in $\mathcal{X}^T$, thus it comes with algebra structures of $A\times_BC$ and $C$. Let $\xi_{A\times_BC}$ and $\xi_C$ be the algebra structures of $A\times_BC$ and $C$ respectively. Moreover, $\tilde{q}$ is a morphism in $\mathcal{X}^T$. We know that the forgetful functor $U^T$ creates all the limits that $\mathcal{X}$ has, so we can lift the kernel pair $(\mathrm{Eq}(\tilde{q}),r_1,r_2)$ to a kernel pair in $\mathcal{X}^T$. Let $\xi_{\mathrm{Eq}(\tilde{q})}$ be the algebra structure of $\mathrm{Eq}(\tilde{q})$.
         We know that $U^T$ creates all the colimits that $\mathcal{X}$ has and the monad $T$ preserves, and we already proved that $T$ preserves coequalizers of kernel pairs. Thus, since $\tilde{q}$ is such a coequalizer, we can lift it to a coequalizer in $\mathcal{X}^T$.
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAKwVqdJq3YAhHnxAZseAkTEAGCQxZtEIACoAKGQEp5-ZUKJlNNbdL1GOZ3hcGqUARnF2pukADS5ooCKsLI3raSOuxGAS4KSu7h5KTEWn7sHAA62XgAtvAA+jIAwsFJYUQALGkZMXrlriGWHsipnvUOBoY5eViFcCWlCW5VKLWdvg09IxWhVijqddPdufn0OAAWAE75wACiAI7chrl4jLDAJ6MtyUTLU9HdRuubu-vHp+dYlzDX3BMLgkMCgAHN4ERQAAzHYQfJIAAcNBwECQxGasPh6JRaMQqWe-iMRzMNC2MHoUCQYGYjEYmLhCMQyxAqKQ3kJ7COIDJFKpehwAHcIOTKQgGdjEAA2XFIdQSpkATlliAA7Kt-LkAB5YIpNBRYpky1l49UgUX81nCi0IDXsH5-AE8kCMegAIxgjAACgsPCAdlgwVscMFDUiVcb7JrsjqisA+gVimVuKHGUgCWzEJ4FeGTUhlea+dTaYw7Y4zv1HTdU5KC5nyDnEGQ88zG2IW824FssNCQ4gALTZg1pxDtzOd7u99k0V0e72+4T+wPBmtM2otlldnt9weN9eZzeTvsc2een2tRcBoMhtsq6qNzwczOeFlR+0x3XAN7bPaHE4Vi4rhuFMZywMB-Cgegu1BVd2SfPFkRALcpwHIcYRHR8VUQ5DjwfFlM2NHDp05PQdiKchnVPecL3YK8V0bM1nzwiMaCI1Cy39cieEobggA
@@ -136,25 +139,59 @@ B \arrow[r, "\eta_B"] \arrow[rd, "f"'] & UF(B) \arrow[d, "U(g)"] &  & F(B) \arro
 \]
 
 Also recall that a monad $(T,\mu,\eta)$ induces a functor $U^T$ and a functor $F^T$ defined as follows:
-\[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwDGjYAA0AvgD0AKiDGl0mXPkIoyARiq1GLNpx78hDUWNnyQGbHgJEATOU31mrRCAAUI0pwAeWAJSmFS2UiAGZ7akcdFxEA80UrFWQ7DQjtZxAYuUClaxQwlK0nNlcpd19PbiYAfRF-MU0YKABzeCJQADMAJwguJDIQHAgkNWo4Pix2nCQAWhHCqJAAVWlYrp7h6kG+0fHJmbnI9IAxFayQNd7EOwGhxDCBuiwGNh40OC3UopdlmTOLpAALJtbgBWTaPZ4uV7vIafBYnX4UMRAA
+
+\begin{minipage}{0.5\textwidth}
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwDGjYAA0AvgD0AKiDGl0mXPkIoyARiq1GLNpx78hDUWNmaYUAObwioAGYAnCFyRkQOCEjXU4fLLZxIALReWsysiCAAqtKy8iAOTp7U7i7evv5BIfRhbABiMWIUYkA
 \begin{tikzcd}
-\mathcal{X}^T \arrow[d, "U^T", shift left] &  & {(X,\xi)} \arrow[r, "U^T", maps to] & X              \\
-\mathcal{X} \arrow[u, "F^T", shift left]   &  & X \arrow[r, "F^T", maps to]         & {(T(X),\mu_X)}
+\mathcal{X}^T \arrow[d, "U^T", shift left] \\
+\mathcal{X} \arrow[u, "F^T", shift left]  
+\end{tikzcd}
+    \]
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoANUgHR4A8sAShABfUuky58hFAEZyVWoxZtOYpTCgBzeEVAAzAE4QAtkjIgcEJAqt0sDNqbpo41kNXrNWiEAFUAPQAVDVEgA
+\begin{tikzcd}
+{(X,\xi)} \arrow[r, "U^T", maps to] & X
 \end{tikzcd}
 \]
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGclVqMWbABQAVaewCUpADoqAtkwD6S7uJhQA5vCKgAZgCcI6pGRA4ISUfbpYGbdXTRwHIavWZWRBAAMQA9WT0uIA
+\begin{tikzcd}
+X \arrow[r, "F^T", maps to] & {(T(X),\mu_X)}
+\end{tikzcd}
+\]
+\end{minipage}
 
 \begin{mainbox}{}
     \begin{lemma}\label{U-coeq}
         Let $U:\mathcal{X} \to \mathcal{A}$ be a functor right adjoint to a functor $F:\mathcal{A} \to \mathcal{X}$, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of parallel arrows in $\mathcal{X}$, where $f_i,g_i: A_i \to U(X)$. Consider the family of unique morphisms induced by the universal property of the unit $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$, such that $f_i=U(\bar{f}_i)\eta_{A_i}$ and $g_i=U(\bar{g}_i)\eta_{A_i}$. If $q:X \to Q$ is a coequalizer of the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ in $\mathcal{X}$, then $q$ is a $U^T$-coequalizer of the family $\{(f_i,g_i)\}_{i\in I}$ in $\mathcal{A}$.
-        \[
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEB9LEAX1PSZc+QigBM5KrUYs2AVQBiACi5YAlHwEgM2PASISxU+s1aIQcpQA0N-QbpFEALKSPUTs86s33h+lACsrsYyZhbWtlo6fqLILpTuoWzKqpG+erFBCdKmbFY+2kIZRABswYm55pYAimmFDv7IZdkeYdV8UjBQAObwRKAAZgBOEAC2SGQgOBBIAIwVniAAOkswOHScwKq8BcNjE9TTSBI5iwPcINRwABZYAzhIALSzdiB744jzUzOIJ63yShWACM6ENgANeNwNFdbvcni8tO8Dt9jjC7g9Pgswt0LtQGHQgTAGAAFIqOcxDLDda4PV5IzEo35ouEM-5VQFLEFg7qQ9SXED4wkksn+ECU6m0xEjD4AZkOPxcIBu6PhWLY5x4dOlSDljMVypZXzZIBxPDxBKJpIaojFVJpu21iCCjLKSthGOeavMwNB4N5Dv2TvlSFdBoxRqS3s5vtNO3NQqtMTY4vtWsDiqOiAA7F7wgBHOr012ZgAcubzHV4QA
+       
+        \begin{minipage}{0.5\textwidth}
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEB9LEAX1PSZc+QigBM5KrUYs2AVQBiACi5YAlHwEgM2PASISxU+s1aIQcpQA0NvKTCgBzeEVAAzAE4QAtkjIgcCCQARmoTWXMAHUiYHDpOYFVeTXcvX0R-QKQJaVM2N24QajgACyw3HCQAWmD+VJ8Q6izEHPCzCyVogCM6D2A3Xm4NYrKK6tqtTwaMpqCWkfLKxFDciJBHQuoGOi6YBgAFIT1REA8sRxLKupAp9JXmnNLFxtX2y27e4EdB9SKQbd2ByOIjYZwuVwovCAA
 \begin{tikzcd}
-A_i \arrow[rr, "\eta_{A_i}"] \arrow[rrdd, "f_i", shift left] \arrow[rrdd, "g_i"', shift right] &  & UF(A_i) \arrow[dd, "U(\bar{f}_i)", shift left] \arrow[dd, "U(\bar{g}_i)"', shift right] &  & F(A_i) \arrow[r, "\bar{f}_i", shift left] \arrow[r, "\bar{g_i}"', shift right] & X \arrow[r, "q"]       & Q    \\
-                                                                                               &  &                                                                                         &  &                                                                                &                        &      \\
-                                                                                               &  & U(X)                                                                                    &  & A_i \arrow[r, "f_i", shift left] \arrow[r, "g_i"', shift right]                & U(X) \arrow[r, "U(q)"] & U(Q)
+A_i \arrow[rr, "\eta_{A_i}"] \arrow[rrdd, "f_i", shift left] \arrow[rrdd, "g_i"', shift right] &  & UF(A_i) \arrow[dd, "U(\bar{f}_i)", shift left] \arrow[dd, "U(\bar{g}_i)"', shift right] \\
+                                                                                               &  &                                                                                         \\
+                                                                                               &  & U(X)                                                                                   
 \end{tikzcd}
-        \]
+\]
+        \end{minipage}
+        \begin{minipage}{0.5\textwidth}
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRADEAKAQQH0sAlCAC+pdJlz5CKAIzkqtRizYANEWJAZseAkQBM86vWatEIAIoiFMKAHN4RUADMAThAC2SMiBwQkckDgACywnHCQAWgDjZTMAHTiAIzoXYCdhfnVnN09Eb19-amDQ8MRopVMQBOTU235hEGoGOkSYBgAFCR1pEBcsWyDw0WyPQp8-RANFEzYARythIA
+\begin{tikzcd}
+F(A_i) \arrow[r, "\bar{f}_i", shift left] \arrow[r, "\bar{g_i}"', shift right] & X \arrow[r, "q"] & Q
+\end{tikzcd}
+\]
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEB9LEAX1PSZc+QigCM5KrUYs2AVQAUADQCUfASAzY8BIgCZJ1es1aIQigIpreUmFADm8IqABmAJwgBbJGRA4ISBIgcAAWWC44SAC0QcayZi7c6q4e3oi+-oHUoeGRiLEypiD2SdQMdABGMAwACkI6oiBuWPYhkfwpXll+AYgG0ibyCgCO1hS8QA
+\begin{tikzcd}
+A_i \arrow[r, "f_i", shift left] \arrow[r, "g_i"', shift right] & U(X) \arrow[r, "U(q)"] & U(Q)
+\end{tikzcd}
+\]
+        \end{minipage}
     \end{lemma}
 \end{mainbox}
 
@@ -193,6 +230,14 @@ A_i \arrow[rrd, "f_i", shift left] \arrow[rrd, "g_i"', shift right] \arrow[rrdd,
 \end{tikzcd}
     \]
     then both the folowing diagrams of parallel arrow in $\mathcal{X}$ have $p$ as $U^T$-coequalizer.
+     
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB124mBbAfSwAVABQBBAQEoQAX1LpMufIRQAmclVqMWbEZ278s4rFNnzseAkQCMpKxvrNWiDl14CjMjTCgBzeEVAAMwAnCB4kMhAcCCQbTUc2ZE4GKAgcOFJddnwcOklSZNT0ihk5EBCwiOpopDUQACMYMCgq+O1nPTcsAAJOAA8sARBqBjpGhgAFBQtlEGCsHwALHFKg0PDEOprEOMbm1od2lxhcvmBOgyNpYZBR8anzJTZ5pZXpCmkgA
+    \[
+\begin{tikzcd}
+\sum_iT(A_i) \arrow[rr, "{[\ldots,T(\iota_i),\ldots]}"] \arrow[rd, "\sum_i \xi_i"'] &                                           & T(\sum_iA_i) \\
+                                                                                    & \sum_iA_i \arrow[ru, "\eta_{\sum_iA_i}"'] &             
+\end{tikzcd}
+\]
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKAQQH0sAlCAC+pdJlz5CKAMzkqtRizZcAOqrhMAtvwAEfQSLEgM2PASIBGUpYX1mrRCANHxZqUQBMNu0sch1TR0sF2EFGCgAc3giUAAzACcILSQyEBwIJGtFBxVOdXwcOn4hUXiklMQ0jKRvHOUndQAPLF5gLGEQagAjGDAoVOoGOl6GAAUJc2kQBKxIgAscVxBE5NrqGsQ5ev8CiCL+ZdXK7c3s+waA1RgD4EDtPQNOnr6BqqGRmHHJjydZhaWYWEQA
 \begin{tikzcd}
@@ -200,19 +245,12 @@ T(A_i) \arrow[rrr, "T(\iota_i)"] \arrow[rd, "\xi_{i}"'] &                       
                                                         & A_i \arrow[r, "\iota_i"] & \sum_iA_i \arrow[ru, "\eta_{\sum_i A_i}"'] &              
 \end{tikzcd}
     \]
-    \[
-    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB124mBbAfSwAVABQBBAQEoQAX1LpMufIRQAmclVqMWbEZ278s4rFNnzseAkQCMpKxvrNWiDl14CjMjTCgBzeEVAAMwAnCB4kMhAcCCQbTUc2ZE4GKAgcOFJddnwcOklSZNT0ihk5EBCwiOpopDUQACMYMCgq+O1nPTcsAAJOAA8sARBqBjpGhgAFBQtlEGCsHwALHFKg0PDEOprEOMbm1od2lxhcvmBOgyNpYZBR8anzJTZ5pZXpCmkgA
-\begin{tikzcd}
-\sum_iT(A_i) \arrow[rr, "{[\ldots,T(\iota_i),\ldots]}"] \arrow[rd, "\sum_i \xi_i"'] &                                           & T(\sum_iA_i) \\
-                                                                                    & \sum_iA_i \arrow[ru, "\eta_{\sum_iA_i}"'] &             
-\end{tikzcd}
-    \]
-
 \end{prop}
 \end{mainbox}
 
 \begin{subbox}{}
     \begin{proof}
+        Consider the first diagram of parallel arrows in $\mathcal{X}^T$, and $p$ its coequalizer.
         \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBmAXVJADcBDAGwFcYkQAVAHS4CMsA5gAoecZgFsA+lg5CAgtICUPfgMUgAvqXSZc+QigBMpQ9TpNW7DgD1DIrmKlYFWdVp3Y8BIgBYKZhhY2RE57R2kXN20QDE99ImNiAItgzmtyMIkIpU1o2L1vFDIARmSgq1sVQUynWUiqtVyPAoNkP1KaQMsQmztRLOccjTMYKAF4IlAAMwAnCHEkMhAcCCRjEF4YMChFzpSrGukeAA8sHJpGek3GAAVdLwMQGcEACxwmkFn53eXVxGK9uUesgeIwoBAcHBSLIePgcPQlKRQeDIZQPl8Fv8aCs1oDuiAeOJmJJgP0nC4NOi5pjyNi-gDzECCVwiSSYQ4BpFKe5PtSkH5fj9Ltc7nFCk9Xu88alCcTSRzavIlNzohikABWOm4xn42UksnZLAq6Z8xACnGIWk61K9EFcMEQqHsuEI1xI+0ouBonlqy1axCa60HPXy8KDI1RE3fM3+wNdG2HLAnM6uTSUDRAA
 \begin{tikzcd}
@@ -222,6 +260,7 @@ T^2\big(\sum_iT(A_i)\big) \arrow[dd, "\mu_{\sum_iT(A_i)}"'] \arrow[rru, "{T^2[\l
 T\big(\sum_iT(A_i)\big) \arrow[rrrr, "T(\sum_i\xi_i)"'] \arrow[rru, "{T[\ldots,T(\iota_i),\ldots]}"]                                      &  &                                                                                   &  & T(\sum_iA_i)                                
 \end{tikzcd}
 \]
+Note that each parallel arrow in $\mathcal{X}^T$ respectively to the top and bottom morphism of the second diagram.
     \end{proof}
 \end{subbox}
 
