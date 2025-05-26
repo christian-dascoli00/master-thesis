@@ -321,7 +321,7 @@ Considering first how $p^*$ acts on the morphism $\mathrm{proj}_{1,E\times_BA}$
     \end{tikzcd}
 \]
 
-\[ \circledast = (\tilde{\mathrm{proj}_{2,E\times_BA}}) (\eta_{(E\times_BA,\mathrm{proj}_1)}) \] 
+\[ \circledast = (\tilde{\mathrm{proj}}_{2,E\times_BA}) (\eta_{(E\times_BA,\mathrm{proj}_1)}) \] 
 and then considering the definition of $\eta$, we obtain
 \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoAjKQVVajFmy48s-OMIAUWvoNEBKCVJAZseAkQDMy1fWatEHbsb2iL0m3KIlACZndTcOXysZW3lkRxDqFw13IQlVGCgAc3giUAAzACcIXiRHEBwIJAAWRLC2NBBqBjoAIxgGAAVogPcCrEyACxxIwuKkJXLKxCDJfKKSxAmK0trXeqKAKwFgJSMdE0NPfe8RU3ER+aQg6mXEGrU19zR9NE3t3aPdYRFxc1mQUYLMiTK7UNpgKClYFJcIKbZ7L6ic7-QFIYG3CYMLBgcJQOhwAYZRogQl0SGIMBMBgMG50LAMNiQHHEmFsbgwAAeWDgODgAAIAIR87hwNB0ADGMD5AB5XhAtjtSAiTD9lPDPirxAA+C5jRDoqZlcHkgC09mBzTanW6dl6-SGLLqTzeiuVJ2RFHEQA
@@ -332,7 +332,7 @@ and then considering the definition of $\eta$, we obtain
     \end{tikzcd}
 \]
 
-\[ \circledast = (\tilde{\mathrm{proj}_{2,E\times_BA}}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle \] 
+\[ \circledast = (\tilde{\mathrm{proj}}_{2,E\times_BA}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle \] 
 
 In order to conclude we need to check some compositions so that, by the universal property of the pullback $E\times_BA$ in the right of the following diagram, we obtain the identity morphism.
 \[
@@ -345,27 +345,21 @@ E\times_BA \arrow[ru, "{\ \ \ \ \ \ \langle \mathrm{proj}_{1,E\times_BA},1_{E\ti
 \]
 
 We want to check that composition of the projections of $E\times_BA$ with $\circledast$ is the same of composing those projection with $1_{(E\times_BA,\mathrm{proj}_1)}$. Then, since the projections are jointly monic, we have the result. Following the first composition
-\[ 
-     (\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}_{2,E\times_BA}}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = 
-\]     
-\[
- = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle =
-\]
-\[
-    = (\mathrm{proj}_{2,E \times_BA}) (1_{E\times_BA}) =(\mathrm{proj}_{2,E \times_BA}) (1_{(E\times_BA,\mathrm{proj}_1)})
-\]
+\begin{align*}
+    (&\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}}_{2,E\times_BA}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = \\[1.5ex]
+    & = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle \\[1.5ex]
+    &= (\mathrm{proj}_{2,E \times_BA}) (1_{E\times_BA}) =(\mathrm{proj}_{2,E \times_BA}) (1_{(E\times_BA,\mathrm{proj}_1)})
+\end{align*}
 and the second composition
-\[
-    (\mathrm{proj}_{1,E \times_BA})(\tilde{\mathrm{proj}_{2,E\times_BA}}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle =
-    \]
-    \[
-    = (\mathrm{proj}_{1,E\times_B(E\times_BA)}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = \mathrm{proj}_{1,E \times_BA} = \] 
-    \[
-    = (\mathrm{proj}_{1,E \times_BA}) (1_{(E\times_BA,\mathrm{proj}_1)})
-\]
+\begin{align*}
+    (&\mathrm{proj}_{1,E \times_BA})(\tilde{\mathrm{proj}}_{2,E\times_BA}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = \\[1.5ex]
+    &= (\mathrm{proj}_{1,E\times_B(E\times_BA)}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle \\[1.5ex]
+    &= \mathrm{proj}_{1,E \times_BA} \\[1.5ex]
+    &= (\mathrm{proj}_{1,E \times_BA}) (1_{(E\times_BA,\mathrm{proj}_1)})
+\end{align*}
 
 Hence
-\[ \circledast = (\tilde{\mathrm{proj}_{2,E\times_BA}}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = 1_{(E\times_BA,\mathrm{proj}_1)}\] 
+\[ \circledast = (\tilde{\mathrm{proj}}_{2,E\times_BA}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = 1_{(E\times_BA,\mathrm{proj}_1)}\] 
 
 Finally we can check the second triangle identities. Let $(D,\delta)$ be an object in $(\mathcal{A} \downarrow E)$, we have:
 \[
