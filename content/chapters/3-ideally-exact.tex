@@ -220,37 +220,36 @@ A_i \arrow[rrd, "f_i", shift left] \arrow[rrd, "g_i"', shift right] \arrow[rrdd,
 
 \begin{mainbox}{}
 \begin{prop}
-    Let $\mathcal{X}$ be a category, let $(T,\mu,\eta)$ be a monad on $\mathcal{X}$ and let $\{(A_i,\xi_i)\}_{i\in I}$ be a family of objects in $\mathcal{X}^T$. Assume that the coproducts $\sum_iA_i$ and $\sum_iT(A_i)$ exist. If the following parallel arrows in 
+    Let $\mathcal{X}$ be a category, let $(T,\mu,\eta)$ be a monad on $\mathcal{X}$ and let $\{(A_i,\xi_i)\}_{i\in I}$ be a family of objects in $\mathcal{X}^T$. Assume that the coproducts $\sum_iA_i$ and $\sum_iT(A_i)$ exist in $\mathcal{X}$ with respective cannical injectio $\{\iota_i\}_{i\in I}$ and $\{\iota'_i\}_{i\in I}$. If the following parallel arrows in 
     $\mathcal{X}^T$ admits a coequalizer $q:T(\sum_i)\to (Q,\xi_Q)$
-    \[
+    \begin{equation}\label{diagr 1 coproducts}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAdDgISwHMAFABUuAI34CucZgFsA+liECAggoCUY-mtJcZzLrz5qQAX1LpMufIRTlSxanSat2BiUIB6AJkkdp8rFUsbV19Hi1TcxAMbDwCIi8KRwYWNkROcMElKVkFIJCOPTcjU0cYKD54IlAAMwAnCBkkMhAcCCREkFEYMChmmhSXdOy-XKwuAA8sdRAaRnpuxgAFSzibEDr+AAscSNqGpsQWtqQ7J1T2IWQuRigIHDhSEfwcenUdDlv7uEpZrp6+kczPtGqcaCdEJ1BmkMno5MAcgEgiY-t1es0TJQTEA
 \begin{tikzcd}
                                                                                                                   & {\Big(T^2(\sum_iA_i),\mu\Big)} \arrow[rd, "\mu_{\sum_iA_i}"] &                              \\
 {\Big(T\big(\sum_iT(A_i)\big),\mu\Big)} \arrow[rr, "T(\sum_i\xi_i)"'] \arrow[ru, "{T[\ldots,T(\iota_i),\ldots]}"] &                                                              & {\Big(T(\sum_iA_i),\mu\Big)}
 \end{tikzcd}
-    \]
-    then both the folowing diagrams of parallel arrow in $\mathcal{X}$ have $p$ as $U^T$-coequalizer.
-     
+\end{equation}
+    then both the following diagrams of parallel arrow in $\mathcal{X}$ have $p$ as $U^T$-coequalizer.
+\begin{equation}\label{diagr 2 coproducts}
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB124mBbAfSwAVABQBBAQEoQAX1LpMufIRQAmclVqMWbEZ278s4rFNnzseAkQCMpKxvrNWiDl14CjMjTCgBzeEVAAMwAnCB4kMhAcCCQbTUc2ZE4GKAgcOFJddnwcOklSZNT0ihk5EBCwiOpopDUQACMYMCgq+O1nPTcsAAJOAA8sARBqBjpGhgAFBQtlEGCsHwALHFKg0PDEOprEOMbm1od2lxhcvmBOgyNpYZBR8anzJTZ5pZXpCmkgA
-    \[
 \begin{tikzcd}
 \sum_iT(A_i) \arrow[rr, "{[\ldots,T(\iota_i),\ldots]}"] \arrow[rd, "\sum_i \xi_i"'] &                                           & T(\sum_iA_i) \\
                                                                                     & \sum_iA_i \arrow[ru, "\eta_{\sum_iA_i}"'] &             
 \end{tikzcd}
-\]
-    \[
+\end{equation}
+\begin{equation}\label{diagr 3 coproducts}
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKAQQH0sAlCAC+pdJlz5CKAMzkqtRizZcAOqrhMAtvwAEfQSLEgM2PASIBGUpYX1mrRCANHxZqUQBMNu0sch1TR0sF2EFGCgAc3giUAAzACcILSQyEBwIJGtFBxVOdXwcOn4hUXiklMQ0jKRvHOUndQAPLF5gLGEQagAjGDAoVOoGOl6GAAUJc2kQBKxIgAscVxBE5NrqGsQ5ev8CiCL+ZdXK7c3s+waA1RgD4EDtPQNOnr6BqqGRmHHJjydZhaWYWEQA
 \begin{tikzcd}
 T(A_i) \arrow[rrr, "T(\iota_i)"] \arrow[rd, "\xi_{i}"'] &                          &                                            & T(\sum_i A_i) \\
                                                         & A_i \arrow[r, "\iota_i"] & \sum_iA_i \arrow[ru, "\eta_{\sum_i A_i}"'] &              
 \end{tikzcd}
-    \]
+\end{equation}
 \end{prop}
 \end{mainbox}
 
 \begin{subbox}{}
     \begin{proof}
-        Consider the first diagram of parallel arrows in $\mathcal{X}^T$, and $p$ its coequalizer.
+        Consider the diagram \eqref{diagr 1 coproducts} of parallel arrows in $\mathcal{X}^T$, and $p$ its coequalizer, here below explicitly.
         \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBmAXVJADcBDAGwFcYkQAVAHS4CMsA5gAoecZgFsA+lg5CAgtICUPfgMUgAvqXSZc+QigBMpQ9TpNW7DgD1DIrmKlYFWdVp3Y8BIgBYKZhhY2RE57R2kXN20QDE99ImNiAItgzmtyMIkIpU1o2L1vFDIARmSgq1sVQUynWUiqtVyPAoNkP1KaQMsQmztRLOccjTMYKAF4IlAAMwAnCHEkMhAcCCRjEF4YMChFzpSrGukeAA8sHJpGek3GAAVdLwMQGcEACxwmkFn53eXVxGK9uUesgeIwoBAcHBSLIePgcPQlKRQeDIZQPl8Fv8aCs1oDuiAeOJmJJgP0nC4NOi5pjyNi-gDzECCVwiSSYQ4BpFKe5PtSkH5fj9Ltc7nFCk9Xu88alCcTSRzavIlNzohikABWOm4xn42UksnZLAq6Z8xACnGIWk61K9EFcMEQqHsuEI1xI+0ouBonlqy1axCa60HPXy8KDI1RE3fM3+wNdG2HLAnM6uTSUDRAA
 \begin{tikzcd}
@@ -260,8 +259,38 @@ T^2\big(\sum_iT(A_i)\big) \arrow[dd, "\mu_{\sum_iT(A_i)}"'] \arrow[rru, "{T^2[\l
 T\big(\sum_iT(A_i)\big) \arrow[rrrr, "T(\sum_i\xi_i)"'] \arrow[rru, "{T[\ldots,T(\iota_i),\ldots]}"]                                      &  &                                                                                   &  & T(\sum_iA_i)                                
 \end{tikzcd}
 \]
-Note that each parallel arrow in $\mathcal{X}^T$ respectively to the top and bottom morphism of the second diagram.
-    \end{proof}
+Note that the top and bottom arrows of the diagram \eqref{diagr 1 coproducts} correspond, by the universal property of the unit of the adjunction, respectively to the top and bottom arrows of the diagram \eqref{diagr 2 coproducts}. In order to prove so, by the uniqueness of the morphism induced by the universal property of the unit, it suffies to show that the image of the diagram \eqref{diagr 1 coproducts} through $U^T$, composed with the unit, is the diagram \eqref{diagr 2 coproducts}. Such composition results to the following diagram.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBpiBdUkANwEMAbAVxiRABUAdTgIywHMAFNzhMAtgH0s7QQEEpASm59+CkAF9S6TLnyEUAZlIAGKrUYs27AHrFhnUZKzysazdux4CRACykAjGb0zKyIHPaOUi5uWiAYnnpE-iZBFqEcygIR4lIy0ZmqGrHxut4oxgGpIWwiOdJyikUepfokldTBlmERaHSworhuZjBQ-PBEoABmAE4QYkgVIDgQSGQgPDBgUAsdaVbZTtwAHliN1Ax0GwwACjpe+iDTAgAWOE0gM3NIyUsriGuddLcMRMCTAWpOFzqd6feaIIy-b67aphdjIbgMKAQHBwUgybj4HB0RSkDFYnEUGGzOF+RHw5FdEDcGBEsEQ3INACSCmh7g+1KQtOWO3MKKZnBZxPBDjqeQk3Oh50uMBud0SYSe-FeGgo6iAA
+\begin{tikzcd}
+                                                                                   & T\big(\sum_iT(A_i)\big) \arrow[rr, "{T[\ldots,T(\iota_i),\ldots]}"] &                                                        & T^2(\sum_iA_i) \arrow[rd, "\mu_{\sum_iA_i}"] &              \\
+\sum_iT(A_i) \arrow[ru, "\eta_{\sum_iT(A_I)}"] \arrow[rrd, "\eta_{\sum_iT(A_I)}"'] &                                                                     & (\spadesuit)                                           &                                              & T(\sum_iA_i) \\
+                                                                                   &                                                                     & T\big(\sum_iT(A_i)\big) \arrow[rru, "T(\sum_i\xi_i)"'] &                                              &             
+\end{tikzcd}
+\]
+Consider now the top arrow in the diagram $(\spadesuit)$. Using the naturality of $\eta$, we have that
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB124mBbAfSwAVABQBBAQEoQAX1LpMufIRRkAjFVqMWbEZ278s4rFNnzseAkQBM5DfWatEIQZwBGWAObC9vASKMSbp4mciAY5krWpOrU9tpOggB6Vt5cvoaSMhowUB7wRKAAZgBOEDxIZCA4EEiqsVqOIMicDFAQOHCkuuz4OHSSpC1tHRQg1Ax0rjAMAAoKFsogxZ4AFjgyoSVlFdTVSDaaDmycMH18wD4G-pLSG0Wl5Yh1VTWIAMz1R04nZ8Dd+gIArdTCAto8Dnt3p94s5muxWu1Ot1ev1jIN4cM4KNpBRpEA
+\begin{tikzcd}
+\sum_iT(A_i) \arrow[d, "{[\ldots,T(\iota_i),\ldots]}"'] \arrow[rr, "\eta_{\sum_iT(A_i)}"] &  & T\big(\sum_iT(A_i)\big) \arrow[d, "{T[\ldots,T(\iota_i),\ldots]}"] \\
+T(\sum_iA_i) \arrow[rr, "\eta_{T(\sum_iA_i)}"]                                            &  & T^2(\sum_iA_i)                                                    
+\end{tikzcd}
+\]
+\begin{align*}
+    \mu_{\sum_iA_i} T[\ldots,T(\iota_i),\ldots] \eta_{\sum_iT(A_i)} &= \mu_{\sum_iA_i} \eta_{T(\sum_iA_i)} [\ldots,T(\iota_i),\ldots] \\[1.5ex]
+    &= 1_{T(\sum_iA_i)} [\ldots,T(\iota_i),\ldots] \\[1.5ex]
+    &= [\ldots,T(\iota_i),\ldots] 
+\end{align*}
+which is the top arrow in \eqref{diagr 2 coproducts}. Then, for the bottom arrow in $(\spadesuit)$, by the naturality of $\eta$, we have that
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB124mBbAfSwAVABQBBAQEoQAX1LpMufIRQAmclVqMWbQZwBGWAObDO3fkLGT9RqbPnY8BImoCMG+s1aIQI07wHiWLZyIBgOSkRkbtQe2t5+5oEyGjBQhvBEoABmAE4QPEhkIDgQSC4xWl4c7DA4dHzACQIigRLSMiG5+YXUJUgAzBWebJwAHlh8ogDUYxMAQiDUDHR6MAwACgqOyiA5RgAWOB3ZeQWIg8WliGqaw-E1dQ1NWIHtdiBdZ+WXSDexVb52ONJjMgfNbBRpEA
+\begin{tikzcd}
+\sum_iT(A_i) \arrow[rr, "\eta_{\sum_iT(A_i)}"] \arrow[d, "\xi_A+\xi_B"'] &  & T\big(\sum_iT(A_i)\big) \arrow[d, "T(\xi_A+\xi_B)"] \\
+\sum_iA_i \arrow[rr, "\eta_{\sum_iA_i}"]                                 &  & T(\sum_iA_i)                                       
+\end{tikzcd}
+\]
+
+\end{proof}
 \end{subbox}
 
 We are now ready to prove the result that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. This is possible if we assume the existence of reflexive coequalizers in the Eilenberg–Moore category.
