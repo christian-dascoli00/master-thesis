@@ -385,7 +385,46 @@ A \arrow[rr, "\iota_1"]                           &  & A+B \arrow[rr, "\eta_{A+B
 \end{tikzcd}
         \]
 
-        Once we have the canonical injections, we need to show that they satisfy the universal property of coproducts in $\mathcal{X}^T$. Let $f_i:(A_i,\xi_i) \to (K,\xi_K)$ for $i=1,2$ in $\mathcal{X}^T$. We aim to prove that there exists a unique morphism $h:(Q,\xi_Q) \to (K,\xi_K)$ in $\mathcal{X}^T$ such that $h\iota_{Q,i} = f_i$ for $i=1,2$. First, on can show that there exists a unique morphism $g=\xi_K T[\ldots,f_i,\ldots]$ in $\mathcal{X}^T$ such that $g\eta_{A+B}\iota_i=f_i$ for $i=1,2$.
+        Once we have the canonical injections, we need to show that they satisfy the universal property of coproducts in $\mathcal{X}^T$. Let $f_i:(A_i,\xi_i) \to (K,\xi_K)$ for $i=1,2$ in $\mathcal{X}^T$. We aim to prove that there exists a unique morphism $h:(Q,\xi_Q) \to (K,\xi_K)$ in $\mathcal{X}^T$ such that $h\iota_{Q,i} = f_i$ for $i=1,2$.
+
+        First, we show that there exists a unique morphism $g:(T(A+B),\mu_{A+B} \to (K,\xi_K)$ in $\mathcal{X}^T$ such that $g(\eta_{A+B})\iota_i=f_i$ for $i=1,2$. Let define $g=\xi_K T[f_1,f_2]$. It is a morphism in $\mathcal{X}^T$, in fact the following diagram commutes.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAVACgEEBqAEIBKEAF9S6TLnyEU5CtTpNW7bgGkR4ydjwEiAFgU0GLNohBqxEkBh0yDpYopMrz6zddvS9cx8+VmnAB65FwaVtresiR+xgGqIbyCmoowUADm8ESgAGYAThAAtkgArDQ4EEhkSqbsADp1hcwA+sD8AqIRIPlFpeWViIY1rpzIOc0AjKTjVF09xYjVFUhTw4EcY5PTzbNa3QULQ8uIqy6BDU3NlnvzSEcDAMxxteYXLdfWt4hPIMfya-U6gAPLBXOYHFb9JD-M6AkFg0SUURAA
+\begin{tikzcd}
+T^2(A+B) \arrow[dd, "\mu_{A+B}"] \arrow[rr, "{T[f_1,f_2]}"] &  & T^2(K) \arrow[dd, "\mu_K"] \arrow[rr, "\mu_K"] &  & T(K) \arrow[dd, "\xi_K"] \\
+                                                            &  &                                                &  &                          \\
+T(A+B) \arrow[rr, "{T[f_1,f_2]}"]                           &  & T(K) \arrow[rr, "\xi_K"]                       &  & K                       
+\end{tikzcd}
+        \]
+        Suppose now there exists another morphism $g':(T(A+B),\mu_{A+B}) \to (K,\xi_K)$ such that $g'(\eta_{A+B})\iota_i=f_i$ for $i=1,2$. Then we have that
+        \begin{align*}
+            g&(\eta_{A+B})\iota_i = g'(\eta_{A+B})\iota_i \ \ i=1,2 \\[1.5ex]
+            &\implies g(\eta_{A+B}) = g'(\eta_{A+B})) \\[1.5ex]
+            &\implies U^T(g)(\eta_{A+B}) = U^T(g')(\eta_{A+B}) \\[1.5ex]
+            &\implies g=g'
+        \end{align*}
+        where we used the unicity in the universal property of the unit and the fact that $g$ and $g'$ are morphisms in $\mathcal{X}^T$. So $g$ is unique. Moreover, we have that $gT(\iota_i) = g (\eta_{A+B}) \iota_i \xi_i$ for $i=1,2$. In fact, we have that
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAVACgEEBKEAF9S6TLnyEUZACzU6TVux5CRIDNjwEi5UrJoMWbRCB4BqAEIrRGiUQDMuuQcXHuZ8wOHXxWlAFZHfQUjTi4AaU9VdR9JZACqIMN2MKs1MU1YhwT5JNdwyO8M7VJiJ2D2NwsCtJtfZB0AJjLck1ToopQHO2aXUP4hORgoAHN4IlAAMwAnCABbJAcQHAgkaUTejmQJgH0dHaaQGkZ6ACMYRgAFdNtjKaxhgAscVOm5pAA2GmWkAJzegB1-gAPLDbFJeECveaINZLFaIX7OEKAkFgl4zaFkOEfdYhbg7cjVKFILHfRAAdlxFS4gPwOHouyJGKQlOxiE+fzxW12pH2lHRb0QpPhOk57BRoOUEOJiFFZIaVOMtIg9N2hxAxzOl2uvhAd0ez2lzMQCrZiyR4v+MFVwHcgnVmvOV1qkj19yeAuhcvhAA4jYLvUgAJyKkCA60MqWqGUhtk+0MS7bKI6nJ06136j3+6Hxtm-M5gKAk0MEh2p7Uu9iZw3R42xsmwi15AlMwX1+Hm8p5ZWqwkDQRAA
+\begin{tikzcd}
+                                                                         & T(A+B) \arrow[rrd, "{T[f_1,f_2]}"] &  &                                                                          &  &                           \\
+T(A) \arrow[rrr, "T(f_1)"] \arrow[ru, "T(\iota_1)"] \arrow[ddd, "\xi_A"] &                                    &  & T(K) \arrow[rr, "\xi_K"]                                                 &  & K                         \\
+                                                                         & A \arrow[rrrru, "f_1"']            &  &                                                                          &  &                           \\
+                                                                         &                                    &  & T(A) \arrow[llu, "\xi_A"'] \arrow[rrd, "T(f_1)"] \arrow[d, "T(\iota_1)"] &  &                           \\
+A \arrow[r, "\iota_1"'] \arrow[ruu] \arrow[rrru, "\eta_A"]               & A+B \arrow[rr, "\eta_{A+B}"']      &  & T(A+B) \arrow[rr, "{T[f_1,f_2]}"']                                       &  & T(K) \arrow[uuu, "\xi_K"]
+\end{tikzcd}
+\]
+\begin{align*}
+    gT(\iota_1) &= \xi_K T[f_1,f_2] T(\iota_i) = \xi_K T([f_1,f_2]\iota_i) \\[1.5ex]
+    &= \xi_K T(f_1) = f_1 \xi_A = f_1 1_A \xi_A \\[1.5ex]
+    &= f_1 \xi_A \eta_{A} \xi_A = \xi_K T(f_1) \eta_{A} \xi_A \\[1.5ex]
+    &= \xi_K T[f_1,f_2] T(\iota_1) \eta_{A} \xi_A \\[1.5ex]
+    &= \xi_K T[f_1,f_2] (\eta_{A+B}) \iota_1 \xi_A \\[1.5ex]
+    &= g (\eta_{A+B}) \iota_1 \xi_A
+\end{align*}
+        and the same holds for $B$. Therefore $g$ has equal compositions with the parallel arrows corresponding to \eqref{diagr 3 coproducts}, which has, by \Cref{coeq for the three diagrams}, $q$ as $U^T$-coequalizer. Then by the universal property of the $U^T$-coequalizer, it follows that there exists a unique morphism $h:(Q,\xi_Q) \to (K,\xi_K)$ such that $g=h q$ in $\mathcal{X^T}$. Thus, we have that
+        \[ h\iota_{Q,i} = h q (\eta_{A+B}) \iota_i = g (\eta_{A+B}) \iota_i = f_i \]
+        and by the unicity of $g$, we have that $h$ is the unique morphism in $\mathcal{X}^T$ satisfying $h\iota_{Q,i} = f_i$ for $i=1,2$.
                 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBpiBdUkANwEMAbAVxiRABUAKAQQGoAhAJQgAvqXSZc+QigAspWVVqMWbLgGlhYidjwEiAVlIGl9Zq0Qh1o8SAy7pRMgEZTKixwB6AJh4CttvZS+nKk3m7maj6cmjY6wTLIRpTUZqqWGgHxeokADAoR6SDccXaSOUT54anuajxZZQ4hyN5hhR4AiqVBFSitue11HQ09jigAbKQDNZEZnELd5WPIk9XKsyD8okowUADm8ESgAGYAThAAtkj5IDgQSM4zRezIxwD6j+-hINQMdABGMAYAAUliEQKcsHsABY4UpnS4Pah3JCtdZFAA6GIAHlg3tZfgCgaCmjIIVDYfDzldEPJbvdEEZ0R4sRcmPiqYjaciGY9mWxWezrNoQAiaUyUYg0WkWTi8cLbGKkGR6Ug6TKot5kFiGFAIDg4KR3lhSDq9QaKJyaZNVYgbn9ASCwWTITC4U9ZTAcHQ3sA+PwRFj8N6PlakAB2HnKj11LFen1+gSBjHBn3OBpKxCR202jWWLG4t4lQmOkkJNiuykizM2yVowFgKBIAC0xBuedFoZLxOdbAYMGOcOr1IjUcZ3adpIrFPdIAbTcQrfbtTm73TYbtY4AHDHLABHDcqyUATl3HE4e4zI8Qp9tO-5+blby6w65t8lTPnLbbZ640KvXL3nW1BfouP4PiA0Ibs4Nwfr+nBfMIIEwI2yr2kSk7lpYlZDoq17OHywEQV8PwgA6PZTthM6kaBbavjSMFjgRZ4FniWz0Q8sEMiqHZcHGIaJgGQb6j63hIWRGFlr05JutBhEMsuGz8Qm-rJqmbzeKR5GYdJOHbCIQA
 \begin{tikzcd}
@@ -404,11 +443,10 @@ A \arrow[rrru, "\eta_{A+B}\iota_1"', pos=0.3] \arrow[rrrrrd, "f_1", bend right=2
 \arrow[from=1-7, to=4-6 , "T(f_2)"', bend left=20, crossing over, pos=0.4]            
 \end{tikzcd}
         \]
-        Then, since $q$ $U^T$-coequalizes the same pair of arrow from $T(A)$ to $T(A+B)$ as in \eqref{diagr 3 coproducts} that have equal composition with $U^T(g)$, it follows that there exists a unique morphism $h$ in $\mathcal{X}^T$ such that $h q = g$. Thus, composing with $\eta_{A+B}\iota_i$, there exists a unique morphism $h$ in $\mathcal{X}^T$ such that $h\iota_{Q,i} = f_i$ for $i=1,2$. So the universal property of coproducts in $\mathcal{X}^T$ is satisfied.
-
+        
         In order to prove that also the finite coproducts exists, it suffies to do the same proof for the initial object, using \Cref{coeq for the three diagrams} again.
 
-        It remains to prove that $\mathcal{X}^T$ is finitely cocomplete. We already know that it has finite coproducts, so we only need to show that it has coequalizers. This follows from the fact that it has finite coproducts and reflexive coequalizers, since each coequalizer can be constructed as a reflexive coequalizer from the coproduct, as shown below.
+        It remains to prove that $\mathcal{X}^T$ is finitely cocomplete. We already know that it has finite coproducts, so we only need to show that it has coequalizers. This follows from the fact that it has finite coproducts and reflexive coequalizers; in fact each coequalizer can be constructed as a reflexive coequalizer from the coproduct, as shown below.
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAmclVqMWbAELdeIDNjwEiZAIzj6zVog4BqWTz5LBRURupapuw+JhQA5vCKgAZgCcIAWyRkQOCCQ1ajgACyxXHCQAWmCJbTZXOTdPH0Q-AKCQ8Mis+OsQBxBqBjoAIxgGAAV+ZSEQdywHUKijEA9vJABmakzEUXydEAAdYfwcOgB9YWKQUorq2tNdLDBsWGT21KQBvp6QMIioxGiBqyHkV1I1SekKTY603cDEfcPc-stJC4dr2-uSuVKjUTCpdI1mq0KFwgA
 \begin{tikzcd}
