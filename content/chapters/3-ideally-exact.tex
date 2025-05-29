@@ -399,7 +399,7 @@ T(A+B) \arrow[rr, "{T[f_1,f_2]}"]                           &  & T(K) \arrow[rr,
         Suppose now there exists another morphism $g':(T(A+B),\mu_{A+B}) \to (K,\xi_K)$ such that $g'(\eta_{A+B})\iota_i=f_i$ for $i=1,2$. Then we have that
         \begin{align*}
             g&(\eta_{A+B})\iota_i = g'(\eta_{A+B})\iota_i \ \ i=1,2 \\[1.5ex]
-            &\implies g(\eta_{A+B}) = g'(\eta_{A+B})) \\[1.5ex]
+            &\implies g(\eta_{A+B}) = g'(\eta_{A+B}) \\[1.5ex]
             &\implies U^T(g)(\eta_{A+B}) = U^T(g')(\eta_{A+B}) \\[1.5ex]
             &\implies g=g'
         \end{align*}
@@ -423,8 +423,8 @@ A \arrow[r, "\iota_1"'] \arrow[ruu] \arrow[rrru, "\eta_A"]               & A+B \
     &= g (\eta_{A+B}) \iota_1 \xi_A
 \end{align*}
         and the same holds for $B$. Therefore $g$ has equal compositions with the parallel arrows corresponding to \eqref{diagr 3 coproducts}, which has, by \Cref{coeq for the three diagrams}, $q$ as $U^T$-coequalizer. Then by the universal property of the $U^T$-coequalizer, it follows that there exists a unique morphism $h:(Q,\xi_Q) \to (K,\xi_K)$ such that $g=h q$ in $\mathcal{X^T}$. Thus, we have that
-        \[ h\iota_{Q,i} = h q (\eta_{A+B}) \iota_i = g (\eta_{A+B}) \iota_i = f_i \]
-        and by the unicity of $g$, we have that $h$ is the unique morphism in $\mathcal{X}^T$ satisfying $h\iota_{Q,i} = f_i$ for $i=1,2$.
+        \[ h\iota_{Q,i} = h q (\eta_{A+B}) \iota_i = g (\eta_{A+B}) \iota_i = f_i \ \ \ i=1,2 \]
+        and by the unicity of $g$, we have that $h$ is the unique morphism in $\mathcal{X}^T$ satisfying such relaation.
                 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBpiBdUkANwEMAbAVxiRABUAKAQQGoAhAJQgAvqXSZc+QigAspWVVqMWbLgGlhYidjwEiAVlIGl9Zq0Qh1o8SAy7pRMgEZTKixwB6AJh4CttvZS+nKk3m7maj6cmjY6wTLIRpTUZqqWGgHxeokADAoR6SDccXaSOUT54anuajxZZQ4hyN5hhR4AiqVBFSitue11HQ09jigAbKQDNZEZnELd5WPIk9XKsyD8okowUADm8ESgAGYAThAAtkj5IDgQSM4zRezIxwD6j+-hINQMdABGMAYAAUliEQKcsHsABY4UpnS4Pah3JCtdZFAA6GIAHlg3tZfgCgaCmjIIVDYfDzldEPJbvdEEZ0R4sRcmPiqYjaciGY9mWxWezrNoQAiaUyUYg0WkWTi8cLbGKkGR6Ug6TKot5kFiGFAIDg4KR3lhSDq9QaKJyaZNVYgbn9ASCwWTITC4U9ZTAcHQ3sA+PwRFj8N6PlakAB2HnKj11LFen1+gSBjHBn3OBpKxCR202jWWLG4t4lQmOkkJNiuykizM2yVowFgKBIAC0xBuedFoZLxOdbAYMGOcOr1IjUcZ3adpIrFPdIAbTcQrfbtTm73TYbtY4AHDHLABHDcqyUATl3HE4e4zI8Qp9tO-5+blby6w65t8lTPnLbbZ640KvXL3nW1BfouP4PiA0Ibs4Nwfr+nBfMIIEwI2yr2kSk7lpYlZDoq17OHywEQV8PwgA6PZTthM6kaBbavjSMFjgRZ4FniWz0Q8sEMiqHZcHGIaJgGQb6j63hIWRGFlr05JutBhEMsuGz8Qm-rJqmbzeKR5GYdJOHbCIQA
 \begin{tikzcd}
