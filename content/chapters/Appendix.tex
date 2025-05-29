@@ -32,6 +32,10 @@
     \end{tikzcd}
     \]
     where $m$ is a mono, there exists a unique morphism $d$ such that $df=u$ and $md=v$.
+
+    We say that the pair $f$ is an \textbf{extremal epimophism} if given a factorizations $f=mf'$, with $m$ mono, then $m$ is an iso.
+
+    We say that $f$ is a \textbf{regular epimorphism} if it is the coequalizer of some parallel arrows.
     \end{defi}
 \end{mainbox}
 
@@ -40,14 +44,14 @@
     Let $\mathcal{C}$ be a category with pullbacks and $f : A \to B$. The following are equivalent:
     \begin{enumerate}
         \item $f$ is a strong epimorphism;
-        \item Given a factorization $f=mg$, if $m$ is a mono, then it is an iso.
+        \item $f$ is an extremal epimorphisms.
     \end{enumerate}
     \end{prop}
 \end{mainbox}
 
 \begin{subbox}{}
     \begin{proof}
-        $(1 \implies 2)$ Let $f=mg$ be a factorization with $m$ mono and consider the square:
+        $(1 \implies 2)$ We want to prove that $f$ is an extremal epi. Let $f=mg$ be a factorization with $m$ mono and consider the square:
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGclVqMWbAELdeIDNjwEio4ePrNWiELJ58lgomXXVNUnQGFu4mFADm8IqABmAJwgBbJGRA4ISKISWmwucq4e3oi+-kgAzGaS2iD2INQMdABGMAwACvzKQiBuWPYAFjjhIO5e8dSxiABMiSE63ulZOfmGKjol5ZX1dFgMbDjDo-rVkYH1AU3pWGDJcBAMWFBpIGUwdJuIYEwMDEMjbJDLW3BlWC6V0S0WIMIA+nryNVFBDQnBT5sdbJ5ApGPqlCo2LhAA
 \begin{tikzcd}
@@ -82,6 +86,8 @@ A' \arrow[rru, "g"] \arrow[rrd, "g'"'] & A \arrow[ru, "f"'] \arrow[rd, "f'"] &  
 \end{tikzcd}
     \]
     where $m$ is a mono, there exists a unique morphism $d$ such that $f'=df$, $g'=dg$ and $md=h$.
+
+    We say that the pair $(f,g)$ is an \textbf{extremally epimorphic pair} if given factorizations $f=mf'$ and $g=mg'$, with $m$ mono, then $m$ is an iso.
     \end{defi}
 \end{mainbox}
 
@@ -89,8 +95,8 @@ A' \arrow[rru, "g"] \arrow[rrd, "g'"'] & A \arrow[ru, "f"'] \arrow[rd, "f'"] &  
     \begin{prop}\label{Eqivalence strong epi pair with iso}
     Let $\mathcal{C}$ be a category with pullbacks and $f : A \to B$, $g : A' \to B$ be morphisms. The following are equivalent:
     \begin{enumerate}
-        \item $(f,g)$ is a strong epimorphic pair;
-        \item Given factorizations $f=mf'$ and $g=mg'$, if $m$ is a mono, then it is an iso.
+        \item $(f,g)$ is a strongly epimorphic pair;
+        \item $(f,g)$ is a extremally epimorphic pair;
     \end{enumerate}
     \end{prop}
 \end{mainbox}
