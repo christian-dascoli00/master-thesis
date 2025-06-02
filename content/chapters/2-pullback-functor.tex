@@ -387,7 +387,7 @@ $p^*$ is a right adjoint functor, so it preserves limits. $p_!$ is a left adjoin
 
 \begin{mainbox}{}
 \begin{propr}\label{p^*(f) is a pullback}
-The diagram costructed by $p^*$ acting on a morphism $f : (A,\alpha) \to (A',\alpha')$ is a pullback in $(\mathcal{A} \downarrow B)$.
+Let $p:E\to B$ be a morphism in $\mathcal{A}$. The diagram costructed by $p^*$ acting on a morphism $f : (A,\alpha) \to (A',\alpha')$ is a pullback in $(\mathcal{A} \downarrow B)$.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoyARiq1GLNmMnTseAkQBMpZdXrNWiECIDkEqSAw65B8itPqLXHln5xh1iSowUADm8ESgAGYAThC8SGQgOBBIAMwmaub2AHoAVAAUEQCUALzceAywwBHitpExcYiK1ElIhqpmbBG1INGx8c3JjekdFty8dDgAFlG8wGgxAFbiAvrdvQ1piYNtbpljE9Oz8xBLKzbiFOJAA
 \begin{tikzcd}
@@ -412,7 +412,7 @@ The diagram costructed by $p^*$ acting on a morphism $f : (A,\alpha) \to (A',\al
 
 \begin{mainbox}{}
 \begin{propr}
-The unit $\eta$ and the counit $\epsilon$ are cartesian.
+Let $p:E\to B$ be a morphism in $\mathcal{A}$ with pullbacks. Then the unit $\eta$ and the counit $\epsilon$ of the adjuction associated to $p$ are cartesian.
 \end{propr}
 \end{mainbox}
 \begin{subbox}{}
@@ -471,7 +471,7 @@ Later on it will be useful to study monads. Thus, we state the following proposi
 
 \begin{mainbox}{}
 \begin{propr}
-Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks. The associated monad $(p^*p_!, \eta, p^*\epsilon p_!)$ is cartesian.
+Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks. Then the associated monad $(p^*p_!, \eta, p^*\epsilon p_!)$ is cartesian.
 \end{propr}
 \end{mainbox}
 \begin{subbox}{}
@@ -493,7 +493,7 @@ A monad $(T,\eta,\mu)$ on a category $\mathcal{X}$ with finite coproducts is sai
 Now we claim a lemma which will be useful to prove some theorems.
 \begin{mainbox}{}
 \begin{lemma}\label{protomod lemma}
-    If a category $\mathcal{X}$ is protomodular, then for each commutative diagram of the form
+    Let $\mathcal{X}$ be a protomodular category. Then for each commutative diagram of the form
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRADUQBfU9TXfIRQAmclVqMWbABrdeIDNjwEiZAIzj6zVohAB1OXyWCiojdS1TdATW7iYUAObwioAGYAnCAFskZEDgQSGoWkjogTIYgnj5IogFBiADModpsNFExvoghCUgpIHAAFlhuOMGpVgog1Ax0AEYwDAAK-MpCIB5YjkXlPO5e2QWBFYUlZaN1jS1tJrpdPeWV4Qj90YNx1COI-sWl5Tm1DU2txirz3b01Emm6ffJZfluJ8XsThyBTJ7PnnZdLNyqAEc7FwgA
 \begin{tikzcd}
