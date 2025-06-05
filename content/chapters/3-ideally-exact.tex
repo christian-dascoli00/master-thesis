@@ -360,7 +360,7 @@ T\bigl( T(A)+T(B)\bigr) \arrow[rr, "{T(\xi_A+\xi_B)}"', shift right] \arrow[ru, 
         \end{align*}
         Thus it is a reflexive pair. 
         
-        Let $q:T(A+B) \to Q$ be the coequalizer in $\mathcal{X}$, and $\xi_Q$ be the algebra structure of $Q$. We aim to prove that $(Q,\xi_Q)$ is the coproduct of $(A,\xi_A)$ and $(B,\xi_B)$ in $\mathcal{X}^T$. First we need to exhibit the canonical injections $\iota_{Q,1}$ and $\iota_{Q,2}$. They are respectively
+        Let $q:T(A+B) \to Q$ be the coequalizer in $\mathcal{X}$, and $\xi_Q$ be the algebra structure of $Q$. We aim to prove that $(Q,\xi_Q)$ is the coproduct of $(A,\xi_A)$ and $(B,\xi_B)$ in $\mathcal{X}^T$. First we need to exhibit the canonical injections $\iota_{Q,1}$ and $\iota_{Q,2}$. They are respectively defined as the following compositions.
         
         \begin{minipage}{\textwidth}
         \[
@@ -372,7 +372,7 @@ A \arrow[rr, "\iota_1"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr,
 \[
 % As the one above 
 \begin{tikzcd}
-A \arrow[rr, "\iota_2"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr, "q"] &  & Q
+B \arrow[rr, "\iota_2"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr, "q"] &  & Q
 \end{tikzcd}
 \]
 \end{minipage}
@@ -386,7 +386,7 @@ A \arrow[rr, "\iota_1"]                           &  & A+B \arrow[rr, "\eta_{A+B
 \end{tikzcd}
         \]
 
-        Once we have the canonical injections, we need to show that they satisfy the universal property of coproducts in $\mathcal{X}^T$. Let $f_i:(A_i,\xi_i) \to (K,\xi_K)$ for $i=1,2$ in $\mathcal{X}^T$. We aim to prove that there exists a unique morphism $h:(Q,\xi_Q) \to (K,\xi_K)$ in $\mathcal{X}^T$ such that $h\iota_{Q,i} = f_i$ for $i=1,2$.
+        Once we have the canonical injections, we need to show that they satisfy the universal property of coproducts in $\mathcal{X}^T$. Let $f_i:(A_i,\xi_i) \to (K,\xi_K)$ for $i=1,2$ in $\mathcal{X}^T$. We aim to prove that there exists a unique morphism $h:(Q,\xi_Q) \to (K,\xi_K)$ in $\mathcal{X}^T$ such that $h\iota_{Q,i} = f_i$ for $i=1,2$. Refer to the diagram at the end of the proof for a visualization of the following arguments.
 
         First, we show that there exists a unique morphism $g:(T(A+B),\mu_{A+B} \to (K,\xi_K)$ in $\mathcal{X}^T$ such that $g(\eta_{A+B})\iota_i=f_i$ for $i=1,2$. Define $g=\xi_K T[f_1,f_2]$. It is a morphism in $\mathcal{X}^T$, in fact the following diagram commutes.
         \[
@@ -404,7 +404,7 @@ T(A+B) \arrow[rr, "{T[f_1,f_2]}"]                           &  & T(K) \arrow[rr,
             &\implies U^T(g)(\eta_{A+B}) = U^T(g')(\eta_{A+B}) \\[1.5ex]
             &\implies g=g'
         \end{align*}
-        where we used the unicity in the universal property of the unit and the fact that $g$ and $g'$ are morphisms in $\mathcal{X}^T$. So $g$ is unique. Moreover, we have that $gT(\iota_i) = g (\eta_{A+B}) \iota_i \xi_i$ for $i=1,2$. In fact, we have that
+        where we used the uniqueness in the universal property of the unit and the fact that $g$ and $g'$ are morphisms in $\mathcal{X}^T$. So $g$ is unique. Moreover, we have that $gT(\iota_i) = g (\eta_{A+B}) \iota_i \xi_i$ for $i=1,2$. In fact, we have that
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAVACgEEBKEAF9S6TLnyEUZACzU6TVux5CRIDNjwEi5UrJoMWbRCB4BqAEIrRGiUQDMuuQcXHuZ8wOHXxWlAFZHfQUjTi4AaU9VdR9JZACqIMN2MKs1MU1YhwT5JNdwyO8M7VJiJ2D2NwsCtJtfZB0AJjLck1ToopQHO2aXUP4hORgoAHN4IlAAMwAnCABbJAcQHAgkaUTejmQJgH0dHaaQGkZ6ACMYRgAFdNtjKaxhgAscVOm5pAA2GmWkAJzegB1-gAPLDbFJeECveaINZLFaIX7OEKAkFgl4zaFkOEfdYhbg7cjVKFILHfRAAdlxFS4gPwOHouyJGKQlOxiE+fzxW12pH2lHRb0QpPhOk57BRoOUEOJiFFZIaVOMtIg9N2hxAxzOl2uvhAd0ez2lzMQCrZiyR4v+MFVwHcgnVmvOV1qkj19yeAuhcvhAA4jYLvUgAJyKkCA60MqWqGUhtk+0MS7bKI6nJ06136j3+6Hxtm-M5gKAk0MEh2p7Uu9iZw3R42xsmwi15AlMwX1+Hm8p5ZWqwkDQRAA
 \begin{tikzcd}
@@ -425,12 +425,12 @@ A \arrow[r, "\iota_1"'] \arrow[ruu] \arrow[rrru, "\eta_A"]               & A+B \
 \end{align*}
         and the same holds for $B$. Therefore $g$ has equal compositions with the parallel arrows corresponding to \eqref{diagr 3 coproducts}, which has, by \Cref{coeq for the three diagrams}, $q$ as $U^T$-coequalizer. Then by the universal property of the $U^T$-coequalizer, it follows that there exists a unique morphism $h:(Q,\xi_Q) \to (K,\xi_K)$ such that $g=h q$ in $\mathcal{X^T}$. Thus, we have that
         \[ h\iota_{Q,i} = h q (\eta_{A+B}) \iota_i = g (\eta_{A+B}) \iota_i = f_i \ \ \ i=1,2 \]
-        and by the unicity of $g$, we have that $h$ is the unique morphism in $\mathcal{X}^T$ satisfying such relaation.
+        and by the uniqueness of $g$, we have that $h$ is the unique morphism in $\mathcal{X}^T$ satisfying such relation.
                 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBpiBdUkANwEMAbAVxiRABUAKAQQGoAhAJQgAvqXSZc+QigAspWVVqMWbLgGlhYidjwEiAVlIGl9Zq0Qh1o8SAy7pRMgEZTKixwB6AJh4CttvZS+nKk3m7maj6cmjY6wTLIRpTUZqqWGgHxeokADAoR6SDccXaSOUT54anuajxZZQ4hyN5hhR4AiqVBFSitue11HQ09jigAbKQDNZEZnELd5WPIk9XKsyD8okowUADm8ESgAGYAThAAtkj5IDgQSM4zRezIxwD6j+-hINQMdABGMAYAAUliEQKcsHsABY4UpnS4Pah3JCtdZFAA6GIAHlg3tZfgCgaCmjIIVDYfDzldEPJbvdEEZ0R4sRcmPiqYjaciGY9mWxWezrNoQAiaUyUYg0WkWTi8cLbGKkGR6Ug6TKot5kFiGFAIDg4KR3lhSDq9QaKJyaZNVYgbn9ASCwWTITC4U9ZTAcHQ3sA+PwRFj8N6PlakAB2HnKj11LFen1+gSBjHBn3OBpKxCR202jWWLG4t4lQmOkkJNiuykizM2yVowFgKBIAC0xBuedFoZLxOdbAYMGOcOr1IjUcZ3adpIrFPdIAbTcQrfbtTm73TYbtY4AHDHLABHDcqyUATl3HE4e4zI8Qp9tO-5+blby6w65t8lTPnLbbZ640KvXL3nW1BfouP4PiA0Ibs4Nwfr+nBfMIIEwI2yr2kSk7lpYlZDoq17OHywEQV8PwgA6PZTthM6kaBbavjSMFjgRZ4FniWz0Q8sEMiqHZcHGIaJgGQb6j63hIWRGFlr05JutBhEMsuGz8Qm-rJqmbzeKR5GYdJOHbCIQA
 \begin{tikzcd}
                                                                                                      &  & T(Q) \arrow[dd, "\xi_Q"]  &                                                                    &                                                &                          & T(B)  \arrow[dd, "\xi_B"] \arrow[llld, "T(\eta_{A+B}\iota_2)"'] \\
-                                                                                                     &  &                                                             & T^2(A+B) \arrow[rd, "{T^2[\ldots,f_i,\ldots]}"] \arrow[lu, "T(q)"'] &                                                &                          &                                                                                                   \\
+                                                                                                     &  &                                                             & T^2(A+B) \arrow[rd, "{T^2[f_1,f_2]}"] \arrow[lu, "T(q)"'] &                                                &                          &                                                                                                   \\
 T(A)  \arrow[dd, "\xi_A"'] &  & Q                            &                                                                    & T^2(K)  &                          & B \arrow[lddd, "f_2"', bend left=20] \arrow[llld, "\eta_{A+B}\iota_2"', pos=0.25]                              \\
                                                                                                      &  &                                                             & T(A+B) \arrow[rd, "{T[f_1,f_2]}", pos=0.25] \arrow[lu, "q"']                 &                                                & T(K) \arrow[dd, "\xi_K"] &                                                                                                   \\
 A \arrow[rrru, "\eta_{A+B}\iota_1"', pos=0.3] \arrow[rrrrrd, "f_1", bend right=25, pos=0.2]                               &  &                                                             &                                                                    & T(K) \arrow[rd, "\xi_K"']                      &                          &                                                                                                   \\
