@@ -166,7 +166,7 @@ X \arrow[r, "F^T", maps to] & {(T(X),\mu_X)}
 
 \begin{mainbox}{}
     \begin{lemma}\label{U-coeq}
-        Let $U:\mathcal{X} \to \mathcal{A}$ be a functor right adjoint to a functor $F:\mathcal{A} \to \mathcal{X}$, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of parallel arrows in $\mathcal{X}$, where $f_i,g_i: A_i \to U(X)$. Consider the family of unique morphisms induced by the universal property of the unit $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$, such that $f_i=U(\bar{f}_i)\eta_{A_i}$ and $g_i=U(\bar{g}_i)\eta_{A_i}$. If $q:X \to Q$ is the coequalizer of the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ in $\mathcal{X}$, then $q$ is the $U^T$-coequalizer of the family $\{(f_i,g_i)\}_{i\in I}$ in $\mathcal{A}$.
+        Let $U:\mathcal{X} \to \mathcal{A}$ be a functor right adjoint to a functor $F:\mathcal{A} \to \mathcal{X}$, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of parallel arrows in $\mathcal{X}$, where $f_i,g_i: A_i \to U(X)$. Consider the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ of unique morphisms induced by the universal property of the unit, such that $f_i=U(\bar{f}_i)\eta_{A_i}$ and $g_i=U(\bar{g}_i)\eta_{A_i}$. If $q:X \to Q$ is the coequalizer of the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ in $\mathcal{X}$, then $q$ is the $U$-coequalizer of the family $\{(f_i,g_i)\}_{i\in I}$ in $\mathcal{A}$.
        
         \begin{minipage}{0.5\textwidth}
 \[
@@ -199,8 +199,8 @@ A_i \arrow[r, "f_i", shift left] \arrow[r, "g_i"', shift right] & U(X) \arrow[r,
 \begin{proof}
     Assume $q:X \to Q$ is the coequalizer of the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ in $\mathcal{X}$, we want to prove that $q$ is the $U^T$-coequalizer of the family $\{(f_i,g_i)\}_{i\in I}$ in $\mathcal{A}$. First we show, for each $i$, that $U(q)f_i=U(q)g_i$. Assume that $q\bar{f}_i=q\bar{g}_i$.
     \begin{align*}
-        q\bar{f}_i=q\bar{g}_i &\implies U(q) U(\bar{f}_i) = U(q) U(\bar{g}_i) \\
-        &\implies U(q) U(\bar{f}_i) \eta_{A_i}= U(q) U(\bar{g}_i) \eta_{A_i} \\
+        q\bar{f}_i=q\bar{g}_i &\implies U(q) U(\bar{f}_i) = U(q) U(\bar{g}_i) \\[1.5ex]
+        &\implies U(q) U(\bar{f}_i) \eta_{A_i}= U(q) U(\bar{g}_i) \eta_{A_i} \\[1.5ex]
         &\implies U(q)f_i=U(q)g_i
     \end{align*}
 
@@ -229,7 +229,7 @@ A_i \arrow[rrd, "f_i", shift left] \arrow[rrd, "g_i"', shift right] \arrow[rrdd,
 {\Big(T\big(\amalg_iT(A_i)\big),\mu\Big)} \arrow[rr, "T(\amalg_i\xi_i)"'] \arrow[ru, "{T[\ldots,T(\iota_i),\ldots]}"] &                                                              & {\Big(T(\amalg_iA_i),\mu\Big)}
 \end{tikzcd}
 \end{equation}
-    then both the following diagrams of parallel arrow in $\mathcal{X}$ have $p$ as $U^T$-coequalizer $\forall j \in I$.
+    then both the following diagrams of parallel arrow in $\mathcal{X}$ have $q$ as $U^T$-coequalizer $\forall j \in I$.
 \begin{equation}\label{diagr 2 coproducts}
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB124mBbAfSwAVABQBBAQEoQAX1LpMufIRQAmclVqMWbEZ278s4rFNnzseAkQCMpKxvrNWiDl14CjMjTCgBzeEVAAMwAnCB4kMhAcCCQbTUc2ZE4GKAgcOFJddnwcOklSZNT0ihk5EBCwiOpopDUQACMYMCgq+O1nPTcsAAJOAA8sARBqBjpGhgAFBQtlEGCsHwALHFKg0PDEOprEOMbm1od2lxhcvmBOgyNpYZBR8anzJTZ5pZXpCmkgA
 \begin{tikzcd}
