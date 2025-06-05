@@ -1,5 +1,6 @@
 \chapter{Ideally exact categories}
 
+\fontsize{12}{14.5}\selectfont
 
 \section{Preliminary results on the Eilenberg-Moore categories}
 
@@ -514,7 +515,7 @@ Thus $\langle r_1,r_2\rangle es = \langle 1_B,1_B \rangle$. The morphism $es$ ma
 
 \begin{subbox}{}
     \begin{proof}
-        Assume $\mathcal{A}$ is exact and Mal'tsev. We want to prove that $\mathcal{A}$ has reflexive coequalizer. Consider a reflexive pair $(f,g)$ from $A$ to $B$. By \Cref{relation induced by a reflexive pair is reflexive} the internal relation induced $\langle r_1,r_2 \rangle$ is reflexive. Since $\mathcal{A}$ is Malt'sev, then each internal reflexive relation is an equivalence relation. Hence $\langle r_1,r_2 \rangle$ is an equivalence relation. $\mathcal{A}$ is also exact, then, by \Cref{equiv rel is kernel pair of the coeq} the equivalence relation $(r_1,r_2)$ has a coequalizer $k$.
+        Assume $\mathcal{A}$ is exact and Mal'tsev. We want to prove that $\mathcal{A}$ has reflexive coequalizer. Consider a reflexive pair $(f,g)$ from $A$ to $B$. By \Cref{relation induced by a reflexive pair is reflexive} the internal relation induced $\langle r_1,r_2 \rangle$ is reflexive. Since $\mathcal{A}$ is Mal'tsev, then each internal reflexive relation is an equivalence relation. Hence $\langle r_1,r_2 \rangle$ is an equivalence relation. $\mathcal{A}$ is also exact, then, by \Cref{equiv rel is kernel pair of the coeq} the equivalence relation $(r_1,r_2)$ has a coequalizer $k$.
         
         We want to prove that $k$ is also the coequalizer of $(f,g)$. First we note that $kf=kr_1e=kr_2e=kg$. It remains to prove the universal property. Let $h:B \to C$ be a morphism such that $hf=hg$. Then $hr_1e=hr_2e$. Since $e$ is a regular epi, hence an epi, we have that $hr_1=hr_2$. Thus there exists a unique morphism $t$ such that $th=k$.
         \[
@@ -624,7 +625,7 @@ A \arrow[rr, "f", pos=0.25, crossing over] \arrow[ru, "e", two heads] \arrow[rd,
     
     First we need to verify that $\mathcal{A}$ is exact. Since $U$ is monadic, we have that $\mathcal{A} \cong \mathcal{X}^T$. Then it suffies to show that $\mathcal{X}^T$ is exact. We know that $\mathcal{X}$ is semiabelian, so it is exact. Then, by \Cref{algebras category is exact if the base category is exact}, $\mathcal{X}^T$ is exact.
 
-    In order to prove that $\mathcal{A}$ has finite coproducts, it is first necessary to establish that $\mathcal{X}^T$ is protomodular. This follows directly from \Cref{algebras category is proto if the base category is proto} as $\mathcal{X}$ is protomodular. Since any protomodular cateogry is Malt'sev, then $\mathcal{X}^T$ is Malt'sev. We already prove that $\mathcal{X}^T$ is also exact, then by \Cref{exact and Maltsev cat has reflexive coeq}, $\mathcal{X}^T$ has reflexive coequalizers. Since $\mathcal{X}$ has finite coproducts and $\mathcal{X}^T$ has reflexive coequalizers, then by \Cref{algebras category has colim if the base category has coprod}, $\mathcal{X}^T$ has finite coproducts. Finally, since $\mathcal{A} \cong \mathcal{X}^T$, it follows that $\mathcal{A}$  has finite coproducts.
+    In order to prove that $\mathcal{A}$ has finite coproducts, it is first necessary to establish that $\mathcal{X}^T$ is protomodular. This follows directly from \Cref{algebras category is proto if the base category is proto} as $\mathcal{X}$ is protomodular. Since any protomodular cateogry is Mal'tsev, then $\mathcal{X}^T$ is Mal'tsev. We already prove that $\mathcal{X}^T$ is also exact, then by \Cref{exact and Maltsev cat has reflexive coeq}, $\mathcal{X}^T$ has reflexive coequalizers. Since $\mathcal{X}$ has finite coproducts and $\mathcal{X}^T$ has reflexive coequalizers, then by \Cref{algebras category has colim if the base category has coprod}, $\mathcal{X}^T$ has finite coproducts. Finally, since $\mathcal{A} \cong \mathcal{X}^T$, it follows that $\mathcal{A}$  has finite coproducts.
 
     $(2 \implies 1)$ TO DO.
 
