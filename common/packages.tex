@@ -7,8 +7,25 @@
 \usepackage{hyperref} % must be loaded before glossaries-extra
 
 % bibliography
-\usepackage[hyperref=true,backref=true,backend=biber,maxbibnames=9,maxcitenames=2,style=numeric,citestyle=numeric,sorting=none]{biblatex} % hyperref uses links, backref goes back to citations, uses biber as backend, with 9 names at most in bibliography and 2 in citations, citing using numbers, and sorting in citation order
+\usepackage[hyperref=true,backend=biber,maxbibnames=9,maxcitenames=2,style=numeric-comp,sorting=ynt,backref=false]{biblatex} % hyperref uses links, backref goes back to citations, uses biber as backend, with 9 names at most in bibliography and 2 in citations, citing using numbers, and sorting in citation order
 % sorting can be also ydnt for year descending, name, title or ynt for ascending year
+% Rimuove corsivo e virgolette da tutti i titoli principali
+\DeclareFieldFormat{title}{#1}
+\DeclareFieldFormat[inbook]{title}{#1}       % necessario separatamente per inbook
+\DeclareFieldFormat{booktitle}{#1}
+\DeclareFieldFormat{journaltitle}{#1}
+\DeclareFieldFormat[article]{title}{#1}
+\DeclareFieldFormat[article]{year}{#1}
+% Rimuove le parentesi dall'anno per gli articoli
+\renewbibmacro*{issue+date}{%
+  \setunit*{\addcomma\space}%
+  \printfield{year}%
+  \newunit}
+
+
+
+% Cambia separatore dei campi da punto a virgola
+\renewcommand*{\newunitpunct}{\addcomma\space}
 
 \usepackage{adjustbox} % to resize boxes by keeping the same aspect ratio
 \usepackage{algorithm} % algorithm environment
