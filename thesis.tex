@@ -2,7 +2,7 @@
 
 % toptesti document class
 \documentclass[
-    12pt,
+    12pt, a4paper % 12pt is the default, a4paper is the default, b5paper can be used
     %%a4paper, % not needed, by default it is a4paper, or also b5paper can be used
     %%corpo=12pt, % dimension of basic font
     % oneside is generally the way to go
@@ -104,7 +104,10 @@
 \frontmatter
 
 \pagenumbering{gobble}     % disattiva numerazione e conteggio
+
 \tableofcontents
+
+\markboth{}{}
 
 \mainmatter
 
