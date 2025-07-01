@@ -109,9 +109,9 @@ T(\mathrm{Eq}(\tilde{q})) \arrow[dd, "\xi_{\mathrm{Eq}(\tilde{q})}", dashed] \ar
     \end{proof}
 \end{subbox}
 
-We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. The following will be rather intricate and technical; readers may choose to skip directly to the final outcome \Cref{algebras category has colim if the base category has coprod}.
+We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. The following will be rather intricate and technical; readers may choose to skip directly to the final outcome \Cref{algebras category has colim if the base category has coprod}. The following results are based on the work of \cite{Linton1969}.
 
-For the sake of clarity, we first present the following technical definition.
+For the sake of clarity, we first present a technical definition.
 
 \begin{mainbox}{}
     \begin{defi}
@@ -130,7 +130,7 @@ A \arrow[r, "f_i", shift left] \arrow[r, "g_i"', shift right] & U(X) \arrow[r, "
     \end{defi}
 \end{mainbox}
 
-Before continuing, recall the universal property of the unit in an adjunction. Consider a functor $U: \mathcal{A} \to \mathcal{B}$ right adjoint to a functor $F$. Then for each object $A$ in $\mathcal{A}$, $B$ in $\mathcal{B}$, and $f:B \to U(A)$ in $\mathcal{B}$ there exists a unique morphism $g: F(B) \to A$ in $\mathcal{A}$ such that $f=U(g)\eta_B$. We denote $g = \bar{f}$. 
+Before continuing, we recall the universal property of the unit in an adjunction. Consider a functor $U: \mathcal{A} \to \mathcal{B}$ right adjoint to a functor $F$. Then for each object $A$ in $\mathcal{A}$, $B$ in $\mathcal{B}$, and $f:B \to U(A)$ in $\mathcal{B}$ there exists a unique morphism $g: F(B) \to A$ in $\mathcal{A}$ such that $f=U(g)\eta_B$. We denote $g = \bar{f}$. 
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACEQBfU9TXfIRQBGclVqMWbAKoAxABTsAlN14gM2PASKjh4+s1aIQ0+QEEVPPpsFEAzGOoGpxhctXWB2lA71PJRiBm3OIwUADm8ESgAGYAThAAtkiiIDgQSABM-oYy8uGWavFJSGRpGYipzoEAOjUwOHQA+pxWIMXJiGXpWdQMdABGMAwACvxaQiBxWOEAFjggOS7tHu0JnQ7lSAAsS4HhIVxAA
 \begin{tikzcd}
@@ -531,7 +531,7 @@ Thus $\langle r_1,r_2\rangle es = \langle 1_B,1_B \rangle$. The morphism $es$ ma
 
 \section{The notion of ideally exact category}
 
-We are now ready to prove the theorem, which will lead to the definition of the ideally exact categories.
+We are now ready to prove the theorem, which will lead to the definition of the ideally exact categories. The following characterization and subsequent results are based on the work of Janelidze \cite{Janelidze2024}.
 
 \begin{mainbox}{}
     \begin{theo}\label{Ideally exact categories}.
