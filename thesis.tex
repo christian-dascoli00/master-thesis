@@ -17,11 +17,7 @@
 ]{book}
 
 
-\usepackage[a4paper, bottom=35mm, top=45mm, inner=40mm, outer=30mm]{geometry}
-
-
-
-%\usepackage[TS1]{fontenc}
+\usepackage[a4paper, bottom=45mm, top=45mm, inner=40mm, outer=30mm]{geometry}
 
 \newcommand{\absdiv}{%
   \par\addvspace{.5\baselineskip}% adjust to suit
@@ -45,7 +41,6 @@
 \input{common/package_config}
 
 \input{common/new_commands}
-
 
 
 \addbibresource{bibliography.bib}     % collega il file .bib
@@ -111,20 +106,11 @@
 
 \mainmatter
 
-
 \raggedbottom
 
-%\part{Prima Parte} % parts division, not needed
-% Chapters always open on a right-side page, i.e. odd numbers, so a blank page is inserted if needed
-%\cleardoublepage[empty] % to have a fully blank page
-% a blank page appears before the first chapter in some configurations, on the last version it doesn't
 
 \input{content/chapters.tex}
 
-
-% \paginavuota % it works even without stile=classica
-
-% endnotes here if needed
 
 \printbibliography[heading=bibintoc] % heading required to show it in ToC
 
