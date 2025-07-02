@@ -1,3 +1,16 @@
 {
-  "editor.wordWrap": "on"
+  "editor.wordWrap": "on",
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.log": true,
+    "**/*.out": true,
+    "**/*.toc": true,
+    "**/*.synctex.gz": true,
+    "**/*.fls": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.bbl": true,
+    "**/*.bcf": true,
+    "**/*.blg": true,
+    "**/*.run.xml": true
+  }
 }
