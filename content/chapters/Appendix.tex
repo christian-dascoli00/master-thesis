@@ -7,6 +7,8 @@
 
 \fontsize{12}{14.5}\selectfont
 
+\markboth{APPENDIX}{}
+
 Some of the following results are due to \cite{BorceuxBourn2004}.
 
 \begin{mainbox}{}
@@ -209,6 +211,27 @@ K \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right] & A \arrow[r, "q"'
     \end{tikzcd}
     \]
     \end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
+\begin{prop}\label{reg epi is an epi}
+    A regular epi is an epi.
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+\begin{proof}
+    Let $p:A \to B$ be a regular epi. By the definition, it is the coequalizer of some parallel arrows $(s_1,s_2)$. Suppose that $f$ and $g$ are two morphisms such that $fp=gp$. We aim to prove that $f=g$.
+    
+    Since $p$ is the coequalizer of $(s_1,s_2)$, then $ps_1=ps_2$. Moreover we have that $fps_1=fps_2=gps_2=gps_1$.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAhHnxAZseAkXLiaDFm0QgAyvP7KhRAMwbJ29gGEeEmFADm8IqABmAJwgBbJGRA4EEjmIHAAFlhuOEgAtP5a0rpuhiCePkhiAUGI6qERUbHxUjqhAPrEKWm+iJmBSLnhkdGIRVa6cKUiIDSM9ABGMIwACgIqwiAeWI5h0bzuXtW5dS2axexolQt+NMshjQUrlokgjt0gvQPDoya6k9OzClXbWcE0A2BQSABsuYxYYCUoPRwg4zgkSgAdCEwAAeWDgODgAEJZpRuEA
+\begin{tikzcd}
+S \arrow[r, "s_1", shift left] \arrow[r, "s_2"', shift right] & A \arrow[r, "p"] & B \arrow[r, "f", shift left] \arrow[r, "g"', shift right] \arrow[r, "\exists!t", dashed, bend left=60] & C
+\end{tikzcd}
+    \]
+    By the universal property of the coequalizer, there exists a unique morphism $t: B \to C$ such that $tp=fp=gp$. Hence, by uniqueness, $f=g$.
+\end{proof}
 \end{subbox}
 
 \begin{mainbox}{}
