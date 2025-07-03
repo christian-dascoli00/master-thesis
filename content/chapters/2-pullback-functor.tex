@@ -488,7 +488,7 @@ The category $(\mathcal{A} \downarrow E)$ has pullbacks, by \Cref{U creates con 
 
 \begin{mainbox}{}
 \begin{defi}
-A monad $(T,\eta,\mu)$ on a category $\mathcal{X}$ with finite coproducts is said to be \textbf{nullary} if, for each object $X$ in $\mathcal{X}$, the morphism $[T(!_X),\eta_X]$ is an iso, where $!_X$ is the unique morphism from the initial object of $\mathcal{X}$ to $X$. A monad is said to be \textbf{essentially nullary} if, for each object $X$ in $\mathcal{X}$, the morphism $[T(!_X),\eta_X]$ is a strong epi.
+A monad $(T,\eta,\mu)$ on a category $\mathcal{X}$ with finite coproducts is said to be \textbf{nullary} if, for each object $X$ in $\mathcal{X}$, the morphism $[T(!_X),\eta_X]$ is an iso, where $!_X$ is the unique morphism from the initial object of $\mathcal{X}$ to $X$. A monad on a category $\mathcal{X}$ with finite coproducts is said to be \textbf{essentially nullary} if, for each object $X$ in $\mathcal{X}$, the morphism $[T(!_X),\eta_X]$ is a strong epi.
 \end{defi}
 \end{mainbox}
 
@@ -543,6 +543,8 @@ By the propomodurality of $\mathcal{X}$, since $v^*(m)$ is an iso, we have that 
 \end{proof}
 \end{subbox}
 
+We now aim to prove a sufficient condition for the monad associated to a morphism $p:E\to B$ to be essentially nullary. We could start with the following proposition.
+
 \begin{mainbox}{}
 \begin{theo}
 If $\mathcal{X}$ is a pointed protomodular category with finite coproducts and $(T,\eta,\mu)$ is a monad on $\mathcal{X}$ with cartesian $\eta$, then the monad is essentially nullary.
@@ -550,7 +552,7 @@ If $\mathcal{X}$ is a pointed protomodular category with finite coproducts and $
 \end{mainbox}
 \begin{subbox}{}
 \begin{proof}
-    For each object $X$ in $\mathcal{X}$ we can consider the following diagram:
+    For each object $X$ in $\mathcal{X}$ we can consider the following commutative diagram:
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQAmclVqMWbACoAKdgEpuvEBmx4CRMgEZx9Zq0QhiyvusFFRu6vqlG5xJV3EwoAc3hFQAMwBOEAFskMhAcCCRtG0lDEAAdWJgcOgB9Th4ffyDEUVDwxABmKIM2eMSUk3SQP0CI6jCkQpA4AAssbxxaiWL7WQBCAD1FEGoGOgAjGAYABX4NIRBfLDdmjsrqrMb6xEim1vbO2xi5XtSlEfHJmfNNI0Xl1ZV1pBytkJa2ju2iuxATznOJtNZhZbksVqYqplgnU8jl3vsvl0fgN-iBRoCrgIbgswasKFwgA
 \begin{tikzcd}
@@ -559,5 +561,45 @@ If $\mathcal{X}$ is a pointed protomodular category with finite coproducts and $
     \end{tikzcd}
 \]
 By hypothesis $\eta$ is cartesian, so the downward directed square is a pullback. Since $\mathcal{X}$ is protomodular then by \Cref{protomod lemma}, the pair $(\eta_X,T(!_X))$ is strongly epimorphic. By a standard result, proved in \Cref{Equivalence strong epi with coprod}, this yields that $[\eta_X,T(!_X)]$ is a strong epi. Thus the monad is essentially nullary.
+\end{proof}
+\end{subbox}
+
+In our case $A \downarrow E$ is pointed if and only if $E$ is a an initial objects, in fact in this case the following initial and terminal objects coincide.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEQBfU9TXfIRQBGclVqMWbAILdeIDNjwEio4ePrNWiDnL5LBRAMxjqmqTtk99AlShPqzk7busL+yocgAspiVrZOLnEYKABzeCJQADMAJwgAWyRREBwIJAAmJwCdAB1cxjQACzo9EDjEpDJU9MQU8xcAQgB9K3kKpMQTGqQAVmyLEHzCkrKOquo0zOoGOgAjGAYABQ9DHVisMKKcEAGm5qD2+M7+nsRff0HhA7HjpG6p8722YYZi0uCuIA
+\begin{tikzcd}
+E \arrow[r, "!_A"] \arrow[rd, "!_E"'] & A \arrow[d, "\alpha"] &  & A \arrow[r, "\alpha"] \arrow[d, "\alpha"] & E \arrow[ld, "1_E"] \\
+                                      & E                     &  & E                                         &                    
+\end{tikzcd}
+\]
+
+While this would work in that specific case, we would like to drop such condition. The following result fits our needs.
+
+\begin{mainbox}{}
+\begin{theo}\label{p^* is essentially nullary}
+Let $p:E\to B$ be a morphism in $\mathcal{A}$ protomodular with finite coproducts. Then the monad associated to $p$ is essentially nullary.
+\end{theo}
+\end{mainbox}
+
+\begin{subbox}{}
+\begin{proof}
+Let $(D,\delta)$ be an object in $(\mathcal{A} \downarrow E)$. To prove that the monad is essentially nullary we need to study the morphism of the initial object. So first note the morphism for each object $(D,\delta)$ in $(\mathcal{A} \downarrow E)$ the morphism of the initial object $!_D$ is the same as the morphism of the initial object in $\mathcal{A}$, in fact the following diagram commutes.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGJAF9T1Nd9CKAIykhVWoxZsAolx4gM2PASIjK1es1aIQAES7iYUAObwioAGYAnCAFskAJmo4ISERK1sAOl9gMcdHKWNvaIZCAujhqS2iAAhAD6+tzBdkjhkYjumlI6ibLUDHQARjAMAAp8yoIgVljGABY4BpxAA
+\begin{tikzcd}
+0 \arrow[r, "!_D"] \arrow[rd, "!_E"'] & D \arrow[d, "\delta"] \\
+                                      & E                    
+\end{tikzcd}
+\]
+
+Then consider the following diagram.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkRiQBfU9TXfIRQAmCtTpNW7ACLdeIDNjwEiZYuIYs2iEAFEAOvrwBbeAH0AQpx58lgoqPU1NUnQaNZTcS7K7iYUADm8ESgAGYAThDGSGQgOBBI5M6S2iAAhGayNHAAFlhhOLE2IJHRSKLxiYgAzCla7GgAegBUaGbpABSZ0gCUcuFRMYiVCbE5+YVJ9a4ghsb0OLkRxsBoUQBWXGbCIDSM9ABGMIwACvzKQiARWIG5RSVlw3FjIxMFRYjJEg06hgdgQKMGAAAkyugoZmIIMMEXogOBexAB2OZwu9h0NzuD3kTyQdSq0xAeQ+RJcaXmi2Wq3WEC2OwA5EiUSdznYVJjbvcBqUhkTXgSSVMvjMKfoAUDQYZYIwcPRSCDyFkYfo4Qi2Psjqz0RzrlyHpQuEA
+\begin{tikzcd}
+E\times_B0 \arrow[rr, "p^*p_!(!_D)"] \arrow[d, "\mathrm{proj}_2"', shift right] &  & E\times_BD \arrow[d, "\mathrm{proj}_2'"', shift right]     \\
+0 \arrow[rr, "!_D"] \arrow[u, "{\langle !_E,1_0 \rangle}"', shift right]        &  & D \arrow[u, "{\langle \delta, 1_D \rangle}"', shift right]
+\end{tikzcd}
+\]
+The downward directed square is commutative by the definition of $p^*$, and it is a pullback by \Cref{p^*(f) is a pullback}. The upward directed square commute by naturality of $\eta$, in fact $\eta_{(0,!_E)}=\langle !_E, 1_0 \rangle$ and $\eta_{(D,\delta)}=\langle \delta, 1_D \rangle$. So, by \Cref{protomod lemma}, the pair $(p^*(!_D),\langle !_E,1_0 \rangle)$ is strongly epimorphic. By \Cref{Equivalence strong epi with coprod} this means that $[T(!_D),\eta_{(D,\delta)}]=[p^*p_!(!_D),\langle \delta,1_D \rangle]$ is a strong epi. Thus the monad is essentially nullary.
 \end{proof}
 \end{subbox}
