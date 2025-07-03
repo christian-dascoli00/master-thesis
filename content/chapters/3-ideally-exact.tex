@@ -377,7 +377,7 @@ B \arrow[rr, "\iota_2"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr,
 \end{tikzcd}
 \]
 \end{minipage}
-        We still need to prove that they are morphisms in $\mathcal{X}^T$. We prove the first one, the second one is similar. Note that $\iota_1$ and $\eta_{A+B}$ are not morphisms in $\mathcal{X}^T$. This is not a problem, however, since we will show that the whole composition $q\eta_{A+B}\iota_1$ is a morphism in $\mathcal{X}^T$. Consider the following diagram. All diagrams, except the left and the external ones, commute. We aim to prove that the left diagram commutes, so that the external one commutes as well. This holds by \Cref{coeq for the three diagrams}, since it corresponds to the diagram \eqref{diagr 3 coproducts}.
+        We still need to prove that they are morphisms in $\mathcal{X}^T$. We prove the first one, the second one is similar\footnote{Note that $\iota_1$ and $\eta_{A+B}$ are not morphisms in $\mathcal{X}^T$. This is not a problem, however, since we will show that the whole composition $q\eta_{A+B}\iota_1$ is a morphism in $\mathcal{X}^T$}. Consider the following diagram. All diagrams, except the left and the external ones, commute. We aim to prove that the left diagram commutes, so that the external one commutes as well. This holds by \Cref{coeq for the three diagrams}, since it corresponds to the diagram \eqref{diagr 3 coproducts}.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdhwDUAIR58QGbHgJEALGJoMWbRCAAqACllyAlIv6qhRAGzaJe9gEUrygWuElSxcbqkDEw5LXmtBdRFff0l9I1N5UKUVCO8tPx1Y9kMAPXIEi3cUr3tozOcg4xck8JKULQBGGIr4s1DxGCgAc3giUAAzACcIAFskMhAcCCQG8sCQAB0F-Bx6AH0G9yHRmZoppFEneaWYVbXgM24t4bHEQ-3EAGY5uIBHa53ELUnpxAmAuJLAAeWDWXDCIG2t2+DwArC9ssYlit1g0apCbkh4T8kA4jnETCczhd5Nx0VDcXtfgAOBEGJYjZjnS4fW7Yh60kCMegAIxgjAACp5bAZBlgugALHAgOkgBrnYKJK4QimITkPZ749jvFWYxB4h4AdllJle5L1xpxT1lwNBbm4lG4QA
 \begin{tikzcd}
@@ -458,6 +458,16 @@ A+B \arrow[rr, "{[f,1_B]}", shift left=2] \arrow[rr, "{[g,1_B]}"', shift right=2
         \]
     \end{proof}  
 \end{subbox}
+
+The construction of the coproduct in the Eilenberg-Moore category $\mathcal{X}^T$ looks quite intricate at first glance and it may appear overly complicated. However, this conscrution is needed beacuse, given two object with an algebra structure each, the sum of the two algebra structures is not an algebra structure in general. To make this clearer consider the following example.
+
+\begin{rembox}{}
+    \begin{ex}
+        Let $\mathbf{Mon}$ be the category of monoids and let $U: \mathbf{Mon} \to \mathbf{Set}$ be the forgetful functor. One can define the free functor $F: \mathbf{Set} \to \mathbf{Mon}$ sending each set $X$ to the free monoid on $X$
+        \[F(X) = \{(x_1,\ldots,x_n) \ | \ n \in \mathbb{N}, \ \forall i=1,\ldots,n, \ x_i \in X \}\]
+        with the operation of concatenation. This induces a monad $T=UF$ on $\mathbf{Set}$ and the functor turns out to be monadic. The coproduct in $\mathbf{Mon}$ is the free product, while in $\mathbf{Set}$ it is the disjoint union. The free product of two monoids, as a set, is in general a bigger set than the disjoint union of the two set underlying the monoids. Thus the forgetful functor $U$ in general does not preserve coproducts. Instead, if the sum of the algebra structure, which correspond to the operation of the moinoid, were itself an algebra structure, the forgeftul functor would preserve coproducts.
+    \end{ex}
+\end{rembox}
 
 We now want to study a sufficient condition for a category to admit reflexive coequalizers, so that we can apply the proposition above.
 
@@ -562,7 +572,7 @@ We are now ready to prove the theorem, which will lead to the definition of the 
     \begin{proof}[\textit{Proof of \Cref{Ideally exact categories}}]\label{The proof}
         $(1\implies 3)$ Suppose $! : 0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact, the pullback functor $(!)^*: (\mathcal{A} \downarrow 1) \to (\mathcal{A} \downarrow 0)$ is monadic by (SECTION TO DO). Note that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$. Now consider $\mathcal{X} = (\mathcal{A} \downarrow 0)$, we want to prove that $\mathcal{X}$ is semiabelian. 
         
-        $(\mathcal{A} \downarrow 0)$ is pointed, in fact if $(A,\alpha)$ is an object in $(\mathcal{A} \downarrow 0)$, we have the following initial and terminal objects, which are the same:
+        $(\mathcal{A} \downarrow 0)$ is pointed, in fact if $(A,\alpha)$ is an object in $(\mathcal{A} \downarrow 0)$, we have the following initial and terminal objects, which coincide:
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGJAF9T1Nd9CKAIzkqtRizYBBLjxAZseAkRFCx9Zq0TtZvRQKIBmUdQ2TtM7nv7KUxtaYladV+XyWDkAFhPjNbDk4xGCgAc3giUAAzACcIAFskERAcCCQAJkd-bQAdHMY0AAs6XRBYhKQyFLTEZLNnAEIAfUs5csTEY2qkAFYs8xA8guLS9srqVIzXMcQ+7sQfPwGhJsC2uI6uyYX+5yGGIpKgziA
         \begin{tikzcd}
@@ -651,7 +661,7 @@ U^T(A) \arrow[rr, "U(m)"]                               &  & Q
     \]
     This imlplies that $U^T(m)$ is a mono by the universal property of the kernel pair. 
     
-    It remains to prove that the image of a mono through the comparison functor $K : \mathcal{A} \to \mathcal{X}^T$ acts as a mono in the way described above. Then, since $U=U^TK$, we have that $U$ does the same. By monadicity, the functor $K$ is fully faithful, this is sufficient to prove that $K$ preserves monos. In fact, let $m$ be a mono in $\mathcal{A}$ and let $f$, $g$ be morphisms in $\mathcal{X}^T$ between object coming from $\mathcal{A}$ such that $K(m)f = K(m)g$.
+    It remains to prove that the image of a mono through the comparison functor $K : \mathcal{A} \to \mathcal{X}^T$ acts as a mono in the way described above. Then, since $U=U^TK$, we have that $U$ does the same. By monadicity, the functor $K$ is fully faithful, this is sufficient to prove that $K$ preserves monos. In fact, let $m$ be a mono in $\mathcal{A}$ and let $f$, $g$ be morphisms in $\mathcal{X}^T$ between object coming from $\mathcal{A}$ such that $K(m)f = K(m)g$. Let $f'$ and $g'$ be the morphisms in $\mathcal{A}$ such that $K(f') = f$ and $K(g') = g$ by the fully property of $K$. Then we have that
     \begin{align*}
     &K(m)f = K(m)g\\[1.5ex]
     &\implies K(m) K(f') = K(m) K(g')\\[1.5ex]
@@ -671,7 +681,7 @@ U(C) \arrow[r, "U(m)"] & 0 & 0 \arrow[r, "!_{U(C)}"] & U(C)
 \end{tikzcd}
     \]
     
-    Now we want to prove that $U$ reflects iso. As done before we prove that for the comparison functor $K$ and for $U^T$, then it follows for $U$. $K$ reflect iso beacuse, by monadicity, it is fully faithful. In fact, if $K(f):K(X) \to K(Y)$ is an iso and $g: K(Y) \to K(X)$ is its inverse in $\mathcal{X}$, then $K(f)g=1_K(Y)$ and $gK(f)=1_K(X)$. So we have that
+    Now we want to prove that $U$ reflects iso. As done before we prove that for the comparison functor $K$ and for $U^T$, then it follows for $U$. $K$ reflect iso beacuse, by monadicity, it is fully faithful. In fact, if $K(f):K(X) \to K(Y)$ is an iso and $g: K(Y) \to K(X)$ is its inverse in $\mathcal{X}^T$, then $K(f)g=1_{K(Y)}$ and $gK(f)=1_{K(X)}$. Let $g'$ be the morphism in $\mathcal{A}$ such that $K(g') = g$ by the fully property of $K$. So we have that
     \begin{align*}
         &1_{K(Y)} = K(f)g\\[1.5ex]
         &\implies 1_{K(Y)} = K(f)K(g')\\[1.5ex]
