@@ -1,0 +1,205 @@
+\documentclass[11pt]{article}
+
+% Pacchetti base
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\usepackage{tikz-cd}
+\addbibresource{ref.bib}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{notation}{Notation}
+
+\title{Regular epis and monadic $p^*$ in an exact category}
+
+\date{}
+
+
+\nocite{*}
+
+\begin{document}
+
+\maketitle
+
+Let $\mathcal{A}$ be a category with pullbacks and let $p: E \to B$ be a morphism in $\mathcal{A}$. Consider the monad $T=p^*p_!$ associated to $p$. Let $(C,\gamma)$ be an object in $(C \downarrow E)$ and let $(C,\gamma; \xi)$ be an object in $(\mathcal{A} \downarrow E)^T$ with $\xi: T(C) \to C$ an algebra.
+
+Consider the pullback in $\mathcal{A}$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQDCIAL6l0mXPkIoATOSq1GLNmMnTseAkSUBGFfWatEIIRKkgMOuUTJHqJ9efYSVMKAHN4RUABmAE4QvEgAzNQ4EEhKqqZsaFaBIWGIZCDRSAbOamYg3Lx0OAAWQbzAaCEAVuICCskgwaFIGVmIkfGuBZxFpeWVNXUGINQMdABGMAwACjK68iBBWN4lOI3NaTmZMYhxLvlo3N50vEUbqdlRu50HbMen52OT03N2eubLq+viFOJAA
+\begin{tikzcd}
+E\times_BC \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"'] &  & C \arrow[d, "p\gamma"] \arrow[lld, "\gamma"'] \\
+E \arrow[rr, "p"]                                                      &  & B                                            
+\end{tikzcd}
+\]
+Thus, we have the span in $\mathcal{A}$:
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAYRABfUuky58hFACZSxanSat24qTOx4CRcirUMWbRCG1qYUAObwioAGYAnCHyRGQOCEjLqzdh4ADyxJaRBXd08aHyRlAM0LHj56HAALFz5gNDcAK0FFCRAaRnoAIxhGAAVZfQUQFyxbdJxJSgkgA
+\begin{tikzcd}
+  & E\times_BC \arrow[rd, "\xi"] \arrow[ld, "\mathrm{proj_2}"'] &   \\
+C &                                                             & C
+\end{tikzcd}
+\]
+Since $\xi$ is also a morphism in $(\mathcal{A} \downarrow E)$, we have that $\gamma \xi = \mathrm{proj}_1$
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQDCIAL6l0mXPkIoATOSq1GLNmMnTseAkQCMpfSvrNWiDhJUwoAc3hFQAMwBOEXkkMgcEJEtVmbNy2dLy8dBJSIK7uSGTevoj+puoW3OE4ABYuvMBobgBW4gL6INQMdABGMAwACjK68iAuWLaZOJHObh6I8T6e1CnmINwAHlhW4kA
+\begin{tikzcd}
+E\times_BC \arrow[rd, "\mathrm{proj}_1"'] \arrow[rr, "\xi"] &   & C \arrow[ld, "\gamma"] \\
+                                                            & E &                       
+\end{tikzcd}
+\]
+
+
+\begin{proposition}
+    Let $\mathcal{A}$ be a finitely complete category and let $p: E \to B$ be a morphism in $\mathcal{A}$. For any object $(C,\gamma;\xi)$ in $(\mathcal{A} \downarrow E)^T$, with $T$ the monad associated to $p$. The pair $(\mathrm{proj}_2,\xi)$ is an equivalence relation in $\mathcal{A}$
+\end{proposition}
+
+\begin{proof}
+    First we show that $(\mathrm{proj}_2,\xi)$ is a regular epi is an internal relation. So we need to show that $\langle \mathrm{proj}_2,\xi \rangle$ is a mono. Consider the following diagram of solid arrows\footnote{\cite{SobralTholen1992} assumes the existence of coequalizers, which is not the case in our setting. However, this is not a problem: at this point, we can use the morphism $p\gamma$ instead of the coequalizer of $(\mathrm{proj}_2,\xi)$, as it serves our purpose. Then, \textit{a posteriori}, this proposition ensures, under the assumption of exact category, that the pair $(\mathrm{proj}_2,\xi)$ has a coequalizer, which we will make use of.}. It commutes, in fact
+    \begin{itemize}
+    \item $1_B(p\gamma)\mathrm{proj}_2= p \mathrm{proj}_1 = p\gamma\xi$
+    \item $1_B(p\gamma)\mathrm{proj}_2'= 1_B(p\gamma)\mathrm{proj}_1' = p\gamma  \mathrm{proj}_1'$
+    \end{itemize}
+    Thus we can consider the morphism $h'$ induced by the universal property of the pullback from $\mathrm{proj}_2'$ and $\gamma \mathrm{proj}_1'$ and $h$ similarly induced from $\mathrm{proj}_2$ and $\xi$.
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQDCIAL6l0mXPkIoAjKQVVajFmxHc+g0RKkgM2PASIBmZavrNWiEGMnTjcokrNX1t+-qezTKC3dqaw07IR9DGRN5ZCUAVg8bNnYIoz8YiwTgzzZw8VUYKABzeCJQADMAJwheJAAWahwIJAA2bKS7BWEIqpqkCxAm+vbQw24iul5eOh7q2sQBocQ4ka9xyenZvuXG5sQ2tQ7DLfmlQb2BkLXOaZwAC0reYDRqgCtxAQUAchOkM6WAEyrNjcW4PJ4vCDvAQAn6OEC9eZA87DQ6jNDrKYzeGIpBkFGIM5wO5Yco4JAAWjOVzYdxA1AYWDAXigdGJhV+hN2eOoxNJ5MQVOBdjuPwZTJZbLuHJxcx5BORACMYGAoP18TS7KC6PdHs83h8AZz8UsBsrVZSzBqclrOAAPLDG7k7EDmtWCq3CkDa3UQg2fekgBh0ZUMAAKURcdkqWCKd3J+XEQA
+\begin{tikzcd}
+E\times_BC \arrow[rd, "h", dashed, shift left] \arrow[rrrd, "\mathrm{proj}_2", bend left] \arrow[rddd, "\xi", bend right] \arrow[rddddd, "\mathrm{proj}_1"', bend right] &                                                                                                               &  &                         \\
+                                                                                                                                                                         & C\times_BC \arrow[dd, "\mathrm{proj}_1'"] \arrow[rr, "\mathrm{proj}_2'"] \arrow[lu, "h'", dashed, shift left] &  & C \arrow[dd, "p\gamma"] \\
+                                                                                                                                                                         &                                                                                                               &  &                         \\
+                                                                                                                                                                         & C \arrow[rr, "p\gamma"] \arrow[dd, "\gamma"]                                                                  &  & B \arrow[dd, "1_B"]     \\
+                                                                                                                                                                         &                                                                                                               &  &                         \\
+                                                                                                                                                                         & E \arrow[rr, "p"]                                                                                             &  & B                      
+\end{tikzcd}
+    \]
+In order to prove that $\langle \mathrm{proj}_2,\xi \rangle$ is a mono, we need to show that $h$ is a mono. Since $(\mathrm{pro}_1,\mathrm{proj}_2)$ is a jointly monic pair, by the following compositions
+\begin{itemize}
+    \item $\mathrm{proj}_1 h'h = \gamma \mathrm{proj}_1' h = \gamma \xi = \mathrm{proj}_1 = \mathrm{proj}_1 1_{E\times_BC}$
+    \item $\mathrm{proj}_2 h'h = \mathrm{proj}_2' h = \mathrm{proj}_2 = \mathrm{proj}_2 1_{E\times_BC}$
+\end{itemize}
+we have that $h'h= 1_{E\times_BC}$. This implies that $h$ is a mono, in fact suppose that $f$ and $g$ are two morphisms such that $hf=hg$, then we have
+\begin{align*}
+    &hf=hg \\[1.5ex]
+    &\implies h'hf=h'hg \\[1.5ex]
+    &\implies 1_{E\times_BC}f=1_{E\times_BC}g \\[1.5ex]
+    &\implies f=g
+\end{align*}
+
+Consider now the canonical morphism $i: C\times_BC \to C\times C$ induced by the universal property of the product. We have that $i$ is a mono, in fact $f$ and $g$ are two morphisms such that $if=ig$, then we have
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAGEAdTvAW3gD6AIXYgAvqXSZc+QigDM5KrUYs2XHln5wABKIlTseAkUUAGZfWatEHcZJAYjs06QBMl1TbsHH043LIZkrUVmq2AILiyjBQAObwRKAAZgBOELxIwSA4EEhuoV5s3Lx0OAAWqbzAaOkAVmICxADk9inpmYjZuUiKKtbFnKUVVTX1jS0g1Ax0AEYwDAAK-i62qVhx5ThtIGkZ+dQ9iGT94SDcaFhNO3udfUcnYd4XV25TIDPzSysmaxtbNw6WUOeWOhQGtiwgP2iAALCDgSA4OUsMltogALSPIq2ZLQzrwnKg7LI1Ho7EQkBxd6fBbLZy-EDrTbbMQUMRAA
+\begin{tikzcd}
+                                                          &                                                                                             &  & C \arrow[d, "\pi_1"]  \\
+A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & C\times_BC \arrow[rru, "\mathrm{proj}_1'"] \arrow[rrd, "\mathrm{proj}_1'"'] \arrow[rr, "i"] &  & C\times C             \\
+                                                          &                                                                                             &  & C \arrow[u, "\pi_2"']
+\end{tikzcd}
+\]
+\begin{itemize}
+\item $if=ig \implies \pi_1 if = \pi_1 ig \implies \mathrm{proj}_1' f = \mathrm{proj}_1' g$
+\item $if=ig \implies \pi_2 if = \pi_2 ig \implies \mathrm{proj}_2' f = \mathrm{proj}_2' g$
+\end{itemize}
+Since $(\mathrm{proj}_1',\mathrm{proj}_2')$ is a jointly monic pair, we have that $f=g$. Thus, $i$ is a mono. Since $i$ and $h$ are both monos, we have that $ih$ is a mono.
+
+By the following commutative diagram
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQBhAHS7wFt4AfQBCHEAF9S6TLnyEUAFgrU6TVu268sAuAAIxk6djwEiSgAwqGLNok4SpIDMblnSxK2tv3DTmSflkc2Uaa3U7AFEefiFRCRUYKABzeCJQADMAJwg+JGCQHAgkMlUbdh4+ehwAC0y+YDRsgCtxQXIAcgcM7NzEfMKkAGZQr3KuSpq6hubW4k6aRnoAIxhGAAV-VztMrCTqnC6QLJzimgHEchGyux40LDbD497hgqKLq-CQW-viEAXl1YbFymba7faPHp5M5vS6lT5YCEnRBKV5QuHeaqI3oo84vFZgKBIAC0g3yYW8FSqtXqjQgLUEv3+K3WmxBIB2ewOvieSBxbxK+MJiFJHwp4ypU1p9PI8XEQA
+\begin{tikzcd}
+                                                                                                                     &  &                                                                                             &  & C \arrow[d, "\pi_1"]  \\
+E\times_BC \arrow[rr, "h"] \arrow[rrrrd, "\mathrm{proj}_2"', bend right] \arrow[rrrru, "\mathrm{proj}_1", bend left] &  & C\times_BC \arrow[rru, "\mathrm{proj}_1'"] \arrow[rrd, "\mathrm{proj}_2'"'] \arrow[rr, "i"] &  & C\times C             \\
+                                                                                                                     &  &                                                                                             &  & C \arrow[u, "\pi_2"']
+\end{tikzcd}
+\]
+we conclude that $ih = \langle \mathrm{proj}_2,\xi \rangle$, so $\langle \mathrm{proj}_2,\xi \rangle$ is a mono.
+
+We proved that $(\mathrm{proj}_2,\xi)$ is an internal relation, now we need to show that it is an equivalence, ie it is reflexive, symmetric and transitive.
+
+\begin{itemize}
+\item Claim: $(\mathrm{proj}_2,\xi)$ is reflexive. 
+
+Called $\eta$ the unit of the monad, we have that $(\mathrm{proj}_2,\xi) \eta_{(C,\gamma)} = \langle 1_C, 1_C \rangle$. In fact $\xi \eta_{(C,\gamma)} = 1_C$ and by the definition of the unit of the monad, we have that $\mathrm{proj}_2 \eta_{(C,\gamma)} = \mathrm{proj}_2 \langle \gamma, 1_C \rangle=1_C$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBhEAX1PU1z5CKMgCZqdJq3YBRADpy8AW3gB9AEJde-bHgJFypcTQYs2iTjz4gMuoUVFGJp6Ra0SYUAObwioAGYAThBKSIYgOBBIZJJm7AowOPSqwAAUHKQKXvRKSvQAlNxWAcGhiOGRSI6xriDEqlw0jPQARjCMAAoCesIggVheABY4xSBBIWE0lYgAzCZS5nUNo+NlMdPVLosKeTiDgUrAaMEAVtyqoiul0VNRs-NxFgoAHlggTa3tXXb6Fv1DI24lG4QA
+\begin{tikzcd}
+  & C \arrow[dd, "{\eta_{(C,\gamma)}}", pos=0.7] \arrow[ldd, "1_C"'] \arrow[rdd, "1_C"] &   \\
+  &                                                                            &   \\
+C & E\times_BC \arrow[l, "\mathrm{proj}_2"] \arrow[r, "\xi"']                  & C
+\end{tikzcd}
+\]
+\item Claim: $(\mathrm{proj}_2,\xi)$ is symmetric. 
+
+Consider the following diagram, where $\mathrm{proj}_1''$ and $\mathrm{proj}_2''$ are the projections of $E\times_BC$. Let $l$ be the morphism induced by the universal property of the pullback from $1_{E\times_BC}$ and $\gamma\mathrm{proj}_2$, in particular it is the unique such that
+\[\gamma\mathrm{proj}_2=l \mathrm{proj}_1'' = l  \mathrm{proj}_1(1_E \times \mathrm{proj}_2)\]
+and
+\[1_{E\times_BC}=l \mathrm{proj}_2''\]
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQDCIAL6l0mXPkIoAjKQVVajFmy48s-OMIAUWvoNEBKUxKkgM2PASIBmZavrNWiDt2N7Rl6bbkiJQcXdXdPbV1hMUl-WXtFUgBWULdNP2sZO3lkJxDqVw0PGKsbeJynFIKwtiEMsuyiMgAWVKKQGNUYKABzeCJQADMAJwheJGbqHAgkADZqtI80DJGxpCcQaaQkhfbuXjocAAth3mA0UYArcQEAJhXR8cQlTZnEW93w-cOTs4uIa53ADkQIea3eUzeOzUixA3AAHlgQNQ4EcsIMcEgALQKWIgVZPF5bRAbVHozGIHGfNgKARGHQmBFIvEEpBEt6ktEYtnUjy0+lRITfY6nc5XO7iZEgBh0ABGMAYAAUsoEPMMsD0jpiWY91pCJry4ZwDiK-lcbgopTL5UqVQlpTBuTrwdDifMYe00NwenReAcwU8Pq9tobhb8xQCbvdqNaFcqAvb1ZrMSiuRTcVZWYgyMGISB5WAoOsc4VwrTgAKTCJJc6njniS9S2wGFasGBwlA6KjugGkPW3gB2UPGn6i-6A6PSuVxu3yEBJrW9xBD3OTfMwQt94c+v10K3T20JucL7UUcRAA
+\begin{tikzcd}
+E\times_BC \arrow[rrrd, "1_{E\times_BC}", bend left] \arrow[rd, "l", dashed] \arrow[dddd, "\mathrm{proj}_2"'] &                                                                                                                                                        &  &                                                                                      \\
+                                                                                                              & E\times_B(E\times_BC)) \arrow[rr, "\mathrm{proj}_2''"] \arrow[dd, "1_E\times_B\xi", shift left] \arrow[dd, "1_E\times_B\mathrm{proj_2}"', shift right] &  & E\times_BC \arrow[dd, "\xi", shift left] \arrow[dd, "\mathrm{proj}_2"', shift right] \\
+                                                                                                              &                                                                                                                                                        &  &                                                                                      \\
+                                                                                                              & E\times_BC \arrow[rr, "\mathrm{proj}_2"] \arrow[dd, "\mathrm{proj}_1"]                                                                                 &  & C \arrow[dd, "p\gamma"]                                                              \\
+C \arrow[rd, "\gamma"']                                                                                       &                                                                                                                                                        &  &                                                                                      \\
+                                                                                                              & E \arrow[rr, "p"]                                                                                                                                      &  & B                                                                                   
+\end{tikzcd}
+\]
+Define $\sigma = (1_E\times_B\xi) l$. Observe that 
+\[\mathrm{proj}_2 \sigma = \mathrm{proj}_2 (1_E\times_B\xi) l = \xi 1_{E\times_BC} = \xi\]
+It remains to show that $\xi \sigma = \mathrm{proj}_2 $. This holds beacuse of the followinf compositions and the fact that $(\mathrm{proj}_1,\mathrm{proj}_2)$ is a jointly monic pair.
+\begin{itemize}
+\item $\mathrm{proj}_1 (1_E\times_B\mathrm{proj}_2)l = \mathrm{proj}_1'' l = \gamma \mathrm{proj}_2$
+\item$\mathrm{proj}_1 \eta_{(C,\gamma)}\mathrm{proj}_2 = \mathrm{proj}_1 \langle\gamma, 1_C \rangle \mathrm{proj}_2= \gamma \mathrm{proj}_2$
+\item$\mathrm{proj}_2 (1_E\times_B\mathrm{proj}_2)l = \mathrm{proj}_2  \mathrm{proj}_2'' l = \mathrm{proj}_2 1_{E\times_BC} = \mathrm{proj}_2$
+\item$\mathrm{proj}_2 \eta_{(C,\gamma)}\mathrm{proj}_2 = \mathrm{proj}_1 \langle\gamma, 1_C \rangle \mathrm{proj}_2 = 1_C \mathrm{proj}_2 = \mathrm{proj}_2$
+\end{itemize}
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAYRABfUuky58hFGWLU6TVu268sAuCPFSZ2PASIAWUgEYVDFm0Qh90kBiPyi5S9bV2HklTCgAc3giUAAzACcIPiQPEBwIJAsaG3V7HmxAvnoAXgAKCx5+IWEeAA8sAEpGSSdI6NiaBKQyVVt2HmycAAsIvmA0KIArCUFiWvComMQ45sQAZhTvDq4KkBpGegAjGEYABVljBRAIrEDunAmQeunk+MSFpfb0ri7e-sGIEbGrm6Smh6tVI+cpYdYgTY7faHNz2U7nS4SSgSIA
+\begin{tikzcd}
+  &  & E\times_BC \arrow[dd, "\sigma=(1\times_B\xi)l"] \arrow[rrd, "\mathrm{proj}_2"] \arrow[lld, "\xi"'] &  &   \\
+C &  &                                                                                                    &  & C \\
+  &  & E\times_BC \arrow[llu, "\mathrm{proj}_2"] \arrow[rru, "\xi"']                                      &  &  
+\end{tikzcd}
+\]
+\item Claim: $(\mathrm{proj}_2,\xi)$ is transitive. \\ Consider the pullback (???)
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAYRABfUuky58hFACYK1Ok1btxUmdjwEiy4qoYs2iTj35Cxk6SAy75RMkZomN5gBTdeWAXBFRAEpLPyFRb1D-QKDJVRgoAHN4IlAAMwAnCD4kAGYaHAgkYm0QTOzigqLEcjd1MxAePnocAAsMvmA0LIArCUFFW3SsnMR8kEKkRVLy0eUJ6tq1U3YeAA8sOIkgA
+\begin{tikzcd}
+(E\times_BC)\times_C(E\times_BC) \arrow[d] \arrow[rr] &  & E\times_BC \arrow[d, "\xi"] \\
+E\times_BC \arrow[rr, "\mathrm{proj}_2"]              &  & C                          
+\end{tikzcd}
+\]
+\end{itemize}
+\end{proof}
+
+In an exact category each equivalence relation is a kernel pair and by (---) has a coequalizer. Thus in an exact category $(\mathrm{proj}_2,\xi)$ has a coequalizer. Let $q:C\to Q$ be such coequalizer. Observe that considering $\mathrm{proj}_2$ and $\xi$ as morphism in $(\mathcal{A} \downarrow B)$, then $q$ is a morphism in $(\mathcal{A} \downarrow B)$ as well by the universal property. So, called $\delta$ the morphism induced by the universal property of the coequalizer from $\mathrm{proj}_2$ and $\xi$, we have that $q$ with codomain $(Q,\delta)$ is also the coequalizer of the pair in $(\mathcal{A} \downarrow B)$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQDCIAL6l0mXPkIoATKQCMVWoxZshEqSAzY8BIksrV6zVohBjJ0g3KIBmcmvOarARQlqYUAObwRKAAZgBOELxIZCA4EEjKZhqWety8dDgAFqG8wGjhAFbiAsog1Ax0AEYwDAAKMobyIKFYfhk4OiHhkYhKMXGICeoWbGjcfnS8aR0gYRFR1LFIvXAZWMHtiAC0g27J3AAeWNOz3dGLPdQraxs7SWyp6Vk5eRCFAgqlIOVVtfUOVs1Wu1bDMukhnH14mUsGBklA6CtfJ9dvdOLAGDg6McwRdIYgISirABHbziIA
+\begin{tikzcd}
+E\times_BC \arrow[rrd, "p\mathrm{proj}_1"'] \arrow[rr, "\xi", shift left] \arrow[rr, "\mathrm{proj}_2"', shift right] &  & C \arrow[d, "p\gamma"] \arrow[r, "q"] & Q \arrow[ld, "\delta", dashed] \\
+                                                                                                                      &  & B                                     &                               
+\end{tikzcd}
+\]
+
+Consider the comparison functor $K:(\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)^T$ defined as $K(D,\zeta)=(p^*(D,\zeta),p^*(\epsilon_{(D,\zeta}))$, where $\epsilon$ is the counit of the adjunction, definig $\epsilon_{(D,\zeta)}$ to be the projection from $E\times_BD$ to $D$ of the pullback of $p$ along $\zeta$.
+
+In our context of exact category, turns out that the comparison functor $K$ has a left adjoint $L:(\mathcal{A} \downarrow E)^T \to (\mathcal{A} \downarrow B)$ defined as $L(C,\gamma;\xi)=(Q,\delta)$, where $(Q,\delta)$ is the codomain of coequalizer of the pair $(\mathrm{proj}_2,\xi)$ in $(\mathcal{A} \downarrow B)$.
+
+Our goal is to show that $p^*$ is a monadic functor, ie that the comparison functor $K$ is an equivalence of categories. In order to do so, we aim to prove that the unit $\alpha$ and the counit $\rho$ of the adjunction $K \dashv L$ are pointwise isomorphisms.
+
+\begin{remark}
+    $\rho$ pointwise isomorphism $\iff$ $K$ fully faithful $\iff$ $\epsilon$ pointwise regular epi
+\end{remark}    
+
+\printbibliography
+
+\end{document}
