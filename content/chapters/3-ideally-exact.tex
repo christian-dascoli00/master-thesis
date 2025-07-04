@@ -109,7 +109,26 @@ T(\mathrm{Eq}(\tilde{q})) \arrow[dd, "\xi_{\mathrm{Eq}(\tilde{q})}", dashed] \ar
     \end{proof}
 \end{subbox}
 
-We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. The following will be rather intricate and technical; readers may choose to skip directly to the final outcome \Cref{algebras category has colim if the base category has coprod}. The following results are based on the work of \cite{Linton1969}.
+We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. 
+
+The construction of the coproducts in the Eilenberg-Moore category $\mathcal{X}^T$ will looks quite intricate at first glance and it may appear overly complicated. However, this conscrution is needed beacuse, given two object with an algebra structure each, the coprocdust of the two algebra structures is not an algebra structure in general. To make this clearer consider the following example.
+
+\begin{rembox}{}
+    \begin{ex}
+        Let $\mathbf{Mon}$ be the category of monoids and let $U: \mathbf{Mon} \to \mathbf{Set}$ be the forgetful functor. One can define the free functor $F: \mathbf{Set} \to \mathbf{Mon}$ sending each set $X$ to the free monoid on $X$
+        \[F(X) = \{(x_1,\ldots,x_n) \ | \ n \in \mathbb{N}, \ \forall i=1,\ldots,n, \ x_i \in X \}\]
+        with the operation of concatenation. This induces a monad $T=UF$ on $\mathbf{Set}$ and the functor turns out to be monadic. The coproduct in $\mathbf{Mon}$ is the free product, while in $\mathbf{Set}$ it is the disjoint union. The free product of two monoids, as sets, is in general a bigger set than the disjoint union of the two set underlying the monoids. Thus the forgetful functor $U$ in general does not preserve coproducts. Instead, if the coproduct of the algebra structures, which correspond to the operation of the moinoids, were itself an algebra structure, the forgeftul functor would preserve coproducts.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBGAM2ABZAgF8QE0uky58hFGQCMVWoxZtOPfsOABlGDiky52PASIry6+s1aIO3XoJFGTAPQAq09TCgAc3giUCEAJwguJDIQHAgkACZqey0nTgBjAkDpWRAIqJjqeKQbEDg+LCEcJABaMtTHEABVXLDI6MQyksRYiqqaxHqUzSaAMTb8jqTihK7qfuq6lTMpwvm4ueTyyqWhlYoJIA
+\begin{tikzcd}
+\mathbf{Mon} \arrow[r, "\cong"] \arrow[d, "U", shift left]     & \mathbf{Set}^T \arrow[ld, shift left] \\
+\mathbf{Set} \arrow[u, "F", shift left] \arrow[ru, shift left] &                                      
+\end{tikzcd}
+        \]
+    \end{ex}
+\end{rembox}
+
+The following will be rather intricate and technical; readers may choose to skip directly to the final outcome \Cref{algebras category has colim if the base category has coprod}. The following results are based on the work of \cite{Linton1969}.
 
 For the sake of clarity, we first present a technical definition.
 
@@ -459,16 +478,6 @@ A+B \arrow[rr, "{[f,1_B]}", shift left=2] \arrow[rr, "{[g,1_B]}"', shift right=2
     \end{proof}  
 \end{subbox}
 
-The construction of the coproduct in the Eilenberg-Moore category $\mathcal{X}^T$ looks quite intricate at first glance and it may appear overly complicated. However, this conscrution is needed beacuse, given two object with an algebra structure each, the sum of the two algebra structures is not an algebra structure in general. To make this clearer consider the following example.
-
-\begin{rembox}{}
-    \begin{ex}
-        Let $\mathbf{Mon}$ be the category of monoids and let $U: \mathbf{Mon} \to \mathbf{Set}$ be the forgetful functor. One can define the free functor $F: \mathbf{Set} \to \mathbf{Mon}$ sending each set $X$ to the free monoid on $X$
-        \[F(X) = \{(x_1,\ldots,x_n) \ | \ n \in \mathbb{N}, \ \forall i=1,\ldots,n, \ x_i \in X \}\]
-        with the operation of concatenation. This induces a monad $T=UF$ on $\mathbf{Set}$ and the functor turns out to be monadic. The coproduct in $\mathbf{Mon}$ is the free product, while in $\mathbf{Set}$ it is the disjoint union. The free product of two monoids, as a set, is in general a bigger set than the disjoint union of the two set underlying the monoids. Thus the forgetful functor $U$ in general does not preserve coproducts. Instead, if the sum of the algebra structure, which correspond to the operation of the moinoid, were itself an algebra structure, the forgeftul functor would preserve coproducts.
-    \end{ex}
-\end{rembox}
-
 We now want to study a sufficient condition for a category to admit reflexive coequalizers, so that we can apply the proposition above.
 
 Recall that a pair $(f,g)$ from $A$ to $B$ in a regular category induces a relation with the following construction. Consider the morphism induced by the universal property $\langle f,g \rangle$. Since the category is regular, we can take the factorization $\langle f,g \rangle = \langle r_1,r_2\rangle e$, with $\langle r_1,r_2\rangle$ mono and $e$ regular epi. Then $\langle r_1,r_2\rangle$ is the relation induced.
@@ -544,7 +553,7 @@ Thus $\langle r_1,r_2\rangle es = \langle 1_B,1_B \rangle$. The morphism $es$ ma
 We are now ready to prove the theorem, which will lead to the definition of the ideally exact categories. The following characterization and subsequent results are based on the work of Janelidze \cite{Janelidze2024}.
 
 \begin{mainbox}{}
-    \begin{theo}\label{Ideally exact categories}.
+    \begin{theo}\label{Ideally exact categories}
         Let $\mathcal{A}$ be a category. The following are equivalent:
         \begin{enumerate}
             \item $\mathcal{A}$ is exact and protomodular, has finite coproducts and the morphism $!:0 \to 1$ is a regular epimorphism.
