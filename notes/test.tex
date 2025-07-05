@@ -9,6 +9,7 @@
 \usepackage{lmodern}
 \usepackage[backend=biber, style=alphabetic]{biblatex}
 \usepackage{tikz-cd}
+\usepackage[hidelinks]{hyperref}
 \addbibresource{ref.bib}
 
 \newtheorem{theorem}{Theorem}
@@ -22,16 +23,18 @@
 \newtheorem*{remark}{Remark}
 \newtheorem*{notation}{Notation}
 
-\title{Regular epis and monadic $p^*$ in an exact category}
+\title{Notes on Regular Epimorphisms and the Monadicity of the Pullback Functor in an Exact Category}
 
 \date{}
-
+\author{C. D'Ascoli}
 
 \nocite{*}
 
 \begin{document}
 
 \maketitle
+
+These notes are based on the work of Sobral and Tholen \cite{SobralTholen1992}, with some ideas drawn from Janelidze and Tholen \cite{JanelidzeTholen1991}.
 
 Let $\mathcal{A}$ be a category with pullbacks and let $p: E \to B$ be a morphism in $\mathcal{A}$. Consider the monad $T=p^*p_!$ associated to $p$. Let $(C,\gamma)$ be an object in $(C \downarrow E)$ and let $(C,\gamma; \xi)$ be an object in $(\mathcal{A} \downarrow E)^T$ with $\xi: T(C) \to C$ an algebra.
 
@@ -190,15 +193,44 @@ E\times_BC \arrow[rrd, "p\mathrm{proj}_1"'] \arrow[rr, "\xi", shift left] \arrow
 \end{tikzcd}
 \]
 
-Consider the comparison functor $K:(\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)^T$ defined as $K(D,\zeta)=(p^*(D,\zeta),p^*(\epsilon_{(D,\zeta}))$, where $\epsilon$ is the counit of the adjunction, definig $\epsilon_{(D,\zeta)}$ to be the projection from $E\times_BD$ to $D$ of the pullback of $p$ along $\zeta$.
+Consider the comparison functor $K:(\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)^T$ defined as $K(D,\zeta)=(p^*(D,\zeta),p^*(\epsilon_{(D,\zeta}))$, where $\epsilon$ is the counit of the adjunction, defining $\epsilon_{(D,\zeta)}$ to be the projection from $E\times_BD$ to $D$ of the pullback of $p$ along $\zeta$.
 
 In our context of exact category, turns out that the comparison functor $K$ has a left adjoint $L:(\mathcal{A} \downarrow E)^T \to (\mathcal{A} \downarrow B)$ defined as $L(C,\gamma;\xi)=(Q,\delta)$, where $(Q,\delta)$ is the codomain of coequalizer of the pair $(\mathrm{proj}_2,\xi)$ in $(\mathcal{A} \downarrow B)$.
 
+Let us introduce the counit $\rho$ and counit $\alpha$ of the adjunction $K \dashv L$.
+
+For each object $(D,\zeta)$ in $(\mathcal{A} \downarrow B)$, the counit is a morphism of the kind $\rho_{(D,\zeta)}:LK(D,\zeta) \to (D,\zeta)$. First we compute $K(D,\zeta)$.
+\[K(D,\zeta) = (E\times_BD, \pi_1; p^*(\pi_2))\]
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAiIAL6l0mXPkIoATOSq1GLNmMnTseAkTIBGFfWatEHCVJAYdcokqPUT680IkqYUAObwioAGYAThC8SGQgOBBISqqmbNxoWAIGlgHBoYjhkUgGTmpmIAlJCqkgQSHR1NmIAMx5ceZopeUZuRFRtfUuhZwAXjA4dO7iQA
+\begin{tikzcd}
+E\times_BD \arrow[d, "\pi_1"] \arrow[rr, "\pi_2"] &  & D \arrow[d, "\zeta"] \\
+E \arrow[rr, "p"]                                 &  & B                   
+\end{tikzcd}
+\]
+Then, call $q:E\times_BD \to Q$ the coequalizer of the equivalence relation $(\mathrm{proj}_2,p^*(\pi_2))$, with codomain $(Q,\delta)$ and compute $L(K(D,\zeta))$. We define in the diagram below the morphism $\rho_{(D,\zeta)}$ by the universal property of the coequalizer.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAERABfUuky58hFACYK1Ok1btxUmdjwEiZRaoYs2iTpOkgMu+UWVGaJjeeGWdc-UtLFj6s5w8-EJi7tayegokPn6m7Ny8WAJwIgAUCcEpYgCUYTaeUQAsMU7+7ACKkqowUADm8ESgAGYAThB8SGQgOBBIympx5jxoWILkYa3tnTQ9SOSlgyDDo4oTbR2I-bOIAMwLLtZrU4jz3b27+wE8AF4wOPRHG8Vnc5fsy4Kr2iCTGwCsM3OXWcVy4fHoOAAFi0+MA0G0AFYST4gGiMegAIxgjAAChE7OZGDAmjhHkgAS9EM84JCsCSkABaU4g9hoAB6ACpUh9FLlvr9yYCkNTafSTm8hmCIdDYfCIEiUWjMdi8bYvCAWlhapDSfz1sKhYgAGwSkAARzJxsNewGBx4sEY91RICxYCgwoAnHrjibKcyypKWpCIIJgKlRKQbnd6NkJM70Vjcfj1ZrtaS0VgwAEoPQaTVna73btiBJKBIgA
+\begin{tikzcd}
+E\times_B(E\times_BD) \arrow[d, "\mathrm{proj}_2"] \arrow[rr, "p^*(\pi_2)", shift left] \arrow[rr, "\mathrm{proj}_2"', shift right] &  & E\times_BD \arrow[d, "\pi_2"] \arrow[rr, "q"] &  & Q \arrow[lldd, "\delta", bend left=49] \arrow[lld, "{\rho_{(D,\zeta)}}"', dashed, bend left] \\
+E\times_BD \arrow[d, "\pi_1"] \arrow[rr, "\pi_2"]                                                                                   &  & D \arrow[d, "\zeta"]                          &  &                                                                                              \\
+E \arrow[rr, "p"]                                                                                                                   &  & B                                             &  &                                                                                             
+\end{tikzcd}
+\]
+Observe that $\delta$ was also definied as the morphism induced by the universal property of the coequalizer, considering the object $E\times_BD$ as an object in $(\mathcal{A} \downarrow B)$ via $p\pi_1$, Thus, by the commutation of the diagram, $\rho_{(D,\zeta)}$ is a morphism in $(\mathcal{A} \downarrow B)$.
+
+(UNIT TO DO. Why are the two definitions of the unit $\alpha$ the same? Does $\xi$ coequalize $(p^*(\xi),p^*(\mathrm{proj}_2))$)
+
 Our goal is to show that $p^*$ is a monadic functor, ie that the comparison functor $K$ is an equivalence of categories. In order to do so, we aim to prove that the unit $\alpha$ and the counit $\rho$ of the adjunction $K \dashv L$ are pointwise isomorphisms.
 
-\begin{remark}
-    $\rho$ pointwise isomorphism $\iff$ $K$ fully faithful $\iff$ $\epsilon$ pointwise regular epi
-\end{remark}    
+\begin{proposition}
+    In an exact category if $p:E \to B$ is a regular epi, then the counit $\rho$ of the adjunction $K \dashv L$ is a pointwise isomorphism.
+\end{proposition}
+
+\begin{proof}
+    We aim to prove that for each object $(D,\zeta)$ in $(\mathcal{A} \downarrow B)$, the morphism $\rho_{(D,\zeta)}:LK(D,\zeta) \to (D,\zeta)$ is an isomorphism.
+    Consider the diagram of the definition of the counit $\rho_{(D,\zeta)}$. An exact category is also regular, in particular regular epi are pullback stable. If $p$ is a regular epi, then $\pi_2$ is a regular epi as well. The top left square is a pullback by (CITE), thus $(p^*(\pi_2), \mathrm{proj}_2)$ is the kernel pair of $\pi_2$. Since $\pi_2$ is a regular epi, then, by (CITE), it is the coequalizer of its kernel pair $(p^*(\pi_2), \mathrm{proj}_2)$. We have that $q$ and $\pi_2$ are coequalizers of the same pair, thus the morphism $\rho_{(D,\zeta)}$ definied by the universal property of the coequalizer $q$ is acctually an isomorphism.
+\end{proof}
 
 \printbibliography
 
