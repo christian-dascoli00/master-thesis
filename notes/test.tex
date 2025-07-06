@@ -135,9 +135,9 @@ By the following commutative diagram
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQBhAHS7wFt4AfQBCHEAF9S6TLnyEUAFgrU6TVu268sAuAAIxk6djwEiSgAwqGLNok4SpIDMblnSxK2tv3DTmSflkc2Uaa3U7AFEefiFRCRUYKABzeCJQADMAJwg+JGCQHAgkMlUbdh4+ehwAC0y+YDRsgCtxQXIAcgcM7NzEfMKkAGZQr3KuSpq6hubW4k6aRnoAIxhGAAV-VztMrCTqnC6QLJzimgHEchGyux40LDbD497hgqKLq-CQW-viEAXl1YbFymba7faPHp5M5vS6lT5YCEnRBKV5QuHeaqI3oo84vFZgKBIAC0g3yYW8FSqtXqjQgLUEv3+K3WmxBIB2ewOvieSBxbxK+MJiFJHwp4ypU1p9PI8XEQA
 \begin{tikzcd}
-                                                                                                                     &  &                                                                                             &  & C \arrow[d, "p_1'"]  \\
-E\times_BC \arrow[rr, "h"] \arrow[rrrrd, "\mathrm{proj}_{2,C}"', bend right] \arrow[rrrru, "\mathrm{proj}_{1,C}", bend left] &  & C\times_BC \arrow[rru, "p_1"] \arrow[rrd, "p_2"'] \arrow[rr, "i"] &  & C\times C             \\
-                                                                                                                     &  &                                                                                             &  & C \arrow[u, "p_2'"']
+                                                                                                                     &  &                                                                                             &  & C  \\
+E\times_BC \arrow[rr, "h"] \arrow[rrrrd, "\mathrm{proj}_{2,C}"', bend right] \arrow[rrrru, "\mathrm{proj}_{1,C}", bend left] &  & C\times_BC \arrow[rru, "p_1"] \arrow[rrd, "p_2"'] \arrow[rr, "i"] &  & C\times C \arrow[d, "p_2'"'] \arrow[u, "p_1'"]           \\
+                                                                                                                     &  &                                                                                             &  & C 
 \end{tikzcd}
 \]
 we conclude that $ih = \langle \mathrm{proj}_{2,C},\xi \rangle$, so $\langle \mathrm{proj}_{2,C},\xi \rangle$ is a mono.
