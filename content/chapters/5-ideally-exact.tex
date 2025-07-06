@@ -1,4 +1,4 @@
-\chapter{The notion of ideally exact category}
+\chapter{Ideally exact categories}
 
 \fontsize{12}{14.5}\selectfont
 
@@ -105,7 +105,7 @@ A \arrow[rr, "f", pos=0.25, crossing over] \arrow[ru, "e", two heads] \arrow[rd,
 
     We are left to show that the morphism $!:0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact by assumption, the morphism $!$ admits a (regular epi, mono) factorization $! = me$.
     
-    Now we aim to prove that if $m$ is a mono, then $U(m)$ acts as a mono in the moprhisms in $\mathcal{X}$ between object coming from $\mathcal{A}$, ie if $f,g : U(A) \to U(B)$ for some $A$, $B$ in $\mathcal{A}$, then $mf=mg \implies f=g$ \footnote{This will be crucial to utilize the fully functor property of the comparin functor $K$.}. First, we prove that if $m$ is a mono, then $U^T(m)$ is a mono. Let $m$ be a mono and $A$ its domain. Then $(A, 1_A, 1_A)$ is the kernel pair of $m$, in fact, given $f$ and $g$ morphisms such that $mf=mg$, we obtain the universal property by the mono.
+    Now we aim to prove that if $m$ is a mono, then $U(m)$ acts as a mono in the moprhisms in $\mathcal{X}$ between object coming from $\mathcal{A}$, ie if $f,g : U(A) \to U(B)$ for some $A$, $B$ in $\mathcal{A}$, then $mf=mg \implies f=g$ \footnote{This will be crucial to utilize the fully functor property of the comparison functor $K$.}. First, we prove that if $m$ is a mono, then $U^T(m)$ is a mono. Let $m$ be a mono and $A$ its domain. Then $(A, 1_A, 1_A)$ is the kernel pair of $m$, in fact, given $f$ and $g$ morphisms such that $mf=mg$, we obtain the universal property by the mono.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMyli1Ok1bsuvftjwEiYqjQYs2iEAEUefEBkVCiZCeulbO+hYOUoADKQeSNM7QCEekmFADm8ESgAGYAThAAtkhiIDgQSE5SmuzEAPpyBmGR0TRxSGRJ7iBpXDSM9ABGMIwACgJKwiChWH4AFjg2IFlRiIl5iOQ0rTD0UEhgzIyMufRYjOw4s-MWydpR8l3hPQX9g7FLCwcrReuZW0gALLnxvTRVYGOIALQiiW5Wfp3dl9f5dzAPaJvSzsYJfc6IK6xG4xRhYMBWKD0ODDMbcSjcIA
 \begin{tikzcd}
@@ -176,6 +176,30 @@ V \arrow[rr, "k", shift left]                 &  & W \arrow[ll, "T(h)", shift le
 \end{proof}
 \end{subbox}
 
+\begin{mainbox}{}
+\begin{prop}
+    An ideally exact category is cocomplete.
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        An ideally exact category is exact and protomodular, thus Mal'tsev. Then by \Cref{exact and Maltsev cat has reflexive coeq} it has reflexive coequalizers. Then \Cref{algebras category has colim if the base category has coprod} implies that the category has all the finite colimits.
+    \end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
+\begin{prop}
+    Let $\mathcal{A}$ be an ideally exact category.
+    There exist $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$ and the corresponding monad is essentially nullary.
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        We can consider $(!)^*$ to be such functor, as shown in the proof of \Cref{Ideally exact categories} $(1\implies3)$. Then by \Cref{p^* is essentially nullary} we have that the monad associated $(!)^*(!)_!$ is essentially nullary.
+    \end{proof}
+\end{subbox}
+
 \section{Main theorem}
 
-TO DO
