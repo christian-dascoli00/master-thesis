@@ -486,13 +486,15 @@ The category $(\mathcal{A} \downarrow E)$ has pullbacks, by \Cref{U creates con 
 
 \section{Nullary and essentially nullary monads}
 
+In this section we look for conditions such that the monad associated to a morphism $p:E\to B$ is essentially nullary. This will be useful in the main theorem of the ideally exact categories. This section is based on the work of \cite{Janelidze2024}.
+
 \begin{mainbox}{}
 \begin{defi}
 A monad $(T,\eta,\mu)$ on a category $\mathcal{X}$ with finite coproducts is said to be \textbf{nullary} if, for each object $X$ in $\mathcal{X}$, the morphism $[T(!_X),\eta_X]$ is an iso, where $!_X$ is the unique morphism from the initial object of $\mathcal{X}$ to $X$. A monad on a category $\mathcal{X}$ with finite coproducts is said to be \textbf{essentially nullary} if, for each object $X$ in $\mathcal{X}$, the morphism $[T(!_X),\eta_X]$ is a strong epi.
 \end{defi}
 \end{mainbox}
 
-The following lemma, due to \cite{BorceuxBourn2004}, will be useful for our purposes. 
+The following lemma, from \cite{BorceuxBourn2004}, will be useful for our purposes. 
 \begin{mainbox}{}
 \begin{lemma}\label{protomod lemma}
     Let $\mathcal{X}$ be a protomodular category. Then for each commutative diagram of the form

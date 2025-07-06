@@ -1,0 +1,181 @@
+\chapter{The notion of ideally exact category}
+
+\fontsize{12}{14.5}\selectfont
+
+\section{Definition and characterization}
+
+We are now ready to prove the theorem, which will lead to the definition of the ideally exact categories. The following characterization and subsequent results are based on the work of Janelidze \cite{Janelidze2024}.
+
+\begin{mainbox}{}
+    \begin{theo}\label{Ideally exact categories}
+        Let $\mathcal{A}$ be a category. The following are equivalent:
+        \begin{enumerate}
+            \item $\mathcal{A}$ is exact and protomodular, has finite coproducts and the morphism $!:0 \to 1$ is a regular epimorphism.
+            \item $\mathcal{A}$ is exact, has finite coproducts and there exists $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$.
+            \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwDGjYAEEAviDGl0mXPkIoyAJiq1GLNpx78hDYAA0JUmdjwEiARnKr6zVog7deg4YYB6wAKoAxI6phQAObwRKAAZgBOEFxIZCA4EEhWanZsniDUcHxYYThIALQWxiCR0UnUCbGZ2bkFybYaDt6S0iVRMYhxlYhK1A32jgIEgRkgfDB0UEhgTAwMFXRYDGyQYKzFpR298YmIyVk5eYiFG+3lO0jbB7XHRRRiQA
+\begin{tikzcd}
+    \mathcal{A} \arrow[dd, "U", shift left] \arrow[r, "\cong"]      & \mathcal{X}^{UF} \arrow[ldd, shift left] \\
+                                                                    &                                          \\
+    \mathcal{X} \arrow[uu, "F", shift left] \arrow[ruu, shift left] &                                         
+    \end{tikzcd}
+            \]
+            \item There exist $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$ and $F$ left adjoint to $U$ such that the associated monad $T=UF$ preserves regular epimorphisms and kernel pairs.
+        \end{enumerate}
+    \end{theo}
+\end{mainbox}
+
+\begin{mainbox}{}
+    \begin{defi}
+        A category $\mathcal{A}$ is said to be \textbf{ideally exact} if it satisfies one of the equivalent conditions of \Cref{Ideally exact categories}.
+    \end{defi}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}[\textit{Proof of \Cref{Ideally exact categories}}]\label{The proof}
+        $(1\implies 3)$ Suppose $! : 0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact, the pullback functor $(!)^*: (\mathcal{A} \downarrow 1) \to (\mathcal{A} \downarrow 0)$ is monadic by (SECTION TO DO). Note that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$. Now consider $\mathcal{X} = (\mathcal{A} \downarrow 0)$, we want to prove that $\mathcal{X}$ is semiabelian. 
+        
+        $(\mathcal{A} \downarrow 0)$ is pointed, in fact if $(A,\alpha)$ is an object in $(\mathcal{A} \downarrow 0)$, we have the following initial and terminal objects, which coincide:
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGJAF9T1Nd9CKAIzkqtRizYBBLjxAZseAkRFCx9Zq0TtZvRQKIBmUdQ2TtM7nv7KUxtaYladV+XyWDkAFhPjNbDk4xGCgAc3giUAAzACcIAFskERAcCCQAJkd-bQAdHMY0AAs6XRBYhKQyFLTEZLNnAEIAfUs5csTEY2qkAFYs8xA8guLS9srqVIzXMcQ+7sQfPwGhJsC2uI6uyYX+5yGGIpKgziA
+        \begin{tikzcd}
+        0 \arrow[r, "!_A"] \arrow[rd] & A \arrow[d, "\alpha"] &  & A \arrow[r, "\alpha"] \arrow[d, "\alpha"] & 0 \arrow[ld, "1_0"] \\
+                                      & 0                     &  & 0                                         &                    
+        \end{tikzcd}
+        \]
+
+        $\mathcal{A}$ has finite coproducts, so $(\mathcal{A} \downarrow 0)$ has finite coproducts. In fact consider $(A,\alpha)$, $(B,\beta)$ in $(\mathcal{A} \downarrow 0)$ and $A+B$ in $\mathcal{A}$, with the canonical injections $\iota_1 : A \to A+B$ and $\iota_2 : B \to A+B$. Let $(C,\gamma)$ be an object in $(\mathcal{A}\downarrow 0)$ with $f:A \to C$ and $g:B \to C$ morphisms in $(\mathcal{A}\downarrow 0)$ . Providing to $A+B$ the morphism $[\alpha,\beta]$ we have that $(A+B, [\alpha,\beta])$ is the coproduct of $(A,\alpha)$ and $(B,\beta)$ in $(\mathcal{A} \downarrow 0)$, in fact $\gamma [f,g] = [\alpha,\beta]$, so $[f,g]$ is also a morphism in $(\mathcal{A}\downarrow 0)$.
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBBAagCEQBfUuky58hFGWLU6TVuwDCAoSAzY8BImQCM0hizaIQ5JcLVii5CrtkHOJlSPXjkAFis09cw337SYUAHN4IlAAMwAnCABbJEsQHAgkYkEwyJjELRoEpI8bdgAdfID6KKj6EBpGegAjGEYABUdzQ3CsAIALHHsI6KQAZizExDjPW0L8HHoAfS1utKQ3eKGRvMNxiEmp4gqQKtqGpo0Wts653sQBpaRMkFqwKCQAWj6V-XZQnb26xrMjkFaOl0UiAeulFtkMjQ7g8Lq8vCAAmd0pcIWQZG81vkmGh2uVKjVvodxP8TkDlKCFoMcuj4YVapMkbEqYg0aN2MhCtjcaQ6TBJpRGcNmTdoU8XABOXIYkDIUKkAIC-H7H6iP4A06+fhAA
+\begin{tikzcd}
+    A \arrow[rr, "\iota_1"] \arrow[rrdd, "f"', bend right] \arrow[rrd, "\alpha"'] &  & A+B \arrow[d] \arrow[d, "{[\alpha,\beta]}"] &  & B \arrow[ll, "\iota_2"'] \arrow[lldd, "g", bend left] \arrow[lld, "\beta"] \\
+                                                                                  &  & 0                                                                                 &  &                                                                            \\
+                                                                                  &  & C \arrow[u, "\gamma"']  \arrow[from=uu, "{[f,g]}"', bend right=49, crossing over, pos=0.54]                                                          &  &                                                                           
+    \end{tikzcd}
+    \]
+
+    Now we want to prove that $(\mathcal{A} \downarrow 0)$ is exact, from the exactness of $\mathcal{A}$.
+    First we prove it is finitely complete. It suffices to show that it has terminal a object and pullbacks. The terminal object is the one just shown above. It also has pullbacks, by \Cref{U creates con lim}, since pullbacks are connected limits and $\mathcal{A}$ has them.
+
+    Consider now an equivalence relation $(R,r_1,r_2)$ in $(\mathcal{A} \downarrow 0)$, endowed with the morphism $\rho$ and $\alpha$ as shown in the diagram below. We want to prove that such equivalence relation is the kernel pair of some arrow. Since $\mathcal{A}$ is exact, it is a kernel pair in $\mathcal{A}$. By \Cref{equiv rel is kernel pair of the coeq} we can suppose that it is the kernel pair of its coequalizer.
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACUQBfU9TXfIRQBGclVqMWbAILdeIDNjwEiAJjHV6zVohAAhOXyWCio4eK1TdxbuJhQA5vCKgAZgCcIAWyRkQOCCRREDgACyxXHCDNSR0QdwB9VRBqBjoAIxgGAAV+ZSF4rAdQqJ43Tx9EPwDokPDIpABaYMs4xOFDEA9vWprEdQltNgBHFJBQmDooNhwAdwgJqYQyrorfaj6AZhih3QAdPfdQwNSMrNzjFV13IpLO7srgrZ2rEAPGNFC6e7X+jcDENsQAwsGA4lA6GF7GNWmwDjAAB5YOA4OAAQgABAdMjhvlwKFwgA
+\begin{tikzcd}
+    R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left] \arrow[rd, "\rho"'] & A \arrow[r, "q", two heads] \arrow[d, "\alpha"] & B \arrow[ld, "\exists! \beta", dashed] \\
+                                                                                      & 0                                               &                                       
+    \end{tikzcd}
+    \]
+    Since $r_1$ and $r_2$ are morphism in $(\mathcal{A} \downarrow 0)$, we have that $\alpha r_1 = \rho = \alpha r_2$. Thus, by the universal property of the coequalizer, there exists a unique morphism $\beta: B \to 0$ such that $\beta q = \alpha$. Providing to $B$ the morphism $\beta$, we have that $(B,\beta)$ is the coequalizer of $(R,r_1,r_2)$ in $(\mathcal{A} \downarrow 0)$.
+
+    We proceed by proving that $(\mathcal{A} \downarrow 0)$ is regular. Both the conditions of the definition of regular category are easely extendable from $\mathcal{A}$ to $(\mathcal{A} \downarrow 0)$. In fact since in $\mathcal{A}$ each morphism admits a (regular epi, mono) factorization, then the same holds in $(\mathcal{A} \downarrow 0)$. Let $f=me$ be such a fatorization through $Q$, with $f$ morphism in $(\mathcal{A} \downarrow 0)$. Endow $Q$ with the morphism $t$ induced by the unviersal property of the coequalizer. Now we want to prove that $e$ and $m$ are morphism in $(\mathcal{A} \downarrow 0)$. Then they will be respectively regular epi and mono in $(\mathcal{A} \downarrow 0)$. Notice first that $e$ is obviously a morphism in $(\mathcal{A} \downarrow 0)$, by the condition of $t$. Moreover, we have that $te=\alpha=\beta f= \beta me$ and since $e$ is a regular epi, hence by \Cref{reg epi is an epi} an epi, it follows that $m$ is a morphism in $(\mathcal{A} \downarrow 0)$.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAhHnxAZseAkXKliEhizaIQARXn9lQtaRFapukMR4SYUAObwioAGYAnCAFskZEDgQSOqSOuxuRiCePn40gUhiIAAWMPRQ7DgA7hApaQg02tJ6bLzuXr6IifGIITj0WIwZ9Y0FVuy+pVHlsQFBiADMrWF6ADojTGhJ9JHRFbV9g6FFIGMARjB1M92VcQs0jFhg1lD0cCnpQ8tjMAAeWHA4cAAEAIRPOHbcQA
+\begin{tikzcd}
+    & Q \arrow[rd, "m", tail] \arrow[dd, "\exists ! t", pos=0.75, dashed] &                       \\
+A \arrow[rr, "f", pos=0.25, crossing over] \arrow[ru, "e", two heads] \arrow[rd, "\alpha"] &                                                           & B \arrow[ld, "\beta"] \\
+    & 0                                                         &                      
+\end{tikzcd}
+    \]
+
+    In order to prove that regular epis are pullback stable in $(\mathcal{A} \downarrow 0)$ we can use the fact that they are in $\mathcal{A}$. In fact, we just endow the regular epi with the morphism induced by universal property of the coequalizer.
+
+    We must now establish that the $(\mathcal{A} \downarrow 0)$ is protomodular. Since the construction of the change-of-base functor involves pullbacks, which are connected limits, then by \Cref{connected limits computed on the base} the construction is the same in $(\mathcal{A} \downarrow 0)$ and in $\mathcal{A}$. Thus $(\mathcal{A} \downarrow 0)$ inherits protomodularity from $\mathcal{A}$, noting that the definition of iso in $\mathcal{A}$ and $(\mathcal{A} \downarrow 0)$ is essentially the same, excpect the morphism condition. Hence, since $\mathcal{X} = (\mathcal{A} \downarrow 0)$ is exact, protomodular, pointed and has binary coproducts, we can conclude that it is semiabelian.
+
+    It remains to prove that the monad $(!)^*(!)_!$ preserves regular epimorphisms and kernel pairs. Consider a regular epi $q:A \to B$ in $(\mathcal{A} \downarrow 0)$, it is the coequalizer of some parallel arrows. Since the coequalizer is a colimit, it is preserved by the left adjoint functor $(!)_!$. So it suffices to prove that, with $\mathcal{A}$ regular, $(!)^*$ preserves regular epis. Consider the following diagram:
+    \[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAhHnxAZseAkXKkREhizaIQ5ef2VCiZYlqm6QxADo28AW3gB9cl15HBq0aXM1t0nq29lhOcK5y3BIwUADm8ESgAGYAThAOSGQgOBBI6pI67ACOhiCp6Zk0OUgiHmVpGYj51Yi1CuWNAMxVuYjEdR1IACw9eQMNSN3ZvSMFgSAAFACEAJQAegBUC0UrPJTcQA
+    \begin{tikzcd}
+    0\times_1A \arrow[d] \arrow[rr, "(!)^*(q)"] &   & 0\times_1B \arrow[d] \\
+    A \arrow[rr, "q"] \arrow[rd]                &   & B \arrow[ld]         \\
+                                                & 1 &                     
+    \end{tikzcd}
+    \]
+    By \Cref{p^*(f) is a pullback} the square is a pullback. Since $\mathcal{A}$ is regular, and hence so is $(\mathcal{A} \downarrow 0)$, it follows that $(!)^*(q)$ is a regular epi due to the stability of regular epis under pullbacks.
+
+    Finally, we want to establish that the monad $(!)^*(!)_!$ preserves kernel pairs. This is obvius: $(!)_!$ preserves connected limits, such as kernel pairs, by \Cref{p_! preserves connected limits}, while $(!)^*$ preserves kernel pairs since it is a right adjoint. Thus $(!)^*(!)_!$ preserves kernel pairs.
+
+    $(3 \implies 2)$ Suppose there exists $\mathcal{X}$ semiabelian category and a monadic functor $U: \mathcal{A} \to \mathcal{X}$. Assume that the associated monad $T$ preserves regular epimorphisms and kernel pairs.
+    
+    First we need to verify that $\mathcal{A}$ is exact. Since $U$ is monadic, we have that $\mathcal{A} \cong \mathcal{X}^T$. So it suffies to show that $\mathcal{X}^T$ is exact. We know that $\mathcal{X}$ is semiabelian, so it is exact. Then, by \Cref{algebras category is exact if the base category is exact}, $\mathcal{X}^T$ is exact.
+
+    In order to prove that $\mathcal{A}$ has finite coproducts, it is first necessary to establish that $\mathcal{X}^T$ is protomodular. This follows directly from \Cref{algebras category is proto if the base category is proto} as $\mathcal{X}$ is protomodular. Since any protomodular cateogry is Mal'tsev, then $\mathcal{X}^T$ is Mal'tsev. We already prove that $\mathcal{X}^T$ is also exact, then by \Cref{exact and Maltsev cat has reflexive coeq}, $\mathcal{X}^T$ has reflexive coequalizers. Since $\mathcal{X}$ has finite coproducts and $\mathcal{X}^T$ has reflexive coequalizers, then by \Cref{algebras category has colim if the base category has coprod}, $\mathcal{X}^T$ has finite coproducts. Finally, since $\mathcal{A} \cong \mathcal{X}^T$, it follows that $\mathcal{A}$  has finite coproducts.
+
+    $(2 \implies 1)$ Suppose that $\mathcal{A}$ is exact, has finite coproducts and there exists a semiabelian category $\mathcal{X}$ and a monadic functor $U: \mathcal{A} \to \mathcal{X}$.
+
+    Since $\mathcal{X}$ is protomodular, so is $\mathcal{X}^T$ by \Cref{algebras category is proto if the base category is proto}. Again, by mondacity, $\mathcal{A}$ inherits this properties.
+
+    We are left to show that the morphism $!:0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact by assumption, the morphism $!$ admits a (regular epi, mono) factorization $! = me$.
+    
+    Now we aim to prove that if $m$ is a mono, then $U(m)$ acts as a mono in the moprhisms in $\mathcal{X}$ between object coming from $\mathcal{A}$, ie if $f,g : U(A) \to U(B)$ for some $A$, $B$ in $\mathcal{A}$, then $mf=mg \implies f=g$ \footnote{This will be crucial to utilize the fully functor property of the comparin functor $K$.}. First, we prove that if $m$ is a mono, then $U^T(m)$ is a mono. Let $m$ be a mono and $A$ its domain. Then $(A, 1_A, 1_A)$ is the kernel pair of $m$, in fact, given $f$ and $g$ morphisms such that $mf=mg$, we obtain the universal property by the mono.
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMyli1Ok1bsuvftjwEiYqjQYs2iEAEUefEBkVCiZCeulbO+hYOUoADKQeSNM7QCEekmFADm8ESgAGYAThAAtkhiIDgQSE5SmuzEAPpyBmGR0TRxSGRJ7iBpXDSM9ABGMIwACgJKwiChWH4AFjg2IFlRiIl5iOQ0rTD0UEhgzIyMufRYjOw4s-MWydpR8l3hPQX9g7FLCwcrReuZW0gALLnxvTRVYGOIALQiiW5Wfp3dl9f5dzAPaJvSzsYJfc6IK6xG4xRhYMBWKD0ODDMbcSjcIA
+\begin{tikzcd}
+B \arrow[rdd, "g", bend right] \arrow[rrrd, "f", bend left] \arrow[rd, dashed] &                                       &  &                        \\
+                                                                               & A \arrow[d, "1_A"] \arrow[rr, "1_A"'] &  & A \arrow[d, "m", tail] \\
+                                                                               & A \arrow[rr, "m", tail]               &  & Q                     
+\end{tikzcd}
+    \]
+    Since $U^T$ is a right adjoint, it preserves limit, such as kernel pairs. Thus also the follwing diagram is a kernel pair.
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBVAPQBUAKAIIBKEAF9S6TLnyEUAJlLFqdJq3bd+wsRJAZseAkQVUaDFm0Qhy2yfplEyS06oudegkaOUwoAc3hEoABmAE4QALZIAMw0OBBIZCrm7OQA+sAaHqI2IKER0bHxiOTOyZZpGe7C2TSM9ABGMIwAClIGsiCMMEE4OXmRiIlxSAogABYw9FBIYMyMjLH0WIzskGBspWqWHHzhnjr9SCUgw4ijOEsrlmsbSVucu56UokA
+\begin{tikzcd}
+U^T(A) \arrow[d, "1_{U^T(A)}"] \arrow[rr, "1_{U^T(A)}"] &  & U^T(A) \arrow[d, "U(m)"] \\
+U^T(A) \arrow[rr, "U(m)"]                               &  & Q                       
+\end{tikzcd}
+    \]
+    This imlplies that $U^T(m)$ is a mono by the universal property of the kernel pair. 
+    
+    It remains to prove that the image of a mono through the comparison functor $K : \mathcal{A} \to \mathcal{X}^T$ acts as a mono in the way described above. Then, since $U=U^TK$, we have that $U$ does the same. By monadicity, the functor $K$ is fully faithful, this is sufficient to prove that $K$ preserves monos. In fact, let $m$ be a mono in $\mathcal{A}$ and let $f$, $g$ be morphisms in $\mathcal{X}^T$ between object coming from $\mathcal{A}$ such that $K(m)f = K(m)g$. Let $f'$ and $g'$ be the morphisms in $\mathcal{A}$ such that $K(f') = f$ and $K(g') = g$ by the fully property of $K$. Then we have that
+    \begin{align*}
+    &K(m)f = K(m)g\\[1.5ex]
+    &\implies K(m) K(f') = K(m) K(g')\\[1.5ex]
+    &\implies K(mf') = K(mg')\\[1.5ex]
+    &\implies mf' = mg'\\[1.5ex]
+    &\implies f' = g'\\[1.5ex]
+    &\implies K(f') = K(f')\\[1.5ex]
+    &\implies f = g
+    \end{align*}
+    Thus $K(m)$ acts as a mono in the moprhisms in $\mathcal{X}^T$ between object coming from $\mathcal{A}$. By the above discussion, $U(m)$ acts as a mono in the moprhisms in $\mathcal{X}$ between object coming from $\mathcal{A}$.
+
+    Picking up where we left off, consider $m$ the mono arising from the (regular epi, mono) factorization of $!:0 \to 1$ in $\mathcal{A}$. Since $U$ preserves monos, then $U(m)$ is a mono. In particular, since the final obejct $1$ is a limit, it is preserved by $U$, then $U(m)$ is a mono with codomain $1$ in $\mathcal{X}$. Moreover, $\mathcal{X}$ is semiabelian, hence pointed, so $0=1$ in $\mathcal{X}$ and $U(m)$ is a mono with codomain $0$ in $\mathcal{X}$. This implies that $U(m)$ is an iso, in fact, suppose that $U(m)$ is a mono with codomaind $0$ and let $U(C)$ be its domain. Denote by $!_{U(C)}$ the unique morphism from $U(C)$ to $0$, then $!_{U(C)}$ is the inverse of $U(m)$. In particular $!_{U(C)}U(m)=!_0=1_0$. Composing with $U(m)$ we obtain $U(m)!_{U(C)}U(m)=U(m)$, thus, obsering that $U(m)!_{U(C)}$ and $1_{U(C)}$ are a morphisms between objects arising from $\mathcal{A}$, we also have that $U(m)!_{U(C)}=1_{U(C)}$. Thus $U(m)$ is an iso.
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkRyQBfU9TXfIRTkK1Ok1bsAqgAoAwgEpuvEBmx4CRAEyiaDFm0QdlfdYKIBmXeIPT5SrmJhQA5vCKgAZgCcIAWyQyEBwIJBEbSSNZPwcVH38kHWDQxCsIwxAAQgB9YFlFLm5KLiA
+\begin{tikzcd}
+U(C) \arrow[r, "U(m)"] & 0 & 0 \arrow[r, "!_{U(C)}"] & U(C)
+\end{tikzcd}
+    \]
+    
+    Now we want to prove that $U$ reflects iso. As done before we prove that for the comparison functor $K$ and for $U^T$, then it follows for $U$. $K$ reflect iso beacuse, by monadicity, it is fully faithful. In fact, if $K(f):K(X) \to K(Y)$ is an iso and $g: K(Y) \to K(X)$ is its inverse in $\mathcal{X}^T$, then $K(f)g=1_{K(Y)}$ and $gK(f)=1_{K(X)}$. Let $g'$ be the morphism in $\mathcal{A}$ such that $K(g') = g$ by the fully property of $K$. So we have that
+    \begin{align*}
+        &1_{K(Y)} = K(f)g\\[1.5ex]
+        &\implies 1_{K(Y)} = K(f)K(g')\\[1.5ex]
+        &\implies K(1_Y) = K(f)K(g')\\[1.5ex]
+        &\implies K(1_Y) = K(fg')\\[1.5ex]
+        &\implies 1_Y = fg'
+    \end{align*}
+    and similarly $1_X = g'f$. Thus $f$ is an iso in $\mathcal{A}$.
+
+    Also $U^T$ reflects iso. In fact, let $U^T(k):U^T(V) \to U^T(W)$ be an iso in $\mathcal{X}^T$ and $h:U^T(W) \to U^T(V)$ its inverse. We aim to prove that $h$ is also a morphism in $\mathcal{X}^T$, so that it is an inverse for $k$ in $\mathcal{X}^T$. Let $\xi_V$ and $\xi_W$ be respectively the algebra structures of $U^T(V)$ and $U^T(W)$. Then, since $k$ is a morphism in $\mathcal{X}^T$, we have that $\xi_W T(k) = k \xi_V$, denoting $U^T(k)$ just as $k$. Composing with $h$ and $T(h)$ we obtain
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQA1EAX1PU1z5CKAEwVqdJq3YB1HnxAZseAkTLEJDFm0QgAKgAoOASnn9lQomI00t03YZmnuEmFADm8IqABmAJwgAWyQxEBwIJGJeXwDgxABmGnCkcmiQfyDIpIjEclspHRAAaxAaOAALLB8cJABaVIUMuNDkhPztdkMi0zLK6rqGmMy2sJzQiqqaxHr2+30DcudG2JTsrJAJ-um8yQ6HBedKbiA
+\begin{tikzcd}
+T(V) \arrow[d] \arrow[rr, "T(k)", shift left] &  & T(W) \arrow[d] \arrow[ll, "T(h)", shift left] \\
+V \arrow[rr, "k", shift left]                 &  & W \arrow[ll, "T(h)", shift left]             
+\end{tikzcd}
+    \]
+    \begin{align*}
+        &\xi_W T(k) = k \xi_V\\[1.5ex]
+        &\implies h \xi_W T(k) T(h)) = h k \xi_V T(h)\\[1.5ex]
+        &\implies h \xi_W = \xi_V T(h)\\[1.5ex]
+    \end{align*}
+    Thus $h$ is a morphism in $\mathcal{X}^T$, and $k$ is an iso in $\mathcal{X}^T$. This implies, as discussed above, that also $U$ reflects iso.
+    
+    Finally we want to prove that $!:0 \to 1$ is a regular epi in $\mathcal{A}$. We already know that $U(m)$ is an iso. Since $U$ reflects iso, then $m$ is an iso. Thus $! = me$ is a regular epi.
+    
+    This holds because an iso, as $m$, is also a strong epimorphism, and $e$ is a regular epimorphism, hence also a strong epimorphism; therefore, the composition $me$ is a strong epimorphism. Since the $\mathcal{A}$ is regular, then by a standard result $me$ is a regular epi, as claimed.
+    
+\end{proof}
+\end{subbox}
+
+\section{Main theorem}
+
+TO DO
