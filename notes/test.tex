@@ -5,7 +5,12 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{amsmath, amssymb, amsthm}
-\usepackage{geometry}
+\usepackage[
+  top=2.5cm,    % margine superiore stretto
+  bottom=2.5cm, % margine inferiore stretto
+  left=3cm,     % margine sinistro (modifica a piacere)
+  right=3cm     % margine destro (modifica a piacere)
+]{geometry}
 \usepackage{lmodern}
 \usepackage[backend=biber, style=alphabetic]{biblatex}
 \usepackage{tikz-cd}
@@ -82,7 +87,7 @@ E\times_BC \arrow[rd, "\mathrm{proj}_{1,C}"'] \arrow[rr, "\xi"] &   & C \arrow[l
 
 
 \begin{proposition}
-    Let $\mathcal{A}$ be a finitely complete category and let $p: E \to B$ be a morphism in $\mathcal{A}$. For any object $(C,\gamma;\xi)$ in $(\mathcal{A} \downarrow E)^T$, with $T$ the monad associated to $p$. The pair $(\mathrm{proj}_{2,C},\xi)$ is an equivalence relation in $\mathcal{A}$
+    Let $\mathcal{A}$ be a finitely complete category and let $p: E \to B$ be a morphism in $\mathcal{A}$. For any object $(C,\gamma;\xi)$ in $(\mathcal{A} \downarrow E)^T$, with $T$ the monad associated to $p$, the pair $(\mathrm{proj}_{2,C},\xi)$ is an equivalence relation in $\mathcal{A}$
 \end{proposition}
 
 \begin{proof}
@@ -147,7 +152,7 @@ We proved that $(\mathrm{proj}_{2,C},\xi)$ is an internal relation, now we need 
 \begin{itemize}
 \item Claim: $(\mathrm{proj}_{2,C},\xi)$ is reflexive. 
 
-Called $\eta$ the unit of the monad, we have that $(\mathrm{proj}_{2,C},\xi) \eta_{(C,\gamma)} = \langle 1_C, 1_C \rangle$. In fact $\xi \eta_{(C,\gamma)} = 1_C$ and by the definition of the unit of the monad, we have that $\mathrm{proj}_{2,C} \eta_{(C,\gamma)} = \mathrm{proj}_{2,C} \langle \gamma, 1_C \rangle=1_C$.
+Called $\eta$ the unit of the monad, we have that $\langle \mathrm{proj}_{2,C},\xi \rangle \eta_{(C,\gamma)} = \langle 1_C, 1_C \rangle$. In fact $\xi \eta_{(C,\gamma)} = 1_C$ and by the definition of the unit of the monad, we have that $\mathrm{proj}_{2,C} \eta_{(C,\gamma)} = \mathrm{proj}_{2,C} \langle \gamma, 1_C \rangle=1_C$.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBhEAX1PU1z5CKMgCZqdJq3YBRADpy8AW3gB9AEJde-bHgJFypcTQYs2iTjz4gMuoUVFGJp6Ra0SYUAObwioAGYAThBKSIYgOBBIZJJm7AowOPSqwAAUHKQKXvRKSvQAlNxWAcGhiOGRSI6xriDEqlw0jPQARjCMAAoCesIggVheABY4xSBBIWE0lYgAzCZS5nUNo+NlMdPVLosKeTiDgUrAaMEAVtyqoiul0VNRs-NxFgoAHlggTa3tXXb6Fv1DI24lG4QA
 \begin{tikzcd}
@@ -159,33 +164,37 @@ C & E\times_BC \arrow[l, "\mathrm{proj}_{2,C}"] \arrow[r, "\xi"']               
 \item Claim: $(\mathrm{proj}_{2,C},\xi)$ is symmetric. 
 
 Consider the following diagram, where $\mathrm{proj}_{1,E\times_BC}$ and $\mathrm{proj}_{2,E\times_BC}$ are the projections of $E\times_B(E\times_BC)$. Let $l$ be the morphism induced by the universal property of the pullback from $1_{E\times_BC}$ and $\gamma\mathrm{proj}_{2,C}$, in particular it is the unique such that
-\[\gamma\mathrm{proj}_{2,C}=l \mathrm{proj}_{1,E\times_BC} = l  \mathrm{proj}_{1,C}(1_E \times \mathrm{proj}_{2,C})\]
+\[\gamma\mathrm{proj}_{2,C}= \mathrm{proj}_{1,E\times_BC} l = \mathrm{proj}_{1,C}(1_E \times \mathrm{proj}_{2,C}) l\]
 and
-\[1_{E\times_BC}=l \mathrm{proj}_{2,E\times_BC}\]
+\[1_{E\times_BC}= \mathrm{proj}_{2,E\times_BC} l \]
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQDCIAL6l0mXPkIoAjKQVVajFmy48s-OMIAUWvoNEBKUxKkgM2PASIBmZavrNWiDt2N7Rl6bbkiJQcXdXdPbV1hMUl-WXtFUgBWULdNP2sZO3lkJxDqVw0PGKsbeJynFIKwtiEMsuyiMgAWVKKQGNUYKABzeCJQADMAJwheJGbqHAgkADZqtI80DJGxpCcQaaQkhfbuXjocAAth3mA0UYArcQEAJhXR8cQlTZnEW93w-cOTs4uIa53ADkQIea3eUzeOzUixA3AAHlgQNQ4EcsIMcEgALQKWIgVZPF5bRAbVHozGIHGfNgKARGHQmBFIvEEpBEt6ktEYtnUjy0+lRITfY6nc5XO7iZEgBh0ABGMAYAAUsoEPMMsD0jpiWY91pCJry4ZwDiK-lcbgopTL5UqVQlpTBuTrwdDifMYe00NwenReAcwU8Pq9tobhb8xQCbvdqNaFcqAvb1ZrMSiuRTcVZWYgyMGISB5WAoOsc4VwrTgAKTCJJc6njniS9S2wGFasGBwlA6KjugGkPW3gB2UPGn6i-6A6PSuVxu3yEBJrW9xBD3OTfMwQt94c+v10K3T20JucL7UUcRAA
 \begin{tikzcd}
+    \arrow[from=2-2, to=6-2, "\mathrm{proj}_{1,E\times_BC}", bend left=65, pos=0.6]
 E\times_BC \arrow[rrrd, "1_{E\times_BC}", bend left] \arrow[rd, "l", dashed] \arrow[dddd, "\mathrm{proj}_{2,C}"'] &                                                                                                                                                        &  &                                                                                      \\
                                                                                                               & E\times_B(E\times_BC)) \arrow[rr, "\mathrm{proj}_{2,E\times_BC}"] \arrow[dd, "1_E\times_B\xi", shift left] \arrow[dd, "1_E\times_B\mathrm{proj}_{2,C}"', shift right] &  & E\times_BC \arrow[dd, "\xi", shift left] \arrow[dd, "\mathrm{proj}_{2,C}"', shift right] \\
                                                                                                               &                                                                                                                                                        &  &                                                                                      \\
-                                                                                                              & E\times_BC \arrow[rr, "\mathrm{proj}_{2,C}"] \arrow[dd, "\mathrm{proj}_{1,C}"]                                                                                 &  & C \arrow[dd, "p\gamma"]                                                              \\
-C \arrow[rd, "\gamma"']                                                                                       &                                                                                                                                                        &  &                                                                                      \\
+                                                                                                              & E\times_BC \arrow[rr, "\mathrm{proj}_{2,C}", crossing over] \arrow[dd, "\mathrm{proj}_{1,C}"]                                                                                 &  & C \arrow[dd, "p\gamma"]                                                              \\
+C \arrow[rd, "\gamma"']      \arrow[ur, "\eta_{(C,\gamma)}"]                                                                                 &                                                                                                                                                        &  &                                                                                      \\
                                                                                                               & E \arrow[rr, "p"]                                                                                                                                      &  & B                                                                                   
 \end{tikzcd}
 \]
 Define $\sigma = (1_E\times_B\xi) l$. Observe that 
-\[\mathrm{proj}_{2,C} \sigma = \mathrm{proj}_{2,C} (1_E\times_B\xi) l = \xi 1_{E\times_BC} = \xi\]
-It remains to show that $\xi \sigma = \mathrm{proj}_{2,C} $. This holds beacuse of the followinf compositions and the fact that $(\mathrm{proj}_{1,C},\mathrm{proj}_{2,C})$ is a jointly monic pair.
+\[\mathrm{proj}_{2,C} \sigma = \mathrm{proj}_{2,C} (1_E\times_B\xi) l = \xi \mathrm{proj}_{2,E\times_BC} l = \xi 1_{E\times_BC} = \xi\]
+It remains to show that $\xi \sigma = \mathrm{proj}_{2,C} $. First, by the following compositions and the fact that $(\mathrm{proj}_{1,C},\mathrm{proj}_{2,C})$ is a jointly monic pair
 \begin{itemize}
 \item $\mathrm{proj}_{1,C} (1_E\times_B\mathrm{proj}_{2,C})l = \mathrm{proj}_{1,E\times_BC} l = \gamma \mathrm{proj}_{2,C}$
 \item$\mathrm{proj}_{1,C} \eta_{(C,\gamma)}\mathrm{proj}_{2,C} = \mathrm{proj}_{1,C} \langle\gamma, 1_C \rangle \mathrm{proj}_{2,C}= \gamma \mathrm{proj}_{2,C}$
 \item$\mathrm{proj}_{2,C} (1_E\times_B\mathrm{proj}_{2,C})l = \mathrm{proj}_{2,C}  \mathrm{proj}_{2,E\times_BC} l = \mathrm{proj}_{2,C} 1_{E\times_BC} = \mathrm{proj}_{2,C}$
-\item$\mathrm{proj}_{2,C} \eta_{(C,\gamma)}\mathrm{proj}_{2,C} = \mathrm{proj}_{1,C} \langle\gamma, 1_C \rangle \mathrm{proj}_{2,C} = 1_C \mathrm{proj}_{2,C} = \mathrm{proj}_{2,C}$
+\item$\mathrm{proj}_{2,C} \eta_{(C,\gamma)}\mathrm{proj}_{2,C} = \mathrm{proj}_{2,C} \langle\gamma, 1_C \rangle \mathrm{proj}_{2,C} = 1_C \mathrm{proj}_{2,C} = \mathrm{proj}_{2,C}$
 \end{itemize}
+we have that $\eta_{(C,\gamma)}\mathrm{proj}_{2,C}=(1_E\times_B\mathrm{proj}_{2,C})l$.
+Hence (Does $\xi$ coeq $(1_E\times_B\mathrm{proj}_{2,C}, 1_E\times_B\xi)$ ??)
+\[\xi \sigma = \xi (1_E\times_B\xi) l = \xi (1_E\times_B\mathrm{proj}_{2,C}) l = \xi \eta_{(C,\gamma)}\mathrm{proj}_{2,C} = 1_C \mathrm{proj}_{2,C}  = \mathrm{proj}_{2,C}\]
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAYRABfUuky58hFGWLU6TVu268sAuCPFSZ2PASIAWUgEYVDFm0Qh90kBiPyi5S9bV2HklTCgAc3giUAAzACcIPiQPEBwIJAsaG3V7HmxAvnoAXgAKCx5+IWEeAA8sAEpGSSdI6NiaBKQyVVt2HmycAAsIvmA0KIArCUFiWvComMQ45sQAZhTvDq4KkBpGegAjGEYABVljBRAIrEDunAmQeunk+MSFpfb0ri7e-sGIEbGrm6Smh6tVI+cpYdYgTY7faHNz2U7nS4SSgSIA
 \begin{tikzcd}
-  &  & E\times_BC \arrow[dd, "\sigma=(1\times_B\xi)l"] \arrow[rrd, "\mathrm{proj}_{2,C}"] \arrow[lld, "\xi"'] &  &   \\
+  &  & E\times_BC \arrow[dd, "\sigma=(1_E\times_B\xi)l"] \arrow[rrd, "\mathrm{proj}_{2,C}"] \arrow[lld, "\xi"'] &  &   \\
 C &  &                                                                                                    &  & C \\
   &  & E\times_BC \arrow[llu, "\mathrm{proj}_{2,C}"] \arrow[rru, "\xi"']                                      &  &  
 \end{tikzcd}
@@ -201,7 +210,7 @@ E\times_BC \arrow[rr, "\mathrm{proj}_{2,C}"]              &  & C
 \end{itemize}
 \end{proof}
 
-In an exact category each equivalence relation is a kernel pair and by (CITE) has a coequalizer. Thus in an exact category $(\mathrm{proj}_{2,C},\xi)$ has a coequalizer. Let $q:C\to Q$ be such coequalizer. Observe that considering $\mathrm{proj}_{2,C}$ and $\xi$ as morphism in $(\mathcal{A} \downarrow B)$, then $q$ is a morphism in $(\mathcal{A} \downarrow B)$ as well by the universal property. So, called $\delta$ the morphism induced by the universal property of the coequalizer from $\mathrm{proj}_{2,C}$ and $\xi$, we have that $q$ with codomain $(Q,\delta)$ is also the coequalizer of the pair in $(\mathcal{A} \downarrow B)$.
+In an exact category each equivalence relation is a kernel pair and by (CITE) has a coequalizer. Thus in an exact category $(\mathrm{proj}_{2,C},\xi)$ has a coequalizer. Let $q:C\to Q$ be such coequalizer. Observe that, considering $\mathrm{proj}_{2,C}$ and $\xi$ as morphism in $(\mathcal{A} \downarrow B)$, then $q$ is a morphism in $(\mathcal{A} \downarrow B)$ as well by the universal property. So, called $\delta$ the morphism induced by the universal property of the coequalizer from $\mathrm{proj}_{2,C}$ and $\xi$, we have that $q$ with codomain $(Q,\delta)$ is also the coequalizer of the pair in $(\mathcal{A} \downarrow B)$.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQDCIAL6l0mXPkIoATKQCMVWoxZshEqSAzY8BIksrV6zVohBjJ0g3KIBmcmvOarARQlqYUAObwRKAAZgBOELxIZCA4EEjKZhqWety8dDgAFqG8wGjhAFbiAsog1Ax0AEYwDAAKMobyIKFYfhk4OiHhkYhKMXGICeoWbGjcfnS8aR0gYRFR1LFIvXAZWMHtiAC0g27J3AAeWNOz3dGLPdQraxs7SWyp6Vk5eRCFAgqlIOVVtfUOVs1Wu1bDMukhnH14mUsGBklA6CtfJ9dvdOLAGDg6McwRdIYgISirABHbziIA
 \begin{tikzcd}
@@ -231,7 +240,7 @@ E\times_BD \arrow[d, "\mathrm{proj}_{1,D}"] \arrow[rr, "\mathrm{proj}_{2,D}"] & 
 E \arrow[rr, "p"]                                 &  & B                   
 \end{tikzcd}
 \]
-Then, call $q':E\times_BD \to Q'$ the coequalizer of the equivalence relation $(\mathrm{proj}_{2,E\times_BD},p^*(\mathrm{proj}_{2,D}))$, as done above we make it a coequalizer in $(\mathcal{A} \downarrow B)$ via the universal property. We obtain $q':(E\times_BD,p\mathrm{proj}_{1,D}) \to (Q',\delta')$. Then compute $LK(D,\zeta)$. By (CITE) the top left square in the diagram below is a pullback, in particular we have that it commutes. Thus we can define as in the diagram below the morphism $\rho_{(D,\zeta)}$ by the universal property of the coequalizer $q'$.
+Then, call $q':E\times_BD \to Q'$ the coequalizer of the equivalence relation $(\mathrm{proj}_{2,E\times_BD},p^*(\mathrm{proj}_{2,D}))$, as done above we make it a coequalizer in $(\mathcal{A} \downarrow B)$ via the universal property. We obtain $q':(E\times_BD,p\mathrm{proj}_{1,D}) \to (Q',\delta')$. Then compute $LK(D,\zeta)$. By definition of the pullback functor, the top left square in the diagram below commutes. Thus we can define, as shown in the diagram, the morphism $\rho_{(D,\zeta)}$ by the universal property of the coequalizer $q'$.
 \begin{equation}\label{counit rho}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAERABfUuky58hFOQrU6TVu3FSZ2PASJkALCoYs2iTpOkgMO+USVGaJ9eeGXtcvYtLFjas5w8-EJi7tayugokPn6m7Ny8WAJwIgAUCcEpYgCUYTaeUQYxTv7sAIqSKjBQAObwRKAAZgBOEHxIZCA4EEhKqnHmPGhYggCMYS1tHTTdSKMlAyBDI+QTre2IfbOIAMwLLtZrU4jzXT27+wE8AF4wOPRHG0Vnc5fsy4KrWiCTGwCsM3OnWcVy4fHoOAAFs0+MA0K0AFYST4gGiMegAIxgjAAChE7OZGDBGjhHkgAS9EM84JCsCSkABaU4g9hoAB6ACpUh9yLlvr9yYCkNTafSTm9BmCIdDYfCIEiUWjMdi8bYvCBmlgapDSfz1sKhYgAGwSkAARzJxsNe36Bx4sEY91RICxYCgSB2xD1xxNlOZpUlzUhEEEwFSolINzu9GyEmd6KxuPx6s12tJaKwYACUHoNOqztd7t2XsoEiAA
 \begin{tikzcd}
@@ -243,9 +252,9 @@ E\times_BD \arrow[dd, "\mathrm{proj}_{1,D}"] \arrow[rr, "\mathrm{proj}_{2,D}", c
 E \arrow[rr, "p"]                                                                                                                    &  & B                                              &  &                                                                                            
 \end{tikzcd}
 \end{equation}
-Observe that $\delta'$ was also definied as the morphism induced by the universal property of the coequalizer, considering the object $E\times_BD$ as an object in $(\mathcal{A} \downarrow B)$ via $p\mathrm{proj}_{1,D}$, thus $\rho_{(D,\zeta)}$ is a morphism in $(\mathcal{A} \downarrow B)$, ie $\zeta \rho_{(D,\zeta)} = \delta$.
+Observe that $\delta'$ was also definied as the morphism induced by the universal property of the coequalizer, considering the object $E\times_BD$ as an object in $(\mathcal{A} \downarrow B)$ via $p\mathrm{proj}_{1,D}$. Thus $\rho_{(D,\zeta)}$ is a morphism in $(\mathcal{A} \downarrow B)$, ie $\zeta \rho_{(D,\zeta)} = \delta'$.
 
-For each object $(C,\gamma;\xi)$ in $(\mathcal{A}\downarrow E)^T$ the unit is a morphism of the kind $\alpha_{(C,\gamma;\xi)}:(C,\gamma;\xi) \to KL(C,\gamma;\xi)$. We compute $KL(C,\gamma;\xi)$. Let $q:C\to Q$ be the coeuqalizer of the equivalence relation $(\mathrm{proj}_{2,C},\xi)$ in $\mathcal{A}$. By the universal property of the coequalizer, we have that $q$ is a morphism in $(\mathcal{A} \downarrow B)$, via the projection $p\gamma$ from $C$ to $B$. Thus, we can consider the coequalizer of the equivalence relation $(\mathrm{proj}_{2,C},\xi)$ in $(\mathcal{A} \downarrow B)$, which we denote by $q:(C,p\gamma) \to (Q,\delta)$. By functoriality, we have that $p^*(q)p^*(\xi) = p^*(q)p^*(\mathrm{proj}_{2,E\times_BC})$. Moreover, it holds that $\xi$ is the coequalizer of $(p^*(\xi),p^*(\mathrm{proj}_{2,C}))$ (WHY?). Thus we can define $\alpha_{(C,\gamma;\xi)}$ as the morphism induced by the universal property of the coequalizer $q$ as done in the diagram below. One can check that $\alpha_{(C,\gamma;\xi)}$ is a morphism in $(\mathcal{A} \downarrow E)^T$.
+For each object $(C,\gamma;\xi)$ in $(\mathcal{A}\downarrow E)^T$ the unit is a morphism of the kind $\alpha_{(C,\gamma;\xi)}:(C,\gamma;\xi) \to KL(C,\gamma;\xi)$. We compute $KL(C,\gamma;\xi)$. Let $q:C\to Q$ be the coequalizer of the equivalence relation $(\mathrm{proj}_{2,C},\xi)$ in $\mathcal{A}$. By the universal property of the coequalizer, we have that $q$ is a morphism in $(\mathcal{A} \downarrow B)$ via $p\gamma$. Thus, we can consider the coequalizer of the equivalence relation $(\mathrm{proj}_{2,C},\xi)$ in $(\mathcal{A} \downarrow B)$, which we denote by $q:(C,p\gamma) \to (Q,\delta)$. By functoriality, we have that $p^*(q)p^*(\xi) = p^*(q)p^*(\mathrm{proj}_{2,E\times_BC})$. Moreover, it holds that $\xi$ is the coequalizer of $(p^*(\xi),p^*(\mathrm{proj}_{2,C}))$ (WHY?). Thus we can define $\alpha_{(C,\gamma;\xi)}$ as the morphism induced by the universal property of the coequalizer $q$, as done in the diagram below. One can check that $\alpha_{(C,\gamma;\xi)}$ is a morphism in $(\mathcal{A} \downarrow E)^T$.
 \begin{equation}\label{unit alpha}
   % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAUXHln5xhAYQCUIAL6l0mXPkIoATOSq1GLNuL6ChMpSpAZseAkTJa99Zq0QduJ6WYuqbGojqO1M6GbubKvup2KAAspEH6LmwAij5WaraayHGUwQau7hJSwqkR6X7RyDoxTvlsQmnWUVlkNXlJbuxKejBQAObwRKAAZgBOELxIAOzUOBBIAGztoVZpYxNIOiBzSADM1HAAFljDOEgAtACMywXcAB5Ya+OTiFs7iPsgRydniNeJK24vDoOEOo14wDQ4wAVooBMAdDJFCBqAw6AAjGAMAAKGX8blGWD6hzOZXWLze80QMwBt04wNB4MhMLhwGuSKeGw+sypS1pbDQ3D6dF4wM5L0+7xpITpwtFdHFex5SDi-LcAEdFYhVe8+TK2NxYAwcAqyc8kGRtlT-t9Thd-vq3GgAHoAKhE9ywCjNXMt7y2jpAQJBYIhUIgsPh12MklMHJ9Lz91oOxztfxuArdHvpIaZ4cjCNIMeKZkUClRGKxuIqmhAhOJpMs5KQ-3en1tvwddTcwcZYZZ8MRyIrmJxeOidaJJK1rap7dTvyuGZ7nAeWslVIArKisGAClA6Edeii1UHOIw0Ic6PCRDJSEKRcCANyeuTDkBo0fV5psevThNINuVoqsuZ4MqGzIRqyOjJMiAHpsBiBAYGLruuq3oUIoQA
 \begin{tikzcd}
@@ -267,7 +276,7 @@ Our goal is to show that $p^*$ is a monadic functor, ie that the comparison func
 
 \begin{proof}
     We aim to prove that for each object $(D,\zeta)$ in $(\mathcal{A} \downarrow B)$, the morphism $\rho_{(D,\zeta)}:LK(D,\zeta) \to (D,\zeta)$ is an isomorphism.
-    Consider the diagram \eqref{counit rho} of the definition of the counit $\rho_{(D,\zeta)}$. An exact category is also regular, in particular regular epi are pullback stable. If $p$ is a regular epi, then $\mathrm{proj}_{2,D}$ is a regular epi as well. The top left square is a pullback by (CITE), thus $(p^*(\mathrm{proj}_{2,D}), \mathrm{proj}_{2,E\times_BD})$ is the kernel pair of $\mathrm{proj}_{2,D}$. Since $\mathrm{proj}_{2,D}$ is a regular epi, then, by (CITE), it is the coequalizer of its kernel pair $(p^*(\mathrm{proj}_{2,D}), \mathrm{proj}_{2,E\times_BD})$. We have that $q$ and $\mathrm{proj}_{2,D}$ are coequalizers of the same pair, thus the morphism $\rho_{(D,\zeta)}$ definied by the universal property of the coequalizer $q$ is acctually an isomorphism.
+    Consider the diagram \eqref{counit rho} of the definition of the counit $\rho_{(D,\zeta)}$. An exact category is also regular, in particular regular epi are pullback stable. If $p$ is a regular epi, then $\mathrm{proj}_{2,D}$ is a regular epi as well. The top left square is a pullback by (CITE), thus $(p^*(\mathrm{proj}_{2,D}), \mathrm{proj}_{2,E\times_BD})$ is the kernel pair of $\mathrm{proj}_{2,D}$. Since $\mathrm{proj}_{2,D}$ is a regular epi, then, by (CITE), it is the coequalizer of its kernel pair $(p^*(\mathrm{proj}_{2,D}), \mathrm{proj}_{2,E\times_BD})$. We have that $q'$ and $\mathrm{proj}_{2,D}$ are coequalizers of the same pair, thus the morphism $\rho_{(D,\zeta)}$ definied by the universal property of the coequalizer $q$ is acctually an isomorphism.
 \end{proof}
 
 \begin{proposition}\label{unit iso}
@@ -285,7 +294,7 @@ Finally, we have the main result we were aiming to prove.
 \end{theorem}
 
 \begin{proof}
-    The exactness of the category implies that the comparison functor $K:(\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)^T$ has a left adjoint $L:(\mathcal{A} \downarrow E)^T \to (\mathcal{A} \downarrow B)$, as shown. By \ref{unit iso} and \ref{counit iso}, the unit $\alpha$ and the counit $\rho$ of the adjunction $L \dashv K$ are pointwise isomorphisms. Thus, $L \dashv K$ is an adjoint equivalence. This implies that $K$ is an equivalence of categories. So $p^*: (\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)$ is a monadic functor.
+    The exactness of the category implies that the comparison functor $K:(\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)^T$ has a left adjoint $L:(\mathcal{A} \downarrow E)^T \to (\mathcal{A} \downarrow B)$, as shown. Since $p$ is a regular epi, the unit $\alpha$ and the counit $\rho$ of the adjunction $L \dashv K$ are pointwise isomorphisms, by \ref{counit iso} and \ref{unit iso}. Thus, $L \dashv K$ is an adjoint equivalence. This implies that $K$ is an equivalence of categories. So $p^*: (\mathcal{A} \downarrow B) \to (\mathcal{A} \downarrow E)$ is a monadic functor.
 \end{proof}
 
 \printbibliography
