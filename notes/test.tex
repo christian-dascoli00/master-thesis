@@ -86,7 +86,7 @@ E\times_BC \arrow[rd, "\mathrm{proj}_{1,C}"'] \arrow[rr, "\xi"] &   & C \arrow[l
 \end{proposition}
 
 \begin{proof}
-    First we show that $(\mathrm{proj}_{2,C},\xi)$ is a regular epi is an internal relation. So we need to show that $\langle \mathrm{proj}_{2,C},\xi \rangle$ is a mono. Consider the following diagram of solid arrows\footnote{\cite{SobralTholen1992} assumes the existence of coequalizers, which is not the case in our setting. However, this is not a problem: at this point, we can use the morphism $p\gamma$ instead of the coequalizer of $(\mathrm{proj}_{2,C},\xi)$, as it serves our purpose. Then, \textit{a posteriori}, this proposition ensures, under the assumption of exact category, that the pair $(\mathrm{proj}_{2,C},\xi)$ has a coequalizer, which we will make use of.}. It commutes, in fact
+    First we show that $(\mathrm{proj}_{2,C},\xi)$ is an internal relation. We need to show that $\langle \mathrm{proj}_{2,C},\xi \rangle$ is a mono. Consider the following diagram of solid arrows\footnote{\cite{SobralTholen1992} assumes the existence of coequalizers, which is not the case in our setting. However, this is not a problem: at this point, we can use the morphism $p\gamma$ instead of the coequalizer of $(\mathrm{proj}_{2,C},\xi)$, as it serves our purpose. Then, \textit{a posteriori}, this proposition ensures, under the assumption of exact category, that the pair $(\mathrm{proj}_{2,C},\xi)$ has a coequalizer, which we will make use of.}. It commutes, in fact
     \begin{itemize}
     \item $(p\gamma)\mathrm{proj}_{2,C}=1_B(p\gamma)\mathrm{proj}_{2,C}= p \mathrm{proj}_{1,C} = p\gamma\xi$
     \item $1_B(p\gamma)p_2= 1_B(p\gamma)p_1 = p\gamma  p_1$
@@ -103,7 +103,7 @@ E\times_BC \arrow[rd, "h", dashed, shift left] \arrow[rrrd, "\mathrm{proj}_{2,C}
                                                                                                                                                                          & E \arrow[rr, "p"]                                                                                             &  & B                      
 \end{tikzcd}
     \]
-In order to prove that $\langle \mathrm{proj}_{2,C},\xi \rangle$ is a mono, we need to show that $h$ is a mono. Since $(\mathrm{proj}_{1,C},\mathrm{proj}_{2,C})$ is a jointly monic pair, by the following compositions
+In order to prove that $\langle \mathrm{proj}_{2,C},\xi \rangle$ is a mono, we first need to show that $h$ is a mono. Since $(\mathrm{proj}_{1,C},\mathrm{proj}_{2,C})$ is a jointly monic pair, by the following compositions
 \begin{itemize}
     \item $\mathrm{proj}_{1,C} h'h = \gamma p_1 h = \gamma \xi = \mathrm{proj}_{1,C} = \mathrm{proj}_{1,C} 1_{E\times_BC}$
     \item $\mathrm{proj}_{2,C} h'h = p_2 h = \mathrm{proj}_{2,C} = \mathrm{proj}_{2,C} 1_{E\times_BC}$
@@ -116,7 +116,7 @@ we have that $h'h= 1_{E\times_BC}$. This implies that $h$ is a mono, in fact sup
     &\implies f=g
 \end{align*}
 
-Consider now the canonical morphism $i: C\times_BC \to C\times C$ induced by the universal property of the product. We have that $i$ is a mono, in fact $f$ and $g$ are two morphisms such that $if=ig$, then we have
+Consider now the canonical morphism $i: C\times_BC \to C\times C$ induced by the universal property of the product. We have that $i$ is a mono, in fact if $f$ and $g$ are two morphisms such that $if=ig$, then we have
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAGEAdTvAW3gD6AIXYgAvqXSZc+QigDM5KrUYs2XHln5wABKIlTseAkUUAGZfWatEHcZJAYjs06QBMl1TbsHH043LIZkrUVmq2AILiyjBQAObwRKAAZgBOELxIwSA4EEhuoV5s3Lx0OAAWqbzAaOkAVmICxADk9inpmYjZuUiKKtbFnKUVVTX1jS0g1Ax0AEYwDAAK-i62qVhx5ThtIGkZ+dQ9iGT94SDcaFhNO3udfUcnYd4XV25TIDPzSysmaxtbNw6WUOeWOhQGtiwgP2iAALCDgSA4OUsMltogALSPIq2ZLQzrwnKg7LI1Ho7EQkBxd6fBbLZy-EDrTbbMQUMRAA
 \begin{tikzcd}
@@ -136,7 +136,7 @@ By the following commutative diagram
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQBhAHS7wFt4AfQBCHEAF9S6TLnyEUAFgrU6TVu268sAuAAIxk6djwEiSgAwqGLNok4SpIDMblnSxK2tv3DTmSflkc2Uaa3U7AFEefiFRCRUYKABzeCJQADMAJwg+JGCQHAgkMlUbdh4+ehwAC0y+YDRsgCtxQXIAcgcM7NzEfMKkAGZQr3KuSpq6hubW4k6aRnoAIxhGAAV-VztMrCTqnC6QLJzimgHEchGyux40LDbD497hgqKLq-CQW-viEAXl1YbFymba7faPHp5M5vS6lT5YCEnRBKV5QuHeaqI3oo84vFZgKBIAC0g3yYW8FSqtXqjQgLUEv3+K3WmxBIB2ewOvieSBxbxK+MJiFJHwp4ypU1p9PI8XEQA
 \begin{tikzcd}
                                                                                                                      &  &                                                                                             &  & C  \\
-E\times_BC \arrow[rr, "h"] \arrow[rrrrd, "\mathrm{proj}_{2,C}"', bend right] \arrow[rrrru, "\mathrm{proj}_{1,C}", bend left] &  & C\times_BC \arrow[rru, "p_1"] \arrow[rrd, "p_2"'] \arrow[rr, "i"] &  & C\times C \arrow[d, "p_2'"'] \arrow[u, "p_1'"]           \\
+E\times_BC \arrow[rr, "h"] \arrow[rrrrd, "\mathrm{proj}_{2,C}"', bend right] \arrow[rrrru, "\xi", bend left] &  & C\times_BC \arrow[rru, "p_1"] \arrow[rrd, "p_2"'] \arrow[rr, "i"] &  & C\times C \arrow[d, "p_2'"'] \arrow[u, "p_1'"]           \\
                                                                                                                      &  &                                                                                             &  & C 
 \end{tikzcd}
 \]
