@@ -23,7 +23,7 @@ Some of the following results are due to \cite{BorceuxBourn2004}.
     \]
     where $m$ is a mono, there exists a unique morphism $d$ such that $df=u$ and $md=v$.
 
-    We say that $f$ is an \textbf{extremal epimophism} if given a factorizations $f=mf'$, with $m$ mono, then $m$ is an iso.
+    We say that $f$ is an \textbf{extremal epimorphism} if given a factorizations $f=mf'$, with $m$ mono, then $m$ is an iso.
 
     We say that $f$ is a \textbf{regular epimorphism} if it is the coequalizer of some parallel arrows.
     \end{defi}
@@ -168,7 +168,7 @@ Since $[f,g]$ is a strong epimorphism, there exists a unique morphism $d: B \to 
     \begin{proof}
 Let $p$ be a regular epi, and let $(r_1,r_2)$ be the kernel pair of $p$. Since $p$ is a regular epi, it is the coequalizer of some parallel arrows. Let $(s_1,s_2)$ be such pair as in the diagram below. We want to prove that $p$ is the coequalizer of $(r_1,r_2)$.
 
-We already know that $pr_1=pr_2$, as $(r_1,r_2)$ is the kernel pair of $p$. It remains to establish the universal property of the coequalizer. Let $q:B \to D$ be a morhism such that $qr_1=qr_2$. By the universal property of the kernel pair, there exists a unique morphism $t: E \to A$ such that $r_1t=s_1$ and $r_2t=s_2$. We have that $qs_1=qr_1t=qr_2t=qs_2$, so, by the universal property of the coequalizer for the pair $(s_1,s_2)$, there exists a unique morphism $u: C \to D$ such that $q=up$. Thus the universal property of the coequalizer also holds for the pair $(r_1,r_2)$.
+We already know that $pr_1=pr_2$, as $(r_1,r_2)$ is the kernel pair of $p$. It remains to establish the universal property of the coequalizer. Let $q:B \to D$ be a morphism such that $qr_1=qr_2$. By the universal property of the kernel pair, there exists a unique morphism $t: E \to A$ such that $r_1t=s_1$ and $r_2t=s_2$. We have that $qs_1=qr_1t=qr_2t=qs_2$, so, by the universal property of the coequalizer for the pair $(s_1,s_2)$, there exists a unique morphism $u: C \to D$ such that $q=up$. Thus the universal property of the coequalizer also holds for the pair $(r_1,r_2)$.
 
 
 \[
@@ -200,7 +200,7 @@ K \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right] & A \arrow[r, "q"'
 \end{tikzcd}
     \]
 
-    We already know that $er_1=er_2$, since $e$ is the coequalizer of $(r_1,r_2)$. It remains to show that the universal property of the kernel pair holds. Consider $h: X \to A$ and $h' : X \to A'$ morphisms such that $eh=eh'$. Since $(r_1,r_2)$ is the kernel pair of $q$, it holds that $qr_1=qr_2$. Thus by the unviersal property of the coequalizer $e$, there exists a unique morphism $l:Q \to B$ such that $q=le$. Composing with such mophism $l$ we have that $leh=leh'$, hence $qh=qh'$. Since $(r_1,r_2)$ is the kernel pair of $q$, by the universal property there exists a unique morphism $g: X \to K$ such that $r_1g=h$ and $r_2g=h'$. Hence $(r_1,r_2)$ is the kernel pair of $e$, its coequalizer.
+    We already know that $er_1=er_2$, since $e$ is the coequalizer of $(r_1,r_2)$. It remains to show that the universal property of the kernel pair holds. Consider $h: X \to A$ and $h' : X \to A'$ morphisms such that $eh=eh'$. Since $(r_1,r_2)$ is the kernel pair of $q$, it holds that $qr_1=qr_2$. Thus by the universal property of the coequalizer $e$, there exists a unique morphism $l:Q \to B$ such that $q=le$. Composing with such morphism $l$ we have that $leh=leh'$, hence $qh=qh'$. Since $(r_1,r_2)$ is the kernel pair of $q$, by the universal property there exists a unique morphism $g: X \to K$ such that $r_1g=h$ and $r_2g=h'$. Hence $(r_1,r_2)$ is the kernel pair of $e$, its coequalizer.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGUsKq1GLNgGluvEBmx4CRAMykATBPrNWiEACF5fZYKIAWUmp1T9IAIonF-FUOSjt1XdIMBBZyUBVRQNcW87NgCuCRgoAHN4IlAAMwAnCABbJDIQHAgkURAGLDB7KDo4AAs4kAi9NgAdRpgADyw4HDgAQgACXvjndKzC6nykAFZ63xA0gH1hIYzsxCLxxCtJBoN5zSWRjbGCxE1p+wBHfZWpvOPTrZnL6gY6ACMYBgAFV3MdrHiqjgrjkjpNqO8wFAkGpcj57FVgYhcutNhCoYgALQws5sKoAckRN3WGhAaOhsMiBlY1BqdHReQA7hBaVAEDxUsskJtieCYJCkFiKdsQNSQCy2DgmSy2QphisSet7jg6FgGGxIGU6g97M02h0un01c9SuVKjUoTEuEA
 \begin{tikzcd}

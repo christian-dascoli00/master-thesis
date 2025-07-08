@@ -18,7 +18,7 @@ We present here some technical results on the Eilenberg-Moore categories. These 
 
         First we show that $\mathcal{X}^T$ is finitely complete. We recall that the forgetful functor $U^T:\mathcal{X}^T \to \mathcal{X}$ creates all the limits that $\mathcal{X}$ has. Since $\mathcal{X}$ is exact, it has all finite limits. Therefore, $\mathcal{X}^T$ has all finite limits.
 
-        We proceed to prove that each equivalent relation is the kernel pair of some arrow. Consider an equivalence relation $R$ in $\mathcal{X}^T$ with $\xi_R$ and $\xi_A$ giving the structure of algebras, as in the diagram below. Then, under the forgetful functor $U^T$, $R$ is an equivalence relation in $\mathcal{X}$. $\mathcal{X}$ is exact, so $R$ is the kernel pair of some arrow. In particular, by \Cref{equiv rel is kernel pair of the coeq}, we cas suppose that $R$ is the kernel pair of its coequalizer. Let call it $q:A \to C$. Since $T$ preserves kernel pairs, we have that $T(R)$ is the kernel pair of $T(q)$. Morover $T$ preserves regular epis, so $T(q)$ is a regular epi. By \Cref{coeq of the kernel pair}, we can assume that $T(q)$ is the coequalizer of its kernel pair $(T(R),T(r_1),T(r_2))$. Since $q\xi_AT(r_1)= qr_1\xi_R = qr_2\xi_R=q\xi_AT(r_2)$, by the universal property of the coequalizer, there exists a unique morphism $\xi_C$ such that $\xi_CT(q) = q\xi_A$. The morphism $\xi_C$ is the algebra structure of $T(B)$. Since $U^T$ creates all the limits that $\mathcal{X}$ has, we can conclude that $R$ is the kernel pair in $\mathcal{X}^T$ of the arrow $q$.
+        We proceed to prove that each equivalent relation is the kernel pair of some arrow. Consider an equivalence relation $R$ in $\mathcal{X}^T$ with $\xi_R$ and $\xi_A$ giving the structure of algebras, as in the diagram below. Then, under the forgetful functor $U^T$, $R$ is an equivalence relation in $\mathcal{X}$. $\mathcal{X}$ is exact, so $R$ is the kernel pair of some arrow. In particular, by \Cref{equiv rel is kernel pair of the coeq}, we cas suppose that $R$ is the kernel pair of its coequalizer. Let call it $q:A \to C$. Since $T$ preserves kernel pairs, we have that $T(R)$ is the kernel pair of $T(q)$. Moreover $T$ preserves regular epis, so $T(q)$ is a regular epi. By \Cref{coeq of the kernel pair}, we can assume that $T(q)$ is the coequalizer of its kernel pair $(T(R),T(r_1),T(r_2))$. Since $q\xi_AT(r_1)= qr_1\xi_R = qr_2\xi_R=q\xi_AT(r_2)$, by the universal property of the coequalizer, there exists a unique morphism $\xi_C$ such that $\xi_CT(q) = q\xi_A$. The morphism $\xi_C$ is the algebra structure of $T(B)$. Since $U^T$ creates all the limits that $\mathcal{X}$ has, we can conclude that $R$ is the kernel pair in $\mathcal{X}^T$ of the arrow $q$.
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAlEAX1PU1z5CKchWp0mrdgEEefEBmx4CRACxiaDFm0QgAwnP5KhRMsXFapugCoAKDgEpDCgcuHJR5zZJ0g70p14jQRUUdS8JbXY7PUDxGCgAc3giUAAzACcIAFskAEYaHAgkURAACxh6KHYcAHcICqqEbyjdAEdnTJykMhAi-Jo4Mqw0nCQAWgLIqxAMgH08zqzcxF7+xCmhkbGNlpn58hAaRnoAIxhGAAVXE10MrESysaCQLpWAZkLi1b3fAB0-gAPLBzLjHLBgXxwCCMLDVF5vJDqPrfKaWf5AkGyBHLJFfJAAVl+0VsbScNEa1V0dQalSgCBx3UQRJRJWJugBwLmBnBkPYUHoQwSSyZn1ZiGRW1GEzRPhJ8zygXkiMQYvWkuG0t2IBO5yuN1CsweTyO018dgOcW4QA
 \begin{tikzcd}
@@ -62,7 +62,7 @@ X \arrow[rr, shift right] \arrow[rr, shift left]    &  & A \arrow[rd, "e"', two 
     \end{tikzcd}
 \]
 
-        In order to prove the factorization of $f$ in $\mathcal{X}^T$, it remains to establish that $m$ is a morphism in $\mathcal{X}^T$ and that it is a mono. Oberve that $m$ is a mono in $\mathcal{X^T}$; in fact it is a mono in $\mathcal{X}$ and, furthermore, it is merely a morphism $\mathcal{X}$ that satisfies the algebra condition. We still need to establish that $m$ is a morphism in $\mathcal{X}^T$.
+        In order to prove the factorization of $f$ in $\mathcal{X}^T$, it remains to establish that $m$ is a morphism in $\mathcal{X}^T$ and that it is a mono. Observe that $m$ is a mono in $\mathcal{X^T}$; in fact it is a mono in $\mathcal{X}$ and, furthermore, it is merely a morphism $\mathcal{X}$ that satisfies the algebra condition. We still need to establish that $m$ is a morphism in $\mathcal{X}^T$.
         \begin{align*}
             f=me &\implies f \xi_A = me\xi_A \\[1.5ex]
             &\implies \xi_B T(f) = m \xi_Q T(e) \\[1.5ex]
@@ -113,13 +113,13 @@ T(\mathrm{Eq}(\tilde{q})) \arrow[dd, "\xi_{\mathrm{Eq}(\tilde{q})}", dashed] \ar
 
 We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. 
 
-The construction of the coproducts in the Eilenberg-Moore category $\mathcal{X}^T$ will looks quite intricate at first glance and it may appear overly complicated. However, this conscrution is needed beacuse, given two object with an algebra structure each, the coprocdust of the two algebra structures is not an algebra structure in general. To make this clearer consider the following example.
+The construction of the coproducts in the Eilenberg-Moore category $\mathcal{X}^T$ will looks quite intricate at first glance and it may appear overly complicated. However, this construction is needed because, given two object with an algebra structure each, the coproduct of the two algebra structures is not an algebra structure in general. To make this clearer consider the following example.
 
 \begin{rembox}{}
     \begin{ex}
         Let $\mathbf{Mon}$ be the category of monoids and let $U: \mathbf{Mon} \to \mathbf{Set}$ be the forgetful functor. One can define the free functor $F: \mathbf{Set} \to \mathbf{Mon}$ sending each set $X$ to the free monoid on $X$
         \[F(X) = \{(x_1,\ldots,x_n) \ | \ n \in \mathbb{N}, \ \forall i=1,\ldots,n, \ x_i \in X \}\]
-        with the operation of concatenation. This induces a monad $T=UF$ on $\mathbf{Set}$ and the functor turns out to be monadic. The coproduct in $\mathbf{Mon}$ is the free product, while in $\mathbf{Set}$ it is the disjoint union. The free product of two monoids, as sets, is in general a bigger set than the disjoint union of the two set underlying the monoids. Thus the forgetful functor $U$ in general does not preserve coproducts. Instead, if the coproduct of the algebra structures, which correspond to the operation of the moinoids, were itself an algebra structure, the forgeftul functor would preserve coproducts.
+        with the operation of concatenation. This induces a monad $T=UF$ on $\mathbf{Set}$ and the functor turns out to be monadic. The coproduct in $\mathbf{Mon}$ is the free product, while in $\mathbf{Set}$ it is the disjoint union. The free product of two monoids, as sets, is in general a bigger set than the disjoint union of the two set underlying the monoids. Thus the forgetful functor $U$ in general does not preserve coproducts. Instead, if the coproduct of the algebra structures, which correspond to the operation of the monoids, were itself an algebra structure, the forgetful functor would preserve coproducts.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBGAM2ABZAgF8QE0uky58hFGQCMVWoxZtOPfsOABlGDiky52PASIry6+s1aIO3XoJFGTAPQAq09TCgAc3giUCEAJwguJDIQHAgkACZqey0nTgBjAkDpWRAIqJjqeKQbEDg+LCEcJABaMtTHEABVXLDI6MQyksRYiqqaxHqUzSaAMTb8jqTihK7qfuq6lTMpwvm4ueTyyqWhlYoJIA
 \begin{tikzcd}
@@ -236,7 +236,7 @@ A_i \arrow[rrd, "f_i", shift left] \arrow[rrd, "g_i"', shift right] \arrow[rrdd,
                                                                                                                                           &  & U(Y)                                                                                                                   &  & Y                                                                                                           
 \end{tikzcd}
     \]
-    Then, by the universal property of the coequalizer $q$ in $\mathcal{X}^T$, there exists a unique morphism $t:Q \to Y$ sucht that $tq=h$.
+    Then, by the universal property of the coequalizer $q$ in $\mathcal{X}^T$, there exists a unique morphism $t:Q \to Y$ such that $tq=h$.
 \end{proof}
 \end{subbox}
 
@@ -282,7 +282,7 @@ T^2\big(\amalg_iT(A_i)\big) \arrow[dd, "\mu_{\amalg_iT(A_i)}"'] \arrow[rru, "{T^
 T\big(\amalg_iT(A_i)\big) \arrow[rrrr, "T(\amalg_i\xi_i)"'] \arrow[rru, "{T[\ldots,T(\iota_i),\ldots]}"]                                      &  &                                                                                   &  & T(\amalg_iA_i)                                
 \end{tikzcd}
 \]
-The top and bottom arrows from $(T(\amalg_iT(A_i)),\mu)$ to $(T(\amalg_iA_i),\mu)$ of the diagram \eqref{diagr 1 coproducts} correspond, by the universal property of the unit of the adjunction, respectively to the top and bottom arrows of the diagram \eqref{diagr 2 coproducts}. In order to prove so, by the uniqueness of the morphism induced by the universal property of the unit, it suffies to show that the image of the diagram \eqref{diagr 1 coproducts} through $U^T$, composed with the unit, is the diagram \eqref{diagr 2 coproducts}. Such composition results to the following diagram.
+The top and bottom arrows from $(T(\amalg_iT(A_i)),\mu)$ to $(T(\amalg_iA_i),\mu)$ of the diagram \eqref{diagr 1 coproducts} correspond, by the universal property of the unit of the adjunction, respectively to the top and bottom arrows of the diagram \eqref{diagr 2 coproducts}. In order to prove so, by the uniqueness of the morphism induced by the universal property of the unit, it suffices to show that the image of the diagram \eqref{diagr 1 coproducts} through $U^T$, composed with the unit, is the diagram \eqref{diagr 2 coproducts}. Such composition results to the following diagram.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBpiBdUkANwEMAbAVxiRABUAdTgIywHMAFNzhMAtgH0s7QQEEpASm59+CkAF9S6TLnyEUAZlIAGKrUYs27AHrFhnUZKzysazdux4CRACykAjGb0zKyIHPaOUi5uWiAYnnpE-iZBFqEcygIR4lIy0ZmqGrHxut4oxgGpIWwiOdJyikUepfokldTBlmERaHSworhuZjBQ-PBEoABmAE4QYkgVIDgQSGQgPDBgUAsdaVbZTtwAHliN1Ax0GwwACjpe+iDTAgAWOE0gM3NIyUsriGuddLcMRMCTAWpOFzqd6feaIIy-b67aphdjIbgMKAQHBwUgybj4HB0RSkDFYnEUGGzOF+RHw5FdEDcGBEsEQ3INACSCmh7g+1KQtOWO3MKKZnBZxPBDjqeQk3Oh50uMBud0SYSe-FeGgo6iAA
 \begin{tikzcd}
@@ -467,7 +467,7 @@ A \arrow[rrru, "\eta_{A+B}\iota_1"', pos=0.3] \arrow[rrrrrd, "f_1", bend right=2
 \end{tikzcd}
         \]
         
-        In order to prove that also finite coproducts exists, it suffies to do the same proof for the initial object, using \Cref{coeq for the three diagrams} again.
+        In order to prove that also finite coproducts exists, it suffices to do the same proof for the initial object, using \Cref{coeq for the three diagrams} again.
 
         It remains to prove that $\mathcal{X}^T$ is finitely cocomplete. We already know that it has finite coproducts, so we only need to show that it has coequalizers. This follows from the fact that it has finite coproducts and reflexive coequalizers; in fact each coequalizer can be constructed as a reflexive coequalizer from the coproduct, as shown below.
         \[
