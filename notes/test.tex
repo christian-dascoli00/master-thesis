@@ -272,14 +272,27 @@ C &  &                                                                          
   &  & E\times_BC \arrow[llu, "\mathrm{proj}_{2,C}"] \arrow[rru, "\xi"']                                      &  &  
 \end{tikzcd}
 \]
-\item Claim: $(\mathrm{proj}_{2,C},\xi)$ is transitive. \\ Consider the pullback (???)
+\item Claim: $(\mathrm{proj}_{2,C},\xi)$ is transitive.
+
+By (CITE) the pullback of $\xi$ and $\mathrm{proj}_{2,C}$ is the square
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAYRABfUuky58hFACYK1Ok1btxUmdjwEiy4qoYs2iTj35Cxk6SAy75RMkZomN5gBTdeWAXBFRAEpLPyFRb1D-QKDJVRgoAHN4IlAAMwAnCD4kAGYaHAgkYm0QTOzigqLEcjd1MxAePnocAAsMvmA0LIArCUFFW3SsnMR8kEKkRVLy0eUJ6tq1U3YeAA8sOIkgA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAUXHln5xhAYQCUIAL6l0mXPkIoATOSq1GLNuL6ChMpSpAZseAkR0BGPfWatEIc8tU2NRMk+oXQ3djSVNPPRgoAHN4IlAAMwAnCF4kMhAcCCQHQIM3EAcBUKlhbgAPLAtElLTEXMzsxB19VzZuXjocAAsk3mA0FIArRQFgHRlFapBk1PTqLKQAZjy29w6u3v7BiBGxnRLwqa8Z2uWFppaggoqqxQpFIA
 \begin{tikzcd}
-(E\times_BC)\times_C(E\times_BC) \arrow[d] \arrow[rr] &  & E\times_BC \arrow[d, "\xi"] \\
-E\times_BC \arrow[rr, "\mathrm{proj}_{2,C}"]              &  & C                          
+E\times_B(E\times_BC) \arrow[rr, "1_E\times_B\xi"] \arrow[d, "{\mathrm{proj}_{2,E\times_BC}}"] &  & E\times_BC \arrow[d, "{\mathrm{proj}_{2,C}}"] \\
+E\times_BC \arrow[rr, "\xi"]                                                                   &  & C                                            
 \end{tikzcd}
 \]
+We aim to prove that there exists a morphism $\tau: E\times_B(E\times_BC) \to E\times_BC$ such that
+\begin{itemize}
+    \item $\xi (1_E\times_B\xi) = \xi \tau$
+    \item $\mathrm{proj}_{2,C} \mathrm{proj}_{2,E\times_BC} = \mathrm{proj}_{2,C}\tau$
+\end{itemize}
+Define $\tau = (1_E\times_B\mathrm{proj}_{2,C})$, we have that
+\begin{itemize}
+    \item $\xi (1_E\times_B\xi) = \xi (1_E\times_B\mathrm{proj}_{2,C})$
+    \item $\mathrm{proj}_{2,C} \mathrm{proj}_{2,E\times_BC} = \mathrm{proj}_{2,C} (1_E\times_B\mathrm{proj}_{2,C})$
+\end{itemize}
+In particular the first condition holds by \Cref{xi coequalizer}, and the second one holds by the definition of $(1_E\times_B\mathrm{proj}_{2,C})$
 \end{itemize}
 \end{proof}
 
