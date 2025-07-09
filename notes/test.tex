@@ -32,7 +32,7 @@
 \title{Notes on Regular Epimorphisms and the Monadicity of the Pullback Functor in an Exact Category}
 
 \date{}
-\author{C. D'Ascoli}
+\author{C. D'Ascoli and A. Cigoli}
 
 \nocite{*}
 
@@ -85,10 +85,71 @@ E\times_BC \arrow[rd, "\mathrm{proj}_{1,C}"'] \arrow[rr, "\xi"] &   & C \arrow[l
 \end{tikzcd}
 \]
 
+In the following for the $p^*$-image of a morphism $f$ in $(\mathcal{A}\downarrow B)$ we will use both notation $p^*(f)$ and $1_E\times_Cf$.
 
-\begin{proposition}
+\begin{lemma}
+    Let $\mathcal{A}$ be a finitely complete category and let $p: E \to B$ be a morphism in $\mathcal{A}$. For any object $(C,\gamma;\xi)$ in $(\mathcal{A} \downarrow E)^T$, with $T$ the monad associated to $p$, the morphism $\xi$ is the coequalizer of $(1_E\times_B\xi,1_E\times_B\mathrm{proj}_{2,C})$.
+\end{lemma}
+
+\begin{proof}
+  Let $(C,\gamma;\xi)$ be an object in $(\mathcal{A} \downarrow E)^T$.First we aim to show that $\xi (1_E\times_B\xi) = \xi (1_E\times_B\mathrm{proj}_{2,C})$. This holds because $\xi$ is an algebra for the monad $T=(p^*p_!, p^*\epsilon p_!, \eta)$. Observe that the multiplication in an object $(C,\gamma)$ is
+  \[p^*\epsilon p_!(C,\gamma) = p^*(\epsilon_{(C,p\gamma)}) = p^*(\mathrm{proj}_{2,C}) = 1_E \times_B \mathrm{proj}_{2,C}\]
+  Then we have the algebra property
+  \[
+  % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQAUXHln5xhAYQCUckAF9S6TLnyEUAJnJVajFm3F9BQmctUgM2PASJkAjPvrNWiDt1PTzltbc0iXWdqVyMPCyV9GCgAc3giUAAzACcIXiRdEBwIJABmUMN3EG4ADyw-EFT0pEdqHPzCtzYyipVktIzEMmzcxDqDZo9HAXYAAi9JMwnOcsrqrp6GxCyw4pHxyalhGd46HAALFN5gNDSAKyUBYF0ZJRBqBjoAIxgGAAV1Oy0QFKxYg44ZQUJRAA
+\begin{tikzcd}
+E\times_B(E\times_BC) \arrow[rr, "1_E \times_B \xi"] \arrow[d, "{1_E \times_B \mathrm{proj}_{2,C}}"'] &  & E\times_BC \arrow[d, "\xi"] \\
+E\times_BC \arrow[rr, "\xi"]                                                                           &  & C                          
+\end{tikzcd}
+  \]
+  \[\xi (1_E \times_B \mathrm{proj}_{2,C}) = \xi (1_E \times_B \xi)\]
+
+  It remains to prove the universal property of the coequalizer. First we observe that $\xi$ is a split epi, in fact $\xi \eta_(C,\gamma) = 1_C$. Thus $\xi$ is the coequalizer of $(1_{E\times_BC}, \eta_{(C,\gamma)}\xi)$. We aim to prove that $\xi$ is also the coequalizer of $(1_E\times_B\xi,1_E\times_B\mathrm{proj}_{2,C})$. We already know that the universal property holds for $\xi$ with $(1_{E\times_BC}, \eta_{(C,\gamma)}\xi)$, so it suffices to show that there exist a morphism $t:E\times_BC \to E\times_B(E\times_BC)$ such that
+  \begin{itemize}
+    \item $(1_E\times_B\xi) t = \eta_{(C,\gamma)}\xi$
+    \item $(1_E\times_B\mathrm{proj}_{2,C}) t = 1_{E\times_BC}$
+  \end{itemize}
+  Then given a morphism $f$ such that $f (1_E \times_B \mathrm{proj}_{2,C}) = f (1_E \times_B \xi)$, we have, composing with $t$,
+  \[f (1_E \times_B \mathrm{proj}_{2,C}) t = f (1_E \times_B \xi) t \]
+  \[\implies f 1_{E\times_BC} = f \eta_{(C,\gamma)}\xi \]
+  By the universal property for $\xi$ with $(1_{E\times_BC}, \eta_{(C,\gamma)}\xi)$ we obtain the universal property for $\xi$ with $(1_E\times_B\xi,1_E\times_B\mathrm{proj}_{2,C})$.
+  \[
+  % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCACm68sAuCIDCAShABfUuky58hFOQrU6TVuwn8hw2ctUgM2PASI7iehizaJOPEzLMW1NzUQBmXRpnQzcAMR8rdVstZB0ApwNXEHMlPRgoAHN4IlAAMwAnCD4kAEYaHAgkIP0XdnyoopKkMhAq8po4AAssfJwkAFoKurCQMsFjKVMeAA8sJuLSxDaOxBGevoH1kOT2CanpER4+ehxuwr5gNGKAKyVBYB1ZJRAaRnoAIxhGAAUY-xuQpYLLdAYqApLJA6drVHYgTb9IYjUIpHgwHD0R6iWSkHhZeh8U7yJRzBYQkDNZYwtYbXpI+Go-aPQ6mF5vEAfb5-AF2IEgsGLFqIGlwtpMtwDd5fH7-Px8kDA0HgyxUzqwpAAFl29TcZKFy21GsQtUYWDAKSg9B6mQ5EpA6PmcBwcAAhAACLIcrmy3laRUC8GUJRAA
+\begin{tikzcd}
+                                                                                                                            &  & E\times_BC \arrow[dd, "{\eta_{(C,\gamma)}\xi}", shift left] \arrow[dd, "1_{E\times_BC}"', shift right] \arrow[lldd, "t"'] &   \\
+                                                                                                                            &  &                                                                                                                           &   \\
+E\times_B(E\times_BC) \arrow[rr, "1_E\times_B\xi", shift left] \arrow[rr, "{1_E\times_B\mathrm{proj}_{2,C}}"', shift right] &  & E\times_BC \arrow[r, "f"] \arrow[d, "\xi"]                                                                                & F \\
+                                                                                                                            &  & C \arrow[ru, "\exists! g"', dashed]                                                                                       &  
+\end{tikzcd}
+  \]
+
+  We now have to prove that such a morphism $t$ actually exists. Define $t = \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle$. We aim to prove that this morphism satisfies the two conditions above, ie the following diagram of pairs commutes.
+  \[
+  % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCACm68sAuCIDCAShABfUuky58hFOQrU6TVuwn8hw2ctUgM2PASI7iehizaJOPEzLMW1NzfdIAZicDV04fK3VbLWRA3RpnQzdzJT0YKABzeCJQADMAJwg+JABGGhwIJDj9F3YePnocAAt8vmA0QoArJUFgMtklCIKi0vLKxAAWBNC6rgbm1vaunuAdAaHC4sQyEArRkDgmrFycJABaMpqkkBLBYylTHgAPLA2R7bH9w+PTxEvEsK3e7SET1RotNodCDdXprQY0Rj0ABGMEYAAUov43PksBkmqcVHlNkgdLtxpdvidzv8Zm4eDAcPReqJZKQeBl6HwGvIlM9XoSQMMtqS9n8aJTfjTam5bsBgaZ1gjkaiMX47Njcfi3sLPh8rmEeIiwBlGDAAARghaQ5a9foqM2y+VeAYWrj5ejG00gJUo9GY9UgHF4gmUJRAA
+\begin{tikzcd}
+                                                                                                                            &  & E\times_BC \arrow[dd, "{\eta_{(C,\gamma)}\xi}", shift left] \arrow[dd, "1_{E\times_BC}"', shift right] \arrow[lldd, "{\langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle}"'] &   \\
+                                                                                                                            &  &                                                                                                                                                                               &   \\
+E\times_B(E\times_BC) \arrow[rr, "1_E\times_B\xi", shift left] \arrow[rr, "{1_E\times_B\mathrm{proj}_{2,C}}"', shift right] &  & E\times_BC 
+\end{tikzcd}
+  \]
+  In order to prove that we use the jointly monic pair $(\mathrm{proj}_{1,C},\mathrm{proj}_{2,C})$.
+  Observe that the following compositions hold.
+  \begin{itemize}
+    \item $\mathrm{proj}_{2,C} (1_E\times_B\xi) \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle = \xi \mathrm{proj}_{2,E\times_BC} \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle = \xi 1_{E\times_BC} = \xi$
+    \item $\mathrm{proj}_{2,C} \eta_{(C,\gamma)}\xi = \mathrm{proj}_{2,C} \langle \gamma, 1_C \rangle \xi = 1_C \xi = \xi$
+    \item $\mathrm{proj}_{2,C} (1_E\times_B\mathrm{proj}_{2,C}) \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle = \mathrm{proj}_{2,C} \mathrm{proj}_{2,E\times_BC} \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle = $ \\$ = \mathrm{proj}_{2,C} 1_{E\times_BC} = \mathrm{proj}_{2,C}$
+    \item $\mathrm{proj}_{2,C} 1_{E\times_BC} = \mathrm{proj}_{2,C}$
+    \item $\mathrm{proj}_{1,C} (1_E\times_B\xi) \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle = \mathrm{proj}_{1,E\times_BC} \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle = \mathrm{proj}_{1,C}$
+    \item $\mathrm{proj}_{1,C} \eta_{(C,\gamma)}\xi = \mathrm{proj}_{1,C} \langle \gamma, 1_C \rangle \xi = \gamma \xi = \mathrm{proj}_{1,C}$
+    \item $\mathrm{proj}_{1,C} (1_E\times_B\mathrm{proj}_{2,C}) \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle = \mathrm{proj}_{1,E\times_BC} \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle = \mathrm{proj}_{1,C} $
+    \item $\mathrm{proj}_{1,C} 1_{E\times_BC} = \mathrm{proj}_{1,C}$.
+  \end{itemize}
+  Thus $t = \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle$ satisfies the conditions required.
+\end{proof}
+
+\begin{lemma}
     Let $\mathcal{A}$ be a finitely complete category and let $p: E \to B$ be a morphism in $\mathcal{A}$. For any object $(C,\gamma;\xi)$ in $(\mathcal{A} \downarrow E)^T$, with $T$ the monad associated to $p$, the pair $(\mathrm{proj}_{2,C},\xi)$ is an equivalence relation in $\mathcal{A}$
-\end{proposition}
+\end{lemma}
 
 \begin{proof}
     First we show that $(\mathrm{proj}_{2,C},\xi)$ is an internal relation. We need to show that $\langle \mathrm{proj}_{2,C},\xi \rangle$ is a mono. Consider the following diagram of solid arrows\footnote{\cite{SobralTholen1992} assumes the existence of coequalizers, which is not the case in our setting. However, this is not a problem: at this point, we can use the morphism $p\gamma$ instead of the coequalizer of $(\mathrm{proj}_{2,C},\xi)$, as it serves our purpose. Then, \textit{a posteriori}, this proposition ensures, under the assumption of exact category, that the pair $(\mathrm{proj}_{2,C},\xi)$ has a coequalizer, which we will make use of.}. It commutes, in fact
