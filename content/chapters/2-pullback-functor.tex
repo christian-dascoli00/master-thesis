@@ -102,7 +102,7 @@ D \arrow[r, "\delta"] \arrow[rd, "\delta"'] & E \arrow[d, "1_E"']              &
     \end{ex}
 \end{rembox}
 
-\section{Pullback functor’s adjunction}
+\section{Pullback functor’s adjunction}\label{pullback functor}
 
 Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to B$ in $\mathcal{A}$, one can consider functors pullback and shrink
 \[
@@ -172,7 +172,7 @@ Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks, then $p_!$ pres
 \end{subbox}
 
 \begin{mainbox}{}
-\begin{prop}
+\begin{prop}\label{adjunction of p}
 Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks, then
 \[
 \begin{tikzcd}
@@ -190,7 +190,8 @@ is an adjunction. The unit is given by
         \eta: \mathrm{Id}_{(\mathcal{A} \downarrow E)} \to p^*p_!
     \]
     \[
-        \eta_{(D,\delta)} = \langle \delta,1_D \rangle : (D,\delta) \to (E\times_BD, \mathrm{proj}_{1})
+        \eta_{(D,\delta)} = \langle \delta,1_D \rangle \]
+         \[ \langle \delta,1_D \rangle : (D,\delta) \to (E\times_BD, \mathrm{proj}_{1})
     \]
     \end{minipage}
     \begin{minipage}{0.5\textwidth}
@@ -210,7 +211,8 @@ and the counit is given by
         \epsilon: p_!p^* \to \mathrm{Id}_{(\mathcal{A} \downarrow B)}
     \]
     \[
-        \epsilon_{(A,\alpha)} = \mathrm{proj}_2 : (E\times_BA, \ p (\mathrm{proj}_1)) \to (A,\alpha)
+        \epsilon_{(A,\alpha)} = \mathrm{proj}_2 \] 
+        \[ \mathrm{proj}_2 : (E\times_BA, \ p (\mathrm{proj}_1)) \to (A,\alpha)
     \]
     \end{minipage}
     \begin{minipage}{0.5\textwidth}
@@ -539,7 +541,7 @@ Notice that $mfv^*(m) = u v^*(m) = m w$, so $fv^*(m) = w$ since m is a mono. Now
     \item $v^*(m) (\langle f, 1_{V} \rangle v^*(m) ) = ( v^*(m) \langle f, 1_{V} \rangle ) v^*(m)  = 1_V v^*(m) = v^*(m) 1_W$
     \item $w (\langle f, 1_{V} \rangle v^*(m)) = (w \langle f, 1_{V} \rangle ) v^*(m) = f v^*(m) = w = w 1_W $
 \end{itemize}
-Since the pair $(v^*(m),w)$ is jointly monic we have that $\langle f, 1_{V} \rangle v^*(m) = 1_W$. Consdiering this composition and the one above, it follows that $v^*(m)$ is an iso.
+Since the pair $(v^*(m),w)$ is jointly monic we have that $\langle f, 1_{V} \rangle v^*(m) = 1_W$. Considering this composition and the one above, it follows that $v^*(m)$ is an iso.
 
 By the protomodularity of $\mathcal{X}$, since $v^*(m)$ is an iso, we have that $m$ is an iso, as claimed.
 \end{proof}
