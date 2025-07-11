@@ -1,0 +1,46 @@
+\chapter{The categorial structure of Rings}
+
+\fontsize{12}{14.5}\selectfont
+
+In this chapter, we aim to introduce a motivating example for the notions of ideally exact categories. 
+
+Consider the category $\mathbf{Ring}$ of rings with unity. The notion of ideal is, at first glance, an somewhat unnatural in the context of categories. In fact, in general, an ideal of a ring with unit is not an object in the category $\mathbf{Ring}$: if an ideal contains the unit, then it coincides with the whole ring. However, we observe that it is an object of the category $\mathbf{Ring_*}$ of rings without unit.
+
+It is a standard fact that $\mathbf{Ring}$ and $\mathbf{Ring_*}$ are finitely complete, protomodular and exact categories. They both have binary coproducts, even if they are not the same. The coproduct in the category $\mathbf{Ring}$ is the free product, while in $\mathbf{Ring_*}$ it is the free product with amalgamation, in order to ensure that there is a unit in the coproduct.
+
+That said, they have a crucial difference: $\mathbf{Ring}$ is not pointed, whereas $\mathbf{Ring_*}$ is. In fact, in $\mathbf{Ring_*}$ the initial and terminal objects are both the zero ring ${0}$, while in $\mathbf{Ring}$ the initial object is the zero ring $0=\mathbb{Z}$ of integers, but the terminal object is the ring $1={0}$. Thus, we conclude the $\mathbf{Ring_*}$ is semiabelian, while $\mathbf{Ring}$ fails to be.
+
+In particular we have the forgetful functor that forgets the unit.
+\[U: \mathbf{Ring} \to \mathbf{Ring_*}\]
+with $\mathbf{Ring}$ protomodular and exact, and $\mathbf{Ring_*}$. This functor turns out to be monadic, with left adjoint the unitalization functor.
+\begin{align*}
+F: \mathbf{Ring_*} &\to \mathbf{Ring} \\
+R &\mapsto \mathbb{Z} \oplus R
+\end{align*}
+This adjunction will lead us to the definition of the ideally exact categories. 
+
+Moreover, the functor $U$ is, up to category equivalences, the pullback functor $!^*$ where $!$ is the unique morphism in $\mathbf{Ring}$ $!:0 \to 1$ and 
+\[!^*:(\mathbf{Ring} \downarrow 1) \to (\mathbf{Ring} \downarrow 0)\]
+is defined as follows. Let $R$ be an object in $\mathbf{Ring}$, then $!^*(X)=(0 \times_1 R,  \mathrm{proj}_1)$
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfQCMAAgBKIAL6l0mXPkIoATKUFVajFm0GTpIDNjwEiZVdXrNWidjpkH5RZZTMbLIcRLUwoAc3hFQAGYAThA8SADM1DgQSILOFmwAhAB67rrBoUjKINGx8ZpWiTYgGWGIZDkxiJHqCVZcPHQ4ABZBPMBoIQBWEvyKxaVIFbmI2eYFIA1Nre2dED1CkhQSQA
+\begin{tikzcd}
+0\times_1 R \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & R \arrow[d, "!^R"] \\
+0 \arrow[rr, "!"]                                                      &  & 1                 
+\end{tikzcd}
+\]
+
+Let's find out the mentioned equivalences of categories. Observe that
+\[(\mathbf{Ring} \downarrow 1) \cong \mathbf{Ring}\]
+in fact, we can always provide an object in $\mathbf{Ring}$ with a morphism to $1$, just using the unique morphism to $1$. Furthermore
+\[(\mathbf{Ring} \downarrow 0) = (\mathbf{Ring} \downarrow \mathbb{Z}) \cong \mathbf{Ring_*} \]
+where the equivalence of category is given by the unitalization functor $(F,\pi)$, and its quasi inverse $\mathrm{ker}$. 
+
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAIwBmwAEpYwAcwC+AAm5QIAdzB0AThtXyAjAEoQs0uky58hFGQBMVWoxZt5XXv2FjJMhUtXqtO7j5BISFgAC1ZQ2NTbDwCImtyO3pmVkQQQLdRCSk5IxMQDFiLBNJbahTHdMzgj1yAfQAqWSM7GChpeCJQEW0eJDIQHAgkXWo4ASwRHCQAWjH7VLYAQgA9RvyevtHqYYHxyem5hcq0kGX65c2QXoh+xEShkcQAZgOpmcR5ioczgFVrrd7m8nkhHhMPscfkt0gAxQHbRCDPYPaFVDKcADGBGkIF2dCwDDYkDArGoAhgdCgxIIrGiN0RCxRIIhR0QJ1+bBqAg0PGAAGsYBoWtQGHQhDAGAAFMxxSwgDRYaQCGb0oFIEEohasz4cmEcWGkbhoLD1bkhcKRPEgMUS6WykrpRXK1UUWRAA
+\begin{tikzcd}
+(\mathbf{Ring} \downarrow 1) \arrow[dd, "!^*", shift left] \arrow[rr, "\cong", no head]                       &  & \mathbf{Ring} \arrow[dd, "U", shift left]                                                    \\
+                                                                                                              &  &                                                                                              \\
+ (\mathbf{Ring} \downarrow \mathbb{Z}) \arrow[uu, "!_!", shift left] \arrow[rr, "\mathrm{ker}"', shift right] &  & \mathbf{Ring_*} \arrow[uu, "F", shift left] \arrow[ll, "{(F,\pi_\mathbb{Z})}"', shift right]
+\end{tikzcd}
+\]
