@@ -10,18 +10,37 @@ It is a standard fact that $\mathbf{Ring}$ and $\mathbf{Ring_*}$ are finitely co
 
 That said, they have a crucial difference: $\mathbf{Ring}$ is not pointed, whereas $\mathbf{Ring_*}$ is. In fact, in $\mathbf{Ring_*}$ the initial and terminal objects are both the zero ring ${0}$, while in $\mathbf{Ring}$ the initial object is the zero ring $0=\mathbb{Z}$ of integers, but the terminal object is the ring $1={0}$. Thus, we conclude the $\mathbf{Ring_*}$ is semiabelian, while $\mathbf{Ring}$ fails to be.
 
-In particular we have the forgetful functor that forgets the unit.
+So we have the forgetful functor that forgets the unit
 \[U: \mathbf{Ring} \to \mathbf{Ring_*}\]
-with $\mathbf{Ring}$ protomodular and exact, and $\mathbf{Ring_*}$. This functor turns out to be monadic, with left adjoint the unitalization functor.
+with $\mathbf{Ring}$ protomodular and exact, and $\mathbf{Ring_*}$. This functor has a left adjoint: the unitalization. This functor, also known as the Dorroh extension, is given by
 \begin{align*}
 F: \mathbf{Ring_*} &\to \mathbf{Ring} \\
 R &\mapsto \mathbb{Z} \oplus R
 \end{align*}
-This adjunction will lead us to the definition of the ideally exact categories. 
+where the sum $\mathbb{Z} \oplus R$ is the sum by components, while the product $\cdot$ is defined as follows
+\begin{align*}
+\cdot : (\mathbb{Z} \oplus R) \times (\mathbb{Z} \oplus R) &\to \mathbb{Z} \oplus R \\
+((m,r),(n,s))&\mapsto (mn, rs + ms + nr)
+\end{align*}
+and with unit of $(\mathbb{Z} \oplus R)$ given by $(1,0)$.
 
-Moreover, the functor $U$ is, up to category equivalences, the pullback functor $!^*$ where $!$ is the unique morphism in $\mathbf{Ring}$ $!:0 \to 1$ and 
+The unit and the counit of the adjunction are given by
+\begin{align*}
+\eta_R: R &\to UF(R)=\mathbb{Z} \oplus R \\
+r &\mapsto (0,r)
+\end{align*}
+\begin{align*}
+\epsilon_R: FU(R)=\mathbb{Z} \oplus R &\to R  \\
+(n,r) &\mapsto (n1_R + r)
+\end{align*}
+
+The functor $U$ turns out to be monadic, simply by Beck's theorem, since coequalizers in $\mathbf{Ring}$ and $\mathbf{Ring_*}$ are the same. In fact, given $f,g$ morphisms, the coequalizer of $(f,g)$ is the canonical projection
+\[\pi: B \to B/I \ \ \ \ \ \ \ I = (f(r) - g(r) \ | \ r \in R)\]
+This adjunction will lead us to the definition of the ideally exact categories. We will see that the definition involves a  generic monadic functor in a semiabelian category. Sometimes, as we will see, such functor is, up to category equivalences, the pullback functor of $!:0 \to 1$. That's the case for the functor $U$ above. As we will see, this is intrinsically due to the fact that the unit $\eta$ of the adjunction is cartesian. We now want to deep into the mentioned category equivalence.
+
+First we define the pullback functor
 \[!^*:(\mathbf{Ring} \downarrow 1) \to (\mathbf{Ring} \downarrow 0)\]
-is defined as follows. Let $R$ be an object in $\mathbf{Ring}$, then $!^*(X)=(0 \times_1 R,  \mathrm{proj}_1)$
+Let $R$ be an object in $\mathbf{Ring}$, then $!^*(X)=(0 \times_1 R,  \mathrm{proj}_1)$
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfQCMAAgBKIAL6l0mXPkIoATKUFVajFm0GTpIDNjwEiZVdXrNWidjpkH5RZZTMbLIcRLUwoAc3hFQAGYAThA8SADM1DgQSILOFmwAhAB67rrBoUjKINGx8ZpWiTYgGWGIZDkxiJHqCVZcPHQ4ABZBPMBoIQBWEvyKxaVIFbmI2eYFIA1Nre2dED1CkhQSQA
 \begin{tikzcd}
@@ -30,12 +49,12 @@ is defined as follows. Let $R$ be an object in $\mathbf{Ring}$, then $!^*(X)=(0 
 \end{tikzcd}
 \]
 
-Let's find out the mentioned equivalences of categories. Observe that
+Observe that
 \[(\mathbf{Ring} \downarrow 1) \cong \mathbf{Ring}\]
 in fact, we can always provide an object in $\mathbf{Ring}$ with a morphism to $1$, just using the unique morphism to $1$. Furthermore
 \[(\mathbf{Ring} \downarrow 0) = (\mathbf{Ring} \downarrow \mathbb{Z}) \cong \mathbf{Ring_*} \]
-where the equivalence of category is given by the unitalization functor $(F,\pi_\mathbb{Z})$, and its quasi inverse $\mathrm{ker}$. 
-
+where the equivalence of category is given by the unitalization functor $(F,\pi_\mathbb{Z})$, and its quasi inverse $\mathrm{ker}$\footnote{We are using the algebraic definition of $\mathrm{ker}$, in fact we cannot use the categorical definition since $\mathbf{Ring}$ is not pointed. However, one can still induce an action of $\mathrm{ker}$ in the morphisms.}. 
+The following diagram, which is commutative up to natural isomorphism, summarizes the situation and shows that the pullback functor $!^*$ is, up to equivalence of categories, the forgetful functor.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAIwBmwAEpYwAcwC+AAm5QIAdzB0AThtXyAjAEoQs0uky58hFGQBMVWoxZt5XXv2FjJMhUtXqtO7j5BISFgAC1ZQ2NTbDwCImtyO3pmVkQQQLdRCSk5IxMQDFiLBNJbahTHdMzgj1yAfQAqWSM7GChpeCJQEW0eJDIQHAgkXWo4ASwRHCQAWjH7VLYAQgA9RvyevtHqYYHxyem5hcq0kGX65c2QXoh+xEShkcQAZgOpmcR5ioczgFVrrd7m8nkhHhMPscfkt0gAxQHbRCDPYPaFVDKcADGBGkIF2dCwDDYkDArGoAhgdCgxIIrGiN0RCxRIIhR0QJ1+bBqAg0PGAAGsYBoWtQGHQhDAGAAFMxxSwgDRYaQCGb0oFIEEohasz4cmEcWGkbhoLD1bkhcKRPEgMUS6WykrpRXK1UUWRAA
 \begin{tikzcd}
