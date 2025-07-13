@@ -55,14 +55,14 @@ is isomorphic to $R$.
 
 We now want to deep into the mentioned category equivalence. First we define the pullback functor
 \[!^*:(\mathbf{Ring} \downarrow 1) \to (\mathbf{Ring} \downarrow 0)\]
-Let $R$ be an object in $\mathbf{Ring}$, then $!^*(X)=(0 \times_1 R,  \mathrm{proj}_1)$
-\[
+Let $R$ be an object in $\mathbf{Ring}$, then $!^*(R)=(0 \times_1 R,  \mathrm{proj}_1)$
+\begin{equation}\label{ring square}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfQCMAAgBKIAL6l0mXPkIoATKUFVajFm0GTpIDNjwEiZVdXrNWidjpkH5RZZTMbLIcRLUwoAc3hFQAGYAThA8SADM1DgQSILOFmwAhAB67rrBoUjKINGx8ZpWiTYgGWGIZDkxiJHqCVZcPHQ4ABZBPMBoIQBWEvyKxaVIFbmI2eYFIA1Nre2dED1CkhQSQA
 \begin{tikzcd}
 0\times_1 R \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & R \arrow[d, "!^R"] \\
 0 \arrow[rr, "!"]                                                      &  & 1                 
 \end{tikzcd}
-\]
+\end{equation}
 
 Observe that
 \[(\mathbf{Ring} \downarrow 1) \cong \mathbf{Ring}\]
@@ -73,20 +73,23 @@ where the equivalence of category is given by the unitalization functor
     (F,\pi_\mathbb{Z}) : \mathbf{Ring_*} &\to \mathbf{Ring} \downarrow \mathbb{Z}\\
     R &\mapsto (\mathbb{Z} \oplus R, \pi_\mathbb{Z}:\mathbb{Z} \oplus R \to \mathbb{Z})
 \end{align*}
-and its quasi inverse $\mathrm{ker}$\footnote{We are using the algebraic definition of $\mathrm{ker}$, in fact we cannot use the categorical definition since $\mathbf{Ring}$ is not pointed. However, one can still induce an action of $\mathrm{ker}$ in the morphisms.}.
+and its quasi inverse $\mathrm{Ker}$\footnote{We are using the algebraic definition of $\mathrm{Ker}$, in fact we cannot use the categorical definition since $\mathbf{Ring}$ is not pointed. However, one can still induce an action of $\mathrm{Ker}$ in the morphisms. Alternatively, one may consider the categorical definition of $\mathrm{Ker}$, but it is the $\mathrm{Ker}$ in $\mathbf{Ring_*}$, which is pointed, via the forgetful functor $U$. This perspective will be used when we treat the corresponding theorem in an ideally exact category, where the existence of the associated categorical equivalence is established.}.
 \begin{align*}
-    \mathrm{ker} : (\mathbf{Ring} \downarrow \mathbb{Z}) &\to \mathbf{Ring_*}\\
-    (R,\phi:R \to \mathbb{Z}) &\mapsto \mathrm{ker}(\phi) 
+    \mathrm{Ker} : (\mathbf{Ring} \downarrow \mathbb{Z}) &\to \mathbf{Ring_*}\\
+    (R,\phi:R \to \mathbb{Z}) &\mapsto \mathrm{Ker}(\phi) 
 \end{align*}
+
 The following diagram, which is commutative up to natural isomorphism, summarizes the situation and shows that the forgetful functor $U$ is, up to equivalence of categories, the pullback functor $!^*$.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAIwBmwAEpYwAcwC+AAm5QIAdzB0AThtXyAjAEoQs0uky58hFGQBMVWoxZt5XXv2FjJMhUtXqtO7j5BISFgAC1ZQ2NTbDwCImtyO3pmVkQQQLdRCSk5IxMQDFiLBNJbahTHdMzgj1yAfQAqWSM7GChpeCJQEW0eJDIQHAgkXWo4ASwRHCQAWjH7VLYAQgA9RvyevtHqYYHxyem5hcq0kGX65c2QXoh+xEShkcQAZgOpmcR5ioczgFVrrd7m8nkhHhMPscfkt0gAxQHbRCDPYPaFVDKcADGBGkIF2dCwDDYkDArGoAhgdCgxIIrGiN0RCxRIIhR0QJ1+bBqAg0PGAAGsYBoWtQGHQhDAGAAFMxxSwgDRYaQCGb0oFIEEohasz4cmEcWGkbhoLD1bkhcKRPEgMUS6WykrpRXK1UUWRAA
 \begin{tikzcd}
 (\mathbf{Ring} \downarrow 1) \arrow[dd, "!^*", shift left] \arrow[rr, "\cong", no head]                       &  & \mathbf{Ring} \arrow[dd, "U", shift left]                                                    \\
                                                                                                               &  &                                                                                              \\
- (\mathbf{Ring} \downarrow \mathbb{Z}) \arrow[uu, "!_!", shift left] \arrow[rr, "\mathrm{ker}"', shift right] &  & \mathbf{Ring_*} \arrow[uu, "F", shift left] \arrow[ll, "{(F,\pi_\mathbb{Z})}"', shift right]
+ (\mathbf{Ring} \downarrow \mathbb{Z}) \arrow[uu, "!_!", shift left] \arrow[rr, "\mathrm{Ker}"', shift right] &  & \mathbf{Ring_*} \arrow[uu, "F", shift left] \arrow[ll, "{(F,\pi_\mathbb{Z})}"', shift right]
 \end{tikzcd}
 \]
+Observe that the downward-right directed square commutes up to natural isomorphism, since, referring to the diagram \refeq{ring square}, given an object $R$ in $\mathbf{Ring}$, $\mathrm{Ker}(\mathrm{proj}_1)$ is isomorphic to $R$ in $\mathbf{Ring_*}$.
+On the other hand, the upward-left directed square also commutes up to natural isomorphism, because in both cases we applied the unitalization functor $F$.
 
 We already know that ideals in $\mathbf{Ring}$ are just the corresponding normal subobject, ie the kernel of an arrow, in $\mathbf{Ring_*}$, which is semiabelian. This thesis is devoted to the ideally exact categories, that better capture the categorical structure of rings.
 
