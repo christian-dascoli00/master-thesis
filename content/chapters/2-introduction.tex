@@ -36,9 +36,24 @@ r &\mapsto (0,r)
 
 The functor $U$ turns out to be monadic, simply by Beck's theorem, since coequalizers in $\mathbf{Ring}$ and $\mathbf{Ring_*}$ are the same. In fact, given $f,g$ morphisms, the coequalizer of $(f,g)$ is the canonical projection
 \[\pi: B \to B/I \ \ \ \ \ \ \ I = (f(r) - g(r) \ | \ r \in R)\]
-This adjunction will lead us to the definition of the ideally exact categories. We will see that the definition involves a  generic monadic functor in a semiabelian category. Sometimes, as we will see, such functor is, up to category equivalences, the pullback functor of $!:0 \to 1$. That's the case for the functor $U$ above. As we will see, this is intrinsically due to the fact that the unit $\eta$ of the adjunction is cartesian. We now want to deep into the mentioned category equivalence.
+This adjunction will lead us to the definition of the ideally exact categories. We will see that the definition involves a  generic monadic functor in a semiabelian category. Sometimes, as we will see, such functor is, up to category equivalences, the pullback functor of $!:0 \to 1$. That's the case for the functor $U$ above. As we will see, this is intrinsically due to the fact that the unit $\eta$ of the adjunction is cartesian. In fact, one can easily prove, for each $R$,$R'$ in $\mathbf{Ring_*}$ and for each morphism $f:R \to R'$, that the pullback in $\mathbf{Ring_*}$ of $\eta_{R'}$ and $f$
+\begin{align*}
+R'&\times_{UF(R')} UF(R) = R'\times_{\mathbb{Z}\oplus R'} (\mathbb{Z}\oplus R) = \\[1.5ex]
+&= \{ (r',(n,r)) \in R'\times (\mathbb{Z}\oplus R) \ | \  UF(f)(x) = \eta_{R'}(y) \} \\[1.5ex]
+&=\{ (r',(n,r)) \in R'\times (\mathbb{Z}\oplus R) \ | \ n=0 \ \land \ f(r)=r' \} \\[1.5ex]
+&=\{ (f(r),(0,r)) \ | \  r \in R \}
+\end{align*}
+is isomorphic to $R$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAIAlAcgB1e8AW3gB9YP0F0cACwBGs4AC0AvvwhpmcLt2XsAFBKlyFKtRqZbOAShDLS6TLnyEUARlIAmKrUYs2PW3sQDGw8AiIAZlJXb3pmVkQQQxl5JVVedU0uQIdQ50jPWN8EpN5JFJN0zIttHODHMJdkdxjqOL9EzltvGCgAc3giUAAzACcIQSQyEBwIJHcQWRgwKCQAWgjp9pLk6VHBYDRxgCtlEVcQagY6JYYABQb8xNGsPukcOrGJqepZpA9qEsVkhNm1imxdvtDiczh5LiBrrcHnlwokGDBhh87CNxpNENM-ogACxXLBgEpQOhwaS9T64pAkmZzRALbZsYZ074s37MqI+eIQ3gwHB0MQ8ZScvGMwkA-kdUrC0VdbEgL542WEvlsxIAVQAYnphjZlBRlEA
+\begin{tikzcd}
+ R'\times_{\mathbb{Z}\oplus R'} (\mathbb{Z}\oplus R) \arrow[rdd, "\mathrm{proj}_1"', bend right] \arrow[rrrd, "\mathrm{proj}_2", bend left] \arrow[rd, dashed] &                                       &  &                                       \\
+                                                                                                                                                               & R \arrow[d, "f"] \arrow[rr, "\eta_R"] &  & \mathbb{Z}\oplus R \arrow[d, "UF(f)"] \\
+                                                                                                                                                               & R' \arrow[rr, "\eta_{R'}"]            &  & \mathbb{Z}\oplus R'                  
+\end{tikzcd}
+\]
 
-First we define the pullback functor
+We now want to deep into the mentioned category equivalence. First we define the pullback functor
 \[!^*:(\mathbf{Ring} \downarrow 1) \to (\mathbf{Ring} \downarrow 0)\]
 Let $R$ be an object in $\mathbf{Ring}$, then $!^*(X)=(0 \times_1 R,  \mathrm{proj}_1)$
 \[
