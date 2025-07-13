@@ -4,7 +4,7 @@
 
 In this chapter, we aim to introduce a motivating example for the notions of ideally exact categories. 
 
-Consider the category $\mathbf{Ring}$ of rings with unity. The notion of ideal is, at first glance, an somewhat unnatural in the context of categories. In fact, in general, an ideal of a ring with unit is not an object in the category $\mathbf{Ring}$: if an ideal contains the unit, then it coincides with the whole ring. However, we observe that it is an object of the category $\mathbf{Ring_*}$ of rings without unit.
+Consider the category $\mathbf{Ring}$ of rings with unit. The notion of ideal is, at first glance, somewhat unnatural in the context of categories. In fact, in general, an ideal of a ring with unit is not an object in the category $\mathbf{Ring}$: if an ideal contains the unit, then it coincides with the whole ring. However, we observe that it is an object of the category $\mathbf{Ring_*}$ of rings without unit.
 
 It is a standard fact that $\mathbf{Ring}$ and $\mathbf{Ring_*}$ are finitely complete, protomodular and exact categories. They both have binary coproducts, even if they are not the same. The coproduct in the category $\mathbf{Ring}$ is the free product, while in $\mathbf{Ring_*}$ it is the free product with amalgamation, in order to ensure that there is a unit in the coproduct.
 
@@ -87,3 +87,7 @@ The following diagram, which is commutative up to natural isomorphism, summarize
  (\mathbf{Ring} \downarrow \mathbb{Z}) \arrow[uu, "!_!", shift left] \arrow[rr, "\mathrm{ker}"', shift right] &  & \mathbf{Ring_*} \arrow[uu, "F", shift left] \arrow[ll, "{(F,\pi_\mathbb{Z})}"', shift right]
 \end{tikzcd}
 \]
+
+We already know that ideals in $\mathbf{Ring}$ are just the corresponding normal subobject, ie the kernel of an arrow, in $\mathbf{Ring_*}$, which is semiabelian. This thesis is devoted to the ideally exact categories, that better capture the categorical structure of rings.
+
+Remark that this anomaly does not appear in the category $\mathbf{Grp}$. In fact normal subgroups are objects in the category of groups and, since $\mathbf{Grp}$ is semiabelian, they are exactly the normal subobjects in the semiabelian sense.
