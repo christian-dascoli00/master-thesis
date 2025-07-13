@@ -68,8 +68,17 @@ Observe that
 \[(\mathbf{Ring} \downarrow 1) \cong \mathbf{Ring}\]
 in fact, we can always provide an object in $\mathbf{Ring}$ with a morphism to $1$, just using the unique morphism to $1$. Furthermore
 \[(\mathbf{Ring} \downarrow 0) = (\mathbf{Ring} \downarrow \mathbb{Z}) \cong \mathbf{Ring_*} \]
-where the equivalence of category is given by the unitalization functor $(F,\pi_\mathbb{Z})$, and its quasi inverse $\mathrm{ker}$\footnote{We are using the algebraic definition of $\mathrm{ker}$, in fact we cannot use the categorical definition since $\mathbf{Ring}$ is not pointed. However, one can still induce an action of $\mathrm{ker}$ in the morphisms.}. 
-The following diagram, which is commutative up to natural isomorphism, summarizes the situation and shows that the pullback functor $!^*$ is, up to equivalence of categories, the forgetful functor.
+where the equivalence of category is given by the unitalization functor 
+\begin{align*}
+    (F,\pi_\mathbb{Z}) : \mathbf{Ring_*} &\to \mathbf{Ring} \downarrow \mathbb{Z}\\
+    R &\mapsto (\mathbb{Z} \oplus R, \pi_\mathbb{Z}:\mathbb{Z} \oplus R \to \mathbb{Z})
+\end{align*}
+and its quasi inverse $\mathrm{ker}$\footnote{We are using the algebraic definition of $\mathrm{ker}$, in fact we cannot use the categorical definition since $\mathbf{Ring}$ is not pointed. However, one can still induce an action of $\mathrm{ker}$ in the morphisms.}.
+\begin{align*}
+    \mathrm{ker} : (\mathbf{Ring} \downarrow \mathbb{Z}) &\to \mathbf{Ring_*}\\
+    (R,\phi:R \to \mathbb{Z}) &\mapsto \mathrm{ker}(\phi) 
+\end{align*}
+The following diagram, which is commutative up to natural isomorphism, summarizes the situation and shows that the forgetful functor $U$ is, up to equivalence of categories, the pullback functor $!^*$.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAIwBmwAEpYwAcwC+AAm5QIAdzB0AThtXyAjAEoQs0uky58hFGQBMVWoxZt5XXv2FjJMhUtXqtO7j5BISFgAC1ZQ2NTbDwCImtyO3pmVkQQQLdRCSk5IxMQDFiLBNJbahTHdMzgj1yAfQAqWSM7GChpeCJQEW0eJDIQHAgkXWo4ASwRHCQAWjH7VLYAQgA9RvyevtHqYYHxyem5hcq0kGX65c2QXoh+xEShkcQAZgOpmcR5ioczgFVrrd7m8nkhHhMPscfkt0gAxQHbRCDPYPaFVDKcADGBGkIF2dCwDDYkDArGoAhgdCgxIIrGiN0RCxRIIhR0QJ1+bBqAg0PGAAGsYBoWtQGHQhDAGAAFMxxSwgDRYaQCGb0oFIEEohasz4cmEcWGkbhoLD1bkhcKRPEgMUS6WykrpRXK1UUWRAA
 \begin{tikzcd}
