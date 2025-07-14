@@ -203,7 +203,55 @@ V \arrow[rr, "k", shift left]                 &  & W \arrow[ll, "T(h)", shift le
 
 \section{The morphism-induced scenario}
 
-We already saw in \Cref{Ideally exact categories} that an we can consider as functor of the definition the one induced by the morphism $!:0 \to 1$, to form the pullback functor. One can ask whether or not this functor is, up to equivalence of categories, the pullback functor. We aim to answer this question. First, we need the following proposition.
+We already saw in \Cref{Ideally exact categories} that an we can consider as functor of the definition the one induced by the morphism $!:0 \to 1$, to form the pullback functor. One can ask whether or not this functor is, up to equivalence of categories, the pullback functor. We aim to answer this question in this section.
+
+Given an adjunction $F \dashv U$ between categories finitely complete, with initial and terminal objects, and $\mathcal{X}$ pointed
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwDGjYAEEAviDGl0mXPkIoAjOSq1GLNpx78hDYAA0JY1TCgBzeEVAAzAE4QuSMiBwQkykACMYYKE+r0zKyIIACqINRwfFjWOEgAtIpSNvaOiB6u-l4+fojOUTFxiIkB6sEgAGKSFGJAA
+\begin{tikzcd}
+\mathcal{A} \arrow[r, "U", shift left] & \mathcal{X} \arrow[l, "F", shift left]
+\end{tikzcd}
+\]
+we can consider the adjunction induced on the initial objects $0$, defined as follows. Let $X$ be an object in $\mathcal{X}$ and let $(A,\alpha)$ be an object in $(\mathcal{A}\downarrow 0)$. Since $\mathcal{X}$ is pointed, then $\mathcal{X} \cong (\mathcal{X}\downarrow 0)$. Denote $!^X:X \to 0$ the unique morphism in the zero object.
+\begin{align*}
+F^0(X) &= (F(X), F(!^X)) \\[1.5ex]
+U^0(A,\alpha) &= 0\times_{UF(0)}U(A) = 0\times_{U(0)}U(A) = \mathrm{Ker}(U(\alpha))
+\end{align*}
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkRiQBfU9TXfIRQAmUsWp0mrdgFUAFAEEAlN14gM2PASKiqNBizaIQ84ip59NgomXH6pRjgB0neALbwA+sFNKu85W4JGCgAc3giUAAzACcINyQAZhocCCRye0N2Fzd6HAALGLdgNDiAKy5PYVVouITEMhBUpFFJLOMAQm9fLhqQWPj0lLTEVoNpY3kXJjR8+nM1AfrkppHG8cccvMLi0ogKz3IgriA
+\begin{tikzcd}
+0\times_{U(0)}U(A) \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & U(A) \arrow[d, "U(\alpha)"] \\
+0 \arrow[rr, "!_{U(0)}"]                                                      &  & U(0)                       
+\end{tikzcd}
+\]
+Since $F$ is a left adjoint, we can assume $F(0)=0$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAY0bAAggF8ABNygQA7mDoAnZQqnEAlFIC8Urr37DRkmZzmKVa+VIBi7LZpATS6TLnyEUARnJVajCxsBnyCIgzAABrSsgpKqupaumahxhHRzv4wUADm8ESgAGZqPEhkIDgQSL4gAEYwYFBl1PTMrIggAKog1HACWIU4SAC03i5FJdXUlc11DU2I5X0DQ4ijLYHtILaZEkA
+\begin{tikzcd}
+(\mathcal{A} \downarrow 0) \cong (\mathcal{A} \downarrow F(0)) \arrow[r, "U^0", shift left] & (\mathcal{X} \downarrow 0) \cong \mathcal{X} \arrow[l, "F^0", shift left]
+\end{tikzcd}
+\]
+One can prove that this is an adjunction. Given $\eta$ and $\epsilon$ the unit and counit of $F \dashv U$, then the unit of $F^0 \dashv U^0$ in an object $X$ in $\mathcal{X}$ is
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAAYAdTvAW3gD6wAKoAKdgEoAvmIBiogBoSJIKaXSZc+QigDM5KrUYs2cxctXqQGbHgJF9AJkP1mrRCGHzJljbe1EZM7UriYe7L7WmnY6yOyk7C7G7iAKqoYwUADm8ESgAGYAThC8SPogOBBIjiHJbNwwOHQC7AC8AIRCXuLSINQMdABGMAwACtEBHoVYWQAWOJFFJUjxFVWIZEZu9Zy8dDizhbzAaMUAVgKOUovFpRvUldW12x7d7QB6SjfLiKuPiOVQiluHsDkcTucpAJiN87gAWB7rTbDMBQMqrIE7RrNNJqAq3JAItZlagotGIAC0ugxdQ8HzS-SGI3G-nsUxm81hhMRK36WDAKSgdDgs0yfS2YRADSa73YAlxFCkQA
+\begin{tikzcd}
+X \arrow[rrrd, "\eta_X", bend left] \arrow[rdd, "!^X"', bend right] \arrow[rd, "\eta^0_X", dashed] &                                                                                  &  &                              \\
+                                                                                                   & 0\times_{UF(0)}UF(X) \arrow[rr, "\mathrm{proj_2}"] \arrow[d, "\mathrm{proj}_1=!^{U^0F^0(X)}"] &  & U(F(X)) \arrow[d, "UF(!^X)"] \\
+                                                                                                   & 0 \arrow[rr, "\eta_0=!_{UF(0)}"']                                                &  & UF(0)                       
+\end{tikzcd}
+\]
+where the outer diagram commutes because of the naturality of $\eta$, and the counit of $F^0 \dashv U^0$ in an object $(A,\alpha)$ in $(\mathcal{A} \downarrow 0)$ is
+\[
+\epsilon^0_{(A,\alpha)} = \epsilon_{A} F(\mathrm{proj}_2)
+\]
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRADEAKAVQD1jOAQVIAdEYzQALOgEoZAXi7ExeALbwA+sG5KZAX25C5IPaXSZc+QigCM5KrUYs27Q4JkmzIDNjwEiAEz21PTMrIgggp7mvlZEdjYOoc4RuiYOMFAA5vBEoABmAE4Qqkh2IDgQSEGOYWxiMGjYDAQaUaYFxaWIZBVViOXJ4RycYqp0OJKFqsBoxQBWehoBHh0gRSVIvZVIAMwhTsNcYxNTM3MQi8sKXACEvMBcfALCYhLS+h7UDHQARjAMAAKFj81hAhSwWUkOGi6y61WoO0Q+1qKRAbwYUjo6T0QA
+\begin{tikzcd}
+{F(U^0(A,\alpha))=F(0\times_{UF(0)}U(A))} \arrow[r, "F(\mathrm{proj}_2)"] \arrow[rd, "{F(\mathrm{proj}_1)=F(!^{F(U^0(A,\alpha)})}"'] & FU(A) \arrow[r, "\epsilon_A"] & A \arrow[ld, "\alpha"] \\
+                                                                                                                                     & F(0)                          &                       
+\end{tikzcd}
+\]
+One can prove that the counit is a morphism in $(\mathcal{A} \downarrow 0)$ and that both $\eta^0$ and $\epsilon^0$ are natural transformations.
 
 \begin{mainbox}{}
 \begin{prop}
@@ -215,9 +263,7 @@ Given an adjunction $F \dashv U$
 \end{tikzcd}
 \]
 in which $\mathcal{X}$ is pointed and protomodular, $U$ reflects isomorphisms, and the unit of the adjunction $\eta$ is cartesian.
-Then the adjunction induced in the $0$
-...
-is an equivalence adjunction. 
+Then the adjunction induced in $0$ $F^0 \dashv U^0$ is an adjoint equivalence.
 \end{prop}
 \end{mainbox}
 
