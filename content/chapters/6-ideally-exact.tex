@@ -212,7 +212,7 @@ Given an adjunction $F \dashv U$ between categories finitely complete, with init
 \mathcal{A} \arrow[r, "U", shift left] & \mathcal{X} \arrow[l, "F", shift left]
 \end{tikzcd}
 \]
-we can consider the adjunction induced on the initial objects $0$, defined as follows. Let $X$ be an object in $\mathcal{X}$ and let $(A,\alpha)$ be an object in $(\mathcal{A}\downarrow 0)$. Since $\mathcal{X}$ is pointed, then $\mathcal{X} \cong (\mathcal{X}\downarrow 0)$. Denote $!^X:X \to 0$ the unique morphism in the zero object.
+we can consider the adjunction induced on the initial objects $0$, defined as follows. Let $X$ be an object in $\mathcal{X}$ and let $(A,\alpha)$ be an object in $(\mathcal{A}\downarrow 0)$. Since $\mathcal{X}$ is pointed, then $\mathcal{X} \cong (\mathcal{X}\downarrow 0)$. The category of the initial objects $0$ in $\mathcal{X}$ and $\mathcal{A}$ is implicit. Denote $!^X:X \to 0$ the unique morphism in the zero object.
 \begin{align*}
 F^0(X) &= (F(X), F(!^X)) \\[1.5ex]
 U^0(A,\alpha) &= 0\times_{UF(0)}U(A) = 0\times_{U(0)}U(A) = \mathrm{Ker}(U(\alpha))
@@ -224,22 +224,22 @@ U^0(A,\alpha) &= 0\times_{UF(0)}U(A) = 0\times_{U(0)}U(A) = \mathrm{Ker}(U(\alph
 0 \arrow[rr, "!_{U(0)}"]                                                      &  & U(0)                       
 \end{tikzcd}
 \]
-Since $F$ is a left adjoint, we can assume $F(0)=0$.
-\[
+Since $F$ is a left adjoint, we can assume $F(0_\mathcal{X})=0_\mathcal{A}$. In the following the category of the $0$ will be implicit.
+\begin{equation}\label{induced ajunction on 0}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAY0bAAggF8ABNygQA7mDoAnZQqnEAlFIC8Urr37DRkmZzmKVa+VIBi7LZpATS6TLnyEUARnJVajCxsBnyCIgzAABrSsgpKqupaumahxhHRzv4wUADm8ESgAGZqPEhkIDgQSL4gAEYwYFBl1PTMrIggAKog1HACWIU4SAC03i5FJdXUlc11DU2I5X0DQ4ijLYHtILaZEkA
 \begin{tikzcd}
 (\mathcal{A} \downarrow 0) \cong (\mathcal{A} \downarrow F(0)) \arrow[r, "U^0", shift left] & (\mathcal{X} \downarrow 0) \cong \mathcal{X} \arrow[l, "F^0", shift left]
 \end{tikzcd}
-\]
+\end{equation}
 One can prove that this is an adjunction. Given $\eta$ and $\epsilon$ the unit and counit of $F \dashv U$, then the unit of $F^0 \dashv U^0$ in an object $X$ in $\mathcal{X}$ is
-\[
+\begin{equation}\label{unit of adjunction in 0}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAAYAdTvAW3gD6wAKoAKdgEoAvmIBiogBoSJIKaXSZc+QigDM5KrUYs2cxctXqQGbHgJF9AJkP1mrRCGHzJljbe1EZM7UriYe7L7WmnY6yOyk7C7G7iAKqoYwUADm8ESgAGYAThC8SPogOBBIjiHJbNwwOHQC7AC8AIRCXuLSINQMdABGMAwACtEBHoVYWQAWOJFFJUjxFVWIZEZu9Zy8dDizhbzAaMUAVgKOUovFpRvUldW12x7d7QB6SjfLiKuPiOVQiluHsDkcTucpAJiN87gAWB7rTbDMBQMqrIE7RrNNJqAq3JAItZlagotGIAC0ugxdQ8HzS-SGI3G-nsUxm81hhMRK36WDAKSgdDgs0yfS2YRADSa73YAlxFCkQA
 \begin{tikzcd}
 X \arrow[rrrd, "\eta_X", bend left] \arrow[rdd, "!^X"', bend right] \arrow[rd, "\eta^0_X", dashed] &                                                                                  &  &                              \\
                                                                                                    & 0\times_{UF(0)}UF(X) \arrow[rr, "\mathrm{proj_2}"] \arrow[d, "\mathrm{proj}_1=!^{U^0F^0(X)}"] &  & U(F(X)) \arrow[d, "UF(!^X)"] \\
                                                                                                    & 0 \arrow[rr, "\eta_0=!_{UF(0)}"']                                                &  & UF(0)                       
 \end{tikzcd}
-\]
+\end{equation}
 where the outer diagram commutes because of the naturality of $\eta$, and the counit of $F^0 \dashv U^0$ in an object $(A,\alpha)$ in $(\mathcal{A} \downarrow 0)$ is
 \[
 \epsilon^0_{(A,\alpha)} = \epsilon_{A} F(\mathrm{proj}_2)
@@ -254,7 +254,7 @@ where the outer diagram commutes because of the naturality of $\eta$, and the co
 One can prove that the counit is a morphism in $(\mathcal{A} \downarrow 0)$ and that both $\eta^0$ and $\epsilon^0$ are natural transformations.
 
 \begin{mainbox}{}
-\begin{prop}
+\begin{prop}\label{ajoint equivalence for pullback functor}
 Given an adjunction $F \dashv U$
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwDGjYAEEAviDGl0mXPkIoAjOSq1GLNpx78hDYAA0JY1TCgBzeEVAAzAE4QuSMiBwQkykACMYYKE+r0zKyIIACqINRwfFjWOEgAtIpSNvaOiB6u-l4+fojOUTFxiIkB6sEgAGKSFGJAA
@@ -269,21 +269,112 @@ Then the adjunction induced in $0$ $F^0 \dashv U^0$ is an adjoint equivalence.
 
 \begin{subbox}{}
     \begin{proof}
+        Consider the induced adjunction  $F^0 \dashv U^0$ in \eqref{induced ajunction on 0}. Observe that $(\mathcal{A} \downarrow 0) \cong \mathrm{Pt}_\mathcal{A}(0)$ via the unique morphism from the initial object.
 
+        First, we aim to prove that $U^0$ reflects iso. Let $f:(A,\alpha)\to (A',\alpha')$ be a morphism in $\mathrm{Pt}_\mathcal{A}(0)$. Observe that $U^0(f)=(!_{U(0)})^*(U(f))$. 
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfWABVABTEAlAF9RAQXEhJpdJlz5CKAIzkqtRizaz5i5djwEiAZm3V6zVohCyA5EaUgMptUQAs13XbZObiw+OEFRCUkZJwU3D1VzFAAmUg0dW30HCNcTBPVkFKT0vXt2BR0YKABzeCJQADMAJwgeJDIQHAgkAFZqACMYMCgkAFoLdozSrh46HAALRp5gNGaAK0l+DRBqODmsepxRjWMQJpakLQ6uxF8QXf3DxBHLyYMRLkY0Oboc0+bWxApK5IW6vLLvDifb4ubYgBh0AYMAAKKjM6hAjSwVTmhx2ewOFxOZwB7U6FxsJTY01mCyWKwg634SVh8MRKM8iQxWJxsQa-3JwMBFIC4Pqv2JSCsgqBYJA1Pmi2Waw2SRiRP5iFJ1ylAyGkvaDCwYFKUDou0qsNlQgAesQRGKALwiACE4TEUnE1oAVCJRGLxRreoLQZSHK7hO7JCyETBkaivA4GDACerzogpWTEEHdcN0xNQ3KODMFXTlZsYtRWbH2Xk2Jjsbi7vjHsc3BKbtRM5d7gSni8C6JXXJeX807dM0Cey3hZlHC7BNFJPJKzG4xz0fWeamAUHM+0c-q8Q8jtuep3tf1Brmxu0pwKq2vaw5N4dJBRJEA
+\begin{tikzcd}
+0\times_{U(0)}U(A) \arrow[rrdd, "\mathrm{proj}_1", bend right, shift left] \arrow[r, "\mathrm{proj}_2"'] \arrow[rrrr, "U^0(f)=(!_{U(0)})^*(U(f))", dashed, bend left] & U(A) \arrow[rd, "U(\alpha)", shift left] \arrow[rr, "U(f)"] &                                                                                                   & U(A') \arrow[ld, "U(\alpha')"', shift right] & 0\times_{U(0)}A' \arrow[l, "\mathrm{proj}_2'"] \arrow[lldd, "\mathrm{proj}_1'"', bend left, shift right] \\
+                                                                                                                                                                      &                                                             & U(0) \arrow[lu, "U(!_A)", shift left] \arrow[ru, "U(!_{A'})"', shift right]                       &                                              &                                                                                                          \\
+                                                                                                                                                                      &                                                             & 0 \arrow[u, "!_{U(0)}"] \arrow[lluu, bend left, shift left] \arrow[rruu, bend right, shift right] &                                              &                                                                                                         
+\end{tikzcd}
+        \]
+        Since $\mathcal{A}$ is protomodular, then $U(f)$ is an iso. By assumption $U$ reflects iso, thus $f$ is an iso, as claimed. 
+
+        In order to prove that $F^0 \dashv U^0$ is an adjoint equivalence we need to prove that its unit $\eta^0$ and its counit $\epsilon^0$ are pointwise isos. By assumption $\eta$ is cartesian, thus, referring to \eqref{unit of adjunction in 0}, for each $X$ in $\mathcal{X}$ $\eta^0_X$ is an iso. Then by the triangular identity, for each $(A,\alpha)$ in $(\mathcal{A} \downarrow 0)$, we have that
+        \[
+        U^0(\epsilon^0_{(A,\alpha)}) \eta^0_{U^0((A,\alpha))} =\mathrm{Id}_{U^0(A,\alpha)}
+        \]
+        Hence $U^0(\epsilon^0_{(A,\alpha)})$ is an iso. We already proved that $U^0$ reflects iso, thus for each $(A,\alpha)$ in $(\mathcal{A} \downarrow 0)$ also $\epsilon^0_{(A,\alpha)}$ is an iso.
     \end{proof}
 \end{subbox}
 
 \begin{mainbox}{}
 \begin{theo}
-
+Let $\mathcal{A}$ be an ideally exact category, and let $U:\mathcal{A} \to \mathcal{X}$ be the monadic functor associated to the definition. The functor $U$ is, up to category equivalence, the pullback functor $!^*$ if and only if the unit associated to $U$ is cartesian.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAdDgW3pwAsAxk2ABBAL4hxpdJlz5CKMsWp0mrdl14DhjYAA1J02djwEi5UipoMWbRCAAUWvkJESABFygQA7mHoAJ0C-D3IASikZEAxTBQsKVVsNB2ceV10xcS8OH38gkN8PAEZI8VUYKABzeCJQADMQ7iRLEBwIJGKbdXsQAFUQGjh+LHqcJABaYuMQRohmxABmGnaWmn4Yeih2SDA2brtNDkECKqiGpqRlto7EMjVDhwBCAD0AKkGQYdHxxCmZuYLe6rRBdEAbLY7Aj7B4pTjHU7nWaXUErW6tb5jSZg5K9ABiSMBSGBt2umN+UwOcKeAH0nlJKOIgA
+\begin{tikzcd}
+(\mathcal{A} \downarrow 1) \arrow[rr, "\cong", no head] \arrow[dd, "!^*", shift left] &  & \mathcal{A} \arrow[dd, "U", shift left] \\
+                                                                                      &  &                                         \\
+(\mathcal{A} \downarrow 0) \arrow[rr, "\cong", no head] \arrow[uu, "!_!", shift left] &  & \mathcal{X} \arrow[uu, "F", shift left]
+\end{tikzcd}
+\]
 \end{theo}
 \end{mainbox}
 
 \begin{subbox}{}
     \begin{proof}
+        We already proved that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$, by the unique morphism to the terminal object. Suppose that the unit $\eta$ associated to $U$ is cartesian, we aim prove that $\mathcal{A} \downarrow 0 \cong \mathcal{X}$ and that the diagram commutes up to natural isomorphisms.
 
+        By the definition of ideally exact category we have that $\mathcal{X}$ is semiabelian, thus $\mathcal{X}$ is pointed and protomodular. Moreover, since $U$ is monadic, $U$ reflects isos. By assumption we also have that $\eta$ is cartesian. Then, by \Cref{ajoint equivalence for pullback functor} the adjunction $F^0 \dashv U^0$ in \eqref{induced ajunction on 0} is an adjoint equivalence, thus an equivalence of categories.
+        
+        We need to prove that such equivalence of categories makes the diagram commute.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAdDgW3pwAsAxk2ABBAL4hxpdJlz5CKMsWp0mrdl14DhjYAA1J02djwEi5UipoMWbRCAAUWvkJESABFygQA7mHoAJ0C-D3IASikZEAxTBQsKVVsNB2ceV10xcS8OH38gkN8PAEZI8VUYKABzeCJQADMQ7iRLEBwIJGKbdXsQAFUQGjh+LHqcJABaYuMQRohmxABmGnaWmn4Yeih2SDA2brtNDkECKqiGpqRlto7EMjVDhwBCAD0AKkGQYdHxxCmZuYLLo3NZfEZjSbA5K9ABi51mlzuK1u12+EL+UJ67CeAH0nvDAUh7qtEMC0b9MY9+i9yJ9GPQAEYwRgABTkZkUIECWCq-HGAMRwJJ93JnQOKRAMJpdMZzLZcXMDm5vP5lHEQA
+\begin{tikzcd}
+(\mathcal{A} \downarrow 1) \arrow[rr, "\cong", no head] \arrow[dd, "!^*", shift left]    &  & \mathcal{A} \arrow[dd, "U", shift left]                                 \\
+                                                                                         &  &                                                                         \\
+(\mathcal{A} \downarrow 0) \arrow[uu, "!_!", shift left] \arrow[rr, "U^0"', shift right] &  & \mathcal{X} \arrow[uu, "F", shift left] \arrow[ll, "F^0"', shift right]
+\end{tikzcd}
+        \]
+        The upward-left directed square commutes up to natural iso by definition of $F^0$. 
+        
+        It remains to prove that the downward-right directed square also commutes up to natural iso. In particular we aim to prove that $U^0 !^*$ correspond to the functor $U$. In order to do that we compute $U^0 !^*$ in an object $A$ in $\mathcal{A}$. Consider the object $(A,!^A)$, and its pullback
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfQCMAQRABfUuky58hFACZyVWoxZtREqdjwEiZQcvrNWiduMkgM22UUUHqRtacHjlMKAHN4RUADMAThA8SILUOBBIAMwOqiYgAIQAehoWAUFIiiDhUTHGbPHmfoHBiGRZEYihKnmmXDx0OAAW-jzAaIEAVmL88oUgaSVl2YiZjnF1Dc2t7RBdQq5iQA
+\begin{tikzcd}
+0\times_1A \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & A \arrow[d, "!^A"] \\
+0 \arrow[rr, "!"]                                                     &  & 1                 
+\end{tikzcd}
+        \]
+        Since $!^*$ is a right adjoint, also the following square is a pullback.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFUAKYgSgB0+eALbwA+gEYuAQR4gAvqXSZc+QigBM5KrUYs2U+YpAZseAkTLjt9Zq0QdushUtOqimq9Rt774+dpgoAHN4IlAAMwAnCCEkcWocCCQAZi9dOwcAQgA9GUMI6NjETRBElLTbNi5MpyMomKQyUqTEeJ1K+y4BITocAAtIoWA0aIArOVF1WoKGxCay4oqfB27egaGRiHGJJwo5IA
+\begin{tikzcd}
+U(0)\times_1U(A) \arrow[rr, "U(\mathrm{proj}_2)"] \arrow[d, "U(\mathrm{proj}_1)"] &  & A \arrow[d, "U(!^A)"] \\
+U(0) \arrow[rr, "U(!)"]                                                           &  & 1                    
+\end{tikzcd}
+\]
+Then, apply $U^0$ to $(U(0)\times_1U(A),U(\mathrm{proj}_1))$. By definition \eqref{induced ajunction on 0}, we need to compute the pullback of $U(\mathrm{proj}_1)$ along $!_U(0)$.
+Since the right square is a pullback, as we just proved, and the whole diagram is a pullback, then the left square is the pullback of $U(\mathrm{proj}_1)$ along $!_U(0)$. Thus the result of $U^0 !^*$ in an object $A$ in $\mathcal{A}$ is the pullback $0\times_1U(A)$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBVACnIEoAdfngC28APoBGbgEFeIAL6l0mXPkIoALBWp0mrdtIVKQGbHgJEyEnQxZtEnHnMXKzaolus1b+hxKOuqhYo5KReunbs5AEmKubqyKFU3nr2IOSCIuJSXLIKOjBQAObwRKAAZgBOEMJIEjQ4EEgAzCmRDtwAhAB6eS4gVTVIZCCNLW2+jp3OxoO1iKGjTYj1EZPcgsL0OAAWlcLAaNUAVvJixDMV1fOLY4gjPmkb-Fu7+4cnZxKXA9dIWkthhM0p0xMBuHx5DE5kgAKwNZbkfowxDwwGIDTySjyIA
+\begin{tikzcd}
+0\times_1U(A) \arrow[rr] \arrow[d] &  & U(0)\times_1U(A) \arrow[rr, "U(\mathrm{proj}_2)"] \arrow[d, "U(\mathrm{proj}_1)"] &  & A \arrow[d, "U(!^A)"] \\
+0 \arrow[rr, "!_{U(0)}"]           &  & U(0) \arrow[rr, "U(!)"]                                                           &  & 1                    
+\end{tikzcd}
+\]
+Finally we prove that the pullback $0\times_1U(A)$ is just $U(A)$. Observe that the following square is the pullback of $U(!^A)$ along $!$. In fact, given two morphism $f_1:X \to U(A)$, $f_2:X \to 0$ such that the external diagram commutes, there exists a unique morphism such the two triangles commutes. Such unique morphism is $f_2$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGUsKq1GLNgFUAFAEEAlN14gM2PASIBmMRPrNWiEPOWq+mwUVEAmA1OMhiAXmEX1-LUOR771Q2kTdy4JGCgAc3giUAAzACcIAFskPRAcCCQAFh44xJTEW2oM7NyQBOSkMnTMxFEQBiwwJyg6OAALcJAAxzZYgH0QtQqC6pLC6gAjGDAoVOrApwGhvMrEMdq06dmkAFodBd6TAdsPEaR68bTFtgBCAD1gMyUuM-yL4tqiySM2YX6nooXtwKFwgA
+\begin{tikzcd}
+X \arrow[rd, "f_1", dashed] \arrow[rrrd, "f_1", bend left] \arrow[rdd, "f_2", bend right] &                                                   &  &                \\
+                                                                                          & U(A) \arrow[d, "!^{U(A)}"] \arrow[rr, "1_{U(A)}"] &  & U(A) \arrow[d] \\
+                                                                                          & 0=1 \arrow[rr]                                    &  & 1             
+\end{tikzcd}
+\]
+Thus the pullback $0\times_1U(A)$ of $U(!^A)$ along $!$ is just $A$. This means that also the downward-right directed square commutes up to natural isomorphisms.
+
+Conversely, suppose that $U$ is, up to natural iso, the pullback functor of $!$, then, by \Cref{eta cartesian}, $\eta$ is cartesian.
     \end{proof}
 \end{subbox}
+
+\begin{rembox}{}
+    \begin{ex}
+In the first chapter we saw the same theorem in the particular case of $\mathcal{A}=\mathbf{Ring}$ and $\mathcal{X}=\mathbf{Ring_*}$, where $1=\{0\}$ and $0=\mathbb{Z}$. 
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAIwBmwAEpYwAcwC+AAm5QIAdzB0AThtXyAjAEoQs0uky58hFGQBMVWoxZt5XXv2FjJMhUtXqtO7j5BISFgAC1ZQ2NTbDwCImtyO3pmVkQQQLdRCSk5IxMQDFiLBNJbahTHdMzgj1yAfQAqWSM7GChpeCJQEW0eJDIQHAgkXWo4ASwRHCQAWjH7VLYAQgA9RvyevtHqYYHxyem5hcq0kGX65c2QXoh+xEShkcQAZgOpmcR5ioczgFVrrd7m8nkhHhMPscfkt0gAxQHbRCDPYPaFVDKcADGBGkIF2dCwDDYkDArGoAhgdCgxIIrGiN0RCxRIIhR0QJ1+bBqAg0PGAAGsYBoWtQGHQhDAGAAFMxxSwgDRYaQCGb0oFIEEohasz4cmEcWGkbhoLD1bkhcKRPEgMUS6WykrpRXK1UUWRAA
+\begin{tikzcd}
+(\mathbf{Ring} \downarrow 1) \arrow[dd, "!^*", shift left] \arrow[rr, "\cong", no head]                       &  & \mathbf{Ring} \arrow[dd, "U", shift left]                                                    \\
+                                                                                                              &  &                                                                                              \\
+ (\mathbf{Ring} \downarrow \mathbb{Z}) \arrow[uu, "!_!", shift left] \arrow[rr, "\mathrm{Ker}"', shift right] &  & \mathbf{Ring_*} \arrow[uu, "F", shift left] \arrow[ll, "{(F,\pi_\mathbb{Z})}"', shift right]
+\end{tikzcd}
+\]
+In particular the bottom category equivalence constructed in that case exactly corresponds to \eqref{induced ajunction on 0}
+    \end{ex}
+\end{rembox}
 
 \section{Ideals}
 
