@@ -203,7 +203,7 @@ V \arrow[rr, "k", shift left]                 &  & W \arrow[ll, "T(h)", shift le
 
 \section{The morphism-induced scenario}
 
-We already saw in \Cref{Ideally exact categories} that an we can consider as functor of the definition the one induced by the morphism $!:0 \to 1$, to form the pullback functor. One can ask whether or not this functor is, up to equivalence of categories, the pullback functor. We aim to answer this question in this section.
+As illustrated in \Cref{Ideally exact categories}$\mathit{:(1\implies 3)}$, in the definition of an ideally exact category, the functor involved can be taken to be the pullback functor induced by the unique morphism $!:0 \to 1$. On the other hand, one can also consider a monadic functor $U$ satisfying certain properties, as in \Cref{Ideally exact categories}\textit{:(2),(3)}. A natural question arises: is this monadic functor $U$, up to equivalence of categories, the same as the pullback functor associated to the unique morphism $!:0 \to 1$? In this section, we aim to address this question.
 
 Given an adjunction $F \dashv U$ between categories finitely complete, with initial and terminal objects, and $\mathcal{X}$ pointed
 \[
@@ -292,25 +292,25 @@ Then the adjunction induced in $0$ $F^0 \dashv U^0$ is an adjoint equivalence.
 
 \begin{mainbox}{}
 \begin{theo}
-Let $\mathcal{A}$ be an ideally exact category, and let $U:\mathcal{A} \to \mathcal{X}$ be the monadic functor associated to the definition. The functor $U$ is, up to category equivalence, the pullback functor $!^*$ if and only if the unit associated to $U$ is cartesian.
-\[
+Let $\mathcal{A}$ be an ideally exact category, and let $U:\mathcal{A} \to \mathcal{X}$ be the monadic functor associated to the definition, coming with a left adjoint $F$. The functor $U$ is, up to category equivalence, the pullback functor $!^*$ if and only if the unit associated to $U$ is cartesian.
+\begin{equation}\label{U is !^* up to iso}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAdDgW3pwAsAxk2ABBAL4hxpdJlz5CKMsWp0mrdl14DhjYAA1J02djwEi5UipoMWbRCAAUWvkJESABFygQA7mHoAJ0C-D3IASikZEAxTBQsKVVsNB2ceV10xcS8OH38gkN8PAEZI8VUYKABzeCJQADMQ7iRLEBwIJGKbdXsQAFUQGjh+LHqcJABaYuMQRohmxABmGnaWmn4Yeih2SDA2brtNDkECKqiGpqRlto7EMjVDhwBCAD0AKkGQYdHxxCmZuYLe6rRBdEAbLY7Aj7B4pTjHU7nWaXUErW6tb5jSZg5K9ABiSMBSGBt2umN+UwOcKeAH0nlJKOIgA
 \begin{tikzcd}
 (\mathcal{A} \downarrow 1) \arrow[rr, "\cong", no head] \arrow[dd, "!^*", shift left] &  & \mathcal{A} \arrow[dd, "U", shift left] \\
                                                                                       &  &                                         \\
 (\mathcal{A} \downarrow 0) \arrow[rr, "\cong", no head] \arrow[uu, "!_!", shift left] &  & \mathcal{X} \arrow[uu, "F", shift left]
 \end{tikzcd}
-\]
+\end{equation}
 \end{theo}
 \end{mainbox}
 
 \begin{subbox}{}
     \begin{proof}
-        We already proved that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$, by the unique morphism to the terminal object. Suppose that the unit $\eta$ associated to $U$ is cartesian, we aim prove that $\mathcal{A} \downarrow 0 \cong \mathcal{X}$ and that the diagram commutes up to natural isomorphisms.
+        We already proved that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$, by the unique morphism to the terminal object. Suppose that the unit $\eta$ associated to $U$ is cartesian, we aim prove that $(\mathcal{A} \downarrow 0) \cong \mathcal{X}$ and that the diagram commutes up to natural isomorphisms.
 
         By the definition of ideally exact category we have that $\mathcal{X}$ is semiabelian, thus $\mathcal{X}$ is pointed and protomodular. Moreover, since $U$ is monadic, $U$ reflects isos. By assumption we also have that $\eta$ is cartesian. Then, by \Cref{ajoint equivalence for pullback functor} the adjunction $F^0 \dashv U^0$ in \eqref{induced ajunction on 0} is an adjoint equivalence, thus an equivalence of categories.
         
-        We need to prove that such equivalence of categories makes the diagram commute.
+        We need to prove that such equivalence of categories makes the diagram commute up to natural iso.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAdDgW3pwAsAxk2ABBAL4hxpdJlz5CKMsWp0mrdl14DhjYAA1J02djwEi5UipoMWbRCAAUWvkJESABFygQA7mHoAJ0C-D3IASikZEAxTBQsKVVsNB2ceV10xcS8OH38gkN8PAEZI8VUYKABzeCJQADMQ7iRLEBwIJGKbdXsQAFUQGjh+LHqcJABaYuMQRohmxABmGnaWmn4Yeih2SDA2brtNDkECKqiGpqRlto7EMjVDhwBCAD0AKkGQYdHxxCmZuYLLo3NZfEZjSbA5K9ABi51mlzuK1u12+EL+UJ67CeAH0nvDAUh7qtEMC0b9MY9+i9yJ9GPQAEYwRgABTkZkUIECWCq-HGAMRwJJ93JnQOKRAMJpdMZzLZcXMDm5vP5lHEQA
 \begin{tikzcd}
@@ -319,9 +319,15 @@ Let $\mathcal{A}$ be an ideally exact category, and let $U:\mathcal{A} \to \math
 (\mathcal{A} \downarrow 0) \arrow[uu, "!_!", shift left] \arrow[rr, "U^0"', shift right] &  & \mathcal{X} \arrow[uu, "F", shift left] \arrow[ll, "F^0"', shift right]
 \end{tikzcd}
         \]
-        The upward-left directed square commutes up to natural iso by definition of $F^0$. 
+        The upward-left directed square commutes up to natural iso by definition of $F^0$. Then, up to category equivalence, $!_!\cong F$. Since $F \dashv U$ and $!_! \dashv \ !^*$, then, since the right adjoint is unique up to natural iso, $!^*\cong U$. Hence, also the downward-right directed square commutes up to natural iso.
         
-        It remains to prove that the downward-right directed square also commutes up to natural iso. In particular we aim to prove that $U^0 !^*$ correspond to the functor $U$. In order to do that we compute $U^0 !^*$ in an object $A$ in $\mathcal{A}$. Consider the object $(A,!^A)$, and its pullback
+        Conversely, suppose that $U$ is, up to natural iso, the pullback functor of $!$, then, by \Cref{eta cartesian}, $\eta$ is cartesian.
+    \end{proof}
+\end{subbox}
+
+\begin{rembox}{}
+    \begin{rem}
+        One can also prove directly that downward-right directed square \eqref{U is !^* up to iso} commutes up to natural iso. So, we aim to prove that $U^0 !^*$ correspond to the functor $U$. In order to do that we compute $U^0 !^*$ in an object $A$ in $\mathcal{A}$. Consider the object $(A,!^A)$, and its pullback
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfQCMAQRABfUuky58hFACZyVWoxZtREqdjwEiZQcvrNWiduMkgM22UUUHqRtacHjlMKAHN4RUADMAThA8SILUOBBIAMwOqiYgAIQAehoWAUFIiiDhUTHGbPHmfoHBiGRZEYihKnmmXDx0OAAW-jzAaIEAVmL88oUgaSVl2YiZjnF1Dc2t7RBdQq5iQA
 \begin{tikzcd}
@@ -356,10 +362,8 @@ X \arrow[rd, "f_1", dashed] \arrow[rrrd, "f_1", bend left] \arrow[rdd, "f_2", be
 \end{tikzcd}
 \]
 Thus the pullback $0\times_1U(A)$ of $U(!^A)$ along $!$ is just $A$. This means that also the downward-right directed square commutes up to natural isomorphisms.
-
-Conversely, suppose that $U$ is, up to natural iso, the pullback functor of $!$, then, by \Cref{eta cartesian}, $\eta$ is cartesian.
-    \end{proof}
-\end{subbox}
+\end{rem}
+\end{rembox}
 
 This previous theorem answer the question we posed at the beginning of this section. The following example shows that we already came across to such a scenario.
 
