@@ -275,15 +275,16 @@ S \arrow[r, "s_1", shift left] \arrow[r, "s_2"', shift right] & A \arrow[r, "p"]
 
 \begin{subbox}{}
     \begin{proof}
-        Let $(\mathrm{Eq},r_1,r_2)$ be the kernel pair of $f: A \to B$ and $g:A \to Q$, such that $f=mg$ with $m$ mono. We have that $fr_1=fr_2$, hence $mgr_1=mgr_2$. Since $m$ is a mono, we have that $gr_1=gr_2$. Conversely, if $(\mathrm{Eq},r_1,r_2)$ is the kernel pair of $e$, then we have that $gr_1=gr_2$. Just composing with $m$ we have that $mgr_1=mgr_2$. Hence $fr_1'=fr_2'$.
+        Let $(\mathrm{Eq},r_1,r_2)$ be the kernel pair of $f: A \to B$ and let $g:A \to Q$ be a morphism such that $f=mg$ with $m$ mono. We have that $fr_1=fr_2$, hence $mgr_1=mgr_2$. Since $m$ is a mono, we have that $gr_1=gr_2$. Conversely, if $(\mathrm{Eq},r_1,r_2)$ is the kernel pair of $g$, then we have that $gr_1=gr_2$. Just composing with $m$ we have that $mgr_1=mgr_2$. Hence $fr_1'=fr_2'$.
         \[
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAmclVqMWbAELdeIDNjwEiARlKrx9Zq0QgAit3EwoAc3hFQAMwBOEALZIyIHBCTqJOtlbnW7jxGdXJFFPKT1TXxBbBxDqYMQPHDosBjZk1JBqbXCQRy4KLiA
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMwVqdJq3YAhHnxAZseAkQBMpYhIYs2iEAEV5-ZUKLlxNHdP0AdWwFt6OABYAnB8ACiAR248JGCgAc3giUAAzNwgHJAsQHAgkMklddgjjECiYuJpEpA1UmxBgzOzYxEL8xBSceixGdjqGkCspPRBY3kjoirEEpMR4uBcsCJwkAFoU6w63AH1iMt6kfurh0fHktrT9BbVWkEZ6ACMYRgAFARVhEDcsYJcJ7kpuIA
 \begin{tikzcd}
-    A \arrow[rr, "f"] \arrow[rd, "g"] &                         & B \\
-                                      & Q \arrow[ru, "m", tail] &  
-    \end{tikzcd}
+\mathrm{Eq} \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right] & A \arrow[rr, "f"] \arrow[rd, "g"] &                         & B \\
+                                                                        &                                   & Q \arrow[ru, "m", tail] &  
+\end{tikzcd}
     \]
-    Now we want to prove that if the universal property of the kernel pair holds for $f$, then it also holds for $g$. Let $s_1:X \to A$ and $s_2:X \to A$ be morphisms such that $gs_1=gs_2$. Just composing with $m$, we have that $mgs_1=mgs_2$. Hence $fs_1=fs_2$. By the universal property of the kernel pair of $f$, there exists a unique morphism $k: X \to \mathrm{Eq}$ such that $r_1k=s_1$ and $r_2k=s_2$. Conversely, consider $s_1:X \to A$ and $s_2:X \to A$ be morphisms such that $fs_1=fs_2$, and suppose that the universal property holds for $g$. That is $mgr_1=mgr_2$. Since $m$ is a mono, we have that $gr_1=gr_2$. By the universal property of the kernel pair of $g$, there exists a unique morphism $k: X \to \mathrm{Eq}$ such that $r_1k=s_1$ and $r_2k=s_2$.
+
+    Now we want to prove that if the universal property of the kernel pair holds for $f$, then it also holds for $g$. Let $s_1:X \to A$ and $s_2:X \to A$ be morphisms such that $gs_1=gs_2$. Just composing with $m$, we have that $mgs_1=mgs_2$. Hence $fs_1=fs_2$. By the universal property of the kernel pair of $f$, there exists a unique morphism $k: X \to \mathrm{Eq}$ such that $r_1k=s_1$ and $r_2k=s_2$. Conversely, consider $s_1:X \to A$ and $s_2:X \to A$ be morphisms such that $fs_1=fs_2$, and suppose that the universal property holds for $g$. We have that $mgs_1=mgs_2$. Since $m$ is a mono, we have that $gs_1=gs_2$. By the universal property of the kernel pair of $g$, there exists a unique morphism $k: X \to \mathrm{Eq}$ such that $r_1k=s_1$ and $r_2k=s_2$.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGUsKq1GLNgB0ZAWzo4AFgCd5wAKIBHLt14gM2PASIBmMRPrNWiEAEF9fY4KKiATFam2HTw-xMhZAtPamtpOwAhPyMBUxQAFlIzLxs2AEVuCRgoAHN4IlAAM1UIeSQyEBwIJAsQACMYMCgkAFozSvCfOAB9YT8SsorqaqRREAYsMB8oOjhlHJAw7zYAawHS8sRK0cR3akbm2s6Vu173DaHEcd26rrZVPsutm5q95bS7R4ueYs3akZvJKST4gIrPJD7KpAj4RMEQ97QpAAVgOTRaiA6sJ8uQRdV2qIa6LaWJBcNxvzB-0QhN2wJwdCwDDYDKZSzJPnKXAoXCAA
 \begin{tikzcd}
@@ -304,6 +305,23 @@ S \arrow[r, "s_1", shift left] \arrow[r, "s_2"', shift right] & A \arrow[r, "p"]
 
 \begin{subbox}{}
     \begin{proof}
-        Similar to \Cref{f and e share the kernel pair}.
+        Let $(\mathrm{Ker},k)$ be the kernel pair of $f: A \to B$ and let $g:A \to Q$ be a morphism such that $f=mg$ with $m$ mono. We have that $fk=0$, hence $mgk=0=m0$. Since $m$ is a mono, we have that $gk=0$. Conversely, if $(\mathrm{Ker},k)$ is the kernel of $g$, then we have that $gk=0$. Just composing with $m$ we have that $mgk=m0$. Hence $fk=0$.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBOXYAGkYAgL4gJpdJlz5CKAIzkqtRizYBBabJAZseAkQDMa6vWatEIAEJ65RxUQBMpZeqtbbARWnqMFAA5vBEoABmAhBcSGQgOBBIqhrWbADWjiBRMcnUiUjuqT7ZWTmxiCkFiObFNiDBINQMdABGMAwACvLGSiACWMF8OE0gfDB0UGw4AO4Q45MIMpHRFbXVRd71sfl0WAzTewcSFBJAA
+\begin{tikzcd}
+\mathrm{Ker} \arrow[r, "k"] & A \arrow[rr, "f"] \arrow[rd, "g", two heads] &                         & B \\
+                            &                                               & Q \arrow[ru, "m", tail] &  
+\end{tikzcd}
+        \]
+        
+        Now we want to prove that if the universal property of the kernel holds for $f$, then it also holds for $g$. Let $k'$ be morphisms such that $gk'=0$. Just composing with $m$, we have that $mgk'=m0$. Hence $fk'=0$. By the universal property of the kernel pair of $f$, there exists a unique morphism $t: X \to \mathrm{Ker}$ such that $kt=k'$. Conversely, consider $k'$ be a morphism such that $fk'=0$, and suppose that the universal property holds for $g$. We have that $fk'=mgk'=0=m0$. Since $m$ is a mono, we have that $gk'=0$. By the universal property of the kernel pair of $g$, there exists a unique morphism $t: X \to \mathrm{Ker}$ such that $kt=k'$.
+        \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBOXYAGkYAgL4gJpdJlz5CKAIzkqtRizYBBabJAZseAkQDMa6vWatEIAEJ65RxUQBMpZeqtbbARUcG8sZKJB5emjYgABrS6jBQAObwRKAAZgIQXEhkIDgQSKoa1mwA1gHpmQXUeUjuRT4gqeUZWYiFNYjm9ZEJINQMdABGMAwACkEutgJYCXw4fSB8MHRQbDgA7hBLKwgyaS1IXR113pFZ1XRYDGuX13uNB4gALNX5bZYRpQDkzZXPr9kPsVbPMJBQJEA
+\begin{tikzcd}
+\mathrm{Ker} \arrow[r, "k"]       & A \arrow[rr, "f"] \arrow[rd, "g"', two heads] &                         & B \\
+X \arrow[ru, "k'"] \arrow[u, "t"] &                                               & Q \arrow[ru, "m", tail] &  
+\end{tikzcd}
+        \]
+
     \end{proof}
 \end{subbox}
