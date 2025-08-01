@@ -557,7 +557,7 @@ Now we aim to generalize the previous theorem to an ideally exact category.
     \begin{proof}
         Let $A$ be an object in $\mathcal{A}$. First we have that
         \[\mathrm{Quot}(A) \cong \mathrm{ERel}(A)\]
-        in fact $\mathcal{A}$ is exact, hence kernel pairs and equivalence relations correspond to each others, and by \Cref{kernel pair of the coeq} and \Cref{coeq of the kernel pair} we have the given isomorphism. Furthermore
+        in fact $\mathcal{A}$ is exact, hence kernel pairs and equivalence relations correspond to each others, and by \Cref{coeq of the kernel pair} and \Cref{kernel pair of the coeq} we have the given isomorphism. Furthermore
         \[\mathrm{ERel}(A) \cong \mathrm{RRel}(A)\]
         because $\mathcal{A}$ is protomodular, hence Mal'tsev. By \Cref{ideally exact has essentially nullary monad} the unit of the adjunction underlying $U$ is essentially nullary, then, by \Cref{T-algebra in the reflexive relation}, we have that
         \[\mathrm{RRel}(A)\cong \mathrm{RRel}(U^T(A)) \]
@@ -569,3 +569,5 @@ Now we aim to generalize the previous theorem to an ideally exact category.
         \[\mathrm{Quot}(U(A)) \cong \mathrm{NSub}(U(A))\]
     \end{proof}
 \end{subbox}
+
+With this final theorem we proved that in an ideally exact category quotients and normal subobjects correspond to each others. This is exactly what happen in $\mathbf{Ring}$ as mentioned in the first chapter. In fact in $\mathbf{Ring}$ the ideals, which are the normal subobjects in $\mathbf{Ring_*}$ through the forgetful functor, correspond to quotients, which are the regular epis. Observe that in $\mathbf{Grp}$ the result holds directly from \Cref{quotients in semiabelian}, since $\mathbf{Grp}$ is a semiabelian category. Thus in this case we do not need to consider an underlying functor, or, equivalently, we can just consider the identity functor.
