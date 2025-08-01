@@ -432,7 +432,7 @@ X \arrow[rr, "n"', tail]                                                        
 \end{tikzcd}
 \]
 The following compositions with the canonical injections of $T(0)+X$ prove that the diagram commutes.
-\begin{itemize}
+\begin{itemize}[itemsep=1.5ex]
     \item $\xi_2 T(n) T(!_X) = \xi_2 T(n!_X) = \xi_2 T(!_{X_2})$
     \item $nm\xi_1 T(!_{X_1}) = \xi_2 T(nm) T(!_{X_1}) = \xi_2 T(nm !_{X_1}) = \xi_2 T(!_{X_2})$
     \item $\xi_2T(n) \eta_X = \xi_2 \eta_{X_2} n = n$
@@ -450,7 +450,7 @@ It remains to prove that it is unique. Suppose that there exists another algebra
 \end{subbox}
 
 \begin{mainbox}{}
-\begin{cor}
+\begin{cor}\label{T-algebra in the reflexive relation}
     Let $\mathcal{X}$ be a category with finite coproducts and let $T$ be an essentially nullary monad in $\mathcal{X}$. Given a $T$-algebra $(X,\xi)$ in $\mathcal{X}$, then every reflexive relation $R$ on $\mathcal{X}$
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACUQBfU9TXfIRQBGclVqMWbABrdxMKAHN4RUADMAThAC2SMiBwQkokHAAWWNTiQBaAEzV6zVohAaA+sO68QmnXupDY2pzS2tEBwlnNg87EGoGOgAjGAYABX48AhisRTNrHnUtXUQTIMR9JylXBATk1IzsLKEQLDBsWDkuIA
@@ -472,8 +472,7 @@ R \arrow[r, "r_1", shift left=2] \arrow[r, "r_2"', shift right=2] & X \arrow[l]
 X \arrow[r, "s"] \arrow[rr, "{\langle 1_X,1_X\rangle}"', bend right] & R \arrow[r, "{\langle r_1, r_2 \rangle}", tail] & X\times X
 \end{tikzcd}
 \]
-
-Observe that ${\langle 1_X,1_X\rangle}$ is a $T$-algebra morphism, in fact given the product structure \eqref{product lift} of $X\times X$ in the category $\mathcal{X}^T$
+Observe that ${\langle 1_X,1_X\rangle}$ is a $T$-algebra morphism, in fact given the product structure \eqref{product lift} of $X\times X$ on the category $\mathcal{X}^T$
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKADQEoQAvqXSZc+QigBM5KrUYs2XbgB1leALbwABH0HCQGbHgJEALDOr1mrRBx78hIo+LOlJsqwtvc9TsSZQyd0t5GxAfRwNRYwlkaWC5azYVNSxNOB1fKOcAuNIARg9QxXtVDW0lB1kYKABzeCJQADMAJwh1JDIQHAgkc0SvEFUADyws1vakaW7exABmEKTbEbHIiY7EfOoepAA2RcHVBjowWoYYLS5VNCwAfXzeUkvOa7vJXlUWk7PWamOAIxgDAACtEXLZzk0cOM2ht9jMkABWA5hFZaMppbQrGGTTbbWbTTxhK7KG63d44jbIhHzFFsV7kylILY0rpEkoMh4gP50QEgsEBEAtLC1AAW0LWsKR+L6dOWpLu+W5IABQNBOQkQpF4sEFAEQA
 \begin{tikzcd}
@@ -491,7 +490,82 @@ T(X) \arrow[dd, "\xi"] \arrow[rr, "{T(\langle1_X,1_X \rangle)}"] &  & T(X\times 
 X \arrow[rr, "{\langle1_X,1_X \rangle}"]                         &  & X\times X                                                    
 \end{tikzcd}
 \]
-Thus we have $s$ and $\langle r_1,r_2 \rangle$ morphisms whose composition is the $T$-algebra morphism $\langle 1_X,1_X \rangle$. By \Cref{induced algebra between morphisms} there exists a unique $T$-algebra structure on $R$ making $s$ and $\langle r_1,r_2 \rangle$ $T$-algebra morphisms.
+Thus we have $s$ and $\langle r_1,r_2 \rangle$ morphisms whose composition is the $T$-algebra morphism $\langle 1_X,1_X \rangle$. Then, by \Cref{induced algebra between morphisms}, there exists a unique $T$-algebra structure on $R$ making $s$ and $\langle r_1,r_2 \rangle$ $T$-algebra morphisms.
     \end{proof}
 \end{subbox}
+
+In the next results we consider the following lattice. Let $A$ be an object in a category $\mathcal{A}$.
+\begin{itemize}[itemsep=1.5ex]
+    \item $\mathrm{Quot}(A)$: regular epi, up to iso, with domain $A$;
+    \item $\mathrm{ERel}(A)$: equivalence relations, up to iso, on $A$;
+    \item $\mathrm{RRel}(A)$: reflexive relations, up to iso, on $A$.
+\end{itemize}
+
+Finally, if the category is semiabelian, we consider also the lattice consisting of normal subobjects $\mathrm{NSub}(A)$, containing the kernels, up to iso, of some morphisms with domain $A$.
+
+The following theorem shows the correspondence between the lattices of quotients and normal subobjects in a semiabelian category. This is a generalization of the classical result in $\mathbf{Grp}$.
+
+\begin{mainbox}{}
+\begin{theo}\label{quotients in semiabelian}
+    Let $\mathcal{X}$ be a semiabelian category. Then for each object $X$ in $\mathcal{X}$ the following lattices are isomorphic.
+    \[\mathrm{Quot}(X) \cong \mathrm{NSub}(X)\]
+\end{theo}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+    Consider the map 
+    \[\mathrm{Quot}(X) \to \mathrm{NSub}(X)\]
+    that associates to each regular epi $q:X \to Q$ its kernel
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQANEAX1PU1z5CKAEwVqdJq3YBFHnxAZseAkXLiaDFm0QgAOnoC29HAAsAToeABpGOe4AKAI4BKHhJhQA5vCKgAZuYQhkjqIDgQSGSS2uxOIDSmMPRQ7DgA7hBJKQi8AUEhiGLhkYjk3JTcQA
+\begin{tikzcd}
+\mathrm{Ker}(q) \arrow[r] & X \arrow[r, "q", two heads] & Q
+\end{tikzcd}
+\]
+    and the map 
+    \[\mathrm{NSub}(X) \to \mathrm{Quot}(X)\]
+    that associates to each kernel pair of some morphism $f:X \to Y$ the regular epi $p$ underlying the corresponding (regular epi, mono) factorization of $f$.
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABpGIIC+ACgBmAShCTS6TLnyEU5CtTpNW7ABpKVIDNjwEiAZh00GLNohABNE6osaiAJlLFdDgbOAApKujBQAObwRKCyghDcSNogOBBIvnqO7LLuIPGJSGSp6YjkynEJSWU0aUi2IPww9FDsOADuEE0tCPb6TmZ5BdUNdYiZOPRYjG1TM5KUkkA
+\begin{tikzcd}
+                          &                                              & P \arrow[rd, tail] &   \\
+\mathrm{Ker}(f) \arrow[r] & X \arrow[rr, "f"] \arrow[ru, "p", two heads] &                    & Y
+\end{tikzcd}
+    \]
+
+    Consider a regular epi $q$, and its kernel. Then consider the factorization of $q$. Since $q$ is a regular epi, we can assume, up to iso, that the regular epi underlying the factorization is $q$ itself with the identity morphism as mono. Thus the composition
+    \[\mathrm{Quot}(X) \to \mathrm{NSub}(X) \to \mathrm{Quot}(X)\] is the identity morphism. 
     
+    Consider a kernel pair of some morphism $f:X \to Y$. Then consider the regular epi underlying the factorization of $f$. By \Cref{f and e share the kernel} the regular epi of the factorization and $f$ share the same kernel. Thus the composition
+    \[\mathrm{NSub}(X) \to \mathrm{Quot}(X) \to \mathrm{NSub}(X)\]
+    is the identity morphism.
+    We proved that the two maps are inverses of each other, hence the isomorphism holds.
+    \end{proof}
+\end{subbox}
+
+Now we aim to generalize the previous theorem to an ideally exact category.
+
+\begin{mainbox}{}
+\begin{theo}
+    Let $\mathcal{A}$ be an ideally exact category and let $U:\mathcal{A} \to \mathcal{X}$ be the underlying functor. Then for each object $A$ in $\mathcal{A}$ the following lattices are isomorphic.
+    \[\mathrm{Quot}(A) \cong \mathrm{NSub}(U(A))\]
+\end{theo}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        Let $A$ be an object in $\mathcal{A}$. First we have that
+        \[\mathrm{Quot}(A) \cong \mathrm{ERel}(A)\]
+        in fact $\mathcal{A}$ is exact, hence kernel pairs and equivalence relations correspond to each others, and by \Cref{kernel pair of the coeq} and \Cref{coeq of the kernel pair} we have the given isomorphism. Furthermore
+        \[\mathrm{ERel}(A) \cong \mathrm{RRel}(A)\]
+        because $\mathcal{A}$ is protomodular, hence Mal'tsev. By \Cref{ideally exact has essentially nullary monad} the unit of the adjunction underlying $U$ is essentially nullary, then, by \Cref{T-algebra in the reflexive relation}, we have that
+        \[\mathrm{RRel}(A)\cong \mathrm{RRel}(U^T(A)) \]
+        Since $U$ is monadic we also have that
+        \[\mathrm{RRel}(A)\cong \mathrm{RRel}(U(A)) \]
+        By definition, the codomain of $U$ is semiabelian, thus exact and Mal'tsev, then as above 
+        \[\mathrm{RRel}(U(A)) \cong \mathrm{ERel}(U(A)) \cong \mathrm{Quot}(U(A))\]
+        Finally, by the previous result \Cref{quotients in semiabelian} we have that
+        \[\mathrm{Quot}(U(A)) \cong \mathrm{NSub}(U(A))\]
+    \end{proof}
+\end{subbox}
