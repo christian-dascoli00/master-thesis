@@ -109,9 +109,22 @@ T(\mathrm{Eq}(\tilde{q})) \arrow[dd, "\xi_{\mathrm{Eq}(\tilde{q})}", dashed] \ar
     \end{proof}
 \end{subbox}
 
-\section{Coproducts lift}
+\section{Products and coproducts lift}
 
-We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. 
+In this section we aim construct products and coproducts in the Eilenberg–Moore category. Products are quite easy to lift, whereas coproducts need additional conditions.
+
+Given $A$, $B$ objects in a category with products and and $T$ a monad on such category, we can construct the product in the Eilenberg-Moore category $\mathcal{X}^T$ as follows. Let $\pi_1:A\times B \to A$ and $\pi_2:A\times B \to B$ be the projections of the product in $\mathcal{X}$, then we define the product in $\mathcal{X}^T$ as follows.
+\begin{equation}\label{product lift}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKAQQEoQAvqXSZc+QigBM5KrUYs2XbgB1leALbwABACF+QkdjwEiAFhnV6zVog6c9g4SAxHxZ0pNlWFtnY8NiJihknpbyNiDc-s6ixhLI0qFy1mwqaliacLrRLoHx0gCMXuGKPLyqGtpcDgKyMFAA5vBEoABmAE4Q6khkIDgQSObJPiCqAB5YAPpRBiAdXUjSfQOIAMxhKbbjU36z892IBdT9SABsGyOqDHRgDQwwWlyqaFMFvKSPnM9TkuXK7Tc7qxqNcAEYwBgABVibls91aOGi+zOxxWAFYLhFttMtBUMtpsbsnMjDqjFpjSt9Jr8kZ0Dhjlkh1sMscoXtTaQtSYzEL1vBEnmzXvwQXRwVCYUEQO0sA0ABaIvZ0pAMk6IIb8thUgogUXi6GuKUy+WKigCIA
+\begin{tikzcd}
+T(A) \arrow[dd, "\xi_A"] &  & T(A\times B) \arrow[d, "{\langle T(\pi_1), T(\pi_2)\rangle}"] \arrow[rr, "T(\pi_2)"] \arrow[ll, "T(\pi_1)"'] &  & T(B) \arrow[dd, "\xi_B"] \\
+                         &  & T(A)\times T(B) \arrow[d, "\xi_A \times \xi_B"]                                                              &  &                          \\
+A                        &  & A\times B \arrow[rr, "\pi_2"] \arrow[ll, "\pi_1"']                                                           &  & B                       
+\end{tikzcd}
+\end{equation}
+Clearly, the product is preserved by the forgetful functor of the monad.
+
+We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category.
 
 The construction of the coproducts in the Eilenberg-Moore category $\mathcal{X}^T$ will looks quite intricate at first glance and it may appear overly complicated. However, this construction is needed because, given two object with an algebra structure each, the coproduct of the two algebra structures is not an algebra structure in general. To make this clearer consider the following example.
 

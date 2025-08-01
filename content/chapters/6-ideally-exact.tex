@@ -212,7 +212,7 @@ Given an adjunction $F \dashv U$ between categories finitely complete, with init
 \mathcal{A} \arrow[r, "U", shift left] & \mathcal{X} \arrow[l, "F", shift left]
 \end{tikzcd}
 \]
-we can consider the adjunction induced on the initial objects $0$, defined as follows. Let $X$ be an object in $\mathcal{X}$ and let $(A,\alpha)$ be an object in $(\mathcal{A}\downarrow 0)$. Since $\mathcal{X}$ is pointed, then $\mathcal{X} \cong (\mathcal{X}\downarrow 0)$. The category of the initial objects $0$ in $\mathcal{X}$ and $\mathcal{A}$ is implicit. Denote $!^X:X \to 0$ the unique morphism in the zero object.
+we can consider the adjunction induced on the initial objects $F^0 \dashv U^0$, defined as follows. Let $X$ be an object in $\mathcal{X}$ and let $(A,\alpha)$ be an object in $(\mathcal{A}\downarrow 0)$. Since $\mathcal{X}$ is pointed, then $\mathcal{X} \cong (\mathcal{X}\downarrow 0)$. The category of the initial objects $0$ in $\mathcal{X}$ and $\mathcal{A}$ is implicit. Denote $!^X:X \to 0$ the unique morphism in the zero object.
 \begin{align*}
 F^0(X) &= (F(X), F(!^X)) \\[1.5ex]
 U^0(A,\alpha) &= 0\times_{UF(0)}U(A) = 0\times_{U(0)}U(A) = \mathrm{Ker}(U(\alpha))
@@ -224,14 +224,14 @@ U^0(A,\alpha) &= 0\times_{UF(0)}U(A) = 0\times_{U(0)}U(A) = \mathrm{Ker}(U(\alph
 0 \arrow[rr, "!_{U(0)}"]                                                      &  & U(0)                       
 \end{tikzcd}
 \]
-Since $F$ is a left adjoint, we can assume $F(0_\mathcal{X})=0_\mathcal{A}$. In the following the category of the $0$ will be implicit.
+Since $F$ is a left adjoint, it preserves colimits. So we can assume $F(0_\mathcal{X})=0_\mathcal{A}$.
 \begin{equation}\label{induced ajunction on 0}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAY0bAAggF8ABNygQA7mDoAnZQqnEAlFIC8Urr37DRkmZzmKVa+VIBi7LZpATS6TLnyEUARnJVajCxsBnyCIgzAABrSsgpKqupaumahxhHRzv4wUADm8ESgAGZqPEhkIDgQSL4gAEYwYFBl1PTMrIggAKog1HACWIU4SAC03i5FJdXUlc11DU2I5X0DQ4ijLYHtILaZEkA
 \begin{tikzcd}
 (\mathcal{A} \downarrow 0) \cong (\mathcal{A} \downarrow F(0)) \arrow[r, "U^0", shift left] & (\mathcal{X} \downarrow 0) \cong \mathcal{X} \arrow[l, "F^0", shift left]
 \end{tikzcd}
 \end{equation}
-One can prove that this is an adjunction. Given $\eta$ and $\epsilon$ the unit and counit of $F \dashv U$, then the unit of $F^0 \dashv U^0$ in an object $X$ in $\mathcal{X}$ is
+One can prove that this is an adjunction. Given $\eta$ and $\epsilon$ the unit and counit of $F \dashv U$, then the unit of $F^0 \dashv U^0$ in an object $X$ in $\mathcal{X}$ is $\eta^0_X$
 \begin{equation}\label{unit of adjunction in 0}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAAYAdTvAW3gD6wAKoAKdgEoAvmIBiogBoSJIKaXSZc+QigDM5KrUYs2cxctXqQGbHgJF9AJkP1mrRCGHzJljbe1EZM7UriYe7L7WmnY6yOyk7C7G7iAKqoYwUADm8ESgAGYAThC8SPogOBBIjiHJbNwwOHQC7AC8AIRCXuLSINQMdABGMAwACtEBHoVYWQAWOJFFJUjxFVWIZEZu9Zy8dDizhbzAaMUAVgKOUovFpRvUldW12x7d7QB6SjfLiKuPiOVQiluHsDkcTucpAJiN87gAWB7rTbDMBQMqrIE7RrNNJqAq3JAItZlagotGIAC0ugxdQ8HzS-SGI3G-nsUxm81hhMRK36WDAKSgdDgs0yfS2YRADSa73YAlxFCkQA
 \begin{tikzcd}
@@ -382,6 +382,116 @@ In particular the bottom category equivalence constructed in that case exactly c
     \end{ex}
 \end{rembox}
 
-\section{Ideals}
+\section{Ideals and quotients}
 
-(TO DO)
+In this section we will investigate the notion of ideals in an ideally exact category and their corresponding quotients. We aim to emulate the classical definition of ideals in a ring, and the corresponding quotients. As already mentioned, recall that a proper ideal in a ring is a non-unital ring. Note that the notion of normal subobjects is well defined in a semiabelian category as the kernel of a morphism. Also recall that a non-unital ring is semiabelian, while a unital ring fails to be, as mentioned in the first chapter. Given the previous observations, one can model the notion of ideals as the normal subobjects through a functor, which is the forgetful functor in rings, having a semiabelian category as codomain. Note that this framing is consistent with the characterization of ideally exact categories given in \Cref{Ideally exact categories}. In particular in $\mathbf{Ring}$ we have the following structure.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBGAM2AAlLGADmAXxDTS6TLnyEUARnJVajFm049+wsRMkB9AFSzpWmFEnwioIQCcIXJGRA4ISDduasiCAAqnIU0kA
+\begin{tikzcd}
+\mathbf{Ring} \arrow[r, "U"] & \mathbf{Ring_*}
+\end{tikzcd}
+\]
+In general in an ideally exact category $\mathcal{A}$ we have the following structure, with semiabelian $\mathcal{X}$.
+\[
+\begin{tikzcd}
+\mathcal{A} \arrow[r, "U"] & \mathcal{X}
+\end{tikzcd}
+\]
+
+We start with a technical lemma.
+
+\begin{mainbox}{}
+    \begin{lemma}\label{induced algebra between morphisms}
+        Let $\mathcal{X}$ be a category with finite coproducts and let $T$ be an essentially nullary monad in $\mathcal{X}$. Given $(X_1,\xi_1)$ and $(X_2,\xi_2)$ $T$-algebras in $\mathcal{X}$, $X$ an object in $\mathcal{X}$, $m: X_1 \to X$ a morphism and $n: X \to X_2$ a mono, such that their composition is a $T$-algebra morphism, then there exists a unique $T$-algebra structure $\xi$ on $X$ making $m$ and $n$ $T$-algebra morphisms.
+        \begin{equation}\label{diag induced algebra between morphisms}
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQANAfXJAF9S6TLnyEU5CtTpNW7Dv0EgM2PASIAmSTQYs2iTl3UKhK0UTLEpO2foAqACm7kAlMaXDVY5JsvaZekAdudVcBExE1cVJfaV12INCpGCgAc3giUAAzACcIAFskMhAcCCQJWJsQArCQHPyymhKkTQqAwkb6LEZ2HE7umrqCxABmRtLEIusAgB1pgA8sHjdBpAAWMea-OP1ZhcNl3KHR4vGAVi3KhzzQxRXEc5O1i4CHMBusw6QHpsRyxiwwAEoPQ4AALZIgZ7sXZYfiUPhAA
+\begin{tikzcd}
+T(X_1) \arrow[d, "\xi_1"] \arrow[r, "T(m)"] & T(X) \arrow[r, "T(n)"] \arrow[d, "\xi", dashed] & T(X_2) \arrow[d, "\xi_2"] \\
+X_1 \arrow[r, "m"]                          & X \arrow[r, "n", tail]                          & X_2                      
+\end{tikzcd}
+        \end{equation}
+    \end{lemma}
+\end{mainbox}
+\begin{subbox}{}
+    \begin{proof}
+First we show that if the there exists a $T$-algebra structure $\xi$ making $n$ a $T$-algebra morphism, then necessarily $m$ is a $T$-algebra morphism. In fact, since $n$ is a mono, and both the outer and the right diagram in \eqref{diag induced algebra between morphisms} commute, then the left diagram commutes.
+\begin{align*}
+    \xi_2 & T(n) T(m) = n m \xi_1 \\[1.5ex]
+    & \implies n \xi T(m)= n m \xi_1 \\[1.5ex] 
+    & \implies \xi T(m) = m \xi_1
+\end{align*}
+
+
+Now we aim to prove that there exists a unique $T$-algebra structure $\xi$ on $X$ making $n$ a $T$-algebra morphism. Since $T$ is an essentially nullary monad, then $[T(!_{X}),\eta_{X}]$ is a strong epi. Consider the following diagram of solid arrows. 
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAVACgA0BKEAF9S6TLnyEU5CtTpNW7buT4BqHkJEgM2PASJlishizaIQPAPrENonRKLTDNYwrPrht8XpRkAjEflTTl4rAUFZGCgAc3giUAAzACcIAFskXxocCCRpORN2ZG4AQgtgHkE+UgAdKpgcelLyyhsQJNT0zOzEAGZnQIKUmoAPLAtfYsaxitJfCx5mmkZ6ACMYRgAFMV1JEESsKIALHBa2tMRcrKQAFj78s24wMM1T686kMjzXEGHR6w9W5JnXogS6ID71LCMdgQqG3L6ERYrNabOzeXb7I4nQE5N49RZYMBBKD0OAHSIgOFBH4UkBLVYbLb2Mx7Q7HcKCIA
+\begin{tikzcd}
+T(0)+X \arrow[rr, "{[T(!_{X}),\eta_{X}]}"] \arrow[dd, "{[m\xi_1T(!_{X_1}),1_X]}"'] &  & T(X) \arrow[d, "T(n)"] \arrow[lldd, "\xi"', dashed] \\
+                                                                                   &  & T(X_2) \arrow[d, "\xi_2"]                           \\
+X \arrow[rr, "n"', tail]                                                           &  & X_2                                                
+\end{tikzcd}
+\]
+The following compositions with the canonical injections of $T(0)+X$ prove that the diagram commutes.
+\begin{itemize}
+    \item $\xi_2 T(n) T(!_X) = \xi_2 T(n!_X) = \xi_2 T(!_{X_2})$
+    \item $nm\xi_1 T(!_{X_1}) = \xi_2 T(nm) T(!_{X_1}) = \xi_2 T(nm !_{X_1}) = \xi_2 T(!_{X_2})$
+    \item $\xi_2T(n) \eta_X = \xi_2 \eta_{X_2} n = n$
+    \item $n 1_X = n$
+\end{itemize}
+Since $[T(!_{X}),\eta_{X}]$ is a strong epi, there exists a unique morphism $\xi$ making the diagram commute. $\xi$ turns out to be a algebra for $X$. 
+
+It remains to prove that it is unique. Suppose that there exists another algebra structure $\xi'$ on $X$ making $n$ a $T$-algebra morphism. Then
+\begin{align*}
+    n & \xi = \xi_2 T(n) = n \xi' \\[1.5ex]
+    & \implies n \xi = n \xi' \\[1.5ex]
+    & \implies \xi = \xi'
+\end{align*}
+    \end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
+\begin{cor}
+    Let $\mathcal{X}$ be a category with finite coproducts and let $T$ be an essentially nullary monad in $\mathcal{X}$. Given a $T$-algebra $(X,\xi)$ in $\mathcal{X}$, then every reflexive relation $R$ on $\mathcal{X}$
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACUQBfU9TXfIRQBGclVqMWbABrdxMKAHN4RUADMAThAC2SMiBwQkokHAAWWNTiQBaAEzV6zVohAaA+sO68QmnXupDY2pzS2tEBwlnNg87EGoGOgAjGAYABX48AhisRTNrHnUtXUQTIMR9JylXBATk1IzsLKEQLDBsWDkuIA
+\begin{tikzcd}
+R \arrow[r, "r_1", shift left=2] \arrow[r, "r_2"', shift right=2] & X \arrow[l]
+\end{tikzcd}
+    \]
+    admits a unique $T$-algebra structure making $R$ a reflexive relation on $\mathcal{X}^T$.
+\end{cor}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        Let $s$ be the common section of $r_1$ and $r_2$. Then
+        \[\langle r_1, r_2 \rangle s = \langle 1_X, 1_X \rangle \]
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQAlEAX1PU1z5CKAEwVqdJq3YANADpy8AW3gACGTz4gM2PASLlxNBizaIQG7hJhQA5vCKgAZgCcISpGJA4ISQ5NN2BF5nNw9Efx8kMgDpcwVGejBbRhhVFwB9MnSMkVUFFySUthoceixGdjKKzVD3T1LfRBiAIxgwKCQAWgBmfxM4kASi1NViDJlScfk5QuTUkBpEtsYABQE9YRAXLFsACxweSm4gA
+\begin{tikzcd}
+X \arrow[r, "s"] \arrow[rr, "{\langle 1_X,1_X\rangle}"', bend right] & R \arrow[r, "{\langle r_1, r_2 \rangle}", tail] & X\times X
+\end{tikzcd}
+\]
+
+Observe that ${\langle 1_X,1_X\rangle}$ is a $T$-algebra morphism, in fact given the product structure \eqref{product lift} of $X\times X$ in the category $\mathcal{X}^T$
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKADQEoQAvqXSZc+QigBM5KrUYs2XbgB1leALbwABH0HCQGbHgJEALDOr1mrRBx78hIo+LOlJsqwtvc9TsSZQyd0t5GxAfRwNRYwlkaWC5azYVNSxNOB1fKOcAuNIARg9QxXtVDW0lB1kYKABzeCJQADMAJwh1JDIQHAgkc0SvEFUADyws1vakaW7exABmEKTbEbHIiY7EfOoepAA2RcHVBjowWoYYLS5VNCwAfXzeUkvOa7vJXlUWk7PWamOAIxgDAACtEXLZzk0cOM2ht9jMkABWA5hFZaMppbQrGGTTbbWbTTxhK7KG63d44jbIhHzFFsV7kylILY0rpEkoMh4gP50QEgsEBEAtLC1AAW0LWsKR+L6dOWpLu+W5IABQNBOQkQpF4sEFAEQA
+\begin{tikzcd}
+T(X) \arrow[dd, "\xi"] &  & T(X\times X) \arrow[d, "{\langle T(\pi_1), T(\pi_2)\rangle}"] \arrow[rr, "T(\pi_2)"] \arrow[ll, "T(\pi_1)"'] &  & T(X) \arrow[dd, "\xi"] \\
+                       &  & T(X)\times T(X) \arrow[d, "\xi \times \xi"]                                                                  &  &                        \\
+X                      &  & X\times X \arrow[rr, "\pi_2"] \arrow[ll, "\pi_1"']                                                           &  & X                     
+\end{tikzcd}
+\]
+we have that the following diagram commutes, easily composing with the canonical projections $\pi_1$ and $\pi_2$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKADQEoQAvqXSZc+QigBM5KrUYs2XbgB1leALbwABH0HCQGbHgJFpARln1mrRBx69VG7Uv5CRR8UTKTL8myG49dzETKVIfaisFWxU1LE04HUFZGCgAc3giUAAzACcIdSQyEBwIJABmSL82VQAPLBBqBjoAIxgGAAVRYwkQBhhsnCCQPIKi6lKkMyrrRU5VZrA0-rMAfW5SNe4tVVy6Jf7+Jtb2ro9QvoGhtxH8wsRpkrLEaTlZ2wX95ZgtLlU0LCrMy8Ui-ebKAGrSQOZR7A6sY5tTrdTy2fqDYaje6vSaIAAsM2iIDqWB2cQSZPqjT6J2R5166Ou+ixFQmzwJbyJn3hW026zJcO+1OaSLOIQZV2SAiAA
+\begin{tikzcd}
+T(X) \arrow[dd, "\xi"] \arrow[rr, "{T(\langle1_X,1_X \rangle)}"] &  & T(X\times X) \arrow[d, "{\langle T(\pi_1), T(\pi_2)\rangle}"] \\
+                                                                 &  & T(X)\times T(X) \arrow[d, "\xi \times \xi"]                   \\
+X \arrow[rr, "{\langle1_X,1_X \rangle}"]                         &  & X\times X                                                    
+\end{tikzcd}
+\]
+Thus we have $s$ and $\langle r_1,r_2 \rangle$ morphisms whose composition is the $T$-algebra morphism $\langle 1_X,1_X \rangle$. By \Cref{induced algebra between morphisms} there exists a unique $T$-algebra structure on $R$ making $s$ and $\langle r_1,r_2 \rangle$ $T$-algebra morphisms.
+    \end{proof}
+\end{subbox}
+    
