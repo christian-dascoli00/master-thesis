@@ -111,18 +111,33 @@ T(\mathrm{Eq}(\tilde{q})) \arrow[dd, "\xi_{\mathrm{Eq}(\tilde{q})}", dashed] \ar
 
 \section{Products and coproducts lift}
 
-In this section we aim construct products and coproducts in the Eilenberg–Moore category. Products are quite easy to lift, whereas coproducts need additional conditions.
+In this section we aim construct products and coproducts in the Eilenberg–Moore category. Products are quite easy to lift, and we implicitly already saw it in the exactness lift, whereas coproducts need additional conditions.
+ 
+Even if we already know that products can be easily lifted, since the forgetful functor $U^T$ creates all the limits, it will be useful to have the explicit construction.
 
-Given $A$, $B$ objects in a category with products and and $T$ a monad on such category, we can construct the product in the Eilenberg-Moore category $\mathcal{X}^T$ as follows. Let $\pi_1:A\times B \to A$ and $\pi_2:A\times B \to B$ be the projections of the product in $\mathcal{X}$, then we define the product in $\mathcal{X}^T$ as follows.
-\begin{equation}\label{product lift}
+\begin{rembox}{}
+    \begin{rem}
+        Given $A$, $B$ objects in a category with products and and $T$ a monad on such category, we can construct the product in the Eilenberg-Moore category $\mathcal{X}^T$ as follows. Let $\pi_1:A\times B \to A$ and $\pi_2:A\times B \to B$ be the projections of the product in $\mathcal{X}$, then we define the product in $\mathcal{X}^T$ as follows.
+\[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKAQQEoQAvqXSZc+QigBM5KrUYs2XbgB1leALbwABACF+QkdjwEiAFhnV6zVog6c9g4SAxHxZ0pNlWFtnY8NiJihknpbyNiDc-s6ixhLI0qFy1mwqaliacLrRLoHx0gCMXuGKPLyqGtpcDgKyMFAA5vBEoABmAE4Q6khkIDgQSObJPiCqAB5YAPpRBiAdXUjSfQOIAMxhKbbjU36z892IBdT9SABsGyOqDHRgDQwwWlyqaFMFvKSPnM9TkuXK7Tc7qxqNcAEYwBgABVibls91aOGi+zOxxWAFYLhFttMtBUMtpsbsnMjDqjFpjSt9Jr8kZ0Dhjlkh1sMscoXtTaQtSYzEL1vBEnmzXvwQXRwVCYUEQO0sA0ABaIvZ0pAMk6IIb8thUgogUXi6GuKUy+WKigCIA
 \begin{tikzcd}
 T(A) \arrow[dd, "\xi_A"] &  & T(A\times B) \arrow[d, "{\langle T(\pi_1), T(\pi_2)\rangle}"] \arrow[rr, "T(\pi_2)"] \arrow[ll, "T(\pi_1)"'] &  & T(B) \arrow[dd, "\xi_B"] \\
                          &  & T(A)\times T(B) \arrow[d, "\xi_A \times \xi_B"]                                                              &  &                          \\
 A                        &  & A\times B \arrow[rr, "\pi_2"] \arrow[ll, "\pi_1"']                                                           &  & B                       
 \end{tikzcd}
-\end{equation}
-Clearly, the product is preserved by the forgetful functor of the monad.
+\]
+The algebra structure coincides with the one given by the creations of limits by $U^T$, in fact, in that case the algebra structure is the unique making the diagram commutes. 
+The universal property holds by the universal property of the product in $\mathcal{X}$, in fact one can prove that the unique morphism induced by the product in $\mathcal{X}$ is also a morphism in $\mathcal{X}^T$.
+\end{rem}
+\end{rembox}
+
+This leads to the following.
+
+\begin{mainbox}{}
+    \begin{prop}
+        Let $T:\mathcal{\mathcal{X}} \to \mathcal{X}$ be a monad. If $\mathcal{X}$ has finite products, then $\mathcal{X}^T$ has finite coproducts.
+    \end{prop}
+\end{mainbox}
 
 We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category.
 
