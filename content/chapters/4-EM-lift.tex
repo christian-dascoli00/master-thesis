@@ -116,7 +116,7 @@ In this section we aim construct products and coproducts in the Eilenberg–Moor
 Even if we already know that products can be easily lifted, since the forgetful functor $U^T$ creates all the limits, it will be useful to have the explicit construction.
 
 \begin{rembox}{}
-    \begin{rem}
+    \begin{rem}\label{product lift}
         Given $A$, $B$ objects in a category with products and and $T$ a monad on such category, we can construct the product in the Eilenberg-Moore category $\mathcal{X}^T$ as follows. Let $\pi_1:A\times B \to A$ and $\pi_2:A\times B \to B$ be the projections of the product in $\mathcal{X}$, then we define the product in $\mathcal{X}^T$ as follows.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKAQQEoQAvqXSZc+QigBM5KrUYs2XbgB1leALbwABACF+QkdjwEiAFhnV6zVog6c9g4SAxHxZ0pNlWFtnY8NiJihknpbyNiDc-s6ixhLI0qFy1mwqaliacLrRLoHx0gCMXuGKPLyqGtpcDgKyMFAA5vBEoABmAE4Q6khkIDgQSObJPiCqAB5YAPpRBiAdXUjSfQOIAMxhKbbjU36z892IBdT9SABsGyOqDHRgDQwwWlyqaFMFvKSPnM9TkuXK7Tc7qxqNcAEYwBgABVibls91aOGi+zOxxWAFYLhFttMtBUMtpsbsnMjDqjFpjSt9Jr8kZ0Dhjlkh1sMscoXtTaQtSYzEL1vBEnmzXvwQXRwVCYUEQO0sA0ABaIvZ0pAMk6IIb8thUgogUXi6GuKUy+WKigCIA
@@ -135,7 +135,7 @@ This leads to the following.
 
 \begin{mainbox}{}
     \begin{prop}
-        Let $T:\mathcal{\mathcal{X}} \to \mathcal{X}$ be a monad. If $\mathcal{X}$ has finite products, then $\mathcal{X}^T$ has finite coproducts.
+        Let $T:\mathcal{\mathcal{X}} \to \mathcal{X}$ be a monad. If $\mathcal{X}$ has finite products, then $\mathcal{X}^T$ has finite products.
     \end{prop}
 \end{mainbox}
 

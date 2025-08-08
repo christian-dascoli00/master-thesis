@@ -12,6 +12,7 @@ We are now ready to prove the theorem, which will lead to the definition of the 
         \begin{enumerate}
             \item $\mathcal{A}$ is exact and protomodular, has finite coproducts and the morphism $!:0 \to 1$ is a regular epimorphism.
             \item $\mathcal{A}$ is exact, has finite coproducts and there exists $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$.
+            \item There exist $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$ and $F$ left adjoint to $U$ such that the associated monad $T=UF$ preserves regular epimorphisms and kernel pairs.
             \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwDGjYAEEAviDGl0mXPkIoyAJiq1GLNpx78hDYAA0JUmdjwEiARnKr6zVog7deg4YYB6wAKoAxI6phQAObwRKAAZgBOEFxIZCA4EEhWanZsniDUcHxYYThIALQWxiCR0UnUCbGZ2bkFybYaDt6S0iVRMYhxlYhK1A32jgIEgRkgfDB0UEhgTAwMFXRYDGyQYKzFpR298YmIyVk5eYiFG+3lO0jbB7XHRRRiQA
 \begin{tikzcd}
@@ -20,7 +21,6 @@ We are now ready to prove the theorem, which will lead to the definition of the 
     \mathcal{X} \arrow[uu, "F", shift left] \arrow[ruu, shift left] &                                         
     \end{tikzcd}
             \]
-            \item There exist $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$ and $F$ left adjoint to $U$ such that the associated monad $T=UF$ preserves regular epimorphisms and kernel pairs.
         \end{enumerate}
     \end{theo}
 \end{mainbox}
@@ -472,7 +472,7 @@ R \arrow[r, "r_1", shift left=2] \arrow[r, "r_2"', shift right=2] & X \arrow[l]
 X \arrow[r, "s"] \arrow[rr, "{\langle 1_X,1_X\rangle}"', bend right] & R \arrow[r, "{\langle r_1, r_2 \rangle}", tail] & X\times X
 \end{tikzcd}
 \]
-Observe that ${\langle 1_X,1_X\rangle}$ is a $T$-algebra morphism, in fact given the product structure from \Cref{prodcut lift} of $X\times X$ on the category $\mathcal{X}^T$
+Observe that ${\langle 1_X,1_X\rangle}$ is a $T$-algebra morphism, in fact given the product structure from \Cref{product lift} of $X\times X$ on the category $\mathcal{X}^T$
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKADQEoQAvqXSZc+QigBM5KrUYs2XbgB1leALbwABH0HCQGbHgJEALDOr1mrRBx78hIo+LOlJsqwtvc9TsSZQyd0t5GxAfRwNRYwlkaWC5azYVNSxNOB1fKOcAuNIARg9QxXtVDW0lB1kYKABzeCJQADMAJwh1JDIQHAgkc0SvEFUADyws1vakaW7exABmEKTbEbHIiY7EfOoepAA2RcHVBjowWoYYLS5VNCwAfXzeUkvOa7vJXlUWk7PWamOAIxgDAACtEXLZzk0cOM2ht9jMkABWA5hFZaMppbQrGGTTbbWbTTxhK7KG63d44jbIhHzFFsV7kylILY0rpEkoMh4gP50QEgsEBEAtLC1AAW0LWsKR+L6dOWpLu+W5IABQNBOQkQpF4sEFAEQA
 \begin{tikzcd}
