@@ -36,7 +36,7 @@ r &\mapsto (0,r)
 
 The functor $U$ turns out to be monadic, simply by Beck's theorem, since coequalizers in $\mathbf{Ring}$ and $\mathbf{Ring_*}$ are the same. In fact, given $f,g$ morphisms, the coequalizer of $(f,g)$ is the canonical projection
 \[\pi: B \to B/I \ \ \ \ \ \ \ I = (f(r) - g(r) \ | \ r \in R)\]
-This adjunction will lead us to the definition of the ideally exact categories. We will see that the definition involves a  generic monadic functor in a semiabelian category. Sometimes, as we will see, such functor is, up to category equivalences, the pullback functor of $!:0 \to 1$. That's the case for the functor $U$ above. As we will see, this is intrinsically due to the fact that the unit $\eta$ of the adjunction is cartesian. In fact, one can easily prove that, for each $R$,$R'$ in $\mathbf{Ring_*}$ and for each morphism $f:R \to R'$, the pullback in $\mathbf{Ring_*}$ of $\eta_{R'}$ and $UF(f)$
+This adjunction will lead us to the definition of the ideally exact categories. We will see that the definition involves a  generic monadic functor in a semiabelian category. Sometimes, as we will see, such functor is, up to category equivalences, the pullback functor of $!:0 \to 1$. That's the case for the functor $U$ above. As we will see, this is intrinsically due to the fact that the unit $\eta$ of the adjunction is cartesian. In fact, one can easily prove that, given a morphism $f:R \to R'$ in $\mathbf{Ring_*}$, the pullback in $\mathbf{Ring_*}$ of $\eta_{R'}$ and $UF(f)$
 \begin{align*}
 R'&\times_{UF(R')} UF(R) = R'\times_{\mathbb{Z}\oplus R'} (\mathbb{Z}\oplus R) = \\[1.5ex]
 &= \{ (r',(n,r)) \in R'\times (\mathbb{Z}\oplus R) \ | \  UF(f)(x) = \eta_{R'}(y) \} \\[1.5ex]
@@ -53,7 +53,7 @@ is isomorphic to $R$.
 \end{tikzcd}
 \]
 
-We now want to deep into the mentioned category equivalence. First we define the pullback functor
+We now want to deep into the mentioned category equivalence. First we consider the pullback functor of $!: 0 \to 1$
 \[!^*:(\mathbf{Ring} \downarrow 1) \to (\mathbf{Ring} \downarrow 0)\]
 Let $R$ be an object in $\mathbf{Ring}$, then $!^*(R)=(0 \times_1 R,  \mathrm{proj}_1)$
 \begin{equation}\label{ring square}
@@ -66,7 +66,7 @@ Let $R$ be an object in $\mathbf{Ring}$, then $!^*(R)=(0 \times_1 R,  \mathrm{pr
 
 Observe that
 \[(\mathbf{Ring} \downarrow 1) \cong \mathbf{Ring}\]
-in fact, we can always provide an object in $\mathbf{Ring}$ with a morphism to $1$, just using the unique morphism to $1$. Furthermore
+in fact, we can always provide an object in $\mathbf{Ring}$ with the unique morphism to $1$. Furthermore
 \[(\mathbf{Ring} \downarrow 0) = (\mathbf{Ring} \downarrow \mathbb{Z}) \cong \mathbf{Ring_*} \]
 where the equivalence of category is given by the unitalization functor 
 \begin{align*}
