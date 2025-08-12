@@ -4,4 +4,139 @@
 
 \section{The general case}
 
+In this section, we aim to show that any cotopos $\mathcal{E}^{\mathrm{op}}$, the dual of a topos $\mathcal{E}$, is an ideally exact category. Then, since the category of $\mathbf{Set}$ is a topos, we will analyze the case of $\mathbf{Set}^{\mathrm{op}}$. The following is based on \cite{Bourn2004} and \cite{Borceux1994II}, \cite{Borceux1994III}.
+
+First, we recall the definition of a topos.
+
+\begin{mainbox}{}
+\begin{defi}
+Let $\mathcal{E}$ be a finitely complete category. A \textbf{subobject classifier} of $\mathcal{E}$ is a pair $(\Omega, t)$, where $\Omega$ is an object of $\mathcal{E}$ and $t: 1 \rightarrowtail \Omega$ is a monomorphism, such that for any object $A$ of $\mathcal{E}$ and any monomorphism $m: S \rightarrowtail A$, there exists a unique morphism $\chi_S: A \rightarrow \Omega$ making the diagram
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAGUQBfU9TXfIRQBGclVqMWbADrSAtnRwALAEYAzYMK7deIDNjwEiZYePrNWiEAEEdfA4KKjT1c1KuyA8nJgBzOtziMFC+8ESgagBOEHJIZCA4EEhaulExcdSJSABMmXRYDGw4+YWukpYgsdQMdCowDAAK-IZCIJFYvko4diBpsYi5CUmIAMxlFjLSAMZKWAD6nDwR0f2iQ0hjEhNW3VwUXEA
+\begin{tikzcd}
+S \arrow[r] \arrow[d, "m"', tail] & \mathbf{1} \arrow[d, "t"] \\
+A \arrow[r, "\chi_S"]             & \Omega                   
+\end{tikzcd}
+\]
+a pullback.
+\end{defi}
+\end{mainbox}
+
+\newpage
+
+\begin{mainbox}{}
+\begin{defi}
+A category $\mathcal{E}$ is said to be an \textbf{elementary topos}, in the following just a \textbf{topos}, if
+\begin{itemize}
+    \item it is finitely complete;
+    \item it is cartesian closed;
+    \item it has a subobject classifier.
+\end{itemize}
+\end{defi}
+\end{mainbox}
+
+A topos turns out to have a rich structure. First, we need some properties. Recall that the exponential is given by the cartesian closedness: for all objects $A$, $B$, and $C$ in $\mathcal{E}$.
+\[
+\mathrm{Hom}_{\mathcal{E}}(A, \Omega^B) \cong \mathrm{Hom}_{\mathcal{E}}(A \times B, \Omega) \cong \mathrm{Hom}_{\mathcal{E}}(B, \Omega^A)
+\]
+
+\begin{mainbox}{}
+\begin{prop}\label{exp in topos is monadic}
+Given a topos, the exponential functor 
+\[\Omega^{(-)}: \mathcal{E}^{\mathrm{op}} \to \mathcal{E} \]
+is monadic.
+\end{prop}
+\end{mainbox}
+\noindent The proof is contained in \cite{Borceux1994III} \textit{Thm 5.7.3} and it is based on the Beck monadicity theorem.
+
+\begin{mainbox}{}
+\begin{prop}\label{topos is finitely cocomplete}
+A topos is finitely cocomplete.
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+\begin{proof}
+Consider a topos $\mathcal{E}$. Since the functor $\Omega^{(-)}: \mathcal{E}^{\mathrm{op}} \to \mathcal{E}$, by \Cref{exp in topos is monadic}, is monadic, and $\mathcal{E}$ is finitely complete, it follows that $\mathcal{E}^{\mathrm{op}}$ is finitely complete. Thus, $\mathcal{E}$ is finitely cocomplete.
+\end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
+\begin{prop}\label{conditions for factorization regular epi mono}
+Let $\mathcal{E}$ be a category with the following conditions:
+\begin{itemize}
+\item it has pullbacks;
+\item it has coequalizers of kernel pairs;
+\item it has pullback stable regular epimorphisms.
+Each morphism $f: A \to B$ in $\mathcal{E}$ admits a (regular epi, mono) factorization.
+\end{itemize}
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+\begin{proof}
+Let $f: A \to B$ be a morphism. Consider the kernel pair $(r_1,r_2)$ of $f$, and the coequalizer $e$ of the kernel pair.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMwVqdJq3YAhHnxAZseAkQBMpYhIYs2iEAEl5-ZUKLlxNHdP0cAOnbwBbeAH0ZXbhJhQA5vCJQADMAJwgnJAsQHAgkMklddiDjEFDwyJoYpA0EmxA2GkZ6ACMYRgAFARVhEBCsXwALHBS0iMQxaNjEKLgGrCDmxABaYl5gsLaOrO6aXv7B0cpuIA
+\begin{tikzcd}
+A\times_BA \arrow[r, shift left] \arrow[r, shift right] & A \arrow[rr, "f"] \arrow[rd, "e"'] &   & B \\
+                                                        &                                    & I &  
+\end{tikzcd}
+\]
+Then, since $fr_1=fr_2$, by the universal property of the coequalizer, there exists a unique morphism $m$ such that $me = f$. We already know that $e$ is a regular epi, since it is a coequalizer.
+
+It remains to prove that $m$ is a mono. Equivalently, we show that, letting $p_1, p_2: I \times_B I \to I$ be the projections of the kernel pair, we have that $p_1 = p_2$. First, we consider the morphism $e\times_Be : A\times_BA \to I\times_BI$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMwVqdJq3YAhHnxAZseAkQBMpYhIYs2iEAEl5-ZUKLlxNHdP0cAOnbwBbeAH0ZXXicGqUZNdpSeoYOzm4yRtwSMFAA5vBEoABmAE4QTkgWIDgQSGSSuuxJxiCp6Zk0OUgaBTYgbDSM9ABGMIwACgIqwiApWLEAFjglZRmIYtm5iFlwA1hJw4gAtMRepWljE1XTNLPzi6sKo9WVU-mMWGDBcBAXUCBWQewZjS1tnaa+vf1DIxtIABZTicQHsFkgVmtjoggZMQWCDlD-uNgTDHoV9DBQlgXHB3A0QE1Wh0umZ9H1BsMotwgA
+\begin{tikzcd}
+A\times_BA \arrow[r, shift left] \arrow[r, shift right] \arrow[rdd, "e\times_Be"'] & A \arrow[rr, "f"] \arrow[rd, "e"']                        &                    & B \\
+                                                                                   &                                                           & I \arrow[ru, "m"'] &   \\
+                                                                                   & I\times_BI \arrow[ru, shift left] \arrow[ru, shift right] &                    &  
+\end{tikzcd}
+\]
+Since $e$ is a coequalizer, it is a regular epi. Thus $e\times_Be$ is an epi. In fact, all the square in the following diagram are pullbacks, and $e\times_Be$ is the composition of the two regular epis, thus it is an epi.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEAdTvAW3gD6AIXYgAvqXSZc+QigBM5KrUYs2ASW59BI8ZJAZseAkQDMS6vWatEHPVKOyzpecqtrb6+wenG5yRVM3VRsQLwkHGRMUMiDLELZRCJ9HaORzOJVrNiFvQyj-Mld47NsuHix+OGFw-Xy-IkVirI8wrUqdcOUYKABzeCJQADMAJwheJDIQHAgkAEZqAAsYOig2HAB3CGXVhGTR8cnqGaQAdiWVtdtN7cu9-QOJxHPp2cQADgvV9a2dqHvhmMngtXkhPiA-j9brtvI8jqCPtQGFgwKEoHQ4Ms1iVWjB2lVhKx9kD5sc3vJiYdEIoEeYWqFWF8rtNfndYSTEbScaE0AI5uyqeCTogACzcti8+QCp5ihEANnFtgmlKedOFCvpbGVDw5L2FAFYVUh9WSkLL3AyQEyoX8ASA4YgpsKaQAjGBgK6mKYWtgjPnS+EG6huj1IAC0IoAnIqQH6pUi6G6GAAFXxOWwjLC9RY4cQUMRAA
+\begin{tikzcd}
+A\times_BA \arrow[rr, two heads] \arrow[dd, two heads] \arrow[rrdd, "e\times_Be", dashed] \arrow[rrr, "r_1", bend left] \arrow[ddd, "r_2"', bend right=49] &  & I\times_BA \arrow[dd, two heads] \arrow[r]   & A \arrow[dd, "e", two heads] \\
+                                                                                                                                                           &  &                                              &                              \\
+A\times_BI \arrow[rr, two heads] \arrow[d]                                                                                                                 &  & I\times_BI \arrow[r, "p_1"] \arrow[d, "p_2"] & I \arrow[d, "m"]             \\
+A \arrow[rr, "e", two heads]                                                                                                                               &  & I \arrow[r, "m"]                             & B                           
+\end{tikzcd}
+\]
+Finally
+\[p_1 (e\times_Be) = e r_1 = e r_2 = p_2 (e\times_Be)\]
+\[\implies p_1 = p_2\]
+\end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
+\begin{prop}\label{colimits are universal in topos}
+    In a topos, all finite colimits are pullback stable.
+\end{prop}
+\end{mainbox}
+\noindent The proof is contained in \cite{Borceux1994II} \textit{Proposition 5.9.1}.
+
+\begin{mainbox}{}
+\begin{prop}
+A topos is a regular category.
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+\begin{proof}\label{topos is regular}
+    A topos is finitely complete. Moreover, by \Cref{colimits are universal in topos} regular epis are pullback stable. By \Cref{topos is finitely cocomplete}, each topos is finitely cocomplete. Then, by \Cref{conditions for factorization regular epi mono}, each morphism admits a (regular epi, mono) factorization. Thus, a topos is a regular category.
+\end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
+\begin{prop}\label{mono are equalizers in topos}
+    In a topos, every monomorphism is an equalizer.
+\end{prop}
+\end{mainbox}
+[MAKE THE PROOF]
+\noindent The proof is contained in \cite{Borceux1994II} \textit{Proposition 5.3.3}.
+
+
+
 \section{The case of cosets}
