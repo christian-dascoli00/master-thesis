@@ -68,8 +68,8 @@ Let $\mathcal{E}$ be a category with the following conditions:
 \item it has pullbacks;
 \item it has coequalizers of kernel pairs;
 \item it has pullback stable regular epimorphisms.
-Each morphism $f: A \to B$ in $\mathcal{E}$ admits a (regular epi, mono) factorization.
 \end{itemize}
+Then each morphism $f: A \to B$ in $\mathcal{E}$ admits a (regular epi, mono) factorization.
 \end{prop}
 \end{mainbox}
 
@@ -129,14 +129,56 @@ A topos is a regular category.
 \end{proof}
 \end{subbox}
 
+Now we aim to transfer the regularity of a topos to its dual, the cotopos.
+
 \begin{mainbox}{}
 \begin{prop}\label{mono are equalizers in topos}
     In a topos, every monomorphism is an equalizer.
 \end{prop}
 \end{mainbox}
-[MAKE THE PROOF]
-\noindent The proof is contained in \cite{Borceux1994II} \textit{Proposition 5.3.3}.
 
+\begin{subbox}{}
+\begin{proof}
+    Let $m: A \rightarrowtail B$ be a monomorphism in a topos, let $\chi_A$ be its characteristic morphism and let $t:1 \to \Omega$ be the morphism underlying the subobject classifier. It holds that $m = \mathrm{Eq}(\chi_S,t!^A)$.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMwVqdJq3YAdGQHkAtjADm9HnxAZseAkQBM4mgxZtEIYhv46hRckcmnZMxfRwALAE6LgAUQCO3AAUcgDG7lgA+gDKpDgAhAB6HACUPBIwUCrwRKAAZp4Qikj2IDgQSIaO0uZJXLz5hcWIVeVIZNVmZVYgBUVIYmUViKUmNSDFDb1NJTRtiB0ARjBgUEgAtCKjUl1hETEgNIz0y4wACgK6wiCeWCruOOncQA
+\begin{tikzcd}
+{\mathrm{Eq}(\chi_S,t!^A)} \arrow[r, "m"] & A \arrow[r, "!^A"] \arrow[rr, "\chi_S"', bend right] & 1 \arrow[r, "t"] & \Omega
+\end{tikzcd}
+    \]
+\end{proof}
+\end{subbox}
 
+\begin{mainbox}{}
+\begin{prop}\label{mono are pushot stable}
+    In a topos, monomorphisms are pushout stable.
+\end{prop}
+\end{mainbox}
+\noindent The proof is contained in ?? cite
+
+\begin{mainbox}{}
+\begin{prop}\label{cotopos is regular}
+    A cotopos is a regular category.
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+\begin{proof}
+Consider a cotopos. It is finitely complete by definition. In the dual category, we aim to prove that each morphism admits a (regular mono, epi) factorization. Let $f: A \to B$ be a morphism and consider its factorization (regular epi, mono) $f=me$ given by \Cref{topos is regular}. $e$ is regular epi, thus, by \Cref{reg epi is an epi}, an epi. $m$ is a mono, thus, by \Cref{mono are equalizers in topos}, it is an equalizer, ie a regular mono. Finally, by \Cref{mono are pushot stable}, monos are pushout stable. Thus, the cotopos is a regular category.
+\end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
+\begin{prop}\label{cotopos is exact}
+    A cotopos is an exact category.
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+\begin{proof}
+Consider a cotopos. By \Cref{cotopos is regular}, it is a regular category. It remains to prove that each equivalence relation is a kernel pair.
+\end{proof}
+\end{subbox}
 
 \section{The case of cosets}
+
