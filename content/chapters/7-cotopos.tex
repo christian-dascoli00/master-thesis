@@ -150,6 +150,18 @@ Now we aim to transfer the regularity of a topos to its dual, the cotopos.
 \end{subbox}
 
 \begin{mainbox}{}
+\begin{prop}\label{epi are reg epi in topos}
+    In a topos, every epimorphism is a coequalizer.
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+\begin{proof}
+    Every epi is the coequalizer of its kernel pair.
+\end{proof}
+\end{subbox}
+
+\begin{mainbox}{}
 \begin{prop}\label{mono are pushot stable}
     In a topos, monomorphisms are pushout stable.
 \end{prop}
@@ -168,6 +180,50 @@ Consider a cotopos. It is finitely complete by definition. In the dual category,
 \end{proof}
 \end{subbox}
 
+We need to prove that a cotopos is also exact. First, we introduce the notion of subobject. A subobject is a monomorphism into an object. We can define the intersection and union of subobjects.
+
+Given $a:X_1 \rightarrowtail X$ and  $b:X_2 \rightarrowtail X$ subobjects, the intersection is given by the pullback
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0B9ARgAIAdfgGM6aXlwBMIAL6l0mXPkIoJpblVqMWbdjLkgM2PASKrK1es1aIOPPfKNKiZdRa3XbU6RphQA5vBEoABmAE4QALZIAMzUOBBI3HF0WAxsOClpblZsAEb2IGGRSKog8YnJqemZINnaNnQFRVGIZGUJiKUZVTbdabIh4S1t5YixZTW9Nd7SQA
+\begin{tikzcd}
+X_1 \cap X_2 \arrow[rr, tail] \arrow[d, tail] &  & X_1 \arrow[d, "a", tail] \\
+X_2 \arrow[rr, "b", tail]                     &  & X                       
+\end{tikzcd}
+\]
+while the union is given by the monomorphism $m$ underlying the (regular epi, mono) factorization from \Cref{topos is regular} of $[a,b]: X_1 + X_2 \to X$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0B9ARgGouATCAC+pdJlz5CKAeSq1GLNuxFiQGbHgJFupbvPrNWiDjwAEAHQsBjJmjOCR8mFADm8IqABmAJwgBbJDIQHAgkXQUjNmQ6UgAjClVvP0DEYNCkWRAACxg6KDYcAHcIXPyEUWSAzOoMxAicOiwGQqaW6kMlE0DqBjo4mAYABQktaRAfLFdsnCdhIA
+\begin{tikzcd}
+X_1+X_2 \arrow[rr, "{[a,b]}"] \arrow[rd, two heads] &                                     & X \\
+                                                    & X_1 \cup X_2 \arrow[ru, "m"', tail] &  
+\end{tikzcd}
+\]
+
+The union is characterized in term of pushout.
+\begin{mainbox}{}
+\begin{prop}\label{union is pushout}
+    Let $a: X_1 \rightarrowtail X$ and $b: X_2 \rightarrowtail X$ be subobjects of a cotopos $\mathcal{E}$ and their intersection given by
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0B9ARgAIAdfgGM6aXlwBMIAL6l0mXPkIoJpblVqMWbdjLkgM2PASKrK1es1aIOPPfKNKiZdRa3XbU6RphQA5vBEoABmAE4QALZIAMzUOBBI3HF0WAxsOClpblZsAEb2IGGRSKog8YnJqemZINnaNnQFRVGIZGUJiKUZVTbdWZo5NkJN4S1t5YixZTW9NXUeUDIU0kA
+\begin{tikzcd}
+X_1 \cap X_2 \arrow[rr, "c", tail] \arrow[d, "d", tail] &  & X_1 \arrow[d, "a", tail] \\
+X_2 \arrow[rr, "b", tail]                               &  & X                       
+\end{tikzcd}
+\]
+Then the union $X_1 \cup X_2\rightarrowtail X$ is given by the pushout
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0B9ARgAIAdfgGM6aXlwBMIAL6l0mXPkIoJpblVqMWbLn0FCmYyTLkgM2PASKrK1es1aIOPE-ItKiZdXa2PnU6Q0YKABzeCJQADMAJwgAWyQAZmocCCRuFLosBjYcLJzZKNiExFUQVPTM7Nz81xAY+KQycrTSqpynPOqfBzYhOoaS5orEZPLaztqe7ScoGQppIA
+\begin{tikzcd}
+X_1 \cap X_2 \arrow[rr, "c", tail] \arrow[d, "d", tail] &  & X_1 \arrow[d, tail] \\
+X_2 \arrow[rr, tail]                                    &  & X_1 \cup X_2       
+\end{tikzcd}
+\]
+\end{prop}
+\end{mainbox}
+\noindent The proof is contained in ?? cite.
+
+We are ready to prove the exactness of a cotopos
+
 \begin{mainbox}{}
 \begin{prop}\label{cotopos is exact}
     A cotopos is an exact category.
@@ -176,9 +232,80 @@ Consider a cotopos. It is finitely complete by definition. In the dual category,
 
 \begin{subbox}{}
 \begin{proof}
-Consider a cotopos. By \Cref{cotopos is regular}, it is a regular category. It remains to prove that each equivalence relation is a kernel pair.
+Consider a cotopos $\mathcal{E}^\mathrm{op}$. By \Cref{cotopos is regular}, it is a regular category. It remains to prove that each equivalence relation is a kernel pair. We prove that each reflexive relation is a kernel pair, then, it follows the result. Consider a reflexive relation on an object $X$ in $\mathcal{E}^\mathrm{op}$, which is the following in $\mathcal{E}$
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQANEAX1PU1z5CKchWp0mrdgE0e4mFADm8IqABmAJwgBbJKJA4ISMiDgALLGpxIAtACYaDFm0QgNAfWI8+ITTr00hsY05pbWiA4SzuwediA0jPQARjCMAAoCeAQxWIpm1rzqWrqIJkGI+okp6ZlC7Fhg2LDxUVKuCNyU3EA
+\begin{tikzcd}
+Y \arrow[r, "s" description] & X \arrow[l, "r_1", shift left=2] \arrow[l, "r_2"', shift right=2]
+\end{tikzcd}
+\]
+where $s$ is a common retraction $sr_1=sr_2=1_X$.
+
+Since $(Z,r_1,r_2)$ is relation in $\mathcal{E}^\mathrm{op}$, then $(r_1,r_2)$ is a jointly monic pair in $\mathcal{E}^\mathrm{op}$. Hence $[r_1,r_2]: X + X \to Y$ is an epi in $\mathcal{E}$. By \Cref{epi are reg epi in topos}, $[r_1,r_2]$ is a regular epi. This means we can assume that $[r_1,r_2]$ is the regular epi underlying the (regular epi, mono) factorization of $[r_1,r_2]$, where the mono is the identity morphism.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0BqdkAX1PSZc+QigBM5KrUYs2ATT4CQGbHgJEAjKQ1T6zVohALeUmFADm8IqABmAJwgBbJGRA4ISLdP1tkdgPpaAWIUINQAFjB0UGw4AO4QkdEI-LYOzoiu7kgSIEkxhvGJUVApSvZOOdTZiF44dFgMsQ1N1Hqyhhr+xhS8QA
+\begin{tikzcd}
+X+X \arrow[rr, "{[r_1,r_2]}", two heads] \arrow[rd, two heads] &                           & Y \\
+                                                               & Y \arrow[ru, "1_Y", tail] &  
+\end{tikzcd}
+\]
+Thus $Y$ is, up to iso, the union $X \cup X$. Now consider the intersection
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0ACAHW4GM6aTuxABfUuky58hFACZSARiq1GLNgC0xEkBmx4CRBZWr1mrRB22T9MomWWm1Fq6JUwoAc3hFQAMwAnCABbJDIQHAgkBVVzNihrEECQsOpIpABmJzjLPkTk0MQsiKjERWz1SwCAfTl8oMKY9LKKlxq6t1EgA
+\begin{tikzcd}
+X \cap X \arrow[rr, "d"] \arrow[d, "c"] &  & X \arrow[d, "r_2"] \\
+X \arrow[rr, "r_2"]                     &  & Y                 
+\end{tikzcd}
+\]
+
+Observe that
+\[c = 1_X c = sr_1 c = sr_2 d = 1_X d \]
+Thus the intersection diagram, which is also a pushout in $\mathcal{E}$ by \Cref{union is pushout}, becomes
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0ACAHW4GM6aTuxABfUuky58hFACZSARiq1GLNgC0xEkBmx4CRBZWr1mrRB22T9MomWWm1Fq6JUwoAc3hFQAMwAnCABbJDIQHAgkBVVzNj5rEECQsOpIpABmJzjLBPF-INDELIioxEVs9UsAgH05ROSimPTyypda+rdRIA
+\begin{tikzcd}
+X \cap X \arrow[rr, "c"] \arrow[d, "c"] &  & X \arrow[d, "r_2"] \\
+X \arrow[rr, "r_2"]                     &  & Y                 
+\end{tikzcd}
+\]
+This diagram is a kernel pair in $\mathcal{E}^\mathrm{op}$ and it is the kernel pair we were looking for.
 \end{proof}
 \end{subbox}
 
+While a topos fails to be protomodular, a cotopos actually has this structure.
+
+\begin{mainbox}{}
+\begin{prop}\label{cotopos is protomodular}
+    A cotopos is a protomodular category.
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+\begin{proof}
+Consider a cotopos $\mathcal{E}^\mathrm{op}$. By \Cref{exp in topos is monadic} the functor
+\[\Omega^{(-)}: \mathcal{E}^\mathrm{op} \to \mathcal{E}\]
+is monadic. In particular, one can show that this functor has image in the internal Heyting algebras in $\mathcal{E}$ which is protomodular. This functor, restricted in the codomain, is still monadic. Then by \Cref{algebras category is proto if the base category is proto}, also $\mathcal{E}^\mathrm{op}$ is protomodular.
+\end{proof}
+\end{subbox}
+
+It remains to prove that in a cotopos $\mathcal{E}^\mathrm{op}$ the unique morphism 
+\[!: 0_{\mathcal{E}^\mathrm{op}} \to 1_{\mathcal{E}^\mathrm{op}}\]
+is a regular epi. Then, the associated pullback functor may serve as underlying functor in the definition of an ideally exact category. In order to prove that $!$ is a regular epi in $\mathcal{E}^\mathrm{op}$, we prove, equivalently, that
+\[!: 0_\mathcal{E} \to 1_\mathcal{E}\]
+is an equalizer.
+
+\begin{mainbox}{}
+    \begin{prop}\label{In a cotopos ! is an equalizer}
+        In a cotopos ${\mathcal{E}^\mathrm{op}}$ the unique morphism
+        \[!: 0_\mathcal{E} \to 1_\mathcal{E}\]
+        is an equalizer.
+    \end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        PROOF
+    \end{proof}
+\end{subbox}  
 \section{The case of cosets}
 
