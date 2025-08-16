@@ -145,14 +145,14 @@ The construction of the coproducts in the Eilenberg-Moore category $\mathcal{X}^
 
 \begin{rembox}{}
     \begin{ex}
-        Let $\mathbf{Mon}$ be the category of monoids and let $U: \mathbf{Mon} \to \mathbf{Set}$ be the forgetful functor. One can define the free functor $F: \mathbf{Set} \to \mathbf{Mon}$ sending each set $X$ to the free monoid on $X$
+        Let $\mathsf{Mon}$ be the category of monoids and let $U: \mathsf{Mon} \to \mathsf{Set}$ be the forgetful functor. One can define the free functor $F: \mathsf{Set} \to \mathsf{Mon}$ sending each set $X$ to the free monoid on $X$
         \[F(X) = \{(x_1,\ldots,x_n) \ | \ n \in \mathbb{N}, \ \forall i=1,\ldots,n, \ x_i \in X \}\]
-        with the operation of concatenation. This induces a monad $T=UF$ on $\mathbf{Set}$ and the functor turns out to be monadic. The coproduct in $\mathbf{Mon}$ is the free product, while in $\mathbf{Set}$ it is the disjoint union. The free product of two monoids, as sets, is in general a bigger set than the disjoint union of the two set underlying the monoids. Thus the forgetful functor $U$ in general does not preserve coproducts. Instead, if the coproduct of the algebra structures, which correspond to the operation of the monoids, were itself an algebra structure, the forgetful functor would preserve coproducts.
+        with the operation of concatenation. This induces a monad $T=UF$ on $\mathsf{Set}$ and the functor turns out to be monadic. The coproduct in $\mathsf{Mon}$ is the free product, while in $\mathsf{Set}$ it is the disjoint union. The free product of two monoids, as sets, is in general a bigger set than the disjoint union of the two set underlying the monoids. Thus the forgetful functor $U$ in general does not preserve coproducts. Instead, if the coproduct of the algebra structures, which correspond to the operation of the monoids, were itself an algebra structure, the forgetful functor would preserve coproducts.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBGAM2ABZAgF8QE0uky58hFGQCMVWoxZtOPfsOABlGDiky52PASIry6+s1aIO3XoJFGTAPQAq09TCgAc3giUCEAJwguJDIQHAgkACZqey0nTgBjAkDpWRAIqJjqeKQbEDg+LCEcJABaMtTHEABVXLDI6MQyksRYiqqaxHqUzSaAMTb8jqTihK7qfuq6lTMpwvm4ueTyyqWhlYoJIA
 \begin{tikzcd}
-\mathbf{Mon} \arrow[r, "\cong"] \arrow[d, "U", shift left]     & \mathbf{Set}^T \arrow[ld, shift left] \\
-\mathbf{Set} \arrow[u, "F", shift left] \arrow[ru, shift left] &                                      
+\mathsf{Mon} \arrow[r, "\cong"] \arrow[d, "U", shift left]     & \mathsf{Set}^T \arrow[ld, shift left] \\
+\mathsf{Set} \arrow[u, "F", shift left] \arrow[ru, shift left] &                                      
 \end{tikzcd}
         \]
     \end{ex}

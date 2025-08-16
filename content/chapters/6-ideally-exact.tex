@@ -33,7 +33,7 @@ We are now ready to prove the theorem, which will lead to the definition of the 
 
 \begin{subbox}{}
     \begin{proof}[\textit{Proof of \Cref{Ideally exact categories}}]\label{The proof}
-        $(1\implies 3)$ Suppose $! : 0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact, the pullback functor $(!)^*: (\mathcal{A} \downarrow 1) \to (\mathcal{A} \downarrow 0)$ is monadic by the main result of the previous chapter: \Cref{monadic p^*}. Note that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$. Now consider $\mathcal{X} = (\mathcal{A} \downarrow 0)$, we want to prove that $\mathcal{X}$ is semiabelian. 
+        $\mathit{(1\implies 3)}$ Suppose $! : 0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact, the pullback functor $(!)^*: (\mathcal{A} \downarrow 1) \to (\mathcal{A} \downarrow 0)$ is monadic by the main result of the previous chapter: \Cref{monadic p^*}. Note that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$. Now consider $\mathcal{X} = (\mathcal{A} \downarrow 0)$, we want to prove that $\mathcal{X}$ is semiabelian. 
         
         $(\mathcal{A} \downarrow 0)$ is pointed, in fact if $(A,\alpha)$ is an object in $(\mathcal{A} \downarrow 0)$, we have the following initial and terminal objects, which coincide:
         \[
@@ -93,13 +93,13 @@ A \arrow[rr, "f", pos=0.25, crossing over] \arrow[ru, "e", two heads] \arrow[rd,
 
     Finally, we want to establish that the monad $(!)^*(!)_!$ preserves kernel pairs. This is obvious: $(!)_!$ preserves connected limits, such as kernel pairs, by \Cref{p_! preserves connected limits}, while $(!)^*$ preserves kernel pairs since it is a right adjoint. Thus $(!)^*(!)_!$ preserves kernel pairs.
 
-    $(3 \implies 2)$ Suppose there exists $\mathcal{X}$ semiabelian category and a monadic functor $U: \mathcal{A} \to \mathcal{X}$. Assume that the associated monad $T$ preserves regular epimorphisms and kernel pairs.
+    $\mathit{(3 \implies 2)}$ Suppose there exists $\mathcal{X}$ semiabelian category and a monadic functor $U: \mathcal{A} \to \mathcal{X}$. Assume that the associated monad $T$ preserves regular epimorphisms and kernel pairs.
     
     First we need to verify that $\mathcal{A}$ is exact. Since $U$ is monadic, we have that $\mathcal{A} \cong \mathcal{X}^T$. So it suffices to show that $\mathcal{X}^T$ is exact. We know that $\mathcal{X}$ is semiabelian, so it is exact. Then, by \Cref{algebras category is exact if the base category is exact}, $\mathcal{X}^T$ is exact.
 
     In order to prove that $\mathcal{A}$ has finite coproducts, it is first necessary to establish that $\mathcal{X}^T$ is protomodular. This follows directly from \Cref{algebras category is proto if the base category is proto} as $\mathcal{X}$ is protomodular. Since any protomodular category is Mal'tsev, then $\mathcal{X}^T$ is Mal'tsev. We already prove that $\mathcal{X}^T$ is also exact, then by \Cref{exact and Maltsev cat has reflexive coeq}, $\mathcal{X}^T$ has reflexive coequalizers. Since $\mathcal{X}$ has finite coproducts and $\mathcal{X}^T$ has reflexive coequalizers, then by \Cref{algebras category has colim if the base category has coprod}, $\mathcal{X}^T$ has finite coproducts. Finally, since $\mathcal{A} \cong \mathcal{X}^T$, it follows that $\mathcal{A}$  has finite coproducts.
 
-    $(2 \implies 1)$ Suppose that $\mathcal{A}$ is exact, has finite coproducts and there exists a semiabelian category $\mathcal{X}$ and a monadic functor $U: \mathcal{A} \to \mathcal{X}$.
+    $\mathit{(2 \implies 1)}$ Suppose that $\mathcal{A}$ is exact, has finite coproducts and there exists a semiabelian category $\mathcal{X}$ and a monadic functor $U: \mathcal{A} \to \mathcal{X}$.
 
     Since $\mathcal{X}$ is protomodular, so is $\mathcal{X}^T$ by \Cref{algebras category is proto if the base category is proto}. Again, by monadicity, $\mathcal{A}$ inherits this properties.
 
@@ -197,7 +197,7 @@ V \arrow[rr, "k", shift left]                 &  & W \arrow[ll, "T(h)", shift le
 
 \begin{subbox}{}
     \begin{proof}
-        We can consider $(!)^*$ to be such functor, as shown in the proof of \Cref{Ideally exact categories} $(1\implies3)$. Then by \Cref{p^* is essentially nullary} we have that the monad associated $(!)^*(!)_!$ is essentially nullary.
+        We can consider $(!)^*$ to be such functor, as shown in the proof of \Cref{Ideally exact categories}$\mathit{:(1\implies 3)}$. Then by \Cref{p^* is essentially nullary} we have that the monad associated $(!)^*(!)_!$ is essentially nullary.
     \end{proof}
 \end{subbox}
 
@@ -369,13 +369,13 @@ This previous theorem answer the question we posed at the beginning of this sect
 
 \begin{rembox}{}
     \begin{ex}
-In the first chapter we saw the same theorem in the particular case of $\mathcal{A}=\mathbf{Ring}$ and $\mathcal{X}=\mathbf{Ring_*}$, where $1=\{0\}$ and $0=\mathbb{Z}$. 
+In the first chapter we saw the same theorem in the particular case of $\mathcal{A}=\mathsf{Ring}$ and $\mathcal{X}=\mathsf{Ring_*}$, where $1=\{0\}$ and $0=\mathbb{Z}$. 
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAIwBmwAEpYwAcwC+AAm5QIAdzB0AThtXyAjAEoQs0uky58hFGQBMVWoxZt5XXv2FjJMhUtXqtO7j5BISFgAC1ZQ2NTbDwCImtyO3pmVkQQQLdRCSk5IxMQDFiLBNJbahTHdMzgj1yAfQAqWSM7GChpeCJQEW0eJDIQHAgkXWo4ASwRHCQAWjH7VLYAQgA9RvyevtHqYYHxyem5hcq0kGX65c2QXoh+xEShkcQAZgOpmcR5ioczgFVrrd7m8nkhHhMPscfkt0gAxQHbRCDPYPaFVDKcADGBGkIF2dCwDDYkDArGoAhgdCgxIIrGiN0RCxRIIhR0QJ1+bBqAg0PGAAGsYBoWtQGHQhDAGAAFMxxSwgDRYaQCGb0oFIEEohasz4cmEcWGkbhoLD1bkhcKRPEgMUS6WykrpRXK1UUWRAA
 \begin{tikzcd}
-(\mathbf{Ring} \downarrow 1) \arrow[dd, "!^*", shift left] \arrow[rr, "\cong", no head]                       &  & \mathbf{Ring} \arrow[dd, "U", shift left]                                                    \\
+(\mathsf{Ring} \downarrow 1) \arrow[dd, "!^*", shift left] \arrow[rr, "\cong", no head]                       &  & \mathsf{Ring} \arrow[dd, "U", shift left]                                                    \\
                                                                                                               &  &                                                                                              \\
- (\mathbf{Ring} \downarrow \mathbb{Z}) \arrow[uu, "!_!", shift left] \arrow[rr, "\mathrm{Ker}"', shift right] &  & \mathbf{Ring_*} \arrow[uu, "F", shift left] \arrow[ll, "{(F,\pi_\mathbb{Z})}"', shift right]
+ (\mathsf{Ring} \downarrow \mathbb{Z}) \arrow[uu, "!_!", shift left] \arrow[rr, "\mathrm{Ker}"', shift right] &  & \mathsf{Ring_*} \arrow[uu, "F", shift left] \arrow[ll, "{(F,\pi_\mathbb{Z})}"', shift right]
 \end{tikzcd}
 \]
 In particular the bottom category equivalence constructed in that case exactly corresponds to \eqref{induced ajunction on 0}
@@ -384,11 +384,11 @@ In particular the bottom category equivalence constructed in that case exactly c
 
 \section{Ideals and quotients}
 
-In this section we will investigate the notion of ideals in an ideally exact category and their corresponding quotients. We aim to emulate the classical definition of ideals in a ring, and the corresponding quotients. As already mentioned, recall that a proper ideal in a ring is a non-unital ring. Note that the notion of normal subobjects is well defined in a semiabelian category as the kernel of a morphism. Also recall that a non-unital ring is semiabelian, while a unital ring fails to be, as mentioned in the first chapter. Given the previous observations, one can model the notion of ideals as the normal subobjects through a functor, which is the forgetful functor in rings, having a semiabelian category as codomain. Note that this framing is consistent with the characterization of ideally exact categories given in \Cref{Ideally exact categories}. In particular in $\mathbf{Ring}$ we have the following structure.
+In this section we will investigate the notion of ideals in an ideally exact category and their corresponding quotients. We aim to emulate the classical definition of ideals in a ring, and the corresponding quotients. As already mentioned, recall that a proper ideal in a ring is a non-unital ring. Note that the notion of normal subobjects is well defined in a semiabelian category as the kernel of a morphism. Also recall that a non-unital ring is semiabelian, while a unital ring fails to be, as mentioned in the first chapter. Given the previous observations, one can model the notion of ideals as the normal subobjects through a functor, which is the forgetful functor in rings, having a semiabelian category as codomain. Note that this framing is consistent with the characterization of ideally exact categories given in \Cref{Ideally exact categories}. In particular in $\mathsf{Ring}$ we have the following structure.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBGAM2AAlLGADmAXxDTS6TLnyEUARnJVajFm049+wsRMkB9AFSzpWmFEnwioIQCcIXJGRA4ISDduasiCAAqnIU0kA
 \begin{tikzcd}
-\mathbf{Ring} \arrow[r, "U"] & \mathbf{Ring_*}
+\mathsf{Ring} \arrow[r, "U"] & \mathsf{Ring_*}
 \end{tikzcd}
 \]
 In general in an ideally exact category $\mathcal{A}$ we have the following structure, with semiabelian $\mathcal{X}$.
@@ -503,7 +503,7 @@ In the next results we consider the following lattice. Let $A$ be an object in a
 
 Finally, if the category is semiabelian, we consider also the lattice consisting of normal subobjects $\mathrm{NSub}(A)$, containing the kernels, up to iso, of some morphisms with domain $A$.
 
-The following theorem shows the correspondence between the lattices of quotients and normal subobjects in a semiabelian category. This is a generalization of the classical result in $\mathbf{Grp}$.
+The following theorem shows the correspondence between the lattices of quotients and normal subobjects in a semiabelian category. This is a generalization of the classical result in $\mathsf{Grp}$.
 
 \begin{mainbox}{}
 \begin{theo}\label{quotients in semiabelian}
@@ -570,4 +570,4 @@ Now we aim to generalize the previous theorem to an ideally exact category.
     \end{proof}
 \end{subbox}
 
-With this final theorem we proved that in an ideally exact category quotients and normal subobjects correspond to each others. This is exactly what happen in $\mathbf{Ring}$ as mentioned in the first chapter. In fact in $\mathbf{Ring}$ the ideals, which are the normal subobjects in $\mathbf{Ring_*}$ through the forgetful functor, correspond to quotients, which are the regular epis. Observe that in $\mathbf{Grp}$ the result holds directly from \Cref{quotients in semiabelian}, since $\mathbf{Grp}$ is a semiabelian category. Thus in this case we do not need to consider an underlying functor, or, equivalently, we can just consider the identity functor.
+With this final theorem we proved that in an ideally exact category quotients and normal subobjects correspond to each others. This is exactly what happen in $\mathsf{Ring}$ as mentioned in the first chapter. In fact in $\mathsf{Ring}$ the ideals, which are the normal subobjects in $\mathsf{Ring_*}$ through the forgetful functor, correspond to quotients, which are the regular epis. Observe that in $\mathsf{Grp}$ the result holds directly from \Cref{quotients in semiabelian}, since $\mathsf{Grp}$ is a semiabelian category. Thus in this case we do not need to consider an underlying functor, or, equivalently, we can just consider the identity functor.

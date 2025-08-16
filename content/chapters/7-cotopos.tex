@@ -4,7 +4,7 @@
 
 \section{The general case}
 
-In this section, we aim to show that any cotopos $\mathcal{E}^{\mathrm{op}}$, the dual of a topos $\mathcal{E}$, is an ideally exact category. Then, since the category of $\mathbf{Set}$ is a topos, we will analyze the case of $\mathbf{Set}^{\mathrm{op}}$. The following is based on \cite{Bourn2004} and \cite{Borceux1994II}, \cite{Borceux1994III}.
+In this section, we aim to show that any cotopos $\mathcal{E}^{\mathrm{op}}$, the dual of a topos $\mathcal{E}$, is an ideally exact category. Then, since the category of $\mathsf{Set}$ is a topos, we will analyze the case of $\mathsf{Set}^{\mathrm{op}}$. The following is based on \cite{Bourn2004} and \cite{Borceux1994II}, \cite{Borceux1994III}.
 
 First, we recall the definition of a topos.
 
@@ -14,7 +14,7 @@ Let $\mathcal{E}$ be a finitely complete category. A \textbf{subobject classifie
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAGUQBfU9TXfIRQBGclVqMWbADrSAtnRwALAEYAzYMK7deIDNjwEiZYePrNWiEAEEdfA4KKjT1c1KuyA8nJgBzOtziMFC+8ESgagBOEHJIZCA4EEhaulExcdSJSABMmXRYDGw4+YWukpYgsdQMdCowDAAK-IZCIJFYvko4diBpsYi5CUmIAMxlFjLSAMZKWAD6nDwR0f2iQ0hjEhNW3VwUXEA
 \begin{tikzcd}
-S \arrow[r] \arrow[d, "m"', tail] & \mathbf{1} \arrow[d, "t"] \\
+S \arrow[r] \arrow[d, "m"', tail] & \mathsf{1} \arrow[d, "t"] \\
 A \arrow[r, "\chi_S"]             & \Omega                   
 \end{tikzcd}
 \]
@@ -241,7 +241,7 @@ Y \arrow[r, "s" description] & X \arrow[l, "r_1", shift left=2] \arrow[l, "r_2"'
 \]
 where $s$ is a common retraction $sr_1=sr_2=1_X$.
 
-Since $(Z,r_1,r_2)$ is relation in $\mathcal{E}^\mathrm{op}$, then $(r_1,r_2)$ is a jointly monic pair in $\mathcal{E}^\mathrm{op}$. Hence $[r_1,r_2]: X + X \to Y$ is an epi in $\mathcal{E}$. By \Cref{epi are reg epi in topos}, $[r_1,r_2]$ is a regular epi. This means we can assume that $[r_1,r_2]$ is the regular epi underlying the (regular epi, mono) factorization of $[r_1,r_2]$, where the mono is the identity morphism.
+Since $(Z,r_1,r_2)$ is a relation in $\mathcal{E}^\mathrm{op}$, then $(r_1,r_2)$ is a jointly monic pair in $\mathcal{E}^\mathrm{op}$. Hence $[r_1,r_2]: X + X \to Y$ is an epi in $\mathcal{E}$. By \Cref{epi are reg epi in topos}, $[r_1,r_2]$ is a regular epi. This means we can assume that $[r_1,r_2]$ is the regular epi underlying the (regular epi, mono) factorization of $[r_1,r_2]$, where the mono is the identity morphism.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0BqdkAX1PSZc+QigBM5KrUYs2ATT4CQGbHgJEAjKQ1T6zVohALeUmFADm8IqABmAJwgBbJGRA4ISLdP1tkdgPpaAWIUINQAFjB0UGw4AO4QkdEI-LYOzoiu7kgSIEkxhvGJUVApSvZOOdTZiF44dFgMsQ1N1Hqyhhr+xhS8QA
 \begin{tikzcd}
@@ -295,17 +295,72 @@ is a regular epi. Then, the associated pullback functor may serve as underlying 
 is an equalizer.
 
 \begin{mainbox}{}
-    \begin{prop}\label{In a cotopos ! is an equalizer}
-        In a cotopos ${\mathcal{E}^\mathrm{op}}$ the unique morphism
-        \[!: 0_\mathcal{E} \to 1_\mathcal{E}\]
-        is an equalizer.
+    \begin{prop}\label{initial object is a subobject}
+        In a topos, the initial object $0$ is the subobject of every object.
     \end{prop}
 \end{mainbox}
 
 \begin{subbox}{}
     \begin{proof}
-        PROOF
+        The initial object is a colimit. By \Cref{colimits are universal in topos}, it is pullback stable. In the case of the colimit of the empty diagram, ie the initial object, this means that given any morphism $f: B \to 0$ is an iso. Thus $B$ is the initial object.
+
+        Consider an object $A$. We aim to prove that
+        \[!_A: 0 \to A\]
+        is a mono. Let $a,b : X \to 0$ such that $!_A a = !_A b$. By the observation above, $X$ is initial, thus $a = b$. Hence $!_A$ is a mono.
     \end{proof}
 \end{subbox}  
+
+\begin{mainbox}{}
+    \begin{cor}\label{In a topos ! is an equalizer}
+        In a topos $\mathcal{E}$, the unique morphism
+        \[!: 0_\mathcal{E} \to 1_\mathcal{E}\]
+        is an equalizer.
+    \end{cor}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        By \Cref{initial object is a subobject}, the morphism $!: 0_\mathcal{E} \to 1_\mathcal{E}$ is a mono. Then, by \Cref{mono are equalizers in topos}, it is an equalizer.
+    \end{proof}
+\end{subbox}
+
+All the results above leads to the following result.
+
+\begin{mainbox}{}
+    \begin{prop}\label{cotopos is ideally exact}
+        A cotopos is an ideally exact category. Moreover, the underlying functor is the pullback functor.
+    \end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        We aim to prove that a cotopos $\mathcal{E}^\mathrm{op}$ satisfies the condition \Cref{Ideally exact categories}\textit{(1)}. By \Cref{cotopos is exact} it is exact, and by \Cref{cotopos is protomodular} it is protomodular. It has binary coproducts, in fact, the underlying topos is finitely complete. Finally, by \Cref{In a topos ! is an equalizer} the morphism
+        \[!: 0_\mathcal{E} \to 1_\mathcal{E}\]
+        is an equalizer in $\mathcal{E}$. Thus the morphism 
+        \[!: 0_{\mathcal{E}^\mathrm{op}} \to 1_{\mathcal{E}^\mathrm{op}}\]
+        is a coequalizer in $\mathcal{E}^\mathrm{op}$, ie a regular epi.
+    \end{proof}
+\end{subbox}
+
+\begin{rembox}{}
+\begin{rem}
+    While a cotopos is an ideally exact category, a topos fails to be. For example one can consider the category $\mathsf{Set}$ which is a topos. It is not protomodular. Moreover, the unique morphism $!: \emptyset \to \{*\}$ is not a regular epi, in fact, it is not even an epi. In order to show that, consider the morphisms
+    \begin{align*}
+        f: \{*\} & \to \{a,b\} \\
+        *       & \mapsto a \\
+        g: \{*\} & \to \{a,b\} \\
+        *       & \mapsto b
+    \end{align*}
+    Then $f! = g!$, since they are both the empty map, but $f \neq g$.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12YBbNHATzgwcIAL6l0mXPkIoAjOSq1GLNp2AAqTqLESQGbHgJEATIur1mrRB3bA6pAEbaxSmFADm8IqABmAJwhuJDIQHAgkBWUrNgBCXT9A4MQo8KQzEDgACyxfEUQAWijLVRtfBJAAoMjqNMQM7Nz84pVrEA8QagY6RxgGAAUpI1kQfywPLJFRClEgA
+\begin{tikzcd}
+\emptyset \arrow[r, "!"] & \{*\} \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & {\{a,b\}}
+\end{tikzcd}
+    \]
+\end{rem}
+\end{rembox}
+
+
 \section{The case of cosets}
 
