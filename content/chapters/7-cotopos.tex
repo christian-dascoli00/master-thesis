@@ -4,7 +4,7 @@
 
 \section{The general case}
 
-In this section, we aim to show that any cotopos $\mathcal{E}^{\mathrm{op}}$, the dual of a topos $\mathcal{E}$, is an ideally exact category. Then, since the category of $\mathsf{Set}$ is a topos, we will analyze the case of $\mathsf{Set}^{\mathrm{op}}$. The following is based on \cite{Bourn2004} and \cite{Borceux1994II}, \cite{Borceux1994III}.
+In this section, we aim to show that any cotopos $\mathcal{E}^{\mathrm{op}}$, the dual of a topos $\mathcal{E}$, is an ideally exact category. Then, since the category of $\mathsf{Set}$ is a topos, we will analyze the case of $\mathsf{Set}^{\mathrm{op}}$. This section is based on \cite{Bourn2004}, \cite{Johnstone1977}, \cite{Borceux1994II} and \cite{Borceux1994III}.
 
 First, we recall the definition of a topos.
 
@@ -47,7 +47,7 @@ Given a topos, the exponential functor
 is monadic.
 \end{prop}
 \end{mainbox}
-\noindent The proof is contained in \cite{Borceux1994III} \textit{Thm 5.7.3} and it is based on the Beck monadicity theorem.
+\noindent The proof is contained in \cite{Borceux1994III} \textit{Theorem 5.7.3} and it is based on the Beck monadicity theorem.
 
 \begin{mainbox}{}
 \begin{prop}\label{topos is finitely cocomplete}
@@ -166,7 +166,7 @@ Now we aim to transfer the regularity of a topos to its dual, the cotopos.
     In a topos, monomorphisms are pushout stable.
 \end{prop}
 \end{mainbox}
-\noindent The proof is contained in ?? cite
+\noindent The proof is contained in \cite{Johnstone1977} \textit{Corollary 1.28}
 
 \begin{mainbox}{}
 \begin{prop}\label{cotopos is regular}
@@ -220,7 +220,7 @@ X_2 \arrow[rr, tail]                                    &  & X_1 \cup X_2
 \]
 \end{prop}
 \end{mainbox}
-\noindent The proof is contained in ?? cite.
+\noindent The proof is contained in \cite{Johnstone1977} \textit{Proposition 1.55}.
 
 We are ready to prove the exactness of a cotopos
 
@@ -284,7 +284,7 @@ While a topos fails to be protomodular, a cotopos actually has this structure.
 \begin{proof}
 Consider a cotopos $\mathcal{E}^\mathrm{op}$. By \Cref{exp in topos is monadic} the functor
 \[\Omega^{(-)}: \mathcal{E}^\mathrm{op} \to \mathcal{E}\]
-is monadic. In particular, one can show that this functor has image in the internal Heyting algebras in $\mathcal{E}$ which is protomodular. This functor, restricted in the codomain, is still monadic. Then by \Cref{algebras category is proto if the base category is proto}, also $\mathcal{E}^\mathrm{op}$ is protomodular.
+is monadic. In particular, one can show that this functor has image in the internal Heyting algebras in $\mathcal{E}$ which is, by \cite{Bourn1996} \textit{Proposition 18}, protomodular. This functor, restricted in the codomain, is still monadic. Then by \Cref{algebras category is proto if the base category is proto}, also $\mathcal{E}^\mathrm{op}$ is protomodular.
 \end{proof}
 \end{subbox}
 
@@ -334,7 +334,7 @@ All the results above leads to the following result.
 
 \begin{subbox}{}
     \begin{proof}
-        We aim to prove that a cotopos $\mathcal{E}^\mathrm{op}$ satisfies the condition \Cref{Ideally exact categories}\textit{(1)}. By \Cref{cotopos is exact} it is exact, and by \Cref{cotopos is protomodular} it is protomodular. It has binary coproducts, in fact, the underlying topos is finitely complete. Finally, by \Cref{In a topos ! is an equalizer} the morphism
+        We aim to prove that a cotopos $\mathcal{E}^\mathrm{op}$ satisfies the condition \Cref{Ideally exact categories}\textit{:(1)}. By \Cref{cotopos is exact} it is exact, and by \Cref{cotopos is protomodular} it is protomodular. It has binary coproducts, in fact, the underlying topos is finitely complete. Finally, by \Cref{In a topos ! is an equalizer} the morphism
         \[!: 0_\mathcal{E} \to 1_\mathcal{E}\]
         is an equalizer in $\mathcal{E}$. Thus the morphism 
         \[!: 0_{\mathcal{E}^\mathrm{op}} \to 1_{\mathcal{E}^\mathrm{op}}\]
@@ -344,10 +344,10 @@ All the results above leads to the following result.
 
 \begin{rembox}{}
 \begin{rem}
-    While a cotopos is an ideally exact category, a topos fails to be. For example one can consider the category $\mathsf{Set}$ which is a topos. It is not protomodular. Moreover, the unique morphism $!: \emptyset \to \{*\}$ is not a regular epi, in fact, it is not even an epi. In order to show that, consider the morphisms
+    While a cotopos is an ideally exact category, a topos fails to be. A topos is exact and it has binary coproducts, that said, it does not satisfy the remaining conditions. For example one can consider the category $\mathsf{Set}$ which is a topos. It is not protomodular. Moreover, the unique morphism $!: \emptyset \to \{*\}$ is not a regular epi, in fact, it is not even an epi. In order to show that, consider the morphisms
     \begin{align*}
         f: \{*\} & \to \{a,b\} \\
-        *       & \mapsto a \\
+        *       & \mapsto a \\[1.5ex]
         g: \{*\} & \to \{a,b\} \\
         *       & \mapsto b
     \end{align*}
@@ -362,5 +362,60 @@ All the results above leads to the following result.
 \end{rembox}
 
 
-\section{The case of cosets}
+\section{The dual of sets}
 
+In the previous section we have seen that a cotopos is an ideally exact category by \Cref{cotopos is ideally exact}. An example of cotopos is the dual of the category of sets $\mathsf{Set}^\mathrm{op}$. In this section we aim to analyze this case.
+
+As in the case of cotopos, we refer to \Cref{Ideally exact categories}\textit{(1)} for the definition of ideally exact categories.
+
+First we want to show directly that
+\[!: \emptyset \to \{*\}\]
+is an equalizer in the underlying topos. So that, it is a regular epi in the cotopos.
+
+In $\mathsf{Set}$ the equalizer of a pair of parallel arrows $f,g: A \to B$ is
+\[  \mathrm{Eq}(f,g) = \{ x \in A \mid f(x) = g(x) \} \]
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBOXYAFEAjgF8AFADNSAcwCUICaXSZc+QigCM5KrUYs2AQRVqQGbHgJEATPur1mrRCABCKgzCjz4RUBkBCC4kPRAcCCQHEDg+LBkcJABacOdjNxlzQODQxHDI6Oo4hKT8pyNXEHkQagY6ACMYBgAFDRttEAEseT4k1RyQpDIIqPyJCgkgA
+\begin{tikzcd}
+{\mathrm{Eq}(f,g)} \arrow[r, hook, "i"] & A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B
+\end{tikzcd}
+\]
+Consider in particular the morphisms
+    \begin{align*}
+        f: \{*\} & \to \{a,b\} \\
+        *       & \mapsto a \\[1.5ex]
+        g: \{*\} & \to \{a,b\} \\
+        *       & \mapsto b
+    \end{align*}
+    Clearly $f \neq g$, thus
+    \[\mathrm{Eq}(f,g) = \emptyset\]
+    Since $!$ is the unique morphism from the initial object to any object, it corresponds in this case with the inclusion $i$. Thus $!$ is the equalizer of $f$ and $g$.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12YBbNHATzgwcIAL6l0mXPkIoAjOSq1GLNp2AAqTqLESQGbHgJEATIur1mrRB3bA6pAEbaxSmFADm8IqABmAJwhuJDIQHAgkBWUrNgBCXT9A4MQo8KQzEDgACyxfEUQAWijLVRtfBJAAoMjqNMQM7Nz84pVrEA8QagY6RxgGAAUpI1kQfywPLJFRClEgA
+\begin{tikzcd}
+\emptyset \arrow[r, "!"] & \{*\} \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & {\{a,b\}}
+\end{tikzcd}
+    \]
+
+    In order to present $\mathsf{Set}^\mathrm{op}$ as an ideally exact category and study the corresponding ideals, we aim to understand which is the underlying semiabelian. Keep in mind that the morphism $!$, in $\mathsf{Set}^\mathrm{op}$, is $!: \{*\} \to \emptyset$. As shown in \Cref{Ideally exact categories}$\mathit{:(1\implies 3)}$ such semiabelian category is
+    \[ \mathcal{X} = (\mathsf{Set}^\mathrm{op} \downarrow \{*\}) \]
+    where the objects are the object of the coslice category from the singleton to sets
+    \[ \mathrm{Ob}(\mathcal{X}) = \mathrm{Ob}(\mathsf{Set}^\mathrm{op} \downarrow \{*\}) =  \mathrm{Ob}(\{*\}\downarrow \mathsf{Set}) \]
+    or, equivalently, of the category of pointed sets
+    \[ \mathrm{Ob}(\mathcal{X}) = \{(A, a) \ | \ A \in \mathsf{Set}, \ a \in A \} \]
+    and the morphism are the morphism of $\mathsf{Set}^\mathrm{op}$ preserving the chosen element. Summing up
+    \begin{align*}
+        \mathrm{Ob}(\mathcal{X}) &= \{(A, a) \ | \ A \in \mathsf{Set}, \ a \in A \} \\
+        \mathrm{Hom}_{\mathcal{X}}((A,a),(B,b)) &= \{ f : B \to A \ | \ f(b)=a \} \subseteq \mathrm{Hom}_{\mathsf{Set}^\mathrm{op}}
+    \end{align*}
+    This category is, actually, pointed in the categorical meaning, in fact, the singleton $(\{*\},*) \cong \{*\}$ is both the initial and terminal object. Given an object $(A,a) \in \mathcal{X}$ we have the following unique morphism from the singleton and to the singleton, represented in $\mathsf{Set}$.
+    \begin{align*}
+    \{*\} &\to (A,a) &\quad (A,a) &\to \{*\} \\[1ex]
+    *     &\mapsto a &\quad (x \in A)     &\mapsto *
+    \end{align*}
+    Moreover, the zero morphism turns out to be the constant morphism to the chosen element
+    \begin{align*}
+    0_{(A,a), (B,b)}: (A,a) &\to (B,b) \\[1ex]
+    (x \in A) &\mapsto b
+    \end{align*}
+    TO ADJUST
