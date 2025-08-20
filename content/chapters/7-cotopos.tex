@@ -405,17 +405,45 @@ Consider in particular the morphisms
     \[ \mathrm{Ob}(\mathcal{X}) = \{(A, a) \ | \ A \in \mathsf{Set}, \ a \in A \} \]
     and the morphism are the morphism of $\mathsf{Set}^\mathrm{op}$ preserving the chosen element. Summing up
     \begin{align*}
-        \mathrm{Ob}(\mathcal{X}) &= \{(A, a) \ | \ A \in \mathsf{Set}, \ a \in A \} \\
+        \mathrm{Ob}(\mathcal{X}) &= \{(A, a) \ | \ A \in \mathsf{Set}, \ a \in A \} \\[1.5ex]
         \mathrm{Hom}_{\mathcal{X}}((A,a),(B,b)) &= \{ f : B \to A \ | \ f(b)=a \} \subseteq \mathrm{Hom}_{\mathsf{Set}^\mathrm{op}}
     \end{align*}
+    Thus, finally
+    \[\mathcal{X} \cong (\mathsf{Set}^\bullet)^\mathrm{op} \]
+    where $\mathsf{Set}^\bullet$ is the category of pointed sets, ie the category of sets with a chosen element.
+    
     This category is, actually, pointed in the categorical meaning, in fact, the singleton $(\{*\},*) \cong \{*\}$ is both the initial and terminal object. Given an object $(A,a) \in \mathcal{X}$ we have the following unique morphism from the singleton and to the singleton, represented in $\mathsf{Set}$.
     \begin{align*}
     \{*\} &\to (A,a) &\quad (A,a) &\to \{*\} \\[1ex]
     *     &\mapsto a &\quad (x \in A)     &\mapsto *
     \end{align*}
-    Moreover, the zero morphism turns out to be the constant morphism to the chosen element
+    Moreover, the zero morphism in $\mathcal{X}$ turns out to be the constant morphism to the chosen element
     \begin{align*}
-    0_{(A,a), (B,b)}: (A,a) &\to (B,b) \\[1ex]
-    (x \in A) &\mapsto b
+    0_{(A,a), (B,b)}: (B,b) &\to (A,a) \\[1ex]
+    (x \in B) &\mapsto a
     \end{align*}
-    TO ADJUST
+    
+    To understand the action of the underlying functor 
+    \[  U : \mathsf{Set}^\mathrm{op} \to \mathcal{X} \cong (\mathsf{Set}^\bullet)^\mathrm{op} \]
+    of the ideally exact category, we need to analyze the pullback functor of the morphism $!$. It is defined through the pullback $!$ along the morphism given with an object in $\mathsf{Set}^\mathrm{op}$. Such pullback, described in the first chapter, corresponds, given an object $A$ in $\mathsf{Set}^\mathrm{op}$, to the pushout in $\mathsf{Set}$
+    \[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAdD4AKi4F8Q-Uuky58hFACYK1Ok1bsuMALZocATzgwcQkSAzY8BIjOJyGLNohABBPaKMSiZczUuKbACi68BAAi44AEcAY2Y0f1sASgB6QI48RlghORgoAHN4IlAAMwAnCBUkchocCCQyeSt2AEIQGkZ6ACMYRgAFMWNJEHysDIALXWE8wuLEUpBypCkRkAKiyrKKxABmdwVrTg58HHoAfXIHebGZ5aR16s9t3YOpBpAm1o6u5xs+weHKfiA
+\begin{tikzcd}
+(\{*\} \sqcup A)/ \sim   &  & A \arrow[ll, "\iota_2"']             \\
+\{*\} \arrow[u, "\iota_1"] &  & \emptyset \arrow[ll, "!"'] \arrow[u]
+\end{tikzcd}
+\]
+where $\sim$ is the smallest equivalence relation identifying the image of any element through the empty function $\emptyset \to A$ and $!$. The injection $\iota_1$ and $\iota_2$ are the canonical inclusions in the disjoint union, followed by the quotient map. In this case the definition of the $\sim$ is based in the empty set, thus $\sim$ is the empty relation and the pushout is just the disjoint union of the singleton and $A$. Thus we obtain
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAdD4AKi4F8Q-Uuky58hFACYK1Ok1bsuMALZocATzgwcQkSAzY8BIjOJyGLNohABBPaKMSiZczUuKbXXgIAEXOABHAGNmNF97fjkYKABzeCJQADMAJwgVJHIaHAgkMnkrdgBCEBpGegAjGEYABTFjSRAUrFiAC11hZLSMxCyQHKQpTpBU9Lzs3MQAZncFa04OfBx6AH1yBxHuwYmkGYLPBaXVqVKQcqra+ucbZraOyn4gA
+\begin{tikzcd}
+\{*\} \sqcup A             &  & A \arrow[ll, "\iota_2"']             \\
+\{*\} \arrow[u, "\iota_1"] &  & \emptyset \arrow[ll, "!"'] \arrow[u]
+\end{tikzcd}
+\]
+Then, the pullback functor associates to an object $A$ in $\mathsf{Set}^\mathrm{op}$ the object $(\{*\} \sqcup A, \iota_1)$ in $\mathcal{X}$. By the identification above, we can write this as
+\begin{align*} 
+    U : \mathsf{Set}^\mathrm{op} &\to (\mathsf{Set}^\bullet)^\mathrm{op}  \\[1ex]
+    A &\mapsto ( \{*\} \sqcup A, *)
+\end{align*}
+in fact $\{*\} \sqcup A, \iota_1$ corresponds to the pointed set $(\{*\} \sqcup A,*)$.
