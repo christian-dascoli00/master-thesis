@@ -446,4 +446,22 @@ Then, the pullback functor associates to an object $A$ in $\mathsf{Set}^\mathrm{
     U : \mathsf{Set}^\mathrm{op} &\to (\mathsf{Set}^\bullet)^\mathrm{op}  \\[1ex]
     A &\mapsto ( \{*\} \sqcup A, *)
 \end{align*}
-in fact $\{*\} \sqcup A, \iota_1$ corresponds to the pointed set $(\{*\} \sqcup A,*)$.
+in fact $(\{*\} \sqcup A, \iota_1)$ corresponds to the pointed set $(\{*\} \sqcup A,*)$.
+
+The functor $U$ is monadic by the Beck monadicity theorem. In fact, consider $(f,g)$ a pair of parallel morphism in $\mathsf{Set}^\mathrm{op}$. Then, consider their coequalizer in $\mathsf{Set}^\mathrm{op}$, which is actually the equalizer in $\mathsf{Set}$. 
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAhHnxAZseAkXLiaDFm0QgAOnuAAPAAQGsYExzN6TAHxsmAZgAojASgC8Aczfub3DwSMFDe8ESgTgBOEAC2SOogOBBIZCBwABZYTjhIALRpWtK6TvKRMfGIicmpNJnZuYiFUjog3iA0jPQARjCMAAoCKsIgUVjeGbm85XFIYkkpVdyU3EA
+\begin{tikzcd}
+\{x \in A \ | \ f(x)=g(x) \} \arrow[r, hook] & A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B
+\end{tikzcd}
+\]
+Its $U$-image is, up to iso, the equalizer of the pair $(1_{\{*\}} \sqcup f, 1_{\{*\}} \sqcup g)$.
+\[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBmAXVJADcBDAGwFcYkQAdDgIywHNGACi7AAVFwC+AAi5wAjgGNmaKQCFSU8T34AnAJRSQE0uky58hFGWLU6TVuy6r+A4R2cCRADy5YwUtzFJGQ55JRUAQQMuKQAfEICARgB9YBEtCWlZRWUpADM9QS89AF5BFLSOII5MkLDcvkLikI8dSVItDz59IxMQDGw8AiIyRNsGFjZETm1XdODs8KkIjS1eboMjWxgoPngiUDydCABbJESaHAgkACZjQ+OzxBvL68QyEDgACyw8nCQALQXOyTdgVeY1LKhHIqPK9B6nW6vJAfb6-f6IYETBzTcFVDJQ+oqPggGiMejcGCMAAKZiGlhAOn4X3+EkoEiAA
+\begin{tikzcd}
+{\Biggl(\Bigl\{x\in (\{*\} \sqcup A) \ | \ (1_{\{*\}} \sqcup f)(x)=(1_{\{*\}} \sqcup g)(x) \Bigr\},*\Biggr)} \arrow[d, hook]       \\
+{\Bigl(\{*\} \sqcup A, *\Bigr) } \arrow[dd, "1_{\{*\}} \sqcup f", shift left] \arrow[dd, "1_{\{*\}} \sqcup g"', shift right] \\
+                                                                                                                             \\
+{\Bigl(\{*\} \sqcup B, *\Bigr) }                                                                                
+\end{tikzcd}
+\]
+Thus the hypothesis of the Beck monadicity theorem is satisfied.
