@@ -455,13 +455,60 @@ The functor $U$ is monadic by the Beck monadicity theorem. In fact, consider $(f
 \{x \in A \ | \ f(x)=g(x) \} \arrow[r, hook] & A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & B
 \end{tikzcd}
 \]
-Its $U$-image is, up to iso, the equalizer of the pair $(1_{\{*\}} \sqcup f, 1_{\{*\}} \sqcup g)$.
+Its $U$-image is the equalizer of the pair $(1_{\{*\}} \sqcup f, 1_{\{*\}} \sqcup g)$.
 \[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBmAXVJADcBDAGwFcYkQAdDgIywHNGACi7AAVFwC+AAi5wAjgGNmaKQCFSU8T34AnAJRSQE0uky58hFGWLU6TVuy6r+A4R2cCRADy5YwUtzFJGQ55JRUAQQMuKQAfEICARgB9YBEtCWlZRWUpADM9QS89AF5BFLSOII5MkLDcvkLikI8dSVItDz59IxMQDGw8AiIyRNsGFjZETm1XdODs8KkIjS1eboMjWxgoPngiUDydCABbJESaHAgkACZjQ+OzxBvL68QyEDgACyw8nCQALQXOyTdgVeY1LKhHIqPK9B6nW6vJAfb6-f6IYETBzTcFVDJQ+oqPggGiMejcGCMAAKZiGlhAOn4X3+EkoEiAA
 \begin{tikzcd}
-{\Biggl(\Bigl\{x\in (\{*\} \sqcup A) \ | \ (1_{\{*\}} \sqcup f)(x)=(1_{\{*\}} \sqcup g)(x) \Bigr\},*\Biggr)} \arrow[d, hook]       \\
+{\begin{array}{c}
+{\Biggl( \{*\} \sqcup \Bigl\{x\in A \ | \ f(x)=g(x) \Bigr\},*\Biggr)} \\ 
+= \\
+{\Biggl(\Bigl\{x\in (\{*\} \sqcup A) \ | \ (1_{\{*\}} \sqcup f)(x)=(1_{\{*\}} \sqcup g)(x) \Bigr\},*\Biggr)}
+\end{array}}
+\arrow[d, hook]       \\
 {\Bigl(\{*\} \sqcup A, *\Bigr) } \arrow[dd, "1_{\{*\}} \sqcup f", shift left] \arrow[dd, "1_{\{*\}} \sqcup g"', shift right] \\
                                                                                                                              \\
 {\Bigl(\{*\} \sqcup B, *\Bigr) }                                                                                
 \end{tikzcd}
 \]
 Thus the hypothesis of the Beck monadicity theorem is satisfied.
+
+Now, we aim to understand what are the ideals given by \Cref{quotients in ideally exact} in the case of $\mathsf{Set}^\mathrm{op}$.
+
+By the mentioned theorem, given an object $A$ in $\mathsf{Set}^\mathrm{op}$, we have that
+\[\mathrm{Quot}(A) \cong \mathrm{NSub}(U(A))\]
+$\mathrm{Quot}(A)$ are the regular epi in $\mathsf{Set}^\mathrm{op}$, which are the equalizers in $\mathsf{Set}$. Equalizers in $\mathsf{Set}$ are all the monomorphisms, ie all the injective functions. In fact, an equalizer is a mono. Conversely, given a mono $m: B \rightarrowtail A$, we can consider the pair of morphism
+    \begin{align*}
+        f: A & \to \{0,1\} \\[1ex]
+           x    & \mapsto 1 \\[1.5ex]
+        g: A & \to \{0,1\} \\[1ex]
+           x    & \mapsto
+\begin{cases}
+  1 & \text{if } x \in \mathrm{Im}(m) \\
+  0 & \text{otherwise}
+\end{cases}
+\end{align*}
+Now, their equalizer is
+\[\mathrm{Eq}(f,g) = \{x \in A \ | \ f(x) = g(x) \} = \{x \in A \ | \ g(x) = 1 \} = \mathrm{Im}(m)\]
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQAhEAX1PU1z5CKAEwVqdJq3YAdGcHKlic7jz4gM2PASKKqNBizaIQcgLb0cACwBOZ4AFEAjtwAUAM1IBzAJQ8JMFBe8ESg7jYQZkiKIDgQSGQgcFZY7jhIALSJhtImXmphEVGIMXEJNMmp6YjZUsYgViA0jPQARjCMAAoC2sIgNlheVum8hZFIYrHxJdyU3EA
+\begin{tikzcd}
+{\mathrm{Eq}(f,g)} = \mathrm{Im}(m) \arrow[r] & A \arrow[r, "g", shift left] \arrow[r, "h"', shift right] & {\{0,1\}}
+\end{tikzcd}
+\]
+Then, since $m$ induces an iso between $\mathrm{Im}(m)$ and $B$, $m$ is the equalizer of $(f,g)$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGclVqMWbAELdeIDNjwEiAJjHV6zVohAAdPcDLCDXbuJhQA5vCKgAZgCcIAWyRkQOCElETtbNx4HZzdEXy8kdRA4AAssexwkAFpfLSldezlg1x9qCMQo2PjEsM1JHRArEGoGOgAjGAYABX5lIRBHLCsYxK4KLiA
+\begin{tikzcd}
+B \arrow[r, "m"] & A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & {\{0,1\}}
+\end{tikzcd}
+\]
+Thus $\mathrm{Quot}(A)$ consists of all the injective functions with codomain $A$.
+
+On the other hand, $\mathrm{NSub}(U(A))$ are the kernels of some morphism in $(\mathsf{Set}^\bullet)^\mathrm{op}$ with domain $U(A)$. Recall that $U(A) = (\{*\} \sqcup A, *)$. Thus $\mathrm{NSub}(U(A))$ are the cokernels of some morphism in $\mathsf{Set}^\bullet$ with codomain $(\{*\} \sqcup A, *)$.
+
+We can conclude that the injective functions with codomain $A$ are in bijection with the cokernels with domain $(\{*\} \sqcup A, *)$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdgCEefEBmx4CRAExiaDFm0QgAFAB0DwAFRHuAAiNwAjgGNmaCx1IWTASjn8lQogGYNCW12PQBhUjtPbnEYKABzeCJQADMAJwgAWyQyEBwIJFFc+ixGdhxi0t4U9KzEdVz8xACQAAsYeigygHcINo6ETUkdECMM+hwW1IzgOwgAaxhU7h5KbiA
+\begin{tikzcd}
+B \arrow[r, tail] & A & {(\{*\} \sqcup A, *)} \arrow[r, "\mathrm{coker}", two heads] & {(C,c)}
+\end{tikzcd}
+\]

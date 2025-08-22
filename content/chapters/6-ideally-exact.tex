@@ -547,7 +547,7 @@ The following theorem shows the correspondence between the lattices of quotients
 Now we aim to generalize the previous theorem to an ideally exact category.
 
 \begin{mainbox}{}
-\begin{theo}
+\begin{theo}\label{quotients in ideally exact}
     Let $\mathcal{A}$ be an ideally exact category and let $U:\mathcal{A} \to \mathcal{X}$ be the underlying functor. Then for each object $A$ in $\mathcal{A}$ the following lattices are isomorphic.
     \[\mathrm{Quot}(A) \cong \mathrm{NSub}(U(A))\]
 \end{theo}
@@ -569,5 +569,17 @@ Now we aim to generalize the previous theorem to an ideally exact category.
         \[\mathrm{Quot}(U(A)) \cong \mathrm{NSub}(U(A))\]
     \end{proof}
 \end{subbox}
+
+\begin{rembox}{}
+    \begin{rem}
+        Note that in an ideally exact category $\mathcal{A}$, given an object $A$ in $\mathcal{A}$, the lattice $\mathrm{NSub}(A)$ is not well defined, since $\mathcal{A}$ is in general non-pointed.
+    \end{rem}
+\end{rembox}
+
+\begin{rembox}{}
+    \begin{rem}
+        In an ideally exact category $\mathcal{A},$, given an object $A$ in $\mathcal{A}$, the lattice $\mathrm{NSub}(U(A))$ consists of ideals for $\mathsf{Ring}$.
+    \end{rem}
+\end{rembox}
 
 With this final theorem we proved that in an ideally exact category quotients and normal subobjects correspond to each others. This is exactly what happen in $\mathsf{Ring}$ as mentioned in the first chapter. In fact in $\mathsf{Ring}$ the ideals, which are the normal subobjects in $\mathsf{Ring_*}$ through the forgetful functor, correspond to quotients, which are the regular epis. Observe that in $\mathsf{Grp}$ the result holds directly from \Cref{quotients in semiabelian}, since $\mathsf{Grp}$ is a semiabelian category. Thus in this case we do not need to consider an underlying functor, or, equivalently, we can just consider the identity functor.
