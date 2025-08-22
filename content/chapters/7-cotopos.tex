@@ -1,4 +1,4 @@
-\chapter{Cotopos as an ideally exact category}
+\chapter{Cotopoi as a fundamental example}
 
 \fontsize{12}{14.5}\selectfont
 
@@ -475,7 +475,7 @@ Now, we aim to understand what are the ideals given by \Cref{quotients in ideall
 
 By the mentioned theorem, given an object $A$ in $\mathsf{Set}^\mathrm{op}$, we have that
 \[\mathrm{Quot}(A) \cong \mathrm{NSub}(U(A))\]
-$\mathrm{Quot}(A)$ are the regular epi in $\mathsf{Set}^\mathrm{op}$, which are the equalizers in $\mathsf{Set}$. Equalizers in $\mathsf{Set}$ are all the monomorphisms, ie all the injective functions. In fact, an equalizer is a mono. Conversely, given a mono $m: B \rightarrowtail A$, we can consider the pair of morphism
+$\mathrm{Quot}(A)$ are the regular epi in $\mathsf{Set}^\mathrm{op}$, which are the equalizers in $\mathsf{Set}$. Equalizers in $\mathsf{Set}$ are all the monomorphisms, ie all the injective functions. In fact, every equalizer is a mono. Conversely, given a mono $m: B \rightarrowtail A$, we can consider the pair of morphism
     \begin{align*}
         f: A & \to \{0,1\} \\[1ex]
            x    & \mapsto 1 \\[1.5ex]
@@ -501,14 +501,26 @@ Then, since $m$ induces an iso between $\mathrm{Im}(m)$ and $B$, $m$ is the equa
 B \arrow[r, "m"] & A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & {\{0,1\}}
 \end{tikzcd}
 \]
-Thus $\mathrm{Quot}(A)$ consists of all the injective functions with codomain $A$.
+Thus $\mathrm{Quot}(A)$ consists in $\mathsf{Set}$ of all the injective functions with codomain $A$.
 
 On the other hand, $\mathrm{NSub}(U(A))$ are the kernels of some morphism in $(\mathsf{Set}^\bullet)^\mathrm{op}$ with domain $U(A)$. Recall that $U(A) = (\{*\} \sqcup A, *)$. Thus $\mathrm{NSub}(U(A))$ are the cokernels of some morphism in $\mathsf{Set}^\bullet$ with codomain $(\{*\} \sqcup A, *)$.
 
-We can conclude that the injective functions with codomain $A$ are in bijection with the cokernels with domain $(\{*\} \sqcup A, *)$.
+We can conclude that the class of iso of injective functions with codomain $A$ is in bijection with the class of iso of cokernels with domain $(\{*\} \sqcup A, *)$.
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdgCEefEBmx4CRAExiaDFm0QgAFAB0DwAFRHuAAiNwAjgGNmaCx1IWTASjn8lQogGYNCW12PQBhUjtPbnEYKABzeCJQADMAJwgAWyQyEBwIJFFc+ixGdhxi0t4U9KzEdVz8xACQAAsYeigygHcINo6ETUkdECMM+hwW1IzgOwgAaxhU7h5KbiA
-\begin{tikzcd}
-B \arrow[r, tail] & A & {(\{*\} \sqcup A, *)} \arrow[r, "\mathrm{coker}", two heads] & {(C,c)}
-\end{tikzcd}
+\left\{
+\begin{array}{c}
+\text{Injective functions in } \mathsf{Set} \\
+\text{with codomain} \ A
+\end{array}
+\right\} \ \  \longleftrightarrow \ \ 
+\left\{
+\begin{array}{c}
+\text{Cokernels in } \mathsf{Set^\bullet} \\
+\text{with domain} \ (\{*\} \sqcup A, *)
+\end{array}
+\right\}
+\]
+\[\rotatebox{90}{$\in$} \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\ \ \ \ \ \ \ \ \ \ \ \rotatebox{90}{$\in$} \]
+\[
+B \rightarrowtail  A \ \ \ \ \ \ \ \ \ \ \   {(\{*\} \sqcup A, *)} \twoheadrightarrow {(C,c)}
 \]

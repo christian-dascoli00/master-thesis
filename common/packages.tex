@@ -10,6 +10,10 @@
 \usepackage[hyperref=true,backend=biber,maxbibnames=9,maxcitenames=2,style=numeric-comp,sorting=ynt,backref=false]{biblatex} % hyperref uses links, backref goes back to citations, uses biber as backend, with 9 names at most in bibliography and 2 in citations, citing using numbers, and sorting in citation order
 % sorting can be also ydnt for year descending, name, title or ynt for ascending year
 % Rimuove corsivo e virgolette da tutti i titoli principali
+
+\usepackage{amssymb}   % per \twoheadrightarrow
+\usepackage{mathtools} % per \rightarrowtail
+
 \DeclareFieldFormat{title}{#1}
 \DeclareFieldFormat[inbook]{title}{#1}       % necessario separatamente per inbook
 \DeclareFieldFormat{booktitle}{#1}
