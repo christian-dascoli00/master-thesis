@@ -35,7 +35,7 @@ A category $\mathcal{E}$ is said to be an \textbf{elementary topos}, in the foll
 \end{defi}
 \end{mainbox}
 
-A topos turns out to have a rich structure. First, we need some properties. Recall that the exponential is given by the cartesian closedness: for all objects $A$, $B$, and $C$ in $\mathcal{E}$.
+A topos turns out to have a rich structure. First, we need some properties. Recall that the exponential is given by the cartesian closedness. For all objects $A$, $B$, and $C$ in $\mathcal{E}$, it holds that
 \[
 \mathrm{Hom}_{\mathcal{E}}(A, \Omega^B) \cong \mathrm{Hom}_{\mathcal{E}}(A \times B, \Omega) \cong \mathrm{Hom}_{\mathcal{E}}(B, \Omega^A)
 \]
@@ -77,21 +77,21 @@ Then each morphism $f: A \to B$ in $\mathcal{E}$ admits a (regular epi, mono) fa
 \begin{proof}
 Let $f: A \to B$ be a morphism. Consider the kernel pair $(r_1,r_2)$ of $f$, and the coequalizer $e$ of the kernel pair.
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMwVqdJq3YAhHnxAZseAkQBMpYhIYs2iEAEl5-ZUKLlxNHdP0cAOnbwBbeAH0ZXbhJhQA5vCJQADMAJwgnJAsQHAgkMklddiDjEFDwyJoYpA0EmxA2GkZ6ACMYRgAFARVhEBCsXwALHBS0iMQxaNjEKLgGrCDmxABaYl5gsLaOrO6aXv7B0cpuIA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMwVqdJq3YAhHnxAZseAkQBMpYhIYs2iEAEl5-ZUKLlxNHdP0cAOnbwBbeAH0ZXbhJhQA5vCJQADMAJwgnJAsQHAgkMklddiDjEFDwyJoYpA0EmxA2GkZ6ACMYRgAFARVhEBCsXwALHBS0iMQxaNjEKLgGrCDmxABaeOs9WtdiFrC2jqzuml7+wdGpcZDXNRBCkrLK01V9Osbmr24gA
 \begin{tikzcd}
-A\times_BA \arrow[r, shift left] \arrow[r, shift right] & A \arrow[rr, "f"] \arrow[rd, "e"'] &   & B \\
-                                                        &                                    & I &  
+A\times_BA \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right] & A \arrow[rr, "f"] \arrow[rd, "e"'] &   & B \\
+                                                                       &                                    & I &  
 \end{tikzcd}
 \]
 Then, since $fr_1=fr_2$, by the universal property of the coequalizer, there exists a unique morphism $m$ such that $me = f$. We already know that $e$ is a regular epi, since it is a coequalizer.
 
 It remains to prove that $m$ is a mono. Equivalently, we show that, letting $p_1, p_2: I \times_B I \to I$ be the projections of the kernel pair, we have that $p_1 = p_2$. First, we consider the morphism $e\times_Be : A\times_BA \to I\times_BI$.
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMwVqdJq3YAhHnxAZseAkQBMpYhIYs2iEAEl5-ZUKLlxNHdP0cAOnbwBbeAH0ZXXicGqUZNdpSeoYOzm4yRtwSMFAA5vBEoABmAE4QTkgWIDgQSGSSuuxJxiCp6Zk0OUgaBTYgbDSM9ABGMIwACgIqwiApWLEAFjglZRmIYtm5iFlwA1hJw4gAtMRepWljE1XTNLPzi6sKo9WVU-mMWGDBcBAXUCBWQewZjS1tnaa+vf1DIxtIABZTicQHsFkgVmtjoggZMQWCDlD-uNgTDHoV9DBQlgXHB3A0QE1Wh0umZ9H1BsMotwgA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMwVqdJq3YAhHnxAZseAkQBMpYhIYs2iEAEl5-ZUKLlxNHdP0cAOnbwBbeAH0ZXXicGqUZNdpSeoYOzm4yRtwSMFAA5vBEoABmAE4QTkgWIDgQSGSSuuxJxiCp6Zk0OUgaBTYgbDSM9ABGMIwACgIqwiApWLEAFjglZRmIYtm5iFlwA1hJw4gAtPnWwSmuxCNpYxNV0zSz84urQewbaiCNLW2dpr69-UPb5Yg1+-mMWGDBcBBfUCutWCGWurQ6XTM+j6g2GXlKOyQABZKlMakcFkgVlYzvo0JsXmMUZNqoc5pjEKdCnjXJcwbdIQ8Yc94aMkHspsS1uwYKEsC44O4GiAmuC7j4esy4ZRuEA
 \begin{tikzcd}
-A\times_BA \arrow[r, shift left] \arrow[r, shift right] \arrow[rdd, "e\times_Be"'] & A \arrow[rr, "f"] \arrow[rd, "e"']                        &                    & B \\
-                                                                                   &                                                           & I \arrow[ru, "m"'] &   \\
-                                                                                   & I\times_BI \arrow[ru, shift left] \arrow[ru, shift right] &                    &  
+A\times_BA \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right] \arrow[rdd, "e\times_Be"'] & A \arrow[rr, "f"] \arrow[rd, "e"']                                       &                    & B \\
+                                                                                                  &                                                                          & I \arrow[ru, "m"'] &   \\
+                                                                                                  & I\times_BI \arrow[ru, "p_1", shift left] \arrow[ru, "p_2"', shift right] &                    &  
 \end{tikzcd}
 \]
 Since $e$ is a coequalizer, it is a regular epi. Thus $e\times_Be$ is an epi. In fact, all the square in the following diagram are pullbacks, and $e\times_Be$ is the composition of the two regular epis, thus, by \Cref{reg epi is an epi}, it is an epi.
@@ -118,13 +118,13 @@ Finally
 \noindent The proof is contained in \cite{Borceux1994II} \textit{Proposition 5.9.1}.
 
 \begin{mainbox}{}
-\begin{prop}
+\begin{prop}\label{topos is regular}
 A topos is a regular category.
 \end{prop}
 \end{mainbox}
 
 \begin{subbox}{}
-\begin{proof}\label{topos is regular}
+\begin{proof}
     A topos is finitely complete. Moreover, by \Cref{colimits are universal in topos} regular epis are pullback stable. By \Cref{topos is finitely cocomplete}, each topos is finitely cocomplete. Then, by \Cref{conditions for factorization regular epi mono}, each morphism admits a (regular epi, mono) factorization. Thus, a topos is a regular category.
 \end{proof}
 \end{subbox}
@@ -176,7 +176,7 @@ Now we aim to transfer the regularity of a topos to its dual, the cotopos.
 
 \begin{subbox}{}
 \begin{proof}
-Consider a cotopos. It is finitely complete by definition. In the dual category, we aim to prove that each morphism admits a (regular mono, epi) factorization. Let $f: A \to B$ be a morphism and consider its factorization (regular epi, mono) $f=me$ given by \Cref{topos is regular}. $e$ is regular epi, thus, by \Cref{reg epi is an epi}, an epi. $m$ is a mono, thus, by \Cref{mono are equalizers in topos}, it is an equalizer, ie a regular mono. Finally, by \Cref{mono are pushot stable}, monos are pushout stable. Thus, the cotopos is a regular category.
+Consider a cotopos. It is finitely complete by definition. In the dual category of a cotopos, we aim to prove that each morphism admits a (regular mono, epi) factorization. Let $f: A \to B$ be a morphism and consider its factorization (regular epi, mono) $f=me$ given by \Cref{topos is regular}. $e$ is regular epi, thus, by \Cref{reg epi is an epi}, an epi. $m$ is a mono, thus, by \Cref{mono are equalizers in topos}, it is an equalizer, ie a regular mono. Finally, by \Cref{mono are pushot stable}, monos are pushout stable. Thus, the cotopos is a regular category.
 \end{proof}
 \end{subbox}
 
@@ -257,7 +257,6 @@ X \cap X \arrow[rr, "d"] \arrow[d, "c"] &  & X \arrow[d, "r_2"] \\
 X \arrow[rr, "r_2"]                     &  & Y                 
 \end{tikzcd}
 \]
-
 Observe that
 \[c = 1_X c = sr_1 c = sr_2 d = 1_X d \]
 Thus the intersection diagram, which is also a pushout in $\mathcal{E}$ by \Cref{union is pushout}, becomes
@@ -397,7 +396,7 @@ Consider in particular the morphisms
 \end{tikzcd}
     \]
 
-    In order to present $\mathsf{Set}^\mathrm{op}$ as an ideally exact category and study the corresponding ideals, we aim to understand which is the underlying semiabelian. Keep in mind that the morphism $!$, in $\mathsf{Set}^\mathrm{op}$, is $!: \{*\} \to \emptyset$. As shown in \Cref{Ideally exact categories}$\mathit{:(1\implies 3)}$ such semiabelian category is
+    In order to present $\mathsf{Set}^\mathrm{op}$ as an ideally exact category and study the corresponding ideals, we aim to understand which is the underlying semiabelian category. Keep in mind that the morphism $!$, in $\mathsf{Set}^\mathrm{op}$, is $!: \{*\} \to \emptyset$. As shown in \Cref{Ideally exact categories}$\mathit{:(1\implies 3)}$ such semiabelian category is
     \[ \mathcal{X} = (\mathsf{Set}^\mathrm{op} \downarrow \{*\}) \]
     where the objects are the object of the coslice category from the singleton to sets
     \[ \mathrm{Ob}(\mathcal{X}) = \mathrm{Ob}(\mathsf{Set}^\mathrm{op} \downarrow \{*\}) =  \mathrm{Ob}(\{*\}\downarrow \mathsf{Set}) \]
@@ -475,7 +474,36 @@ Now, we aim to understand what are the ideals given by \Cref{quotients in ideall
 
 By the mentioned theorem, given an object $A$ in $\mathsf{Set}^\mathrm{op}$, we have that
 \[\mathrm{Quot}(A) \cong \mathrm{NSub}(U(A))\]
-$\mathrm{Quot}(A)$ are the regular epi in $\mathsf{Set}^\mathrm{op}$, which are the equalizers in $\mathsf{Set}$. Equalizers in $\mathsf{Set}$ are all the monomorphisms, ie all the injective functions. In fact, every equalizer is a mono. Conversely, given a mono $m: B \rightarrowtail A$, we can consider the pair of morphism
+\[
+\left\{
+\begin{array}{c}
+\text{Classes of iso of} \\
+\text{regular epis } \mathsf{Set}^\mathrm{op} \\
+\text{with domain} \ A
+\end{array}
+\right\} \ \ \ \ \ \ \ \  \longleftrightarrow \ \ \ \ \ \ \ \  
+\left\{
+\begin{array}{c}
+\text{Classes of iso of} \\
+\text{kernels in } (\mathsf{Set}^\bullet)^\mathrm{op} \\
+\text{with codomain} \ U(A)
+\end{array}
+\right\}
+\]
+\begin{minipage}{0.5\textwidth}
+\[ \rotatebox{90}{$\in$} \]
+\[
+\big[ \ A  \twoheadrightarrow  B \  \big]
+\]
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\[ \rotatebox{90}{$\in$} \]
+\[\big[ \ {(C,c)} \rightarrowtail U(A) \  \big]
+\]
+\end{minipage}
+
+\vspace{1em}
+\noindent $\mathrm{Quot}(A)$ are the regular epi in $\mathsf{Set}^\mathrm{op}$, which are the equalizers in $\mathsf{Set}$. Equalizers in $\mathsf{Set}$ are all the monomorphisms, ie all the injective functions. In fact, every equalizer is a mono. Conversely, given a mono $m: B \rightarrowtail A$, we can consider the pair of morphism
     \begin{align*}
         f: A & \to \{0,1\} \\[1ex]
            x    & \mapsto 1 \\[1.5ex]
@@ -489,9 +517,9 @@ $\mathrm{Quot}(A)$ are the regular epi in $\mathsf{Set}^\mathrm{op}$, which are 
 Now, their equalizer is
 \[\mathrm{Eq}(f,g) = \{x \in A \ | \ f(x) = g(x) \} = \{x \in A \ | \ g(x) = 1 \} = \mathrm{Im}(m)\]
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQAhEAX1PU1z5CKAEwVqdJq3YAdGcHKlic7jz4gM2PASKKqNBizaIQcgLb0cACwBOZ4AFEAjtwAUAM1IBzAJQ8JMFBe8ESg7jYQZkiKIDgQSGQgcFZY7jhIALSJhtImXmphEVGIMXEJNMmp6YjZUsYgViA0jPQARjCMAAoC2sIgNlheVum8hZFIYrHxJdyU3EA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAdGcHKlic7jz4gM2PASKKqNBizaIQcgLb0cACwBOZ4AFEAjtwAUAM1IBzAJQ8JMFBe8ESg7jYQZkiKIDgQSGQgcFZY7jhIALSJhtIm7mphEVGIMXEJNMmp6YjZUsYgXiA0jPQARjCMAAoC2sIgNlheVum8hZFIYrHxJdyU3EA
 \begin{tikzcd}
-{\mathrm{Eq}(f,g)} = \mathrm{Im}(m) \arrow[r] & A \arrow[r, "g", shift left] \arrow[r, "h"', shift right] & {\{0,1\}}
+{\mathrm{Im}(m)} \arrow[r] & A \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & {\{0,1\}}
 \end{tikzcd}
 \]
 Then, since $m$ induces an iso between $\mathrm{Im}(m)$ and $B$, $m$ is the equalizer of $(f,g)$.
