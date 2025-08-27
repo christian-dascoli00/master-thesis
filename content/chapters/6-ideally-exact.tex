@@ -191,7 +191,7 @@ V \arrow[rr, "k", shift left]                 &  & W \arrow[ll, "T(h)", shift le
 \begin{mainbox}{}
 \begin{prop}\label{ideally exact has essentially nullary monad}
     Let $\mathcal{A}$ be an ideally exact category.
-    There exist $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$ and the corresponding monad is essentially nullary.
+    There exist $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$ and the corresponding monad is essentially nullary. Moreover, the functor $U$ is the pullback functor associated to $!: 0 \to 1$
 \end{prop}
 \end{mainbox}
 
@@ -548,7 +548,7 @@ Now we aim to generalize the previous theorem to an ideally exact category.
 
 \begin{mainbox}{}
 \begin{theo}\label{quotients in ideally exact}
-    Let $\mathcal{A}$ be an ideally exact category and let $U:\mathcal{A} \to \mathcal{X}$ be the underlying functor. Then for each object $A$ in $\mathcal{A}$ the following lattices are isomorphic.
+    Let $\mathcal{A}$ be an ideally exact category and let $U:\mathcal{A} \to \mathcal{X}$ be, up to equivalence, the underlying pullback functor associated to $! : 0 \to 1$. Then for each object $A$ in $\mathcal{A}$ the following lattices are isomorphic.
     \[\mathrm{Quot}(A) \cong \mathrm{NSub}(U(A))\]
 \end{theo}
 \end{mainbox}
@@ -559,7 +559,7 @@ Now we aim to generalize the previous theorem to an ideally exact category.
         \[\mathrm{Quot}(A) \cong \mathrm{ERel}(A)\]
         in fact $\mathcal{A}$ is exact, hence kernel pairs and equivalence relations correspond to each others, and by \Cref{coeq of the kernel pair} and \Cref{kernel pair of the coeq} we have the given isomorphism. Furthermore
         \[\mathrm{ERel}(A) \cong \mathrm{RRel}(A)\]
-        because $\mathcal{A}$ is protomodular, hence Mal'tsev. By \Cref{ideally exact has essentially nullary monad} the unit of the adjunction underlying $U$ is essentially nullary, then, by \Cref{T-algebra in the reflexive relation}, we have that
+        because $\mathcal{A}$ is protomodular, hence Mal'tsev. By \Cref{ideally exact has essentially nullary monad} the unit of the adjunction associated to $U$ is essentially nullary, then, by \Cref{T-algebra in the reflexive relation}, we have that
         \[\mathrm{RRel}(A)\cong \mathrm{RRel}(U^T(A)) \]
         Since $U$ is monadic we also have that
         \[\mathrm{RRel}(A)\cong \mathrm{RRel}(U(A)) \]
@@ -570,6 +570,8 @@ Now we aim to generalize the previous theorem to an ideally exact category.
     \end{proof}
 \end{subbox}
 
+Given an ideally exact category $\mathcal{A}$, we call the elements of $\mathrm{NSub}(U(A))$ the $U$-ideals of $\mathcal{A}$. This theorem gives the correspondence between $U$-ideals and regular epis, which play the role of quotients.
+
 \begin{rembox}{}
     \begin{rem}
         Note that in an ideally exact category $\mathcal{A}$, given an object $A$ in $\mathcal{A}$, the lattice $\mathrm{NSub}(A)$ is not well defined, since $\mathcal{A}$ is in general non-pointed.
@@ -578,7 +580,7 @@ Now we aim to generalize the previous theorem to an ideally exact category.
 
 \begin{rembox}{}
     \begin{rem}
-        In $\mathsf{Ring}$, given an object $A$ in $\mathcal{A}$, the lattice $\mathrm{NSub}(U(A))$ consists of ideals. We have the following corresponding morphisms, composed by an ideal $I$, ie a kernel, and its corresponding quotient map, ie a regular epi, $\pi$.
+        In $\mathsf{Ring}$, given an object $A$ in $\mathcal{A}$, the lattice $\mathrm{NSub}(U(A))$ consists of ideals. As shown in the first chapter, the forgetful functor $U:\mathsf{Ring} \to \mathsf{Ring_*}$ is, up to equivalence, the pullback functor associated to $! : 0 \to 1$. We have the following corresponding morphisms, composed by an ideal $I$, ie a kernel, and its corresponding quotient map, ie a regular epi, $\pi$.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQAlEAX1PU1z5CKAEwVqdJq3YcA9AEkefEBmx4CRcuJoMWbRCEXcJMKAHN4RUADMAThAC2SLSBwQkZEHAAWWazmcdKX0QAB1QtCwlG3snRDFXd0RyY24gA
 \begin{tikzcd}
