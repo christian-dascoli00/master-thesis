@@ -4,14 +4,14 @@
 
 \section{Definition and characterization}
 
-We are now ready to prove the theorem, which will lead to the definition of the ideally exact categories. The following characterization and subsequent results are based on the work of Janelidze \cite{Janelidze2024}.
+We are now ready to prove the theorem, which will lead to the definition of the ideally exact categories. The following is based on the work of Janelidze \cite{Janelidze2024}. The next theorem presents a slight variation of the original result.
 
 \begin{mainbox}{}
     \begin{theo}\label{Ideally exact categories}
         Let $\mathcal{A}$ be a category. The following are equivalent:
         \begin{enumerate}
             \item $\mathcal{A}$ is exact and protomodular, has finite coproducts and the morphism $!:0 \to 1$ is a regular epimorphism.
-            \item $\mathcal{A}$ is exact, has finite coproducts and there exists $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$.
+            \item $\mathcal{A}$ is exact\footnotemark[1] and there exists $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$.
             \item There exist $\mathcal{X}$ semiabelian category with a monadic functor $U: \mathcal{A} \to \mathcal{X}$ and $F$ left adjoint to $U$ such that the associated monad $T=UF$ preserves regular epimorphisms and kernel pairs.
             \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwDGjYAEEAviDGl0mXPkIoyAJiq1GLNpx78hDYAA0JUmdjwEiARnKr6zVog7deg4YYB6wAKoAxI6phQAObwRKAAZgBOEFxIZCA4EEhWanZsniDUcHxYYThIALQWxiCR0UnUCbGZ2bkFybYaDt6S0iVRMYhxlYhK1A32jgIEgRkgfDB0UEhgTAwMFXRYDGyQYKzFpR298YmIyVk5eYiFG+3lO0jbB7XHRRRiQA
@@ -24,6 +24,7 @@ We are now ready to prove the theorem, which will lead to the definition of the 
         \end{enumerate}
     \end{theo}
 \end{mainbox}
+\footnotetext[1]{Janelidze in condition \textit{2} requires that $\mathcal{A}$ has finite coproducts. As we will see in the proof, this requirement is not necessary, since one can still construct finite coproducts in \textit{2} $\implies$ \textit{1} in the same way as Janelidze does in \textit{3} $\implies$ \textit{2}. Nevertheless, this is equivalent to the author's claim: condition \textit{1} indeed implies that $\mathcal{A}$ has finite coproducts.}
 
 \begin{mainbox}{}
     \begin{defi}
@@ -95,13 +96,13 @@ A \arrow[rr, "f", pos=0.25, crossing over] \arrow[ru, "e", two heads] \arrow[rd,
 
     $\mathit{(3 \implies 2)}$ Suppose there exists $\mathcal{X}$ semiabelian category and a monadic functor $U: \mathcal{A} \to \mathcal{X}$. Assume that the associated monad $T$ preserves regular epimorphisms and kernel pairs.
     
-    First we need to verify that $\mathcal{A}$ is exact. Since $U$ is monadic, we have that $\mathcal{A} \cong \mathcal{X}^T$. So it suffices to show that $\mathcal{X}^T$ is exact. We know that $\mathcal{X}$ is semiabelian, so it is exact. Then, by \Cref{algebras category is exact if the base category is exact}, $\mathcal{X}^T$ is exact.
+    We need to verify that $\mathcal{A}$ is exact. Since $U$ is monadic, we have that $\mathcal{A} \cong \mathcal{X}^T$. So it suffices to show that $\mathcal{X}^T$ is exact. We know that $\mathcal{X}$ is semiabelian, so it is exact. Then, by \Cref{algebras category is exact if the base category is exact}, $\mathcal{X}^T$ is exact.
 
-    In order to prove that $\mathcal{A}$ has finite coproducts, it is first necessary to establish that $\mathcal{X}^T$ is protomodular. This follows directly from \Cref{algebras category is proto if the base category is proto} as $\mathcal{X}$ is protomodular. Since any protomodular category is Mal'tsev, then $\mathcal{X}^T$ is Mal'tsev. We already prove that $\mathcal{X}^T$ is also exact, then by \Cref{exact and Maltsev cat has reflexive coeq}, $\mathcal{X}^T$ has reflexive coequalizers. Since $\mathcal{X}$ has finite coproducts and $\mathcal{X}^T$ has reflexive coequalizers, then by \Cref{algebras category has colim if the base category has coprod}, $\mathcal{X}^T$ has finite coproducts. Finally, since $\mathcal{A} \cong \mathcal{X}^T$, it follows that $\mathcal{A}$  has finite coproducts.
-
-    $\mathit{(2 \implies 1)}$ Suppose that $\mathcal{A}$ is exact, has finite coproducts and there exists a semiabelian category $\mathcal{X}$ and a monadic functor $U: \mathcal{A} \to \mathcal{X}$.
+    $\mathit{(2 \implies 1)}$ Suppose that $\mathcal{A}$ is exact and there exists a semiabelian category $\mathcal{X}$ and a monadic functor $U: \mathcal{A} \to \mathcal{X}$.
 
     Since $\mathcal{X}$ is protomodular, so is $\mathcal{X}^T$ by \Cref{algebras category is proto if the base category is proto}. Again, by monadicity, $\mathcal{A}$ inherits this properties.
+
+    In order to prove that $\mathcal{A}$ has finite coproducts, it is first necessary to establish that $\mathcal{X}^T$ is protomodular. This is as already noted. Since any protomodular category is Mal'tsev, then $\mathcal{X}^T$ is Mal'tsev. Since $\mathcal{A}$ is exact, then, by $\mathcal{A} \cong \mathcal{X}^T$, $\mathcal{X}^T$ is also exact. By \Cref{exact and Maltsev cat has reflexive coeq}, it holds that $\mathcal{X}^T$ has reflexive coequalizers. Since $\mathcal{X}$ has finite coproducts and $\mathcal{X}^T$ has reflexive coequalizers, then by \Cref{algebras category has colim if the base category has coprod}, $\mathcal{X}^T$ has finite coproducts. Finally, since $\mathcal{A} \cong \mathcal{X}^T$, it follows that $\mathcal{A}$  has finite coproducts.
 
     We are left to show that the morphism $!:0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact by assumption, the morphism $!$ admits a (regular epi, mono) factorization $! = me$.
     
