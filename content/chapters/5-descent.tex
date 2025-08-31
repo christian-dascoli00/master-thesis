@@ -4,7 +4,7 @@
 
 In this chapter we prove a monadicity theorem for the pullback functor. The standard terminology in the literature is \textit{descent morphism} for a morphism whose pullback functor is premonadic, and \textit{effective descent morphism} for a morphism whose pullback functor is monadic. We do not aim to develop descent theory; therefore, we will stick to the monadic theory nomenclature. 
 
-This theorem is usually stated in the literature in the descent theory framework, and then by a comparison theorem it holds in the monadic theory. The reader can refer to \cite{JanelidzeSobralTholen2003} for the first approach. We aim to prove this monadicity theorem directly in monadic theory, without the need of the comparison theorem. This part is based on the work of Sobral and Tholen \cite{SobralTholen1992}, but we will introduce some changes to suit our context. Some ideas drawn from Janelidze and Tholen \cite{JanelidzeTholen1991}. Let us first state the theorem.
+This theorem is usually stated in the literature in the descent theory framework, and then by a comparison theorem it holds in the monadic theory. The reader can refer to \cite{JanelidzeSobralTholen2003} for the first approach. We aim to prove this monadicity theorem directly in monadic theory, without the need of the comparison theorem. This part is based on the work of Sobral and Tholen \cite{SobralTholen1992} and some ideas drawn from Janelidze and Tholen \cite{JanelidzeTholen1991}, but I will introduce some substantial changes to suit our context. Those changes will be discussed in detail in a footnote. Let us first state the theorem.
 
 \begin{mainbox}{}
     \begin{theorem*}
@@ -123,9 +123,13 @@ E\times_B(E\times_BC) \arrow[rr, "1_E\times_B\xi", shift left] \arrow[rr, "{1_E\
 \end{lemma}
 \end{mainbox}
 
+\pagebreak
+
+\footnotetext[1]{\cite{SobralTholen1992} assumes the existence of all coequalizers, which is not the case in our setting. However, this is not a problem: at this point, we can use the morphism $p\gamma$ instead of the coequalizer of $(\mathrm{proj}_{2,C},\xi)$, as it serves our purpose. Then, \textit{a posteriori}, this proposition ensures, under the assumption of an exact category, that the pair $(\mathrm{proj}_{2,C},\xi)$ has a coequalizer, which we will make use of, following the approach of the aforementioned work.}
+
 \begin{subbox}{}
 \begin{proof}
-    First we show that $(\mathrm{proj}_{2,C},\xi)$ is an internal relation. We need to show that $\langle \mathrm{proj}_{2,C},\xi \rangle$ is a mono. Consider the following diagram of solid arrows\footnote{\cite{SobralTholen1992} assumes the existence of coequalizers, which is not the case in our setting. However, this is not a problem: at this point, we can use the morphism $p\gamma$ instead of the coequalizer of $(\mathrm{proj}_{2,C},\xi)$, as it serves our purpose. Then, \textit{a posteriori}, this proposition ensures, under the assumption of exact category, that the pair $(\mathrm{proj}_{2,C},\xi)$ has a coequalizer, which we will make use of.}. It commutes, in fact
+    First we show that $(\mathrm{proj}_{2,C},\xi)$ is an internal relation. We need to show that $\langle \mathrm{proj}_{2,C},\xi \rangle$ is a mono. Consider the following diagram of solid arrows\footnotemark[1]. It commutes, in fact
     \begin{itemize}
     \item $(p\gamma)\mathrm{proj}_{2,C}=1_B(p\gamma)\mathrm{proj}_{2,C}= p \mathrm{proj}_{1,C} = p\gamma\xi$
     \item $1_B(p\gamma)p_2= 1_B(p\gamma)p_1 = p\gamma  p_1$
