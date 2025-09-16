@@ -210,10 +210,10 @@ Now we aim to transfer the regularity of a topos to its dual, the cotopos.
 \begin{proof}
     Clearly, every iso is both a mono and an epi. Conversely, let $f: X \to Y$ be a morphism which is both a mono and an epi. By \Cref{mono are equalizers in topos}, it is also an equalizer. Let $(a,b)$ be pair such that $f=\mathrm{Eq}(a,b)$. It holds $af=bf$. Since $f$ is an epi, then $a=b$. On the other hand, $\mathrm{Eq}(a,b)=\mathrm{Eq}(a,a)=1_Y$, so there exists an iso $g$ such that $fg=1_Y$. Hence $f$ is an iso.
     \[
-    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGclVqMWbAJrdeIDNjwEiAJjHV6zVohAAtOXyWCiZYeK1TdsruJhQA5vCKgAZgCcIAWyRkQOCCRRCW02V0MQD28g6gCkdRA4AAssVxwYkKsQACMQagY6bJgGAAV+ZSEQdywHJPSeN08fRGC4xATk1PTEAFpgyx0QOgio5oBmWMCWzUlB4QB9G3lRpAn-Kb8BtgduCi4gA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGclVqMWbAJrdeIDNjwEiAJjHV6zVohAAtOXyWCiZYeK1TdsruJhQA5vCKgAZgCcIAWyRkQOCCRRCW02V0MQD28g6gCkdRA4AAssVxwYkKsQACMQagY6bJgGAAV+ZSEQdywHJPSeN08fRGC4xATk1PTEAFpgyx0QOgio5oBmWMCWzUlB4QB9WXzC4rLjFV1q2vr5UaQJ-ym-AbYHbgouIA
 \begin{tikzcd}
-X \arrow[r, "f"]                   & Y \arrow[r, "b"', shift right] \arrow[r, "a", shift left] & Z \\
-Y \arrow[ru, "1_Y"] \arrow[u, "g"] &                                                           &  
+X \arrow[r, "f"]                    & Y \arrow[r, "b"', shift right] \arrow[r, "a", shift left] & Z \\
+Y \arrow[ru, "1_Y"'] \arrow[u, "g"] &                                                           &  
 \end{tikzcd}
     \]
 \end{proof}
@@ -229,10 +229,10 @@ Y \arrow[ru, "1_Y"] \arrow[u, "g"] &                                            
 \begin{proof}
     Let $e : A \twoheadrightarrow B$ be an epi in a topos. By \Cref{topos is regular}, a topos is a regular category, thus $e$ admits factorization $e=mr$ where $r$ is a regular epi and $m$ is a mono. It holds that $m$ is also an epi. In fact, if $a$ and $b$ are morphisms such that $am=bm$, then $ae=amr=bmr=be$, and since $e$ is an epi, $a=b$. We proved that $m$ is both a mono and an epi, thus, by \Cref{mono epi are iso in topos}, it is an iso. Hence $e$ is a regular epi, ie a coequalizer.
     \[
-    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAhEAX1PU1z5CKAMwVqdJq3YARHnxAZseAkXLiaDFm0QgAgvP7KhRAIylTErdN0BhHhJhQA5vCKgAZgCcIAWyTqIDgQSOYgcAAWWB44oZpSOiAARiA0jPRJMIwACgIqwiBeWM4RsbyePv6IgcFx4VExSAC0YdaJ9IYg3n5IZEEh1fHa7GzlXZW9NLWIYiARMPRQ7DgA7hDziwhDNoWpIOmZOXkmukUlZQrdVbPTNfRYjMv3j9uJ-tyU3EA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAhEAX1PU1z5CKAMwVqdJq3YARHnxAZseAkXLiaDFm0QgAgvP7KhRAIylTErdN0BhHhJhQA5vCKgAZgCcIAWyTqIDgQSOYgcAAWWB44oZpSOiAARiA0jPRJMIwACgIqwiBeWM4RsbyePv6IgcFx4VExSAC0YdaJ9IYg3n5IZEEh1fHa7GzlXZW9NLWIYiARMPRQ7DgA7hDziwhDNoWpIOmZOXkmukUlZQrdVbPTNfRYjMv3j9uJ-mkZWbnGqqfFpQ5uEA
 \begin{tikzcd}
-A \arrow[rr, "e"] \arrow[rd, "r"', two heads] &                         & B \arrow[r, "b"', shift right] \arrow[r, "a", shift left] & D \\
-                                              & C \arrow[ru, "m", tail] &                                                           &  
+A \arrow[rr, "e"] \arrow[rd, "r"', two heads] &                          & B \arrow[r, "b"', shift right] \arrow[r, "a", shift left] & D \\
+                                              & C \arrow[ru, "m"', tail] &                                                           &  
 \end{tikzcd}
     \]
 \end{proof}
@@ -378,11 +378,19 @@ is an equalizer.
 
 \begin{subbox}{}
     \begin{proof}
-        The initial object is a colimit. By \Cref{colimits are universal in topos}, it is pullback stable. In the case of the colimit of the empty diagram, ie the initial object, this means that given any morphism $f: B \to 0$ is an iso. Thus $B$ is the initial object.
+        Let $\mathcal{E}$ be a topos, and let $f: E \to 0$ be a morphism in $\mathcal{E}$. It holds that $0_{(\mathcal{E} \downarrow 0)}=(0,1_0)$. The pullback given by $f^*(0,1_0)$ is
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6xYgAJuAYwIBzEexABfUuky58hFACZyVWoxZtiCpSAzY8BIloCMO+s1aIQhxcrNqiZG9Tv7Hc+TowUFLwRKAAZgBOELxIAMzUOBBIWrr2bOFGEdGxiFaJyYipPg4gVkJZIFExSGQgSUj5ab5VldW5dQ2ICc2l5c4U8kA
+\begin{tikzcd}
+E\times_00 \cong E \arrow[rr, "f"] \arrow[d, "1_0"] &  & 0 \arrow[d, "1_0"] \\
+E \arrow[rr, "f"]                                   &  & 0                 
+\end{tikzcd}
+        \]
+        And since, by \Cref{colimits are universal in topos}, $f^*$ preserves colimits, it holds that $E \cong 0$ is initial. In particular $f$ is an iso.
 
-        Consider an object $A$. We aim to prove that
+        Now, consider an object $A$. We aim to prove that
         \[!_A: 0 \to A\]
-        is a mono. Let $a,b : X \to 0$ such that $!_A a = !_A b$. By the observation above, $X$ is initial, thus $a = b$. Hence $!_A$ is a mono.
+        is a mono. Let $a,b : X \to 0$ such that $!_A a = !_A b$. By the observation above, $X$ is initial, thus, by the universal property of the initial object,  $a = b$. Hence $!_A$ is a mono.
     \end{proof}
 \end{subbox}  
 
