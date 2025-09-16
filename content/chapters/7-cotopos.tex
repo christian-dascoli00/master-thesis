@@ -121,17 +121,17 @@ Finally
 
 \begin{mainbox}{}
 \begin{prop}\label{coequalizers are pullback stable}
-   Let $q: X \to Y$ be a morphism in $\mathcal{A}$. The following conditions are equivalent:
+   Let $q: X \to Y$ be a morphism. The following conditions are equivalent:
     \begin{itemize}
-        \item $q: X \to Y$ is pullback stable coequalizer in $\mathcal{A}$;
-        \item The pullback functor along any morphism $f: E \to Y$ preserves the coequalizer $q: (X,q) \to (Y,1_Y)$ in $(\mathcal{A} \downarrow Y)$.
+        \item $q: X \to Y$ is pullback stable coequalizer;
+        \item The pullback functor along any morphism $f: E \to Y$ preserves the coequalizer $q: (X,q) \to (Y,1_Y)$.
     \end{itemize}
 \end{prop}
 \end{mainbox}
 
 \begin{subbox}{}
 \begin{proof}
-    It is a standard fact that $q: X \to Y$ is a coequalizer in $\mathcal{A}$ if and only if $q: (X,q) \to (Y,1_Y)$ is a coequalizer in the slice category $(\mathcal{A} \downarrow Y)$.
+    It is a standard fact that $q: X \to Y$ is a coequalizer in a category $\mathcal{A}$ if and only if $q: (X,q) \to (Y,1_Y)$ is a coequalizer in the slice category $(\mathcal{A} \downarrow Y)$.
 
     Let $\mathcal{A}$ be a finitely complete category and let $f: E \to B$ be a morphism in $\mathcal{A}$. Let $q: X \to Y$ be a coequalizer of a pair $(a,b)$ in $(\mathcal{A} \downarrow B)$. Suppose that $q$ is pullback stable. Consider the action of the pullback functor $f^*: (\mathcal{A} \downarrow E) \to (\mathcal{A} \downarrow B)$ on $q$, $a$ and $b$.
     \[
