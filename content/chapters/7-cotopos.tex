@@ -65,11 +65,13 @@ Consider a topos $\mathcal{E}$. Since the functor $\Omega^{(-)}: \mathcal{E}^{\m
 \begin{prop}\label{conditions for factorization regular epi mono}
 Let $\mathcal{E}$ be a category with the following conditions:
 \begin{itemize}
-\item it has pullbacks;
-\item it has coequalizers of kernel pairs;
-\item it has pullback stable regular epimorphisms.
+\item It has pullbacks;
+\item It has coequalizers of kernel pairs;
+\item Regular epimorphisms are pullback stable.
 \end{itemize}
 Then each morphism $f: A \to B$ in $\mathcal{E}$ admits a (regular epi, mono) factorization.
+
+Moreover, if the category is also finitely complete, then it is a regular category.
 \end{prop}
 \end{mainbox}
 
@@ -112,7 +114,7 @@ Finally
 
 \begin{mainbox}{}
 \begin{prop}\label{colimits are universal in topos}
-    In a topos, all finite colimits in the slice category are preserved by the pullback functor associated to any morphism.
+    In a topos $\mathcal{E}$, for every morphism $p: E \to B$, the pullback functor $p^*: (\mathcal{E} \downarrow B) \to (\mathcal{E} \downarrow E)$ preserves all finite colimits.
 \end{prop}
 \end{mainbox}
 \noindent The proof is contained in \cite{Borceux1994II} \textit{Proposition 5.9.1}.
@@ -121,8 +123,8 @@ Finally
 \begin{prop}\label{coequalizers are pullback stable}
    Let $q: X \to Y$ be a coequalizer. The following conditions are equivalent:
     \begin{itemize}
-        \item $q$ is pullback stable;
-        \item the coequalizer $q:(X,q) \to (Y,1_Y)$ in the slice category is preserved by the pullback functor associated to any morphism $f: E \to Y$.
+        \item $q: X \to Y$ is pullback stable;
+        \item $q: (X,q) \to (Y,1_Y)$ is preserved by the pullback functor along any morphism $f: E \to Y$ between the corresponding slice categories.
     \end{itemize}
 \end{prop}
 \end{mainbox}
@@ -150,6 +152,8 @@ E\times_YX \arrow[rr, "a'", shift left] \arrow[rr, "b'"', shift right] \arrow[d]
 Z \arrow[rr, "a", shift left] \arrow[rr, "b"', shift right]                      &  & X \arrow[rr, "q"]                     &  & Y               
 \end{tikzcd}
     \]
+    We aim to show that the pullback of $q$ along $f$ is the same as the one resulting by \Cref{p^*(f) is a pullback} between $f^*(q)$ and $q$, so that $f^*(q)=f'$. Then, consequently, the same happens for the left diagram, so that $f^*(a)=a'$ and $f^*(b)=b'$.
+    In order to prove that those pullbacks of $f$ are the same, we first need to focus on the pullback $E\times_YY$ of $f$ along $1_Y$. In particular, since one morphism is the identity, it turns out that $E\times_YY \cong E$ with the projections $\mathrm{proj}_{1,Y} = 1_E$ and $\mathrm{proj}_{2,Y} = f$. Thus, the pullback between $q$ and $f^*(q)$ is the same as the one between $q$ and $f$. We obtain the following diagram.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQANEAX1PU1z5CKACwVqdJq3YBNHnxAZseAkTIAGCQxZtEIAKIAdQ3gC28APoyuvfsqFExmmtul6jJrObhW5txQIqwsjq4i5SuiAAWvJ2gqoooc6SOuweZpYyMf5K8cFkxFoRsrEB9gkkpADMRanuPBIwUADm8ESgAGYAThCmSKEgOBBI5OF1IACOpd29SGSDw4hVY24gHQB6AFQAFBMAlNM9fYjzQ-0rkcam9DgAFl2mwGg9AFbcFsBkHNyHs4gArDQzicaHBblgOjgkABaUYpVYbHb0A7+GbHMQLc4gMEQqGIWEXdj0X7HQGYxAY1yXQzXO4PJ6vd6fUhRH6oo5IDHAgY4yEjQl6ABGIBojHogpgjAACoEHHoulhmrcoey-mTgfNeXi4VT2IjtoKDqLxZKZeVhCAFUqVQo0VjgQA2AWTEmcoGLJ0gCVgKAwqoDXV6Cb0AC8E2Fxol0tlCUtiuVrsQcMdNG9vqWAeKenIVkTAHZ3UhPYG1iKQGKo2a8uwrQnVcdTosC16YD6-ZnxlcbvdHs8IG8PqNvmWK6aYxbazbOhyloWk86u3Te4yPmQZD9I2PzTX41O1jP1U3U6309CHR3Vouewz+0zRqyRybo9v5bvE8tyc200WL9Tade+wHYBRnXBpuCAA
 \begin{tikzcd}
@@ -160,6 +164,7 @@ Z \arrow[rr, "a", shift left, crossing over] \arrow[rr, "b"', shift right, cross
                                                                                                                                                                          &  & E \arrow[u, "f"']                                                                                                    &  &                                                                                                    
 \end{tikzcd}
     \]
+    Then, since the coequalizer $q:(X,q) \to (Y,1_Y)$ of $(a,b)$ is preserved by the pullback functor $f^*$, it follows that $q'$ is the coequalizer of $(a',b')$.
 \end{proof}
 \end{subbox}
 
@@ -171,7 +176,7 @@ A topos is a regular category.
 
 \begin{subbox}{}
 \begin{proof}
-    A topos is finitely complete. Moreover, by \Cref{colimits are universal in topos} regular epis are pullback stable. By \Cref{topos is finitely cocomplete}, each topos is finitely cocomplete. Then, by \Cref{conditions for factorization regular epi mono}, each morphism admits a (regular epi, mono) factorization. Thus, a topos is a regular category.
+    A topos is finitely complete. Moreover, by \Cref{colimits are universal in topos} we have that coequalizers are preserved by the pullback functor along any morphism, then, by \Cref{coequalizers are pullback stable}, this implies that coequalizers are pullback stable. Hence regular epis are pullback stable. By \Cref{topos is finitely cocomplete}, each topos is also finitely cocomplete. Then, by \Cref{conditions for factorization regular epi mono}, each morphism admits a (regular epi, mono) factorization. Thus, a topos is a regular category.
 \end{proof}
 \end{subbox}
 
