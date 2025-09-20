@@ -375,7 +375,7 @@ The following gives a criteria to construct coproducts in the Eilenberg–Moore 
 
 \begin{mainbox}{}
     \begin{prop}\label{algebras category has colim if the base category has coprod}
-        Let $T:\mathcal{\mathcal{X}} \to \mathcal{X}$ be a monad. If $\mathcal{X}$ has finite coproducts and the Eilenberg-Moore category $\mathcal{X}^T$ has reflexive coequalizers, then $\mathcal{X}^T$ has finite coproducts. Moreover $\mathcal{X}^T$ is finitely cocomplete.
+        Let $(T,\mu,\eta)$ be a monad on $\mathcal{X}$. If $\mathcal{X}$ has finite coproducts and the Eilenberg-Moore category $\mathcal{X}^T$ has reflexive coequalizers, then $\mathcal{X}^T$ has finite coproducts. Moreover $\mathcal{X}^T$ is finitely cocomplete.
     \end{prop}
 \end{mainbox}
 
@@ -438,7 +438,7 @@ A \arrow[rr, "\iota_1"]                           &  & A+B \arrow[rr, "\eta_{A+B
 
         Once we have the canonical injections, we need to show that they satisfy the universal property of coproducts in $\mathcal{X}^T$. Let $f_i:(A_i,\xi_i) \to (K,\xi_K)$ for $i=1,2$ in $\mathcal{X}^T$. We aim to prove that there exists a unique morphism $h:(Q,\xi_Q) \to (K,\xi_K)$ in $\mathcal{X}^T$ such that $h\iota_{Q,i} = f_i$ for $i=1,2$. Refer to the diagram at the end of the proof for a visualization of the following arguments.
 
-        First, we show that there exists a unique morphism $g:(T(A+B),\mu_{A+B} \to (K,\xi_K)$ in $\mathcal{X}^T$ such that $g(\eta_{A+B})\iota_i=f_i$ for $i=1,2$. Define $g=\xi_K T[f_1,f_2]$. It is a morphism in $\mathcal{X}^T$, in fact the following diagram commutes.
+        First, we show that there exists a unique morphism $g:(T(A+B),\mu_{A+B}) \to (K,\xi_K)$ in $\mathcal{X}^T$ such that $g(\eta_{A+B})\iota_i=f_i$ for $i=1,2$. Define $g=\xi_K T[f_1,f_2]$. It is a morphism in $\mathcal{X}^T$, in fact the following diagram commutes.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAVACgEEBqAEIBKEAF9S6TLnyEU5CtTpNW7bgGkR4ydjwEiAFgU0GLNohBqxEkBh0yDpYopMrz6zddvS9cx8+VmnAB65FwaVtresiR+xgGqIbyCmoowUADm8ESgAGYAThAAtkgArDQ4EEhkSqbsADp1hcwA+sD8AqIRIPlFpeWViIY1rpzIOc0AjKTjVF09xYjVFUhTw4EcY5PTzbNa3QULQ8uIqy6BDU3NlnvzSEcDAMxxteYXLdfWt4hPIMfya-U6gAPLBXOYHFb9JD-M6AkFg0SUURAA
 \begin{tikzcd}
@@ -475,7 +475,7 @@ A \arrow[r, "\iota_1"'] \arrow[ruu] \arrow[rrru, "\eta_A"]               & A+B \
 \end{align*}
         and the same holds for $B$. Therefore $g$ has equal compositions with the parallel arrows corresponding to \eqref{diagr 3 coproducts}, which has, by \Cref{coeq for the three diagrams}, $q$ as $U^T$-coequalizer. Then by the universal property of the $U^T$-coequalizer, it follows that there exists a unique morphism $h:(Q,\xi_Q) \to (K,\xi_K)$ such that $g=h q$ in $\mathcal{X}^T$. Thus, we have that
         \[ h\iota_{Q,i} = h q (\eta_{A+B}) \iota_i = g (\eta_{A+B}) \iota_i = f_i \ \ \ i=1,2 \]
-        and by the uniqueness of $g$, we have that $h$ is the unique morphism in $\mathcal{X}^T$ satisfying such relation.
+        and by the uniqueness of $g$, we have that $h$ is the unique morphism in $\mathcal{X}^T$ satisfying such condition.
                 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBpiBdUkANwEMAbAVxiRABUAKAQQGoAhAJQgAvqXSZc+QigAspWVVqMWbLgGlhYidjwEiAVlIGl9Zq0Qh1o8SAy7pRMgEZTKixwB6AJh4CttvZS+nKk3m7maj6cmjY6wTLIRpTUZqqWGgHxeokADAoR6SDccXaSOUT54anuajxZZQ4hyN5hhR4AiqVBFSitue11HQ09jigAbKQDNZEZnELd5WPIk9XKsyD8okowUADm8ESgAGYAThAAtkj5IDgQSM4zRezIxwD6j+-hINQMdABGMAYAAUliEQKcsHsABY4UpnS4Pah3JCtdZFAA6GIAHlg3tZfgCgaCmjIIVDYfDzldEPJbvdEEZ0R4sRcmPiqYjaciGY9mWxWezrNoQAiaUyUYg0WkWTi8cLbGKkGR6Ug6TKot5kFiGFAIDg4KR3lhSDq9QaKJyaZNVYgbn9ASCwWTITC4U9ZTAcHQ3sA+PwRFj8N6PlakAB2HnKj11LFen1+gSBjHBn3OBpKxCR202jWWLG4t4lQmOkkJNiuykizM2yVowFgKBIAC0xBuedFoZLxOdbAYMGOcOr1IjUcZ3adpIrFPdIAbTcQrfbtTm73TYbtY4AHDHLABHDcqyUATl3HE4e4zI8Qp9tO-5+blby6w65t8lTPnLbbZ640KvXL3nW1BfouP4PiA0Ibs4Nwfr+nBfMIIEwI2yr2kSk7lpYlZDoq17OHywEQV8PwgA6PZTthM6kaBbavjSMFjgRZ4FniWz0Q8sEMiqHZcHGIaJgGQb6j63hIWRGFlr05JutBhEMsuGz8Qm-rJqmbzeKR5GYdJOHbCIQA
 \begin{tikzcd}
@@ -495,9 +495,42 @@ A \arrow[rrru, "\eta_{A+B}\iota_1"', pos=0.3] \arrow[rrrrrd, "f_1", bend right=2
 \end{tikzcd}
         \]
         
-        In order to prove that also finite coproducts exists, it suffices to do the same proof for the initial object, using \Cref{coeq for the three diagrams} again.
+        In order to prove that also finite coproducts exists, it suffices to show that the initial object exists. Let $0$ be the initial object in $\mathcal{X}$. It holds that $(T(0),\mu_0)$ is the initial object in $\mathcal{X}^T$. In fact, let $(A,\xi_A)$ be an object in $\mathcal{X}^T$. Since $0$ is initial in $\mathcal{X}$, there exists a unique morphism $!^A:0 \to A$ in $\mathcal{X}$. Then, the morphism $f=\xi_A T(!^A)$ is a morphism in $\mathcal{X}$ from $(T(0),\mu_0)$ to $(A,\xi_A)$.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABUAKYgShAF9S6TLnyEUARnJVajFmy4BBPoOHY8BIgCZp1es1aIQigTJhQA5vCKgAZgCcIAWyRSQOCEh2yDbADp+AB5YAPomqiAOzkhk7p6IbvryRlwAhAB6yqb8QA
+\begin{tikzcd}
+T(0) \arrow[r, "T(!^A)"] & T(A) \arrow[r, "\xi_A"] & A
+\end{tikzcd}
+        \]
+        We aim to prove that it is a morphism in $\mathcal{X}^T$ and that it is the unique morphism in $\mathcal{X}^T$ from $(T(0),\mu_0)$ to $(A,\xi_A)$.
+        It is a morphism in $\mathcal{X}^T$, in fact, using property of algebra $\xi_A T(\xi_A) = \xi_A \mu_A$ and the naturality of $\mu$, we have that
+        \begin{align*}
+            \xi_A T(f) & = \xi_A T(\xi_A T(!^A)) \\[1.5ex]
+            & = \xi_A T(\xi_A) T^2(!^A) \\[1.5ex]
+            & = \xi_A \mu_A T^2(!^A) \\[1.5ex]
+            & = \xi_A T(!^A) \mu_{0} \\[1.5ex]
+            & = f \mu_0
+        \end{align*}
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAFgBoAGAXVJADcBDAGwFcYkQAVAPQCYAKcgEoQAX1LpMufIRRkAjNTpNW7DgOFiJ2PASIA2UgpoMWbRJz4BBDeJAZt0-RUUmV57v2ujb9qbpQ8hi7KZiCW3lp+MsiBVMYhqlY2kTrR5EHxpolemnaSqUTpcUpZ7rxJooowUADm8ESgAGYAThAAtkjpIDgQSADMmW4WAIRcObYt7UhyND1IgSVDaqPjTa0diF1ziDOLoQA6+23MAPrkESCTGwPdvYgLrgdHp+G5V0gGt0hke+yHAB5YE6vCbrJAAVlmdx+jz++0BwIu70QAHYoR9Bk9joi3mDUejEJDfu4+ACgTlKCIgA
+\begin{tikzcd}
+T^2(A) \arrow[d, "\mu_A"] \arrow[rr, "T(\xi_A)"] &  & T(A) \arrow[d, "\xi_A"] &  & T^2(0) \arrow[rr, "T(!^A)"] \arrow[d, "\mu_0"] &  & T^2(A) \arrow[d, "\mu_A"] \\
+T(A) \arrow[rr, "\xi_A"]                         &  & A                       &  & T(0) \arrow[rr, "T(!^A)"]                      &  & T(A)                     
+\end{tikzcd}
+\]
+    Moreover, it is the unique morphism in $\mathcal{X}^T$ from $(T(0),\mu_0)$ to $(A,\xi_A)$. In fact, let $f':(T(0),\mu_0) \to (A,\xi_A)$ be an other morphism in $\mathcal{X}^T$. Then, it holds that
+    \begin{itemize}
+        \item $f \mu_0 = \xi_A T(f)$
+        \item $f' \mu_0 = \xi_A T(f')$
+    \end{itemize}
+    and, composing both sides with $T(\eta_0)$, we have that
+    \begin{itemize}
+        \item $f = f 1_{T(0)} = f \mu_0 T(\eta_0) = \xi_A T(f) T(\eta_0) = \xi_A T(f \eta_0) = \xi_A T(!^A)$
+        \item $f' = f' 1_{T(0)} = f' \mu_0 T(\eta_0) = \xi_A T(f') T(\eta_0) = \xi_A T(f' \eta_0) = \xi_A T(!^A)$
+    \end{itemize}
+    since $!^A$ is the unique morphism from $0$ to $A$. Thus $f=f'$.
 
-        It remains to prove that $\mathcal{X}^T$ is finitely cocomplete. We already know that it has finite coproducts, so we only need to show that it has coequalizers. This follows from the fact that it has finite coproducts and reflexive coequalizers; in fact each coequalizer can be constructed as a reflexive coequalizer from the coproduct, as shown below.
+    It remains to prove that $\mathcal{X}^T$ is finitely cocomplete. We already know that it has finite coproducts, so we only need to show that it has coequalizers. This follows from the fact that it has finite coproducts and reflexive coequalizers; in fact each coequalizer can be constructed as a reflexive coequalizer from the coproduct, as shown below.
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQAmclVqMWbAELdeIDNjwEiZAIzj6zVog4BqWTz5LBRURupapuw+JhQA5vCKgAZgCcIAWyRkQOCCQ1ajgACyxXHCQAWmCJbTZXOTdPH0Q-AKCQ8Mis+OsQBxBqBjoAIxgGAAV+ZSEQdywHUKijEA9vJABmakzEUXydEAAdYfwcOgB9YWKQUorq2tNdLDBsWGT21KQBvp6QMIioxGiBqyHkV1I1SekKTY603cDEfcPc-stJC4dr2-uSuVKjUTCpdI1mq0KFwgA
 \begin{tikzcd}
