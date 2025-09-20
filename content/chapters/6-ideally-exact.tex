@@ -38,11 +38,11 @@ We are now ready to prove the theorem, which will lead to the definition of the 
         
         $(\mathcal{A} \downarrow 0)$ is pointed, in fact if $(A,\alpha)$ is an object in $(\mathcal{A} \downarrow 0)$, we have the following initial and terminal objects, which coincide:
         \[
-        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGJAF9T1Nd9CKAIzkqtRizYBBLjxAZseAkRFCx9Zq0TtZvRQKIBmUdQ2TtM7nv7KUxtaYladV+XyWDkAFhPjNbDk4xGCgAc3giUAAzACcIAFskERAcCCQAJkd-bQAdHMY0AAs6XRBYhKQyFLTEZLNnAEIAfUs5csTEY2qkAFYs8xA8guLS9srqVIzXMcQ+7sQfPwGhJsC2uI6uyYX+5yGGIpKgziA
-        \begin{tikzcd}
-        0 \arrow[r, "!_A"] \arrow[rd] & A \arrow[d, "\alpha"] &  & A \arrow[r, "\alpha"] \arrow[d, "\alpha"] & 0 \arrow[ld, "1_0"] \\
+   % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGJAF9T1Nd9CKAIzkqtRizYBBLjxAZseAkRFCx9Zq0TtZvRQKIBmUdQ2TtM7nv7KUxtaYladV+XyWDkAFhPjNbDk4xGCgAc3giUAAzACcIAFskERAcCCQAJkd-bQAdHMY0AAs6XRBYhKQyFLTEZLNnAEIAfUs5csTEY2qkAFYs8xA8guLS9srqVIz+5yEmjmoGOgAjGAYABXcDbRisUMKcUbiOvu7EHz8B2cC2o6QuybPptiGGIpKgziA
+\begin{tikzcd}
+0 \arrow[r, "!_A"] \arrow[rd, "1_0"'] & A \arrow[d, "\alpha"] &  & A \arrow[r, "\alpha"] \arrow[d, "\alpha"] & 0 \arrow[ld, "1_0"] \\
                                       & 0                     &  & 0                                         &                    
-        \end{tikzcd}
+\end{tikzcd}
         \]
 
         $\mathcal{A}$ has finite coproducts, so $(\mathcal{A} \downarrow 0)$ has finite coproducts. In fact consider $(A,\alpha)$, $(B,\beta)$ in $(\mathcal{A} \downarrow 0)$ and $A+B$ in $\mathcal{A}$, with the canonical injections $\iota_1 : A \to A+B$ and $\iota_2 : B \to A+B$. Let $(C,\gamma)$ be an object in $(\mathcal{A}\downarrow 0)$ with $f:A \to C$ and $g:B \to C$ morphisms in $(\mathcal{A}\downarrow 0)$ . Providing to $A+B$ the morphism $[\alpha,\beta]$ we have that $(A+B, [\alpha,\beta])$ is the coproduct of $(A,\alpha)$ and $(B,\beta)$ in $(\mathcal{A} \downarrow 0)$, in fact $\gamma [f,g] = [\alpha,\beta]$, so $[f,g]$ is also a morphism in $(\mathcal{A}\downarrow 0)$.
@@ -80,7 +80,7 @@ A \arrow[rr, "f", pos=0.25, crossing over] \arrow[ru, "e", two heads] \arrow[rd,
 
     In order to prove that regular epis are pullback stable in $(\mathcal{A} \downarrow 0)$ we can use the fact that they are in $\mathcal{A}$. In fact, we just endow the regular epi with the morphism induced by universal property of the coequalizer.
 
-    We must now establish that the $(\mathcal{A} \downarrow 0)$ is protomodular. Since the construction of the change-of-base functor involves pullbacks, which are connected limits, then by \Cref{connected limits computed on the base} the construction is the same in $(\mathcal{A} \downarrow 0)$ and in $\mathcal{A}$. Thus $(\mathcal{A} \downarrow 0)$ inherits protomodularity from $\mathcal{A}$, noting that the definition of iso in $\mathcal{A}$ and $(\mathcal{A} \downarrow 0)$ is essentially the same, except the morphism condition. Hence, since $\mathcal{X} = (\mathcal{A} \downarrow 0)$ is exact, protomodular, pointed and has binary coproducts, we can conclude that it is semiabelian.
+    We must now establish that the $(\mathcal{A} \downarrow 0)$ is protomodular. Since the construction of the change-of-base functor involves pullbacks, which are connected limits, then by \Cref{U creates con lim} the construction in $(\mathcal{A} \downarrow 0)$ is the same as in $\mathcal{A}$. Thus $(\mathcal{A} \downarrow 0)$ inherits protomodularity from $\mathcal{A}$, noting that the definition of iso in $\mathcal{A}$ and $(\mathcal{A} \downarrow 0)$ is essentially the same, except for the morphism condition. Hence, since $\mathcal{X} = (\mathcal{A} \downarrow 0)$ is exact, protomodular, pointed and has binary coproducts, we can conclude that it is semiabelian.
 
     It remains to prove that the monad $(!)^*(!)_!$ preserves regular epimorphisms and kernel pairs. Consider a regular epi $q:A \to B$ in $(\mathcal{A} \downarrow 0)$, it is the coequalizer of some parallel arrows. Since the coequalizer is a colimit, it is preserved by the left adjoint functor $(!)_!$. So it suffices to prove that, with $\mathcal{A}$ regular, $(!)^*$ preserves regular epis. Consider the following diagram:
     \[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAEwVqdJq3YAhHnxAZseAkXKkREhizaIQ5ef2VCiZYlqm6QxADo28AW3gB9cl15HBq0aXM1t0nq29lhOcK5y3BIwUADm8ESgAGYAThAOSGQgOBBI6pI67ACOhiCp6Zk0OUgiHmVpGYj51Yi1CuWNAMxVuYjEdR1IACw9eQMNSN3ZvSMFgSAAFACEAJQAegBUC0UrPJTcQA

@@ -121,7 +121,7 @@ Finally
 
 \begin{mainbox}{}
 \begin{prop}\label{coequalizers are pullback stable}
-   Let $q: X \to Y$ be a morphism. The following conditions are equivalent:
+   Let $\mathcal{A}$ be a finitely complete category and let $q: X \to Y$ be a coequalizer in $\mathcal{A}$. Then $q: (X,q) \to (Y,1_Y)$ is a coequalizer in $(\mathcal{A} \downarrow Y)$. Moreover, the following conditions are equivalent:
     \begin{itemize}
         \item $q: X \to Y$ is a pullback stable coequalizer;
         \item The pullback functor along any morphism $f: E \to Y$ preserves the coequalizer $q: (X,q) \to (Y,1_Y)$.
@@ -131,9 +131,9 @@ Finally
 
 \begin{subbox}{}
 \begin{proof}
-    First, recall that the forgetful functor $U$ from a slice category to the base category creates all the colimits that the base category has. Moreover, given $q: X \to Y$ coequalizer in a category $\mathcal{A}$, it yields that $q: (X,q) \to (Y,1_Y)$ is a coequalizer in the slice category $(\mathcal{A} \downarrow Y)$. Thus, whether $q$ is taken as a coequalizer in the slice or in the base category, it serves as a coequalizer in both categories.
+    First, recall that the forgetful functor $U$ from $\mathcal{A}$ to a slice category of $\mathcal{A}$ creates all the colimits that $\mathcal{A}$ has, by \Cref{U creates con lim}. Thus, given $q: X \to Y$ coequalizer in a category $\mathcal{A}$, it yields that $q: (X,q) \to (Y,1_Y)$ is a coequalizer in the slice category $(\mathcal{A} \downarrow Y)$.
 
-    Let $\mathcal{A}$ be a finitely complete category and let $f: E \to B$ be a morphism in $\mathcal{A}$. Let $q: X \to Y$ be a coequalizer of a pair $(a,b)$ in $(\mathcal{A} \downarrow B)$. Suppose that $q$ is pullback stable. Consider the action of the pullback functor $f^*: (\mathcal{A} \downarrow E) \to (\mathcal{A} \downarrow B)$ on $q$, $a$ and $b$.
+    Let $f: E \to B$ be a morphism in $\mathcal{A}$. Let $q: X \to Y$ be the coequalizer of a pair $(a,b)$ in $(\mathcal{A} \downarrow B)$. Suppose that $q$ is a pullback stable coequalizer. Consider the action of the pullback functor $f^*: (\mathcal{A} \downarrow E) \to (\mathcal{A} \downarrow B)$ on $q$, $a$ and $b$.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQANEAX1PU1z5CKACwVqdJq3YBNHnxAZseAkTIAGCQxZtEIAKIAdQ3gC28APoyuvfsqFExmmtul6jJrObhW5txQIqwsjq4i5SuiAAWvJ2gqoooc6SOuweZpYyMf5K8cFkxFoRsrEB9gkkpADMRanuPBIwUADm8ESgAGYAThCmSKEgOBBI5OF1IACOpd29SGSDw4hVY24gHQB6AFQAFBMAlNM9fYjzQ-0rkcam9DgAFl2mwGg9AFbcFsBkHNyHs4gArDQzicaHBblgOjgkABaUYpVYbHb0A7+GbHMQLc4gMEQqGIWEXdj0X7HQGYxAY1yXQzXO4PJ6vd6fUhRH6oo5IDHAgY4yEjQl6ABGIBojHogpgjAACoEHHoulhmrcoey-mTgfNeXi4VT2IjtoKDqLxZKZeVhCAFUqVQo0VjgQA2AWTEmcoGLJ0gCVgKAwqoDXV6Cb0AC8E2Fxol0tlCUtiuVrsQcMdNG9vqWAeKenIVkTAHZ3UhPYG1iKQGKo2a8uwrQnVcdTosC16YD6-ZnxlcbvdHs8IG8PqNvmWK6aYxbazbOhyloWk86u3Te4yPmQZD9I2PzTX41O1jP1U3U6309CHR3Vouewz+0zRqyRybo9v5bvE8tyc200WL9Tade+wHYBRnXBpuCAA
 \begin{tikzcd}
@@ -144,8 +144,7 @@ Z \arrow[rr, "a", shift left, crossing over] \arrow[rr, "b"', shift right, cross
                                                                                                                                                                          &  & E \arrow[u, "f"']                                                                                                    &  &                                                                                                    
 \end{tikzcd}
     \]
-    By \Cref{p^*(f) is a pullback}, the top squares are pullbacks. Since the coequalizer $q$ is pullback stable, then $f^*(q)$ is a coequalizer of $(f^*(a), f^*(b))$. Hence the pullback functor $f^*$ preserves the coequalizer $q$ in the slice category. 
-    Since the forgetful functor $U$ creates all the colimits that the base category has, it follows the statement in the slice category.
+    By \Cref{p^*(f) is a pullback}, the top squares are pullbacks. Since the coequalizer $q$ is pullback stable, then $f^*(q)$ is a coequalizer of $(f^*(a), f^*(b))$ in $\mathcal{A}$. Since the forgetful functor $U$ creates all the colimits that $\mathcal{A}$ has, it follows the statement in $(\mathcal{A} \downarrow E)$.
 
     Conversely, we aim to prove that $q$ is pullback stable, ie if $q$ is the coequalizer of $(a,b)$ then $q'$ is the coequalizer of $(a',b')$ in the pullback squares
     \[
@@ -167,7 +166,7 @@ Z \arrow[rr, "a", shift left, crossing over] \arrow[rr, "b"', shift right, cross
                                                                                                                                                                          &  & E \arrow[u, "f"']                                                                                                    &  &                                                                                                    
 \end{tikzcd}
     \]
-    Then, since the coequalizer $q:(X,q) \to (Y,1_Y)$ of $(a,b)$ is preserved by the pullback functor $f^*$, it follows that $q'$ is the coequalizer of $(a',b')$ in the slice category. Since the forgetful functor $U$ creates colimits that base category has, it follows the statement in the base category.
+    Then, since the coequalizer $q:(X,q) \to (Y,1_Y)$ of $(a,b)$ is preserved by the pullback functor $f^*$, it follows that $q'$ is the coequalizer of $(a',b')$ in the slice category. Since $\mathcal{A}$ is finitely complete, one can prove that a coequalizer in the slice category is also a coequalizer in $\mathcal{A}$, using binary products to prove the universal property in $\mathcal{A}$. In fact, given a morphism $h:Y \to Z$ in $\mathcal{A}$, one can form the morphism $\langle h,q\rangle: (X,q) \to (Y \times Z, \mathrm{proj}_2)$ and the universal property for $h$ follows from the one for $\langle h,q\rangle$. Hence $q'$ is the coequalizer of $(a',b')$ in $\mathcal{A}$, ie $q$ is a pullback stable coequalizer.
 \end{proof}
 \end{subbox}
 

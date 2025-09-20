@@ -36,9 +36,22 @@
         \end{itemize}
     \end{ex}
 \end{rembox}
-\begin{rembox}{}
-    \begin{rem}\label{connected limits computed on the base}
-    The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. In fact we can provide to the object $L$ of the limit cone $(L,(q_i)_{i \in \mathcal{I}})$ in $\mathcal{A}$ a morphism to form an object in $(\mathcal{A} \downarrow E)$. In the zigzag below we chose $(\varphi_1)(q_1)$, but we could use whatever morphism of the type $(\varphi_i)(q_i)$. The connection guarantees that all the morphisms $q_1 \ldots q_n$ involved in the limit in $\mathcal{A}$ are also morphisms in $(\mathcal{A} \downarrow E)$, ie $(\varphi_i)(q_i) = (\varphi_1)(q_1) \ \forall i $.
+
+The following holds.
+
+\begin{mainbox}{}
+    \begin{prop}\label{U creates con lim}
+       Let $E$ be an object in $\mathcal{A}$. Then the forgetful functor $U : (\mathcal{A} \downarrow E) \to \mathcal{A}$ creates 
+       \begin{enumerate}
+       \item all the connected limits that $\mathcal{A}$ has;
+       \item all the colimits that $\mathcal{A}$ has.
+    \end{enumerate}
+\end{prop}
+\end{mainbox}
+
+\begin{subbox}{}
+    \begin{proof}
+        \textit{1}. The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. Consider a connected limit cone $(L,(q_i)_{i \in \mathcal{I}})$. Denote each object in $(\mathcal{A} \downarrow E)$ associated to $i \in \mathcal{I}$ as $(F(i),\varphi_i)$. Since the limit is connected, it is the limit over a connected, hence inhabited, category. Thus we can pick $j\in \mathcal{I}$. The limit in $(\mathcal{A} \downarrow E)$ is $((L,\varphi_jq_j),(q_i)_{i \in \mathcal{I}})$. The connection in the zigzag guarantees that all the morphisms $q_1, \ldots, q_n$ involved in the limit in $\mathcal{A}$ are also morphisms in $(\mathcal{A} \downarrow E)$, ie $\varphi_iq_i = \varphi_jq_j \ \forall i $.
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
     \[
         \begin{tikzcd}
@@ -46,7 +59,7 @@
               \arrow[rddd, "q_2" description, bend left] 
               \arrow[rrdd, "q_3" description, bend left] 
               \arrow[rrrrdd, "q_n" description, bend left] 
-              \arrow[dddd, "(\varphi_1)(q_1)"', dashed, bend right=65] 
+              \arrow[dddd, "\varphi_jq_j"', dashed, bend right=65] 
               & & & & \\
             & & & & \\
             F(1) 
@@ -69,17 +82,19 @@
             E & & & & 
             \end{tikzcd}
     \]
-    \end{rem}
-\end{rembox}
 
-By the previous result, the following holds.
-\begin{mainbox}{}
-    \begin{prop}\label{U creates con lim}
-       Let $E$ be an object in $\mathcal{A}$. Then the forgetful functor $U : (\mathcal{A} \downarrow E) \to \mathcal{A}$ creates all connected limits that $\mathcal{A}$ has.
-    \end{prop}
-\end{mainbox}
+        \textit{2}. The colimits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. Consider a colimit cocone $(L,(q_i)_{i \in \mathcal{I}})$. Denote each object in $(\mathcal{A} \downarrow E)$ associated to $i \in \mathcal{I}$ as $(F(i),\varphi_i)$. Observe that $(E,(\varphi_i)_{i \in \mathcal{I}})$ is a cocone over the diagram $F$. By the universal property, there exists a unique $\lambda: L \to E$ such that $\lambda q_i = \varphi_i$ for all $i \in \mathcal{I}$. The colimit in $(\mathcal{A} \downarrow E)$ is $((L,\lambda),(q_i)_{i \in \mathcal{I}})$.
+        \[
+        % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRADEAKLAShAF9S6TLnyEUARnJVajFmwAyAoSAzY8BImQkz6zVohABRATJhQA5vCKgAZgCcIAWyRkQOCEimz9bAI4A+ljKdo4uiG4eSABM1HryhgA6ifT2aAAWWEEg1Ax0AEYwDAAKIhriIPZYFuk4ISAOzl7UUYixPgkgyXlO+VB0pvxAA
+\begin{tikzcd}
+F(i) \arrow[r, "q_i"] \arrow[d, "\varphi_i"'] & L \arrow[ld, "\lambda"] \\
+E                                             &                        
+\end{tikzcd}
+\]
+    \end{proof}
+\end{subbox}
 
-Note that this result is not true for all the limits. This is extensively shown in the following example.
+Note that this result does not hold for all the limits. This is extensively shown in the following example.
 \begin{rembox}{}  
     \begin{ex}
         The product is not a connected limit, in fact as we can observe the following category is not connected.
@@ -167,7 +182,7 @@ Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks, then $p_!$ pres
 
 \begin{subbox}{}
 \begin{proof}
-    By \Cref{connected limits computed on the base} connected limits are computed in $\mathcal{A}$ and $p_!$ doesn't affect objects and morphism in $\mathcal{A}$.
+    By \Cref{U creates con lim} connected limits are computed in $\mathcal{A}$ and $p_!$ doesn't affect objects and morphism in $\mathcal{A}$.
 \end{proof}
 \end{subbox}
 
@@ -391,7 +406,7 @@ $p^*$ is a right adjoint functor, so it preserves limits. $p_!$ is a left adjoin
 
 \begin{mainbox}{}
 \begin{propr}\label{p^*(f) is a pullback}
-Let $p:E\to B$ be a morphism in $\mathcal{A}$. The diagram constructed by $p^*$ acting on a morphism $f : (A,\alpha) \to (A',\alpha')$ is a pullback in $(\mathcal{A} \downarrow B)$.
+Let $p:E\to B$ be a morphism in a category $\mathcal{A}$. The diagram constructed by $p^*$ acting on a morphism $f : (A,\alpha) \to (A',\alpha')$ is a pullback.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoyARiq1GLNmMnTseAkQBMpZdXrNWiECIDkEqSAw65B8itPqLXHln5xh1iSowUADm8ESgAGYAThC8SGQgOBBIAMwmaub2AHoAVAAUEQCUALzceAywwBHitpExcYiK1ElIhqpmbBG1INGx8c3JjekdFty8dDgAFlG8wGgxAFbiAvrdvQ1piYNtbpljE9Oz8xBLKzbiFOJAA
 \begin{tikzcd}
@@ -403,7 +418,7 @@ Let $p:E\to B$ be a morphism in $\mathcal{A}$. The diagram constructed by $p^*$ 
 \end{mainbox}
 \begin{subbox}{}
 \begin{proof}
-   We prove it in $\mathcal{A}$, then by \Cref{connected limits computed on the base} it holds in $\mathcal{A} \downarrow B$. Since the right and the total diagrams below are pullback, then the left diagram is a pullback.
+   Since the right and the total diagrams below are pullback, then the left diagram is a pullback too.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoyARiq1GLNmMnTseAkQBMpZdXrNWiECIDkEqSAw65B8itPqLXHln5xh129qyeigALC4mauYcAfYyuvLIYcaqZmxCEiowUADm8ESgAGYAThC8SGQgOBBIAMwRqRZoAHoAVAAUBQCUALzceAywwAXiMcWlSIrUVUiGKe4gBaMlZYgV04iTc1HcvHQ4ABZFvMBoJQBW4gL6S+OIdZXViLNu25y7B0cn55f6NloLy1qU0eYS2bB2e0Ox1OEAuAkUfzsYxWs3WAFZ6vNuIw0Ps6IjCoDEKD0ZiomgbitNqSQAAjGBgKBIAC0NQqDDo9IYAAU4k4LEUsNl9jgQGTwZwcXjKeVgUhQfTGbUKi8Je8oV9YZdFBlxEA
 \begin{tikzcd}
@@ -416,7 +431,7 @@ Let $p:E\to B$ be a morphism in $\mathcal{A}$. The diagram constructed by $p^*$ 
 
 \begin{mainbox}{}
 \begin{propr}\label{eta cartesian}
-Let $p:E\to B$ be a morphism in $\mathcal{A}$ with pullbacks. Then the unit $\eta$ and the counit $\epsilon$ of the adjuction associated to $p$ are cartesian.
+Let $p:E\to B$ be a morphism in $\mathcal{A}$ with pullbacks. Then the unit $\eta$ and the counit $\epsilon$ of the adjuction associated to $p^*$ are cartesian.
 \end{propr}
 \end{mainbox}
 \begin{subbox}{}
