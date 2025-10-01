@@ -11,7 +11,7 @@ In order to understand the notions introduced in this thesis is important to rec
 First we define some categories that will be used throughout the thesis. Let $\mathcal{A}$ be a category, we defines the following categories.
 
 \begin{itemize}
-    \item The \textbf{slice category}: given an object $B$ in a category $\mathcal{A}$, we call $(\mathcal{A} \downarrow B)$ the category of objects over $E$, we denote an object by $(A, \alpha:A \to B)$. A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $f: A \to A'$ such that $\alpha' f = \alpha$.
+    \item The \textbf{slice category}: given an object $B$ in the category $\mathcal{A}$, we call $(\mathcal{A} \downarrow B)$ the category of objects over $E$, we denote an object by $(A, \alpha:A \to B)$. A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $f: A \to A'$ such that $\alpha' f = \alpha$.
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiAJnLj6zVog5y+SwUQDMG6lqm72Acn0L+yocnVjzknSFldxMKAHN4IlAAMwAnCABbJDIQHAgkETdtNgAdFMY0AAs6OzDIpHVY+MRTCWTdYNzwqMRCuKQAFiTLEDSM7Kr8kup6xCaylraGLLpbby4gA
     \begin{tikzcd}
@@ -19,7 +19,7 @@ First we define some categories that will be used throughout the thesis. Let $\m
     B                     &  & B                                    &                         
     \end{tikzcd}
     \]
-    \item The \textbf{coslice category}: given an object $B$ in a category $\mathcal{A}$, we call $(B \downarrow \mathcal{A})$ the category of objects under $B$, we denote an object by $(\alpha:B \to A, A)$. A morphism between two objects $(\alpha, A)$ and $(\alpha', A')$ is a morphism $f: A \to A'$ such that $f \alpha = \alpha'$.
+    \item The \textbf{coslice category}: given an object $B$ in the category $\mathcal{A}$, we call $(B \downarrow \mathcal{A})$ the category of objects under $B$, we denote an object by $(\alpha:B \to A, A)$. A morphism between two objects $(\alpha, A)$ and $(\alpha', A')$ is a morphism $f: A \to A'$ such that $f \alpha = \alpha'$.
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRACEQBfU9TXfIRRkAjFVqMWbAILdeIDNjwEiAJnLj6zVog5y+SwWtJjqWqbtk8DAlSgDMJzZJ0hpAcm7iYUAObwiUAAzACcIAFskMhAcCCQRMxc2AB1kxjQACzp9EFCIpHUYuMRHCW0UtIZM7OtcsMjEQtikABZE8t1U9KzPWryG0ubENrKLXK8uIA
     \begin{tikzcd}
@@ -27,7 +27,7 @@ First we define some categories that will be used throughout the thesis. Let $\m
     A                     &  & A \arrow[r, "f"]                            & A'
     \end{tikzcd}
     \]
-    \item The \textbf{category of points}: given an object $B$ in a category $\mathcal{A}$, we call $\mathrm{Pt}(B)$ the category of points of $B$, we denote an object by $(A,B,p,s)$ which is a diagram of the type $A \overset{p}{\underset{s}{\rightleftarrows}} B$ with the condition $ps=1_B$. Morphisms between two objects $(A,B,p,s)$ and $(A',B',p',s')$ are diagrams of the type 
+    \item The \textbf{category of points}: given an object $B$ in the category $\mathcal{A}$, we call $\mathrm{Pt}(B)$ the category of points of $B$, we denote an object by $(A,B,p,s)$ which is a diagram of the type $A \overset{p}{\underset{s}{\rightleftarrows}} B$ with the condition $ps=1_B$. Morphisms between two objects $(A,B,p,s)$ and $(A',B',p',s')$ are diagrams of the type 
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGUsKq1GLNgCFuvEBmx4CRAEzkJ9Zq0QcA5NwkwoAc3hFQAMwBOEALZIyIHBCSiQcABZYrOd9Ta0npoINQMdABGMAwACvwqQiA2WKZe-jzWdo6IGi5uiB7evv6FgVK6iobhUTHxyoJsKWkZCrYOAflIecV+nRHRcQmNes3pYZI6bHCGmSDtOR6uTtS9pR5BlQg1g-UCqqOp43MLK1255VN6VkZcQA
     \begin{tikzcd}
@@ -42,7 +42,7 @@ We recall the following definitions.
 
 \begin{mainbox}{}
     \begin{defi}
-        A A finitely complete category $\mathcal{A}$ is said to be \textbf{regular} if
+        A finitely complete category $\mathcal{A}$ is said to be \textbf{regular} if
         \begin{itemize}
             \item Every morphism in $\mathcal{A}$ admits an (regular epi, mono) factorization;
             \item Regular epis in $\mathcal{A}$ are pullback stable.
