@@ -14,7 +14,7 @@ Let $\mathcal{E}$ be a finitely complete category. A \textbf{subobject classifie
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAGUQBfU9TXfIRQBGclVqMWbADrSAtnRwALAEYAzYMK7deIDNjwEiZYePrNWiEAEEdfA4KKjT1c1KuyA8nJgBzOtziMFC+8ESgagBOEHJIZCA4EEhaulExcdSJSABMmXRYDGw4+YWukpYgsdQMdCowDAAK-IZCIJFYvko4diBpsYi5CUmIAMxlFjLSAMZKWAD6nDwR0f2iQ0hjEhNW3VwUXEA
 \begin{tikzcd}
-S \arrow[r] \arrow[d, "m"', tail] & \mathsf{1} \arrow[d, "t"] \\
+S \arrow[r] \arrow[d, "m"', tail] & 1 \arrow[d, "t"] \\
 A \arrow[r, "\chi_S"]             & \Omega                   
 \end{tikzcd}
 \]
@@ -192,13 +192,23 @@ Now we aim to transfer the regularity of a topos to its dual, the cotopos.
 
 \begin{subbox}{}
 \begin{proof}
-    Let $m: S \rightarrowtail A$ be a mono in a topos, let $\chi_S$ be its characteristic morphism and let $t:1 \to \Omega$ be the morphism underlying the subobject classifier. It holds that $m = \mathrm{Eq}(\chi_S,t!^A)$.
+    Let $m: S \rightarrowtail A$ be a mono in a topos, let $\chi_S$ be its characteristic morphism and let $t:1 \to \Omega$ be the morphism underlying the subobject classifier. We aim to prove that $m = \mathrm{Eq}(\chi_S,t!^A)$.
     \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMwVqdJq3YAdGQHkAtjADm9HnxAZseAkQBM4mgxZtEIYhv46hRckcmnZMxfRwALAE6LgAUQCO3AAUcgDG7lgA+gDKpDgAhAB6HACUPBIwUCrwRKAAZp4Qikj2IDgQSIaO0uZJXLz5hcWIVeVIZNVmZVYgBUVIYmUViKUmNSDFNDj0WIzs07M9fc2lbYgdAEYwYFBIALQio1JdYRExIDSM9FuMAAoCusIgnlgq7jjp3EA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMwVqdJq3YAdGQHkAtjADm9HnxAZseAkQBM4mgxZtEIYhv46hRckcmn2AZR4SYUFfCKgAZgCcIRSR7EBwIJENHaXMAQgA9Ll4-QODEKPCkMmizMKsQAKCkMTCIxFCTGJBgmhx6LEZ2Oob8wrTQzMRsgCMYMCgkAFoRCqlcuQBjAAssAH1XGkZ6XsYABQFdYRB-LBUpnDduIA
 \begin{tikzcd}
-{\mathrm{Eq}(\chi_S,t!^A)} \arrow[r, "m", tail] & A \arrow[r, "!^A"] \arrow[rr, "\chi_S"', bend right] & 1 \arrow[r, "t"] & \Omega
+S \arrow[r, "m", tail] & A \arrow[r, "!^A"] \arrow[rr, "\chi_S"', bend right] & 1 \arrow[r, "t"] & \Omega
 \end{tikzcd}
     \]
+    It holds that $\chi_Sm=t!^S=t!^Am$. Thus, it remains to show the universal property of the equalizer. Let $n: X \to A$ be a morphism such that $\chi_S n = t!^A n$. By the universal property of the pullback of the subobject classifier, there exists a unique morphism $t: X \to S$ such that $!^S t = !^X$ and $m t = n$, as wanted.
+    \[
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAGUQBfU9TXfIRRkATFVqMWbAILdeIDNjwEiI8uPrNWiEMTl8lg1aTHVNUnQB1LAeQC2MAOZ19C-sqHIADKS8bJ2iAAGtziMFCO8ESgAGYAThB2SD4gOBBIahJabACEAHqcPLEJSYiZaUgAzGYBbDiu8YlIZKnpiNVZFiDWAMYAFlgA+oXyjaUpFYgtOHRYDHWz8zXZOknUDHQARjAMAAruRjpxWI599UUgY83Uk5nmgfmyF1eIACw3bZnbYFBVKfe5PIhZ4lJDvVrXEDfX6IAC0lX+tR0hBBTTeH2S6ywYECUDocD64RAyy65woXCAA
+\begin{tikzcd}
+X \arrow[rrd, "!^X", bend left] \arrow[rdd, "n", bend right] \arrow[rd, "t", dashed] &                                          &                  \\
+                                                                                     & S \arrow[r, "!^S"] \arrow[d, "m"', tail] & 1 \arrow[d, "t"] \\
+                                                                                     & A \arrow[r, "\chi_S"] \arrow[ru, "!^A"]  & \Omega          
+\end{tikzcd}
+    \]
+
 \end{proof}
 \end{subbox}
 
@@ -255,7 +265,7 @@ A \arrow[rr, "e"] \arrow[rd, "r"', two heads] &                          & B \ar
 
 \begin{subbox}{}
 \begin{proof}
-Consider a cotopos. It is finitely complete by definition. In the dual category of a cotopos, we aim to prove that each morphism admits a (regular mono, epi) factorization. Let $f: A \to B$ be a morphism and consider its factorization (regular epi, mono) $f=me$ given by \Cref{topos is regular}. $e$ is regular epi, thus, by \Cref{reg epi is an epi}, an epi. $m$ is a mono, thus, by \Cref{mono are equalizers in topos}, it is an equalizer, ie a regular mono. Finally, by \Cref{mono are pushot stable}, monos, which are the equalizers by \Cref{mono are equalizers in topos}, are pushout stable. Thus, the cotopos is a regular category.
+Consider a cotopos. It is finitely complete, in fact, by \Cref{topos is finitely cocomplete}, its dual is finitely cocomplete. In the underlying topos, we aim to prove that each morphism admits a (regular mono, epi) factorization. Let $f: A \to B$ be a morphism and consider its factorization (regular epi, mono) $f=me$ given by \Cref{topos is regular}. $e$ is regular epi, thus, by \Cref{reg epi is an epi}, an epi. $m$ is a mono, thus, by \Cref{mono are equalizers in topos}, it is an equalizer, ie a regular mono. Finally, by \Cref{mono are pushot stable}, monos, which are the equalizers by \Cref{mono are equalizers in topos}, are pushout stable. Thus, the cotopos is a regular category.
 \end{proof}
 \end{subbox}
 
