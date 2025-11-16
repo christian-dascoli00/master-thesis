@@ -255,7 +255,40 @@ A \arrow[rr, "e"] \arrow[rd, "r"', two heads] &                          & B \ar
     In a topos, monomorphisms are pushout stable.
 \end{prop}
 \end{mainbox}
-\noindent The proof is contained in \cite{Johnstone1977} \textit{Corollary 1.28}
+
+\begin{subbox}{}
+\begin{proof}
+Given the pushout square
+\[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRRkAjFVqMWbAFrdeIDNjwEiAJnLj6zVohABNOXyWC1pMdS1TdABW7iYUAObwioAGYAnCAFskZEDgQSOoS2mxuhiCePn7UgUgiFpI6IL7UDHQARjAM1vzKQiAeWI4AFjggcXRYDGw41bU87l6+iIkBQYgAzElhuo6R0a0h8d29VuB2XEA
+\begin{tikzcd}
+X \arrow[rr, "f"] \arrow[d, "m"', tail] &  & Y \arrow[d, "n"] \\
+Z \arrow[rr, "g"]                       &  & P               
+\end{tikzcd}\]
+we aim to prove that, if $m$ is a mono, then so is $n$. In order to do that, we construct two morphisms respectively from $Z$ to an object $A$ and from $Y$ to the same object $A$, such that the external square commutes. Then, if the considered morphism from $Y$ to $A$ is a mono, so is $n$. In fact, if a morphism post-composed with an other is a mono, then the first one is also a mono.
+\[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRRkAjFVqMWbAFrdeIDNjwEiAJnLj6zVohABNOXyWC1pMdS1TdABUML+yocgDMpVZsk6QAQW7iYUADm8ESgAGYAThAAtkhkIDgQSOoS2mxhdpExcdSJSCIWnmyx1Ax0AEYwDNYOJroRWIEAFjgguXRYDGw4HV084VGxiAUJSYiuqVYggZmDybljE5ZehP0gWUMjeYgALNSVYFBIALTOxGsb86NIeyAHR+Pn8pfjCzelWGBeUHRwTQF+LhAA
+\begin{tikzcd}
+X \arrow[rr, "f"] \arrow[d, "m"', tail]    &  & Y \arrow[d, "n"] \arrow[rdd, bend left] &   \\
+Z \arrow[rr, "g"] \arrow[rrrd, bend right] &  & P \arrow[rd, dashed]                    &   \\
+                                           &  &                                         & A
+\end{tikzcd}\]
+
+To construct such morphisms, we make use of the universal property of the counit of the exponential adjunction, given by the cartesian closedness of a topos, and the subobject classifier. Consider the the morphisms $\Delta_Y:Y \rightarrowtail Y\times Y$ and $\langle f,m \rangle: X \rightarrowtail Y\times Z$. They are monos, in fact the post-compositions of each of them with their second projection are respectively $1_Y$ and $m$, which are monos. Thus, we can consider their characteristic morphisms $\chi_{Y}$ and $\chi_{\langle f,m \rangle}$ given by the subobject classifier $(\Omega,t)$.
+\[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAE0QBfU9TXfIRRkAjFVqMWbdgB0ZeALbwABJx59seAkRHlx9Zq0QgR3XiAybBO0mOoGpxuQHklAczpmNA7SgAsevaSRiZeFvxaQsgBdhKGbC7unurhVr7IAMy2+sHScooqAFphlj5RWZRB8cYAGtziMFBu8ESgAGYAThAKSGQgOBBIAEwpnd291ANIunGOIHIAIjAMOHQA+pzUDHQARssAChHWxh1YbgAWOCCTdFgMbKt3YWM9iDNTiFmzIXIAxudYDbPLqvIaTQafKpzK6jEFIADs4KQADYoT8ZNswG4GDBlG1SAplHIOnQsTjriBtnsGIc0kIQKcLjDzC8UUjEABWNEJGT-QHAOSY7G4-EKYmk4VcYHjRABfoQrnfB7S16I+VIPxcChcIA
+\begin{tikzcd}
+Y \arrow[r] \arrow[d, "\Delta_Y"', tail] & 1 \arrow[d, "t"] &  & X \arrow[d, "{\langle f,m \rangle}"'] \arrow[r]    & 1 \arrow[d, "t"] \\
+Y\times Y \arrow[r, "\chi_Y"]            & \Omega           &  & Y\times Z \arrow[r, "{\chi_{\langle f,m\rangle}}"] & \Omega          
+\end{tikzcd}\]
+Then, the universal property of the counit $\epsilon$ of the exponential adjunction gives us the the unique morphism $\alpha: Y \to \Omega^Y$ and $\varphi: Z \to \Omega^Y$, such that respectively $\epsilon_\Omega(Y\times \alpha)=\chi_Y$ and $\epsilon_\Omega(Y\times \varphi)=\chi_{\langle f,m\rangle}$. $\alpha$ and $\varphi$ are the desired morphisms.
+\[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12B5AWxgHM6IAL6l0mXPkIoAjOSq1GLNgE1OePnAAUnXgLoA9FQEoRYkBmx4CROTIX1mrRCDXsN8AAQqz4q1KIAZnlqR2UXXT5BXwsJa2lkABZSe1ClZ1d1LE1PAC0Yy0kbFGTKNKdVLM0dbijDExEFGCh+eCJQADMAJwgeJAAmahwIJDJFCoj2AGMACywAfR9RTp6+xGSQYaRg8fCOabn54E4GOjB+BhhPDtIeT04us4uYYRju3qQ5TZHEMbCMzgwNDYBgEeaRfQgainABGMAYAAU4gEXF0sPwZjg3qskABWIY-Hb-NiA4FYUFgcG1SHQuhwxHI4ogNEYrHLEDvNaDb6faFYMAZKB0OAzZpQ3YZNweOCcRhoGZCWn0pH+JkszHYj7rAl4vkCthCkVi8p7KXZeCcehdeVYcWw+EqorSZnojXCCjCIA
+\begin{tikzcd}
+\Omega & Y\times(\Omega^Y) \arrow[l, "\epsilon_\Omega"']                    &  & \Omega & Y\times(\Omega^Y) \arrow[l, "\epsilon_\Omega"']                                           \\
+       & Y\times Y \arrow[lu, "\chi_Y"] \arrow[u, "Y\times\alpha"', dashed] &  &        & Y\times Z \arrow[lu, "{\chi_{\langle f,m \rangle}}"] \arrow[u, "Y\times\varphi"', dashed]
+\end{tikzcd}\]
+
+We need to show that the external square commutes, ie that $\alpha f = \varphi m$.
+\end{proof}
+\end{subbox}
+
 
 \begin{mainbox}{}
 \begin{prop}\label{cotopos is regular}
