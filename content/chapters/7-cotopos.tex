@@ -278,7 +278,9 @@ To construct such morphisms, we make use of the universal property of the counit
 Y \arrow[r] \arrow[d, "\Delta_Y"', tail] & 1 \arrow[d, "t"] &  & X \arrow[d, "{\langle f,m \rangle}"'] \arrow[r]    & 1 \arrow[d, "t"] \\
 Y\times Y \arrow[r, "\chi_Y"]            & \Omega           &  & Y\times Z \arrow[r, "{\chi_{\langle f,m\rangle}}"] & \Omega          
 \end{tikzcd}\]
-Then, the universal property of the counit $\epsilon$ of the exponential adjunction gives us the the unique morphism $\alpha: Y \to \Omega^Y$ and $\varphi: Z \to \Omega^Y$, such that respectively $\epsilon_\Omega(1_Y\times \alpha)=\chi_Y$ and $\epsilon_\Omega(1_Y\times \varphi)=\chi_{\langle f,m\rangle}$. The morphisms $\alpha$ and $\varphi$ are the ones we were looking for.
+Then, the universal property of the counit $\epsilon$ of the exponential adjunction gives us the unique morphisms
+\[\alpha: Y \to \Omega^Y\]
+\[\varphi: Z \to \Omega^Y\]
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12B5AWxgHM6IAL6l0mXPkIoAjOSq1GLNgE1OePnAAUnXgLoA9FQEoRYkBmx4CROTIX1mrRCDXsN8AAQqz4q1KIAZnlqR2UXXT5BXwsJa2lkABZSe1ClZ1d1LE1PAC0Yy0kbFGTKNKdVLM0dbijDExEFGCh+eCJQADMAJwgeJAAmahwIJDJFCoj2AGMACywAfR9RTp6+xGSQYaRg8fCOabn54E4GOjB+BhhPDtIeT04us4uYYRju3qQ5TZHEMbCMzgwNDYBgEeaRfQgainABGMAYAAU4gEXF0sPwZjg3qskABWIY-Hb-NiA4FYUFgcG1SHQuhwxHI4ogNEYrHLEDvNaDb6faFYMAZKB0OAzZpQ3YZGSLKrwTiMNAzIS0+lI-xMlmY7EfdYEvF8gVsIUisXlPZStweOCcehdBVYcWw+GqorSZnozXCCjCIA
 \begin{tikzcd}
@@ -286,6 +288,7 @@ Then, the universal property of the counit $\epsilon$ of the exponential adjunct
        & Y\times Y \arrow[lu, "\chi_Y"] \arrow[u, "1_Y\times\alpha"', dashed] &  &        & Y\times Z \arrow[lu, "{\chi_{\langle f,m \rangle}}"] \arrow[u, "1_Y\times\varphi"', dashed]
 \end{tikzcd}
 \]
+such that respectively $\epsilon_\Omega(1_Y\times \alpha)=\chi_Y$ and $\epsilon_\Omega(1_Y\times \varphi)=\chi_{\langle f,m\rangle}$. These morphisms are the ones we were looking for.
 
 We still need to show that the external square commutes, ie that $\alpha f = \varphi m$.
 \[
@@ -357,7 +360,7 @@ It remains to show that $\alpha$ is a mono, so that also $n$ is a mono. Let $u,v
 
 \vspace{1.5ex}
 
-Consider the following diagram. The right square is a pullback by the subobject classifier. The two left square are pullbacks as already shown similarly before. Moreover, by the previous equality, the bottom composition commutes. Thus, the whole diagram is a pullback.
+\noindent Consider the following diagram. The right square is a pullback by the subobject classifier. The two left square are pullbacks as already shown similarly before. Moreover, by the previous equality, the bottom composition commutes. Thus, the whole diagram is a pullback.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAGkQBfU9TXfIRRkAjFVqMWbdgB0ZeALbwABAE1uvEBmx4CRAEzlx9Zq0Qh1PPjsEHSY6iannVcxSsubtAvSgDMRo6SZiAiGtY+QsgBDhKmbHIA8koA5nTc4jBQKfBEoABmAE4QCkhkIDgQSIYgcAAWWPk4SCJB8eY0INQMdABGMAwACvy6QiCFWCl1zVYgRSUt1JVIAbUNTUgAtK1xziBMblhKcMoiAPqeBcWliOXLiDtOIXI9YCkMMKdn7KRMynKFOhvD5dEA9fpDEa2cwTKbNaj1RrNB6zeY3Gr3VZPBIyV7vT7nVTKewXf4yQHA1io67VJZVRAAFjaewAhAA9S5zGmIVb3ACszOeMgAxg0LuEuQtGXSkALdiEZpo0WUZYgaoiNohtoK2EwJcqHqrVhrkY9gmwaIdjl91N0+gNhjZfONJtN9dy7vSdiatmb2iAXkD8V8fjQyRT8aCGFgwCE4BBo1AMlwgA
 \begin{tikzcd}
@@ -365,7 +368,6 @@ K \arrow[rr, "v"', shift right] \arrow[d, "{\langle 1_K,u \rangle}"', shift righ
 K\times Y \arrow[rr, "u\times 1_Y", shift left] \arrow[rr, "v\times 1_Y"', shift right]                                                                         &  & Y\times Y \arrow[r, "\chi_Y"]                              & \Omega          
 \end{tikzcd}
 \]
-
 By the universal property of the pullback, there exists a unique $\sigma: K \to K$ such that $\langle 1_K , v \rangle \sigma = \langle 1_K , u \rangle$.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAGkQBfU9TXfIRQAGUsKq1GLNpx59seAkQAs5CfWatEIYt14gMCwUTIAmdVK0cAOtbwBbeAAIAmnvkClKVeeobp2rYA8o4A5nTcEjBQofBEoABmAE4Q9kgAzNQ4EEiqkppstgDGABZYAPouABRMtg7OxJUAlAC8xWWVVTR1WI5wTo0uTSDUDHQARjAMAAr8ikIgDDAJOO4gyalIZCDZSKKLWGBWUHRwJdEj+QEgttih9hFy6ylpiNu7iJkgk2BQSAC06X2-istjGYFCSwG5XYpCYTlsSToEKWlzGkxmc2M2iSWFCJVWTw2r3eOUQpmoPz+n2BljYAEIAHqcUYTKazIxeEC4-GE-TEpAUnZkvIgth8xIvPZZMlfM5YFbSq6g6zgyEwaGwmgI6xIlGsIlSxD7D5C+WK41+OnaJmyChcIA
