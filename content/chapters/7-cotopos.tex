@@ -278,14 +278,104 @@ To construct such morphisms, we make use of the universal property of the counit
 Y \arrow[r] \arrow[d, "\Delta_Y"', tail] & 1 \arrow[d, "t"] &  & X \arrow[d, "{\langle f,m \rangle}"'] \arrow[r]    & 1 \arrow[d, "t"] \\
 Y\times Y \arrow[r, "\chi_Y"]            & \Omega           &  & Y\times Z \arrow[r, "{\chi_{\langle f,m\rangle}}"] & \Omega          
 \end{tikzcd}\]
-Then, the universal property of the counit $\epsilon$ of the exponential adjunction gives us the the unique morphism $\alpha: Y \to \Omega^Y$ and $\varphi: Z \to \Omega^Y$, such that respectively $\epsilon_\Omega(Y\times \alpha)=\chi_Y$ and $\epsilon_\Omega(Y\times \varphi)=\chi_{\langle f,m\rangle}$. $\alpha$ and $\varphi$ are the desired morphisms.
-\[% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12B5AWxgHM6IAL6l0mXPkIoAjOSq1GLNgE1OePnAAUnXgLoA9FQEoRYkBmx4CROTIX1mrRCDXsN8AAQqz4q1KIAZnlqR2UXXT5BXwsJa2lkABZSe1ClZ1d1LE1PAC0Yy0kbFGTKNKdVLM0dbijDExEFGCh+eCJQADMAJwgeJAAmahwIJDJFCoj2AGMACywAfR9RTp6+xGSQYaRg8fCOabn54E4GOjB+BhhPDtIeT04us4uYYRju3qQ5TZHEMbCMzgwNDYBgEeaRfQgainABGMAYAAU4gEXF0sPwZjg3qskABWIY-Hb-NiA4FYUFgcG1SHQuhwxHI4ogNEYrHLEDvNaDb6faFYMAZKB0OAzZpQ3YZNweOCcRhoGZCWn0pH+JkszHYj7rAl4vkCthCkVi8p7KXZeCcehdeVYcWw+EqorSZnojXCCjCIA
+Then, the universal property of the counit $\epsilon$ of the exponential adjunction gives us the the unique morphism $\alpha: Y \to \Omega^Y$ and $\varphi: Z \to \Omega^Y$, such that respectively $\epsilon_\Omega(1_Y\times \alpha)=\chi_Y$ and $\epsilon_\Omega(1_Y\times \varphi)=\chi_{\langle f,m\rangle}$. The morphisms $\alpha$ and $\varphi$ are the ones we were looking for.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12B5AWxgHM6IAL6l0mXPkIoAjOSq1GLNgE1OePnAAUnXgLoA9FQEoRYkBmx4CROTIX1mrRCDXsN8AAQqz4q1KIAZnlqR2UXXT5BXwsJa2lkABZSe1ClZ1d1LE1PAC0Yy0kbFGTKNKdVLM0dbijDExEFGCh+eCJQADMAJwgeJAAmahwIJDJFCoj2AGMACywAfR9RTp6+xGSQYaRg8fCOabn54E4GOjB+BhhPDtIeT04us4uYYRju3qQ5TZHEMbCMzgwNDYBgEeaRfQgainABGMAYAAU4gEXF0sPwZjg3qskABWIY-Hb-NiA4FYUFgcG1SHQuhwxHI4ogNEYrHLEDvNaDb6faFYMAZKB0OAzZpQ3YZGSLKrwTiMNAzIS0+lI-xMlmY7EfdYEvF8gVsIUisXlPZStweOCcehdBVYcWw+GqorSZnozXCCjCIA
 \begin{tikzcd}
-\Omega & Y\times(\Omega^Y) \arrow[l, "\epsilon_\Omega"']                    &  & \Omega & Y\times(\Omega^Y) \arrow[l, "\epsilon_\Omega"']                                           \\
-       & Y\times Y \arrow[lu, "\chi_Y"] \arrow[u, "Y\times\alpha"', dashed] &  &        & Y\times Z \arrow[lu, "{\chi_{\langle f,m \rangle}}"] \arrow[u, "Y\times\varphi"', dashed]
-\end{tikzcd}\]
+\Omega & Y\times(\Omega^Y) \arrow[l, "\epsilon_\Omega"']                      &  & \Omega & Y\times(\Omega^Y) \arrow[l, "\epsilon_\Omega"']                                             \\
+       & Y\times Y \arrow[lu, "\chi_Y"] \arrow[u, "1_Y\times\alpha"', dashed] &  &        & Y\times Z \arrow[lu, "{\chi_{\langle f,m \rangle}}"] \arrow[u, "1_Y\times\varphi"', dashed]
+\end{tikzcd}
+\]
 
-We need to show that the external square commutes, ie that $\alpha f = \varphi m$.
+We still need to show that the external square commutes, ie that $\alpha f = \varphi m$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRRkAjFVqMWbAFrdeIDNjwEiAJnLj6zVohABNOXyWC1pMdS1TdABUML+yocgDMpVZsk6QAHW8B5AFsYAHM6AD1ZLnEYKGD4IlAAMwAnCACkMhAcCCR1CW02RLsUtIzqbKQRC082dOoGOgAjGAZrBxNdZKxggAscEHK6LAY2HCGRniTU9MQqrJzEV3yrEGDi6dzyhaXLL0JJkBKZvIrEABZqZrAoJGdM3bZfRjQeunXS2a2kC5Arm8QALR3aoFXS+ejJF5Yd4zJanH4MLBgLxQOhwHoxAYgBrNVrtFSdbp9bgULhAA
+\begin{tikzcd}
+X \arrow[rr, "f"] \arrow[d, "m"', tail]               &  & Y \arrow[d, "n"] \arrow[rdd, "\alpha", bend left] &          \\
+Z \arrow[rr, "g"] \arrow[rrrd, "\varphi", bend right] &  & P \arrow[rd, dashed]                              &          \\
+                                                      &  &                                                   & \Omega^Z
+\end{tikzcd}
+\]
+In order to prove that, we first prove that the following holds. Let $\chi_Y$ and $\chi_{\langle f,m \rangle}$ be as before, and $\chi_{\langle f,1_X \rangle}$ be the characteristic morphism of the mono $\langle f,1_X \rangle: X \rightarrowtail Y\times X$, then
+\[ \chi_{\langle f,m \rangle}(1_Y\times m)=\chi_{\langle f,1_X \rangle}=\chi_Y(1_Y\times f) \]
+We prove this equality using the subobject classifier. Consider the following commutative squares. They are pullbacks. In fact, for the left one, let $k:V \to X$ and $\langle l_1,l_2\rangle : V \to Y \times X$ be morphisms such that $\langle f,m \rangle k = (1_Y \times m) \langle l_1,l_2\rangle$, then $k:V \to X$ is the unique morphism such that $1_X k = k$ and $\langle f,1_X \rangle k = \langle l_1,l_2\rangle$. For the right one, let $b:W \to Y$ and $\langle a_1, a_2 \rangle : W \to Y \times X$ be morphisms such that $\langle 1_Y, 1_Y \rangle b =(1_Y\times f) \langle a_1, a_2 \rangle$, then $a_2:W \to X$ is the unique morphism such that $\langle f, 1_X \rangle a_2 = \langle a_1, a_2\rangle$ and $fa_2=b$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQAmclVqMWbTjz7Y8BImWHj6zVohABNADo68AW3gACGbxAZ5goqJXU1Uzbv1YjcYwC1u5ywMUoABlIA1UkNEAA1bzk-IWQAFjF7MOloi34FOIBWJIl1Ni0030yiRLs8x209QxMzGJKUHPKHcOca90LZdKt-ZABmYND8zQB1bnEYKABzeCJQADMAJwgDJCCQHAgkMgrw4gB9OpAllbXqTaRRXbY9BjowKYYYY3nyQ+M9RfvH1i6T1cQVwuiAG100By0HxcbmMq2odwARjAGAAFDLWTRPeY4NL-bbnLYg5LDEC3b5PF6kAxQr4PJ645YAxIbQnrBhYMDhKB0OAAC0mIGJlQA1gzTohmcCrkiwFAkABaPrrFo3HR3OnPBj7YjGUjGLXCT7k1jwuhI1Ho-wgRZYKa8nF-RlISWEnYyuUg5UpTSix3inIspAAdiF4TJGspB3YNONYoBAeBADZQ2x5nHgwSkAAOFPg-aQ6quExpv0A5OBxA5sGktXG4wQt4FnS0n7pxAATkziBDIHdCqVuZr6p+xjo2tIY+EMY1gpAiORaJ6Qmttvtbc7FfLfc9g4R667AfnFqXbCxOMHY+Is-ZnLY3L5Aq4FC4QA
+\begin{tikzcd}
+V \arrow[rd, "k", dashed] \arrow[rdd, "{\langle l_1 , l_2\rangle}"', bend right] \arrow[rrd, "k", bend left] &                                                         &                                      & W \arrow[rdd, "{\langle a_1,a_2 \rangle}"', bend right] \arrow[rrd, "b", bend left] \arrow[rd, "a_1", dashed] &                                                       &                                          \\
+                                                                                                             & X \arrow[r, "1_X"] \arrow[d, "{\langle f,1_X \rangle}"] & X \arrow[d, "{\langle f,m \rangle}"] &                                                                                                               & X \arrow[d, "{\langle f,1_X \rangle}"] \arrow[r, "f"] & Y \arrow[d, "{\langle 1_Y,1_Y \rangle}"] \\
+                                                                                                             & Y\times X \arrow[r, "1_Y \times m"]                     & Y\times Z                            &                                                                                                               & Y\times X \arrow[r, "1_Y \times f"]                   & Y\times Y                               
+\end{tikzcd}
+\]
+Thus, the following squares are pullbacks.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGclVqMWbTjz7Y8BImWHj6zVohABNADo68AW3gACGbxAZ5goqJXU1Uzbv1YjcYwC1u5ywMUoAZjF7SQ0Obzk-IWQAFmCJdTYtCIt+BWiguwTHbT1DEzNI9KI4rIcw53z3ZNlUq39kACZ48rZhFN9ilGay0LY9AHkjAHM6DrTrFABWUl7EzUGRsdrOyeQZyhD5kHaucRgoYfgiUAAzACcIAyQyEBwIJFFssOEAfUKQC6ub6nukZue-R0DDoYGGDBgxlOs3exj051B4NYtS+10QAL+iCCgM0by0cJcbmM12oIIARjAGAAFCb+EAQ044FKox6-B5YrY5PQgsEQqGkAwEhG85HmFmIOJ3dkANk5YW5iL50Le7CFitFZ0uaMlmJmOM+zK1SFlUqQAHY5W1Xvi8q4TKdDd9EHrMRb9QqRcY8TCbTphUjHWiABxspAATktmiZKKNiGET0xwlurSjgaQLvZ8cjIAAhAA9Gpi2NuxPJvoLHQAYwAFlhrWmOabEBH3VXa69gB6kfzBfD1VwGwn2SH9fmPuKMeyWxSwFAkABaAJl7Z6Gt1zvA9X8lVqkUD0l0CnU2lCEDnLDDavRotOk2l6gzueIRfLrlt9ddpUw1V9vcgA9HjS9Snuel7XpqTq3JiI6PkgS7ZmODY6pmTywVir5hIhexcEAA
+\begin{tikzcd}
+X \arrow[r, "1_X"] \arrow[d, "{\langle f,1_X \rangle}"] \arrow[rr, "!^X", bend left]          & X \arrow[d, "{\langle f,m \rangle}"] \arrow[r, "!^X"] & 1 \arrow[d, "t"] & X \arrow[d, "{\langle f,1_X \rangle}"] \arrow[r, "f"] \arrow[rr, "!^X", bend left]            & Y \arrow[d, "{\langle 1_Y,1_Y \rangle}"] \arrow[r, "!^Y"] & 1 \arrow[d, "t"] \\
+Y\times X \arrow[r, "1_Y \times m"] \arrow[rr, "{\chi_{\langle f,1_X \rangle}}"', bend right] & Y\times Z \arrow[r, "{\chi_{\langle f,m \rangle}}"]   & \Omega           & Y\times X \arrow[r, "1_Y \times f"] \arrow[rr, "{\chi_{\langle f,1_X \rangle}}"', bend right] & Y\times Y \arrow[r, "\chi_Y"]                             & \Omega          
+\end{tikzcd}
+\]
+Since $(\Omega,t)$ is a subobject classifier, given the mono $\langle f,1_X \rangle$, there exists a unique morphism from $Y \times X$ to $\Omega$ making the squares pullbacks, thus
+\[ \chi_{\langle f,m \rangle}(1_Y\times m)=\chi_{\langle f,1_X \rangle}=\chi_Y(1_Y\times f) \]
+
+Now, we can finally prove that $\alpha f = \varphi m$. By the universal property of the counit, there exists a unique morphism $\psi: X \to \Omega^Y$ such that $\epsilon_\Omega(1_Y\times \psi)= \chi_{\langle f,1_X \rangle}$. Observe that both $\alpha f$ and $\varphi m$ satisfy this property. In fact, by definition of $\alpha$ and $\varphi$
+\begin{itemize}[itemsep=1.5ex]
+    \item $\epsilon_\Omega (1_Y \times \alpha) (1_Y \times f) = \chi_Y (1_Y \times f) = \chi_{\langle f,1_X \rangle}$
+    \item $\epsilon_\Omega (1_Y \times \varphi) (1_Y \times m) = \chi_{\langle f,m \rangle}(1_Y\times m) = \chi_{\langle f,1_X \rangle}$
+\end{itemize}
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12B5AWxgHM6IAL6l0mXPkIoAjOSq1GLNgE1OePnAAUnXgLoA9FQEoRYkBmx4CROTIX1mrRCDXsN8AAQqz4q1NtSACYHJWdXdSxNTwANXwsJa2lkIPlqR2UXXT5BeMtJGxQAZjTFJ1VIzR1uHMMTPMSA4uDQ8pc3DzhYhv9C5BL7dLCK9yivAC0eguSAFlKM8Oz9KaSiAFZ54fbK+Gq9QSNTUT9p9ZahtojR6LjhBRgofngiUAAzACcIHiRUkBwIJByMqZEAyAD6Kk8Oy6nEYaAAFkJqAw6AAjGAMAAKjUKIHeWH48Jw8Q+XyQJT+AMQvwWbHBkOhnleIGRaIx2N60jxBKJJM+30QAHZqP8kBtgeF6VDrl5OPR3gisCyQCj0VicVz8YTiccQKSBQA2EVU4USukQ6WdTzfVlqjmnFxa3m6-VII2UpBzEDosBQclkM1ZdgAY3hWDBwE4KLA-AYMCZpHBMWl7zoMbjwj5ZKFxs91B9fsQRQDtKDofDkfY0dj8depB4KbTNcztvZGrYTp15ld1NziADBf9FxBnHLEOVqrbnI7PK7b355L7A5gvqHgY4IbDEajTbjCaTjfTMEzLoXiBkAdFiAAnMPJRboZw0NgJ2z1dPHbOswKL32ABx3mwo5bpW1Z7nWB6cKmR4tt6K6FsWp7ZreHqIAB66cDAz5YAwBBgksuStu+Drctq36AkugFBlh2C4WA+E1MsRH2qsn5kUhArileXqlhuNE4XhBFIiqb4sU0pHOhQwhAA
+\begin{tikzcd}
+\Omega & Y\times(\Omega^Y) \arrow[l, "\epsilon_\Omega"']                                               & \Omega & Y\times(\Omega^Y) \arrow[l, "\epsilon_\Omega"']                                                   & \Omega & Y\times(\Omega^Y) \arrow[l, "\epsilon_\Omega"']                                                  \\
+       & Y\times Y \arrow[u, "1_Y \times \alpha"'] \arrow[lu, "\chi_Y"', bend left]                    &        & Y\times Z \arrow[u, "1_Y \times \varphi"'] \arrow[lu, "{\chi_{\langle f,m \rangle}}"', bend left] &        &                                                                                                  \\
+       & Y\times X \arrow[u, "1_Y \times f"'] \arrow[luu, "{\chi_{\langle f,1_X \rangle}}", bend left] &        & Y\times X \arrow[u, "1_Y \times m"'] \arrow[luu, "{\chi_{\langle f,1_X \rangle}}", bend left]     &        & Y\times X \arrow[uu, "1_Y \times\psi"'] \arrow[luu, "{\chi_{\langle f,1_X \rangle}}", bend left]
+\end{tikzcd}
+\]
+So, by uniqueness, $\alpha f = \psi = \varphi m$.
+
+It remains to show that $\alpha$ is a mono, so that also $n$ is a mono. Let $u,v: K \to Y$ be morphisms such that $\alpha u = \alpha v$. Then, by the universal property of the counit, we have that
+
+\begin{minipage}{0.55\textwidth}
+\begin{align*} 
+    \chi_Y(1_Y \times u) &= \epsilon_\Omega(1_Y \times \alpha)(1_Y \times u) \\[1.5ex]
+    &= \epsilon_\Omega(1_Y \times \alpha u) \\[1.5ex]
+    &= \epsilon_\Omega(1_Y \times \alpha v) \\[1.5ex]
+    & = \epsilon_\Omega(1_Y \times \alpha)(1_Y \times v) \\[1.5ex]
+    & = \chi_Y(1_Y \times v)
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.35\textwidth}
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12B5AWxgHM6IAL6l0mXPkIoAjOSq1GLNgE1OePnAAUnXgLoA9FQEoRYkBmx4CROTIX1mrRCDXsN8AAQqz4q1NtSACYHJWdXdSxNTwBpEQUYKH54IlAAMwAnCB4kIOocCCQyRSc2TgBjAAssAH0fUXSsnMQ5EAKi6kdlF04YNGwGAhrdPkEQagY6ACMYBgAFCWtpEAysfkqcXxBM7Nz8wpaJrDBwqDo4SsTxku6QGTrIzU5GNEqhCenZhf8bF1X1zYNbZNJAAZn2exu4XuKk8jy8TGukxm80WARcDBgaU21AuWGxSAAtDIgTtmuC2gc8iA8QTDlC2DC4e4ol4aEjPqifst-ht4sIgA
+\begin{tikzcd}
+\Omega & Y\times(\Omega^Y) \arrow[l, "\epsilon_\Omega"']                                         \\
+       & Y\times Y \arrow[lu, "\chi_Y"] \arrow[u, "1_Y\times\alpha"', dashed]                    \\
+       & Y\times K \arrow[u, "1_Y \times u", shift left] \arrow[u, "1_Y \times v"', shift right]
+\end{tikzcd}
+\]
+\end{minipage}
+
+\vspace{1.5ex}
+
+Consider the following diagram. The right square is a pullback by the subobject classifier. The two left square are pullbacks as already shown similarly before. Moreover, by the previous equality, the bottom composition commutes. Thus, the whole diagram is a pullback.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAGkQBfU9TXfIRRkAjFVqMWbdgB0ZeALbwABAE1uvEBmx4CRAEzlx9Zq0Qh1PPjsEHSY6iannVcxSsubtAvSgDMRo6SZiAiGtY+QsgBDhKmbHIA8koA5nTc4jBQKfBEoABmAE4QCkhkIDgQSIYgcAAWWPk4SCJB8eY0INQMdABGMAwACvy6QiCFWCl1zVYgRSUt1JVIAbUNTUgAtK1xziBMblhKcMoiAPqeBcWliOXLiDtOIXI9YCkMMKdn7KRMynKFOhvD5dEA9fpDEa2cwTKbNaj1RrNB6zeY3Gr3VZPBIyV7vT7nVTKewXf4yQHA1io67VJZVRAAFjaewAhAA9S5zGmIVb3ACszOeMgAxg0LuEuQtGXSkALdiEZpo0WUZYgaoiNohtoK2EwJcqHqrVhrkY9gmwaIdjl91N0+gNhjZfONJtN9dy7vSdiatmb2iAXkD8V8fjQyRT8aCGFgwCE4BBo1AMlwgA
+\begin{tikzcd}
+K \arrow[rr, "v"', shift right] \arrow[d, "{\langle 1_K,u \rangle}"', shift right] \arrow[rr, "u", shift left] \arrow[d, "{\langle 1_K,v \rangle}", shift left] &  & Y \arrow[d, "{\langle 1_Y ,1_Y \rangle}"] \arrow[r, "!^Y"] & 1 \arrow[d, "t"] \\
+K\times Y \arrow[rr, "u\times 1_Y", shift left] \arrow[rr, "v\times 1_Y"', shift right]                                                                         &  & Y\times Y \arrow[r, "\chi_Y"]                              & \Omega          
+\end{tikzcd}
+\]
+
+By the universal property of the pullback, there exists a unique $\sigma: K \to K$ such that $\langle 1_K , v \rangle \sigma = \langle 1_K , u \rangle$.
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAGkQBfU9TXfIRQAGUsKq1GLNpx59seAkQAs5CfWatEIYt14gMCwUTIAmdVK0cAOtbwBbeAAIAmnvkClKVeeobp2rYA8o4A5nTcEjBQofBEoABmAE4Q9kgAzNQ4EEiqkppstgDGABZYAPouABRMtg7OxJUAlAC8xWWVVTR1WI5wTo0uTSDUDHQARjAMAAr8ikIgDDAJOO4gyalIZCDZSKKLWGBWUHRwJdEj+QEgttih9hFy6ylpiNu7iJkgk2BQSAC06X2-istjGYFCSwG5XYpCYTlsSToEKWlzGkxmc2M2iSWFCJVWTw2r3eOUQpmoPz+n2BljYAEIAHqcUYTKazIxeEC4-GE-TEpAUnZkvIgth8xIvPZZMlfM5YFbSq6g6zgyEwaGwmgI6xIlGsIlSxD7D5C+WK41+OnaJmyChcIA
+\begin{tikzcd}
+K \arrow[rd, "\sigma", dashed] \arrow[rdd, "{\langle 1_K,u \rangle}"', bend right] \arrow[rrrrd, "!^K"', bend left] &                                                                  &  &  &                  \\
+                                                                                                                    & K \arrow[d, "{\langle 1_K,v \rangle}"] \arrow[rrr, "!^K"]        &  &  & 1 \arrow[d, "t"] \\
+                                                                                                                    & K\times Y \arrow[rrr, "\chi_Y(u\times 1_Y)=\chi_Y(v\times 1_Y)"] &  &  & \Omega          
+\end{tikzcd}
+\]
+So, $1_K \sigma = 1_K$, ie $\sigma = 1_K$, and $v\sigma=u$, ie $v=u$. Thus, $\alpha$ is a mono. This concludes the proof.
 \end{proof}
 \end{subbox}
 
