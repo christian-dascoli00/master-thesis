@@ -133,29 +133,7 @@ Finally
 \begin{proof}
     First, recall that the forgetful functor $U$ from a slice category of $\mathcal{A}$ to $\mathcal{A}$ creates all the colimits that $\mathcal{A}$ has, by \Cref{U creates con lim}. Thus, given $q: X \to Y$ coequalizer in a category $\mathcal{A}$, it yields that $q: (X,q) \to (Y,1_Y)$ is a coequalizer in the slice category $(\mathcal{A} \downarrow Y)$.
 
-    Let $f: E \to Y$ be a morphism in $\mathcal{A}$. Let $q: X \to Y$ be the coequalizer of a pair $(a,b)$. Suppose that $q$ is a pullback stable coequalizer. Consider the action of the pullback functor $f^*: (\mathcal{A} \downarrow Y) \to (\mathcal{A} \downarrow E)$ on $q$, $a$ and $b$.
-    \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQANEAX1PU1z5CKACwVqdJq3YBNHnxAZseAkTIAGCQxZtEIAKIAdQ3gC28APoyuvfsqFExmmtul6jJrObhW5txQIqwsjq4i5SuiAAWvJ2gqoooc6SOuweZpYyMf5K8cFkxFoRsrEB9gkkpADMRanuPBIwUADm8ESgAGYAThCmSKEgOBBI5OF1IACOpd29SGSDw4hVY24gHQB6AFQAFBMAlNM9fYjzQ-0rkcam9DgAFl2mwGg9AFbcFsBkHNyHs4gArDQzicaHBblgOjgkABaUYpVYbHb0A7+GbHMQLc4gMEQqGIWEXdj0X7HQGYxAY1yXQzXO4PJ6vd6fUhRH6oo5IDHAgY4yEjQl6ABGIBojHogpgjAACoEHHoulhmrcoey-mTgfNeXi4VT2IjtoKDqLxZKZeVhCAFUqVQo0VjgQA2AWTEmcoGLJ0gCVgKAwqoDXV6Cb0AC8E2Fxol0tlCUtiuVrsQcMdNG9vqWAeKenIVkTAHZ3UhPYG1iKQGKo2a8uwrQnVcdTosC16YD6-ZnxlcbvdHs8IG8PqNvmWK6aYxbazbOhyloWk86u3Te4yPmQZD9I2PzTX41O1jP1U3U6309CHR3Vouewz+0zRqyRybo9v5bvE8tyc200WL9Tade+wHYBRnXBpuCAA
-\begin{tikzcd}
-\arrow[from=1-3, to=4-3,"{\mathrm{proj}_{1,X}}"', bend right, pos=0.54]
-E\times_YZ \arrow[rr, "f^*(a)", shift left] \arrow[d, "{\mathrm{proj}_{2,Z}}"] \arrow[rr, "f^*(b)"', shift right] \arrow[rrddd, "{\mathrm{proj}_{1,Z}}"', bend right=95] &  & E\times_YX \arrow[rr, "f^*(q)"] \arrow[d, "{\mathrm{proj}_{2,X}}"]  &  & E\times_YY \arrow[d, "{\mathrm{proj}_{2,Y}}"'] \arrow[llddd, "{\mathrm{proj}_{1,Y}}", bend left=95] \\
-Z \arrow[rr, "a", shift left, crossing over] \arrow[rr, "b"', shift right, crossing over] \arrow[rrd, "qa=qb"', bend right, crossing over]                                                                            &  & X \arrow[rr, "q"] \arrow[d, "q"]                                                                                     &  & Y \arrow[lld, "1_Y", bend left]                                                                     \\
-                                                                                                                                                                         &  & Y                                                                                                                    &  &                                                                                                     \\
-                                                                                                                                                                         &  & E \arrow[u, "f"']                                                                                                    &  &                                                                                                    
-\end{tikzcd}
-    \]
-    By \Cref{p^*(f) is a pullback}, the top squares are pullbacks. Since the coequalizer $q$ is pullback stable, then $f^*(q)$ is a coequalizer of $(f^*(a), f^*(b))$ in $\mathcal{A}$. Since the forgetful functor $U$ creates all the colimits that $\mathcal{A}$ has, it follows the statement in $(\mathcal{A} \downarrow E)$.
-
-    Conversely, we aim to prove that $q$ is pullback stable, ie if $q$ is the coequalizer of $(a,b)$ then $q'$ is the coequalizer of $(a',b')$ in the pullback squares
-    \[
-    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQANEAX1PU1z5CKACwVqdJq3YBNHnxAZseAkTEAGCQxZtEIAKLz+yoUTKaa26Xv0AdW3gC28APoyuvY4NUp14y1K6IABaRooCKsLIfhaSOux2DljOcG4eEjBQAObwRKAAZgBOEI5IZCA4EEjkAfF6+WFFJUh+FVWINXHWIACOjcWliADMNJUtniBNgyNtZbXdPQDk-c2IAKyj7TNwABZY+ThIALSdVkH0yxNTSBuzwzS7+4cd80EARss0jPRvMIwAChFTHpClgsjtDlcBkgxHdWo8DsdToF2PQVoNYWNEPC9oiXl13iAvj8-oCTD4QKDwZCFNd1psYdxKNwgA
-\begin{tikzcd}
-E\times_YX \arrow[rr, "a'", shift left] \arrow[rr, "b'"', shift right] \arrow[d] &  & E\times_YX \arrow[d] \arrow[rr, "q'"] &  & E \arrow[d, "f"] \\
-Z \arrow[rr, "a", shift left] \arrow[rr, "b"', shift right]                      &  & X \arrow[rr, "q"]                     &  & Y               
-\end{tikzcd}
-    \]
-    We aim to show that the pullback of $q$ along $f$ is the same as the one resulting by \Cref{p^*(f) is a pullback} between $f^*(q)$ and $q$, so that $f^*(q)=q'$. Then, consequently, the same happens for the left diagram, so that $f^*(a)=a'$ and $f^*(b)=b'$.
-    In order to prove that those pullbacks of $f$ are the same, we first need to focus on the pullback $E\times_YY$ of $f$ along $1_Y$. In particular, since one morphism is the identity, it turns out that $E\times_YY \cong E$ with the projections $\mathrm{proj}_{1,Y} = 1_E$ and $\mathrm{proj}_{2,Y} = f$. Thus, the pullback between $q$ and $f^*(q)$ is the same as the one between $q$ and $f$. We obtain the following diagram.
+    Let $f: E \to Y$ be a morphism in $\mathcal{A}$. Let $q: X \to Y$ be the coequalizer of a pair $(a,b)$. The right upper square, obtained via pullback functor along $f$, is also the pullback of $q$ along $f$ in $\mathcal{A}$. So, if $q$ is a pullback stable coequalizer in $\mathcal{A}$, then $f^*(q)$ is also a coequalizer, and since it lives in $(A \downarrow Y)$, then it is also a coequalizer there.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQANEAX1PU1z5CKACwVqdJq3YBNHnxAZseAkTIAGCQxZtEIAKIAdQ3gC28APoyuvfsqFExmmtul6jJrObhW5txQIqwsjq4i5SuiAAWvJ2gqoooc6SOuweZpYyMf5K8cFkxFoRsrEB9gkkpADMRanuPBIwUADm8ESgAGYAThCmSKEgOBBI5OF1IACOpd29SGSDw4hVY24gHQB6AFQAFBMAlNM9fYjzQ-0rkcam9DgAFl2mwGg9AFbcFsBkHNyHs4gArDQzicaHBblgOjgkABaUYpVYbHb0A7+GbHMQLc4gMEQqGIWEXdj0X7HQGYxAY1yXQzXO4PJ6vd6fUhRH6oo5IDHAgY4yEjQl6ABGIBojHogpgjAACoEHHoulhmrcoey-mTgfNeXi4VT2IjtoKDqLxZKZeVhCAFUqVQo0VjgQA2AWTEmcoGLJ0gCVgKAwqoDXV6Cb0AC8E2Fxol0tlCUtiuVrsQcMdNG9vqWAeKenIVkTAHZ3UhPYG1iKQGKo2a8uwrQnVcdTosC16YD6-ZnxlcbvdHs8IG8PqNvmWK6aYxbazbOhyloWk86u3Te4yPmQZD9I2PzTX41O1jP1U3U6309CHR3Vouewz+0zRqyRybo9v5bvE8tyc200WL9Tade+wHYBRnXBpuCAA
 \begin{tikzcd}
@@ -166,7 +144,8 @@ Z \arrow[rr, "a", shift left, crossing over] \arrow[rr, "b"', shift right, cross
                                                                                                                                                                          &  & E \arrow[u, "f"']                                                                                                    &  &                                                                                                    
 \end{tikzcd}
     \]
-    Then, since the coequalizer $q:(X,q) \to (Y,1_Y)$ of $(a,b)$ is preserved by the pullback functor $f^*$, it follows that $q'$ is the coequalizer of $(a',b')$ in the slice category. Since $\mathcal{A}$ is finitely complete, one can prove that a coequalizer in the slice category is also a coequalizer in $\mathcal{A}$, using binary products in order to show the universal property in $\mathcal{A}$. In fact, let $s:(Z,z) \to (W,w)$ be a coequalizer in the slice category, we aim to prove the universal property for $s$ as morphism in $\mathcal{A}$. Given a morphism $h:Z \to V$ in $\mathcal{A}$, one can form the morphism $\langle h,z\rangle: (Z,z) \to (V \times W, \mathrm{proj}_2)$ in the slice. Then the universal property for $s$ in the $\mathcal{A}$ follows from the one for $s$ in the slice. Hence $q'$ is the coequalizer of $(a',b')$ in $\mathcal{A}$, ie $q$ is a pullback stable coequalizer.
+
+    Conversely, if $f^*(q)$ is a coequalizer in $(A \downarrow Y)$, then it is also a coequalizer in $\mathcal{A}$. This is due to the fact that $\mathcal{A}$ is finitely complete. In fact, consider the coequalizer $f^*(q) : (E \times_Y X, \mathrm{proj}_{2,X}) \to (E,1_E)$, we aim to prove the universal property for $f^*(q)$ as morphism in $\mathcal{A}$. Given a morphism $h: E \times_Y X \to V$ in $\mathcal{A}$, one can form the morphism $\langle h,\mathrm{proj}_{2,X}\rangle: (E \times_Y X, \mathrm{proj}_{2,X}) \to (E,1_E) \to (V \times X, \mathrm{proj}_2)$ in the slice. Then the universal property for $f^*(q)$ in the $\mathcal{A}$ follows from the one for $f^*(q)$ in the slice.
 \end{proof}
 \end{subbox}
 
@@ -682,7 +661,7 @@ By the mentioned theorem, given an object $A$ in $\mathsf{Set}^\mathrm{op}$, we 
 \text{regular epis in } \mathsf{Set}^\mathrm{op} \\
 \text{with domain} \ A
 \end{array}
-\right\} \ \ \ \ \ \ \ \  \longleftrightarrow \ \ \ \ \ \ \ \  
+\right\} \ \ \ \ \ \  \longleftrightarrow \ \ \ \ \ \  
 \left\{
 \begin{array}{c}
 \text{Classes of iso of} \\
@@ -691,13 +670,13 @@ By the mentioned theorem, given an object $A$ in $\mathsf{Set}^\mathrm{op}$, we 
 \end{array}
 \right\}
 \]
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.45\textwidth}
 \[ \rotatebox{90}{$\in$} \]
 \[
 \big[ \ A  \twoheadrightarrow  B \  \big]
 \]
 \end{minipage}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.6\textwidth}
 \[ \rotatebox{90}{$\in$} \]
 \[\big[ \ {(C,c)} \rightarrowtail U(A) \  \big]
 \]
@@ -734,31 +713,39 @@ Thus $\mathrm{Quot}(A)$ consists in $\mathsf{Set}$ of all the injective function
 
 On the other hand, $\mathrm{NSub}(U(A))$ are the kernels of some morphism in $(\mathsf{Set}^\bullet)^\mathrm{op}$ with domain $U(A)$. Recall that $U(A) = (\{*\} \sqcup A, *)$. Thus $\mathrm{NSub}(U(A))$ are the cokernels of some morphism in $\mathsf{Set}^\bullet$ with codomain $(\{*\} \sqcup A, *)$.
 
-We can conclude that the class of iso of injective functions with codomain $A$ is in bijection with the class of iso of cokernels with domain $(\{*\} \sqcup A, *)$.
+We can conclude that the class of iso of injective functions with codomain $A$ is in bijection with the class of iso of cokernels with domain $(\{*\} \sqcup A, *)$. One can be even more precise. For every injective function $f: B \rightarrowtail A$, there is a corresponding surjective function
+\begin{align*}
+\bar{f} : \big(A \sqcup \{*\} , *\big) &\twoheadrightarrow  \big((A \setminus f(B)) \sqcup \{*\}, *\big) \\[1ex]
+a &\mapsto
+\begin{cases}
+    * & \text{if } a \in f(B) \\
+    a & \text{otherwise}
+\end{cases}
+\end{align*}
+It holds that $\bar{f}=\mathrm{Coker}(f)$.
+Conversely, every surjective function $g: (A \sqcup \{*\} , *) \twoheadrightarrow (C,c)$, has a corresponding injective function, namely the inclusion
 \[
+g^{-1}(c) \cap A \rightarrowtail A
+\]
+These two correspondences are mutually inverse to each other (up to iso).
+
+\begin{align*}
 \left\{
 \begin{array}{c}
 \text{Classes of iso of} \\
 \text{injective functions in } \mathsf{Set} \\
 \text{with codomain} \ A
 \end{array}
-\right\} \ \  \longleftrightarrow \ \ 
+\right\} \ \  &\longleftrightarrow \ \ 
 \left\{
 \begin{array}{c}
 \text{Classes of iso of} \\
 \text{cokernels in } \mathsf{Set^\bullet} \\
 \text{with domain} \ (\{*\} \sqcup A, *)
 \end{array}
-\right\}
-\]
-\begin{minipage}{0.5\textwidth}
-\[ \rotatebox{90}{$\in$} \]
-\[
-\big[ \ B \rightarrowtail  A \  \big]
-\]
-\end{minipage}
-\begin{minipage}{0.5\textwidth}
-\[ \rotatebox{90}{$\in$} \]
-\[\big[ \ {(\{*\} \sqcup A, *)} \twoheadrightarrow {(C,c)} \  \big]
-\]
-\end{minipage}
+\right\} \\[2ex]
+    \Big[ \ f: B \rightarrowtail  A \  \Big] \ \ \ \ \ &\longmapsto \ \ \ \ \ \Big[ \ \bar{f} \ \Big] \\[1ex]
+    \Big[ \ g^{-1}(c) \cap A \rightarrowtail A \ \Big]
+    \ \ \ \ \ &\longmapsfrom \ \ \ \ \
+     \Big[ \ g : (A \sqcup \{*\} , *) \twoheadrightarrow (C,c) \ \Big]
+\end{align*}
