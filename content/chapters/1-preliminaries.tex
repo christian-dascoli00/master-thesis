@@ -6,12 +6,12 @@
 
 \fontsize{12}{14.5}\selectfont
 
-In order to understand the notions introduced in this thesis is important to recall some definitions and constructions. We also take this opportunity to introduce and fix some notations.
+In order to understand the notions introduced in this thesis it is important to recall some definitions and constructions. We also take this opportunity to introduce and fix some notations.
 
-First we define some categories that will be used throughout the thesis. Let $\mathcal{A}$ be a category, we defines the following categories.
+First we recall some basic constructions on a category $\mathcal{A}$ that will be used throughout the thesis.
 
 \begin{itemize}
-    \item The \textbf{slice category}: given an object $B$ in the category $\mathcal{A}$, we call $(\mathcal{A} \downarrow B)$ the category of objects over $E$, we denote an object by $(A, \alpha:A \to B)$. A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $f: A \to A'$ such that $\alpha' f = \alpha$.
+    \item The \textbf{slice category}: given an object $B$ in the category $\mathcal{A}$, we call $(\mathcal{A} \downarrow B)$ the category of objects over $B$, we denote an object by $(A, \alpha:A \to B)$. A morphism between two objects $(A, \alpha)$ and $(A', \alpha')$ is a morphism $f: A \to A'$ such that $\alpha' f = \alpha$.
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRRkAjFVqMWbAELdeIDNjwEiAJnLj6zVog5y+SwUQDMG6lqm72Acn0L+yocnVjzknSFldxMKAHN4IlAAMwAnCABbJDIQHAgkETdtNgAdFMY0AAs6OzDIpHVY+MRTCWTdYNzwqMRCuKQAFiTLEDSM7Kr8kup6xCaylraGLLpbby4gA
     \begin{tikzcd}
@@ -27,7 +27,7 @@ First we define some categories that will be used throughout the thesis. Let $\m
     A                     &  & A \arrow[r, "f"]                            & A'
     \end{tikzcd}
     \]
-    \item The \textbf{category of points}: given an object $B$ in the category $\mathcal{A}$, we call $\mathrm{Pt}(B)$ the category of points of $B$, we denote an object by $(A,B,p,s)$ which is a diagram of the type $A \overset{p}{\underset{s}{\rightleftarrows}} B$ with the condition $ps=1_B$. Morphisms between two objects $(A,B,p,s)$ and $(A',B',p',s')$ are diagrams of the type 
+    \item The \textbf{category of points} over $B$: given an object $B$ in the category $\mathcal{A}$, we call $\mathrm{Pt}(B)$ the category of points of $B$, we denote an object by $(A,p,s)$ which is a diagram of the type $A \overset{p}{\underset{s}{\rightleftarrows}} B$ with the condition $ps=1_B$. Morphisms between two objects $(A,p,s)$ and $(A',p',s')$ are diagrams of the type 
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGUsKq1GLNgCFuvEBmx4CRAEzkJ9Zq0QcA5NwkwoAc3hFQAMwBOEALZIyIHBCSiQcABZYrOd9Ta0npoINQMdABGMAwACvwqQiA2WKZe-jzWdo6IGi5uiB7evv6FgVK6iobhUTHxyoJsKWkZCrYOAflIecV+nRHRcQmNes3pYZI6bHCGmSDtOR6uTtS9pR5BlQg1g-UCqqOp43MLK1255VN6VkZcQA
     \begin{tikzcd}
@@ -38,7 +38,11 @@ First we define some categories that will be used throughout the thesis. Let $\m
     with the conditions $p'f=p$ and $fs=s'$
 \end{itemize}
 
-We recall the following definitions.
+We recall that a regular epimorphism is the
+coequalizer of some pair of arrows and, in a finitely complete category,
+a morphism is a regular epi if and only if it is the coequalizer of its
+kernel pair. We recall also a few definitions that are relevant to the
+present work. For a more detailed account, the reader can refer to \cite{BorceuxBourn2004}.
 
 \begin{mainbox}{}
     \begin{defi}
@@ -72,7 +76,7 @@ A \arrow[d, "p", shift left] & {} \arrow[r, "f^*", maps to, shift right=7] & {} 
 B \arrow[u, "s", shift left] &                                             &    &                                                                                                                      & B' \arrow[rr, "f"]                                                     &  & B \arrow[u, "s", shift left]
 \end{tikzcd}
 \]
-where $\langle 1_{B'},sf \rangle$ is the section of $\mathrm{proj}_1$. It holds that $(\mathrm{proj}_1) \langle 1_{B'},sf \rangle = 1_{B'}$. The action on a morphism $\alpha: A \to A'$ is given by
+where $\langle 1_{B'},sf \rangle$ is induced by the universal property of the pullback $B'\times_BA$. By construction, it is a section of $\mathrm{proj}_1$. It holds that $(\mathrm{proj}_1) \langle 1_{B'},sf \rangle = 1_{B'}$. The action on a morphism $\alpha: A \to A'$ is described by the following diagram, where $f^*(\alpha)$ is induced by the universal property of the pullback $B'\times_BA'$.
 
 
 \fontsize{11}{13}\selectfont
@@ -84,7 +88,7 @@ where $\langle 1_{B'},sf \rangle$ is the section of $\mathrm{proj}_1$. It holds 
                                                                 &                                   &                                             &    &                                                                                                                                                  &                                                    & B' \arrow[u, "f"] \arrow[lluu, "{\langle 1_{B'},sf\rangle}", bend left, shift left] \arrow[rruu, "{\langle 1_{B'},s'f \rangle}"', bend right, shift right] &                                   &                                                                                                     
     \end{tikzcd}
 \]
-\fontsize{12}{13}\selectfont
+\fontsize{12}{14.5}\selectfont
 \begin{mainbox}{}
     \begin{defi}
         A finitely complete category $\mathcal{A}$ is said to be \textbf{protomodular} if for every morphism $f: A \to B$ in $\mathcal{A}$, the change-of-base functor $f^*: \mathrm{Pt}(B) \to \mathrm{Pt}(A)$ is conservative.
@@ -95,7 +99,7 @@ We conclude recalling the following.
 
 \begin{mainbox}{}
     \begin{defi}
-        A category finitely complete category $\mathcal{A}$ is \textbf{Mal'tsev} if every internal reflexive relation in $\mathcal{A}$ is an equivalence relation.
+        A finitely complete category $\mathcal{A}$ is \textbf{Mal'tsev} if every internal reflexive relation in $\mathcal{A}$ is an equivalence relation.
     \end{defi}
 \end{mainbox}
 

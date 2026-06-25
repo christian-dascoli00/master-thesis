@@ -1,4 +1,4 @@
-\chapter{Lifting results on the E-M categories}
+\chapter{Lifting results on E-M categories}
 
 \fontsize{12}{14.5}\selectfont
 
@@ -14,11 +14,11 @@ We present here some technical results on the Eilenberg-Moore categories. These 
 
 \begin{subbox}{}
     \begin{proof}
-        Assume $\mathcal{X}$ is exact. With the given hypotheses on the monad $T$, we aim to prove that $\mathcal{X}^T$ is exact. We need to establish that it is finitely complete, that each equivalent relation is the kernel pair of some arrow, that regular epis are pullback stable and that each morphism admits a (regular epi, mono) factorization.
+        Assume $\mathcal{X}$ is exact. With the given hypotheses on the monad $T$, we aim to prove that $\mathcal{X}^T$ is exact. We need to establish that it is finitely complete, that each equivalence relation is the kernel pair of some arrow, that regular epis are pullback stable and that each morphism admits a (regular epi, mono) factorization.
 
         First we show that $\mathcal{X}^T$ is finitely complete. We recall that the forgetful functor $U^T:\mathcal{X}^T \to \mathcal{X}$ creates all the limits that $\mathcal{X}$ has. Since $\mathcal{X}$ is exact, it has all finite limits. Therefore, $\mathcal{X}^T$ has all finite limits.
 
-        We proceed to prove that each equivalent relation is the kernel pair of some arrow. Consider an equivalence relation $R$ in $\mathcal{X}^T$ with $\xi_R$ and $\xi_A$ giving the structure of algebras, as in the diagram below. Then, under the forgetful functor $U^T$, $R$ is an equivalence relation in $\mathcal{X}$. $\mathcal{X}$ is exact, so $R$ is the kernel pair of some arrow. In particular, by \Cref{equiv rel is kernel pair of the coeq}, we cas suppose that $R$ is the kernel pair of its coequalizer. Let call it $q:A \to C$. Since $T$ preserves kernel pairs, we have that $T(R)$ is the kernel pair of $T(q)$. Moreover $T$ preserves regular epis, so $T(q)$ is a regular epi. By \Cref{coeq of the kernel pair}, we can assume that $T(q)$ is the coequalizer of its kernel pair $(T(R),T(r_1),T(r_2))$. Since $q\xi_AT(r_1)= qr_1\xi_R = qr_2\xi_R=q\xi_AT(r_2)$, by the universal property of the coequalizer, there exists a unique morphism $\xi_C$ such that $\xi_CT(q) = q\xi_A$. The morphism $\xi_C$ is the algebra structure of $T(B)$. Since $U^T$ creates all the limits that $\mathcal{X}$ has, we can conclude that $R$ is the kernel pair in $\mathcal{X}^T$ of the arrow $q$.
+        We proceed to prove that each equivalent relation is the kernel pair of some arrow. Consider an equivalence relation $R$ in $\mathcal{X}^T$ with $\xi_R$ and $\xi_A$ giving the structure of algebras, as in the diagram below. Then, under the forgetful functor $U^T$, $R$ is an equivalence relation in $\mathcal{X}$. $\mathcal{X}$ is exact, so $R$ is the kernel pair of some arrow. In particular, by \Cref{equiv rel is kernel pair of the coeq}, $R$ is the kernel pair of its coequalizer. Let us call it $q:A \to C$. Since $T$ preserves kernel pairs, we have that $T(R)$ is the kernel pair of $T(q)$. Moreover $T$ preserves regular epis, so $T(q)$ is a regular epi. By \Cref{coeq of the kernel pair}, $T(q)$ is the coequalizer of its kernel pair $(T(R),T(r_1),T(r_2))$. Since $q\xi_AT(r_1)= qr_1\xi_R = qr_2\xi_R=q\xi_AT(r_2)$, by the universal property of the coequalizer, there exists a unique morphism $\xi_C$ such that $\xi_CT(q) = q\xi_A$. The morphism $\xi_C$ is the algebra structure of $T(B)$. Since $U^T$ creates all the limits that $\mathcal{X}$ has, we can conclude that $R$ is the kernel pair in $\mathcal{X}^T$ of the arrow $q$.
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAlEAX1PU1z5CKchWp0mrdgEEefEBmx4CRACxiaDFm0QgAwnP5KhRMsXFapugCoAKDgEpDCgcuHJR5zZJ0g70p14jQRUUdS8JbXY7PUDxGCgAc3giUAAzACcIAFskAEYaHAgkURAACxh6KHYcAHcICqqEbyjdAEdnTJykMhAi-Jo4Mqw0nCQAWgLIqxAMgH08zqzcxF7+xCmhkbGNlpn58hAaRnoAIxhGAAVXE10MrESysaCQLpWAZkLi1b3fAB0-gAPLBzLjHLBgXxwCCMLDVF5vJDqPrfKaWf5AkGyBHLJFfJAAVl+0VsbScNEa1V0dQalSgCBx3UQRJRJWJugBwLmBnBkPYUHoQwSSyZn1ZiGRW1GEzRPhJ8zygXkiMQYvWkuG0t2IBO5yuN1CsweTyO018dgOcW4QA
 \begin{tikzcd}
@@ -62,17 +62,17 @@ X \arrow[rr, shift right] \arrow[rr, shift left]    &  & A \arrow[rd, "e"', two 
     \end{tikzcd}
 \]
 
-        In order to prove the factorization of $f$ in $\mathcal{X}^T$, it remains to establish that $m$ is a morphism in $\mathcal{X}^T$ and that it is a mono. Observe that $m$ is a mono in $\mathcal{X^T}$; in fact it is a mono in $\mathcal{X}$ and, furthermore, it is merely a morphism $\mathcal{X}$ that satisfies the algebra condition. We still need to establish that $m$ is a morphism in $\mathcal{X}^T$.
+        In order to prove the factorization of $f$ in $\mathcal{X}^T$, it remains to establish that $m$ is a morphism in $\mathcal{X}^T$ and that it is a mono. Observe that $m$ is a mono in $\mathcal{X^T}$; in fact it is a mono in $\mathcal{X}$ and, furthermore, it is merely a morphism in $\mathcal{X}$ that satisfies the algebra condition. We still need to establish that $m$ is a morphism in $\mathcal{X}^T$.
         \begin{align*}
             f=me &\implies f \xi_A = me\xi_A \\[1.5ex]
             &\implies \xi_B T(f) = m \xi_Q T(e) \\[1.5ex]
             &\implies \xi_B T(m) T(e) =  m \xi_Q T(e)
         \end{align*}
-        We know that $T(e)$ is a regular epi, thus it is a epi. So we can cancel it from both sides and we obtain the condition for $m$ to be a morphism in $\mathcal{X}^T$:
+        We know that $T(e)$ is a regular epi, thus it is an epi. So we can cancel it from both sides and we obtain the condition for $m$ to be a morphism in $\mathcal{X}^T$:
         \[ \xi_B T(m) =  m \xi_Q \]
         We proved that $m$ and $p$ are respectively a mono and a regular epi in $\mathcal{X}^T$. This allows the lifting of the factorization $f=me$ to $\mathcal{X}^T$.
 
-        It remains to prove the last condition of a regular category, that is the pullback stability of regular epi. Let $q: A \to B$ be a regular epi in $\mathcal{X}^T$, ie a coequalizer of some arrows in $\mathcal{X}^T$. In particular, $q$ is a regular epi in $\mathcal{X}$. Since $\mathcal{X}$ is exact, $q$ is pullback stable. Let $\tilde{q}$ be the pullback in $\mathcal{X}^T$ of $q$ along some morphism. As just noticed, $\tilde{q}$ is a regular epi in $\mathcal{X}$. Let $(\mathrm{Eq}(\tilde{q}), r_1,r_2)$ be the kernel pair of $\tilde{q}$. By \Cref{coeq of the kernel pair}, $\tilde{q}$ is the coequalizer of such kernel pair. We want to lift $\tilde{q}$ to a regular epi in $\mathcal{X}^T$. By construction, the pullback considered is a pullback in $\mathcal{X}^T$, thus it comes with algebra structures of $A\times_BC$ and $C$. Let $\xi_{A\times_BC}$ and $\xi_C$ be the algebra structures of $A\times_BC$ and $C$ respectively. Moreover, $\tilde{q}$ is a morphism in $\mathcal{X}^T$. We know that the forgetful functor $U^T$ creates all the limits that $\mathcal{X}$ has, so we can lift the kernel pair $(\mathrm{Eq}(\tilde{q}),r_1,r_2)$ to a kernel pair in $\mathcal{X}^T$. Let $\xi_{\mathrm{Eq}(\tilde{q})}$ be the algebra structure of $\mathrm{Eq}(\tilde{q})$.
+        It remains to prove the last condition of a regular category, that is the pullback stability of regular epi. Let $q: A \to B$ be a regular epi in $\mathcal{X}^T$, i.e. a coequalizer of some arrows in $\mathcal{X}^T$. In particular, $q$ is a regular epi in $\mathcal{X}$. Since $\mathcal{X}$ is exact, $q$ is pullback stable. Let $\tilde{q}$ be the pullback in $\mathcal{X}^T$ of $q$ along some morphism. As just noticed, $\tilde{q}$ is a regular epi in $\mathcal{X}$. Let $(\mathrm{Eq}(\tilde{q}), r_1,r_2)$ be the kernel pair of $\tilde{q}$. By \Cref{coeq of the kernel pair}, $\tilde{q}$ is the coequalizer of such kernel pair. We want to lift $\tilde{q}$ to a regular epi in $\mathcal{X}^T$. By construction, the pullback considered is a pullback in $\mathcal{X}^T$, thus it comes with algebra structures of $A\times_BC$ and $C$. Let $\xi_{A\times_BC}$ and $\xi_C$ be the algebra structures of $A\times_BC$ and $C$ respectively. Moreover, $\tilde{q}$ is a morphism in $\mathcal{X}^T$. We know that the forgetful functor $U^T$ creates all the limits that $\mathcal{X}$ has, so we can lift the kernel pair $(\mathrm{Eq}(\tilde{q}),r_1,r_2)$ to a kernel pair in $\mathcal{X}^T$. Let $\xi_{\mathrm{Eq}(\tilde{q})}$ be the algebra structure of $\mathrm{Eq}(\tilde{q})$.
         Then we know that $U^T$ creates all the colimits that $\mathcal{X}$ has and the monad $T$ preserves, and we already proved that $T$ preserves coequalizers of kernel pairs. Thus, since $\tilde{q}$ is such a coequalizer, we can lift it to a coequalizer in $\mathcal{X}^T$.
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAKwVqdJq3YAhHnxAZseAkTEAGCQxZtEIACoAKGQEp5-ZUKJlNNbdL1GOZ3hcGqUARnF2pukADS5ooCKsLI3raSOuxGAS4KSu7h5KTEWn7sHAA62XgAtvAA+jIAwsFJYUQALGkZMXrlriGWHsipnvUOBoY5eViFcCWlCW5VKLWdvg09IxWhVijqddPdufn0OAAWAE75wACiAI7chrl4jLDAJ6MtyUTLU9HdRuubu-vHp+dYlzDX3BMLgkMCgAHN4ERQAAzHYQfJIAAcNBwECQxGasPh6JRaMQqWe-iMRzMNC2MHoUCQYGYjEYmLhCMQyxAqKQ3kJ7COIDJFKpehwAHcIOTKQgGdjEAA2XFIdQSpkATlliAA7Kt-LkAB5YIpNBRYpky1l49UgUX81nCi0IDXsH5-AE8kCMegAIxgjAACgsPCAdlgwVscMFDUiVcb7JrsjqisA+gVimVuKHGUgCWzEJ4FeGTUhlea+dTaYw7Y4zv1HTdU5KC5nyDnEGQ88zG2IW824FssNCQ4gALTZg1pxDtzOd7u99k0V0e72+4T+wPBmtM2otlldnt9weN9eZzeTvsc2een2tRcBoMhtsq6qNzwczOeFlR+0x3XAN7bPaHE4Vi4rhuFMZywMB-Cgegu1BVd2SfPFkRALcpwHIcYRHR8VUQ5DjwfFlM2NHDp05PQdiKchnVPecL3YK8V0bM1nzwiMaCI1Cy39cieEobggA
@@ -111,7 +111,7 @@ T(\mathrm{Eq}(\tilde{q})) \arrow[dd, "\xi_{\mathrm{Eq}(\tilde{q})}", dashed] \ar
 
 \section{Products and coproducts lift}
 
-In this section we aim construct products and coproducts in the Eilenberg–Moore category. Products are quite easy to lift, and we implicitly already saw it in the exactness lift, whereas coproducts need additional conditions.
+In this section we aim to construct products and coproducts in the Eilenberg–Moore category. Products are quite easy to lift, and we implicitly already saw it in the exactness lift, whereas coproducts need additional conditions.
  
 Even if we already know that products can be easily lifted, since the forgetful functor $U^T$ creates all the limits, it will be useful to have the explicit construction.
 
@@ -126,7 +126,7 @@ T(A) \arrow[dd, "\xi_A"] &  & T(A\times B) \arrow[d, "{\langle T(\pi_1), T(\pi_2
 A                        &  & A\times B \arrow[rr, "\pi_2"] \arrow[ll, "\pi_1"']                                                           &  & B                       
 \end{tikzcd}
 \]
-The algebra structure coincides with the one given by the creations of limits by $U^T$, in fact, in that case the algebra structure is the unique making the diagram commutes. 
+The algebra structure coincides with the one given by the creations of limits by $U^T$, in fact, in that case the algebra structure is the unique making the diagram commute. 
 The universal property holds by the universal property of the product in $\mathcal{X}$, in fact one can prove that the unique morphism induced by the product in $\mathcal{X}$ is also a morphism in $\mathcal{X}^T$.
 \end{rem}
 \end{rembox}
@@ -141,7 +141,7 @@ This leads to the following.
 
 We now proceed with results that will allow us to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category.
 
-The construction of the coproducts in the Eilenberg-Moore category $\mathcal{X}^T$ will looks quite intricate at first glance and it may appear overly complicated. However, this construction is needed because, given two object with an algebra structure each, the coproduct of the two algebra structures is not an algebra structure in general. To make this clearer consider the following example.
+The construction of the coproducts in the Eilenberg-Moore category $\mathcal{X}^T$ will look quite intricate at first glance and it may appear overly complicated. However, this construction is needed because, given two object with an algebra structure each, the coproduct of the two algebra structures is not an algebra structure in general. To make this clearer consider the following example.
 
 \begin{rembox}{}
     \begin{ex}
@@ -164,7 +164,7 @@ For the sake of clarity, we first present a technical definition.
 
 \begin{mainbox}{}
     \begin{defi}
-        Let $U:\mathcal{X} \to \mathcal{A}$ be a functor, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of pair of parallel arrows in $\mathcal{A}$, where $f_i,g_i: A_i \to U(X)$. A morphism $q:X \to Q$ in $\mathcal{X}$ is said to be a $U$\textbf{-coequalizer} of the pair $\{(f_i,g_i)\}_{i\in I}$ if 
+        Let $U:\mathcal{X} \to \mathcal{A}$ be a functor, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of pairs of parallel arrows in $\mathcal{A}$, where $f_i,g_i: A_i \to U(X)$. A morphism $q:X \to Q$ in $\mathcal{X}$ is said to be a $U$\textbf{-coequalizer} of the pair $\{(f_i,g_i)\}_{i\in I}$ if 
         \begin{itemize}
             \item $U(q) f_i = U(q) g_i \ \forall i \in I$ in $\mathcal{A}$;
             \item If $h:X \to Y$ is a morphism in $\mathcal{X}$ such that $U(h) f_i = U(h) g_i \ \forall i \in I$ in $\mathcal{A}$, then there exists a unique morphism $t:Q \to Y$ in $\mathcal{X}$ such that $t q = h$.
@@ -271,7 +271,7 @@ A_i \arrow[rrd, "f_i", shift left] \arrow[rrd, "g_i"', shift right] \arrow[rrdd,
 \begin{mainbox}{}
 \begin{prop}\label{coeq for the three diagrams}
     Let $\mathcal{X}$ be a category, let $(T,\mu,\eta)$ be a monad on $\mathcal{X}$ and let $\{(A_i,\xi_i)\}_{i\in I}$ be a family of objects in $\mathcal{X}^T$. Assume that the coproducts $\amalg_iA_i$ and $\amalg_iT(A_i)$ exist in $\mathcal{X}$ with respective canonical injections $\{\iota_i\}_{i\in I}$ and $\{\iota'_i\}_{i\in I}$. If the following parallel arrows in 
-    $\mathcal{X}^T$ admits a coequalizer $q:T(\amalg_i)\to (Q,\xi_Q)$
+    $\mathcal{X}^T$ admit a coequalizer $q:T(\amalg_i)\to (Q,\xi_Q)$
     \begin{equation}\label{diagr 1 coproducts}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAdDgISwHMAFABUuAI34CucZgFsA+liECAggoCUY-mtJcZzLrz5qQAX1LpMufIRTlSxanSat2BiUIB6AJkkdp8rFUsbV19Hi1TcxAMbDwCIi8KRwYWNkROcMElKVkFIJCOPTcjU0cYKD54IlAAMwAnCBkkMhAcCCREkFEYMChmmhSXdOy-XKwuAA8sdRAaRnpuxgAFSzibEDr+AAscSNqGpsQWtqQ7J1T2IWQuRigIHDhSEfwcenUdDlv7uEpZrp6+kczPtGqcaCdEJ1BmkMno5MAcgEgiY-t1es0TJQTEA
 \begin{tikzcd}
@@ -371,7 +371,7 @@ and by the universal property of the $U^T$-coequalizer of \eqref{diagr 2 coprodu
 \end{subbox}
 
 
-The following gives a criteria to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. This is possible if we assume the existence of reflexive coequalizers in the Eilenberg–Moore category.
+The following gives a criterion to construct coproducts in the Eilenberg–Moore category, assuming they exist in the base category. This is possible if we assume the existence of reflexive coequalizers in the Eilenberg–Moore category.
 
 \begin{mainbox}{}
     \begin{prop}\label{algebras category has colim if the base category has coprod}
@@ -398,7 +398,7 @@ T\bigl( T(A)+T(B)\bigr) \arrow[rr, "{T(\xi_A+\xi_B)}"', shift right] \arrow[ru, 
             \item $\mu_{A+B}T[T(\iota_1),T(\iota_2)]$
         \end{itemize}
         We proceed to show that they form a reflexive pair by exhibiting a common section. $T(\eta_A+\eta_B)$ is such a common section, as shown below. It follows the first composition
-        \[T[\xi_A,\xi_B]T(\eta_A+\eta_B)=T\bigl([\xi_A,\xi_B](\eta_A+\eta_B)\bigr)=T(1_{A+B})=1_{T(A+B)} \]
+        \[T(\xi_A+\xi_B)T(\eta_A+\eta_B)=T\bigl((\xi_A+\xi_B)(\eta_A+\eta_B)\bigr)=T(1_{A+B})=1_{T(A+B)} \]
         and the second composition, using the naturality of $\eta$.
         \begin{align*}
         \mu_{A+B}T[T(\iota_1),T(\iota_2)]T&(\eta_A+\eta_B)=\mu_{A+B}T\bigl([T(\iota_1),T(\iota_2)](\eta_A+\eta_B)\bigr) \\[1.5ex]
@@ -426,7 +426,7 @@ B \arrow[rr, "\iota_2"] &  & A+B \arrow[rr, "\eta_{A+B}"] &  & T(A+B) \arrow[rr,
 \end{tikzcd}
 \]
 \end{minipage}
-        We still need to prove that they are morphisms\footnote{Note that $\iota_1$ and $\eta_{A+B}$ are not morphisms in $\mathcal{X}^T$. This is not a problem, however, since we will show that the whole composition $q\eta_{A+B}\iota_1$ is a morphism in $\mathcal{X}^T$} in $\mathcal{X}^T$. We prove the first one, the second one is similar. Consider the following diagram. All diagrams, except the left and the external ones, commute. We aim to prove that the left diagram commutes, so that the external one commutes as well. This holds by \Cref{coeq for the three diagrams}, since it corresponds to the diagram \eqref{diagr 3 coproducts}.
+        We still need to prove that they are morphisms. Note that $\iota_1$ and $\eta_{A+B}$ are not morphisms in $\mathcal{X}^T$. This is not a problem, however, since we will show that the whole composition $q\eta_{A+B}\iota_1$ is a morphism in $\mathcal{X}^T$ in $\mathcal{X}^T$. We prove the first one, the second one is similar. Consider the following diagram. All diagrams, except the left and the external ones, commute. We aim to prove that the left diagram commutes, so that the external one commutes as well. This holds by \Cref{coeq for the three diagrams}, since it corresponds to the diagram \eqref{diagr 3 coproducts}.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKchWp0mrdhwDUAIR58QGbHgJEALGJoMWbRCAAqACllyAlIv6qhRAGzaJe9gEUrygWuElSxcbqkDEw5LXmtBdRFff0l9I1N5UKUVCO8tPx1Y9kMAPXIEi3cUr3tozOcg4xck8JKULQBGGIr4s1DxGCgAc3giUAAzACcIAFskMhAcCCQG8sCQAB0F-Bx6AH0G9yHRmZoppFEneaWYVbXgM24t4bHEQ-3EAGY5uIBHa53ELUnpxAmAuJLAAeWDWXDCIG2t2+DwArC9ssYlit1g0apCbkh4T8kA4jnETCczhd5Nx0VDcXtfgAOBEGJYjZjnS4fW7Yh60kCMegAIxgjAACp5bAZBlgugALHAgOkgBrnYKJK4QimITkPZ749jvFWYxB4h4AdllJle5L1xpxT1lwNBbm4lG4QA
 \begin{tikzcd}
@@ -442,7 +442,7 @@ A \arrow[rr, "\iota_1"]                           &  & A+B \arrow[rr, "\eta_{A+B
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAVACgEEBqAEIBKEAF9S6TLnyEU5CtTpNW7bgGkR4ydjwEiAFgU0GLNohBqxEkBh0yDpYopMrz6zddvS9cx8+VmnAB65FwaVtresiR+xgGqIbyCmoowUADm8ESgAGYAThAAtkgArDQ4EEhkSqbsADp1hcwA+sD8AqIRIPlFpeWViIY1rpzIOc0AjKTjVF09xYjVFUhTw4EcY5PTzbNa3QULQ8uIqy6BDU3NlnvzSEcDAMxxteYXLdfWt4hPIMfya-U6gAPLBXOYHFb9JD-M6AkFg0SUURAA
 \begin{tikzcd}
-T^2(A+B) \arrow[dd, "\mu_{A+B}"] \arrow[rr, "{T[f_1,f_2]}"] &  & T^2(K) \arrow[dd, "\mu_K"] \arrow[rr, "\mu_K"] &  & T(K) \arrow[dd, "\xi_K"] \\
+T^2(A+B) \arrow[dd, "\mu_{A+B}"] \arrow[rr, "{T^2[f_1,f_2]}"] &  & T^2(K) \arrow[dd, "\mu_K"] \arrow[rr, "T(\xi_K)"] &  & T(K) \arrow[dd, "\xi_K"] \\
                                                             &  &                                                &  &                          \\
 T(A+B) \arrow[rr, "{T[f_1,f_2]}"]                           &  & T(K) \arrow[rr, "\xi_K"]                       &  & K                       
 \end{tikzcd}
@@ -597,16 +597,16 @@ Thus $\langle r_1,r_2\rangle es = \langle 1_B,1_B \rangle$. The morphism $es$ ma
 
 \begin{subbox}{}
     \begin{proof}
-        Assume $\mathcal{A}$ is exact and Mal'tsev. We want to prove that $\mathcal{A}$ has reflexive coequalizer. Consider a reflexive pair $(f,g)$ from $A$ to $B$. By \Cref{relation induced by a reflexive pair is reflexive} the internal relation induced $\langle r_1,r_2 \rangle$ is reflexive. Since $\mathcal{A}$ is Mal'tsev, then each internal reflexive relation is an equivalence relation. Hence $\langle r_1,r_2 \rangle$ is an equivalence relation. $\mathcal{A}$ is also exact, then, by \Cref{equiv rel is kernel pair of the coeq} the equivalence relation $(r_1,r_2)$ has a coequalizer $k$.
+        Assume $\mathcal{A}$ is exact and Mal'tsev. We want to prove that $\mathcal{A}$ has reflexive coequalizers. Consider a reflexive pair $(f,g)$ from $A$ to $B$. By \Cref{relation induced by a reflexive pair is reflexive} the internal relation induced $\langle r_1,r_2 \rangle$ is reflexive. Since $\mathcal{A}$ is Mal'tsev, then each internal reflexive relation is an equivalence relation. Hence $\langle r_1,r_2 \rangle$ is an equivalence relation. $\mathcal{A}$ is also exact, then, by \Cref{equiv rel is kernel pair of the coeq} the equivalence relation $(r_1,r_2)$ has a coequalizer $k$.
         
-        We want to prove that $k$ is also the coequalizer of $(f,g)$. First we note that $kf=kr_1e=kr_2e=kg$. It remains to prove the universal property. Let $h:B \to C$ be a morphism such that $hf=hg$. Then $hr_1e=hr_2e$. Since $e$ is a regular epi, hence by \Cref{reg epi is an epi} an epi, we have that $hr_1=hr_2$. Thus there exists a unique morphism $t$ such that $th=k$.
+        We want to prove that $k$ is also the coequalizer of $(f,g)$. First we note that $kf=kr_1e=kr_2e=kg$. It remains to prove the universal property. Let $h:B \to C$ be a morphism such that $hf=hg$. Then $hr_1e=hr_2e$. Since $e$ is a regular epi, hence by \Cref{reg epi is an epi} an epi, we have that $hr_1=hr_2$. Thus there exists a unique morphism $t$ such that $tk=h$.
         \[
-    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGUgCYqtRizYAhbrxAZseAkTITq9Zq0QgASgr4rBRMeMnaZegDo2AtnRwALAE73gAYQgwAjlwAKVwB9URCxAEojJX5VIWRzYUtpXRBPbkkYKABzeCJQADNXCHskURAcCCQAZi0UtgBrEGoGOgAjGAYABVjTPVcsbOccaKKSpHMKqsRyuGcsApGZlvbOnpM1fsHh5qkdNnDR4tLEMimJuv29VmpnGDooNhwAdwg7h4QeQuOkM8qy6gdMCPRDVM5zBZLAC05SsqQKR3Gp2o-2WICBILB1AhiwBe2sIGyu1aHW6vU2IAGQxGXxAYxOk1Rs3muMQMMuBJCwkRJ3KqIALC0sGBUnAIAwsI8OalnDykILzqChSK2FA6HMsrs4Ww7DAAB5YOA4OAAAgAhCaaRQuEA
-    \begin{tikzcd}
-        A \arrow[dd, "e", two heads] \arrow[rdd, "f", bend left, shift left] \arrow[rdd, "g"', bend left, shift right] &                                   &                                    \\
-                                                                                                                       &                                   & C \arrow[d, "\exists ! t", dashed] \\
-        R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left]                                                  & B \arrow[r, "k"'] \arrow[ru, "h"] & {\mathrm{Coeq}(r_1,r_2)}          
-        \end{tikzcd}
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGUgCYqtRizYAhbrxAZseAkTITq9Zq0QgASgr4rBRMeMnaZegDo2AtnRwALAE73gAYQgwAjlwAKVwB9URCxAEojJX5VIWRzYUtpXRBPbkkYKABzeCJQADNXCHskURAcCCQAZi0UtgBrEGoGOgAjGAYABVjTPVcsbOccaKKSpHMKqsRyuGcsApGZlvbOnpM1fsHh5qkdNnDR4tLEMimJuv29VmpnGDooNhwAdwg7h4QeQuOkM8qy6gdMCPRDVM5zBZLAC05SsqQKR3Gp2o-2WICBILB1AhiwBe2sIGyu1aHW6vU2IAGQxGXxAYxOk1Rs3muMQMMuBJCwkRJ3KqIALC0sGBUnAIAwsI8OalnDyaijpoKQBKRWwoHQ5lldnCnrscUsziS1uShJTtjSKFwgA
+\begin{tikzcd}
+A \arrow[dd, "e", two heads] \arrow[rdd, "f", bend left, shift left] \arrow[rdd, "g"', bend left, shift right] &                                   &                                                  \\
+                                                                                                               &                                   & C                                                \\
+R \arrow[r, "r_2"', shift right] \arrow[r, "r_1", shift left]                                                  & B \arrow[r, "k"'] \arrow[ru, "h"] & {\mathrm{Coeq}(r_1,r_2)} \arrow[u, "t"', dashed]
+\end{tikzcd}
         \]
     \end{proof}    
 \end{subbox}

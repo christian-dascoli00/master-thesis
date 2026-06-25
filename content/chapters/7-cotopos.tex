@@ -1,4 +1,4 @@
-\chapter{Cotopoi as a fundamental example}
+\chapter{Cotopoi}
 
 \fontsize{12}{14.5}\selectfont
 
@@ -96,7 +96,7 @@ A\times_BA \arrow[r, "r_1", shift left] \arrow[r, "r_2"', shift right] \arrow[rd
                                                                                                   & I\times_BI \arrow[ru, "p_1", shift left] \arrow[ru, "p_2"', shift right] &                    &  
 \end{tikzcd}
 \]
-Since $e$ is a coequalizer, it is a regular epi. Thus $e\times_Be$ is an epi. In fact, all the square in the following diagram are pullbacks, and $e\times_Be$ is the composition of the two regular epis, thus, by \Cref{reg epi is an epi}, it is an epi.
+Since $e$ is a coequalizer, it is a regular epi. Thus $e\times_Be$ is an epi. In fact, all the square in the following diagram are pullbacks, and $e\times_Be$ is the composition of the two epis, thus it is an epi.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEAdTvAW3gD6AIXYgAvqXSZc+QigBM5KrUYs2ASW59BI8ZJAZseAkQDMS6vWatEHPVKOyzpecqtrb6+wenG5yRVM3VRsQLwkHGRMUMiDLELZRCJ9HaORzOJVrNiFvQyj-Mld47NsuHix+OGFw-Xy-IkVirI8wrUqdcOUYKABzeCJQADMAJwheJDIQHAgkAEZqAAsYOig2HAB3CGXVhGTR8cnqGaQAdiWVtdtN7cu9-QOJxHPp2cQADgvV9a2dqHvhmMngtXkhPiA-j9brtvI8jqCPtQGFgwKEoHQ4Ms1iVWjB2lVhKx9kD5sc3vJiYdEIoEeYWqFWF8rtNfndYSTEbScaE0AI5uyqeCTogACzcti8+QCp5ihEANnFtgmlKedOFCvpbGVDw5L2FAFYVUh9WSkLL3AyQEyoX8ASA4YgpsKaQAjGBgK6mKYWtgjPnS+EG6huj1IAC0IoAnIqQH6pUi6G6GAAFXxOWwjLC9RY4cQUMRAA
 \begin{tikzcd}
@@ -133,7 +133,7 @@ Finally
 \begin{proof}
     First, recall that the forgetful functor $U$ from a slice category of $\mathcal{A}$ to $\mathcal{A}$ creates all the colimits that $\mathcal{A}$ has, by \Cref{U creates con lim}. Thus, given $q: X \to Y$ coequalizer in a category $\mathcal{A}$, it yields that $q: (X,q) \to (Y,1_Y)$ is a coequalizer in the slice category $(\mathcal{A} \downarrow Y)$.
 
-    Let $f: E \to B$ be a morphism in $\mathcal{A}$. Let $q: X \to Y$ be the coequalizer of a pair $(a,b)$ in $(\mathcal{A} \downarrow B)$. Suppose that $q$ is a pullback stable coequalizer. Consider the action of the pullback functor $f^*: (\mathcal{A} \downarrow Y) \to (\mathcal{A} \downarrow E)$ on $q$, $a$ and $b$.
+    Let $f: E \to Y$ be a morphism in $\mathcal{A}$. Let $q: X \to Y$ be the coequalizer of a pair $(a,b)$. Suppose that $q$ is a pullback stable coequalizer. Consider the action of the pullback functor $f^*: (\mathcal{A} \downarrow Y) \to (\mathcal{A} \downarrow E)$ on $q$, $a$ and $b$.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQANEAX1PU1z5CKACwVqdJq3YBNHnxAZseAkTIAGCQxZtEIAKIAdQ3gC28APoyuvfsqFExmmtul6jJrObhW5txQIqwsjq4i5SuiAAWvJ2gqoooc6SOuweZpYyMf5K8cFkxFoRsrEB9gkkpADMRanuPBIwUADm8ESgAGYAThCmSKEgOBBI5OF1IACOpd29SGSDw4hVY24gHQB6AFQAFBMAlNM9fYjzQ-0rkcam9DgAFl2mwGg9AFbcFsBkHNyHs4gArDQzicaHBblgOjgkABaUYpVYbHb0A7+GbHMQLc4gMEQqGIWEXdj0X7HQGYxAY1yXQzXO4PJ6vd6fUhRH6oo5IDHAgY4yEjQl6ABGIBojHogpgjAACoEHHoulhmrcoey-mTgfNeXi4VT2IjtoKDqLxZKZeVhCAFUqVQo0VjgQA2AWTEmcoGLJ0gCVgKAwqoDXV6Cb0AC8E2Fxol0tlCUtiuVrsQcMdNG9vqWAeKenIVkTAHZ3UhPYG1iKQGKo2a8uwrQnVcdTosC16YD6-ZnxlcbvdHs8IG8PqNvmWK6aYxbazbOhyloWk86u3Te4yPmQZD9I2PzTX41O1jP1U3U6309CHR3Vouewz+0zRqyRybo9v5bvE8tyc200WL9Tade+wHYBRnXBpuCAA
 \begin{tikzcd}
@@ -199,11 +199,11 @@ Now we aim to transfer the regularity of a topos to its dual, the cotopos.
 S \arrow[r, "m", tail] & A \arrow[r, "!^A"] \arrow[rr, "\chi_S"', bend right] & 1 \arrow[r, "t"] & \Omega
 \end{tikzcd}
     \]
-    It holds that $\chi_Sm=t!^S=t!^Am$. Thus, it remains to show the universal property of the equalizer. Let $n: X \to A$ be a morphism such that $\chi_S n = t!^A n$. By the universal property of the pullback of the subobject classifier, there exists a unique morphism $t: X \to S$ such that $!^S t = !^X$ and $m t = n$, as wanted.
+    It holds that $\chi_Sm=t!^S=t!^Am$. Thus, it remains to show the universal property of the equalizer. Let $n: X \to A$ be a morphism such that $\chi_S n = t!^A n$. By the universal property of the pullback of the subobject classifier, there exists a unique morphism $r: X \to S$ such that $!^S r = !^X$ and $m r = n$, as wanted.
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAGUQBfU9TXfIRRkATFVqMWbAILdeIDNjwEiI8uPrNWiEMTl8lg1aTHVNUnQB1LAeQC2MAOZ19C-sqHIADKS8bJ2iAAGtziMFCO8ESgAGYAThB2SD4gOBBIahJabACEAHqcPLEJSYiZaUgAzGYBbDiu8YlIZKnpiNVZFiDWAMYAFlgA+oXyjaUpFYgtOHRYDHWz8zXZOknUDHQARjAMAAruRjpxWI599UUgY83Uk5nmgfmyF1eIACw3bZnbYFBVKfe5PIhZ4lJDvVrXEDfX6IAC0lX+tR0hBBTTeH2S6ywYECUDocD64RAyy65woXCAA
 \begin{tikzcd}
-X \arrow[rrd, "!^X", bend left] \arrow[rdd, "n", bend right] \arrow[rd, "t", dashed] &                                          &                  \\
+X \arrow[rrd, "!^X", bend left] \arrow[rdd, "n", bend right] \arrow[rd, "r", dashed] &                                          &                  \\
                                                                                      & S \arrow[r, "!^S"] \arrow[d, "m"', tail] & 1 \arrow[d, "t"] \\
                                                                                      & A \arrow[r, "\chi_S"] \arrow[ru, "!^A"]  & \Omega          
 \end{tikzcd}
@@ -220,7 +220,7 @@ X \arrow[rrd, "!^X", bend left] \arrow[rdd, "n", bend right] \arrow[rd, "t", das
 
 \begin{subbox}{}
 \begin{proof}
-    Clearly, every iso is both a mono and an epi. Conversely, let $f: X \to Y$ be a morphism which is both a mono and an epi. By \Cref{mono are equalizers in topos}, it is also an equalizer. Let $(a,b)$ be pair such that $f=\mathrm{Eq}(a,b)$. It holds $af=bf$. Since $f$ is an epi, then $a=b$. On the other hand, $\mathrm{Eq}(a,b)=\mathrm{Eq}(a,a)=1_Y$, so there exists an iso $g$ such that $fg=1_Y$. Hence $f$ is an iso.
+    Clearly, every iso is both a mono and an epi. Conversely, let $f: X \to Y$ be a morphism which is both a mono and an epi. By \Cref{mono are equalizers in topos}, it is also an equalizer. Let $(a,b)$ be a pair such that $f=\mathrm{Eq}(a,b)$. It holds $af=bf$. Since $f$ is an epi, then $a=b$. On the other hand, $\mathrm{Eq}(a,b)=\mathrm{Eq}(a,a)=1_Y$, so there exists an iso $g$ such that $fg=1_Y$. Hence $f$ is an iso.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGclVqMWbAJrdeIDNjwEiAJjHV6zVohAAtOXyWCiZYeK1TdsruJhQA5vCKgAZgCcIAWyRkQOCCRRCW02V0MQD28g6gCkdRA4AAssVxwYkKsQACMQagY6bJgGAAV+ZSEQdywHJPSeN08fRGC4xATk1PTEAFpgyx0QOgio5oBmWMCWzUlB4QB9WXzC4rLjFV1q2vr5UaQJ-ym-AbYHbgouIA
 \begin{tikzcd}
@@ -305,7 +305,7 @@ We prove this equality using the subobject classifier. Consider the following co
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQAmclVqMWbTjz7Y8BImWHj6zVohABNADo68AW3gACGbxAZ5goqJXU1Uzbv1YjcYwC1u5ywMUoABlIA1UkNEAA1bzk-IWQAFjF7MOloi34FOIBWJIl1Ni0030yiRLs8x209QxMzGJKUHPKHcOca90LZdKt-ZABmYND8zQB1bnEYKABzeCJQADMAJwgDJCCQHAgkMgrw4gB9OpAllbXqTaRRXbY9BjowKYYYY3nyQ+M9RfvH1i6T1cQVwuiAG100By0HxcbmMq2odwARjAGAAFDLWTRPeY4NL-bbnLYg5LDEC3b5PF6kAxQr4PJ645YAxIbQnrBhYMDhKB0OAAC0mIGJlQA1gzTohmcCrkiwFAkABaPrrFo3HR3OnPBj7YjGUjGLXCT7k1jwuhI1Ho-wgRZYKa8nF-RlISWEnYyuUg5UpTSix3inIspAAdiF4TJGspB3YNONYoBAeBADZQ2x5nHgwSkAAOFPg-aQ6quExpv0A5OBxA5sGktXG4wQt4FnS0n7pxAATkziBDIHdCqVuZr6p+xjo2tIY+EMY1gpAiORaJ6Qmttvtbc7FfLfc9g4R667AfnFqXbCxOMHY+Is-ZnLY3L5Aq4FC4QA
 \begin{tikzcd}
-V \arrow[rd, "k", dashed] \arrow[rdd, "{\langle l_1 , l_2\rangle}"', bend right] \arrow[rrd, "k", bend left] &                                                         &                                      & W \arrow[rdd, "{\langle a_1,a_2 \rangle}"', bend right] \arrow[rrd, "b", bend left] \arrow[rd, "a_1", dashed] &                                                       &                                          \\
+V \arrow[rd, "k", dashed] \arrow[rdd, "{\langle l_1 , l_2\rangle}"', bend right] \arrow[rrd, "k", bend left] &                                                         &                                      & W \arrow[rdd, "{\langle a_1,a_2 \rangle}"', bend right] \arrow[rrd, "b", bend left] \arrow[rd, "a_2", dashed] &                                                       &                                          \\
                                                                                                              & X \arrow[r, "1_X"] \arrow[d, "{\langle f,1_X \rangle}"] & X \arrow[d, "{\langle f,m \rangle}"] &                                                                                                               & X \arrow[d, "{\langle f,1_X \rangle}"] \arrow[r, "f"] & Y \arrow[d, "{\langle 1_Y,1_Y \rangle}"] \\
                                                                                                              & Y\times X \arrow[r, "1_Y \times m"]                     & Y\times Z                            &                                                                                                               & Y\times X \arrow[r, "1_Y \times f"]                   & Y\times Y                               
 \end{tikzcd}
@@ -416,7 +416,7 @@ X_1+X_2 \arrow[rr, "{[a,b]}"] \arrow[rd, two heads] &                           
 The union is characterized in term of pushout.
 \begin{mainbox}{}
 \begin{prop}\label{union is pushout}
-    Let $a: X_1 \rightarrowtail X$ and $b: X_2 \rightarrowtail X$ be subobjects of a cotopos $\mathcal{E}$ and their intersection given by
+    Let $a: X_1 \rightarrowtail X$ and $b: X_2 \rightarrowtail X$ be subobjects of a topos $\mathcal{E}$ and their intersection given by
     \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0B9ARgAIAdfgGM6aXlwBMIAL6l0mXPkIoJpblVqMWbdjLkgM2PASKrK1es1aIOPPfKNKiZdRa3XbU6RphQA5vBEoABmAE4QALZIAMzUOBBI3HF0WAxsOClpblZsAEb2IGGRSKog8YnJqemZINnaNnQFRVGIZGUJiKUZVTbdWZo5NkJN4S1t5YixZTW9NXUeUDIU0kA
 \begin{tikzcd}
@@ -455,15 +455,7 @@ Y \arrow[r, "s" description] & X \arrow[l, "r_1", shift left=2] \arrow[l, "r_2"'
 \]
 where $s$ is a common retraction $sr_1=sr_2=1_X$.
 
-Since $(Z,r_1,r_2)$ is a relation in $\mathcal{E}^\mathrm{op}$, then $(r_1,r_2)$ is a jointly monic pair in $\mathcal{E}^\mathrm{op}$. Hence $[r_1,r_2]: X + X \to Y$ is an epi in $\mathcal{E}$. By \Cref{epi are reg epi in topos}, $[r_1,r_2]$ is a regular epi. This means we can assume that $[r_1,r_2]$ is the regular epi underlying the (regular epi, mono) factorization of $[r_1,r_2]$, where the mono is the identity morphism.
-\[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0BqdkAX1PSZc+QigBM5KrUYs2ATT4CQGbHgJEAjKQ1T6zVohALeUmFADm8IqABmAJwgBbJGRA4ISLdP1tkdgPpaAWIUINQAFjB0UGw4AO4QkdEI-LYOzoiu7kgSIEkxhvGJUVApSvZOOdTZiF44dFgMsQ1N1Hqyhhr+xhS8QA
-\begin{tikzcd}
-X+X \arrow[rr, "{[r_1,r_2]}", two heads] \arrow[rd, two heads] &                           & Y \\
-                                                               & Y \arrow[ru, "1_Y", tail] &  
-\end{tikzcd}
-\]
-Thus $Y$ is, up to iso, the union $X \cup X$. Now consider the intersection
+Since $(Y,r_1,r_2)$ is a relation in $\mathcal{E}^\mathrm{op}$, then $(r_1,r_2)$ is a jointly monic pair in $\mathcal{E}^\mathrm{op}$. Hence $[r_1,r_2]: X + X \to Y$ is an epi in $\mathcal{E}$. By \Cref{epi are reg epi in topos}, $[r_1,r_2]$ is a regular epi. Thus $Y$ is, up to iso, the union $X \cup X$. Now consider the intersection
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0ACAHW4GM6aTuxABfUuky58hFACZSARiq1GLNgC0xEkBmx4CRBZWr1mrRB22T9MomWWm1Fq6JUwoAc3hFQAMwAnCABbJDIQHAgkBVVzNihrEECQsOpIpABmJzjLPkTk0MQsiKjERWz1SwCAfTl8oMKY9LKKlxq6t1EgA
 \begin{tikzcd}
@@ -549,7 +541,7 @@ All the results above leads to the following result.
 
 \begin{mainbox}{}
     \begin{prop}\label{cotopos is ideally exact}
-        A cotopos is an ideally exact category. Moreover, the underlying functor is the pullback functor.
+        A cotopos is an ideally exact category.
     \end{prop}
 \end{mainbox}
 
@@ -565,20 +557,7 @@ All the results above leads to the following result.
 
 \begin{rembox}{}
 \begin{rem}
-    While a cotopos is an ideally exact category, a topos fails to be. A topos is exact and it has binary coproducts, that said, it does not satisfy the remaining conditions. For example one can consider the category $\mathsf{Set}$ which is a topos. It is not protomodular. Moreover, the unique morphism $!: \emptyset \to \{*\}$ is not a regular epi, in fact, it is not even an epi. In order to show that, consider the morphisms
-    \begin{align*}
-        f: \{*\} & \to \{a,b\} \\
-        *       & \mapsto a \\[1.5ex]
-        g: \{*\} & \to \{a,b\} \\
-        *       & \mapsto b
-    \end{align*}
-    Then $f! = g!$, since they are both the empty map, but $f \neq g$.
-    \[
-    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12YBbNHATzgwcIAL6l0mXPkIoAjOSq1GLNp2AAqTqLESQGbHgJEATIur1mrRB3bA6pAEbaxSmFADm8IqABmAJwhuJDIQHAgkBWUrNgBCXT9A4MQo8KQzEDgACyxfEUQAWijLVRtfBJAAoMjqNMQM7Nz84pVrEA8QagY6RxgGAAUpI1kQfywPLJFRClEgA
-\begin{tikzcd}
-\emptyset \arrow[r, "!"] & \{*\} \arrow[r, "f", shift left] \arrow[r, "g"', shift right] & {\{a,b\}}
-\end{tikzcd}
-    \]
+    While a cotopos is an ideally exact category, a topos fails to be. A topos is exact and it has binary coproducts, that said, it does not satisfy the remaining conditions. For example one can consider the category $\mathsf{Set}$ which is a topos. It is not protomodular. Moreover, the unique morphism $!: \emptyset \to \{*\}$ is not a regular epi, in fact, it is not even an epi.
 \end{rem}
 \end{rembox}
 

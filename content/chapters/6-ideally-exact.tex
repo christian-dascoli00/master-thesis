@@ -36,7 +36,7 @@ We are now ready to prove the theorem, which will lead to the definition of the 
     \begin{proof}[\textit{Proof of \Cref{Ideally exact categories}}]\label{The proof}
         $\mathit{(1\implies 3)}$ Suppose $! : 0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact, the pullback functor $(!)^*: (\mathcal{A} \downarrow 1) \to (\mathcal{A} \downarrow 0)$ is monadic by the main result of the previous chapter: \Cref{monadic p^*}. Note that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$. Now consider $\mathcal{X} = (\mathcal{A} \downarrow 0)$, we want to prove that $\mathcal{X}$ is semiabelian. 
         
-        $(\mathcal{A} \downarrow 0)$ is pointed, in fact if $(A,\alpha)$ is an object in $(\mathcal{A} \downarrow 0)$, we have the following initial and terminal objects, which coincide:
+        $(\mathcal{A} \downarrow 0)$ is pointed, in fact if $(A,\alpha)$ is an object in $(\mathcal{A} \downarrow 0)$, we have the following initial and terminal maps:
         \[
    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGJAF9T1Nd9CKAIzkqtRizYBBLjxAZseAkRFCx9Zq0TtZvRQKIBmUdQ2TtM7nv7KUxtaYladV+XyWDkAFhPjNbDk4xGCgAc3giUAAzACcIAFskERAcCCQAJkd-bQAdHMY0AAs6XRBYhKQyFLTEZLNnAEIAfUs5csTEY2qkAFYs8xA8guLS9srqVIz+5yEmjmoGOgAjGAYABXcDbRisUMKcUbiOvu7EHz8B2cC2o6QuybPptiGGIpKgziA
 \begin{tikzcd}
@@ -137,7 +137,7 @@ U^T(A) \arrow[rr, "U(m)"]                               &  & Q
     \end{align*}
     Thus $K(m)$ acts as a mono in the morphisms in $\mathcal{X}^T$ between object coming from $\mathcal{A}$. By the above discussion, $U(m)$ acts as a mono in the morphisms in $\mathcal{X}$ between object coming from $\mathcal{A}$.
 
-    Picking up where we left off, consider $m$ the mono arising from the (regular epi, mono) factorization of $!:0 \to 1$ in $\mathcal{A}$. By the discussion above, $U(m)$ acts as a mono in the morphisms in $\mathcal{X}$ between object coming from $\mathcal{A}$. In particular, since the final object $1$ is a limit, it is preserved by $U$, then $U(m)$ acts as mono and has codomain $1$ in $\mathcal{X}$. Moreover, $\mathcal{X}$ is semiabelian, hence pointed, so $0=1$ in $\mathcal{X}$. This means that $U(m)$ acts as a mono and and has codomain $0$ in $\mathcal{X}$. Finally, this implies that $U(m)$ is an iso, in fact, suppose that $U(m)$ acts as a mono with codomain $0$ and let $U(C)$ be its domain. Denote by $!_{U(C)}$ the unique morphism from $U(C)$ to $0$, then $!_{U(C)}$ is the inverse of $U(m)$. In fact $!_{U(C)}U(m)=!_0=1_0$. Then composing with $U(m)$ we obtain $U(m)!_{U(C)}U(m)=U(m)$, thus, observing that $U(m)!_{U(C)}$ and $1_{U(C)}$ are a morphisms between objects arising from $\mathcal{A}$, we also have that $U(m)!_{U(C)}=1_{U(C)}$. Thus $U(m)$ is an iso.
+    Picking up where we left off, consider $m$ the mono arising from the (regular epi, mono) factorization of $!:0 \to 1$ in $\mathcal{A}$. By the discussion above, $U(m)$ acts as a mono in the morphisms in $\mathcal{X}$ between object coming from $\mathcal{A}$. In particular, since the final object $1$ is a limit, it is preserved by $U$, then $U(m)$ acts as mono and has codomain $1$ in $\mathcal{X}$. Moreover, $\mathcal{X}$ is semiabelian, hence pointed, so $0=1$ in $\mathcal{X}$. This means that $U(m)$ acts as a mono and and has codomain $0$ in $\mathcal{X}$. Finally, this implies that $U(m)$ is an iso, in fact, suppose that $U(m)$ acts as a mono with codomain $0$ and let $U(C)$ be its domain. Denote by $!_{U(C)}$ the unique morphism from $0$ to $U(C)$, then $!_{U(C)}$ is the inverse of $U(m)$. In fact $U(m)!_{U(C)}=1_0$. Then composing with $U(m)$ we obtain $U(m)!_{U(C)}U(m)=U(m)$, thus, observing that $!_{U(C)}U(m)$ and $1_{U(C)}$ are a morphisms between objects arising from $\mathcal{A}$, we also have that $!_{U(C)}U(m)=1_{U(C)}$. Thus $U(m)$ is an iso.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkRyQBfU9TXfIRTkK1Ok1bsAqgAoAwgEpuvEBmx4CRAEyiaDFm0QdlfdYKIBmXeIPT5SrmJhQA5vCKgAZgCcIAWyQyEBwIJBEbSSNZPwcVH38kHWDQxCsIwxAAQgB9YFlFLm5KLiA
 \begin{tikzcd}
@@ -272,7 +272,7 @@ Then the adjunction induced in $0$ $F^0 \dashv U^0$ is an adjoint equivalence.
     \begin{proof}
         Consider the induced adjunction  $F^0 \dashv U^0$ in \eqref{induced ajunction on 0}. Observe that $(\mathcal{A} \downarrow 0) \cong \mathrm{Pt}_\mathcal{A}(0)$ via the unique morphism from the initial object.
 
-        First, we aim to prove that $U^0$ reflects isos. Let $f:(A,\alpha)\to (A',\alpha')$ be a morphism in $\mathrm{Pt}_\mathcal{A}(0)$. Observe that $U^0(f)=(!_{U(0)})^*(U(f))$. 
+        First, we aim to prove that $U^0$ reflects isos. Let $f:(A,\alpha)\to (A',\alpha')$ be a morphism in $\mathrm{Pt}_\mathcal{A}(0)$ such that $U^0(f)$ is iso. Observe that $U^0(f)=(!_{U(0)})^*(U(f))$. 
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfWABVABTEAlAF9RAQXEhJpdJlz5CKAIzkqtRizaz5i5djwEiAZm3V6zVohCyA5EaUgMptUQAs13XbZObiw+OEFRCUkZJwU3D1VzFAAmUg0dW30HCNcTBPVkFKT0vXt2BR0YKABzeCJQADMAJwgeJDIQHAgkAFZqACMYMCgkAFoLdozSrh46HAALRp5gNGaAK0l+DRBqODmsepxRjWMQJpakLQ6uxF8QXf3DxBHLyYMRLkY0Oboc0+bWxApK5IW6vLLvDifb4ubYgBh0AYMAAKKjM6hAjSwVTmhx2ewOFxOZwB7U6FxsJTY01mCyWKwg634SVh8MRKM8iQxWJxsQa-3JwMBFIC4Pqv2JSCsgqBYJA1Pmi2Waw2SRiRP5iFJ1ylAyGkvaDCwYFKUDou0qsNlQgAesQRGKALwiACE4TEUnE1oAVCJRGLxRreoLQZSHK7hO7JCyETBkaivA4GDACerzogpWTEEHdcN0xNQ3KODMFXTlZsYtRWbH2Xk2Jjsbi7vjHsc3BKbtRM5d7gSni8C6JXXJeX807dM0Cey3hZlHC7BNFJPJKzG4xz0fWeamAUHM+0c-q8Q8jtuep3tf1Brmxu0pwKq2vaw5N4dJBRJEA
 \begin{tikzcd}
@@ -292,7 +292,7 @@ Then the adjunction induced in $0$ $F^0 \dashv U^0$ is an adjoint equivalence.
 \end{subbox}
 
 \begin{mainbox}{}
-\begin{theo}
+\begin{theo}\label{U is !^* up to iso iff unit is cartesian}
 Let $\mathcal{A}$ be an ideally exact category, and let $U:\mathcal{A} \to \mathcal{X}$ be the monadic functor associated to the definition, coming with a left adjoint $F$. The functor $U$ is, up to category equivalence, the pullback functor $!^*$ if and only if the unit associated to $U$ is cartesian.
 \begin{equation}\label{U is !^* up to iso}
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAdDgW3pwAsAxk2ABBAL4hxpdJlz5CKMsWp0mrdl14DhjYAA1J02djwEi5UipoMWbRCAAUWvkJESABFygQA7mHoAJ0C-D3IASikZEAxTBQsKVVsNB2ceV10xcS8OH38gkN8PAEZI8VUYKABzeCJQADMQ7iRLEBwIJGKbdXsQAFUQGjh+LHqcJABaYuMQRohmxABmGnaWmn4Yeih2SDA2brtNDkECKqiGpqRlto7EMjVDhwBCAD0AKkGQYdHxxCmZuYLe6rRBdEAbLY7Aj7B4pTjHU7nWaXUErW6tb5jSZg5K9ABiSMBSGBt2umN+UwOcKeAH0nlJKOIgA
@@ -307,7 +307,7 @@ Let $\mathcal{A}$ be an ideally exact category, and let $U:\mathcal{A} \to \math
 
 \begin{subbox}{}
     \begin{proof}
-        We already proved that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$, by the unique morphism to the terminal object. Suppose that the unit $\eta$ associated to $U$ is cartesian, we aim prove that $(\mathcal{A} \downarrow 0) \cong \mathcal{X}$ and that the diagram commutes up to natural isomorphisms.
+        We already proved that $(\mathcal{A} \downarrow 1) \cong \mathcal{A}$, by the unique morphism to the terminal object. Suppose that the unit $\eta$ associated to $U$ is cartesian, we aim to prove that $(\mathcal{A} \downarrow 0) \cong \mathcal{X}$ and that the diagram commutes up to natural isomorphisms.
 
         By the definition of ideally exact category we have that $\mathcal{X}$ is semiabelian, thus $\mathcal{X}$ is pointed and protomodular. Moreover, since $U$ is monadic, $U$ reflects isos. By assumption we also have that $\eta$ is cartesian. Then, by \Cref{ajoint equivalence for pullback functor} the adjunction $F^0 \dashv U^0$ in \eqref{induced ajunction on 0} is an adjoint equivalence, thus an equivalence of categories.
         
@@ -328,45 +328,37 @@ Let $\mathcal{A}$ be an ideally exact category, and let $U:\mathcal{A} \to \math
 
 \begin{rembox}{}
     \begin{rem}
-        One can also prove directly that downward-right directed square \eqref{U is !^* up to iso} commutes up to natural iso. So, we aim to prove that $U^0 !^*$ corresponds to the functor $U$. In order to do that we compute $U^0 !^*$ in an object $A$ in $\mathcal{A}$. Consider the object $(A,!^A)$, and its pullback
+        One can also prove directly that the downward-right directed square \eqref{U is !^* up to iso} commutes up to natural iso. So, we aim to prove that $U^0 !^*$ corresponds to the functor $U$. In order to do that we compute $U^0 !^*$ in an object $A$ in $\mathcal{A}$. Consider the object $(A,!^A)$, and its pullback
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfQCMAQRABfUuky58hFACZyVWoxZtREqdjwEiZQcvrNWiduMkgM22UUUHqRtacHjlMKAHN4RUADMAThA8SILUOBBIAMwOqiYgAIQAehoWAUFIiiDhUTHGbPHmfoHBiGRZEYihKnmmXDx0OAAW-jzAaIEAVmL88oUgaSVl2YiZjnF1Dc2t7RBdQq5iQA
 \begin{tikzcd}
-0\times_1A \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & A \arrow[d, "!^A"] \\
+0\times A \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & A \arrow[d, "!^A"] \\
 0 \arrow[rr, "!"]                                                     &  & 1                 
 \end{tikzcd}
         \]
-        Since $!^*$ is a right adjoint, also the following square is a pullback.
+        Since $U$ is a right adjoint, also the following square is a pullback.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFUAKYgSgB0+eALbwA+gEYuAQR4gAvqXSZc+QigBM5KrUYs2U+YpAZseAkTLjt9Zq0QdushUtOqimq9Rt774+dpgoAHN4IlAAMwAnCCEkcWocCCQAZi9dOwcAQgA9GUMI6NjETRBElLTbNi5MpyMomKQyUqTEeJ1K+y4BITocAAtIoWA0aIArOVF1WoKGxCay4oqfB27egaGRiHGJJwo5IA
 \begin{tikzcd}
-U(0)\times_1U(A) \arrow[rr, "U(\mathrm{proj}_2)"] \arrow[d, "U(\mathrm{proj}_1)"] &  & A \arrow[d, "U(!^A)"] \\
-U(0) \arrow[rr, "U(!)"]                                                           &  & 1                    
+U(0 \times A) \arrow[rr, "U(\mathrm{proj}_2)"] \arrow[d, "U(\mathrm{proj}_1)"] &  & U(A) \arrow[d, "U(!^A)"] \\
+U(0) \arrow[rr, "U(!)"]                                                           &  & U(1)                    
 \end{tikzcd}
 \]
-Then, apply $U^0$ to $(U(0)\times_1U(A),U(\mathrm{proj}_1))$. By definition \eqref{induced ajunction on 0}, we need to compute the pullback of $U(\mathrm{proj}_1)$ along $!_U(0)$.
-Since the right square is a pullback, as we just proved, and the whole diagram is a pullback, then the left square is the pullback of $U(\mathrm{proj}_1)$ along $!_U(0)$. Thus the result of $U^0 !^*$ in an object $A$ in $\mathcal{A}$ is the pullback $0\times_1U(A)$.
+Then, apply $U^0$ to $(0\times A,\mathrm{proj}_1)$. By definition \eqref{induced ajunction on 0}, we need to compute the pullback of $U(\mathrm{proj}_1)$ along $!_{U(0)}$.
+
+Now, the last diagram can be rewritten, up to iso, as
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBVACnIEoAdfngC28APoBGbgEFeIAL6l0mXPkIoALBWp0mrdtIVKQGbHgJEyEnQxZtEnHnMXKzaolus1b+hxKOuqhYo5KReunbs5AEmKubqyKFU3nr2IOSCIuJSXLIKOjBQAObwRKAAZgBOEMJIEjQ4EEgAzCmRDtwAhAB6eS4gVTVIZCCNLW2+jp3OxoO1iKGjTYj1EZPcgsL0OAAWlcLAaNUAVvJixDMV1fOLY4gjPmkb-Fu7+4cnZxKXA9dIWkthhM0p0xMBuHx5DE5kgAKwNZbkfowxDwwGIDTySjyIA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFUAKYgSgAIAOgLwBbeHy4BBHiAC+pdJlz5CKAEzkqtRizZSZ8xdjwEiZAIxb6zVog7cDCkBmMqiGy9Wu675uVpgoAHN4IlAAMwAnCBEkc2ocCCQAZi8dWxAAQgA9YH1ZOScomKQNEESUtJs9TkzHCOjYxDJypMR47Wq7IRE6HAALSJFgNGiAK1kAfTVChpLmhLay7wyevsHh0YgJyb9ZClkgA
 \begin{tikzcd}
-0\times_1U(A) \arrow[rr] \arrow[d] &  & U(0)\times_1U(A) \arrow[rr, "U(\mathrm{proj}_2)"] \arrow[d, "U(\mathrm{proj}_1)"] &  & A \arrow[d, "U(!^A)"] \\
-0 \arrow[rr, "!_{U(0)}"]           &  & U(0) \arrow[rr, "U(!)"]                                                           &  & 1                    
+U(0) \times U(A) \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & U(A) \arrow[d, "!^{U(A)}"] \\
+U(0) \arrow[rr, "!^{U(0)}"]                                                     &  & 1                         
 \end{tikzcd}
 \]
-Finally we prove that the pullback $0\times_1U(A)$ is just $U(A)$. Observe that the following square is the pullback of $U(!^A)$ along $!$. In fact, given two morphism $f_1:X \to U(A)$, $f_2:X \to 0$ such that the external diagram commutes, there exists a unique morphism such the two triangles commutes. Such unique morphism is $f_2$.
-\[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRQBGUsKq1GLNgFUAFAEEAlN14gM2PASIBmMRPrNWiEPOWq+mwUVEAmA1OMhiAXmEX1-LUOR771Q2kTdy4JGCgAc3giUAAzACcIAFskPRAcCCQAFh44xJTEW2oM7NyQBOSkMnTMxFEQBiwwJyg6OAALcJAAxzZYgH0QtQqC6pLC6gAjGDAoVOrApwGhvMrEMdq06dmkAFodBd6TAdsPEaR68bTFtgBCAD1gMyUuM-yL4tqiySM2YX6nooXtwKFwgA
-\begin{tikzcd}
-X \arrow[rd, "f_1", dashed] \arrow[rrrd, "f_1", bend left] \arrow[rdd, "f_2", bend right] &                                                   &  &                \\
-                                                                                          & U(A) \arrow[d, "!^{U(A)}"] \arrow[rr, "1_{U(A)}"] &  & U(A) \arrow[d] \\
-                                                                                          & 0=1 \arrow[rr]                                    &  & 1             
-\end{tikzcd}
-\]
-Thus the pullback $0\times_1U(A)$ of $U(!^A)$ along $!$ is just $A$. This means that also the downward-right directed square commutes up to natural isomorphisms.
+so $U^0!^*(A) = U^0((0 \times A, \mathrm{proj}_1)) = \mathrm{Ker}(U(\mathrm{proj}_1)) \cong \mathrm{Ker}(\mathrm{proj}_1: U(0) \times U(A) \to U(A)) \cong U(A)$
 \end{rem}
 \end{rembox}
 
-This previous theorem answer the question we posed at the beginning of this section. The following example shows that we already came across to such a scenario.
+\Cref{U is !^* up to iso iff unit is cartesian} answers the question we posed at the beginning of this section. The following example shows that we already came across to such a scenario.
 
 \begin{rembox}{}
     \begin{ex}
@@ -374,7 +366,7 @@ In the first chapter we saw the same theorem in the particular case of $\mathcal
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAIwBmwAEpYwAcwC+AAm5QIAdzB0AThtXyAjAEoQs0uky58hFGQBMVWoxZt5XXv2FjJMhUtXqtO7j5BISFgAC1ZQ2NTbDwCImtyO3pmVkQQQLdRCSk5IxMQDFiLBNJbahTHdMzgj1yAfQAqWSM7GChpeCJQEW0eJDIQHAgkXWo4ASwRHCQAWjH7VLYAQgA9RvyevtHqYYHxyem5hcq0kGX65c2QXoh+xEShkcQAZgOpmcR5ioczgFVrrd7m8nkhHhMPscfkt0gAxQHbRCDPYPaFVDKcADGBGkIF2dCwDDYkDArGoAhgdCgxIIrGiN0RCxRIIhR0QJ1+bBqAg0PGAAGsYBoWtQGHQhDAGAAFMxxSwgDRYaQCGb0oFIEEohasz4cmEcWGkbhoLD1bkhcKRPEgMUS6WykrpRXK1UUWRAA
 \begin{tikzcd}
-(\mathsf{Ring} \downarrow 1) \arrow[dd, "!^*", shift left] \arrow[rr, "\cong", no head]                       &  & \mathsf{Ring} \arrow[dd, "U", shift left]                                                    \\
+(\mathsf{Ring} \downarrow \{0\}) \arrow[dd, "!^*", shift left] \arrow[rr, "\cong", no head]                       &  & \mathsf{Ring} \arrow[dd, "U", shift left]                                                    \\
                                                                                                               &  &                                                                                              \\
  (\mathsf{Ring} \downarrow \mathbb{Z}) \arrow[uu, "!_!", shift left] \arrow[rr, "\mathrm{Ker}"', shift right] &  & \mathsf{Ring_*} \arrow[uu, "F", shift left] \arrow[ll, "{(F,\pi_\mathbb{Z})}"', shift right]
 \end{tikzcd}
@@ -385,14 +377,18 @@ In particular the bottom category equivalence constructed in that case exactly c
 
 \section{Ideals and quotients}
 
-In this section we will investigate the notion of ideals in an ideally exact category and their corresponding quotients. We aim to emulate the classical definition of ideals in a ring, and the corresponding quotients. As already mentioned, recall that a proper ideal in a ring is a non-unital ring. Note that the notion of normal subobjects is well defined in a semiabelian category as the kernel of a morphism. Also recall that a non-unital ring is semiabelian, while a unital ring fails to be, as mentioned in the first chapter. Given the previous observations, one can model the notion of ideals as the normal subobjects through a functor, which is the forgetful functor in rings, having a semiabelian category as codomain. Note that this framing is consistent with the characterization of ideally exact categories given in \Cref{Ideally exact categories}. In particular in $\mathsf{Ring}$ we have the following structure.
+Notice that the example of rings given in the first chapter is consistent with the definition of ideally exact category, since the forgetful functor
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBGAM2AAlLGADmAXxDTS6TLnyEUARnJVajFm049+wsRMkB9AFSzpWmFEnwioIQCcIXJGRA4ISDduasiCAAqnIU0kA
 \begin{tikzcd}
 \mathsf{Ring} \arrow[r, "U"] & \mathsf{Ring_*}
 \end{tikzcd}
 \]
-In general in an ideally exact category $\mathcal{A}$ we have the following structure, with semiabelian $\mathcal{X}$.
+is monadic, and $\mathsf{Ring}_*$ is semiabelian. Moreover $U$ is, up to iso, the pullback functor along $!:0 \to 1$, which makes applicable \Cref{quotients in ideally exact} in this case. 
+
+In a semiabelian category, a \textbf{normal subobject} is precisely the kernel of a morphism. In this section we will investigate the notion of ideal. As we will see, this concept extends the familiar notion of normal subobject from semiabelian categories.
+
+In an ideally exact category $\mathcal{A}$ we have the following structure, with semiabelian $\mathcal{X}$.
 \[
 \begin{tikzcd}
 \mathcal{A} \arrow[r, "U"] & \mathcal{X}
@@ -439,7 +435,7 @@ The following compositions with the canonical injections of $T(0)+X$ prove that 
     \item $\xi_2T(n) \eta_X = \xi_2 \eta_{X_2} n = n$
     \item $n 1_X = n$
 \end{itemize}
-Since $[T(!_{X}),\eta_{X}]$ is a strong epi, there exists a unique morphism $\xi$ making the diagram commute. $\xi$ turns out to be a algebra for $X$. 
+Since $[T(!_{X}),\eta_{X}]$ is a strong epi, there exists a unique morphism $\xi$ making the diagram commute. $\xi$ turns out to be an algebra for $X$. 
 
 It remains to prove that it is unique. Suppose that there exists another algebra structure $\xi'$ on $X$ making $n$ a $T$-algebra morphism. Then
 \begin{align*}
@@ -495,7 +491,7 @@ Thus we have $s$ and $\langle r_1,r_2 \rangle$ morphisms whose composition is th
     \end{proof}
 \end{subbox}
 
-In the next results we consider the following lattice. Let $A$ be an object in a category $\mathcal{A}$.
+In the next results we consider the following lattices. Let $A$ be an object in a category $\mathcal{A}$.
 \begin{itemize}[itemsep=1.5ex]
     \item $\mathrm{Quot}(A)$: regular epis, up to iso, with domain $A$;
     \item $\mathrm{ERel}(A)$: equivalence relations, up to iso, on $A$;
@@ -526,7 +522,7 @@ The following theorem shows the correspondence between the lattices of quotients
 \]
     and the map 
     \[\mathrm{NSub}(X) \to \mathrm{Quot}(X)\]
-    that associates to each kernel pair of some morphism $f:X \to Y$ the regular epi $p$ underlying the corresponding (regular epi, mono) factorization of $f$.
+    that associates to each kernel of some morphism $f:X \to Y$ the regular epi $p$ underlying the corresponding (regular epi, mono) factorization of $f$.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAdDgW3pwAsATt2ABpGIIC+ACgBmAShCTS6TLnyEU5CtTpNW7ABpKVIDNjwEiAZh00GLNohABNE6osaiAJlLFdDgbOAApKujBQAObwRKCyghDcSNogOBBIvnqO7LLuIPGJSGSp6YjkynEJSWU0aUi2IPww9FDsOADuEE0tCPb6TmZ5BdUNdYiZOPRYjG1TM5KUkkA
 \begin{tikzcd}
@@ -560,10 +556,9 @@ Now we aim to generalize the previous theorem to an ideally exact category.
         \[\mathrm{Quot}(A) \cong \mathrm{ERel}(A)\]
         in fact $\mathcal{A}$ is exact, hence kernel pairs and equivalence relations correspond to each others, and by \Cref{coeq of the kernel pair} and \Cref{kernel pair of the coeq} we have the given isomorphism. Furthermore
         \[\mathrm{ERel}(A) \cong \mathrm{RRel}(A)\]
-        because $\mathcal{A}$ is protomodular, hence Mal'tsev. By \Cref{ideally exact has essentially nullary monad} the unit of the adjunction associated to $U$ is essentially nullary, then, by \Cref{T-algebra in the reflexive relation}, we have that
-        \[\mathrm{RRel}(A)\cong \mathrm{RRel}(U^T(A)) \]
-        Since $U$ is monadic we also have that
+        because $\mathcal{A}$ is protomodular, hence Mal'tsev. By \Cref{ideally exact has essentially nullary monad} the monad of the adjunction associated to $U$ is essentially nullary. Then, by \Cref{T-algebra in the reflexive relation}, we have that
         \[\mathrm{RRel}(A)\cong \mathrm{RRel}(U(A)) \]
+        where we also used the monadicity of $U$ to conclude that the category of algebras is equivalent to $\mathcal{A}$.
         By definition, the codomain of $U$ is semiabelian, thus exact and Mal'tsev, then as above 
         \[\mathrm{RRel}(U(A)) \cong \mathrm{ERel}(U(A)) \cong \mathrm{Quot}(U(A))\]
         Finally, by the previous result \Cref{quotients in semiabelian} we have that
@@ -571,7 +566,9 @@ Now we aim to generalize the previous theorem to an ideally exact category.
     \end{proof}
 \end{subbox}
 
-Given an ideally exact category $\mathcal{A}$, we call the elements of $\mathrm{NSub}(U(A))$ the $U$-ideals of $\mathcal{A}$. This theorem gives the correspondence between $U$-ideals and regular epis, which play the role of quotients.
+Given an ideally exact category $\mathcal{A}$, the elements of $\mathrm{NSub}(U(A))$ are called $U$\textbf{-ideals} of $\mathcal{A}$. If $U$ is, up to iso, the pullback functor along $! : 0 \to 1$, then these are simply called \textbf{ideals}.
+
+The previous theorem gives the correspondence between $U$-ideals and regular epis, which play the role of quotients.
 
 \begin{rembox}{}
     \begin{rem}
@@ -591,4 +588,4 @@ I \arrow[r, hook] & R \arrow[r, "\pi"] & R/I
     \end{rem}
 \end{rembox}
 
-With this final theorem we proved that in an ideally exact category quotients and normal subobjects correspond to each others. This is exactly what happens in $\mathsf{Ring}$ as mentioned in the first chapter. In fact in $\mathsf{Ring}$ the ideals, which are the normal subobjects in $\mathsf{Ring_*}$ through the forgetful functor, correspond to quotients, which are the regular epis. Observe that in $\mathsf{Grp}$ the result holds directly from \Cref{quotients in semiabelian}, since $\mathsf{Grp}$ is a semiabelian category, and normal subgroups are objects of $\mathsf{Grp}$. Thus in this case we do not need to consider an underlying functor, or, equivalently, we can just consider the identity functor.
+With this final theorem we proved that in an ideally exact category quotients and normal subobjects correspond to each others. This is exactly what happens in $\mathsf{Ring}$. In fact the ideals in $\mathsf{Ring}$, which are the normal subobjects in $\mathsf{Ring_*}$ through the forgetful functor, correspond to quotients, which are the regular epis. Observe that in $\mathsf{Grp}$ the result holds directly from \Cref{quotients in semiabelian}, since $\mathsf{Grp}$ is a semiabelian category, and normal subgroups are objects of $\mathsf{Grp}$. Thus in this case we do not need to consider an underlying functor, or, equivalently, we can just consider the identity functor.

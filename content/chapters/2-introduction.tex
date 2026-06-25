@@ -1,28 +1,34 @@
-\chapter{The categorical structure of Rings}
+\chapter{Unital versus non-unital rings}
 
 \fontsize{12}{14.5}\selectfont
 
-In this chapter, we aim to introduce a motivating example for the notions of ideally exact categories. This is based on an article by George Janelidze \cite{Janelidze2024}.
+In this chapter, we aim to introduce a motivating example for the notion of ideally exact category. This is based on an article by George Janelidze \cite{Janelidze2024}.
 
-Consider the category $\mathsf{Ring}$ of rings with unit. The notion of ideal is, at first glance, somewhat unnatural in the context of categories. In fact, in general, an ideal of a ring with unit is not an object in the category $\mathsf{Ring}$: if an ideal contains the unit, then it coincides with the whole ring. However, we observe that it is an object of the category $\mathsf{Ring_*}$ of rings without unit.
+Consider the category $\mathsf{Ring}$ of rings with unit. The notion of ideal is, at first glance, somewhat unnatural in the context of categories. In fact, in general, an ideal of a ring with unit is not an object in the category $\mathsf{Ring}$: if an ideal contains the unit, then it coincides with the whole ring. However, we observe that it is an object of the category $\mathsf{Ring_*}$ of not necessarily unital rings.
 
-It is a standard fact that $\mathsf{Ring}$ and $\mathsf{Ring_*}$ are finitely complete, protomodular and exact categories. They both have binary coproducts, even if they are not the same. The coproduct in the category $\mathsf{Ring_*}$ is the free product, while in $\mathsf{Ring}$ it is the free product with amalgamation, in order to ensure that there is a unit in the coproduct.
+It is known that $\mathsf{Ring}$ and $\mathsf{Ring_*}$ are exact and protomodular categories (see \cite{BorceuxBourn2004} for example). They both have binary coproducts, even if they are not the same. The coproduct in the category $\mathsf{Ring_*}$ is the free product, while in $\mathsf{Ring}$ it is the free product with amalgamation, in order to ensure that there is a unit in the coproduct.
 
-That said, they have a crucial difference: $\mathsf{Ring}$ is not pointed, whereas $\mathsf{Ring_*}$ is. In fact, in $\mathsf{Ring_*}$ the initial and terminal objects are both the zero ring ${0}$, while in $\mathsf{Ring}$ the initial object is the zero ring $0=\mathbb{Z}$ of integers, but the terminal object is the ring $1=\{0\}$. Thus, we conclude the $\mathsf{Ring_*}$ is semiabelian, while $\mathsf{Ring}$ fails to be.
+That said, they have a crucial difference: $\mathsf{Ring}$ is not pointed, whereas $\mathsf{Ring_*}$ is. In fact, in $\mathsf{Ring_*}$ the initial and terminal objects are both the zero ring $\{0\}$, while in $\mathsf{Ring}$ the initial object $0$ is the ring $\mathbb{Z}$ of integers, whereas the terminal object $1$ is the trivial ring $\{0\}$. Thus, we conclude the $\mathsf{Ring_*}$ is semiabelian, while $\mathsf{Ring}$ fails to be.
 
-So we have the forgetful functor that forgets the unit
+There is an obvious inclusion functor (that forgets the existence of a unit element):
 \[U: \mathsf{Ring} \to \mathsf{Ring_*}\]
-with $\mathsf{Ring}$ protomodular and exact, and $\mathsf{Ring_*}$. This functor has a left adjoint: $\mathbb{Z} \ltimes (-)$. This functor, is given by
+This functor has a left adjoint: $\mathbb{Z} \ltimes (-)$. This functor, is given by
 \begin{align*}
 F: \mathsf{Ring_*} &\to \mathsf{Ring} \\
 R &\mapsto \mathbb{Z} \ltimes R
 \end{align*}
-where $\mathbb{Z} \ltimes R$ is $\mathbb{Z} \times R$ as set, the sum in $\mathbb{Z} \ltimes R$ is the sum by components, while the product $\cdot$ is defined as follows
+where $\mathbb{Z} \ltimes R$ is $\mathbb{Z} \times R$ as a set, with componentwise addition, while the product $\cdot$ is defined as follows
 \begin{align*}
 \cdot : (\mathbb{Z} \ltimes R) \times (\mathbb{Z} \ltimes R) &\to \mathbb{Z} \ltimes R \\
 ((m,r),(n,s))&\mapsto (mn, nr + ms + rs)
 \end{align*}
 The unit of the ring $(\mathbb{Z} \ltimes R)$ is $(1,0_R)$. This construction gives us a unital ring.
+
+For a morphism $f: R \to S$ in $\mathsf{Ring_*}$,
+\begin{align*}
+    F(f) : \mathbb{Z} \ltimes R &\to \mathbb{Z} \ltimes S \\
+    (n,r) &\mapsto (n, f(r))
+\end{align*}
 
 The unit and the counit of the adjunction are given by
 \begin{align*}
@@ -33,10 +39,17 @@ r &\mapsto (0,r)
 \epsilon_R: FU(R)=\mathbb{Z} \ltimes R &\to R  \\
 (n,r) &\mapsto (n1_R + r)
 \end{align*}
+One can check that if $f: R \to
+U(S)$ is a morphism in $\mathsf{Ring_*}$, with $S$ unital, then the function 
+\begin{align*}
+Z \ltimes R &\to S \\
+(n,r) &\mapsto (n1_S + f(r))
+\end{align*}
+gives a morphism in $\mathsf{Ring}$, so that the unit $\eta$ has the universal property required for a adjunction.
 
 The functor $U$ turns out to be monadic, simply by Beck's theorem, since coequalizers in $\mathsf{Ring}$ and $\mathsf{Ring_*}$ are the same. In fact, given $f,g$ morphisms, the coequalizer of $(f,g)$ is the canonical projection
 \[\pi: B \to B/I \ \ \ \ \ \ \ I = (f(r) - g(r) \ | \ r \in R)\]
-This adjunction will lead us to the definition of the ideally exact categories. We will see that the definition involves a  generic monadic functor in a semiabelian category. Sometimes, as we will see, such functor is, up to category equivalences, the pullback functor of $!:0 \to 1$. That's the case for the functor $U$ above. As we will see, this is intrinsically due to the fact that the unit $\eta$ of the adjunction is cartesian. In fact, one can easily prove that, given a morphism $f:R \to R'$ in $\mathsf{Ring_*}$, the pullback in $\mathsf{Ring_*}$ of $\eta_{R'}$ and $UF(f)$
+Notice that the unit $\eta$ of the adjunction is cartesian, i.e. the naturality squares are pullbacks. In fact, one can easily prove that, given a morphism $f:R \to R'$ in $\mathsf{Ring_*}$, the pullback in $\mathsf{Ring_*}$ of $\eta_{R'}$ and $UF(f)$
 \begin{align*}
 R'&\times_{UF(R')} UF(R) = R'\times_{\mathbb{Z}\ltimes R'} (\mathbb{Z}\ltimes R) = \\[1.5ex]
 &= \{ (r',(n,r)) \in R'\times (\mathbb{Z}\ltimes R) \ | \  UF(f)(x) = \eta_{R'}(y) \} \\[1.5ex]
@@ -53,44 +66,97 @@ is isomorphic to $R$.
 \end{tikzcd}
 \]
 
-We now want to deep into the mentioned category equivalence. First we consider the pullback functor of $!: 0 \to 1$
-\[!^*:(\mathsf{Ring} \downarrow 1) \to (\mathsf{Ring} \downarrow 0)\]
-Let $R$ be an object in $\mathsf{Ring}$, then $!^*(R)=(0 \times_1 R,  \mathrm{proj}_1)$
-\begin{equation}\label{ring square}
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfQCMAAgBKIAL6l0mXPkIoATKUFVajFm0GTpIDNjwEiZVdXrNWidjpkH5RZZTMbLIcRLUwoAc3hFQAGYAThA8SADM1DgQSILOFmwAhAB67rrBoUjKINGx8ZpWiTYgGWGIZDkxiJHqCVZcPHQ4ABZBPMBoIQBWEvyKxaVIFbmI2eYFIA1Nre2dED1CkhQSQA
-\begin{tikzcd}
-0\times_1 R \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & R \arrow[d, "!^R"] \\
-0 \arrow[rr, "!"]                                                      &  & 1                 
-\end{tikzcd}
-\end{equation}
 
-Observe that
-\[(\mathsf{Ring} \downarrow 1) \cong \mathsf{Ring}\]
-in fact, we can always provide an object in $\mathsf{Ring}$ with the unique morphism to $1$. Furthermore
-\[(\mathsf{Ring} \downarrow 0) = (\mathsf{Ring} \downarrow \mathbb{Z}) \cong \mathsf{Ring_*} \]
-where the equivalence of category is given by the unitalization functor 
+
+
+
+
+
+
+
+
+From the properties of the adjunction above, Janelidze extrapolated the
+notion of ideally exact categories. In order to better understand the link
+between the guiding example and the abstract notion, we need a few more
+observations.
+
+First of all, we have an obvious equivalence $(\mathsf{Ring} \downarrow 1)\cong \mathsf{Ring}$, as for
+any category with a terminal object. More interestingly, there is another equivalence of categories
+
+\[
+(\mathsf{Ring} \downarrow 0)\cong (\mathsf{Ring} \downarrow \mathbb{Z}) \cong \mathsf{Ring_*}
+\]
+given by the unitalization functor 
 \begin{align*}
-    (F,\pi_\mathbb{Z}) : \mathsf{Ring_*} &\to \mathsf{Ring} \downarrow \mathbb{Z}\\
+    (F,\pi_\mathbb{Z}) : \mathsf{Ring_*} &\to (\mathsf{Ring} \downarrow \mathbb{Z})\\
     R &\mapsto (\mathbb{Z} \ltimes R, \pi_\mathbb{Z}:\mathbb{Z} \ltimes R \to \mathbb{Z})
 \end{align*}
-and its quasi inverse $\mathrm{Ker}$\footnote{We are using the algebraic definition of $\mathrm{Ker}$, in fact we cannot use the categorical definition since $\mathsf{Ring}$ is not pointed. However, one can still induce an action of $\mathrm{Ker}$ in the morphisms. Alternatively, one may consider the categorical definition of $\mathrm{Ker}$, but it is the $\mathrm{Ker}$ in $\mathsf{Ring_*}$, which is pointed, via the forgetful functor $U$. This perspective will be used when we treat the corresponding theorem in an ideally exact category, where the existence of the associated categorical equivalence is established.}.
+and its quasi inverse $\mathrm{Ker}$
 \begin{align*}
     \mathrm{Ker} : (\mathsf{Ring} \downarrow \mathbb{Z}) &\to \mathsf{Ring_*}\\
     (R,\phi:R \to \mathbb{Z}) &\mapsto \mathrm{Ker}(\phi) 
 \end{align*}
+Indeed, for an $R$ in $\mathsf{Ring_*}$, $\mathrm{Ker}(\pi_\mathbb{Z} \ltimes R \to \mathbb{Z})$
+is clearly isomorphic to $R$.
 
-The following diagram, which is commutative up to natural isomorphism, summarizes the situation and shows that the forgetful functor $U$ is, up to equivalence of categories, the pullback functor $!^*$.
+On the other hand, given a $\phi: R \to \mathbb{Z}$ in $\mathsf{Ring}$, 
+and fixed a kernel $K$ of $\phi$, the functions
+\begin{align*}
+    \mathbb{Z} \ltimes K &\to R \\
+    (n,k) &\mapsto n1_R + k
+\end{align*}
+\begin{align*}
+    R &\to \mathbb{Z} \ltimes K \\
+    r &\mapsto (\phi(r), r - \phi(r)1_R)
+\end{align*}
+are inverse each other and provide an isomorphism
+$(\mathbb{Z} \ltimes K, \pi_\mathbb{Z}) \cong (R,\phi)$
+in $(\mathsf{Ring} \downarrow \mathbb{Z})$.
+
+Notice that $\mathrm{Ker}$ is used here in the usual algebraic sense,
+and is not a kernel in $\mathsf{Ring}$ in the categorical sense, since the category is not
+pointed, and more importantly, if $\phi \neq 0$ then $\mathrm{Ker}(\phi)$ is not a unital subring of $R$. More appropriately, one should regard it as $\mathrm{Ker}(U(\phi))$, so that it becomes
+a categorical kernel in the
+(pointed) category $\mathsf{Ring_*}$. This perspective will be
+essential to define ideals in the ideally exact context.
+
+Based on the discussion above, one may regard $U$ as a functor from $(\mathsf{Ring} \downarrow 1)$ to $(\mathsf{Ring} \downarrow 0)$, up to equivalence. Actually, we can be even more precise.
+For each $R$ in $\mathsf{Ring}$, the functions
+\begin{align*}
+\mathbb{Z} \ltimes R &\to \mathbb{Z} \ltimes R \\
+(n,r) &\mapsto (n, -n1_R + r)
+\end{align*}
+\begin{align*}
+\mathbb{Z} \ltimes R &\to \mathbb{Z} \ltimes R \\
+(n,r) &\mapsto (n, n1_R + r)
+\end{align*}
+are inverse each other and provide an isomorphism $(\mathbb{Z} \ltimes K, \pi_\mathbb{Z}) \cong (\mathbb{Z} \ltimes K, \pi_\mathbb{Z})$ in $(\mathsf{Ring} \downarrow \mathbb{Z})$. But $\pi_\mathbb{Z}: \mathbb{Z} \ltimes K \to \mathbb{Z}$ is also the first projection of the pullback
+
 \[
-% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAIwBmwAEpYwAcwC+AAm5QIAdzB0AThtXyAjAEoQs0uky58hFGQBMVWoxZt5XXv2FjJMhUtXqtO7j5BISFgAC1ZQ2NTbDwCImtyO3pmVkQQQLdRCSk5IxMQDFiLBNJbahTHdMzgj1yAfQAqWSM7GChpeCJQEW0eJDIQHAgkXWo4ASwRHCQAWjH7VLYAQgA9RvyevtHqYYHxyem5hcq0kGX65c2QXoh+xEShkcQAZgOpmcR5ioczgFVrrd7m8nkhHhMPscfkt0gAxQHbRCDPYPaFVDKcADGBGkIF2dCwDDYkDArGoAhgdCgxIIrGiN0RCxRIIhR0QJ1+bBqAg0PGAAGsYBoWtQGHQhDAGAAFMxxSwgDRYaQCGb0oFIEEohasz4cmEcWGkbhoLD1bkhcKRPEgMUS6WykrpRXK1UUWRAA
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfQCMAAgBKIAL6l0mXPkIoATKUFVajFm0GTpIDNjwEiZVdXrNWidjpkH5RZZTMbLIcRLUwoAc3hFQAGYAThA8SADM1DgQSILOFmwAhAB67rrBoUjKINGx8ZpWiTYgGWGIZDkxiJHqCVZcPHQ4ABZBPMBoIQBWEvyKxaVIFbmI2eYFIA1Nre2dED1CkhQSQA
 \begin{tikzcd}
-(\mathsf{Ring} \downarrow 1) \arrow[dd, "!^*", shift left] \arrow[rr, "\cong", no head]                       &  & \mathsf{Ring} \arrow[dd, "U", shift left]                                                    \\
-                                                                                                              &  &                                                                                              \\
- (\mathsf{Ring} \downarrow \mathbb{Z}) \arrow[uu, "!_!", shift left] \arrow[rr, "\mathrm{Ker}"', shift right] &  & \mathsf{Ring_*} \arrow[uu, "F", shift left] \arrow[ll, "{(F,\pi_\mathbb{Z})}"', shift right]
+\mathbb{Z} \times R \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & R \arrow[d, "!^R"] \\
+0 = \mathbb{Z} \arrow[rr, "!"]                                                      &  & 1 = \{0\}                
 \end{tikzcd}
 \]
-Observe that the downward-right directed square commutes up to natural isomorphism, since, referring to the diagram \refeq{ring square}, given an object $R$ in $\mathsf{Ring}$, $\mathrm{Ker}(\mathrm{proj}_1)$ is isomorphic to $R$ in $\mathsf{Ring_*}$.
-On the other hand, the upward-left directed square also commutes up to natural isomorphism, because in both cases we applied the unitalization functor $F$.
+in $\mathsf{Ring}$. In other words, the composite functor
+\[
+(\mathsf{Ring} \downarrow 1) \xrightarrow{\quad\cong\quad} \mathsf{Ring} \xrightarrow{\quad U\quad} \mathsf{Ring_*} \xrightarrow{(F,\pi_\mathbb{Z})} (\mathsf{Ring} \downarrow 0)
+\]
+is isomorphic to the pullback functor  (see Chapter 2)
+\[
+!^* : (\mathsf{Ring} \downarrow 1) \to (\mathsf{Ring} \downarrow 0)
+\]
+To sum up, there is an equivalence of adjunctions:
+\[
+% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAAoAdTgWzpwAWAIwBmwAEpYwAcwC+AAm5QIAdzB0AThtXyAjAEoQs0uky58hFGQBMVWoxZt5XXv2FjJMhUtXqtO7j5BISFgAC1ZQ2NTbDwCImtyO3pmVkQQQLdRCSk5IxMQDFiLBNJbahTHdMzgj1yAfQAqWSM7GChpeCJQEW0eJDIQHAgkXWo4ASwRHCQAWjH7VLYAQgA9RvyevtHqYYHxyem5hcq0kGX65c2QXoh+xEShkcQAZgOpmcR5ioczgFVrrd7m8nkhHhMPscfkt0gAxQHbRCDPYPaFVDKcADGBGkIF2dCwDDYkDArGoAhgdCgSDATAYDGoDCkZzgECZ1MZdCEMAYAAUzHFLCAGDAjtEboiFiiQRCjogTr82NxsTI8cKuTz+cV4ukRWKKLIgA
+\begin{tikzcd}
+(\mathsf{Ring} \downarrow 1) \arrow[dd, "!^*", shift left=3] \arrow[rr, leftrightarrow, "\cong"] \arrow[dd, phantom, "\dashv" description]                       &  & \mathsf{Ring} \arrow[dd, "U", shift left=3] \arrow[dd, phantom, "\dashv" description]      \\
+                                                                                                      &  &                                             \\
+ (\mathsf{Ring} \downarrow 0) \arrow[uu, "!_!", shift left=3] \arrow[rr, "\cong", leftrightarrow] &  & \mathsf{Ring_*} \arrow[uu, "F", shift left=3]
+\end{tikzcd}
+\]
 
-As already noticed, ideals in $\mathsf{Ring}$ are not objects in $\mathsf{Ring}$. However they are the normal subobject, ie the kernel of an arrow, in $\mathsf{Ring_*}$, which is semiabelian. Our aim is to study the notion of ideally exact category, that better captures the categorical structure of rings and ideals.
-
-Remark that this anomaly does not occur in the category $\mathsf{Grp}$. In fact normal subgroups are objects in the category of groups and, since $\mathsf{Grp}$ is semiabelian, they are exactly the normal subobjects in the semiabelian sense.
+It is precisely this interpretation of the adjunction $F \dashv U$ in terms of
+pullback functor that suggests how to extrapolate from the example of rings
+the more general notion of ideally exact category, illustrated in Chapter 5.

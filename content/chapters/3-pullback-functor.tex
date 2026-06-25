@@ -5,7 +5,7 @@
 \fontsize{12}{14.5}\selectfont
 \begin{mainbox}{}
 \begin{defi}
-    A \textbf{connected limit} is a limit over a connected category. A category is connected if it is inhabited and any two objects can be connected by a zigzag of morphisms
+    A \textbf{connected limit} is a limit over a connected category. A category is connected if it is inhabited (i.e. it is non-empty) and any two objects can be connected by a zigzag of morphisms
     \[
     \begin{tikzcd}
          y_1 \arrow[rd, leftrightarrow] &   & y_3 \arrow[ld, leftrightarrow] \arrow[rd, leftrightarrow] &        & y_n \arrow[ld, leftrightarrow] \\
@@ -94,7 +94,7 @@ E                                             &
     \end{proof}
 \end{subbox}
 
-Note that this result does not hold for all the limits. This is extensively shown in the following example.
+Note that this result does not hold for all the limits. A counterexample is given in the following example.
 \begin{rembox}{}  
     \begin{ex}
         The product is not a connected limit, in fact as we can observe the following category is not connected.
@@ -119,7 +119,7 @@ D \arrow[r, "\delta"] \arrow[rd, "\delta"'] & E \arrow[d, "1_E"']              &
 
 \section{Pullback functor’s adjunction}\label{pullback functor}
 
-Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to B$ in $\mathcal{A}$, one can consider functors pullback and shrink
+Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to B$ in $\mathcal{A}$, one can consider the functors pullback and shrink
 \[
 \begin{tikzcd}
     (\mathcal{A} \downarrow B)
@@ -136,7 +136,7 @@ defined as follows:
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAZgBoAGAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCAQRABfUuky58hFAFYK1Ok1btxUmdjwEiygIyqGLNohDDJ0kBl3yiZYzVMaLHazrn6U5FS-VzEC0bO28FZD9nNTN2K21bWT0Iw38YtxBPRPsfZAAmNNcgyVUYKABzeCJQADMAJwg+JD8QHAgkVPSgtAaAK0E8rPrGpDJW9sQCrvY0IYamxBa20YDYix6IfsM5kcRO5cnVjJ4mNAALeh2FgBYaA+UQRnoAIxhGAAUkhwtGGBqcEBHIInRjnS4JYYLABsdwmAHY7vQsIx2Hx6Gg4MsaHAzlh-kgEdN1gA9ABUJQkQA
 \begin{tikzcd}
-    A \arrow[d, "\alpha"] & {} \arrow[r, "p^*", maps to, shift right=7] & {} & E\times_BA \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  & A \arrow[d, "\alpha"] \\
+    A \arrow[d, "\alpha"] & {} \arrow[r, "p^*", maps to, shift right=7] & {} & E\times_BA \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1=p^*(\alpha)"'] &  & A \arrow[d, "\alpha"] \\
     B                     &                                             &    & E \arrow[rr, "p"]                                   &  & B                    
     \end{tikzcd}
 \]
@@ -158,7 +158,7 @@ defined as follows:
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbAKLdeIDNjwEiI8uPrNWiEHL5LBRAEzrqmqTr0L+yocgDMpiVrace+gSpSOxZydpBZd2sDL2QAFlJfZwsQACFucRgoAHN4IlAAMwAnCABbJDIQHAgkNRiAgB1K2AYcOisc-KQTYtLER2K6LAY2PLo0OBKQajgACyxMnCQAVj8XHTQAfQBCRtyCxEi2pAA2edi0atr69eat6mHEOYq2Y5g6huoGOgAjB4AFG0MdbKwUsbTYJNTY3K77W6LRJcIA
 \begin{tikzcd}
-    D \arrow[d, "\delta"] & {} \arrow[r, "p_!", maps to, shift right=5] & {} & D \arrow[rd, "p\delta"] \arrow[d, "\delta"'] &   \\
+    D \arrow[d, "\delta"] & {} \arrow[r, "p_!", maps to, shift right=5] & {} & D \arrow[rd, "p\delta=p_!(\delta)"] \arrow[d, "\delta"'] &   \\
     E                     &                                             &    & E \arrow[r, "p"]                             & B
     \end{tikzcd}
 \]
@@ -167,7 +167,7 @@ defined as follows:
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRQAmclVqMWbdgHJuvEBmx4CRMgEZx9Zq0QgAovL7LBRAMxjq2qXqOL+KocgAsliTrZ2lA1SgCsbta6HF4OpigA7IGSwbKhJr7IAZpWMWyGPMY+TlEp7jYgAELc4jBQAObwRKAAZgBOEAC2SGQgOBBIovnBADo9sAw4dCDUDHQARjAMAAphviB1WOUAFjh29U0t1O1I6qkeelAjIGOTM3NCJzA1a5kgG82Ie20diF1BbH0DQ3KjE1OzBKXBjXW4KB5ICwvJCuNp0LAMNiNOhoOA7ahwZZYG5IALdNhoAD6AEJ1g1HnidogAGz7ApHO4QxBRaGIAAcdOCaGOpwBFzYixWYNq5Nx21eHPxejQXymQx5-3OQIFS1Wx0x2LWiGIjNFNPFSElH2lssGdDkXAoXCAA
 \begin{tikzcd}
     D \arrow[d, "\delta"'] \arrow[rr, "g"] &  & D' \arrow[lld, "\delta'"] & {} \arrow[r, "p_!", maps to, shift right=5] & {} & D \arrow[rr, "g"] \arrow[rrd, "p\delta"'] &  & D' \arrow[d, "p\delta'"] \\
-    E                                      &  &                           &                                             &    & E \arrow[rr, "p"']                        &  & B                       
+    E                                      &  &                           &                                             &    &                         &  & B                       
     \end{tikzcd}
 \]
 \end{itemize}
@@ -182,7 +182,7 @@ Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks, then $p_!$ pres
 
 \begin{subbox}{}
 \begin{proof}
-    By \Cref{U creates con lim} connected limits are computed in $\mathcal{A}$ and $p_!$ doesn't affect objects and morphism in $\mathcal{A}$.
+    By \Cref{U creates con lim} connected limits are computed in $\mathcal{A}$ and $p_!$ doesn't affect objects and morphisms in $\mathcal{A}$.
 \end{proof}
 \end{subbox}
 
@@ -243,7 +243,7 @@ and the counit is given by
 \end{mainbox}
 \begin{subbox}{}
 \begin{proof}
-We want to prove this is adjunction. We start proving that the unit is a natural transformation. Let $g : (D,\delta)  \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$, we want to prove that the following diagram commutes:
+We want to prove this is an adjunction. We start proving that the unit is a natural transformation. Let $g : (D,\delta)  \to (D',\delta')$ be a morphism in $(\mathcal{A} \downarrow E)$, we want to prove that the following diagram commutes:
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRABEQBfU9TXfIRRkAjFVqMWbdgHJuvEBmx4CRAEzlx9Zq0QgAogB1DeALbwA+gCFOPPssHrSY6tql6jJrObjXZ3cRgoAHN4IlAAMwAnCFMkMhAcCCQNCR02YxgcOgtgAAp2UmNYBmyASi55SJi4xBFqJKQAZldJXRBM7NyCmSLDEuyZCqqQaNj4huS61vS9YJGx2tTGxBa090UAPQAqNAsAQjzgsoBeYzwGWGBgyq4KLiA
 \begin{tikzcd}
@@ -318,11 +318,11 @@ As similarly done above, we need to expand the action of the functor $p_!p^*$ on
 
 Since $\epsilon_{(A,\alpha)} = \mathrm{proj}_{2,E\times_BA}$, the composition $(f)(\epsilon_{(A,\alpha)})=(\epsilon_{(A',\alpha')})(\tilde{f})$ holds by the definition of $\tilde{f}$. Thus also the naturality of $\epsilon$ is satisfied.
 
-Now we can check that the unit and counit fulfil the first triangle identities. Let $(A,\alpha)$ be an object in $(\mathcal{A} \downarrow B)$.
+Now we can check that the unit and counit fulfil the first triangle identity. Let $(A,\alpha)$ be an object in $(\mathcal{A} \downarrow B)$.
 \[ ((p^*\epsilon) \circ (\eta p^*))_{(A,\alpha)} = (p^*\epsilon)_{(A,\alpha)}  (\eta p^*)_{(A,\alpha)} = p^*(\mathrm{proj}_{2,E\times_BA})  (\eta_{(E\times_BA,\mathrm{proj}_1)} ) = \circledast
 \]
 
-Considering first how $p^*$ acts on the morphism $\mathrm{proj}_{1,E\times_BA}$
+Considering first how $p^*$ acts on the morphism $\mathrm{proj}_{2,E\times_BA}$
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAFEAdTvAW3gD6AIQCCIAL6l0mXPkIoATOSq1GLNmMnTseAkQCMpfSvrNWiEEIlSQGHXKIBmZdVPqL17bL0oALC9UzNgkVGCgAc3giUAAzACcIXiQyEBwIJCVA9xBuRjQACzoAAgAKbl46HHy43mA0BIArcQFgJS4eLH44YRFxAEoQagY6ACMYBgAFGV15EDiscPycTxB4xKRDVPTETLdzHM48wpW1pMQUtI3XNX3yyura+ogmlrbuPkFRcROEs+ctpD+EBwfJYGLLRAAVmuQQsaAAegAqQapOhYBhsCpoOCXcQUcRAA
 \begin{tikzcd}
@@ -363,7 +363,7 @@ E\times_BA \arrow[ru, "{\ \ \ \ \ \ \langle \mathrm{proj}_{1,E\times_BA},1_{E\ti
 \end{tikzcd}
 \]
 
-We want to check that composition of the projections of $E\times_BA$ with $\circledast$ is the same of composing those projection with $1_{(E\times_BA,\mathrm{proj}_1)}$. Then, since the projections are jointly monic, we have the result. Following the first composition
+We want to check that composition of the projections of $E\times_BA$ with $\circledast$ is the same as composing those projections with $1_{(E\times_BA,\mathrm{proj}_1)}$. Then, since the projections are jointly monic, we have the result. Following the first composition
 \begin{align*}
     (&\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}}_{2,E\times_BA}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = \\[1.5ex]
     & = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle \\[1.5ex]
@@ -380,9 +380,9 @@ and the second composition
 Hence
 \[ \circledast = (\tilde{\mathrm{proj}}_{2,E\times_BA}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = 1_{(E\times_BA,\mathrm{proj}_1)}\] 
 
-Finally we can check the second triangle identities. Let $(D,\delta)$ be an object in $(\mathcal{A} \downarrow E)$, we have:
+Finally we can check the second triangle identity. Let $(D,\delta)$ be an object in $(\mathcal{A} \downarrow E)$, we have:
 \[
-((\epsilon p_!) \circ (p_! \eta))_{(D,\delta)} = ((\epsilon p_!)_{(D,\delta)} (p_! \eta))_{(D,\delta)} = (\epsilon_{p_!(D,\delta)}) p_! \langle \delta, 1_D \rangle =
+((\epsilon p_!) \circ (p_! \eta))_{(D,\delta)} = (\epsilon p_!)_{(D,\delta)} (p_! \eta)_{(D,\delta)} = (\epsilon_{p_!(D,\delta)}) p_! \langle \delta, 1_D \rangle =
 \]
 \[ 
     = (\epsilon_{(D,p \delta)}) p_! (\langle \delta, 1_D \rangle) = \mathrm{proj}_{2,E\times_BD} \langle \delta, 1_D \rangle = 1_{(D,p\delta)}
@@ -503,7 +503,7 @@ The category $(\mathcal{A} \downarrow E)$ has pullbacks, by \Cref{U creates con 
 
 \section{Nullary and essentially nullary monads}
 
-In this section we look for conditions such that the monad associated to a morphism $p:E\to B$ is essentially nullary. This will be useful in the main theorem of the ideally exact categories. This section is based on the work of \cite{Janelidze2024}.
+In this section we look for conditions such that the monad associated to a morphism $p:E\to B$ is essentially nullary. This is a key ingredient of \Cref{induced algebra between morphisms}. This section is based on \cite{Janelidze2024}.
 
 \begin{mainbox}{}
 \begin{defi}
@@ -534,7 +534,7 @@ Define $p' = pm$, we have that $p's'=1_Y$, in fact $p's'=pms'=ps=1_Y$. Pulling b
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAHUQBfU9TXfIRQBGclVqMWbABoBybrxAZseAkQDMY6vWatEIaQr4rBRACxaJutgDUjS-qqHIATKWHidU-QE17ygTUUNxdPST0ObnEYKABzeCJQADMAJwgAWyQyEBwIJABWagAjGDAoJABadWy4AAssJJxK0StvEABHeR5ktMzEFtykC1aItHlqOoamxArhbpBUjKQ3HLzEYa9RkGoGOhKGAAVHU30UrFjapon6xqQ5xUW+7MH+nb2YQ+OgkDOLq5G2AB3eyPO7UF4rTZsTLguhYBhsHBwhHzUGIZ5rTQgEplJDVHZYMARKB0OoxbYA-Q0AB6ACoABTpACUFN2+yOJm+hOwsBBvQK4LWG3CbBorPen05QhADBgt1R-MQWJehWxpXKSuybI+HMC0t+lwpk1ur0pHT5S3WgrBIGN01m2hF+jgXQeiuGEOuUxtUOd4vZX3150NCstqpe2RxGvxtpu9pavpyrp6YetSuK6sqMbtNu1kr1bAN-0TTVDfWVa0hTpATAt5bTLSjlQAbAB2R3WfRJf06wOF4P-HPorgULhAA
 \begin{tikzcd}
-    W \arrow[rrdd, "q'", bend right, shift left] \arrow[r, "w"'] \arrow[rrrr, "v^*(m)" description, dashed, bend left] & X' \arrow[rd, "p'", shift left] \arrow[rr, "m", tail] &                                                                                                        & X \arrow[ld, "p"', shift right] & V \arrow[lldd, "q"', bend left, shift right] \arrow[l, "u"] \arrow[lll, "f"', bend right=67, crossing over] \\
+    V' \arrow[rrdd, "q'", bend right, shift left] \arrow[r, "w"'] \arrow[rrrr, "v^*(m)" description, dashed, bend left] & X' \arrow[rd, "p'", shift left] \arrow[rr, "m", tail] &                                                                                                        & X \arrow[ld, "p"', shift right] & V \arrow[lldd, "q"', bend left, shift right] \arrow[l, "u"] \arrow[lll, "f"', bend right=67, crossing over] \\
                                                                                                                        &                                                       & Y \arrow[lu, "s'", shift left] \arrow[ru, "s"', shift right]                                           &                                 &                                                                                              \\
                                                                                                                        &                                                       & W \arrow[u, "v"] \arrow[lluu, "t'", bend left, shift left] \arrow[rruu, "t"', bend right, shift right] &                                 &                                                                                             
     \end{tikzcd}
@@ -545,18 +545,18 @@ Now we want to prove that $v^*(m)$ is an iso. Consider the following diagram. We
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBpiBdUkANwEMAbAVxiRAHUQBfU9TXfIRQBmclVqMWbAGrdeIDNjwEiZAEzj6zVohAANAORy+SwUVEbqWqbr3GF-ZUOQAGUi82SdIWV3EwoAHN4IlAAMwAnCABbJDcQHAgkNSsvNgB3e0iYpDIEpMRRCW02Jiyo2MR4xNzUkt0aAD0AKgAKaIBKcpzEFPykIutvWOocOiwGNjGJ7sqAFlGCvIAjGDAoAfihtmIAfV95bPnF5OpV9aQAWmEttN0w2aQF-qrqBiwwbyg6OAALAJAdRsIAAOiCGHQwIEGDAAARhcj7WFgiKQ6GsPxcIA
 \begin{tikzcd}
     V \arrow[rrrd, "1_V", bend left] \arrow[rdd, "f", bend right] \arrow[rd, "{\langle f,1_V \rangle}", dashed] &                                       &  &                  \\
-                                                                                                                & W \arrow[d, "w"] \arrow[rr, "v^*(m)"] &  & V \arrow[d, "u"] \\
+                                                                                                                & V' \arrow[d, "w"] \arrow[rr, "v^*(m)"] &  & V \arrow[d, "u"] \\
                                                                                                                 & X' \arrow[rr, "m", tail]              &  & X               
     \end{tikzcd}
 \]
-Since the square is a pullback, it's obvious that $v^*(m) \langle f, 1_{V} \rangle  = 1_V$. It remains to prove that $\langle f, 1_{V} \rangle v^*(m) = 1_{W}$. 
+Since the square is a pullback, it's obvious that $v^*(m) \langle f, 1_{V} \rangle  = 1_V$. It remains to prove that $\langle f, 1_{V} \rangle v^*(m) = 1_{V'}$. 
 
 Notice that $mfv^*(m) = u v^*(m) = m w$, so $fv^*(m) = w$ since m is a mono. Now consider the following compositions, and use what we just noticed.
 \begin{itemize}
-    \item $v^*(m) (\langle f, 1_{V} \rangle v^*(m) ) = ( v^*(m) \langle f, 1_{V} \rangle ) v^*(m)  = 1_V v^*(m) = v^*(m) 1_W$
-    \item $w (\langle f, 1_{V} \rangle v^*(m)) = (w \langle f, 1_{V} \rangle ) v^*(m) = f v^*(m) = w = w 1_W $
+    \item $v^*(m) (\langle f, 1_{V} \rangle v^*(m) ) = ( v^*(m) \langle f, 1_{V} \rangle ) v^*(m)  = 1_V v^*(m) = v^*(m) 1_{V'}$
+    \item $w (\langle f, 1_{V} \rangle v^*(m)) = (w \langle f, 1_{V} \rangle ) v^*(m) = f v^*(m) = w = w 1_{V'} $
 \end{itemize}
-Since the pair $(v^*(m),w)$ is jointly monic we have that $\langle f, 1_{V} \rangle v^*(m) = 1_W$. Considering this composition and the one above, it follows that $v^*(m)$ is an iso.
+Since the pair $(v^*(m),w)$ is jointly monic we have that $\langle f, 1_{V} \rangle v^*(m) = 1_{V'}$. Considering this composition and the one above, it follows that $v^*(m)$ is an iso.
 
 By the protomodularity of $\mathcal{X}$, since $v^*(m)$ is an iso, we have that $m$ is an iso, as claimed.
 \end{proof}
@@ -602,7 +602,7 @@ Let $p:E\to B$ be a morphism in $\mathcal{A}$ protomodular with finite coproduct
 
 \begin{subbox}{}
 \begin{proof}
-Let $(D,\delta)$ be an object in $(\mathcal{A} \downarrow E)$. To prove that the monad is essentially nullary we need to study the morphism of the initial object. So first note the morphism for each object $(D,\delta)$ in $(\mathcal{A} \downarrow E)$ the morphism of the initial object $!_D$ is the same as the morphism of the initial object in $\mathcal{A}$, in fact the following diagram commutes.
+Let $(D,\delta)$ be an object in $(\mathcal{A} \downarrow E)$. To prove that the monad is essentially nullary we need to study the morphism of the initial object. So first note that the morphism for each object $(D,\delta)$ in $(\mathcal{A} \downarrow E)$ the morphism of the initial object $!_D$ is the same as the morphism of the initial object in $\mathcal{A}$, in fact the following diagram commutes.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGJAF9T1Nd9CKAIykhVWoxZsAolx4gM2PASIjK1es1aIQAES7iYUAObwioAGYAnCAFskAJmo4ISERK1sAOl9gMcdHKWNvaIZCAujhqS2iAAhAD6+tzBdkjhkYjumlI6ibLUDHQARjAMAAp8yoIgVljGABY4BpxAA
 \begin{tikzcd}
@@ -619,6 +619,6 @@ E\times_B0 \arrow[rr, "p^*p_!(!_D)"] \arrow[d, "\mathrm{proj}_2"', shift right] 
 0 \arrow[rr, "!_D"] \arrow[u, "{\langle !_E,1_0 \rangle}"', shift right]        &  & D \arrow[u, "{\langle \delta, 1_D \rangle}"', shift right]
 \end{tikzcd}
 \]
-The downward directed square is commutative by the definition of $p^*$, and it is a pullback by \Cref{p^*(f) is a pullback}. The upward directed square commute by naturality of $\eta$, in fact $\eta_{(0,!_E)}=\langle !_E, 1_0 \rangle$ and $\eta_{(D,\delta)}=\langle \delta, 1_D \rangle$. So, by \Cref{protomod lemma}, the pair $(p^*(!_D),\langle !_E,1_0 \rangle)$ is strongly epimorphic. By \Cref{Equivalence strong epi with coprod} this means that $[T(!_D),\eta_{(D,\delta)}]=[p^*p_!(!_D),\langle \delta,1_D \rangle]$ is a strong epi. Thus the monad is essentially nullary.
+The downward directed square is commutative by the definition of $p^*$, and it is a pullback by \Cref{p^*(f) is a pullback}. The upward directed square commutes by naturality of $\eta$, in fact $\eta_{(0,!_E)}=\langle !_E, 1_0 \rangle$ and $\eta_{(D,\delta)}=\langle \delta, 1_D \rangle$. So, by \Cref{protomod lemma}, the pair $(p^*(!_D),\langle !_E,1_0 \rangle)$ is strongly epimorphic. By \Cref{Equivalence strong epi with coprod} this means that $[T(!_D),\eta_{(D,\delta)}]=[p^*p_!(!_D),\langle \delta,1_D \rangle]$ is a strong epi. Thus the monad is essentially nullary.
 \end{proof}
 \end{subbox}
