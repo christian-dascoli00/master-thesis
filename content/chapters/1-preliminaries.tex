@@ -38,7 +38,7 @@ First we recall some basic constructions on a category $\mathcal{A}$ that will b
     with the conditions $p'f=p$ and $fs=s'$
 \end{itemize}
 
-We recall that a regular epimorphism is the
+We recall that a \textbf{regular epimorphism} is the
 coequalizer of some pair of arrows and, in a finitely complete category,
 a morphism is a regular epi if and only if it is the coequalizer of its
 kernel pair. We recall also a few definitions that are relevant to the
@@ -76,7 +76,7 @@ A \arrow[d, "p", shift left] & {} \arrow[r, "f^*", maps to, shift right=7] & {} 
 B \arrow[u, "s", shift left] &                                             &    &                                                                                                                      & B' \arrow[rr, "f"]                                                     &  & B \arrow[u, "s", shift left]
 \end{tikzcd}
 \]
-where $\langle 1_{B'},sf \rangle$ is induced by the universal property of the pullback $B'\times_BA$. By construction, it is a section of $\mathrm{proj}_1$. It holds that $(\mathrm{proj}_1) \langle 1_{B'},sf \rangle = 1_{B'}$. The action on a morphism $\alpha: A \to A'$ is described by the following diagram, where $f^*(\alpha)$ is induced by the universal property of the pullback $B'\times_BA'$.
+where $\langle 1_{B'},sf \rangle$ is induced by the universal property of the pullback $B'\times_BA$. By construction, it is a section of $\mathrm{proj}_1$. The action on a morphism $\alpha: A \to A'$ is described by the following diagram, where $f^*(\alpha)$ is induced by the universal property of the pullback $B'\times_BA'$.
 
 
 \fontsize{11}{13}\selectfont
@@ -94,6 +94,7 @@ where $\langle 1_{B'},sf \rangle$ is induced by the universal property of the pu
         A finitely complete category $\mathcal{A}$ is said to be \textbf{protomodular} if for every morphism $f: A \to B$ in $\mathcal{A}$, the change-of-base functor $f^*: \mathrm{Pt}(B) \to \mathrm{Pt}(A)$ is conservative.
     \end{defi}
 \end{mainbox}
+A finitely complete pointed category $\mathcal{A}$ is protomodular if and only if the Split Short Five Lemma holds in $\mathcal{A}$.
 
 We conclude recalling the following.
 

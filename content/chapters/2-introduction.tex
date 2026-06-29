@@ -45,14 +45,14 @@ U(S)$ is a morphism in $\mathsf{Ring_*}$, with $S$ unital, then the function
 Z \ltimes R &\to S \\
 (n,r) &\mapsto (n1_S + f(r))
 \end{align*}
-gives a morphism in $\mathsf{Ring}$, so that the unit $\eta$ has the universal property required for a adjunction.
+gives a morphism in $\mathsf{Ring}$, so that the unit $\eta$ has the universal property required for an adjunction.
 
 The functor $U$ turns out to be monadic, simply by Beck's theorem, since coequalizers in $\mathsf{Ring}$ and $\mathsf{Ring_*}$ are the same. In fact, given $f,g$ morphisms, the coequalizer of $(f,g)$ is the canonical projection
 \[\pi: B \to B/I \ \ \ \ \ \ \ I = (f(r) - g(r) \ | \ r \in R)\]
 Notice that the unit $\eta$ of the adjunction is cartesian, i.e. the naturality squares are pullbacks. In fact, one can easily prove that, given a morphism $f:R \to R'$ in $\mathsf{Ring_*}$, the pullback in $\mathsf{Ring_*}$ of $\eta_{R'}$ and $UF(f)$
 \begin{align*}
 R'&\times_{UF(R')} UF(R) = R'\times_{\mathbb{Z}\ltimes R'} (\mathbb{Z}\ltimes R) = \\[1.5ex]
-&= \{ (r',(n,r)) \in R'\times (\mathbb{Z}\ltimes R) \ | \  UF(f)(x) = \eta_{R'}(y) \} \\[1.5ex]
+&= \{ (r',(n,r)) \in R'\times (\mathbb{Z}\ltimes R) \ | \  UF(f)(n,r) = \eta_{R'}(r') \} \\[1.5ex]
 &=\{ (r',(n,r)) \in R'\times (\mathbb{Z}\ltimes R) \ | \ n=0 \ \land \ f(r)=r' \} \\[1.5ex]
 &=\{ (f(r),(0,r)) \ | \  r \in R \}
 \end{align*}
@@ -76,7 +76,7 @@ is isomorphic to $R$.
 
 
 From the properties of the adjunction above, Janelidze extrapolated the
-notion of ideally exact categories. In order to better understand the link
+notion of ideally exact category. In order to better understand the link
 between the guiding example and the abstract notion, we need a few more
 observations.
 
@@ -96,7 +96,7 @@ and its quasi inverse $\mathrm{Ker}$
     \mathrm{Ker} : (\mathsf{Ring} \downarrow \mathbb{Z}) &\to \mathsf{Ring_*}\\
     (R,\phi:R \to \mathbb{Z}) &\mapsto \mathrm{Ker}(\phi) 
 \end{align*}
-Indeed, for an $R$ in $\mathsf{Ring_*}$, $\mathrm{Ker}(\pi_\mathbb{Z} \ltimes R \to \mathbb{Z})$
+Indeed, for an $R$ in $\mathsf{Ring_*}$, $\mathrm{Ker}(\pi_\mathbb{Z} : \mathbb{Z} \ltimes R \to \mathbb{Z})$
 is clearly isomorphic to $R$.
 
 On the other hand, given a $\phi: R \to \mathbb{Z}$ in $\mathsf{Ring}$, 
@@ -123,14 +123,14 @@ essential to define ideals in the ideally exact context.
 Based on the discussion above, one may regard $U$ as a functor from $(\mathsf{Ring} \downarrow 1)$ to $(\mathsf{Ring} \downarrow 0)$, up to equivalence. Actually, we can be even more precise.
 For each $R$ in $\mathsf{Ring}$, the functions
 \begin{align*}
-\mathbb{Z} \ltimes R &\to \mathbb{Z} \ltimes R \\
+\mathbb{Z} \times R &\to \mathbb{Z} \ltimes R \\
 (n,r) &\mapsto (n, -n1_R + r)
 \end{align*}
 \begin{align*}
-\mathbb{Z} \ltimes R &\to \mathbb{Z} \ltimes R \\
+\mathbb{Z} \ltimes R &\to \mathbb{Z} \times R \\
 (n,r) &\mapsto (n, n1_R + r)
 \end{align*}
-are inverse each other and provide an isomorphism $(\mathbb{Z} \ltimes K, \pi_\mathbb{Z}) \cong (\mathbb{Z} \ltimes K, \pi_\mathbb{Z})$ in $(\mathsf{Ring} \downarrow \mathbb{Z})$. But $\pi_\mathbb{Z}: \mathbb{Z} \ltimes K \to \mathbb{Z}$ is also the first projection of the pullback
+are inverse each other and provide an isomorphism $(\mathbb{Z} \times K, \pi_\mathbb{Z}) \cong (\mathbb{Z} \ltimes K, \pi_\mathbb{Z})$ in $(\mathsf{Ring} \downarrow \mathbb{Z})$. But $\pi_\mathbb{Z}: \mathbb{Z} \times K \to \mathbb{Z}$ is also the first projection of the pullback
 
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRGIB0O8BbeAfQCMAAgBKIAL6l0mXPkIoATKUFVajFm0GTpIDNjwEiZVdXrNWidjpkH5RZZTMbLIcRLUwoAc3hFQAGYAThA8SADM1DgQSILOFmwAhAB67rrBoUjKINGx8ZpWiTYgGWGIZDkxiJHqCVZcPHQ4ABZBPMBoIQBWEvyKxaVIFbmI2eYFIA1Nre2dED1CkhQSQA
@@ -143,7 +143,7 @@ in $\mathsf{Ring}$. In other words, the composite functor
 \[
 (\mathsf{Ring} \downarrow 1) \xrightarrow{\quad\cong\quad} \mathsf{Ring} \xrightarrow{\quad U\quad} \mathsf{Ring_*} \xrightarrow{(F,\pi_\mathbb{Z})} (\mathsf{Ring} \downarrow 0)
 \]
-is isomorphic to the pullback functor  (see Chapter 2)
+is isomorphic to the pullback functor \Cref{chap:pb-funct}.
 \[
 !^* : (\mathsf{Ring} \downarrow 1) \to (\mathsf{Ring} \downarrow 0)
 \]
@@ -159,4 +159,4 @@ To sum up, there is an equivalence of adjunctions:
 
 It is precisely this interpretation of the adjunction $F \dashv U$ in terms of
 pullback functor that suggests how to extrapolate from the example of rings
-the more general notion of ideally exact category, illustrated in Chapter 5.
+the more general notion of ideally exact category, illustrated in \Cref{chap:ideally-ex}.

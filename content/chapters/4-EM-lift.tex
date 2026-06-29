@@ -164,7 +164,7 @@ For the sake of clarity, we first present a technical definition.
 
 \begin{mainbox}{}
     \begin{defi}
-        Let $U:\mathcal{X} \to \mathcal{A}$ be a functor, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of pairs of parallel arrows in $\mathcal{A}$, where $f_i,g_i: A_i \to U(X)$. A morphism $q:X \to Q$ in $\mathcal{X}$ is said to be a $U$\textbf{-coequalizer} of the pair $\{(f_i,g_i)\}_{i\in I}$ if 
+        Let $U:\mathcal{X} \to \mathcal{A}$ be a functor, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of pairs of parallel arrows in $\mathcal{A}$, where $f_i,g_i: A_i \to U(X)$. A morphism $q:X \to Q$ in $\mathcal{X}$ is said to be a $U$\textbf{-coequalizer} of $\{(f_i,g_i)\}_{i\in I}$ if 
         \begin{itemize}
             \item $U(q) f_i = U(q) g_i \ \forall i \in I$ in $\mathcal{A}$;
             \item If $h:X \to Y$ is a morphism in $\mathcal{X}$ such that $U(h) f_i = U(h) g_i \ \forall i \in I$ in $\mathcal{A}$, then there exists a unique morphism $t:Q \to Y$ in $\mathcal{X}$ such that $t q = h$.
@@ -216,7 +216,7 @@ X \arrow[r, "F^T", maps to] & {(T(X),\mu_X)}
 
 \begin{mainbox}{}
     \begin{lemma}\label{U-coeq}
-        Let $U:\mathcal{X} \to \mathcal{A}$ be a functor right adjoint to a functor $F:\mathcal{A} \to \mathcal{X}$, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of parallel arrows in $\mathcal{X}$, where $f_i,g_i: A_i \to U(X)$. Consider the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ of unique morphisms induced by the universal property of the unit, such that $f_i=U(\bar{f}_i)\eta_{A_i}$ and $g_i=U(\bar{g}_i)\eta_{A_i}$. If $q:X \to Q$ is the coequalizer of the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ in $\mathcal{X}$, then $q$ is the $U$-coequalizer of the family $\{(f_i,g_i)\}_{i\in I}$ in $\mathcal{A}$.
+        Let $U:\mathcal{X} \to \mathcal{A}$ be a right adjoint functor to a functor $F:\mathcal{A} \to \mathcal{X}$, let $X$ be an object in $\mathcal{X}$ and let $\{(f_i,g_i)\}_{i\in I}$ be a family of parallel arrows in $\mathcal{X}$, where $f_i,g_i: A_i \to U(X)$. Consider the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ of unique morphisms induced by the universal property of the unit, such that $f_i=U(\bar{f}_i)\eta_{A_i}$ and $g_i=U(\bar{g}_i)\eta_{A_i}$. If $q:X \to Q$ is the coequalizer of the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ in $\mathcal{X}$, then $q$ is the $U$-coequalizer of the family $\{(f_i,g_i)\}_{i\in I}$ in $\mathcal{A}$.
        
         \begin{minipage}{0.5\textwidth}
 \[
@@ -247,14 +247,14 @@ A_i \arrow[r, "f_i", shift left] \arrow[r, "g_i"', shift right] & U(X) \arrow[r,
 
 \begin{subbox}{}
 \begin{proof}
-    Assume $q:X \to Q$ is the coequalizer of the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ in $\mathcal{X}$, we want to prove that $q$ is the $U^T$-coequalizer of the family $\{(f_i,g_i)\}_{i\in I}$ in $\mathcal{A}$. First we show, for each $i$, that $U(q)f_i=U(q)g_i$. Assume that $q\bar{f}_i=q\bar{g}_i$.
+    Assume $q:X \to Q$ is the coequalizer of the family $\{(\bar{f}_i,\bar{g}_i)\}_{i\in I}$ in $\mathcal{X}$, we want to prove that $q$ is the $U$-coequalizer of the family $\{(f_i,g_i)\}_{i\in I}$ in $\mathcal{A}$. First we show, for each $i$, that $U(q)f_i=U(q)g_i$. Assume that $q\bar{f}_i=q\bar{g}_i$.
     \begin{align*}
         q\bar{f}_i=q\bar{g}_i &\implies U(q) U(\bar{f}_i) = U(q) U(\bar{g}_i) \\[1.5ex]
         &\implies U(q) U(\bar{f}_i) \eta_{A_i}= U(q) U(\bar{g}_i) \eta_{A_i} \\[1.5ex]
         &\implies U(q)f_i=U(q)g_i
     \end{align*}
 
-    We now aim to prove the universal property of the $U^T$-coequalizer. Let $h:X \to Y$ be a morphism such that $U(h)f_i=U(h)g_i$. By the universal property of the unit applied to $U(h)f_i=U(h)g_i : A_i \to U(Y)$ there exist a unique morphism $k:F(A_i) \to Y$ such that $U(k) \eta_{A_i}=U(h)f_i=U(h)g_i$. Both $h\bar{f}_i$ and
+    We now aim to prove the universal property of the $U$-coequalizer. Let $h:X \to Y$ be a morphism such that $U(h)f_i=U(h)g_i$. By the universal property of the unit applied to $U(h)f_i=U(h)g_i : A_i \to U(Y)$ there exist a unique morphism $k:F(A_i) \to Y$ such that $U(k) \eta_{A_i}=U(h)f_i=U(h)g_i$. Both $h\bar{f}_i$ and
     $h\bar{g}_i$ satisfies such condition; in fact $U(h\bar{f}_i) \eta_{A_i}= U(h) U(\bar{f}_i) \eta_{A_i} = U(h)f_i$ and similarly for $h\bar{g}_i$. Thus by the uniqueness $h\bar{f}_i=k=h\bar{g}_i$.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEB9LEAX1PSZc+QigBM5KrUYs2AVQBiACi5YAlHwEgM2PASISAjFPrNWiEHKUANDf0G6RB0mJMzzlpQE07WncP0UABZJalNZC2VVXwcA0WQQ4zD3NmtNWL14kNdkszYvPikYKABzeCJQADMAJwgAWyRDahwIJAkQOAALLEqcJABaJuk8iysAHTGAIzpq4ErebhiQGvqkMhAWttyI5e4Qai6evsRB+2XahsR1zcR2w97G7Y8SveoGOkmYBgAFIUy2apYEqdPpnFaXa6tRAAZmonzAUAG0PW92O63CHisnTUlW4AF4sWoXjw3h8vr9HIEQIDgaCtOCthsobDhjtCelzqsrs0oUMMWwJjAcHROMBVLwOQzEEMbndug9paTPj8-k4LDSQftWZilBNprMSgt1JKLo8mUgWfDEYgAGwAdie8iUAGsllKQubEABWA7y46DR0WPUzYCGvZg03enlIG2BkCdE1cj03H0dP1m-lBqYh+avEDvZUUuIAoGaiNJ6O2uEwBEx9EpCzOwq8IA
@@ -264,7 +264,7 @@ A_i \arrow[rrd, "f_i", shift left] \arrow[rrd, "g_i"', shift right] \arrow[rrdd,
                                                                                                                                           &  & U(Y)                                                                                                                   &  & Y                                                                                                           
 \end{tikzcd}
     \]
-    Then, by the universal property of the coequalizer $q$ in $\mathcal{X}^T$, there exists a unique morphism $t:Q \to Y$ such that $tq=h$.
+    Then, by the universal property of the coequalizer $q$ in $\mathcal{X}$, there exists a unique morphism $t:Q \to Y$ such that $tq=h$.
 \end{proof}
 \end{subbox}
 
@@ -300,7 +300,7 @@ T(A_j) \arrow[rrr, "T(\iota_j)"] \arrow[rd, "\xi_{j}"'] &                       
 
 \begin{subbox}{}
     \begin{proof}
-        Consider the diagram \eqref{diagr 1 coproducts} of parallel arrows in $\mathcal{X}^T$, and $p$ its coequalizer, here below explicitly.
+        Consider the diagram \eqref{diagr 1 coproducts} of parallel arrows in $\mathcal{X}^T$, and $q$ its coequalizer, here below explicitly.
         \[
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBmAXVJADcBDAGwFcYkQAVAHS4CMsA5gAoecZgFsA+lg5CAgtICUPfgMUgAvqXSZc+QigBMpQ9TpNW7DgD1DIrmKlYFWdVp3Y8BIgBYKZhhY2RE57R2kXN20QDE99ImNiAItgzmtyMIkIpU1o2L1vFDIARmSgq1sVQUynWUiqtVyPAoNkP1KaQMsQmztRLOccjTMYKAF4IlAAMwAnCHEkMhAcCCRjEF4YMChFzpSrGukeAA8sHJpGek3GAAVdLwMQGcEACxwmkFn53eXVxGK9uUesgeIwoBAcHBSLIePgcPQlKRQeDIZQPl8Fv8aCs1oDuiAeOJmJJgP0nC4NOi5pjyNi-gDzECCVwiSSYQ4BpFKe5PtSkH5fj9Ltc7nFCk9Xu88alCcTSRzavIlNzohikABWOm4xn42UksnZLAq6Z8xACnGIWk61K9EFcMEQqHsuEI1xI+0ouBonlqy1axCa60HPXy8KDI1RE3fM3+wNdG2HLAnM6uTSUDRAA
 \begin{tikzcd}
@@ -343,9 +343,9 @@ which is the top arrow in \eqref{diagr 2 coproducts}. Then, for the bottom arrow
 \[
 T(\amalg_i\xi_i)\eta_{\amalg_iT(A_i)} = \eta_{\amalg_iA_i}(\amalg_i\xi_i)
 \]
-which is the bottom arrow in \eqref{diagr 2 coproducts}. By \Cref{U-coeq}, it follows that the diagram \eqref{diagr 2 coproducts} has $p$ as $U^T$-coequalizer.
+which is the bottom arrow in \eqref{diagr 2 coproducts}. By \Cref{U-coeq}, it follows that the diagram \eqref{diagr 2 coproducts} has $q$ as $U^T$-coequalizer.
 
-It remains to prove that the diagram \eqref{diagr 3 coproducts} has $p$ as $U^T$-coequalizer. We already know that \eqref{diagr 2 coproducts} has $p$ as $U^T$-coequalizer. Note that these two diagrams are related by the canonical injection $\iota'_j:T(A_j) \to \amalg_iT(A_i)$, as shown in the diagram below. In particular, by the universal property of the coproduct, it holds that $(\amalg_i \xi_i) \iota'_j = \iota_j\xi_j$ and $[\ldots,T(\iota_i),\ldots] \iota'_j = T(\iota_j)$.
+It remains to prove that the diagram \eqref{diagr 3 coproducts} has $q$ as $U^T$-coequalizer. We already know that \eqref{diagr 2 coproducts} has $q$ as $U^T$-coequalizer. Note that these two diagrams are related by the canonical injection $\iota'_j:T(A_j) \to \amalg_iT(A_i)$, as shown in the diagram below. In particular, by the universal property of the coproduct, it holds that $(\amalg_i \xi_i) \iota'_j = \iota_j\xi_j$ and $[\ldots,T(\iota_i),\ldots] \iota'_j = T(\iota_j)$.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQAdDuZgWwH0sAFQAUAQUEBKEAF9S6TLnyEUAZgrU6TVu1FceArBKzS5C7HgJEATKWKaGLNok7c+g47PkgMF5UXINGkcdF1EJACtTTRgoAHN4IlAAMwAnCF4kQJAcCCQyLSd2ZC5GKAgcOFI9DnwceilSUvLKyi8U9MzEbNykWxAAIxgwKCzg7WdXA0EAAi4ADyxBEBpGeiHGAAVFSxUQVKw4gAscdpA0jL6aXsQCoZGxwtDXGHr+YH13I0EZFZA1jbbPxWFwHY6nMznTpIdQ5PLdcZFFxcOr0ADk-AiZwuXVhNzuw1GiAALABORHPGqozGmbw4mHXeH9e5EgC0qmyIUmKIqDQiCyWWNW6xgWx2-lBhxOskoMiAA
 \begin{tikzcd}

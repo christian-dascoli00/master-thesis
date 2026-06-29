@@ -133,7 +133,7 @@ Finally
 \begin{proof}
     First, recall that the forgetful functor $U$ from a slice category of $\mathcal{A}$ to $\mathcal{A}$ creates all the colimits that $\mathcal{A}$ has, by \Cref{U creates con lim}. Thus, given $q: X \to Y$ coequalizer in a category $\mathcal{A}$, it yields that $q: (X,q) \to (Y,1_Y)$ is a coequalizer in the slice category $(\mathcal{A} \downarrow Y)$.
 
-    Let $f: E \to Y$ be a morphism in $\mathcal{A}$. Let $q: X \to Y$ be the coequalizer of a pair $(a,b)$. The right upper square, obtained via pullback functor along $f$, is also the pullback of $q$ along $f$ in $\mathcal{A}$. So, if $q$ is a pullback stable coequalizer in $\mathcal{A}$, then $f^*(q)$ is also a coequalizer, and since it lives in $(A \downarrow Y)$, then it is also a coequalizer there.
+    Let $f: E \to Y$ be a morphism in $\mathcal{A}$. Let $q: X \to Y$ be the coequalizer of a pair $(a,b)$. The right upper square, obtained via pullback functor along $f$, is also the pullback of $q$ along $f$ in $\mathcal{A}$. So, if $q$ is a pullback stable coequalizer in $\mathcal{A}$, then $f^*(q)$ is also a coequalizer, and since it lives in $(A \downarrow E)$, then it is also a coequalizer there.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoBGAXVJADcBDAGwFcYkQANEAX1PU1z5CKACwVqdJq3YBNHnxAZseAkTIAGCQxZtEIAKIAdQ3gC28APoyuvfsqFExmmtul6jJrObhW5txQIqwsjq4i5SuiAAWvJ2gqoooc6SOuweZpYyMf5K8cFkxFoRsrEB9gkkpADMRanuPBIwUADm8ESgAGYAThCmSKEgOBBI5OF1IACOpd29SGSDw4hVY24gHQB6AFQAFBMAlNM9fYjzQ-0rkcam9DgAFl2mwGg9AFbcFsBkHNyHs4gArDQzicaHBblgOjgkABaUYpVYbHb0A7+GbHMQLc4gMEQqGIWEXdj0X7HQGYxAY1yXQzXO4PJ6vd6fUhRH6oo5IDHAgY4yEjQl6ABGIBojHogpgjAACoEHHoulhmrcoey-mTgfNeXi4VT2IjtoKDqLxZKZeVhCAFUqVQo0VjgQA2AWTEmcoGLJ0gCVgKAwqoDXV6Cb0AC8E2Fxol0tlCUtiuVrsQcMdNG9vqWAeKenIVkTAHZ3UhPYG1iKQGKo2a8uwrQnVcdTosC16YD6-ZnxlcbvdHs8IG8PqNvmWK6aYxbazbOhyloWk86u3Te4yPmQZD9I2PzTX41O1jP1U3U6309CHR3Vouewz+0zRqyRybo9v5bvE8tyc200WL9Tade+wHYBRnXBpuCAA
 \begin{tikzcd}
@@ -145,7 +145,7 @@ Z \arrow[rr, "a", shift left, crossing over] \arrow[rr, "b"', shift right, cross
 \end{tikzcd}
     \]
 
-    Conversely, if $f^*(q)$ is a coequalizer in $(A \downarrow Y)$, then it is also a coequalizer in $\mathcal{A}$. This is due to the fact that $\mathcal{A}$ is finitely complete. In fact, consider the coequalizer $f^*(q) : (E \times_Y X, \mathrm{proj}_{2,X}) \to (E,1_E)$, we aim to prove the universal property for $f^*(q)$ as morphism in $\mathcal{A}$. Given a morphism $h: E \times_Y X \to V$ in $\mathcal{A}$, one can form the morphism $\langle h,\mathrm{proj}_{2,X}\rangle: (E \times_Y X, \mathrm{proj}_{2,X}) \to (E,1_E) \to (V \times X, \mathrm{proj}_2)$ in the slice. Then the universal property for $f^*(q)$ in the $\mathcal{A}$ follows from the one for $f^*(q)$ in the slice.
+    Conversely, if $f^*(q)$ is a coequalizer in $(A \downarrow E)$, then it is also a coequalizer in $\mathcal{A}$. This is due to the fact that $\mathcal{A}$ is finitely complete. In fact, consider the coequalizer $f^*(q) : (E \times_Y X, \mathrm{proj}_{1,X}) \to (E,1_E)$, we aim to prove the universal property for $f^*(q)$ as morphism in $\mathcal{A}$. Given a morphism $h: E \times_Y X \to V$ in $\mathcal{A}$, one can form the morphism $\langle h,\mathrm{proj}_{1,X}\rangle: (E \times_Y X, \mathrm{proj}_{1,X})\to (V \times E, \mathrm{proj}_2)$ in the slice. Then the universal property for $f^*(q)$ in the $\mathcal{A}$ follows from the one for $f^*(q)$ in the slice.
 \end{proof}
 \end{subbox}
 
@@ -218,7 +218,7 @@ Y \arrow[ru, "1_Y"'] \arrow[u, "g"] &                                           
 
 \begin{subbox}{}
 \begin{proof}
-    Let $e : A \twoheadrightarrow B$ be an epi in a topos. By \Cref{topos is regular}, a topos is a regular category, thus $e$ admits factorization $e=mr$ where $r$ is a regular epi and $m$ is a mono. It holds that $m$ is also an epi. In fact, if $a$ and $b$ are morphisms such that $am=bm$, then $ae=amr=bmr=be$, and since $e$ is an epi, $a=b$. We proved that $m$ is both a mono and an epi, thus, by \Cref{mono epi are iso in topos}, it is an iso. Hence $e$ is a regular epi, ie a coequalizer.
+    Let $e : A \twoheadrightarrow B$ be an epi in a topos. By \Cref{topos is regular}, a topos is a regular category, thus $e$ admits factorization $e=mr$ where $r$ is a regular epi and $m$ is a mono. It holds that $m$ is also an epi. In fact, if $a$ and $b$ are morphisms such that $am=bm$, then $ae=amr=bmr=be$, and since $e$ is an epi, $a=b$. We proved that $m$ is both a mono and an epi, thus, by \Cref{mono epi are iso in topos}, it is an iso. Hence $e$ is a regular epi, i.e. a coequalizer.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAhEAX1PU1z5CKAMwVqdJq3YARHnxAZseAkXLiaDFm0QgAgvP7KhRAIylTErdN0BhHhJhQA5vCKgAZgCcIAWyTqIDgQSOYgcAAWWB44oZpSOiAARiA0jPRJMIwACgIqwiBeWM4RsbyePv6IgcFx4VExSAC0YdaJ9IYg3n5IZEEh1fHa7GzlXZW9NLWIYiARMPRQ7DgA7hDziwhDNoWpIOmZOXkmukUlZQrdVbPTNfRYjMv3j9uJ-mkZWbnGqqfFpQ5uEA
 \begin{tikzcd}
@@ -269,7 +269,7 @@ Then, the universal property of the counit $\epsilon$ of the exponential adjunct
 \]
 such that respectively $\epsilon_\Omega(1_Y\times \alpha)=\chi_Y$ and $\epsilon_\Omega(1_Y\times \varphi)=\chi_{\langle f,m\rangle}$. These morphisms are the ones we were looking for.
 
-We still need to show that the external square commutes, ie that $\alpha f = \varphi m$.
+We still need to show that the external square commutes, i.e. that $\alpha f = \varphi m$.
 \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA0QBfU9TXfIRRkAjFVqMWbAFrdeIDNjwEiAJnLj6zVohABNOXyWC1pMdS1TdABUML+yocgDMpVZsk6QAHW8B5AFsYAHM6AD0DLnEYKGD4IlAAMwAnCACkMhAcCCR1CW02RLsUtIzqbKQRC082dOoGOgAjGAZrBxNdZKxggAscEHK6LAY2HCGRniTU9MQqrJzEV3yrEGDi6dzyhaXLL0JJkBKZvIrEABZqZrAoJGdM3bZfRjQeunXS2a2kC5Arm8QALR3aoFXS+ejJF5Yd4zJanH4MLBgLxQOhwHoxAYgBrNVrtFSdbp9bgULhAA
 \begin{tikzcd}
@@ -356,7 +356,7 @@ K \arrow[rd, "\sigma", dashed] \arrow[rdd, "{\langle 1_K,u \rangle}"', bend righ
                                                                                                                     & K\times Y \arrow[rrr, "\chi_Y(u\times 1_Y)=\chi_Y(v\times 1_Y)"] &  &  & \Omega          
 \end{tikzcd}
 \]
-So, $1_K \sigma = 1_K$, ie $\sigma = 1_K$, and $v\sigma=u$, ie $v=u$. Thus, $\alpha$ is a mono. This concludes the proof.
+So, $1_K \sigma = 1_K$, i.e. $\sigma = 1_K$, and $v\sigma=u$, i.e. $v=u$. Thus, $\alpha$ is a mono. This concludes the proof.
 \end{proof}
 \end{subbox}
 
@@ -369,7 +369,7 @@ So, $1_K \sigma = 1_K$, ie $\sigma = 1_K$, and $v\sigma=u$, ie $v=u$. Thus, $\al
 
 \begin{subbox}{}
 \begin{proof}
-Consider a cotopos. It is finitely complete, in fact, by \Cref{topos is finitely cocomplete}, its dual is finitely cocomplete. In the underlying topos, we aim to prove that each morphism admits a (regular mono, epi) factorization. Let $f: A \to B$ be a morphism and consider its factorization (regular epi, mono) $f=me$ given by \Cref{topos is regular}. $e$ is regular epi, thus, by \Cref{reg epi is an epi}, an epi. $m$ is a mono, thus, by \Cref{mono are equalizers in topos}, it is an equalizer, ie a regular mono. Finally, by \Cref{mono are pushot stable}, monos, which are the equalizers by \Cref{mono are equalizers in topos}, are pushout stable. Thus, the cotopos is a regular category.
+Consider a cotopos. It is finitely complete, in fact, by \Cref{topos is finitely cocomplete}, its dual is finitely cocomplete. In the underlying topos, we aim to prove that each morphism admits a (regular mono, epi) factorization. Let $f: A \to B$ be a morphism and consider its factorization (regular epi, mono) $f=me$ given by \Cref{topos is regular}. $e$ is regular epi, thus, by \Cref{reg epi is an epi}, an epi. $m$ is a mono, thus, by \Cref{mono are equalizers in topos}, it is an equalizer, i.e. a regular mono. Finally, by \Cref{mono are pushot stable}, monos, which are the equalizers by \Cref{mono are equalizers in topos}, are pushout stable. Thus, the cotopos is a regular category.
 \end{proof}
 \end{subbox}
 
@@ -468,7 +468,7 @@ While a topos fails to be protomodular, a cotopos actually has this structure.
 \begin{proof}
 Consider a cotopos $\mathcal{E}^\mathrm{op}$. By \Cref{exp in topos is monadic} the functor
 \[\Omega^{(-)}: \mathcal{E}^\mathrm{op} \to \mathcal{E}\]
-is monadic. In particular, one can show that this functor has image in the internal Heyting algebras in $\mathcal{E}$ which is, by \cite{Bourn1996} \textit{Proposition 18}, protomodular. Since $\Omega^{(-)}$ is monadic, it is conservative, thus its restriction in the codomain is conservative. Moreover, its restriction is also left exact. Then $\mathcal{E}^\mathrm{op}$ is protomodular.
+is monadic. In particular, one can show that this functor has image in the internal Heyting algebras in $\mathcal{E}$ which is, by \cite{Bourn1996} \textit{Proposition 18}, protomodular. Since $\Omega^{(-)}$ is monadic, it is conservative. Moreover, it is also left exact. Then $\mathcal{E}^\mathrm{op}$ is protomodular.
 \end{proof}
 \end{subbox}
 
@@ -530,7 +530,7 @@ All the results above leads to the following result.
         \[!: 0_\mathcal{E} \to 1_\mathcal{E}\]
         is an equalizer in $\mathcal{E}$. Thus the morphism 
         \[!: 0_{\mathcal{E}^\mathrm{op}} \to 1_{\mathcal{E}^\mathrm{op}}\]
-        is a coequalizer in $\mathcal{E}^\mathrm{op}$, ie a regular epi.
+        is a coequalizer in $\mathcal{E}^\mathrm{op}$, i.e. a regular epi.
     \end{proof}
 \end{subbox}
 
@@ -589,7 +589,7 @@ Consider in particular the morphisms
     \end{align*}
     Thus, finally
     \[\mathcal{X} \cong (\mathsf{Set}^\bullet)^\mathrm{op} \]
-    where $\mathsf{Set}^\bullet$ is the category of pointed sets, ie the category of sets with a chosen element.
+    where $\mathsf{Set}^\bullet$ is the category of pointed sets, i.e. the category of sets with a chosen element.
     
     This category is, actually, pointed in the categorical meaning, in fact, the singleton $(\{*\},*) \cong \{*\}$ is both the initial and terminal object. Given an object $(A,a) \in \mathcal{X}$ we have the following unique morphism from the singleton and to the singleton, represented in $\mathsf{Set}$.
     \begin{align*}
@@ -683,7 +683,7 @@ By the mentioned theorem, given an object $A$ in $\mathsf{Set}^\mathrm{op}$, we 
 \end{minipage}
 
 \vspace{1em}
-\noindent $\mathrm{Quot}(A)$ are the regular epi in $\mathsf{Set}^\mathrm{op}$, which are the equalizers in $\mathsf{Set}$. Equalizers in $\mathsf{Set}$ are all the monomorphisms, ie all the injective functions. In fact, every equalizer is a mono. Conversely, given a mono $m: B \rightarrowtail A$, we can consider the pair of morphism
+\noindent $\mathrm{Quot}(A)$ are the regular epi in $\mathsf{Set}^\mathrm{op}$, which are the equalizers in $\mathsf{Set}$. Equalizers in $\mathsf{Set}$ are all the monomorphisms, i.e. all the injective functions. In fact, every equalizer is a mono. Conversely, given a mono $m: B \rightarrowtail A$, we can consider the pair of morphism
     \begin{align*}
         f: A & \to \{0,1\} \\[1ex]
            x    & \mapsto 1 \\[1.5ex]
@@ -722,7 +722,7 @@ a &\mapsto
     a & \text{otherwise}
 \end{cases}
 \end{align*}
-It holds that $\bar{f}=\mathrm{Coker}(f)$.
+It holds that $\bar{f}=\mathrm{Coker}(f\sqcup \{*\})$.
 Conversely, every surjective function $g: (A \sqcup \{*\} , *) \twoheadrightarrow (C,c)$, has a corresponding injective function, namely the inclusion
 \[
 g^{-1}(c) \cap A \rightarrowtail A

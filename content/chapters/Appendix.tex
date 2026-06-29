@@ -9,11 +9,11 @@
 
 \markboth{APPENDIX}{}
 
-Some of the following results are due to \cite{BorceuxBourn2004}.
+Some of the following results can be found in \cite{BorceuxBourn2004}.
 
 \begin{mainbox}{}
     \begin{defi}
-        Let $\mathcal{C}$ be a category and $f : A \to B$. We say that $f$ is a \textbf{strong epimorphism} if it for each commutative diagram of solid arrows
+        Let $\mathcal{C}$ be a category and $f : A \to B$. We say that $f$ is a \textbf{strong epimorphism} if for each commutative diagram of solid arrows
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGclVqMWbAELdeIDNjwEiZYePrNWiEAGE5fJYKKj11TVJ0ARbuJhQA5vCKgAZgCcIAWyRkQOCCRRCS02VwMQD28kACZqAKQAZni6LAY2HFT080ltEB8eN08fRD8ExDiQyxAmEGoGOgAjGAYABX5lIRB3LAcACxwIqJLg8uSqvJoh4qD4wIr6rDA8qDo4Pvs6ibYAHR2YAA8sOBw4AAIAQjOoLYbmto7jHR7+wa4KLiA
 \begin{tikzcd}
@@ -242,7 +242,7 @@ S \arrow[r, "s_1", shift left] \arrow[r, "s_2"', shift right] & A \arrow[r, "p"]
 
 \begin{subbox}{}
 \begin{proof}
-    Consider an equivalence relation $(R,r_1,r_2)$ in $\mathcal{A}$. Since $\mathcal{A}$ is exact, $(R,r_1,r_2)$ is the kernel pair of some arrow $q:A \to B$. $\mathcal{A}$ is also regular, so $q$ admits a factorization $q=me$, where $m$ is a mono and $e$ is a regular epi, ie the coequalizer of some arrows. Let $s_1$ and $s_2$ be such arrows, we have that $es_1=es_2$. Composing with $m$, we have that $qs_1=mes_1=mes_2=qs_2$. By the universal property of the kernel pair, there exists a unique morphism $t: C \to R$ such that $r_1t=s_1$ and $r_2t=s_2$.
+    Consider an equivalence relation $(R,r_1,r_2)$ in $\mathcal{A}$. Since $\mathcal{A}$ is exact, $(R,r_1,r_2)$ is the kernel pair of some arrow $q:A \to B$. $\mathcal{A}$ is also regular, so $q$ admits a factorization $q=me$, where $m$ is a mono and $e$ is a regular epi, i.e. the coequalizer of some arrows. Let $s_1$ and $s_2$ be such arrows, we have that $es_1=es_2$. Composing with $m$, we have that $qs_1=mes_1=mes_2=qs_2$. By the universal property of the kernel pair, there exists a unique morphism $t: C \to R$ such that $r_1t=s_1$ and $r_2t=s_2$.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAlEAX1PU1z5CKAIwVqdJq3YBBHnxAZseAkQDM4mgxZtEIAELz+yoUXKkRE7dL0BFI4oErhJUsStTdIAMI8JMKABzeCJQADMAJwgAWyQyEBwIJDEQOAALLDCcZK1PdgiAfXIQGkZ6ACMYRgAFJ1M9CKxAtOzecKjYxHjEnNSMrKQAWhTrL0KRB0iY3p7Ec0kddgBHSY6ZpMQNEDSYeih2HAB3CB29hFzFvTY2kCnOrdn50fZYmhx6LEYDj6+bu6QACxvDYpdKZbKIYYXGypIolECVMD7TbEP5rRBAhIgmhggaIEZ5PRwAoTUoVKq1EyqBpNFrwxHItSohT-DHAuKlLBgLxQejpALw556AA6wpgAA8sHAcHAAAQAQll2TJlRqdWpIEazValG4QA
 \begin{tikzcd}
@@ -269,7 +269,7 @@ S \arrow[r, "s_1", shift left] \arrow[r, "s_2"', shift right] & A \arrow[r, "p"]
 
 \begin{mainbox}{}
     \begin{prop}\label{f and e share the kernel pair}
-        If a morphism $f$ admits a factorization $f=mg$, with $m$ mono, then $f$ and $g$ share the same kernel pair.
+        In a category with kernel pairs, if a morphism $f$ admits a factorization $f=mg$, with $m$ mono, then $f$ and $g$ share the same kernel pair.
     \end{prop}
 \end{mainbox}
 
@@ -299,13 +299,13 @@ S \arrow[r, "s_1", shift left] \arrow[r, "s_2"', shift right] & A \arrow[r, "p"]
 
 \begin{mainbox}{}
     \begin{prop}\label{f and e share the kernel}
-        If a morphism $f$ admits a factorization $f=mg$, with $m$ mono, then $f$ and $g$ share the same kernel.
+        In a pointed category with kernels, if a morphism $f$ admits a factorization $f=mg$, with $m$ mono, then $f$ and $g$ share the same kernel.
     \end{prop}
 \end{mainbox}
 
 \begin{subbox}{}
     \begin{proof}
-        Let $(\mathrm{Ker},k)$ be the kernel pair of $f: A \to B$ and let $g:A \to Q$ be a morphism such that $f=mg$ with $m$ mono. We have that $fk=0$, hence $mgk=0=m0$. Since $m$ is a mono, we have that $gk=0$. Conversely, if $(\mathrm{Ker},k)$ is the kernel of $g$, then we have that $gk=0$. Just composing with $m$ we have that $mgk=m0$. Hence $fk=0$.
+        Let $(\mathrm{Ker},k)$ be the kernel of $f: A \to B$ and let $g:A \to Q$ be a morphism such that $f=mg$ with $m$ mono. We have that $fk=0$, hence $mgk=0=m0$. Since $m$ is a mono, we have that $gk=0$. Conversely, if $(\mathrm{Ker},k)$ is the kernel of $g$, then we have that $gk=0$. Just composing with $m$ we have that $mgk=m0$. Hence $fk=0$.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBOXYAGkYAgL4gJpdJlz5CKAIzkqtRizYBBabJAZseAkQDMa6vWatEIAEJ65RxUQBMpZeqtbbARWnqMFAA5vBEoABmAhBcSGQgOBBIqhrWbADWjiBRMcnUiUjuqT7ZWTmxiCkFiObFNiDBINQMdABGMAwACvLGSiACWMF8OE0gfDB0UGw4AO4Q45MIMpHRFbXVRd71sfl0WAzTewcSFBJAA
 \begin{tikzcd}
@@ -314,7 +314,7 @@ S \arrow[r, "s_1", shift left] \arrow[r, "s_2"', shift right] & A \arrow[r, "p"]
 \end{tikzcd}
         \]
         
-        Now we want to prove that if the universal property of the kernel holds for $f$, then it also holds for $g$. Let $k'$ be morphisms such that $gk'=0$. Just composing with $m$, we have that $mgk'=m0$. Hence $fk'=0$. By the universal property of the kernel pair of $f$, there exists a unique morphism $t: X \to \mathrm{Ker}$ such that $kt=k'$. Conversely, consider $k'$ be a morphism such that $fk'=0$, and suppose that the universal property holds for $g$. We have that $fk'=mgk'=0=m0$. Since $m$ is a mono, we have that $gk'=0$. By the universal property of the kernel pair of $g$, there exists a unique morphism $t: X \to \mathrm{Ker}$ such that $kt=k'$.
+        Now we want to prove that if the universal property of the kernel holds for $f$, then it also holds for $g$. Let $k'$ be morphisms such that $gk'=0$. Just composing with $m$, we have that $mgk'=m0$. Hence $fk'=0$. By the universal property of the kernel of $f$, there exists a unique morphism $t: X \to \mathrm{Ker}$ such that $kt=k'$. Conversely, consider $k'$ be a morphism such that $fk'=0$, and suppose that the universal property holds for $g$. We have that $fk'=mgk'=0=m0$. Since $m$ is a mono, we have that $gk'=0$. By the universal property of the kernel of $g$, there exists a unique morphism $t: X \to \mathrm{Ker}$ such that $kt=k'$.
         \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBOXYAGkYAgL4gJpdJlz5CKAIzkqtRizYBBabJAZseAkQDMa6vWatEIAEJ65RxUQBMpZeqtbbARUcG8sZKJB5emjYgABrS6jBQAObwRKAAZgIQXEhkIDgQSKoa1mwA1gHpmQXUeUjuRT4gqeUZWYiFNYjm9ZEJINQMdABGMAwACkEutgJYCXw4fSB8MHRQbDgA7hBLKwgyaS1IXR113pFZ1XRYDGuX13uNB4gALNX5bZYRpQDkzZXPr9kPsVbPMJBQJEA
 \begin{tikzcd}

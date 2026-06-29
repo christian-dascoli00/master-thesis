@@ -1,5 +1,7 @@
 \chapter{Ideally exact categories}
 
+\label{chap:ideally-ex}
+
 \fontsize{12}{14.5}\selectfont
 
 \section{Definition and characterization}
@@ -106,7 +108,7 @@ A \arrow[rr, "f", pos=0.25, crossing over] \arrow[ru, "e", two heads] \arrow[rd,
 
     We are left to show that the morphism $!:0 \to 1$ is a regular epi. Since $\mathcal{A}$ is exact by assumption, the morphism $!$ admits a (regular epi, mono) factorization $! = me$.
     
-    Now we aim to prove that if a morphism $m$ is a mono, then $U(m)$ acts as a mono in the morphisms in $\mathcal{X}$ between object coming from $\mathcal{A}$, ie if $f,g : U(A) \to U(B)$ for some $A$, $B$ in $\mathcal{A}$, then $U(m)f=U(m)g \implies f=g$. First, we prove that if $m$ is a mono, then $U^T(m)$ is a mono. Let $m$ be a mono and $A$ its domain. Then $(A, 1_A, 1_A)$ is the kernel pair of $m$, in fact, given $f$ and $g$ morphisms such that $mf=mg$, we obtain the universal property by the mono.
+    Now we aim to prove that if a morphism $m$ is a mono, then $U(m)$ acts as a mono in the morphisms in $\mathcal{X}$ between object coming from $\mathcal{A}$, i.e. if $f,g : U(A) \to U(B)$ for some $A$, $B$ in $\mathcal{A}$, then $U(m)f=U(m)g \implies f=g$. First, we prove that if $m$ is a mono, then $U^T(m)$ is a mono. Let $m$ be a mono and $A$ its domain. Then $(A, 1_A, 1_A)$ is the kernel pair of $m$, in fact, given $f$ and $g$ morphisms such that $mf=mg$, we obtain the universal property by the mono.
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAmAXVJADcBDAGwFcYkQBBEAX1PU1z5CKAMyli1Ok1bsuvftjwEiYqjQYs2iEAEUefEBkVCiZCeulbO+hYOUoADKQeSNM7QCEekmFADm8ESgAGYAThAAtkhiIDgQSE5SmuzEAPpyBmGR0TRxSGRJ7iBpXDSM9ABGMIwACgJKwiChWH4AFjg2IFlRiIl5iOQ0rTD0UEhgzIyMufRYjOw4s-MWydpR8l3hPQX9g7FLCwcrReuZW0gALLnxvTRVYGOIALQiiW5Wfp3dl9f5dzAPaJvSzsYJfc6IK6xG4xRhYMBWKD0ODDMbcSjcIA
 \begin{tikzcd}
@@ -119,8 +121,8 @@ B \arrow[rdd, "g", bend right] \arrow[rrrd, "f", bend left] \arrow[rd, dashed] &
     \[
 % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQBVAPQBUAKAIIBKEAF9S6TLnyEUAJlLFqdJq3bd+wsRJAZseAkQVUaDFm0Qhy2yfplEyS06oudegkaOUwoAc3hEoABmAE4QALZIAMw0OBBIZCrm7OQA+sAaHqI2IKER0bHxiOTOyZZpGe7C2TSM9ABGMIwAClIGsiCMMEE4OXmRiIlxSAogABYw9FBIYMyMjLH0WIzskGBspWqWHHzhnjr9SCUgw4ijOEsrlmsbSVucu56UokA
 \begin{tikzcd}
-U^T(A) \arrow[d, "1_{U^T(A)}"] \arrow[rr, "1_{U^T(A)}"] &  & U^T(A) \arrow[d, "U(m)"] \\
-U^T(A) \arrow[rr, "U(m)"]                               &  & Q                       
+U^T(A) \arrow[d, "1_{U^T(A)}"] \arrow[rr, "1_{U^T(A)}"] &  & U^T(A) \arrow[d, "U^T(m)"] \\
+U^T(A) \arrow[rr, "U^T(m)"]                               &  & Q                       
 \end{tikzcd}
     \]
     This implies that $U^T(m)$ is a mono by the universal property of the kernel pair. 
@@ -354,7 +356,7 @@ U(0) \times U(A) \arrow[rr, "\mathrm{proj}_2"] \arrow[d, "\mathrm{proj}_1"] &  &
 U(0) \arrow[rr, "!^{U(0)}"]                                                     &  & 1                         
 \end{tikzcd}
 \]
-so $U^0!^*(A) = U^0((0 \times A, \mathrm{proj}_1)) = \mathrm{Ker}(U(\mathrm{proj}_1)) \cong \mathrm{Ker}(\mathrm{proj}_1: U(0) \times U(A) \to U(A)) \cong U(A)$
+so $U^0!^*(A) = U^0((0 \times A, \mathrm{proj}_1)) = \mathrm{Ker}(U(\mathrm{proj}_1)) \cong \mathrm{Ker}(\mathrm{proj}_1: U(0) \times U(A) \to U(0)) \cong U(A)$
 \end{rem}
 \end{rembox}
 
@@ -578,7 +580,7 @@ The previous theorem gives the correspondence between $U$-ideals and regular epi
 
 \begin{rembox}{}
     \begin{rem}
-        In $\mathsf{Ring}$, given an object $A$ in $\mathcal{A}$, the lattice $\mathrm{NSub}(U(A))$ consists of ideals. As shown in the first chapter, the forgetful functor $U:\mathsf{Ring} \to \mathsf{Ring_*}$ is, up to equivalence, the pullback functor associated to $! : 0 \to 1$. We have the following corresponding morphisms, composed by an ideal $I$, ie a kernel, and its corresponding quotient map, ie a regular epi, $\pi$.
+        In $\mathsf{Ring}$, given an object $A$ in $\mathcal{A}$, the lattice $\mathrm{NSub}(U(A))$ consists of ideals. As shown in the first chapter, the forgetful functor $U:\mathsf{Ring} \to \mathsf{Ring_*}$ is, up to equivalence, the pullback functor associated to $! : 0 \to 1$. We have the following corresponding morphisms, composed by an ideal $I$, i.e. a kernel, and its corresponding quotient map, i.e. a regular epi, $\pi$.
         \[
         % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQAlEAX1PU1z5CKAEwVqdJq3YcA9AEkefEBmx4CRcuJoMWbRCEXcJMKAHN4RUADMAThAC2SLSBwQkZEHAAWWazmcdKX0QAB1QtCwlG3snRDFXd0RyY24gA
 \begin{tikzcd}

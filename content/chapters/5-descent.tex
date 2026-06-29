@@ -94,7 +94,7 @@ E\times_B(E\times_BC) \arrow[rr, "1_E\times_B\xi", shift left] \arrow[rr, "{1_E\
 \end{tikzcd}
   \]
 
-  We now have to prove that such a morphism $t$ actually exists. Define $t = \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle$. We aim to prove that this morphism satisfies the two conditions above, ie the following diagram of pairs commutes.
+  We now have to prove that such a morphism $t$ actually exists. Define $t = \langle \mathrm{proj}_{1,C}, 1_{E\times_BC} \rangle$. We aim to prove that this morphism satisfies the two conditions above, i.e. the following diagram of pairs commutes.
   \[
   % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQBRAHS7wFt4AfQBCACm68sAuCIDCAShABfUuky58hFOQrU6TVuwn8hw2ctUgM2PASI7iehizaJOPEzLMW1NzfdIAZicDV04fK3VbLWRA3RpnQzdzJT0YKABzeCJQADMAJwg+JABGGhwIJDj9F3YePnocAAt8vmA0QoArJUFgMtklCIKi0vLKxAAWBNC6rgbm1vaunuAdAaHC4sQyEArRkDgmrFycJABaMpqkkBLBYylTHgAPLA2R7bH9w+PTxEvEsK3e7SET1RotNodCDdXprQY0Rj0ABGMEYAAUov43PksBkmqcVHlNkgdLtxpdvidzv8Zm4eDAcPReqJZKQeBl6HwGvIlM9XoSQMMtqS9n8aJTfjTam5bsBgaZ1gjkaiMX47Njcfi3sLPh8rmEeIiwBlGDAAARghaQ5a9foqM2y+VeAYWrj5ejG00gJUo9GY9UgHF4gmUJRAA
 \begin{tikzcd}
@@ -187,7 +187,7 @@ E\times_BC \arrow[rr, "h"] \arrow[rrrrd, "\mathrm{proj}_{2,C}"', bend right] \ar
 \]
 we conclude that $ih = \langle \mathrm{proj}_{2,C},\xi \rangle$, so $\langle \mathrm{proj}_{2,C},\xi \rangle$ is a mono.
 
-We proved that $(\mathrm{proj}_{2,C},\xi)$ is an internal relation, now we need to show that it is an equivalence, ie it is reflexive, symmetric and transitive.
+We proved that $(\mathrm{proj}_{2,C},\xi)$ is an internal relation, now we need to show that it is an equivalence, i,e. it is reflexive, symmetric and transitive.
 
 \begin{itemize}
 \item Claim: $(\mathrm{proj}_{2,C},\xi)$ is reflexive. 
@@ -307,7 +307,7 @@ E\times_BD \arrow[dd, "\mathrm{proj}_{1,D}"] \arrow[rr, "\mathrm{proj}_{2,D}", c
 E \arrow[rr, "p"]                                                                                                                    &  & B                                              &  &                                                                                            
 \end{tikzcd}
 \end{equation}
-Observe that $\delta'$ was also defined as the morphism induced by the universal property of the coequalizer, considering the object $E\times_BD$ as an object in $(\mathcal{A} \downarrow B)$ via $p\mathrm{proj}_{1,D}$. Thus $\rho_{(D,\zeta)}$ is a morphism in $(\mathcal{A} \downarrow B)$, ie $\zeta \rho_{(D,\zeta)} = \delta'$.
+Observe that $\delta'$ was also defined as the morphism induced by the universal property of the coequalizer, considering the object $E\times_BD$ as an object in $(\mathcal{A} \downarrow B)$ via $p\mathrm{proj}_{1,D}$. Thus $\rho_{(D,\zeta)}$ is a morphism in $(\mathcal{A} \downarrow B)$, i.e. $\zeta \rho_{(D,\zeta)} = \delta'$.
 
 For each object $(C,\gamma;\xi)$ in $(\mathcal{A}\downarrow E)^T$ the unit is a morphism of the kind $\alpha_{(C,\gamma;\xi)}:(C,\gamma;\xi) \to KL(C,\gamma;\xi)$. We compute $KL(C,\gamma;\xi)$. Let $q:C\to Q$ be the coequalizer of the equivalence relation $(\mathrm{proj}_{2,C},\xi)$ in $\mathcal{A}$. By the universal property of the coequalizer, we have that $q$ is a morphism in $(\mathcal{A} \downarrow B)$ via $p\gamma$. Thus, we can consider the coequalizer of the equivalence relation $(\mathrm{proj}_{2,C},\xi)$ in $(\mathcal{A} \downarrow B)$, which we denote by $q:(C,p\gamma) \to (Q,\delta)$. By functoriality, we have that $p^*(q)p^*(\xi) = p^*(q)p^*(\mathrm{proj}_{2,C})$. Moreover, it holds that $\xi$ is the coequalizer of $(p^*(\xi),p^*(\mathrm{proj}_{2,C}))$ by \Cref{xi coequalizer}. Thus we can define $\alpha_{(C,\gamma;\xi)}$ as the morphism induced by the universal property of the coequalizer $q$, as done in the diagram below. One can check that $\alpha_{(C,\gamma;\xi)}$ is a morphism in $(\mathcal{A} \downarrow E)^T$.
 \begin{equation}\label{unit alpha}
@@ -323,7 +323,7 @@ E \arrow[rr, "p"]                                                               
 
 One can show that $\rho$ and $\alpha$ are natural transformations, and that they satisfy the universal property of the counit / unit. This follows from the universal property of the coequalizer of the equivalence relation considered.
 
-Our goal is to show that $p^*$ is a monadic functor, ie that the comparison functor $K$ is an equivalence of categories. We prove that $K$ is an adjoint equivalence, which is the same. In order to do so, we aim to prove that the unit $\alpha$ and the counit $\rho$ of the adjunction $L \dashv K$ are pointwise isomorphisms.
+Our goal is to show that $p^*$ is a monadic functor, i.e. the comparison functor $K$ is an equivalence of categories. We prove that $K$ is an adjoint equivalence, which is the same. In order to do so, we aim to prove that the unit $\alpha$ and the counit $\rho$ of the adjunction $L \dashv K$ are pointwise isomorphisms.
 
 \begin{mainbox}{}
 \begin{prop}\label{counit iso}

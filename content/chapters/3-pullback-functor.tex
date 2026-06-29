@@ -1,5 +1,7 @@
 \chapter{Pullback functor}
 
+\label{chap:pb-funct}
+
 \section{Connected limits}
 
 \fontsize{12}{14.5}\selectfont
@@ -51,7 +53,7 @@ The following holds.
 
 \begin{subbox}{}
     \begin{proof}
-        \textit{1}. The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. Consider a connected limit cone $(L,(q_i)_{i \in \mathcal{I}})$. Denote each object in $(\mathcal{A} \downarrow E)$ associated to $i \in \mathcal{I}$ as $(F(i),\varphi_i)$. Since the limit is connected, it is the limit over a connected, hence inhabited, category. Thus we can pick $j\in \mathcal{I}$. The limit in $(\mathcal{A} \downarrow E)$ is $((L,\varphi_jq_j),(q_i)_{i \in \mathcal{I}})$. The connection in the zigzag guarantees that all the morphisms $q_1, \ldots, q_n$ involved in the limit in $\mathcal{A}$ are also morphisms in $(\mathcal{A} \downarrow E)$, ie $\varphi_iq_i = \varphi_jq_j \ \forall i $.
+        \textit{1}. The connected limits in the category $(\mathcal{A} \downarrow E)$ can be computed in $\mathcal{A}$. Consider a connected limit cone $(L,(q_i)_{i \in \mathcal{I}})$. Denote each object in $(\mathcal{A} \downarrow E)$ associated to $i \in \mathcal{I}$ as $(F(i),\varphi_i)$. Since the limit is connected, it is the limit over a connected, hence inhabited, category. Thus we can pick $j\in \mathcal{I}$. The limit in $(\mathcal{A} \downarrow E)$ is $((L,\varphi_jq_j),(q_i)_{i \in \mathcal{I}})$. The connection in the zigzag guarantees that all the morphisms $q_1, \ldots, q_n$ involved in the limit in $\mathcal{A}$ are also morphisms in $(\mathcal{A} \downarrow E)$, i.e. $\varphi_iq_i = \varphi_jq_j \ \forall i $.
     % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoAmAXVJADcBDAGwFcYkQAxACgEYBKEAF9S6TLnyEUPUgGZqdJq3bdyA4aOx4CRchXkMWbRJy6qhIkBk0SiZACz7FRkAFFzG8dpR29NA0uNuMDULK09JZBlZR0N2AB04gGMoCBwEdUsxLQiyYhiAkAAZIXkYKABzeCJQADMAJwgAWyQyEBwIJGkFWMCuLAEaRnoAIxhGAAUsm2MsMGxYdxB6ppaadqQokFGwKCQAWjsATj8neLiGOrQACywAfR4QQZGxyesvEFn5tgzl5sQu9aITbbXaIPYyVpDUYTKbvT5YBYnHogBIXa53ciLX5IXRtDr-J7Q17hdjwxHdArcABWIVqDT+uMBwJgOyQR0JL1hkg+cwRbCRBVR9EuN1uMix9Jxa3xAFYBc5uABrAYgKGct7csnfCzYxByvFsjkwjWk3nk-wKriMWlLSWIHwGoE0EFs46q57GkkzM38inOIUiu6EH52gBs0tWWxZoPBkI9xOypq+jz97AAjvcJStEOHHV0XUDWhb07dMUaE9MecmQ9nc4DcWrPYnvcn5SXxc7oxtiDW-nX8Q6CxC28YM4Ry1yk3ys32I06o6ywaGi6djFwA+j7nwuBn+CnGLNnFB6HArmV9-HJ8Y6lhylccCVBEA
     \[
         \begin{tikzcd}
@@ -119,7 +121,7 @@ D \arrow[r, "\delta"] \arrow[rd, "\delta"'] & E \arrow[d, "1_E"']              &
 
 \section{Pullback functor’s adjunction}\label{pullback functor}
 
-Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to B$ in $\mathcal{A}$, one can consider the functors pullback and shrink
+Given a category $\mathcal{A}$ with pullbacks and a morphism $p: E \to B$ in $\mathcal{A}$, one can consider the pullback and shrink functors
 \[
 \begin{tikzcd}
     (\mathcal{A} \downarrow B)
@@ -363,7 +365,7 @@ E\times_BA \arrow[ru, "{\ \ \ \ \ \ \langle \mathrm{proj}_{1,E\times_BA},1_{E\ti
 \end{tikzcd}
 \]
 
-We want to check that composition of the projections of $E\times_BA$ with $\circledast$ is the same as composing those projections with $1_{(E\times_BA,\mathrm{proj}_1)}$. Then, since the projections are jointly monic, we have the result. Following the first composition
+We want to check that the composition of the projections of $E\times_BA$ with $\circledast$ is the same as composing those projections with $1_{(E\times_BA,\mathrm{proj}_1)}$. Then, since the projections are jointly monic, we have the result. Following the first composition
 \begin{align*}
     (&\mathrm{proj}_{2,E \times_BA})(\tilde{\mathrm{proj}}_{2,E\times_BA}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = \\[1.5ex]
     & = (\mathrm{proj}_{2,E \times_BA}) (\mathrm{proj}_{2,E\times_B(E\times_BA)}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle \\[1.5ex]
@@ -376,7 +378,6 @@ and the second composition
     &= \mathrm{proj}_{1,E \times_BA} \\[1.5ex]
     &= (\mathrm{proj}_{1,E \times_BA}) (1_{(E\times_BA,\mathrm{proj}_1)})
 \end{align*}
-
 Hence
 \[ \circledast = (\tilde{\mathrm{proj}}_{2,E\times_BA}) \langle \mathrm{proj}_{1,E\times_BA}, 1_{E\times_BA} \rangle = 1_{(E\times_BA,\mathrm{proj}_1)}\] 
 
@@ -495,7 +496,7 @@ Let $p : E \to B$ be a morphism in $\mathcal{A}$ with pullbacks. Then the associ
 \end{mainbox}
 \begin{subbox}{}
 \begin{proof}
-We need to prove that the category $(\mathcal{A} \downarrow E)$ has pullback, the monad preserves pullbacks, and both the multiplication $p^* \epsilon p_!$ and the unit $\eta$ are cartesian.
+We need to prove that the category $(\mathcal{A} \downarrow E)$ has pullbacks, the monad preserves pullbacks, and both the multiplication $p^* \epsilon p_!$ and the unit $\eta$ are cartesian.
 
 The category $(\mathcal{A} \downarrow E)$ has pullbacks, by \Cref{U creates con lim}, since $\mathcal{A}$ has. The monad $p^*p_!$ preserves pullbacks, in fact $p^*$ is a right adjoint so it preserves limits, therefore preserves pullbacks, and $p_!$ preserves pullbacks by \Cref{p_! preserves connected limits}. We already proved that the unit $\eta$ is cartesian, so it remains to prove that the multiplication $p^* \epsilon p_!$ is cartesian. Since $\epsilon$ is cartesian and $p^*$ preserves pullbacks as shown above, we can conclude that the multiplication is cartesian.
 \end{proof}
