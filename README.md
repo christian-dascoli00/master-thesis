@@ -5,6 +5,7 @@ This thesis in category theory introduces ideally exact categories, a generaliza
 This framework offers a cleaner, more general way to understand ideals and other classical algebraic notions through category theory.
 
 [Thesis](thesis.pdf)
+
 [Presentation](presentation.pdf)
 
 Candidate: Christian D'Ascoli
